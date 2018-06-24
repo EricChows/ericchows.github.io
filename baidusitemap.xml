@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/06/23/hello-world/</loc>
+    <lastmod>2018-06-24T11:41:07.750Z</lastmod>
+    <data>
+        <display>
+        <title>Hello World</title>
+        <pubTime>2018-06-23T10:17:15.772Z</pubTime>
+        
+        <tag>Hexo</tag>
+         
+         
+           
+             
+              <breadCrumb title="Hexo" url="http://yoursite.com/categories/Hexo/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/06/23/year-06-23-Android/</loc>
+    <lastmod>2018-06-24T11:35:33.530Z</lastmod>
+    <data>
+        <display>
+        <title>Android</title>
+        <pubTime>2018-06-23T12:26:02.000Z</pubTime>
+        
+        <tag>Hexo</tag>
+         
+        <tag>Android</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="http://yoursite.com/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+    
+    
+    
+    
+  <url>
+    <loc>http://yoursite.com/2018/05/31/year-06-23-Ubuntu-%E9%85%8D%E7%BD%AE-OpenGork-%E6%9C%8D%E5%8A%A1/</loc>
+    <lastmod>2018-06-23T15:24:28.881Z</lastmod>
+    <data>
+        <display>
+        <title>Ubuntu 配置 OpenGork 服务</title>
+        <pubTime>2018-05-31T09:38:08.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="Tools" url="http://yoursite.com/categories/Tools/"/>
+          
+        </display>
+    </data>
+    </url>
+
+</urlset>
