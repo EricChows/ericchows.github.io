@@ -6,7 +6,7 @@
     
   <url>
     <loc>http://yoursite.com/2017/04/23/2017-04-23-Android%E5%BC%80%E5%8F%91%E5%B8%B8%E7%94%A8%E7%BD%91%E7%AB%99/</loc>
-    <lastmod>2018-06-24T14:00:35.109Z</lastmod>
+    <lastmod>2018-06-25T01:37:08.834Z</lastmod>
     <data>
         <display>
         <title>Android开发常用网站</title>
@@ -52,9 +52,9 @@
         <title>Android</title>
         <pubTime>2018-06-23T12:26:02.000Z</pubTime>
         
-        <tag>Hexo</tag>
-         
         <tag>Android</tag>
+         
+        <tag>Hexo</tag>
          
          
            
@@ -164,24 +164,6 @@
 
     
   <url>
-    <loc>http://yoursite.com/2015/08/01/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/</loc>
-    <lastmod>2018-06-23T15:24:29.019Z</lastmod>
-    <data>
-        <display>
-        <title>观察者模式</title>
-        <pubTime>2015-08-01T05:21:22.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="Android" url="http://yoursite.com/categories/Android/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://yoursite.com/2015/08/01/%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F/</loc>
     <lastmod>2018-06-23T15:24:29.019Z</lastmod>
     <data>
@@ -200,15 +182,13 @@
 
     
   <url>
-    <loc>http://yoursite.com/2015/07/22/android%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D/</loc>
-    <lastmod>2018-06-23T15:24:29.018Z</lastmod>
+    <loc>http://yoursite.com/2015/08/01/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/</loc>
+    <lastmod>2018-06-23T15:24:29.019Z</lastmod>
     <data>
         <display>
-        <title>android数字签名</title>
-        <pubTime>2015-07-22T02:33:38.000Z</pubTime>
+        <title>观察者模式</title>
+        <pubTime>2015-08-01T05:21:22.000Z</pubTime>
         
-        <tag>android</tag>
-         
          
            
              
@@ -247,6 +227,26 @@
         <title>Java中堆内存和栈内存详解</title>
         <pubTime>2015-07-29T14:20:41.000Z</pubTime>
         
+         
+           
+             
+              <breadCrumb title="Android" url="http://yoursite.com/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2015/07/22/android%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D/</loc>
+    <lastmod>2018-06-23T15:24:29.018Z</lastmod>
+    <data>
+        <display>
+        <title>android数字签名</title>
+        <pubTime>2015-07-22T02:33:38.000Z</pubTime>
+        
+        <tag>android</tag>
+         
          
            
              
