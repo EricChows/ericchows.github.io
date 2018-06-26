@@ -1,0 +1,1420 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Android PMS," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="EricChows" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="1.充电图标不显示，问题分析步骤a)找到充电图标的UI，frameworks/base/packages/SystemUI/res/layout/system_icons.xml中找到1234&amp;lt;com.android.systemui.BatteryMeterView android:id=&quot;@+id/battery&quot;        android:layout_height=&quot;match_">
+<meta name="keywords" content="Android PMS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android8.0充电图标不显示">
+<meta property="og:url" content="http://yoursite.com/2018/06/25/Android8-0充电图标不显示/index.html">
+<meta property="og:site_name" content="EricChows">
+<meta property="og:description" content="1.充电图标不显示，问题分析步骤a)找到充电图标的UI，frameworks/base/packages/SystemUI/res/layout/system_icons.xml中找到1234&amp;lt;com.android.systemui.BatteryMeterView android:id=&quot;@+id/battery&quot;        android:layout_height=&quot;match_">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-06-26T07:54:59.679Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android8.0充电图标不显示">
+<meta name="twitter:description" content="1.充电图标不显示，问题分析步骤a)找到充电图标的UI，frameworks/base/packages/SystemUI/res/layout/system_icons.xml中找到1234&amp;lt;com.android.systemui.BatteryMeterView android:id=&quot;@+id/battery&quot;        android:layout_height=&quot;match_">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/06/25/Android8-0充电图标不显示/"/>
+
+
+
+
+
+  <title>Android8.0充电图标不显示 | EricChows</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">EricChows</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">Android Developer</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/25/Android8-0充电图标不显示/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Eric Chows">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/myapple.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="EricChows">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Android8.0充电图标不显示</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-25T17:06:20+08:00">
+                2018-06-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/06/25/Android8-0充电图标不显示/" class="leancloud_visitors" data-flag-title="Android8.0充电图标不显示">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>1.充电图标不显示，问题分析步骤<br>a)找到充电图标的UI，frameworks/base/packages/SystemUI/res/layout/system_icons.xml<br>中找到<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;com.android.systemui.BatteryMeterView android:id=<span class="string">"@+id/battery"</span></span><br><span class="line">        android:layout_height=<span class="string">"match_parent"</span></span><br><span class="line">        android:layout_width=<span class="string">"wrap_content"</span></span><br><span class="line">        /&gt;</span><br></pre></td></tr></table></figure></p>
+<p>确定充电图标UI文件，BatteryMeterView.java<br>frameworks/base/packages/SystemUI/src/com/android/systemui/BatteryMeterView.java<br>中充电图标绘制在BatteryMeterDrawableBase.java,查看<br>frameworks/base/packages/SettingsLib/src/com/android/settingslib/graph/BatteryMeterDrawableBase.java可以看到充电的闪电图标的绘制过程。<br>在BatteryMeterView.java中可以看到充电图标的显示与否是由下面决定的:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">@Override</span><br><span class="line">    public void onBatteryLevelChanged(int level, boolean pluggedIn, boolean charging) &#123;</span><br><span class="line">        mDrawable.setBatteryLevel(level);</span><br><span class="line">        mDrawable.setCharging(pluggedIn);//pluggedIn为<span class="literal">true</span>，显示闪电图标，为<span class="literal">false</span>则不显示</span><br><span class="line">        mLevel = level;</span><br><span class="line">        updatePercentText();</span><br><span class="line">        setContentDescription(</span><br><span class="line">                getContext().getString(charging ? R.string.accessibility_battery_level_charging</span><br><span class="line">                        : R.string.accessibility_battery_level, level));</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p>可以看到是由pluggedIn来决定是否显示，这里有个疑问，为何不用charging的值来判断，而要用pluggedIn的值来判断。原因在下面这个代码,<br>onBatteryLevelChanged这个函数，是在<br>frameworks/base/packages/SystemUI/src/com/android/systemui/statusbar/policy/BatteryControllerImpl.java里面addCallback回调过去的。<br>mCharging的值是由 mCharged和 BATTERY_STATUS_CHARGING两个值一起判断的。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">@Override</span><br><span class="line">    public void onReceive(final Context context, Intent intent) &#123;</span><br><span class="line">        final String action = intent.getAction();</span><br><span class="line">        <span class="keyword">if</span> (action.equals(Intent.ACTION_BATTERY_CHANGED)) &#123;</span><br><span class="line">            <span class="keyword">if</span> (mTestmode &amp;&amp; !intent.getBooleanExtra(<span class="string">"testmode"</span>, <span class="literal">false</span>)) <span class="built_in">return</span>;</span><br><span class="line">            mHasReceivedBattery = <span class="literal">true</span>;</span><br><span class="line">            mLevel = (int)(100f</span><br><span class="line">                    * intent.getIntExtra(BatteryManager.EXTRA_LEVEL, 0)</span><br><span class="line">                    / intent.getIntExtra(BatteryManager.EXTRA_SCALE, 100));</span><br><span class="line">            mPluggedIn = intent.getIntExtra(BatteryManager.EXTRA_PLUGGED, 0) != 0;</span><br><span class="line"></span><br><span class="line">            final int status = intent.getIntExtra(BatteryManager.EXTRA_STATUS,</span><br><span class="line">                    BatteryManager.BATTERY_STATUS_UNKNOWN);</span><br><span class="line">            mCharged = status == BatteryManager.BATTERY_STATUS_FULL;</span><br><span class="line">            mCharging = mCharged || status == BatteryManager.BATTERY_STATUS_CHARGING;</span><br><span class="line"></span><br><span class="line">            fireBatteryLevelChanged();</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure></p>
+<p>为了查看手机中当前的pluggedIn和charging这两个值的状态，从<br>frameworks/base/packages/SystemUI/src/com/android/systemui/statusbar/policy/BatteryControllerImpl.java文件中看到了一个Dump 的log打印，刚好打印了这几个值的状态，如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">@Override</span><br><span class="line">    public void dump(FileDescriptor fd, PrintWriter pw, String[] args) &#123;</span><br><span class="line">        pw.println(<span class="string">"BatteryController state:"</span>);</span><br><span class="line">        pw.print(<span class="string">"  mLevel="</span>); pw.println(mLevel);</span><br><span class="line">        pw.print(<span class="string">"  mPluggedIn="</span>); pw.println(mPluggedIn);</span><br><span class="line">        pw.print(<span class="string">"  mCharging="</span>); pw.println(mCharging);</span><br><span class="line">        pw.print(<span class="string">"  mCharged="</span>); pw.println(mCharged);</span><br><span class="line">        pw.print(<span class="string">"  mPowerSave="</span>); pw.println(mPowerSave);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<pre><code>所以，不需要另外打任何的log，直接连接手机，使用adb shell bugreport &gt; bugreport.txt
+抓出所有的dump log即可。
+
+BatteryController state:
+  mLevel=86
+  mPluggedIn=false
+  mCharging=true
+  mCharged=false
+  mPowerSave=false
+
+01-01 10:23:19.490  1000  1098  1110 D BatteryService: Sending ACTION_BATTERY_CHANGED.  level:71, scale:100, status:3, health:2, present:true, voltage: 3962, temperature: 375, technology: Li-ion, AC powered:false, USB powered:false, Wireless powered:false, icon:17303429, invalid charger:0, maxChargingCurrent:0, maxChargingVoltage:0, chargeCounter:1714883
+
+-------------------------------------------------------------------------------
+DUMP OF SERVICE batteryproperties:
+ac: 0 usb: 0 wireless: 0 current_max: 0 voltage_max: 0
+status: 2 health: 2 present: 1
+level: 86 voltage: 4234 temp: 297
+current now: -77209
+charge counter: 2089873
+current now: -376
+Full charge: 2444000
+--------- 0.003s was the duration of dumpsys batteryproperties, ending at: 2018-06-15 16:17:57
+
+
+这里有个问题，adb shell bugreport的log在User版本和Userdebug的版本里面抓出来的结果不一样，具体原因，可能是日志的级别限制的，需要查证一下。
+</code></pre><p>2.mPluggedIn的值是在收到ACTION_BATTERY_CHANGED广播里面带的参数得到的，那么这个广播是哪里发出来的呢？<br>通过使用<a href="http://androidxref.com" target="_blank" rel="noopener">http://androidxref.com</a> 进行全局搜索，找到是在<br>/frameworks/base/services/core/java/com/android/server/BatteryService.java的sendIntentLocked()函数里面发出来的。代码如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">private void <span class="function"><span class="title">sendIntentLocked</span></span>() &#123;</span><br><span class="line">        //  Pack up the values and broadcast them to everyone</span><br><span class="line">        final Intent intent = new Intent(Intent.ACTION_BATTERY_CHANGED);</span><br><span class="line">        intent.addFlags(Intent.FLAG_RECEIVER_REGISTERED_ONLY</span><br><span class="line">                | Intent.FLAG_RECEIVER_REPLACE_PENDING);</span><br><span class="line"></span><br><span class="line">        int icon = getIconLocked(mBatteryProps.batteryLevel);</span><br><span class="line"></span><br><span class="line">        intent.putExtra(BatteryManager.EXTRA_SEQUENCE, mSequence);</span><br><span class="line">        intent.putExtra(BatteryManager.EXTRA_STATUS, mBatteryProps.batteryStatus);</span><br><span class="line">        intent.putExtra(BatteryManager.EXTRA_HEALTH, mBatteryProps.batteryHealth);</span><br><span class="line">        intent.putExtra(BatteryManager.EXTRA_PRESENT, mBatteryProps.batteryPresent);</span><br><span class="line">        intent.putExtra(BatteryManager.EXTRA_LEVEL, mBatteryProps.batteryLevel);</span><br><span class="line">        intent.putExtra(BatteryManager.EXTRA_SCALE, BATTERY_SCALE);</span><br><span class="line">        intent.putExtra(BatteryManager.EXTRA_ICON_SMALL, icon);</span><br><span class="line">        intent.putExtra(BatteryManager.EXTRA_PLUGGED, mPlugType);</span><br><span class="line">        intent.putExtra(BatteryManager.EXTRA_VOLTAGE, mBatteryProps.batteryVoltage);    </span><br><span class="line">        intent.putExtra(BatteryManager.EXTRA_TEMPERATURE, mBatteryProps.batteryTemperature);  </span><br><span class="line"></span><br><span class="line">        EXTRA_PLUGGED的值是由mPlugType得到的，而mPlugType的值在BatteryService.java中得到方式如下：</span><br><span class="line">    private void processValuesLocked(boolean force) &#123;</span><br><span class="line">        boolean logOutlier = <span class="literal">false</span>;</span><br><span class="line">        long dischargeDuration = 0;</span><br><span class="line"></span><br><span class="line">        mBatteryLevelCritical = (mBatteryProps.batteryLevel &lt;= mCriticalBatteryLevel);</span><br><span class="line">        <span class="keyword">if</span> (mBatteryProps.chargerAcOnline) &#123;</span><br><span class="line">            mPlugType = BatteryManager.BATTERY_PLUGGED_AC;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (mBatteryProps.chargerUsbOnline) &#123;</span><br><span class="line">            mPlugType = BatteryManager.BATTERY_PLUGGED_USB;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (mBatteryProps.chargerWirelessOnline) &#123;</span><br><span class="line">            mPlugType = BatteryManager.BATTERY_PLUGGED_WIRELESS;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            mPlugType = BATTERY_PLUGGED_NONE;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure></p>
+<pre><code>从中可以看出是根据mBatteryProps.chargerAcOnline或者mBatteryProps.chargerUsbOnline或者mBatteryProps.chargerWirelessOnline的值来判断，在
+frameworks/base/core/java/android/os/BatteryProperties.java中，可以看到这三个值是通过序列化的方式得到：
+</code></pre><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">private BatteryProperties(Parcel p) &#123;</span><br><span class="line">    chargerAcOnline = p.readInt() == 1 ? <span class="literal">true</span> : <span class="literal">false</span>;</span><br><span class="line">    chargerUsbOnline = p.readInt() == 1 ? <span class="literal">true</span> : <span class="literal">false</span>;</span><br><span class="line">    chargerWirelessOnline = p.readInt() == 1 ? <span class="literal">true</span> : <span class="literal">false</span>;</span><br><span class="line">    maxChargingCurrent = p.readInt();</span><br><span class="line">    maxChargingVoltage = p.readInt();</span><br><span class="line">    batteryStatus = p.readInt();</span><br><span class="line">    batteryHealth = p.readInt();</span><br><span class="line">    batteryPresent = p.readInt() == 1 ? <span class="literal">true</span> : <span class="literal">false</span>;</span><br><span class="line">    batteryLevel = p.readInt();</span><br><span class="line">    batteryVoltage = p.readInt();</span><br><span class="line">    batteryTemperature = p.readInt();</span><br><span class="line">    batteryFullCharge = p.readInt();</span><br><span class="line">    batteryChargeCounter = p.readInt();</span><br><span class="line">    batteryTechnology = p.readString();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public void writeToParcel(Parcel p, int flags) &#123;</span><br><span class="line">    p.writeInt(chargerAcOnline ? 1 : 0);</span><br><span class="line">    p.writeInt(chargerUsbOnline ? 1 : 0);</span><br><span class="line">    p.writeInt(chargerWirelessOnline ? 1 : 0);</span><br><span class="line">    p.writeInt(maxChargingCurrent);</span><br><span class="line">    p.writeInt(maxChargingVoltage);</span><br><span class="line">    p.writeInt(batteryStatus);</span><br><span class="line">    p.writeInt(batteryHealth);</span><br><span class="line">    p.writeInt(batteryPresent ? 1 : 0);</span><br><span class="line">    p.writeInt(batteryLevel);</span><br><span class="line">    p.writeInt(batteryVoltage);</span><br><span class="line">    p.writeInt(batteryTemperature);</span><br><span class="line">    p.writeInt(batteryFullCharge);</span><br><span class="line">    p.writeInt(batteryChargeCounter);</span><br><span class="line">    p.writeString(batteryTechnology);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public static final Parcelable.Creator&lt;BatteryProperties&gt; CREATOR</span><br><span class="line">    = new Parcelable.Creator&lt;BatteryProperties&gt;() &#123;</span><br><span class="line">    public BatteryProperties createFromParcel(Parcel p) &#123;</span><br><span class="line">        <span class="built_in">return</span> new BatteryProperties(p);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public BatteryProperties[] newArray(int size) &#123;</span><br><span class="line">        <span class="built_in">return</span> new BatteryProperties[size];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<pre><code>再来看看mBatteryProps的赋值：
+</code></pre><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">private void update(BatteryProperties props) &#123;</span><br><span class="line">    synchronized (mLock) &#123;</span><br><span class="line">        <span class="keyword">if</span> (!mUpdatesStopped) &#123;</span><br><span class="line">            mBatteryProps = props;</span><br><span class="line">            // Process the new values.</span><br><span class="line">            processValuesLocked(<span class="literal">false</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            mLastBatteryProps.set(props);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code>接着看update()函数的调用，如下：
+</code></pre><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">private final class BatteryListener extends IBatteryPropertiesListener.Stub &#123;</span><br><span class="line">    @Override public void batteryPropertiesChanged(BatteryProperties props) &#123;</span><br><span class="line">        final long identity = Binder.clearCallingIdentity();</span><br><span class="line">        try &#123;</span><br><span class="line">            BatteryService.this.update(props);</span><br><span class="line">        &#125; finally &#123;</span><br><span class="line">            Binder.restoreCallingIdentity(identity);</span><br><span class="line">        &#125;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code>可以看到BatteryProperties是在由batteryPropertiesChanged赋值，是通过AIDL实现对C++侧的监听，这个AIDL实现了JAVA侧与C++侧的通讯。
+这一块关于电池的共有三个AIDL文件,作为客户端和服务端的媒介，具体代码，以及作用分析如下：
+</code></pre><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">frameworks/base/core/java/android/os/BatteryProperties.aidl</span><br><span class="line">package android.os;</span><br><span class="line">    parcelable BatteryProperties;</span><br></pre></td></tr></table></figure>
+<pre><code>BatteryProperties.aidl主要用户AIDL跨进程通讯时的数据序列化和反序列化frameworks/base/core/java/android/os/BatteryProperties.java
+</code></pre><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">frameworks/base/core/java/android/os/IBatteryPropertiesListener.aidl</span><br><span class="line">package android.os;</span><br><span class="line">import android.os.BatteryProperties;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line">* &#123;@hide&#125;</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">oneway interface IBatteryPropertiesListener &#123;</span><br><span class="line">    void batteryPropertiesChanged(<span class="keyword">in</span> BatteryProperties props);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code>IBatteryPropertiesListener.aidl主要用于监听
+</code></pre><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">frameworks/base/core/java/android/os/IBatteryPropertiesRegistrar.aidl</span><br><span class="line">package android.os;</span><br><span class="line">import android.os.IBatteryPropertiesListener;</span><br><span class="line">import android.os.BatteryProperty;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * &#123;@hide&#125;</span><br><span class="line"> */</span><br><span class="line"></span><br><span class="line">interface IBatteryPropertiesRegistrar &#123;</span><br><span class="line">    void registerListener(IBatteryPropertiesListener listener);</span><br><span class="line">    void unregisterListener(IBatteryPropertiesListener listener);</span><br><span class="line">    int getProperty(<span class="keyword">in</span> int id, out BatteryProperty prop);</span><br><span class="line">    oneway void scheduleUpdate();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code>IBatteryPropertiesRegistrar.aidl主要用于注册
+
+服务端在BatteryService.java
+</code></pre><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">@Override</span><br><span class="line">public void <span class="function"><span class="title">onStart</span></span>() &#123;</span><br><span class="line">    IBinder b = ServiceManager.getService(<span class="string">"batteryproperties"</span>);</span><br><span class="line">    final IBatteryPropertiesRegistrar batteryPropertiesRegistrar =</span><br><span class="line">            IBatteryPropertiesRegistrar.Stub.asInterface(b);</span><br><span class="line">    try &#123;</span><br><span class="line">        batteryPropertiesRegistrar.registerListener(new BatteryListener());</span><br><span class="line">    &#125; catch (RemoteException e) &#123;</span><br><span class="line">        // Should never happen.</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    mBinderService = new BinderService();</span><br><span class="line">    publishBinderService(<span class="string">"battery"</span>, mBinderService);</span><br><span class="line">    publishLocalService(BatteryManagerInternal.class, new LocalService());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code>对应的native层的代码在frameworks/native/services/batteryservice/编译出libbatteryservice.so库
+Java侧与C++侧通过AIDL通讯，两边都要写AIDL文件，且两边都要有Parcel序列化。
+通过查找batteryPropertiesChanged函数
+
+system/core/healthd/BatteryPropertiesRegistrar.cpp
+</code></pre><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include "BatteryPropertiesRegistrar.h"</span></span><br><span class="line"><span class="comment">#include &lt;batteryservice/BatteryService.h&gt;</span></span><br><span class="line"><span class="comment">#include &lt;batteryservice/IBatteryPropertiesListener.h&gt;</span></span><br><span class="line"><span class="comment">#include &lt;batteryservice/IBatteryPropertiesRegistrar.h&gt;</span></span><br><span class="line"><span class="comment">#include &lt;binder/IPCThreadState.h&gt;</span></span><br><span class="line"><span class="comment">#include &lt;binder/IServiceManager.h&gt;</span></span><br><span class="line"><span class="comment">#include &lt;binder/PermissionCache.h&gt;</span></span><br><span class="line"><span class="comment">#include &lt;private/android_filesystem_config.h&gt;</span></span><br><span class="line"><span class="comment">#include &lt;utils/Errors.h&gt;</span></span><br><span class="line"><span class="comment">#include &lt;utils/Mutex.h&gt;</span></span><br><span class="line"><span class="comment">#include &lt;utils/String16.h&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#include &lt;healthd/healthd.h&gt;</span></span><br><span class="line"></span><br><span class="line">namespace android &#123;</span><br><span class="line"></span><br><span class="line">void BatteryPropertiesRegistrar::publish(</span><br><span class="line">    const sp&lt;BatteryPropertiesRegistrar&gt;&amp; service) &#123;</span><br><span class="line">    defaultServiceManager()-&gt;addService(String16(<span class="string">"batteryproperties"</span>), service);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void BatteryPropertiesRegistrar::notifyListeners(const struct BatteryProperties&amp; props) &#123;</span><br><span class="line">    Vector&lt;sp&lt;IBatteryPropertiesListener&gt; &gt; listenersCopy;</span><br><span class="line"></span><br><span class="line">    // Binder currently may service an incoming oneway transaction whenever an</span><br><span class="line">    // outbound oneway call is made (<span class="keyword">if</span> there is already a pending incoming</span><br><span class="line">    // oneway call waiting).  This is considered a bug and may change <span class="keyword">in</span> the</span><br><span class="line">    // future.  For now, avoid recursive mutex lock <span class="keyword">while</span> making outbound</span><br><span class="line">    // calls by making a <span class="built_in">local</span> copy of the current list of listeners.</span><br><span class="line">    &#123;</span><br><span class="line">        Mutex::Autolock _l(mRegistrationLock);</span><br><span class="line">        listenersCopy = mListeners;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (size_t i = 0; i &lt; listenersCopy.size(); i++) &#123;</span><br><span class="line">        listenersCopy[i]-&gt;batteryPropertiesChanged(props);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void BatteryPropertiesRegistrar::registerListener(const sp&lt;IBatteryPropertiesListener&gt;&amp; listener) &#123;</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (listener == NULL)</span><br><span class="line">            <span class="built_in">return</span>;</span><br><span class="line">        Mutex::Autolock _l(mRegistrationLock);</span><br><span class="line">        // check whether this is a duplicate</span><br><span class="line">        <span class="keyword">for</span> (size_t i = 0; i &lt; mListeners.size(); i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (IInterface::asBinder(mListeners[i]) == IInterface::asBinder(listener)) &#123;</span><br><span class="line">                <span class="built_in">return</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        mListeners.add(listener);</span><br><span class="line">        IInterface::asBinder(listener)-&gt;linkToDeath(this);</span><br><span class="line">    &#125;</span><br><span class="line">    healthd_battery_update();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void BatteryPropertiesRegistrar::unregisterListener(const sp&lt;IBatteryPropertiesListener&gt;&amp; listener) &#123;</span><br><span class="line">    <span class="keyword">if</span> (listener == NULL)</span><br><span class="line">        <span class="built_in">return</span>;</span><br><span class="line">    Mutex::Autolock _l(mRegistrationLock);</span><br><span class="line">    <span class="keyword">for</span> (size_t i = 0; i &lt; mListeners.size(); i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (IInterface::asBinder(mListeners[i]) == IInterface::asBinder(listener)) &#123;</span><br><span class="line">            IInterface::asBinder(mListeners[i])-&gt;unlinkToDeath(this);</span><br><span class="line">            mListeners.removeAt(i);</span><br><span class="line">            <span class="built_in">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">status_t BatteryPropertiesRegistrar::getProperty(int id, struct BatteryProperty *val) &#123;</span><br><span class="line">    <span class="built_in">return</span> healthd_get_property(id, val);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void BatteryPropertiesRegistrar::<span class="function"><span class="title">scheduleUpdate</span></span>() &#123;</span><br><span class="line">    healthd_battery_update();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">status_t BatteryPropertiesRegistrar::dump(int fd, const Vector&lt;String16&gt;&amp; /*args*/) &#123;</span><br><span class="line">    IPCThreadState* self = IPCThreadState::self();</span><br><span class="line">    const int pid = self-&gt;getCallingPid();</span><br><span class="line">    const int uid = self-&gt;getCallingUid();</span><br><span class="line">    <span class="keyword">if</span> ((uid != AID_SHELL) &amp;&amp;</span><br><span class="line">        !PermissionCache::checkPermission(</span><br><span class="line">                String16(<span class="string">"android.permission.DUMP"</span>), pid, uid))</span><br><span class="line">        <span class="built_in">return</span> PERMISSION_DENIED;</span><br><span class="line"></span><br><span class="line">    healthd_dump_battery_state(fd);</span><br><span class="line">    <span class="built_in">return</span> OK;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void BatteryPropertiesRegistrar::binderDied(const wp&lt;IBinder&gt;&amp; who) &#123;</span><br><span class="line">    Mutex::Autolock _l(mRegistrationLock);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (size_t i = 0; i &lt; mListeners.size(); i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (IInterface::asBinder(mListeners[i]) == who) &#123;</span><br><span class="line">            mListeners.removeAt(i);</span><br><span class="line">            <span class="built_in">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#125;  // namespace android</span><br></pre></td></tr></table></figure>
+<pre><code>再查找notifyListeners函数，在 system/core/healthd/healthd_mode_android.cpp
+</code></pre><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">void healthd_mode_android_battery_update(</span><br><span class="line">    struct android::BatteryProperties *props) &#123;</span><br><span class="line">    <span class="keyword">if</span> (gBatteryPropertiesRegistrar != NULL)</span><br><span class="line">        gBatteryPropertiesRegistrar-&gt;notifyListeners(*props);</span><br><span class="line"></span><br><span class="line">    <span class="built_in">return</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code>Healthd是一种中介模型，向下监听来自kernel层的电池事件，向上将电池数据信息传递给Framework层的BatteryService.
+主要代码在 system/core/healthd 中，对Healthd模块的代码分析如下：
+参考：
+Healthd模块编译出来的文件有system/bin/healthd
+通过在system/core/healthd里面查找chargerUsbOnline，在system/core/healthd/BatteryMonitor.cpp中update函数可以看到赋值：
+</code></pre><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br></pre></td><td class="code"><pre><span class="line">bool BatteryMonitor::update(void) &#123;</span><br><span class="line">    bool logthis;</span><br><span class="line"></span><br><span class="line">    initBatteryProperties(&amp;props);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (!mHealthdConfig-&gt;batteryPresentPath.isEmpty())</span><br><span class="line">        props.batteryPresent = getBooleanField(mHealthdConfig-&gt;batteryPresentPath);</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        props.batteryPresent = mBatteryDevicePresent;</span><br><span class="line"></span><br><span class="line">    props.batteryLevel = mBatteryFixedCapacity ?</span><br><span class="line">        mBatteryFixedCapacity :</span><br><span class="line">        getIntField(mHealthdConfig-&gt;batteryCapacityPath);</span><br><span class="line">    props.batteryVoltage = getIntField(mHealthdConfig-&gt;batteryVoltagePath) / 1000;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (!mHealthdConfig-&gt;batteryCurrentNowPath.isEmpty())</span><br><span class="line">        props.batteryCurrent = getIntField(mHealthdConfig-&gt;batteryCurrentNowPath) / 1000;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (!mHealthdConfig-&gt;batteryFullChargePath.isEmpty())</span><br><span class="line">        props.batteryFullCharge = getIntField(mHealthdConfig-&gt;batteryFullChargePath);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (!mHealthdConfig-&gt;batteryCycleCountPath.isEmpty())</span><br><span class="line">        props.batteryCycleCount = getIntField(mHealthdConfig-&gt;batteryCycleCountPath);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (!mHealthdConfig-&gt;batteryChargeCounterPath.isEmpty())</span><br><span class="line">        props.batteryChargeCounter = getIntField(mHealthdConfig-&gt;batteryChargeCounterPath);</span><br><span class="line"></span><br><span class="line">    props.batteryTemperature = mBatteryFixedTemperature ?</span><br><span class="line">        mBatteryFixedTemperature :</span><br><span class="line">        getIntField(mHealthdConfig-&gt;batteryTemperaturePath);</span><br><span class="line"></span><br><span class="line">    // For devices <span class="built_in">which</span> <span class="keyword">do</span> not have battery and are always plugged</span><br><span class="line">    // into power souce.</span><br><span class="line">    <span class="keyword">if</span> (mAlwaysPluggedDevice) &#123;</span><br><span class="line">        props.chargerAcOnline = <span class="literal">true</span>;</span><br><span class="line">        props.batteryPresent = <span class="literal">true</span>;</span><br><span class="line">        props.batteryStatus = BATTERY_STATUS_CHARGING;</span><br><span class="line">        props.batteryHealth = BATTERY_HEALTH_GOOD;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    std::string buf;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (readFromFile(mHealthdConfig-&gt;batteryStatusPath, &amp;buf) &gt; 0)</span><br><span class="line">        props.batteryStatus = getBatteryStatus(buf.c_str());</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (readFromFile(mHealthdConfig-&gt;batteryHealthPath, &amp;buf) &gt; 0)</span><br><span class="line">        props.batteryHealth = getBatteryHealth(buf.c_str());</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (readFromFile(mHealthdConfig-&gt;batteryTechnologyPath, &amp;buf) &gt; 0)</span><br><span class="line">        props.batteryTechnology = String8(buf.c_str());</span><br><span class="line"></span><br><span class="line">    unsigned int i;</span><br><span class="line">    double MaxPower = 0;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (i = 0; i &lt; mChargerNames.size(); i++) &#123;</span><br><span class="line">        String8 path;</span><br><span class="line">        path.appendFormat(<span class="string">"%s/%s/online"</span>, POWER_SUPPLY_SYSFS_PATH,</span><br><span class="line">                          mChargerNames[i].string());</span><br><span class="line">        <span class="keyword">if</span> (getIntField(path)) &#123;</span><br><span class="line">            path.clear();</span><br><span class="line">            path.appendFormat(<span class="string">"%s/%s/type"</span>, POWER_SUPPLY_SYSFS_PATH,</span><br><span class="line">                              mChargerNames[i].string());</span><br><span class="line">            switch(readPowerSupplyType(path)) &#123;</span><br><span class="line">            <span class="keyword">case</span> ANDROID_POWER_SUPPLY_TYPE_AC:</span><br><span class="line">                props.chargerAcOnline = <span class="literal">true</span>;</span><br><span class="line">                <span class="built_in">break</span>;</span><br><span class="line">            <span class="keyword">case</span> ANDROID_POWER_SUPPLY_TYPE_USB:</span><br><span class="line">                props.chargerUsbOnline = <span class="literal">true</span>;</span><br><span class="line">                <span class="built_in">break</span>;</span><br><span class="line">            <span class="keyword">case</span> ANDROID_POWER_SUPPLY_TYPE_WIRELESS:</span><br><span class="line">                props.chargerWirelessOnline = <span class="literal">true</span>;</span><br><span class="line">                <span class="built_in">break</span>;</span><br><span class="line">            default:</span><br><span class="line">                KLOG_WARNING(LOG_TAG, <span class="string">"%s: Unknown power supply type\n"</span>,</span><br><span class="line">                             mChargerNames[i].string());</span><br><span class="line">            &#125;</span><br><span class="line">            path.clear();</span><br><span class="line">            path.appendFormat(<span class="string">"%s/%s/current_max"</span>, POWER_SUPPLY_SYSFS_PATH,</span><br><span class="line">                              mChargerNames[i].string());</span><br><span class="line">            int ChargingCurrent =</span><br><span class="line">                    (access(path.string(), R_OK) == 0) ? getIntField(path) : 0;</span><br><span class="line"></span><br><span class="line">            path.clear();</span><br><span class="line">            path.appendFormat(<span class="string">"%s/%s/voltage_max"</span>, POWER_SUPPLY_SYSFS_PATH,</span><br><span class="line">                              mChargerNames[i].string());</span><br><span class="line"></span><br><span class="line">            int ChargingVoltage =</span><br><span class="line">                (access(path.string(), R_OK) == 0) ? getIntField(path) :</span><br><span class="line">                DEFAULT_VBUS_VOLTAGE;</span><br><span class="line"></span><br><span class="line">            double power = ((double)ChargingCurrent / MILLION) *</span><br><span class="line">                           ((double)ChargingVoltage / MILLION);</span><br><span class="line">            <span class="keyword">if</span> (MaxPower &lt; power) &#123;</span><br><span class="line">                props.maxChargingCurrent = ChargingCurrent;</span><br><span class="line">                props.maxChargingVoltage = ChargingVoltage;</span><br><span class="line">                MaxPower = power;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    logthis = !healthd_board_battery_update(&amp;props);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">        char dmesgline[256];</span><br><span class="line">        size_t len;</span><br><span class="line">        <span class="keyword">if</span> (props.batteryPresent) &#123;</span><br><span class="line">            snprintf(dmesgline, sizeof(dmesgline),</span><br><span class="line">                 <span class="string">"battery l=%d v=%d t=%s%d.%d h=%d st=%d"</span>,</span><br><span class="line">                 props.batteryLevel, props.batteryVoltage,</span><br><span class="line">                 props.batteryTemperature &lt; 0 ? <span class="string">"-"</span> : <span class="string">""</span>,</span><br><span class="line">                 abs(props.batteryTemperature / 10),</span><br><span class="line">                 abs(props.batteryTemperature % 10), props.batteryHealth,</span><br><span class="line">                 props.batteryStatus);</span><br><span class="line"></span><br><span class="line">            len = strlen(dmesgline);</span><br><span class="line">            <span class="keyword">if</span> (!mHealthdConfig-&gt;batteryCurrentNowPath.isEmpty()) &#123;</span><br><span class="line">                len += snprintf(dmesgline + len, sizeof(dmesgline) - len,</span><br><span class="line">                                <span class="string">" c=%d"</span>, props.batteryCurrent);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (!mHealthdConfig-&gt;batteryFullChargePath.isEmpty()) &#123;</span><br><span class="line">                len += snprintf(dmesgline + len, sizeof(dmesgline) - len,</span><br><span class="line">                                <span class="string">" fc=%d"</span>, props.batteryFullCharge);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (!mHealthdConfig-&gt;batteryCycleCountPath.isEmpty()) &#123;</span><br><span class="line">                len += snprintf(dmesgline + len, sizeof(dmesgline) - len,</span><br><span class="line">                                <span class="string">" cc=%d"</span>, props.batteryCycleCount);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            len = snprintf(dmesgline, sizeof(dmesgline),</span><br><span class="line">                 <span class="string">"battery none"</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        snprintf(dmesgline + len, sizeof(dmesgline) - len, <span class="string">" chg=%s%s%s"</span>,</span><br><span class="line">                 props.chargerAcOnline ? <span class="string">"a"</span> : <span class="string">""</span>,</span><br><span class="line">                 props.chargerUsbOnline ? <span class="string">"u"</span> : <span class="string">""</span>,</span><br><span class="line">                 props.chargerWirelessOnline ? <span class="string">"w"</span> : <span class="string">""</span>);</span><br><span class="line"></span><br><span class="line">        KLOG_WARNING(LOG_TAG, <span class="string">"%s\n"</span>, dmesgline);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    healthd_mode_ops-&gt;battery_update(&amp;props);</span><br><span class="line">    <span class="built_in">return</span> props.chargerAcOnline | props.chargerUsbOnline |</span><br><span class="line">            props.chargerWirelessOnline;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>   从上面代码可以看到chargerUsbOnline的值是通过读取 sys/class/power_supply文件夹下的USB文件夹下的type里面的值来判断。</p>
+<p>   adb shell进入手机后，cd sys/class/power_supply/USB,cat type发现是USB。</p>
+<h2 id="这下懵逼了，这个值是对的呀，为何log里面读取出来的值不对呢？而且从之前抓的dump-log来看如下：的确没有正确的读取到"><a href="#这下懵逼了，这个值是对的呀，为何log里面读取出来的值不对呢？而且从之前抓的dump-log来看如下：的确没有正确的读取到" class="headerlink" title="   这下懵逼了，这个值是对的呀，为何log里面读取出来的值不对呢？而且从之前抓的dump log来看如下：的确没有正确的读取到"></a>   这下懵逼了，这个值是对的呀，为何log里面读取出来的值不对呢？而且从之前抓的dump log来看如下：的确没有正确的读取到</h2><pre><code>DUMP OF SERVICE batteryproperties:
+ac: 0 usb: 0 wireless: 0 current_max: 0 voltage_max: 0
+status: 2 health: 2 present: 1
+level: 86 voltage: 4234 temp: 297
+current now: -77209
+charge counter: 2089873
+current now: -376
+Full charge: 2444000
+--------- 0.003s was the duration of dumpsys batteryproperties, ending at: 2018-06-15 16:17:57
+现在怀疑是SeAndroid的AVC权限导致的。
+</code></pre>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Android-PMS/" rel="tag"># Android PMS</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/06/23/year-06-23-Android/" rel="next" title="Android">
+                <i class="fa fa-chevron-left"></i> Android
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  
+    <div id="gitalk-container"></div>
+  
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/myapple.jpg"
+                alt="Eric Chows" />
+            
+              <p class="site-author-name" itemprop="name">Eric Chows</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/ericchows" target="_blank" title="GitHub">
+                    
+                      <i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:xnzds2008@163.com" target="_blank" title="E-Mail">
+                    
+                      <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://plus.google.com" target="_blank" title="Google">
+                    
+                      <i class="fa fa-fw fa-google"></i>Google</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://twitter.com" target="_blank" title="Twitter">
+                    
+                      <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.facebook.com" target="_blank" title="FB Page">
+                    
+                      <i class="fa fa-fw fa-facebook"></i>FB Page</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://vk.com" target="_blank" title="VK Group">
+                    
+                      <i class="fa fa-fw fa-vk"></i>VK Group</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://stackoverflow.com/users/8872810/eric" target="_blank" title="StackOverflow">
+                    
+                      <i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://youtube.com" target="_blank" title="YouTube">
+                    
+                      <i class="fa fa-fw fa-youtube"></i>YouTube</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://instagram.com" target="_blank" title="Instagram">
+                    
+                      <i class="fa fa-fw fa-instagram"></i>Instagram</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="skype" target="_blank" title="Skype">
+                    
+                      <i class="fa fa-fw fa-skype"></i>Skype</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="/images/wechat.jpg" target="_blank" title="Wechat">
+                    
+                      <i class="fa fa-fw fa-globe"></i>Wechat</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://blog.csdn.net/Cxiaolinxiaozi" target="_blank" title="CSDN">
+                    
+                      <i class="fa fa-fw fa-globe"></i>CSDN</a>
+                </span>
+              
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#这下懵逼了，这个值是对的呀，为何log里面读取出来的值不对呢？而且从之前抓的dump-log来看如下：的确没有正确的读取到"><span class="nav-number">1.</span> <span class="nav-text">   这下懵逼了，这个值是对的呀，为何log里面读取出来的值不对呢？而且从之前抓的dump log来看如下：的确没有正确的读取到</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2015 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">EricChows</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="//s95.cnzz.com/z_stat.php?id=1274018749&web_id=1274018749" language="JavaScript"></script>
+  </div>
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.3"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+   <script type="text/javascript">
+		var gitalk = new Gitalk({
+		  clientID: '2f039a8ed54186479946',
+		  clientSecret: 'bc88282455b50fbc8c5d9502d17621a4f9e48d18',
+		  repo: 'myblog-comment',
+		  owner: 'EricChows',
+		  admin: ['EricChows'],
+		  id: location.pathname,
+		  distractionFreeMode: 'true'
+		})
+		gitalk.render('gitalk-container')           
+       </script>
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('-1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("ANlC6pJEdxOLHAcDbFuHuXrF-gzGzoHsz", "tNpAWjkmbhhKnsB3bcDooRrl");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.3"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.3"></script>
+
+
+  
+
+</body>
+</html>
