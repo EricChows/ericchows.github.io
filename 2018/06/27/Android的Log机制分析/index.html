@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="EricChows">
 <meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Andro">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-28T13:23:43.155Z">
+<meta property="og:updated_time" content="2018-07-01T10:34:56.225Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android的Log机制分析">
 <meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Andro">
@@ -418,6 +418,18 @@
 <p>Android 解读main log和event log日志信息<br><a href="https://blog.csdn.net/yelangjueqi/article/details/52621903" target="_blank" rel="noopener">https://blog.csdn.net/yelangjueqi/article/details/52621903</a></p>
 <p>Log中’main’, ‘system’, ‘radio’, ‘events’以及android log分析<br><a href="https://www.cnblogs.com/zhengtu2015/p/5134012.html" target="_blank" rel="noopener">https://www.cnblogs.com/zhengtu2015/p/5134012.html</a></p>
 <p>关于Android Log的一些思考<br><a href="https://droidyue.com/blog/2015/11/01/thinking-about-android-log/" target="_blank" rel="noopener">https://droidyue.com/blog/2015/11/01/thinking-about-android-log/</a></p>
+<p><a href="https://blog.csdn.net/fishmai/article/details/52398537" target="_blank" rel="noopener">https://blog.csdn.net/fishmai/article/details/52398537</a></p>
+<p>手机的默认的日志目录：</p>
+<p> /data/local/tmp/*</p>
+<p>/data/tmp/*</p>
+<p>/data/system/usagestats/*</p>
+<p>/data/system/appusagestates/*</p>
+<p>/data/system/dropbox/*</p>
+<p>/data/tombstones/*</p>
+<p>/data/anr/*</p>
+<p>logcat的日志在</p>
+<p>/dev/log/main</p>
+<p>有/data/local/log目录的，可以保存3-4天的log。</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
 
       
@@ -553,7 +565,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -564,7 +576,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">23</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

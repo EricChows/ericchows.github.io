@@ -46,9 +46,9 @@
     <link href="http://yoursite.com/2018/06/27/Android%E7%9A%84Log%E6%9C%BA%E5%88%B6%E5%88%86%E6%9E%90/"/>
     <id>http://yoursite.com/2018/06/27/Android的Log机制分析/</id>
     <published>2018-06-27T15:45:18.115Z</published>
-    <updated>2018-06-28T13:23:43.155Z</updated>
+    <updated>2018-07-01T10:34:56.225Z</updated>
     
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><p>Android 解读main log和event log日志信息<br><a href="https://blog.csdn.net/yelangjueqi/article/details/52621903" target="_blank" rel="noopener">https://blog.csdn.net/yelangjueqi/article/details/52621903</a></p><p>Log中’main’, ‘system’, ‘radio’, ‘events’以及android log分析<br><a href="https://www.cnblogs.com/zhengtu2015/p/5134012.html" target="_blank" rel="noopener">https://www.cnblogs.com/zhengtu2015/p/5134012.html</a></p><p>关于Android Log的一些思考<br><a href="https://droidyue.com/blog/2015/11/01/thinking-about-android-log/" target="_blank" rel="noopener">https://droidyue.com/blog/2015/11/01/thinking-about-android-log/</a></p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><p>Android 解读main log和event log日志信息<br><a href="https://blog.csdn.net/yelangjueqi/article/details/52621903" target="_blank" rel="noopener">https://blog.csdn.net/yelangjueqi/article/details/52621903</a></p><p>Log中’main’, ‘system’, ‘radio’, ‘events’以及android log分析<br><a href="https://www.cnblogs.com/zhengtu2015/p/5134012.html" target="_blank" rel="noopener">https://www.cnblogs.com/zhengtu2015/p/5134012.html</a></p><p>关于Android Log的一些思考<br><a href="https://droidyue.com/blog/2015/11/01/thinking-about-android-log/" target="_blank" rel="noopener">https://droidyue.com/blog/2015/11/01/thinking-about-android-log/</a></p><p><a href="https://blog.csdn.net/fishmai/article/details/52398537" target="_blank" rel="noopener">https://blog.csdn.net/fishmai/article/details/52398537</a></p><p>手机的默认的日志目录：</p><p> /data/local/tmp/*</p><p>/data/tmp/*</p><p>/data/system/usagestats/*</p><p>/data/system/appusagestates/*</p><p>/data/system/dropbox/*</p><p>/data/tombstones/*</p><p>/data/anr/*</p><p>logcat的日志在</p><p>/dev/log/main</p><p>有/data/local/log目录的，可以保存3-4天的log。</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
@@ -184,31 +184,6 @@
     
     
       <category term="Android StrictMode" scheme="http://yoursite.com/tags/Android-StrictMode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="http://yoursite.com/2018/06/02/hello-world/"/>
-    <id>http://yoursite.com/2018/06/02/hello-world/</id>
-    <published>2018-06-02T13:23:33.000Z</published>
-    <updated>2018-06-28T12:53:35.117Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
-      
-    
-    </summary>
-    
-      <category term="Hexo" scheme="http://yoursite.com/categories/Hexo/"/>
-    
-    
-      <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
     
   </entry>
   
@@ -680,68 +655,76 @@
   </entry>
   
   <entry>
-    <title>问题速查</title>
-    <link href="http://yoursite.com/2015/06/29/%E9%97%AE%E9%A2%98%E9%80%9F%E6%9F%A5/"/>
-    <id>http://yoursite.com/2015/06/29/问题速查/</id>
+    <title>问题锦集-速查</title>
+    <link href="http://yoursite.com/2015/06/29/%E9%97%AE%E9%A2%98%E9%94%A6%E9%9B%86-%E9%80%9F%E6%9F%A5/"/>
+    <id>http://yoursite.com/2015/06/29/问题锦集-速查/</id>
     <published>2015-06-29T06:17:50.000Z</published>
-    <updated>2018-06-23T15:24:28.882Z</updated>
+    <updated>2018-07-01T10:57:07.807Z</updated>
     
-    <content type="html"><![CDATA[<p>1, 无法下载问题：<br>1、确认主板中是否有download过软件——直接接电源开机，如可以开机，可以断定此主板已经down过版本了；如果无法开机，尝试焊接串口线，抓一下log，看看在哪一步停下来走不下去了。<br>一般而言，可以开机但是不能下载的，存在两种可能：<br>①新软件中未兼容主板上的Memory物料；<br>②分区表更新了。<br>对于这第一种情况，可以通过查配置表，找到Memory物料型号，然后跟软件开发人员核对，是否有兼容；或者查看flash download工具的log，发给开发人员，通过Memory ID来确认是否兼容该物料。<br>对于第二种情况，通常可以选择upgrade的升级方式，如实在不行，可以导出校准参数，然后格式化下载新软件，最后重新导入校准参数。<br>2、如果遇到无法开机，又无法下载的，可能有三种种情况：<br>①软件中未兼容主板上的Memory物料；<br>②下载工具版本过旧，不支持当前平台的下载；<br>③主板有异常，尤其Memory可能有损坏。<br>第一种情况跟上面类似，不再赘述。第二种情况，可以先直接换一个新版本工具试试能否下载，如可以下载，说明工具需要更新，如仍然无法下载，说明跟工具无关。第三种情况，可以多找几块主板，如果有一块可以下载软件，基本就可以判断无法下载的主板存在硬件上的损坏。<br>2, 不开机问题：<br>1、按开机键没有反应，屏幕不亮，用电源连接时发现电流无变化。这种情况，有两种可能：<br>①主板开机键或电池连接异常；<br>②单块主板损坏；<br>第一种情况，可以直接使用电源，然后用镊子连接主板power key测试点与地，如可以开机，说明开机键或电池异常；<br>第二种情况通常需要硬件同事介入分析。<br>2、开机到某个阶段停止不动。类似这样的情况，可以直接抓log分析。<br>比较实用的方法：①抓取不开机的uart log，部分手机不开机，同时抓取正常开机的uart log对比分析；②如果开机到android界面，可使用adb logcat -v time &gt; log.txt获取上层log信息。</p><p>3部分手机开机时间非常长：<br>此类问题很大可能性是由于外设在读ID导致的，直接抓log查看即可。最方便的方式就是直接抓串口log来分析。此外还可以用adb shell logcat –v time &gt; 123.txt来抓取上层log来分析。</p><p>4开机背光亮，有开机铃声，屏幕没有显示：<br>一般而言，问题在于屏没有兼容或者屏/主板单体损坏。如果是单体问题，我们可以做交叉实验，分析问题是主板还是屏导致的。如果全部显示都不对，可以跟软件开发同事确认是否软件不对，或者抓串口log，确认屏ID是否读到。</p><p>5 Camera应用丢失，Camera切换按钮丢失：<br>在MTK平台上，Camera的识别是在开机过程中完成的。如果开机时没有识别到任何Camera，开机之后Camera应用就会直接影藏；如果只识别到一个Camera，Camera切换按钮就是影藏。<br>1、如果有发现手机开机之后，Camera应用丢失，可以通过以下步骤去：<br>①将手机恢复出厂设置，然后重新开机，此时如果Camera应用显示出来，且多次使用都正常了，说明之前该机器很有可能是先开机过，然后再安装Camera的。<br>②如果恢复出厂设置还是无法显示Camera应用，首先需要确认此问题是单体（或小概率）问题还是大批量问题。单体问题的话，就需要去排查Camera焊接/连接是否正常。如焊接/连接正常，接着做交叉实验，确认是模组问题还是主板问题。模组问题就安排模组厂分析，主板问题就合硬件沟通解决。如果是大批量问题，一方面需要让模组厂参与进来分析，另一方面需要排查软件/硬件。软件上可以抓串口log给软件同事分析，硬件上排查走线、供电是否有异常。<br>③如果切换异常，通常是某个Camera的ID没有读到。可以在拨号界面输入“_#<em>#9375#</em>#_”（仅适用于MTK平台），确认下是否是没有读到ID，如确实ID没有读到，一方面检查Camera焊接/连接是否正常，另一方面抓下串口log给软件同事分析。</p><p>6 Camera花屏/闪绿线：<br>遇到Camera使用过程中花屏/闪绿线的问题，我们可以从两个方向去排查问题。首先还是按照惯例统计花屏的概率，如果是单体问题，需要去确认Camera数据线是否有问题，直接测量数据线信号即可，将波形发生给硬件同事检查。然后做交叉实验，确认是模组问题还是主板问题。模组问题让模组厂来分析，主板问题可以跟硬件沟通处理。<br>如果大批量都有问题，需要软件和硬件同事介入分析。软件上尝试修改Camera驱动能力，优化一个最好的组合，硬件上尝试包导电布、做接地处理。</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>本文收集平常工作过程中遇到的一些常见问题，遇到的一些坑，把它们记录下来，以便日后再次遇到能快速排查。</p><h1 id="无法下载版本问题："><a href="#无法下载版本问题：" class="headerlink" title="无法下载版本问题："></a>无法下载版本问题：</h1><ol><li><p>确认主板中是否有download过软件——直接接电源开机，如可以开机，可以断定此主板已经down过版本了；如果无法开机，尝试焊接串口线，抓一下log，看看在哪一步停下来走不下去了。<br>一般而言，可以开机但是不能下载的，存在两种可能：<br>①新软件中未兼容主板上的Memory物料；<br>②分区表更新了。<br>对于这第一种情况，可以通过查配置表，找到Memory物料型号，然后跟软件开发人员核对，是否有兼容；或者查看flash download工具的log，发给开发人员，通过Memory ID来确认是否兼容该物料。<br>对于第二种情况，通常可以选择upgrade的升级方式，如实在不行，可以导出校准参数，然后格式化下载新软件，最后重新导入校准参数。 </p></li><li><p>如果遇到无法开机，又无法下载的，可能有三种种情况：<br>①软件中未兼容主板上的Memory物料；<br>②下载工具版本过旧，不支持当前平台的下载；<br>③主板有异常，尤其Memory可能有损坏。<br>第一种情况跟上面类似，不再赘述。第二种情况，可以先直接换一个新版本工具试试能否下载，如可以下载，说明工具需要更新，如仍然无法下载，说明跟工具无关。第三种情况，可以多找几块主板，如果有一块可以下载软件，基本就可以判断无法下载的主板存在硬件上的损坏。  </p></li><li><p>不开机问题：<br>1、 按开机键没有反应，屏幕不亮，用电源连接时发现电流无变化。这种情况，有两种可能：<br>①主板开机键或电池连接异常；<br>②单块主板损坏；<br>第一种情况，可以直接使用电源，然后用镊子连接主板power key测试点与地，如可以开机，说明开机键或电池异常；<br>第二种情况通常需要硬件同事介入分析。<br>2、开机到某个阶段停止不动。类似这样的情况，可以直接抓log分析。<br>比较实用的方法：①抓取不开机的uart log，部分手机不开机，同时抓取正常开机的uart log对比分析；②如果开机到android界面，可使用adb logcat -v time &gt; log.txt获取上层log信息。</p></li><li><p>部分手机开机时间非常长：<br>此类问题很大可能性是由于外设在读ID导致的，直接抓log查看即可。最方便的方式就是直接抓串口log来分析。此外还可以用adb shell logcat –v time &gt; 123.txt来抓取上层log来分析。</p></li><li><p>开机背光亮，有开机铃声，屏幕没有显示：<br>一般而言，问题在于屏没有兼容或者屏/主板单体损坏。如果是单体问题，我们可以做交叉实验，分析问题是主板还是屏导致的。如果全部显示都不对，可以跟软件开发同事确认是否软件不对，或者抓串口log，确认屏ID是否读到。</p></li><li><p>Camera应用丢失，Camera切换按钮丢失：<br>在MTK平台上，Camera的识别是在开机过程中完成的。如果开机时没有识别到任何Camera，开机之后Camera应用就会直接影藏；如果只识别到一个Camera，Camera切换按钮就是影藏。<br>1、如果有发现手机开机之后，Camera应用丢失，可以通过以下步骤去：<br>①将手机恢复出厂设置，然后重新开机，此时如果Camera应用显示出来，且多次使用都正常了，说明之前该机器很有可能是先开机过，然后再安装Camera的。<br>②如果恢复出厂设置还是无法显示Camera应用，首先需要确认此问题是单体（或小概率）问题还是大批量问题。单体问题的话，就需要去排查Camera焊接/连接是否正常。如焊接/连接正常，接着做交叉实验，确认是模组问题还是主板问题。模组问题就安排模组厂分析，主板问题就合硬件沟通解决。如果是大批量问题，一方面需要让模组厂参与进来分析，另一方面需要排查软件/硬件。软件上可以抓串口log给软件同事分析，硬件上排查走线、供电是否有异常。<br>③如果切换异常，通常是某个Camera的ID没有读到。可以在拨号界面输入“_#<em>#9375#</em>#_”（仅适用于MTK平台），确认下是否是没有读到ID，如确实ID没有读到，一方面检查Camera焊接/连接是否正常，另一方面抓下串口log给软件同事分析。</p></li><li><p>Camera花屏/闪绿线：<br>遇到Camera使用过程中花屏/闪绿线的问题，我们可以从两个方向去排查问题。首先还是按照惯例统计花屏的概率，如果是单体问题，需要去确认Camera数据线是否有问题，直接测量数据线信号即可，将波形发生给硬件同事检查。然后做交叉实验，确认是模组问题还是主板问题。模组问题让模组厂来分析，主板问题可以跟硬件沟通处理。<br>如果大批量都有问题，需要软件和硬件同事介入分析。软件上尝试修改Camera驱动能力，优化一个最好的组合，硬件上尝试包导电布、做接地处理。</p></li></ol>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;1, 无法下载问题：&lt;br&gt;1、确认主板中是否有download过软件——直接接电源开机，如可以开机，可以断定此主板已经down过版本了；如果无法开机，尝试焊接串口线，抓一下log，看看在哪一步停下来走不下去了。&lt;br&gt;一般而言，可以开机但是不能下载的，存在两种可能：&lt;br
+        &lt;h1 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h1&gt;&lt;p&gt;本文收集平常工作过程中遇到的一些常见问题，遇到的一些坑，把它们记录下来，以便日后再次遇到能快速排查。&lt;/p&gt;
+&lt;h1 id=&quot;无法下载版本问
       
     
     </summary>
     
+      <category term="问题" scheme="http://yoursite.com/categories/%E9%97%AE%E9%A2%98/"/>
+    
+    
+      <category term="问题 锦集 速查" scheme="http://yoursite.com/tags/%E9%97%AE%E9%A2%98-%E9%94%A6%E9%9B%86-%E9%80%9F%E6%9F%A5/"/>
     
   </entry>
   
   <entry>
-    <title>工具小技巧</title>
-    <link href="http://yoursite.com/2015/06/29/%E5%B7%A5%E5%85%B7%E5%B0%8F%E6%8A%80%E5%B7%A7/"/>
-    <id>http://yoursite.com/2015/06/29/工具小技巧/</id>
+    <title>各类工具使用小技巧</title>
+    <link href="http://yoursite.com/2015/06/29/%E5%90%84%E7%B1%BB%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E5%B0%8F%E6%8A%80%E5%B7%A7/"/>
+    <id>http://yoursite.com/2015/06/29/各类工具使用小技巧/</id>
     <published>2015-06-29T06:06:59.000Z</published>
-    <updated>2018-06-23T15:24:28.882Z</updated>
+    <updated>2018-07-01T10:47:06.687Z</updated>
     
-    <content type="html"><![CDATA[<p><strong>1—-</strong>.VIM配置鼠标和显示行号<br>服务器在安装了加密之后，vim无法使用鼠标，也无法显示行号了，可以通过如下方法修改：<br>1、 在~路径下创建.vimrc，然后加入两行<br>set mouse=a<br>set nu<br>修改完之后保存退出。<br>2、 关闭bash窗口，或者source .vimrc，接下来vim就可以使用鼠标和显示行号了。</p><p><strong>2—–</strong><br>shell脚本注意事项<br>有些情况下，我们会碰到一个问题，在编译时，有些shell脚本会无法执行。相信大家会第一时间去检查脚本的权限，看看脚本是否有可执行权限——ls查看下。如果权限不对，使用chmod指令修改下就好了。<br>但是有些时候，发现权限对了，脚本执行仍然不对，如这种提示——bad interpreter:No such file or directory。这种情况，其实是脚本的文件结尾符是dos格式的，而非unix标准编码。<br>碰到这种情况，可以通过如下方式定位、解决。<br>1、 使用vim打开文件，然后进入命令模式，输入set: ff（ ）并回车，此时，文件下方会有提示 或者 如果是第二种，那么恭喜你中招了，这个文件的格式是dos的（也就是windows一系列系统的格式），这种格式的脚本，是无法在shell中执行的。<br>2、 想要修改，也非常简单。输入命令 ，然后回车，问题搞定了。保存文件，会发现该脚本已经可以执行了。</p><p><strong>3—–</strong><br>Putty实现输入中文和log行数增加<br>1， 在Translation标签页，将putty的字符集修改为UTF-8。<br>2， 将字体设置成Fixedsys。<br>3，在Window标签页，将Lines of Scrollback设置成为20000。<br>4，将Session中的IP地址和Saved Session填写好。选择Save。<br>5，下次登录的时候，只要选择存储的Session就可以了。</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="VIM-使用小技巧"><a href="#VIM-使用小技巧" class="headerlink" title="VIM 使用小技巧"></a>VIM 使用小技巧</h1><h2 id="配置鼠标和显示行号"><a href="#配置鼠标和显示行号" class="headerlink" title="配置鼠标和显示行号"></a>配置鼠标和显示行号</h2><p>服务器在安装了加密之后，vim无法使用鼠标，也无法显示行号了，可以通过如下方法修改：  </p><ol><li>在~路径下创建.vimrc，然后加入两行<br>set mouse=a<br>set nu<br>修改完之后保存退出。  </li><li>关闭bash窗口，或者source .vimrc，接下来vim就可以使用鼠标和显示行号了。</li></ol><h1 id="shell-脚本小技巧"><a href="#shell-脚本小技巧" class="headerlink" title="shell 脚本小技巧"></a>shell 脚本小技巧</h1><h2 id="shell脚本注意事项"><a href="#shell脚本注意事项" class="headerlink" title="shell脚本注意事项"></a>shell脚本注意事项</h2><p>有些情况下，我们会碰到一个问题，在编译时，有些shell脚本会无法执行。相信大家会第一时间去检查脚本的权限，看看脚本是否有可执行权限——ls查看下。如果权限不对，使用chmod指令修改下就好了。<br>但是有些时候，发现权限对了，脚本执行仍然不对，如这种提示——bad interpreter:No such file or directory。这种情况，其实是脚本的文件结尾符是dos格式的，而非unix标准编码。<br>碰到这种情况，可以通过如下方式定位、解决。  </p><ol><li>使用vim打开文件，然后进入命令模式，输入set: ff（ ）并回车，此时，文件下方会有提示 或者 如果是第二种，那么恭喜你中招了，这个文件的格式是dos的（也就是windows一系列系统的格式），这种格式的脚本，是无法在shell中执行的。  </li><li>想要修改，也非常简单。输入命令 ，然后回车，问题搞定了。保存文件，会发现该脚本已经可以执行了。</li></ol><h1 id="Putty-使用小技巧"><a href="#Putty-使用小技巧" class="headerlink" title="Putty 使用小技巧"></a>Putty 使用小技巧</h1><h2 id="实现输入中文和log行数增加"><a href="#实现输入中文和log行数增加" class="headerlink" title="实现输入中文和log行数增加"></a>实现输入中文和log行数增加</h2><ol><li>在Translation标签页，将putty的字符集修改为UTF-8。  </li><li>将字体设置成Fixedsys。  </li><li>在Window标签页，将Lines of Scrollback设置成为20000。  </li><li>将Session中的IP地址和Saved Session填写好。选择Save。  </li><li>下次登录的时候，只要选择存储的Session就可以了。</li></ol>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;&lt;strong&gt;1—-&lt;/strong&gt;.VIM配置鼠标和显示行号&lt;br&gt;服务器在安装了加密之后，vim无法使用鼠标，也无法显示行号了，可以通过如下方法修改：&lt;br&gt;1、 在~路径下创建.vimrc，然后加入两行&lt;br&gt;set mouse=a&lt;br&gt;set nu&lt;br&gt;修改
+        &lt;h1 id=&quot;VIM-使用小技巧&quot;&gt;&lt;a href=&quot;#VIM-使用小技巧&quot; class=&quot;headerlink&quot; title=&quot;VIM 使用小技巧&quot;&gt;&lt;/a&gt;VIM 使用小技巧&lt;/h1&gt;&lt;h2 id=&quot;配置鼠标和显示行号&quot;&gt;&lt;a href=&quot;#配置鼠标和显示行号&quot; class
       
     
     </summary>
     
+      <category term="Tools" scheme="http://yoursite.com/categories/Tools/"/>
     
-      <category term="vim" scheme="http://yoursite.com/tags/vim/"/>
+    
+      <category term="小技巧 工具 vim shell putty" scheme="http://yoursite.com/tags/%E5%B0%8F%E6%8A%80%E5%B7%A7-%E5%B7%A5%E5%85%B7-vim-shell-putty/"/>
     
   </entry>
   
   <entry>
-    <title>批处理 BAT</title>
-    <link href="http://yoursite.com/2015/06/29/%E6%89%B9%E5%A4%84%E7%90%86-BAT/"/>
-    <id>http://yoursite.com/2015/06/29/批处理-BAT/</id>
+    <title>windows批处理 BAT技巧</title>
+    <link href="http://yoursite.com/2015/06/29/windows%E6%89%B9%E5%A4%84%E7%90%86-BAT%E6%8A%80%E5%B7%A7/"/>
+    <id>http://yoursite.com/2015/06/29/windows批处理-BAT技巧/</id>
     <published>2015-06-29T03:49:50.000Z</published>
-    <updated>2018-06-23T15:24:28.882Z</updated>
+    <updated>2018-07-01T10:38:39.635Z</updated>
     
-    <content type="html"><![CDATA[<p>用批处理命令批量获取指定文件夹内的文件名<br>dir /s /w &gt;&gt;catalog.txt<br>::/s 表示只显示系统文件<br>::/w 表示只显示文件名，至于文件大小以及建立的日期和时间都省略<br>::dir *.doc /s /w &gt;&gt; catalog.txt 表示仅生成后缀为.doc文件</p><p>::BAT文件注释符<br>:: 注释内容（第一个冒号后也可以跟任何一个非字母数字的字符）<br>rem 注释内容（不能出现重定向符号和管道符号）<br>:注释内容（注释文本不能与已有标签重名）<br>%注释内容(可以用作行间注释，不能出现重定向符号和管道符号)%</p><p>rem 指定存放文件的目录<br>set originPath=C:\Documents and Settings\zhoudeshui\Desktop\临时文件</p><p>:@echo<br>:　　dir c:<em>.</em> &gt;a.txt　　　　　　　<br>:　　call c:\ucdos\ucdos.bat　　　　<br>:　　echo 你好 　　　　　　　　　　<br>:　　pause 　　　　　　　　　　　　</p><p>@echo off<br>for /f “delims=\” %%a in (‘dir /b /a-d /o-d “%originPath%<em>.</em>”’) do (<br>echo %%a &gt; aa.txt<br>)<br>pause</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="概览"><a href="#概览" class="headerlink" title="概览"></a>概览</h1><p>Windows操作系统中，cmd可以执行bat格式的文件，可以自己编写bat文件完成一些重复性的工作。</p><h1 id="用批处理命令批量获取指定文件夹内的文件名"><a href="#用批处理命令批量获取指定文件夹内的文件名" class="headerlink" title="用批处理命令批量获取指定文件夹内的文件名"></a>用批处理命令批量获取指定文件夹内的文件名</h1><p>dir /s /w &gt;&gt;catalog.txt<br>::/s 表示只显示系统文件<br>::/w 表示只显示文件名，至于文件大小以及建立的日期和时间都省略<br>::dir *.doc /s /w &gt;&gt; catalog.txt 表示仅生成后缀为.doc文件</p><h1 id="BAT文件注释符"><a href="#BAT文件注释符" class="headerlink" title="::BAT文件注释符"></a>::BAT文件注释符</h1><p>:: 注释内容（第一个冒号后也可以跟任何一个非字母数字的字符）<br>rem 注释内容（不能出现重定向符号和管道符号）<br>:注释内容（注释文本不能与已有标签重名）<br>%注释内容(可以用作行间注释，不能出现重定向符号和管道符号)%</p><p>rem 指定存放文件的目录<br>set originPath=C:\Documents and Settings\zhoudeshui\Desktop\临时文件</p><p>:@echo<br>:　　dir c:<em>.</em> &gt;a.txt　　　　　　　<br>:　　call c:\ucdos\ucdos.bat　　　　<br>:　　echo 你好 　　　　　　　　　　<br>:　　pause 　　　　　　　　　　　　</p><p>@echo off<br>for /f “delims=\” %%a in (‘dir /b /a-d /o-d “%originPath%<em>.</em>”’) do (<br>echo %%a &gt; aa.txt<br>)<br>pause</p><h1 id="使用bat-完成Android-log的自动抓取"><a href="#使用bat-完成Android-log的自动抓取" class="headerlink" title="使用bat 完成Android log的自动抓取"></a>使用bat 完成Android log的自动抓取</h1><p>可以将抓log的命令，做成一个合集，放在一个bat文件中，一步运行，抓取所有log。适合于工厂产线抓log。<br><a href="https://blog.csdn.net/maetelibom/article/details/51480980" target="_blank" rel="noopener">一种通过自动脚本抓取Android 手机log的方法</a><br><a href="https://blog.csdn.net/xxm282828/article/details/46433095" target="_blank" rel="noopener">使用脚本导出android 手机log</a></p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;用批处理命令批量获取指定文件夹内的文件名&lt;br&gt;dir /s /w &amp;gt;&amp;gt;catalog.txt&lt;br&gt;::/s 表示只显示系统文件&lt;br&gt;::/w 表示只显示文件名，至于文件大小以及建立的日期和时间都省略&lt;br&gt;::dir *.doc /s /w &amp;gt;&amp;gt
+        &lt;h1 id=&quot;概览&quot;&gt;&lt;a href=&quot;#概览&quot; class=&quot;headerlink&quot; title=&quot;概览&quot;&gt;&lt;/a&gt;概览&lt;/h1&gt;&lt;p&gt;Windows操作系统中，cmd可以执行bat格式的文件，可以自己编写bat文件完成一些重复性的工作。&lt;/p&gt;
+&lt;h1 id=&quot;用批处理命令
       
     
     </summary>
     
-      <category term="BAT" scheme="http://yoursite.com/categories/BAT/"/>
+      <category term="批处理" scheme="http://yoursite.com/categories/%E6%89%B9%E5%A4%84%E7%90%86/"/>
     
     
       <category term="批处理" scheme="http://yoursite.com/tags/%E6%89%B9%E5%A4%84%E7%90%86/"/>
@@ -777,6 +760,34 @@
     
     
       <category term="Android ADB" scheme="http://yoursite.com/tags/Android-ADB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Myblog</title>
+    <link href="http://yoursite.com/2015/01/01/Myblog/"/>
+    <id>http://yoursite.com/2015/01/01/Myblog/</id>
+    <published>2014-12-31T16:00:00.000Z</published>
+    <updated>2018-07-01T10:56:57.928Z</updated>
+    
+    <content type="html"><![CDATA[<p>This article is for self-summary, Only for myself.</p><h1 id="已经整理完成的文章"><a href="#已经整理完成的文章" class="headerlink" title="已经整理完成的文章"></a>已经整理完成的文章</h1><ol><li>ADB (Android Debug Bridge)常用命令<br>需要做的延伸是：分析adb 的源码</li><li><p>windows批处理 BAT技巧<br>需要延伸的是： 用bat脚本抓所有的Android log<br>在Ubuntu环境下，使用其他脚本抓所有的Android log</p></li><li><p>各类工具使用小技巧<br>需要延伸的是： 日常工作中使用过的工具的小技巧需要随时收录进来</p></li><li><p>问题锦集-速查<br>需要延伸的是： 日常工作中遇到的常见的一些问题，最好都记录下来，保存到这里来</p></li><li></li></ol><h1 id="重点关注的文章"><a href="#重点关注的文章" class="headerlink" title="重点关注的文章"></a>重点关注的文章</h1><!--Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [documentation](https://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](https://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).## Quick Start### Create a new post<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html">Deployment</a><br>–&gt;</p>-->]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;This article is for self-summary, Only for myself.&lt;/p&gt;
+&lt;h1 id=&quot;已经整理完成的文章&quot;&gt;&lt;a href=&quot;#已经整理完成的文章&quot; class=&quot;headerlink&quot; title=&quot;已经整理完成的文章&quot;&gt;&lt;/a&gt;已
+      
+    
+    </summary>
+    
+      <category term="Hexo" scheme="http://yoursite.com/categories/Hexo/"/>
+    
+    
+      <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
+    
+      <category term="Myblog" scheme="http://yoursite.com/tags/Myblog/"/>
     
   </entry>
   
