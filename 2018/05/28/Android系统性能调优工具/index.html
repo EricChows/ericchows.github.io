@@ -1,0 +1,1438 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="性能," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="EricChows" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="概述在软件开发过程中，想必很多读者都遇到过系统性能问题。而解决系统性能问题的几个主要步骤是：  测评：对系统进行大量有针对性的测试，以得到合适的测试数据。 分析系统瓶颈：分析测试数据，找到其中的hotspot（热点，即bottleneck）。 性能优化：对hotspot相关的代码进行优化。由上述步骤可知，性能优化的目标对象是hotspot。如果找到的hotspot并非真正的热点，则性能优化的结果必">
+<meta name="keywords" content="性能">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android系统性能调优工具">
+<meta property="og:url" content="http://yoursite.com/2018/05/28/Android系统性能调优工具/index.html">
+<meta property="og:site_name" content="EricChows">
+<meta property="og:description" content="概述在软件开发过程中，想必很多读者都遇到过系统性能问题。而解决系统性能问题的几个主要步骤是：  测评：对系统进行大量有针对性的测试，以得到合适的测试数据。 分析系统瓶颈：分析测试数据，找到其中的hotspot（热点，即bottleneck）。 性能优化：对hotspot相关的代码进行优化。由上述步骤可知，性能优化的目标对象是hotspot。如果找到的hotspot并非真正的热点，则性能优化的结果必">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://img-blog.csdn.net/20130602213318781">
+<meta property="og:updated_time" content="2018-06-30T06:40:46.255Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android系统性能调优工具">
+<meta name="twitter:description" content="概述在软件开发过程中，想必很多读者都遇到过系统性能问题。而解决系统性能问题的几个主要步骤是：  测评：对系统进行大量有针对性的测试，以得到合适的测试数据。 分析系统瓶颈：分析测试数据，找到其中的hotspot（热点，即bottleneck）。 性能优化：对hotspot相关的代码进行优化。由上述步骤可知，性能优化的目标对象是hotspot。如果找到的hotspot并非真正的热点，则性能优化的结果必">
+<meta name="twitter:image" content="https://img-blog.csdn.net/20130602213318781">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/05/28/Android系统性能调优工具/"/>
+
+
+
+
+
+  <title>Android系统性能调优工具 | EricChows</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">EricChows</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">Android Developer</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/28/Android系统性能调优工具/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Eric Chows">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/myapple.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="EricChows">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Android系统性能调优工具</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-28T21:23:33+08:00">
+                2018-05-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/05/28/Android系统性能调优工具/" class="leancloud_visitors" data-flag-title="Android系统性能调优工具">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>在软件开发过程中，想必很多读者都遇到过系统性能问题。而解决系统性能问题的几个主要步骤是：</p>
+<ul>
+<li>测评：对系统进行大量有针对性的测试，以得到合适的测试数据。</li>
+<li>分析系统瓶颈：分析测试数据，找到其中的hotspot（热点，即bottleneck）。</li>
+<li>性能优化：对hotspot相关的代码进行优化。<br>由上述步骤可知，性能优化的目标对象是hotspot。如果找到的hotspot并非真正的热点，则性能优化的结果必然是事倍功半甚至竹篮打水一场空。所以，作为Android性能调优相关知识的第一部分，本篇首先将向读者介绍Android平台中三个重要的性能测试工具，它们能很好得帮助开发者找到hotspot。</li>
+</ul>
+<p>Android官方的性能和功耗的优化介绍： <a href="https://developer.android.com/topic/performance/" target="_blank" rel="noopener">https://developer.android.com/topic/performance/</a></p>
+<h1 id="Android性能相关的关键词"><a href="#Android性能相关的关键词" class="headerlink" title="Android性能相关的关键词:"></a>Android性能相关的关键词:</h1><ol>
+<li><a href="https://developer.android.com/topic/performance/vitals/" target="_blank" rel="noopener">Android Vitals</a>：Android性能指标</li>
+<li>[TraceView] ：Android性能分析工具</li>
+<li>[dmtracedump] :Google提供的工具，能画函数调用图，dmtracedump和TraceView是一对兄弟，一起使用，用来分析性能</li>
+</ol>
+<h2 id="Android-性能指标"><a href="#Android-性能指标" class="headerlink" title="Android 性能指标"></a>Android 性能指标</h2><p>Android的性能指标，可以参考Google提供的 Android Vitals 仪表盘只能在Google play store上使用，用来监测APP性能数据.<br>见<a href="https://support.google.com/googleplay/android-developer/answer/7385505" target="_blank" rel="noopener">https://support.google.com/googleplay/android-developer/answer/7385505</a></p>
+<ol>
+<li>ANR比例</li>
+<li>Crash 比例</li>
+<li>过度唤醒 WakeLock ,AlarmManager</li>
+<li>过度的后台Wifi扫描</li>
+<li>过度的后台网络使用</li>
+<li>渲染慢,UI 渲染要在16ms以下，60fps即60帧/s以上，不然的话就是Jank(不合格)，用户明显能够感受到卡顿现象。<blockquote>
+<p>识别Jank的方法：<br>a) 通过在 开发者选项中打开 GPU 渲染开关后，查看柱形条<br>b)使用systrace<br>c)</p>
+</blockquote>
+</li>
+<li></li>
+</ol>
+<h2 id="Android-性能指标监测工具"><a href="#Android-性能指标监测工具" class="headerlink" title="Android 性能指标监测工具"></a>Android 性能指标监测工具</h2><p><a href="https://blog.csdn.net/u011974987/article/details/51753774" target="_blank" rel="noopener">Android 性能指标检测工具</a></p>
+<p>Android 常见问题:</p>
+<ul>
+<li>内存泄漏：不使用的内存空间(对象)一直被引用着没有得到释放。</li>
+<li>内存抖动：短时间内大量创建对象又在短时间内频繁触发GC导致内存波动很大，android虚拟机执行GC操作时需要耗费CPU性能频繁GC会到来严重的性能问题。内存抖动是因为大量的对象被创建又在短时间内马上被释放。瞬间产生大量的对象会严重占用Young Generation的内存区域，当达到阀值，剩余空间不够的时候，也会触发GC。即使每次分配的对象占用了很少的内存，但是他们叠加在一起会增加Heap的压力，从而触发更多其他类型的GC。这个操作有可能会影响到帧率，并使得用户感知到性能问题。</li>
+<li>内存溢出：内存泄漏到一定程度超出系统给进程分配的内存大小就会造成内存溢出程序奔溃，或者加载一个或多个大型文件(图片)到内存中也会导致内存溢出。</li>
+<li>ANR：应用无响应，代码效率过低或者在主线程执行耗时操作。</li>
+</ul>
+<p>内存监控工具如下:</p>
+<p><a href="https://blog.csdn.net/ekeuy/article/details/48661595" target="_blank" rel="noopener">Android性能测试工具列表</a></p>
+<h1 id="TraceView"><a href="#TraceView" class="headerlink" title="TraceView"></a>TraceView</h1><h2 id="TraceView介绍与用途"><a href="#TraceView介绍与用途" class="headerlink" title="TraceView介绍与用途"></a>TraceView介绍与用途</h2><p>TraceView 是 Android SDK 中内置的一个工具，它可以加载 trace 文件，<strong>用图形的形式展示代码的执行时间、次数及调用栈</strong>，便于我们分析。</p>
+<p>从代码层面分析性能问题，针对每个方法来分析，比如当我们发现我们的应用出现卡顿的时候，我们可以来分析出现卡顿时在方法的调用上有没有很耗时的操作，关注以下两个问题：</p>
+<pre><code>- 调用次数不多，但是每一次执行都很耗时
+- 方法耗时不大，但是调用次数太多
+</code></pre><p>简单一点来说就是我们能找到频繁被调用的方法，也能找到执行非常耗时的方法，前者可能会造成Cpu频繁调用，手机发烫的问题，后者就是卡顿的问题</p>
+<p>两方面用途： </p>
+<ol>
+<li>查看跟踪代码的执行时间，分析哪些是耗时操作，主要用于分析方法和线程</li>
+<li>可以用于跟踪方法的调用，尤其是android Framework层的方法调用关系</li>
+</ol>
+<p>Traceview是Android平台特有的数据采集和分析工具，它主要用于分析Android中应用程序的hotspot。Traceview本身只是一个数据分析工具，而数据的采集则需要使用Android SDK中的Debug类或者利用DDMS工具。二者的用法如下：</p>
+<ul>
+<li>开发者在一些关键代码段开始前调用Android SDK中Debug类的startMethodTracing函数，并在关键代码段结束前调用stopMethodTracing函数。这两个函数运行过程中将采集运行时间内该应用所有线程（注意，只能是Java线程）的函数执行情况，并将采集数据保存到/mnt/sdcard/下的一个文件中。开发者然后需要利用SDK中的Traceview工具来分析这些数据。</li>
+<li>借助Android SDK中的DDMS工具。DDMS可采集系统中某个正在运行的进程的函数调用信息。对开发者而言，此方法适用于没有目标应用源代码的情况。DDMS工具中Traceview的使用如图1-1所示。<br><img src="https://img-blog.csdn.net/20130602213318781" alt="图1-1"><br><center>图1-1  DDMS中Traceview使用示意图</center><br>点击图1-1中所示按钮即可以采集目标进程的数据。当停止采集时，DDMS会自动触发Traceview工具来浏览采集数据。</li>
+</ul>
+<h2 id="TraceView的使用"><a href="#TraceView的使用" class="headerlink" title="TraceView的使用"></a>TraceView的使用</h2><p><a href="https://blog.csdn.net/superxlcr/article/details/78219673" target="_blank" rel="noopener">TraceView工具如何使用</a><br>Google官方TraceView 教程：</p>
+<ol>
+<li>使用TraceView收集log <a href="https://developer.android.com/studio/profile/generate-trace-logs" target="_blank" rel="noopener">https://developer.android.com/studio/profile/generate-trace-logs</a></li>
+<li>分析TraceView log <a href="https://developer.android.com/studio/profile/traceview#timelinepanel" target="_blank" rel="noopener">https://developer.android.com/studio/profile/traceview#timelinepanel</a></li>
+</ol>
+<p>Android代码调试工具 traceview 和 dmtracedump的波折演绎 <a href="https://blog.csdn.net/yiyaaixuexi/article/details/6716884" target="_blank" rel="noopener">https://blog.csdn.net/yiyaaixuexi/article/details/6716884</a> 此文的优点：可以使用dmtracedump来输出函数调用关系图</p>
+<p>以下章节来自：<br><a href="https://blog.csdn.net/u011240877/article/details/54347396" target="_blank" rel="noopener">Android 性能优化：使用 TraceView 找到卡顿的元凶</a></p>
+<h3 id="生成TraceView文件"><a href="#生成TraceView文件" class="headerlink" title="生成TraceView文件"></a>生成TraceView文件</h3><p>生成 trace 文件有三种方法：</p>
+<ol>
+<li>使用代码</li>
+<li>使用 Android Studio</li>
+<li>使用 DDMS</li>
+</ol>
+<h4 id="使用代码生成trace文件"><a href="#使用代码生成trace文件" class="headerlink" title="使用代码生成trace文件"></a>使用代码生成trace文件</h4><p>android.os.Debug类，其中重要的两个方法Debug.startMethodTracing()和Debug.stopMethodTracing()。这两个方法用来创建.trace文件，将从Debug.startMethodTracing()开始，到Debug.stopMethodTracing()结束，期间所有的调用过程保存在.trace文件中，包括调用的函数名称和执行的时间等信息。<br>    把下面代码分别在加在调试起始代码的位置，和终止位置。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Debug.startMethodTracing(Environment.getExternalStorageDirectory().getPath()+<span class="string">"/"</span>+TAG);    //开始 trace，保存文件到外部存储空间的TAG.trace，/mnt/sdcard目录下</span><br><span class="line">    // ...</span><br><span class="line">Debug.stopMethodTracing();    //结束</span><br></pre></td></tr></table></figure></p>
+<p>代码很简单，当你调用开始代码的时候，系统会生产 trace 文件，并且产生追踪数据，当你调用结束代码时，会将追踪数据写入到 trace 文件中。</p>
+<p>下一步使用 adb 命令将 trace 文件导出到电脑：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb pull /sdcard/TAG.trace /tmp</span><br></pre></td></tr></table></figure></p>
+<p>使用代码生成 trace 方式的好处是容易控制追踪的开始和结束，缺点就是步骤稍微多了一点。</p>
+<h4 id="使用Android-Studio生成trace文件"><a href="#使用Android-Studio生成trace文件" class="headerlink" title="使用Android Studio生成trace文件"></a>使用Android Studio生成trace文件</h4><p>暂时没有用过</p>
+<h3 id="使用Android-Device-Monitor生成Trace文件"><a href="#使用Android-Device-Monitor生成Trace文件" class="headerlink" title="使用Android Device Monitor生成Trace文件"></a>使用Android Device Monitor生成Trace文件</h3><p>参考: <a href="https://blog.csdn.net/itfootball/article/details/48792435" target="_blank" rel="noopener">Android性能专项测试之TraceView工具(Device Monitor)</a></p>
+<h2 id="根据-TraceView-显示内容定位问题"><a href="#根据-TraceView-显示内容定位问题" class="headerlink" title="根据 TraceView 显示内容定位问题"></a>根据 TraceView 显示内容定位问题</h2><p>定位问题时 TraceView 的使用方式：</p>
+<ul>
+<li>从上半部分查看哪些线程执行时间长？什么时候开始执行？与主线程交错时间？</li>
+<li>哪些方法的执行需要花费很长时间点击 TraceView 中的 Cpu Time/Call，按照占用 CPU 时间从高到低排序</li>
+<li>哪些方法调用次数非常频繁,点击 TraceView 中的 Calls + Recur Calls/Total ，按照调用次数从高到底排序排序后，然后逐个排查是否有项目代码或者依赖库代码，有的话点击查看详情，查看是这个方法还是调用的子方法的问题，进一步定位问题。</li>
+</ul>
+<h1 id="Systrace"><a href="#Systrace" class="headerlink" title="Systrace"></a>Systrace</h1><h2 id="Systrace简介"><a href="#Systrace简介" class="headerlink" title="Systrace简介"></a>Systrace简介</h2><p>Systrace是Android4.1中新增的性能数据采样和分析工具。它可帮助开发者收集Android关键子系统（如surfaceflinger、WindowManagerService等Framework部分关键模块、服务）的运行信息，从而帮助开发者更直观的分析系统瓶颈，改进性能。</p>
+<p>Systrace的功能包括跟踪系统的I/O操作、内核工作队列、CPU负载以及Android各个子系统的运行状况等。在Android平台中，它主要由3部分组成：</p>
+<ul>
+<li>内核部分：Systrace利用了Linux Kernel中的ftrace功能。所以，如果要使用Systrace的话，必须开启kernel中和ftrace相关的模块。</li>
+<li>数据采集部分：Android定义了一个Trace类。应用程序可利用该类把统计信息输出给ftrace。同时，Android还有一个atrace程序，它可以从ftrace中读取统计信息然后交给数据分析工具来处理。</li>
+<li>数据分析工具：Android提供一个systrace.py（python脚本文件，位于Android SDK目录/platform-tools/systrace中，其内部将调用atrace程序）用来配置数据采集的方式（如采集数据的标签、输出文件名等）和收集ftrace统计数据并生成一个结果网页文件供用户查看。</li>
+</ul>
+<p>从本质上说，Systrace是对Linux Kernel中ftrace的封装。应用进程需要利用Android提供的Trace类来使用Systrace。Android 4.1为系统中的几个关键进程和模块都添加了Systrace功能。以显示系统中重要模块Hwcomposer为例，其代码中使用Systrace的方法如图2-1所示：</p>
+<h1 id="Oprofile"><a href="#Oprofile" class="headerlink" title="Oprofile"></a>Oprofile</h1><h1 id="内存泄漏"><a href="#内存泄漏" class="headerlink" title="内存泄漏"></a>内存泄漏</h1><p><a href="https://github.com/francistao/LearningNotes/blob/master/Part1/Android/Android%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F%E6%80%BB%E7%BB%93.md" target="_blank" rel="noopener">Android 内存泄漏总结</a><br><a href="http://drakeet.me/android-leaks/" target="_blank" rel="noopener">Android 内存泄漏案例和解析</a><br><a href="https://github.com/francistao/LearningNotes/blob/master/Part1/Android/Handler%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F%E5%88%86%E6%9E%90%E5%8F%8A%E8%A7%A3%E5%86%B3.md" target="_blank" rel="noopener">Handler内存泄漏分析及解决</a></p>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a href="https://blog.csdn.net/innost/article/details/9008691" target="_blank" rel="noopener">Android系统性能调优工具介绍</a>  介绍了TraceView、Systrace、Oprofile等性能分析工具<br><a href="https://blog.csdn.net/cangely/article/details/80504292" target="_blank" rel="noopener">Android Vitals各性能指标介绍</a> Google官方的性能介绍<br><a href="https://blog.csdn.net/u011974987/article/details/51753774" target="_blank" rel="noopener">Android 性能指标检测工具</a><br><a href="http://www.cnblogs.com/sunzn/p/3192231.html" target="_blank" rel="noopener">Android 编程下的 TraceView 简介及其案例实战</a><br><a href="https://blog.csdn.net/u011240877/article/details/54347396" target="_blank" rel="noopener">Android 性能优化：使用 TraceView 找到卡顿的元凶</a><br><a href="https://juejin.im/post/5874bff0128fe1006b443fa0" target="_blank" rel="noopener">Android性能优化（一）之启动加速35%</a><br><a href="https://blog.csdn.net/u011240877/article/details/54141714" target="_blank" rel="noopener">Android 性能优化：使用 Lint 优化代码、去除多余资源</a><br><a href="https://blog.csdn.net/u011240877/article/details/53142177" target="_blank" rel="noopener">Android 性能优化：多线程</a></p>
+<p><a href="https://race604.com/android-weekly-30/" target="_blank" rel="noopener">[第 30 期] Android 周报</a>  有些性能的文章</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/性能/" rel="tag"># 性能</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/02/Android-开发者指南阅读/" rel="next" title="Android 开发者指南阅读">
+                <i class="fa fa-chevron-left"></i> Android 开发者指南阅读
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/05/29/Android虚拟机Dalvik/" rel="prev" title="Android虚拟机Dalvik">
+                Android虚拟机Dalvik <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  
+    <div id="gitalk-container"></div>
+  
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/myapple.jpg"
+                alt="Eric Chows" />
+            
+              <p class="site-author-name" itemprop="name">Eric Chows</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">31</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/ericchows" target="_blank" title="GitHub">
+                    
+                      <i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:xnzds2008@163.com" target="_blank" title="E-Mail">
+                    
+                      <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://plus.google.com" target="_blank" title="Google">
+                    
+                      <i class="fa fa-fw fa-google"></i>Google</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://twitter.com" target="_blank" title="Twitter">
+                    
+                      <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.facebook.com" target="_blank" title="FB Page">
+                    
+                      <i class="fa fa-fw fa-facebook"></i>FB Page</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://vk.com" target="_blank" title="VK Group">
+                    
+                      <i class="fa fa-fw fa-vk"></i>VK Group</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://stackoverflow.com/users/8872810/eric" target="_blank" title="StackOverflow">
+                    
+                      <i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://youtube.com" target="_blank" title="YouTube">
+                    
+                      <i class="fa fa-fw fa-youtube"></i>YouTube</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://instagram.com" target="_blank" title="Instagram">
+                    
+                      <i class="fa fa-fw fa-instagram"></i>Instagram</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="skype" target="_blank" title="Skype">
+                    
+                      <i class="fa fa-fw fa-skype"></i>Skype</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="/images/wechat.jpg" target="_blank" title="Wechat">
+                    
+                      <i class="fa fa-fw fa-globe"></i>Wechat</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://blog.csdn.net/Cxiaolinxiaozi" target="_blank" title="CSDN">
+                    
+                      <i class="fa fa-fw fa-globe"></i>CSDN</a>
+                </span>
+              
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Android性能相关的关键词"><span class="nav-number">2.</span> <span class="nav-text">Android性能相关的关键词:</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Android-性能指标"><span class="nav-number">2.1.</span> <span class="nav-text">Android 性能指标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Android-性能指标监测工具"><span class="nav-number">2.2.</span> <span class="nav-text">Android 性能指标监测工具</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#TraceView"><span class="nav-number">3.</span> <span class="nav-text">TraceView</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#TraceView介绍与用途"><span class="nav-number">3.1.</span> <span class="nav-text">TraceView介绍与用途</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TraceView的使用"><span class="nav-number">3.2.</span> <span class="nav-text">TraceView的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#生成TraceView文件"><span class="nav-number">3.2.1.</span> <span class="nav-text">生成TraceView文件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#使用代码生成trace文件"><span class="nav-number">3.2.1.1.</span> <span class="nav-text">使用代码生成trace文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用Android-Studio生成trace文件"><span class="nav-number">3.2.1.2.</span> <span class="nav-text">使用Android Studio生成trace文件</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用Android-Device-Monitor生成Trace文件"><span class="nav-number">3.2.2.</span> <span class="nav-text">使用Android Device Monitor生成Trace文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#根据-TraceView-显示内容定位问题"><span class="nav-number">3.3.</span> <span class="nav-text">根据 TraceView 显示内容定位问题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Systrace"><span class="nav-number">4.</span> <span class="nav-text">Systrace</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Systrace简介"><span class="nav-number">4.1.</span> <span class="nav-text">Systrace简介</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Oprofile"><span class="nav-number">5.</span> <span class="nav-text">Oprofile</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#内存泄漏"><span class="nav-number">6.</span> <span class="nav-text">内存泄漏</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">7.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2015 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">EricChows</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="//s95.cnzz.com/z_stat.php?id=1274018749&web_id=1274018749" language="JavaScript"></script>
+  </div>
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.3"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+   <script type="text/javascript">
+		var gitalk = new Gitalk({
+		  clientID: '2f039a8ed54186479946',
+		  clientSecret: 'bc88282455b50fbc8c5d9502d17621a4f9e48d18',
+		  repo: 'myblog-comment',
+		  owner: 'EricChows',
+		  admin: ['EricChows'],
+		  id: location.pathname,
+		  distractionFreeMode: 'true'
+		})
+		gitalk.render('gitalk-container')           
+       </script>
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('-1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("ANlC6pJEdxOLHAcDbFuHuXrF-gzGzoHsz", "tNpAWjkmbhhKnsB3bcDooRrl");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.3"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.3"></script>
+
+
+  
+
+</body>
+</html>
