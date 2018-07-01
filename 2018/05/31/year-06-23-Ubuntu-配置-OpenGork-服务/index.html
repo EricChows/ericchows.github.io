@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="OpenGork的好处，这里不做介绍了，可以参考https://zhuanlan.zhihu.com/p/24369747OpenGork是用Java实现的，源码见 https://github.com/oracle/opengrok/OpenGork官网：http://oracle.github.io/opengrok/OpenGork下载地址：https://github.com/oracle">
+<meta name="description" content="OpenGork的配置OpenGork的好处，这里不做介绍了，可以参考https://zhuanlan.zhihu.com/p/24369747OpenGork是用Java实现的，源码见 https://github.com/oracle/opengrok/OpenGork官网：http://oracle.github.io/opengrok/OpenGork下载地址：https://github">
 <meta name="keywords" content="Android">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ubuntu 配置 OpenGork 服务">
 <meta property="og:url" content="http://yoursite.com/2018/05/31/year-06-23-Ubuntu-配置-OpenGork-服务/index.html">
 <meta property="og:site_name" content="EricChows">
-<meta property="og:description" content="OpenGork的好处，这里不做介绍了，可以参考https://zhuanlan.zhihu.com/p/24369747OpenGork是用Java实现的，源码见 https://github.com/oracle/opengrok/OpenGork官网：http://oracle.github.io/opengrok/OpenGork下载地址：https://github.com/oracle">
+<meta property="og:description" content="OpenGork的配置OpenGork的好处，这里不做介绍了，可以参考https://zhuanlan.zhihu.com/p/24369747OpenGork是用Java实现的，源码见 https://github.com/oracle/opengrok/OpenGork官网：http://oracle.github.io/opengrok/OpenGork下载地址：https://github">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-23T15:24:28.881Z">
+<meta property="og:updated_time" content="2018-07-01T11:48:33.229Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ubuntu 配置 OpenGork 服务">
-<meta name="twitter:description" content="OpenGork的好处，这里不做介绍了，可以参考https://zhuanlan.zhihu.com/p/24369747OpenGork是用Java实现的，源码见 https://github.com/oracle/opengrok/OpenGork官网：http://oracle.github.io/opengrok/OpenGork下载地址：https://github.com/oracle">
+<meta name="twitter:description" content="OpenGork的配置OpenGork的好处，这里不做介绍了，可以参考https://zhuanlan.zhihu.com/p/24369747OpenGork是用Java实现的，源码见 https://github.com/oracle/opengrok/OpenGork官网：http://oracle.github.io/opengrok/OpenGork下载地址：https://github">
 
 
 
@@ -414,16 +414,33 @@
       
 
       
-        <p>OpenGork的好处，这里不做介绍了，可以参考<a href="https://zhuanlan.zhihu.com/p/24369747" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/24369747</a><br>OpenGork是用Java实现的，源码见 <a href="https://github.com/oracle/opengrok/" target="_blank" rel="noopener">https://github.com/oracle/opengrok/</a><br>OpenGork官网：<a href="http://oracle.github.io/opengrok/" target="_blank" rel="noopener">http://oracle.github.io/opengrok/</a><br>OpenGork下载地址：<a href="https://github.com/oracle/opengrok/releases" target="_blank" rel="noopener">https://github.com/oracle/opengrok/releases</a> 这里可以下载编译好的文件，或者下载源码</p>
-<p>配置OpenGork之前需要一些其他的环境：<br>1.Java环境：JDK 以及配置好环境变量<br>—如何实现请自行查找<br>2.Tomcat 服务：需要下载Tomcat服务<br>下载地址：<a href="http://tomcat.apache.org/" target="_blank" rel="noopener">http://tomcat.apache.org/</a><br><strong>注意一：Tomcat7.0版本和JDK1.8版本无法兼容</strong><br>3.OpenGork：<a href="https://github.com/oracle/opengrok/releases" target="_blank" rel="noopener">https://github.com/oracle/opengrok/releases</a><br>4.遗漏了ctags，如果这个工具没有安装和在Opengork里面配置的话，就算Tomcat和Opengork都配置好了，且都能正常运行，还是无法进行搜索，而且Opengork网站里面也无法打开文件。根本原因是ctags 就是用来建立索引的工具，没了它，后面的搜索就无从说起。<br>Ubuntu 安装ctags命令:sudo apt-get install ctags<br>Ubuntu自带了exuberant ctags,在后面的OpenGork的配置文件中，需要FindExuberanCtags()函数的binary中需要填写为binay=”exuberant ctags”</p>
+        <h1 id="OpenGork的配置"><a href="#OpenGork的配置" class="headerlink" title="OpenGork的配置"></a>OpenGork的配置</h1><p>OpenGork的好处，这里不做介绍了，可以参考<a href="https://zhuanlan.zhihu.com/p/24369747" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/24369747</a><br>OpenGork是用Java实现的，源码见 <a href="https://github.com/oracle/opengrok/" target="_blank" rel="noopener">https://github.com/oracle/opengrok/</a><br>OpenGork官网：<a href="http://oracle.github.io/opengrok/" target="_blank" rel="noopener">http://oracle.github.io/opengrok/</a><br>OpenGork下载地址：<a href="https://github.com/oracle/opengrok/releases" target="_blank" rel="noopener">https://github.com/oracle/opengrok/releases</a> 这里可以下载编译好的文件，或者下载源码</p>
+<p>配置OpenGork之前需要一些其他的环境：  </p>
+<ol>
+<li>Java环境：JDK 以及配置好环境变量<br>—如何实现请自行查找  </li>
+<li>Tomcat 服务：需要下载Tomcat服务<br>下载地址：<a href="http://tomcat.apache.org/" target="_blank" rel="noopener">http://tomcat.apache.org/</a><br><strong>注意一：Tomcat7.0版本和JDK1.8版本无法兼容</strong>  </li>
+<li>OpenGork：<a href="https://github.com/oracle/opengrok/releases" target="_blank" rel="noopener">https://github.com/oracle/opengrok/releases</a>  </li>
+<li>遗漏了ctags，如果这个工具没有安装和在Opengork里面配置的话，就算Tomcat和Opengork都配置好了，且都能正常运行，还是无法进行搜索，而且Opengork网站里面也无法打开文件。根本原因是ctags 就是用来建立索引的工具，没了它，后面的搜索就无从说起。<br>Ubuntu 安装ctags命令:sudo apt-get install ctags<br>Ubuntu自带了exuberant ctags,在后面的OpenGork的配置文件中，需要FindExuberanCtags()函数的binary中需要填写为binay=”exuberant ctags”</li>
+</ol>
 <p><strong>注意二：Tomcat 和 Jdk不要直接用sudo apt-get install的命令方式来安装。这样做了，后面改配置文件会很痛苦</strong></p>
-<p>前期准备工作做好了之后，下面来进行安装和配置：<br>1.安装Tomcat<br>1)解压下载下来的Tomcat压缩包<br>进入Tomcat解压目录/bin 下执行sudo ./startup.sh<br>启动Tomcat<br>2).在浏览器输入<a href="http://localhost:8080" target="_blank" rel="noopener">http://localhost:8080</a> 或者192.168.0.1:8080<br>局域网内其他机器可以输入<a href="http://ip:8080" target="_blank" rel="noopener">http://ip:8080</a>来测试Tomcat服务是否启动成功</p>
-<p>2.安装OpenGork<br>1)在/opt目录下新建opengork目录<br>2)将下载下来的opengork压缩包解压到/opt/opengork目录下<br>3)opengrok/lib目录下的source.war包拷贝到apache-tomcat/webapps目录下<br>4)在浏览器输入<a href="http://localhost:8080/source" target="_blank" rel="noopener">http://localhost:8080/source</a><br>5)能正常看到opengork起来了的界面就Ok了。<br>如果Tomcat版本是7.0，JDK版本是1.8的话，或在这个界面报各种http 400/500等各种乱七八糟的错误</p>
-<p>3.配置OpenGork<br>在/opt/opengrok目录的bin文件下 vim OpenGork文件<br>找到DefaultInstanceConfiguration函数里面的<br>OPENGROK_INSTANCE_BASE=”${OPENGROK_INSTANCE_BASE:-/var/opengrok}”</p>
+<p>前期准备工作做好了之后，下面来进行安装和配置：  </p>
+<ol>
+<li><p>安装Tomcat<br>1)解压下载下来的Tomcat压缩包<br>进入Tomcat解压目录/bin 下执行sudo ./startup.sh<br>启动Tomcat<br>2).在浏览器输入<a href="http://localhost:8080" target="_blank" rel="noopener">http://localhost:8080</a> 或者192.168.0.1:8080<br>局域网内其他机器可以输入<a href="http://ip:8080" target="_blank" rel="noopener">http://ip:8080</a>来测试Tomcat服务是否启动成功</p>
+</li>
+<li><p>安装OpenGork<br>1)在/opt目录下新建opengork目录<br>2)将下载下来的opengork压缩包解压到/opt/opengork目录下<br>3)opengrok/lib目录下的source.war包拷贝到apache-tomcat/webapps目录下<br>4)在浏览器输入<a href="http://localhost:8080/source" target="_blank" rel="noopener">http://localhost:8080/source</a><br>5)能正常看到opengork起来了的界面就Ok了。<br>如果Tomcat版本是7.0，JDK版本是1.8的话，或在这个界面报各种http 400/500等各种乱七八糟的错误</p>
+</li>
+<li><p>配置OpenGork<br>在/opt/opengrok目录的bin文件下 vim OpenGork文件<br>找到DefaultInstanceConfiguration函数里面的<br>OPENGROK_INSTANCE_BASE=”${OPENGROK_INSTANCE_BASE:-/var/opengrok}”</p>
+</li>
+</ol>
 <p>这一块<a href="https://blog.csdn.net/tyronne/article/details/34984805" target="_blank" rel="noopener">https://blog.csdn.net/tyronne/article/details/34984805</a> 这篇文章写的蛮好，可以参考</p>
-<p>4.客制化Opengork<br>由于Opengork的代码需要建立索引，一般是在/opt/opengork/有src data等目录<br>其实可以自己克制化这个目录<br>比如：在/home/xxx/Code/目录下新建一个opengork目录<br>在里面再建好src data etc三个目录</p>
+<ol start="4">
+<li>客制化Opengork<br>由于Opengork的代码需要建立索引，一般是在/opt/opengork/有src data等目录<br>其实可以自己克制化这个目录<br>比如：在/home/xxx/Code/目录下新建一个opengork目录<br>在里面再建好src data etc三个目录</li>
+</ol>
 <p>在第三步的/opt/opengork/bin/OpenGork这个配置文件里面和Tomcat的web.xml文件里面<br>把路径都配置成/home/xxx/Code/opengork就可以了</p>
 <p>后面可以把代码放在/home/xxx/Code/src目录下面</p>
+<h1 id="Android源码-OpenGork"><a href="#Android源码-OpenGork" class="headerlink" title="Android源码 OpenGork"></a>Android源码 OpenGork</h1><p>以下三个OpenGork都已经部署好，可以查询从Android1.6到最新版本的Android 以及Kernel代码</p>
+<p><a href="http://androidxref.com/" target="_blank" rel="noopener">androidxref</a><br><a href="https://www.androidos.net.cn/" target="_blank" rel="noopener">androidos</a><br><a href="http://android.macpod.net/" target="_blank" rel="noopener">macpod</a></p>
+<p>这三个网站各有各自的优点</p>
 
       
     </div>
@@ -512,8 +529,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -532,7 +558,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">31</span>
+                  <span class="site-state-item-count">32</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -543,7 +569,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -554,7 +580,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-count">27</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -660,6 +686,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#OpenGork的配置"><span class="nav-number">1.</span> <span class="nav-text">OpenGork的配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Android源码-OpenGork"><span class="nav-number">2.</span> <span class="nav-text">Android源码 OpenGork</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
