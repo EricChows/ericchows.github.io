@@ -4,30 +4,8 @@
 
     
   <url>
-    <loc>http://yoursite.com/2015/02/01/Android%E9%9D%A2%E8%AF%95%E6%B1%87%E6%80%BB/</loc>
-    <lastmod>2018-07-03T09:43:17.102Z</lastmod>
-    <data>
-        <display>
-        <title>Android面试汇总</title>
-        <pubTime>2015-01-31T16:00:00.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-        <tag>面试</tag>
-         
-         
-           
-             
-              <breadCrumb title="Android" url="http://yoursite.com/categories/Android/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://yoursite.com/2017/01/01/Android-%E5%A5%BD%E6%96%87/</loc>
-    <lastmod>2018-07-03T06:50:27.567Z</lastmod>
+    <lastmod>2018-07-03T14:35:09.515Z</lastmod>
     <data>
         <display>
         <title>Android 好文</title>
@@ -47,18 +25,60 @@
     </url>
 
     
-    
   <url>
-    <loc>http://yoursite.com/2015/01/01/Myblog/</loc>
-    <lastmod>2018-07-03T04:03:41.374Z</lastmod>
+    <loc>http://yoursite.com/2015/02/01/Android%E9%9D%A2%E8%AF%95%E6%B1%87%E6%80%BB/</loc>
+    <lastmod>2018-07-03T14:16:54.339Z</lastmod>
     <data>
         <display>
-        <title>Myblog</title>
-        <pubTime>2014-12-31T16:00:00.000Z</pubTime>
+        <title>Android面试汇总</title>
+        <pubTime>2015-01-31T16:00:00.000Z</pubTime>
         
-        <tag>Hexo</tag>
+        <tag>Android</tag>
          
-        <tag>Myblog</tag>
+        <tag>面试</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="http://yoursite.com/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+  <url>
+    <loc>http://yoursite.com/2017/04/23/2017-04-23-Android%E5%BC%80%E5%8F%91%E5%B8%B8%E7%94%A8%E7%BD%91%E7%AB%99/</loc>
+    <lastmod>2018-07-03T13:20:07.790Z</lastmod>
+    <data>
+        <display>
+        <title>Android开发常用网站</title>
+        <pubTime>2017-04-23T09:38:08.000Z</pubTime>
+        
+        <tag>Android Tools</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android Tools" url="http://yoursite.com/categories/Android-Tools/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2017/05/05/IT%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95%E8%AE%BA/</loc>
+    <lastmod>2018-07-03T12:27:33.485Z</lastmod>
+    <data>
+        <display>
+        <title>IT学习方法论</title>
+        <pubTime>2017-05-04T16:00:00.000Z</pubTime>
+        
+        <tag>方法论</tag>
+         
+        <tag>IT</tag>
          
          
            
@@ -72,7 +92,7 @@
     
   <url>
     <loc>http://yoursite.com/2023/11/01/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</loc>
-    <lastmod>2018-07-02T12:22:58.995Z</lastmod>
+    <lastmod>2018-07-03T10:11:16.909Z</lastmod>
     <data>
         <display>
         <title>读书笔记</title>
@@ -81,6 +101,28 @@
         <tag>逆向分析</tag>
          
         <tag>安全</tag>
+         
+         
+           
+             
+              <breadCrumb title="Hexo" url="http://yoursite.com/categories/Hexo/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2015/01/01/Myblog/</loc>
+    <lastmod>2018-07-03T04:03:41.374Z</lastmod>
+    <data>
+        <display>
+        <title>Myblog</title>
+        <pubTime>2014-12-31T16:00:00.000Z</pubTime>
+        
+        <tag>Hexo</tag>
+         
+        <tag>Myblog</tag>
          
          
            
@@ -466,26 +508,6 @@
            
              
               <breadCrumb title="Android" url="http://yoursite.com/categories/Android/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2017/04/23/2017-04-23-Android%E5%BC%80%E5%8F%91%E5%B8%B8%E7%94%A8%E7%BD%91%E7%AB%99/</loc>
-    <lastmod>2018-06-27T13:04:11.900Z</lastmod>
-    <data>
-        <display>
-        <title>Android开发常用网站</title>
-        <pubTime>2017-04-23T09:38:08.000Z</pubTime>
-        
-        <tag>Android Tools</tag>
-         
-         
-           
-             
-              <breadCrumb title="Android Tools" url="http://yoursite.com/categories/Android-Tools/"/>
           
         </display>
     </data>
