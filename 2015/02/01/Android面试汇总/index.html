@@ -1,0 +1,1844 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Android,面试," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="EricChows" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="Java面试题Java基础 集合类以及集合框架；HashMap与HashTable实现原理，线程安全性，hash冲突以及处理算法，ConcurrentHashMap   进程和线程的区别   Java的并发、多线程、线程模型  什么是线程池，如何使用线程池就是事先将多个线程对象放到一个容器中，当使用额时候就不用new线程，而是直接去线程池中拿线程就可以了，节省了开辟子线程的时间，提高代码的执行效率">
+<meta name="keywords" content="Android,面试">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android面试汇总">
+<meta property="og:url" content="http://yoursite.com/2015/02/01/Android面试汇总/index.html">
+<meta property="og:site_name" content="EricChows">
+<meta property="og:description" content="Java面试题Java基础 集合类以及集合框架；HashMap与HashTable实现原理，线程安全性，hash冲突以及处理算法，ConcurrentHashMap   进程和线程的区别   Java的并发、多线程、线程模型  什么是线程池，如何使用线程池就是事先将多个线程对象放到一个容器中，当使用额时候就不用new线程，而是直接去线程池中拿线程就可以了，节省了开辟子线程的时间，提高代码的执行效率">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2015/02/01/Android面试汇总/">
+<meta property="og:image" content="http://yoursite.com/2015/02/01/Android面试汇总/">
+<meta property="og:updated_time" content="2018-07-03T09:43:17.102Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android面试汇总">
+<meta name="twitter:description" content="Java面试题Java基础 集合类以及集合框架；HashMap与HashTable实现原理，线程安全性，hash冲突以及处理算法，ConcurrentHashMap   进程和线程的区别   Java的并发、多线程、线程模型  什么是线程池，如何使用线程池就是事先将多个线程对象放到一个容器中，当使用额时候就不用new线程，而是直接去线程池中拿线程就可以了，节省了开辟子线程的时间，提高代码的执行效率">
+<meta name="twitter:image" content="http://yoursite.com/2015/02/01/Android面试汇总/">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2015/02/01/Android面试汇总/"/>
+
+
+
+
+
+  <title>Android面试汇总 | EricChows</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">EricChows</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">Android Developer</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/02/01/Android面试汇总/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Eric Chows">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/myapple.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="EricChows">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Android面试汇总</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-02-01T00:00:00+08:00">
+                2015-02-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2015/02/01/Android面试汇总/" class="leancloud_visitors" data-flag-title="Android面试汇总">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Java面试题"><a href="#Java面试题" class="headerlink" title="Java面试题"></a>Java面试题</h1><h2 id="Java基础"><a href="#Java基础" class="headerlink" title="Java基础"></a>Java基础</h2><ol>
+<li>集合类以及集合框架；HashMap与HashTable实现原理，线程安全性，hash冲突以及处理算法，ConcurrentHashMap</li>
+</ol>
+<ol start="2">
+<li>进程和线程的区别</li>
+</ol>
+<ol start="3">
+<li><p>Java的并发、多线程、线程模型</p>
+</li>
+<li><p>什么是线程池，如何使用<br>线程池就是事先将多个线程对象放到一个容器中，当使用额时候就不用new线程，而是直接去线程池中拿线程就可以了，节省了开辟子线程的时间，提高代码的执行效率。</p>
+</li>
+<li><p>数据一致性如何保证；Synchronized关键字，类锁，方法锁和重入锁</p>
+</li>
+<li><p>Java中实现多态的机制是什么</p>
+</li>
+<li><p>如何将一个Java对象序列化到文件中</p>
+</li>
+<li><p>说说对Java反射的理解<br>Java中的反射，首先是能够获取到Java中要反射类的字节码，获取字节码有三种方式<br>a)Class.forName(classname)<br>b)类名.class<br>c) this.getClass()<br>然后将字节码中的方法、变量、构造函数等映射成相应的Method、Filed、Constructor等<br>d)同步的方法：多进程开发以及多进程应用场景</p>
+</li>
+<li><p>在Java中wait和sleep方法的不同<br>最大的不同是在等待的时候wait会释放锁，而sleep一直持有锁。wait通常用于线程间的交互，sleep通常用于执行暂停</p>
+</li>
+<li><p>synchronized和volatile关键字的作用<br>1) 保证了不同线程对这个变量进行操作时的可见性，即一个线程修改了某个变量的值，这个新值对其他线程来说是立即可见的</p>
+</li>
+</ol>
+<ol start="11">
+<li><p>服务器只提供数据接收接口，在多线程或多线程条件下，如何保证数据的有序到达</p>
+</li>
+<li><p>TheadLocal原理，实现以及如何保证Local属性</p>
+</li>
+<li><p>String、StringBuilder、StringBuffer的对比</p>
+</li>
+<li><p>你所知道的设计模式</p>
+</li>
+<li><p>Java如何调用C、C++语言</p>
+</li>
+<li><p>接口和回调，回调的原理，写一个回调的demo</p>
+</li>
+<li><p>泛型的原理，举例说明；解析与分派</p>
+</li>
+<li><p>抽象类和接口的区别；应用场景，抽象类是否可以没有方法和属性</p>
+</li>
+<li><p>静态属性和静态方法是否可以被继承？是否可以被重写？什么原因</p>
+</li>
+<li><p>修改对象A的equals方法的签名，那么使用HashMap存放这个对象实例的时候，会调用哪个equals方法</p>
+</li>
+<li><p>说说对泛型的理解</p>
+</li>
+<li><p>Java的异常体系</p>
+</li>
+<li><p>如何控制某个方法运行并发访问线程的个数</p>
+</li>
+<li><p>动态代理的区别，分别在什么场景下使用</p>
+</li>
+</ol>
+<h1 id="Android面试题"><a href="#Android面试题" class="headerlink" title="Android面试题"></a>Android面试题</h1><h2 id="Android基础"><a href="#Android基础" class="headerlink" title="Android基础"></a>Android基础</h2><ol>
+<li><p>什么是ANR？如何避免它？<br>看《ANR机制以及问题分析》</p>
+</li>
+<li><p>View的绘制流程？自定义View如何考虑机型适配？ View的事件分发机制？</p>
+</li>
+<li><p>ART和Dalvik的对比，JVM的内存 分配和垃圾回收GC机制,虚拟机原理，如何自己设计一个虚拟机(内存管理，类加载，双亲委派)，JVM的内存模型以及类加载机制，内存对象的循环应用以及避免</p>
+</li>
+</ol>
+<ol start="4">
+<li>DDMS/traceView/systrace</li>
+</ol>
+<ol start="5">
+<li>内存回收机制与GC算法(各种算法的优缺点以及应用场景)；GC的原理时机以及GC对象；内存泄漏的场景以及解决方法</li>
+</ol>
+<ol start="6">
+<li>四大组件以及生命周期；ContentProvider的权限管理(读写分离，权限控制-精确到表级，URL控制)，Activity的四种启动模式的对比，Activity状态保存于恢复</li>
+</ol>
+<ol start="7">
+<li>什么是AIDL，以及如何使用.</li>
+</ol>
+<ol start="8">
+<li>请解释下在单线程模型中Message、Hanlder、MessageQueue、Looper之间的关系</li>
+</ol>
+<ol start="9">
+<li>Fragment生命周期，Fragment状态保存,startActivityForResult是哪个类的方法，在什么情况下使用，如果在Adapter中使用，应该如何解耦</li>
+</ol>
+<ol start="10">
+<li>AsyncTask 原理以及不足，IntentService的原理</li>
+</ol>
+<ol start="11">
+<li><p>Activity怎么和Service绑定，怎么在Activity中启动对应的Service</p>
+</li>
+<li><p>AsyncTask + HttpClient 与 AsyncHttpClient有什么区别</p>
+</li>
+<li><p>请描述一下Service的生命周期</p>
+</li>
+</ol>
+<ol start="14">
+<li><p>如何保证一个后台服务不被杀死；比较省电的方式是什么？</p>
+</li>
+<li><p>如何通过广播拦截和abort一条短信；广播是否可以请求网络，广播引起的ANR的时间限制</p>
+</li>
+<li><p>进程间通信的方式有哪些？ AIDL</p>
+</li>
+<li><p>事件分发中的onTouch和onTouchEvent有什么区别，又该如何使用</p>
+</li>
+</ol>
+<ol start="18">
+<li><p>说说 ContentProvider/ContentResolver/ContentObservr之间的关系</p>
+</li>
+<li><p>请介绍一下ContentProvider是如何实现数据共享的</p>
+</li>
+<li><p>Handler的机制以及底层的实现</p>
+</li>
+<li><p>Binder机制以及底层的实现</p>
+</li>
+<li><p>ListView中图片错位的问题是如何产生的</p>
+</li>
+<li><p>在manifest和代码中是如何注册和使用广播的</p>
+</li>
+<li><p>说说Activity/Intent/Service是什么关系</p>
+</li>
+<li><p>ApplicationContext和ActivityContext的区别是什么</p>
+</li>
+</ol>
+<ol start="26">
+<li><p>一张Bitmap所占内存以及内存占用的计算方法</p>
+</li>
+<li><p>Serializable和Parcelable的区别</p>
+</li>
+<li><p>请描述一下BroadcastReceiver</p>
+</li>
+</ol>
+<ol start="29">
+<li>请描述一下Android的事件分发机制</li>
+</ol>
+<ol start="30">
+<li><p>请介绍一下NDK</p>
+</li>
+<li><p>什么是NDK库，如何在JNI中注册native函数，有几种注册方式</p>
+</li>
+<li><p>Async如何使用</p>
+</li>
+</ol>
+<ol start="33">
+<li><p>对于应用更新这块是如何做的？(灰度？强制更新？分区域更新？)</p>
+</li>
+<li><p>混合开发：ReactNative/weex/H5/小程序/Flutter</p>
+</li>
+<li><p>什么情况下会导致内存泄漏</p>
+</li>
+<li><p>如何对Android应用进行性能分析以及优化</p>
+</li>
+<li><p>说一款你认为当前比较火的应用并设计(直播APP)</p>
+</li>
+<li><p>OOM的避免异常以及解决方法</p>
+</li>
+<li><p>屏幕适配的处理技巧有哪些</p>
+</li>
+<li><p>两个Activity之间跳转时必然会执行的是哪几个方法</p>
+</li>
+</ol>
+<ol start="41">
+<li><p>MVC、MVP、MVVM、常见的设计模式，写出观察者模式代码</p>
+</li>
+<li><p>TCP的三次握手和四次挥手，TCP与UDP的区别</p>
+</li>
+<li><p>HTTP协议；HTTP 1.0与2.0的区别，HTTP报文结构</p>
+</li>
+<li><p>都使用过哪些框架和平台</p>
+</li>
+<li><p>都使用过哪些自定义控件</p>
+</li>
+<li><p>介绍你做过的项目</p>
+</li>
+</ol>
+<h2 id="非技术问题汇总"><a href="#非技术问题汇总" class="headerlink" title="非技术问题汇总"></a>非技术问题汇总</h2><ol>
+<li><p>研究的比较深的领域有哪些</p>
+</li>
+<li><p>对业内信息的关注渠道有哪些</p>
+</li>
+<li><p>最近都读了哪些书</p>
+</li>
+<li><p>自己最擅长的技术点，最感兴趣的技术领域和技术点</p>
+</li>
+<li><p>项目中使用了哪些开源库，如何避免因为引入开源库而导致的安全性和稳定性问题</p>
+</li>
+<li><p>实习过程中做了什么，有哪些产出</p>
+</li>
+<li><p>5枚硬币，2正3反，如何划分为两堆然后通过翻转让两堆中正面向上的硬币和反面向上的硬币个数相同</p>
+</li>
+<li><p>时针走一圈，时针和分针重合几次</p>
+</li>
+<li><p>N*N的方格纸，里面有多少个正方形</p>
+</li>
+<li><p>现在下载速度很慢，试从网络协议的角度分析原因，并优化，网络的5层都可以涉及</p>
+</li>
+</ol>
+<h1 id="数据结构和算法"><a href="#数据结构和算法" class="headerlink" title="数据结构和算法"></a>数据结构和算法</h1><ol>
+<li><p>堆和栈在内存中的区别是什么(数据结构方面以及实际实现方面)</p>
+</li>
+<li><p>最快的排序算法是哪个？给阿里2万多员工按年龄排序应该选择哪个算法？堆和树的区别？写出快排代码，链表逆序代码</p>
+</li>
+<li><p>求1000以内的水仙花数以及40亿以内的水仙花数</p>
+</li>
+<li><p>子串包含问题(KMP算法)写代码实现</p>
+</li>
+<li><p>万亿级别的两个URL文件A和B，如何求出A和B的差集C</p>
+</li>
+<li><p>蚁群算法和蒙特卡洛算法</p>
+</li>
+<li><p>写出你所知道的排序算法以及时空复杂度，稳定性</p>
+</li>
+<li><p>百度POI中如何试下查找最近商家功能(坐标镜像+R树)</p>
+</li>
+<li><p>死锁的四个必要条件</p>
+</li>
+<li><p>常见的编码方式，utf-8变种中文占几个字节，int型占几个字节</p>
+</li>
+</ol>
+<h1 id="HR问题"><a href="#HR问题" class="headerlink" title="HR问题"></a>HR问题</h1><ol>
+<li><p>上家离职的原因</p>
+</li>
+<li><p>讲一件你印象最深的事情</p>
+</li>
+<li><p>介绍一个你影响最深的项目</p>
+</li>
+<li><p>介绍你最热爱最擅长的专业领域</p>
+</li>
+<li><p>公司实习最大的收获是什么</p>
+</li>
+<li><p>与上级意见不一致时，你怎么办</p>
+</li>
+<li><p>自己的优点和缺点是什么，并举例说明</p>
+</li>
+<li><p>你的学习方法是什么样的？实习过程中如何学习？实习过程中遇到的最大困难是什么，以及如何解决的？</p>
+</li>
+<li><p>说一件最能证明你能力的事情</p>
+</li>
+<li><p>针对你申请的这个职位，你认为你还欠缺什么</p>
+</li>
+<li><p>项目中遇到的最大困难时什么，如何解决</p>
+</li>
+<li><p>职业规划以及个人目标，未来发展路线以及求职定位</p>
+</li>
+</ol>
+<ol start="13">
+<li></li>
+</ol>
+<h1 id="Android基础-1"><a href="#Android基础-1" class="headerlink" title="Android基础"></a>Android基础</h1><p> 主要复习Android的一些个基础知识点</p>
+<ul>
+<li>四大组件</li>
+<li>事件分发机制</li>
+<li>消息机制</li>
+<li>binder机制</li>
+<li>线程和进程</li>
+</ul>
+<h2 id="Activity全方位解析"><a href="#Activity全方位解析" class="headerlink" title="Activity全方位解析"></a>Activity全方位解析</h2><p> 先从Activity的功能上复习</p>
+<p> MyQuestion:</p>
+<ol>
+<li>能否从Framework的层面来分析一下，Activity这样设计的原理和机制是什么？</li>
+</ol>
+<ol start="2">
+<li>如何从Framework代码中看出Activity的设计逻辑</li>
+</ol>
+<h3 id="Activity生命周期"><a href="#Activity生命周期" class="headerlink" title="Activity生命周期"></a>Activity生命周期</h3><ol>
+<li><p>Activity生命周期<br>典型的生命周期<br>onCreate -&gt; onRestart -&gt; onStart -&gt; onResume -&gt; onPause -&gt; onStop -&gt; onDestory<br>onCreate:加载布局资源，初始化Activity所需要的数据，<br>onRestart:从不可见变为可见<br>onStart:表示Activity正在被启动，此时Activity已经出现，但是还没有出现在前台，无法与用户交互，这个时候可以理解为Activity已经显示出来，但是我们看不到。<br>onResume:表示Activity已经可见，且出现在前台<br>onPause:表示Activity正在停止，但是仍可见，正常情况下，紧接着onStop就会被调用。特殊情况下，如果这个时候快速的返回当前Activity，那么onResume就会被调用(极端情况)<br>onStop:表示Activity即将停止，不可见，位于后台，可以做稍微重量级的回收工作，同样不能太耗时。<br>onDestory:表示Activity即将被销毁，这是Activity的最后一个回调，可以做一些回收工作和最终的资源回收。、</p>
+</li>
+<li><p>特殊情况下的生命周期<br>a) 横竖屏切换<br>横竖屏切换的过程中，会发生Activity被销毁和重建的过程。<br>onSaveInstanceState和onRestoreInstanceState</p>
+<p>onSaveInstanceState在onStop之前被调用<br>onRestoreInstanceState在onStart之后调用</p>
+<p>b)资源不足导致优先级低的Activity被杀死</p>
+</li>
+</ol>
+<h3 id="Activity的启动模式"><a href="#Activity的启动模式" class="headerlink" title="Activity的启动模式"></a>Activity的启动模式</h3><p> 从Framework中Activity相关代码可以看到，Activity的管理是通过ActivityStack任务栈的形式来管理。<br> Activity的LaunchMode主要有四种：</p>
+<ol>
+<li>Standard 标准模式：每次启动Activity，都会new一个新的Activity放在栈顶</li>
+<li>SingleTop 栈顶复用：栈顶存在，则直接使用，不用new</li>
+<li>SingleTask 栈内复用</li>
+<li><p>SingleInstance 单例模式</p>
+<p>特殊情况：前台栈和后台栈交互</p>
+</li>
+</ol>
+<h3 id="Activity的Flag"><a href="#Activity的Flag" class="headerlink" title="Activity的Flag"></a>Activity的Flag</h3><p> FLAG_ACTIVITY_NEW_TASK</p>
+<p> FLAG_ACTIVITY_SINGLE_TOP</p>
+<p> FLAG_ACTIVITY_CLEAR_TOP</p>
+<h2 id="Service-全方位解析"><a href="#Service-全方位解析" class="headerlink" title="Service 全方位解析"></a>Service 全方位解析</h2><p> Service是ANdroid中实现程序后台运行的解决方案，它非常适用于执行那些不需要和用户交互而且还要求长期运行的任务。Servcie默认并不会运行在子线程中，它也不运行在一个独立的进程中，它同样执行在UI线程中，因此，不要在Service中执行耗时的操作，除非你在Service中创建子线程来完成耗时操作。</p>
+<p> MyQuestion：</p>
+<ol>
+<li>在Android Framework代码中，Service的机制是什么?</li>
+</ol>
+<ol>
+<li><p>Service种类<br>按运行类型分类：</p>
+<pre><code>区别                                    应用
+</code></pre><p>前台服务   会在通知栏显示onGoing的Notification     服务被终止时，通知栏Notification也会消失，如：音乐播放服务<br>后台服务   默认的服务即为后台服务，不会在通知栏显示  服务被终止时，用户看不到，如：天气更新、日期同步、邮件同步</p>
+<p>按使用方式分类：<br>  类别                          区别<br>startServcie启动的服务       主要用于启动一个服务咨询后台任务，不进行通讯，停止服务，使用stopService<br>bindService启动的服务        可以进行进程通讯.停止服务，使用unbindService<br>同时使用StartServcie和bindService启动的服务    停止服务使用stopService和unbindServcie</p>
+</li>
+<li><p>Service生命周期<br>onCreate -&gt; onStartCommand -&gt; onDestory<br>onCreate -&gt; onBind -&gt; onUnbind -&gt; onDestory<br>onCreate:系统在Service第一次创建时执行此方法，如果service已经运行，此方法不会调用<br>onStartCommand:每次客户端调用startService方法启动该service，都会回调该方法<br>onBind:当调用bindService时，执行该方法，一次调用</p>
+</li>
+</ol>
+<h2 id="BroadcastReceiver全方位解析"><a href="#BroadcastReceiver全方位解析" class="headerlink" title="BroadcastReceiver全方位解析"></a>BroadcastReceiver全方位解析</h2><p> BroadcastReceiver广播接收器，使用了观察者模式来实现。<br> 模型中有三个角色：<br> a)消息订阅者 –广播接收者<br> b)消息发布者 –广播发送者<br> c)消息中心(AMS,即ActivityManagerService)</p>
+<p> 原理描述：<br> i) 广播接受者通过Binder机制在AMS注册<br> ii)广播发送者通过Binder机制向AMS发送广播<br> iii)AMS根据广播发送者要求，在已注册列表中，寻求合适的广播接收者</p>
+<ul>
+<li><p>寻找依据：IntenFilter/Permission<br>iv)AMS将广播发送到合适的广播接收者相应的消息循环队列中<br>v)广播接收者通过消息循环 拿到此广播，并回调onReceive()</p>
+<p>特别注意：广播发送者和广播接收者执行的是 异步的，发出去的广播不会关心有无接收者接收，也不确定接收者到底何时才能接收到。</p>
+<p><a href="https://github.com/LRH1993/android_interview/blob/master/android/basis/broadcastreceiver.md" target="_blank" rel="noopener">参考文章</a></p>
+<p>My Question:<br>需要拿出AMS的源码来详细的分析原理</p>
+</li>
+</ul>
+<h2 id="ContenProvider全方位解析"><a href="#ContenProvider全方位解析" class="headerlink" title="ContenProvider全方位解析"></a>ContenProvider全方位解析</h2><ol>
+<li><p>作用：进程间 数据交互和共享，跨进程通讯<br>ContentProvider只是中间者角色，真正存储&amp;操作数据的数据源还是原来存储数据的方式(数据库、文件、xml、网络)</p>
+</li>
+<li><p>原理：ContentProvider 采用的是Android中Binder机制来实现</p>
+</li>
+<li><p>使用</p>
+</li>
+</ol>
+<ul>
+<li>URL 统一资源标识符</li>
+<li>MIME 数据类型</li>
+<li>ContentProvider类的 使用方法和数据组织方式</li>
+<li><p>辅助工具类：a)ContentResolver类  b)ContentUris 类 c)UriMatcher类  d) ContentObserver类</p>
+<p>3.1 统一资源标识符<br>Uniform Resource Identifier<br>作用：唯一标识ContentProvider 其中的数据<br>具体使用，分两类，系统预制和自定义</p>
+<p>自定义URI = content://com.carson.provider/User/1<br>主题(Schema):URI的前缀，由Android规定<br>授权信息(Authority):唯一标识符，一般是包名<br>表名(Path):指向数据库中的某个表<br>记录(ID):表中的某个记录(若无指定，则返回全部记录)</p>
+<p>3.2 MIME数据类型</p>
+<p>3.3 ContentProvider 类</p>
+<p><a href="https://github.com/LRH1993/android_interview/blob/master/android/basis/ContentProvider.md" target="_blank" rel="noopener">参考文章</a></p>
+</li>
+</ul>
+<h2 id="Fragment-详解"><a href="#Fragment-详解" class="headerlink" title="Fragment 详解"></a>Fragment 详解</h2><ol>
+<li><p>什么是Fragment<br>简单来说，就是显示在Activity中的Activity</p>
+</li>
+<li><p>Fragment的生命周期<br>由于Fragment是依附于Activity存在的，因此，它的生命周期受到Activity的生命周期的影响<br>onCreate(){ onAttach() -&gt; onCreate() -&gt; onCreateView() -&gt; onActivityCreated() }<br>onStart(){ onStart() }<br>onResume(){ onResume() }<br>onPause(){ onPause() }<br>onStop(){ onStop() }<br>onDestory(){ onDestoryView() -&gt; onDestory() -&gt; onDetach() }</p>
+<p>PS： 注意：除了onCreateView,其他的所有方法如果重写了，必须调用父类对于该方法的实现</p>
+</li>
+<li><p>Fragment的使用方式<br>静态使用Fragment</p>
+<p>动态使用Fragment</p>
+</li>
+<li><p>什么是Fragment的回退栈？<br>Fragment的回退栈是用来保存每一次Fragment事务发生的变化，如果你将Fragment任务添加到回退栈，当用户点击回退按钮时，将看到上一次保存的Fragment。一旦Fragment完全从回退栈弹出，用户再次点击后退键，则退出当前Activity</p>
+<p>FragmentTransaction.addToBackStack(String)</p>
+</li>
+<li><p>Fragment和Activity之间的通信</p>
+</li>
+<li><p>Fragment与Activity通信的优化</p>
+</li>
+<li><p>如何处理运行时配置发生变化</p>
+<p><a href="https://github.com/LRH1993/android_interview/blob/master/android/basis/Fragment.md" target="_blank" rel="noopener">参考文章</a></p>
+</li>
+</ol>
+<h2 id="Android消息机制"><a href="#Android消息机制" class="headerlink" title="Android消息机制"></a>Android消息机制</h2><p>  Android中的消息机制，即Handler.</p>
+<ol>
+<li><p>消息机制的模型<br>消息机制主要包含：MessageQueue/Handler/Looper/Message四个模块，现在来一一介绍</p>
+<p><strong>Message:</strong> 需要传递的消息，可以装载数据<br><strong>MessageQueue:</strong> 消息队列，它的内部实现并不是用的队列，实际是通过一个单链表的数据结构来维护消息列表，因为单链表在插入和删除上比较有优势。主要功能是向消息池投递消息<br>(MessageQueue.enqueueMessage)和取走消息池的消息(MessageQueue.next). <a href="/home/zds/Code/Junior/frameworks/base/core/java/android/os/MessageQueue.java">MessageQueue</a><br><strong>Handler:</strong> 消息辅助类，主要功能是向信息池发送各种消息事件(Handler.sendMessage)和取走处理相应消息事件(Handler.handleMessage).<br><strong>Looper：</strong>不断循环执行(Looper.loop),从MessageQueue中读取消息，按分发机制将消息分发给目标处理.</p>
+</li>
+<li><p>消息机制的架构</p>
+</li>
+</ol>
+<ol start="3">
+<li><p>消息机制原理<br>frameworks/base/core/java/android/os/MessageQueue.java<br>frameworks/base/core/java/android/os/Message.java<br>frameworks/base/core/java/android/os/Message.aidl<br>frameworks/base/core/java/android/os/Looper.java<br>frameworks/base/core/java/android/os/Handler.java</p>
+<p><a href="https://github.com/LRH1993/android_interview/blob/master/android/basis/message-mechanism.md" target="_blank" rel="noopener">参考文章</a></p>
+</li>
+</ol>
+<h2 id="Android事件分发机制"><a href="#Android事件分发机制" class="headerlink" title="Android事件分发机制"></a>Android事件分发机制</h2><ol>
+<li><p>事件在哪些对象间进行传递<br>Activity、ViewGroup、View，事件产生后，传递顺序：Activity &gt; ViewGroup &gt; View</p>
+</li>
+<li><p>事件分发的本质，就是Activity/ViewGroup/View三者的事件分发<br>参考资料2中有对源码进行分析</p>
+<p>参考资料[1]:Myblog中的 《Android编程下Touch事件的分发和消费机制》</p>
+<p><a href="https://github.com/LRH1993/android_interview/blob/master/android/basis/Event-Dispatch.md" target="_blank" rel="noopener">参考资料2</a> </p>
+</li>
+<li><p>onTouch和onTouchEvent的区别</p>
+</li>
+<li><p>Touch事件的后续(Move、up)事件的层级传递</p>
+</li>
+</ol>
+<h2 id="AsyncTask详解"><a href="#AsyncTask详解" class="headerlink" title="AsyncTask详解"></a>AsyncTask详解</h2><ol>
+<li><p>AsyncTask是一个抽象类，是由Android封装的一个轻量级异步类，它可以在线程池中执行后台任务，然后把执行的进度和最终的结果传递给主线程并在主线程中更新UI<br>AsyncTask的内部封装了两个线程池(SerialExecutor和THREAD_POOL_EXECUTOR)和一个Handler(InternalHandler).</p>
+</li>
+<li><p>AsyncTask的使用和源码分析见参考资料1</p>
+</li>
+<li><p>AsyncTask使用不当的后果<br>a) 生命周期<br>AsyncTask 不与任何组件绑定生命周期，所以在Activity或者Fragment中创建执行AsyncTask时，最好在Activity/Fragment的onDestory调用cancel方法</p>
+<p>b)内存泄漏<br>如果AsyncTask被声明为Activity的非静态的内部类，那么AsyncTask会保留一个对创建了AsyncTask的Activity的引用.<br>如果Activity已经被销毁，AsyncTask的后台线程还在执行，将继续保留这个引用，导致Activity无法被回收，引起内存泄漏</p>
+<p>c)结果丢失<br>屏幕旋转或者Activity在后台被系统杀掉等情况导致的Activity重建，之前运行的AsyncTask会持有一个之前Activity的引用，这个引用已经无效，这是调用onPOSTExecute()再去更新界面将不再生效.</p>
+<p><a href="https://github.com/LRH1993/android_interview/blob/master/android/basis/asynctask.md" target="_blank" rel="noopener">参考资料1</a></p>
+</li>
+</ol>
+<h2 id="HandlerThread详解"><a href="#HandlerThread详解" class="headerlink" title="HandlerThread详解"></a>HandlerThread详解</h2><p>   在Android中执行耗时的操作都需要另外开启子线程来执行，执行完线程以后会自动销毁，如果项目中经常需要执行耗时操作，如果经常开启线程，接着又销毁线程，无疑会消耗性能，解决方法是：<br>   a)使用线程池<br>   b)使用HandlerThread</p>
+<p>   HandlerThread的代码以及在Framework中封装好：/frameworks/base/core/java/android/os/HandlerThread.java，采用的是Handler和Looper来实现</p>
+<p>   HandlerThread的使用，见参考资料1</p>
+<p>   <a href="https://github.com/LRH1993/android_interview/blob/master/android/basis/HandlerThread.md" target="_blank" rel="noopener">参考资料1</a></p>
+<h2 id="IntentServcie详解"><a href="#IntentServcie详解" class="headerlink" title="IntentServcie详解"></a>IntentServcie详解</h2><h2 id="LruCache详解"><a href="#LruCache详解" class="headerlink" title="LruCache详解"></a>LruCache详解</h2><h2 id="Window、Activity、DecorView以及ViewRoot之间的关系"><a href="#Window、Activity、DecorView以及ViewRoot之间的关系" class="headerlink" title="Window、Activity、DecorView以及ViewRoot之间的关系"></a>Window、Activity、DecorView以及ViewRoot之间的关系</h2><h2 id="View的测量、布局以及绘制原理"><a href="#View的测量、布局以及绘制原理" class="headerlink" title="View的测量、布局以及绘制原理"></a>View的测量、布局以及绘制原理</h2><h2 id="Android虚拟机以及编译过程"><a href="#Android虚拟机以及编译过程" class="headerlink" title="Android虚拟机以及编译过程"></a>Android虚拟机以及编译过程</h2><h2 id="Android进程间通信方式"><a href="#Android进程间通信方式" class="headerlink" title="Android进程间通信方式"></a>Android进程间通信方式</h2><h2 id="Android-Bitmap压缩策略"><a href="#Android-Bitmap压缩策略" class="headerlink" title="Android Bitmap压缩策略"></a>Android Bitmap压缩策略</h2><h2 id="Android-动画总结"><a href="#Android-动画总结" class="headerlink" title="Android 动画总结"></a>Android 动画总结</h2><h2 id="Android-进程优先级"><a href="#Android-进程优先级" class="headerlink" title="Android 进程优先级"></a>Android 进程优先级</h2><h2 id="Android-Contex-详解"><a href="#Android-Contex-详解" class="headerlink" title="Android Contex 详解"></a>Android Contex 详解</h2><h1 id="Android进阶"><a href="#Android进阶" class="headerlink" title="Android进阶"></a>Android进阶</h1><h2 id="Android-多线程断点续传"><a href="#Android-多线程断点续传" class="headerlink" title="Android 多线程断点续传"></a>Android 多线程断点续传</h2><h2 id="Android全局异常处理"><a href="#Android全局异常处理" class="headerlink" title="Android全局异常处理"></a>Android全局异常处理</h2><h2 id="Android-MVP模式详解"><a href="#Android-MVP模式详解" class="headerlink" title="Android MVP模式详解"></a>Android MVP模式详解</h2><h2 id="Android-Binder机制以及AIDL使用"><a href="#Android-Binder机制以及AIDL使用" class="headerlink" title="Android Binder机制以及AIDL使用"></a>Android Binder机制以及AIDL使用</h2><h2 id="Android-Parcelable和Serializable的区别"><a href="#Android-Parcelable和Serializable的区别" class="headerlink" title="Android Parcelable和Serializable的区别"></a>Android Parcelable和Serializable的区别</h2><h2 id="一个APP从启动到主页面显示经历了哪些过程"><a href="#一个APP从启动到主页面显示经历了哪些过程" class="headerlink" title="一个APP从启动到主页面显示经历了哪些过程?"></a>一个APP从启动到主页面显示经历了哪些过程?</h2><h2 id="Android-性能优化总结"><a href="#Android-性能优化总结" class="headerlink" title="Android 性能优化总结"></a>Android 性能优化总结</h2><h2 id="Android-内存泄漏总结"><a href="#Android-内存泄漏总结" class="headerlink" title="Android 内存泄漏总结"></a>Android 内存泄漏总结</h2><h2 id="Android-布局优化之include-merge-ViewStub的使用"><a href="#Android-布局优化之include-merge-ViewStub的使用" class="headerlink" title="Android 布局优化之include/merge/ViewStub的使用"></a>Android 布局优化之include/merge/ViewStub的使用</h2><h2 id="Android-权限处理"><a href="#Android-权限处理" class="headerlink" title="Android 权限处理"></a>Android 权限处理</h2><h2 id="Android热修复原理"><a href="#Android热修复原理" class="headerlink" title="Android热修复原理"></a>Android热修复原理</h2><h2 id="Android-插件化入门指南"><a href="#Android-插件化入门指南" class="headerlink" title="Android 插件化入门指南"></a>Android 插件化入门指南</h2><h2 id="VirtualAPK解析"><a href="#VirtualAPK解析" class="headerlink" title="VirtualAPK解析"></a>VirtualAPK解析</h2><h2 id="Android-推送技术解析"><a href="#Android-推送技术解析" class="headerlink" title="Android 推送技术解析"></a>Android 推送技术解析</h2><h2 id="Android-APK安装过程"><a href="#Android-APK安装过程" class="headerlink" title="Android APK安装过程"></a>Android APK安装过程</h2><h2 id="PopupWindow和Dialog区别"><a href="#PopupWindow和Dialog区别" class="headerlink" title="PopupWindow和Dialog区别"></a>PopupWindow和Dialog区别</h2><h1 id="Java-虚拟机"><a href="#Java-虚拟机" class="headerlink" title="Java 虚拟机"></a>Java 虚拟机</h1><p>《深入理解Java虚拟机》–JVM高级特性与最佳实践<br>      周志明-机械工业出版社</p>
+<p>关于Java虚拟机，重点考察以下三个方面：</p>
+<ul>
+<li>内存区域/内存模型</li>
+<li>类加载机制</li>
+<li>垃圾收集算法/收集器</li>
+</ul>
+<p>MyQuestion：</p>
+<ol>
+<li><p>JVM 开源么？ JVM是包含在JDK里面的么？</p>
+</li>
+<li><p>Dalvik对JVM 做了哪些改进？ </p>
+</li>
+<li><p>ART又对Dalvik做了哪些改进？</p>
+</li>
+</ol>
+<p>虚拟机相关的关键字：<br>JVM：<br>HotSpot：<br>JIT<br>AOT:<br>Heap(堆):<br>Stack(栈):</p>
+<h2 id="对象的创建、内存布局和访问定位"><a href="#对象的创建、内存布局和访问定位" class="headerlink" title="对象的创建、内存布局和访问定位"></a>对象的创建、内存布局和访问定位</h2><h3 id="对象的创建"><a href="#对象的创建" class="headerlink" title="对象的创建"></a>对象的创建</h3><ol>
+<li><p>虚拟机遇到一个New指令时，首先将去检查这个指令的参数是否能在常量池中定位到一个类的符号引用；</p>
+</li>
+<li><p>检查这个符号引用代表的类是否已经被加载，解析和初始化过。如果没有，那必须先执行相应的类的加载过程;</p>
+</li>
+<li><p>在类加载检查功能通过后，为新生对象分配内存。对象所需的内存大小在类加载完成后便可完全确定。</p>
+</li>
+</ol>
+<h3 id="对象的内存布局"><a href="#对象的内存布局" class="headerlink" title="对象的内存布局"></a>对象的内存布局</h3><p>分为三个区域：  对象头，实例数据，对齐填充。</p>
+<ol>
+<li><p>对象头<br>包含两部分信息，第一部分：对象自身的运行时数据，如哈希吗，GC分代年龄，锁状态标志，线程持有的锁，偏向线程ID，偏向时间戳等。着不放数据的长度在32位和64位虚拟机中分别为32bit和64bit，官方称它为”Mark Word”.</p>
+<p>第二部分：类型指针，即对象指向它的类元数据的指针，虚拟机通过这个指针来确定这个对象是哪个类的实例。如果对象是一个java数组，那在对象头中还必须有一块用于记录数组长度的数据 。</p>
+</li>
+<li><p>实例数据<br>是对象真正存储的有效信息，也是在程序代码中所定义的各种类型的字段内容。</p>
+</li>
+<li><p>对齐填充<br>对齐填充不是必然存在的。HotSpot VM的自动内存管理系统要求对象起始地址必须是8字节的整数倍，也就是说对象的大小必须是8字节的整数倍。而对象头部分正好是8字节的整数倍。因此，当对象实例数据部分没有对齐是，就需要通过对齐补充来补全了。</p>
+</li>
+</ol>
+<h3 id="对象的访问定位"><a href="#对象的访问定位" class="headerlink" title="对象的访问定位"></a>对象的访问定位</h3><p> Java程序需要通过栈上的reference数据来操作堆上的具体对象</p>
+<p> 目前主流的访问方式有使用句柄和直接使用指针两种。</p>
+<ol>
+<li><p>句柄访问<br>Java堆中会划分出一块内存来作为句柄池，reference中存储的事就对象的句柄地址，而句柄中包含了对实例数据与类型数据的各自具体的地址信息。<br><img src="/2015/02/01/Android面试汇总/" alt="句柄访问"></p>
+</li>
+<li><p>直接指针访问<br>reference中存储的直接就是对象地址<br><img src="/2015/02/01/Android面试汇总/" alt="直接指针访问"></p>
+</li>
+</ol>
+<h2 id="Java内存区域"><a href="#Java内存区域" class="headerlink" title="Java内存区域"></a>Java内存区域</h2><ol>
+<li><p>方法区(公有)</p>
+</li>
+<li><p>堆(公有)</p>
+</li>
+<li><p>虚拟机栈(线程私有)</p>
+</li>
+<li><p>本地方法栈(线程私有)</p>
+</li>
+<li><p>程序计数器(线程私有)</p>
+</li>
+</ol>
+<h2 id="Java内存模型"><a href="#Java内存模型" class="headerlink" title="Java内存模型"></a>Java内存模型</h2><p> Java内存模型的目的： 屏蔽掉各种硬件和操作系统的内存访问差异，以实现让java程序在各种平台下都能达到一致的内存访问效果。</p>
+<p> 主要目标：定义程序中各个变量的访问规则，即在虚拟机中将变量存储到内存和从内存中取出变量这样的底层细节。</p>
+<p> 了解Java内存模型之前需要了解：主内存和工作内存。</p>
+<p> Java内存模型规定了所有的变量都存储在主内存中，每个线程中还有自己的工作内存，线程的工作内存中保存了被该线程所使用到的变量(这些变量是从主内存中拷贝而来)。线程对变量的所有操作(读取、赋值)都必须在工作内存中进行。不同线程之间也无法直接访问对方工作内存中的变量，线程间变量值的传递均需要通过主内存来完成。</p>
+<h2 id="Java类加载机制"><a href="#Java类加载机制" class="headerlink" title="Java类加载机制"></a>Java类加载机制</h2><ol>
+<li><p>定义： 把描述类的数据从class文件加载到内存，并对数据进行校验、转换解析和初始化，最终形成可以被虚拟机直接使用的Java类型。</p>
+<p>在Java语言里，类型的加载、连接和初始化过程都是在程序运行期间完成的，这种策略虽然会令类加载时稍微增加一些性能开销，但是会为Java应用程序提供高度的灵活性，Java里天生可以动态扩展的语言特性就是依赖运行期动态加载和动态链接这个特点来实现的。</p>
+</li>
+<li><p>类的生命周期：  加载、验证、准备、解析、初始化、使用和卸载。其中验证，准备，解析3个部分统称为链接。<br>Loading -&gt; Verification -&gt; Preparation -&gt; Resolution -&gt; Initalization -&gt; Using -&gt; Unloading</p>
+</li>
+</ol>
+<h2 id="类加载器详解"><a href="#类加载器详解" class="headerlink" title="类加载器详解"></a>类加载器详解</h2><p> 通过上述的了解，我们已经知道了类加载机制的大概流程以及各个部分的功能，其中加载部分的功能是将类的class文件读入内存，并为之创建一个java.lang.Class对象。这部分功能就是由类加载器来实现的。</p>
+<ol>
+<li><p>类加载器分类<br>不同的类加载器负责加载不同的类。主要分为两类：<br>启动类加载器(Bootstrap ClassLoader):由C++语言实现(针对Hotspot),负责将存放在&lt;JAVA_HOME&gt;/lib目录或者-Xbootclasspath参数指定的路径中的类库加载到内存中，即负责加载Java的核心类</p>
+<p>其他类加载器：由Java语言实现，继承自抽象类ClassLoader。如：</p>
+<p>扩展类加载器(Extension ClassLoader)：负责将存放在&lt;JAVA_HOME&gt;/lib/ext目录或者java.ext.dirs系统变量指定的路径中的类库加载到内存中，即负责加载Java扩展的核心类之外的类</p>
+<p>应用程序类加载器(Application ClassLoader): </p>
+</li>
+<li><p>双亲委派模型<br>双亲委派模型的工作流程是：如果一个类加载器收到了类加载的请求，它首先不会自己去尝试加载这个类，而是把请求委托给父加载器去完成，依次向上，因此，所有的类加载请求最终都应该被传递到顶层的启动类加载器中，只有父加载器在它的搜索范围内没有找到所需的类时，即无法完成该加载，子加载才会尝试自己去加载该类。</p>
+</li>
+</ol>
+<ol start="3">
+<li>双亲委派模型的代码实现<br>ClassLoader中loadClass方法实现了双亲委派模型</li>
+</ol>
+<h2 id="JVM中垃圾收集算法"><a href="#JVM中垃圾收集算法" class="headerlink" title="JVM中垃圾收集算法"></a>JVM中垃圾收集算法</h2><ol>
+<li><p>标记-清除算法<br>最基础的收集算法是”标记-清除”(Mark-Sweep)算法，分为标记和清除两个阶段<br>a)首先标记出所需要回收的对象<br>b)在标记完成之后，统一回收所有被标记的对象</p>
+<p>不足：<br>效率问题： 标记和清除两个过程的效率都不高<br>空间问题：标记清除后产生大量的不连续的内存碎片，空间碎片太多，可能会导致分配大对象时，无法找到足够连续的内存而不得不提前触发另一次垃圾收集动作</p>
+</li>
+<li><p>复制算法<br>目的：为了解决效率问题</p>
+<p>将可用内存按照容量大小划分为大小相等的两块，每次只使用其中的一块。当一块内存使用完了，就将还存活的对象复制到另一块上面，然后再把已使用过的内存空间一次清理掉。这样使得每次都是对整个半区进行内存回收，内存分配时也就不用考虑内存碎片等复杂情况。</p>
+<p>缺点：将内存缩小为了原来的一半</p>
+<p>现代的商业虚拟机都是采用这种收集算法来回收新生代，IBM公司的专门研究表明，新生代中对象98%对象是”朝生夕死”，所以不需要按照1:1来划分内存空间，而是将内存分为较大的Eden空间和两块较小的Survivor空间，每次使用Eden和其中一块Survivor。HotSpot虚拟机中默认Eden和Survivor的大小比例是8:1</p>
+</li>
+<li><p>标记-整理算法<br>复制算法在对象存活率较高的时候，就要进行较多的复制操作，效率就会变低。</p>
+<p>标记过程和标记清除算法一样，但后续步骤不是直接对可回收对象进行清理，而是让所有存活对象都向一端移动，然后直接清理掉边界以外的内存。</p>
+</li>
+<li><p>分代收集算法<br>一般把Java堆分为新生代和老年代，这样就可以根据各个年代的特点采用最适当的收集算法。</p>
+<p>对新生代，采用复制算法</p>
+<p>对老年代，采用标记整理算法或者标记清除算法</p>
+</li>
+</ol>
+<p>##垃圾收集器详解</p>
+<h2 id="JVM怎么判断对象是否已死"><a href="#JVM怎么判断对象是否已死" class="headerlink" title="JVM怎么判断对象是否已死"></a>JVM怎么判断对象是否已死</h2><ol>
+<li><p>引用计数法<br>给对象添加一个引用计数器，每当有一个地方引用它时，计数器值就加1；当引用失效时，计数器值就减1.任何时刻计数器为0的对象就是不可能被在使用的。</p>
+<p>主流的JVM里面没有选用引用计数器算法来管理内存，其中最主要的原因是它很难解决对象间的互相循环引用问题。</p>
+</li>
+<li><p>可达性分析算法</p>
+</li>
+<li><p>判断对象是否存活与”引用”相关<br>Strong Reference 强引用<br>Soft Reference 软引用<br>Weak Reference 弱引用<br>Phantom Reference 虚引用<br>引用强度依次减弱</p>
+</li>
+</ol>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a href="https://github.com/LRH1993/android_interview" target="_blank" rel="noopener">Android校招面试指南</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Android/" rel="tag"># Android</a>
+          
+            <a href="/tags/面试/" rel="tag"># 面试</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/01/01/Myblog/" rel="next" title="Myblog">
+                <i class="fa fa-chevron-left"></i> Myblog
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/06/29/ADB-Android-Debug-Bridge-常用命令/" rel="prev" title="ADB (Android Debug Bridge)常用命令">
+                ADB (Android Debug Bridge)常用命令 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  
+    <div id="gitalk-container"></div>
+  
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/myapple.jpg"
+                alt="Eric Chows" />
+            
+              <p class="site-author-name" itemprop="name">Eric Chows</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">34</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">30</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/ericchows" target="_blank" title="GitHub">
+                    
+                      <i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:xnzds2008@163.com" target="_blank" title="E-Mail">
+                    
+                      <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://plus.google.com" target="_blank" title="Google">
+                    
+                      <i class="fa fa-fw fa-google"></i>Google</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://twitter.com" target="_blank" title="Twitter">
+                    
+                      <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.facebook.com" target="_blank" title="FB Page">
+                    
+                      <i class="fa fa-fw fa-facebook"></i>FB Page</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://vk.com" target="_blank" title="VK Group">
+                    
+                      <i class="fa fa-fw fa-vk"></i>VK Group</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://stackoverflow.com/users/8872810/eric" target="_blank" title="StackOverflow">
+                    
+                      <i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://youtube.com" target="_blank" title="YouTube">
+                    
+                      <i class="fa fa-fw fa-youtube"></i>YouTube</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://instagram.com" target="_blank" title="Instagram">
+                    
+                      <i class="fa fa-fw fa-instagram"></i>Instagram</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="skype" target="_blank" title="Skype">
+                    
+                      <i class="fa fa-fw fa-skype"></i>Skype</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="/images/wechat.jpg" target="_blank" title="Wechat">
+                    
+                      <i class="fa fa-fw fa-globe"></i>Wechat</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://blog.csdn.net/Cxiaolinxiaozi" target="_blank" title="CSDN">
+                    
+                      <i class="fa fa-fw fa-globe"></i>CSDN</a>
+                </span>
+              
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Java面试题"><span class="nav-number">1.</span> <span class="nav-text">Java面试题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Java基础"><span class="nav-number">1.1.</span> <span class="nav-text">Java基础</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Android面试题"><span class="nav-number">2.</span> <span class="nav-text">Android面试题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Android基础"><span class="nav-number">2.1.</span> <span class="nav-text">Android基础</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#非技术问题汇总"><span class="nav-number">2.2.</span> <span class="nav-text">非技术问题汇总</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据结构和算法"><span class="nav-number">3.</span> <span class="nav-text">数据结构和算法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HR问题"><span class="nav-number">4.</span> <span class="nav-text">HR问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Android基础-1"><span class="nav-number">5.</span> <span class="nav-text">Android基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Activity全方位解析"><span class="nav-number">5.1.</span> <span class="nav-text">Activity全方位解析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Activity生命周期"><span class="nav-number">5.1.1.</span> <span class="nav-text">Activity生命周期</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Activity的启动模式"><span class="nav-number">5.1.2.</span> <span class="nav-text">Activity的启动模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Activity的Flag"><span class="nav-number">5.1.3.</span> <span class="nav-text">Activity的Flag</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Service-全方位解析"><span class="nav-number">5.2.</span> <span class="nav-text">Service 全方位解析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BroadcastReceiver全方位解析"><span class="nav-number">5.3.</span> <span class="nav-text">BroadcastReceiver全方位解析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ContenProvider全方位解析"><span class="nav-number">5.4.</span> <span class="nav-text">ContenProvider全方位解析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Fragment-详解"><span class="nav-number">5.5.</span> <span class="nav-text">Fragment 详解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Android消息机制"><span class="nav-number">5.6.</span> <span class="nav-text">Android消息机制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Android事件分发机制"><span class="nav-number">5.7.</span> <span class="nav-text">Android事件分发机制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AsyncTask详解"><span class="nav-number">5.8.</span> <span class="nav-text">AsyncTask详解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HandlerThread详解"><span class="nav-number">5.9.</span> <span class="nav-text">HandlerThread详解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IntentServcie详解"><span class="nav-number">5.10.</span> <span class="nav-text">IntentServcie详解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LruCache详解"><span class="nav-number">5.11.</span> <span class="nav-text">LruCache详解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Window、Activity、DecorView以及ViewRoot之间的关系"><span class="nav-number">5.12.</span> <span class="nav-text">Window、Activity、DecorView以及ViewRoot之间的关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#View的测量、布局以及绘制原理"><span class="nav-number">5.13.</span> <span class="nav-text">View的测量、布局以及绘制原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Android虚拟机以及编译过程"><span class="nav-number">5.14.</span> <span class="nav-text">Android虚拟机以及编译过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Android进程间通信方式"><span class="nav-number">5.15.</span> <span class="nav-text">Android进程间通信方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Android-Bitmap压缩策略"><span class="nav-number">5.16.</span> <span class="nav-text">Android Bitmap压缩策略</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Android-动画总结"><span class="nav-number">5.17.</span> <span class="nav-text">Android 动画总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Android-进程优先级"><span class="nav-number">5.18.</span> <span class="nav-text">Android 进程优先级</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Android-Contex-详解"><span class="nav-number">5.19.</span> <span class="nav-text">Android Contex 详解</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Android进阶"><span class="nav-number">6.</span> <span class="nav-text">Android进阶</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Android-多线程断点续传"><span class="nav-number">6.1.</span> <span class="nav-text">Android 多线程断点续传</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Android全局异常处理"><span class="nav-number">6.2.</span> <span class="nav-text">Android全局异常处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Android-MVP模式详解"><span class="nav-number">6.3.</span> <span class="nav-text">Android MVP模式详解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Android-Binder机制以及AIDL使用"><span class="nav-number">6.4.</span> <span class="nav-text">Android Binder机制以及AIDL使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Android-Parcelable和Serializable的区别"><span class="nav-number">6.5.</span> <span class="nav-text">Android Parcelable和Serializable的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一个APP从启动到主页面显示经历了哪些过程"><span class="nav-number">6.6.</span> <span class="nav-text">一个APP从启动到主页面显示经历了哪些过程?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Android-性能优化总结"><span class="nav-number">6.7.</span> <span class="nav-text">Android 性能优化总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Android-内存泄漏总结"><span class="nav-number">6.8.</span> <span class="nav-text">Android 内存泄漏总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Android-布局优化之include-merge-ViewStub的使用"><span class="nav-number">6.9.</span> <span class="nav-text">Android 布局优化之include/merge/ViewStub的使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Android-权限处理"><span class="nav-number">6.10.</span> <span class="nav-text">Android 权限处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Android热修复原理"><span class="nav-number">6.11.</span> <span class="nav-text">Android热修复原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Android-插件化入门指南"><span class="nav-number">6.12.</span> <span class="nav-text">Android 插件化入门指南</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#VirtualAPK解析"><span class="nav-number">6.13.</span> <span class="nav-text">VirtualAPK解析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Android-推送技术解析"><span class="nav-number">6.14.</span> <span class="nav-text">Android 推送技术解析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Android-APK安装过程"><span class="nav-number">6.15.</span> <span class="nav-text">Android APK安装过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PopupWindow和Dialog区别"><span class="nav-number">6.16.</span> <span class="nav-text">PopupWindow和Dialog区别</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Java-虚拟机"><span class="nav-number">7.</span> <span class="nav-text">Java 虚拟机</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#对象的创建、内存布局和访问定位"><span class="nav-number">7.1.</span> <span class="nav-text">对象的创建、内存布局和访问定位</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#对象的创建"><span class="nav-number">7.1.1.</span> <span class="nav-text">对象的创建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对象的内存布局"><span class="nav-number">7.1.2.</span> <span class="nav-text">对象的内存布局</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对象的访问定位"><span class="nav-number">7.1.3.</span> <span class="nav-text">对象的访问定位</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java内存区域"><span class="nav-number">7.2.</span> <span class="nav-text">Java内存区域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java内存模型"><span class="nav-number">7.3.</span> <span class="nav-text">Java内存模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java类加载机制"><span class="nav-number">7.4.</span> <span class="nav-text">Java类加载机制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类加载器详解"><span class="nav-number">7.5.</span> <span class="nav-text">类加载器详解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JVM中垃圾收集算法"><span class="nav-number">7.6.</span> <span class="nav-text">JVM中垃圾收集算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JVM怎么判断对象是否已死"><span class="nav-number">7.7.</span> <span class="nav-text">JVM怎么判断对象是否已死</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">8.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2015 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">EricChows</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="//s95.cnzz.com/z_stat.php?id=1274018749&web_id=1274018749" language="JavaScript"></script>
+  </div>
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.3"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+   <script type="text/javascript">
+		var gitalk = new Gitalk({
+		  clientID: '2f039a8ed54186479946',
+		  clientSecret: 'bc88282455b50fbc8c5d9502d17621a4f9e48d18',
+		  repo: 'myblog-comment',
+		  owner: 'EricChows',
+		  admin: ['EricChows'],
+		  id: location.pathname,
+		  distractionFreeMode: 'true'
+		})
+		gitalk.render('gitalk-container')           
+       </script>
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('-1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("ANlC6pJEdxOLHAcDbFuHuXrF-gzGzoHsz", "tNpAWjkmbhhKnsB3bcDooRrl");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.3"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.3"></script>
+
+
+  
+
+</body>
+</html>
