@@ -1,0 +1,1380 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Android Log," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="EricChows" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="Android 解读main log和event log日志信息https://blog.csdn.net/yelangjueqi/article/details/52621903 Log中’main’, ‘system’, ‘radio’, ‘events’以及android log分析https://www.cnblogs.com/zhengtu2015/p/5134012.html 关于An">
+<meta name="keywords" content="Android Log">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android的Log机制分析">
+<meta property="og:url" content="http://yoursite.com/2018/06/27/A-Ongoing-Android的Log机制分析/index.html">
+<meta property="og:site_name" content="EricChows">
+<meta property="og:description" content="Android 解读main log和event log日志信息https://blog.csdn.net/yelangjueqi/article/details/52621903 Log中’main’, ‘system’, ‘radio’, ‘events’以及android log分析https://www.cnblogs.com/zhengtu2015/p/5134012.html 关于An">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-07-05T01:15:19.892Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android的Log机制分析">
+<meta name="twitter:description" content="Android 解读main log和event log日志信息https://blog.csdn.net/yelangjueqi/article/details/52621903 Log中’main’, ‘system’, ‘radio’, ‘events’以及android log分析https://www.cnblogs.com/zhengtu2015/p/5134012.html 关于An">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/06/27/A-Ongoing-Android的Log机制分析/"/>
+
+
+
+
+
+  <title>Android的Log机制分析 | EricChows</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">EricChows</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">Android Developer</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/27/A-Ongoing-Android的Log机制分析/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Eric Chows">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/myapple.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="EricChows">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Android的Log机制分析</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-27T23:45:18+08:00">
+                2018-06-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/06/27/A-Ongoing-Android的Log机制分析/" class="leancloud_visitors" data-flag-title="Android的Log机制分析">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Android 解读main log和event log日志信息<br><a href="https://blog.csdn.net/yelangjueqi/article/details/52621903" target="_blank" rel="noopener">https://blog.csdn.net/yelangjueqi/article/details/52621903</a></p>
+<p>Log中’main’, ‘system’, ‘radio’, ‘events’以及android log分析<br><a href="https://www.cnblogs.com/zhengtu2015/p/5134012.html" target="_blank" rel="noopener">https://www.cnblogs.com/zhengtu2015/p/5134012.html</a></p>
+<p>关于Android Log的一些思考<br><a href="https://droidyue.com/blog/2015/11/01/thinking-about-android-log/" target="_blank" rel="noopener">https://droidyue.com/blog/2015/11/01/thinking-about-android-log/</a></p>
+<p><a href="https://blog.csdn.net/fishmai/article/details/52398537" target="_blank" rel="noopener">https://blog.csdn.net/fishmai/article/details/52398537</a></p>
+<p>手机的默认的日志目录：</p>
+<p> /data/local/tmp/*</p>
+<p>/data/tmp/*</p>
+<p>/data/system/usagestats/*</p>
+<p>/data/system/appusagestates/*</p>
+<p>/data/system/dropbox/*</p>
+<p>/data/tombstones/*</p>
+<p>/data/anr/*</p>
+<p>logcat的日志在</p>
+<p>/dev/log/main</p>
+<p>有/data/local/log目录的，可以保存3-4天的log。</p>
+<h1 id="需要对Android的log机制有深入的研究"><a href="#需要对Android的log机制有深入的研究" class="headerlink" title="需要对Android的log机制有深入的研究"></a>需要对Android的log机制有深入的研究</h1><h1 id="logcat源码分析"><a href="#logcat源码分析" class="headerlink" title="logcat源码分析"></a>logcat源码分析</h1><p>logcat源码位置:<a href="">system/core/logcat/logcat.cpp</a><br>代码结构以及各个文件功能：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br></pre></td><td class="code"><pre><span class="line">logcat</span><br><span class="line">└── Android.mk</span><br><span class="line">    event.logtags  //</span><br><span class="line">    logcat.cpp     //主文件</span><br><span class="line">    logcatd.rc     //logcat相关的一些rc属性</span><br><span class="line">    logpersist     //持久化的存储一些<span class="built_in">log</span>相关的属性值</span><br><span class="line"> ```  </span><br><span class="line">event.logtags 文件的作用是：</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> <span class="comment"># logd源码分析</span></span><br><span class="line"></span><br><span class="line">logd源码位置:[system/core/logd]()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> <span class="comment"># logwraper 源码分析</span></span><br><span class="line">logwraper源码位置：[system/core/logwrapper/logwrap.c]()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 概述</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Log的使用</span></span><br><span class="line"></span><br><span class="line"> 介绍Kernel中内核态的printk和用户态的Log使用</span><br><span class="line"></span><br><span class="line"> printk提供了8种日志级别</span><br><span class="line"> kernel/include/linux/kern_levels.h</span><br><span class="line">``` bash</span><br><span class="line"><span class="comment">#ifndef __KERN_LEVELS_H__</span></span><br><span class="line"><span class="comment">#define __KERN_LEVELS_H__</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#define KERN_SOH	"\001"		/* ASCII Start Of Header */</span></span><br><span class="line"><span class="comment">#define KERN_SOH_ASCII	'\001'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#define KERN_EMERG	KERN_SOH "0"	/* system is unusable */</span></span><br><span class="line"><span class="comment">#define KERN_ALERT	KERN_SOH "1"	/* action must be taken immediately */</span></span><br><span class="line"><span class="comment">#define KERN_CRIT	KERN_SOH "2"	/* critical conditions */</span></span><br><span class="line"><span class="comment">#define KERN_ERR	KERN_SOH "3"	/* error conditions */</span></span><br><span class="line"><span class="comment">#define KERN_WARNING	KERN_SOH "4"	/* warning conditions */</span></span><br><span class="line"><span class="comment">#define KERN_NOTICE	KERN_SOH "5"	/* normal but significant condition */</span></span><br><span class="line"><span class="comment">#define KERN_INFO	KERN_SOH "6"	/* informational */</span></span><br><span class="line"><span class="comment">#define KERN_DEBUG	KERN_SOH "7"	/* debug-level messages */</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#define KERN_DEFAULT	KERN_SOH "d"	/* the default kernel loglevel */</span></span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line"> * Annotation <span class="keyword">for</span> a <span class="string">"continued"</span> line of <span class="built_in">log</span> printout (only <span class="keyword">done</span> after a</span><br><span class="line"> * line that had no enclosing \n). Only to be used by core/arch code</span><br><span class="line"> * during early bootup (a continued line is not SMP-safe otherwise).</span><br><span class="line"> */</span><br><span class="line"><span class="comment">#define KERN_CONT	""</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#endif</span></span><br><span class="line">``` </span><br><span class="line"> 在Android系统中，printk输出的日志信息保存在/proc/kmsg中，要查看/proc/kmsg的内容,cat  /proc/kmsg</span><br><span class="line"></span><br><span class="line"> 如何调整Kernel <span class="built_in">log</span>的日志级别</span><br><span class="line"></span><br><span class="line"> Android系统中的C/C++日志接口是通过宏来使用的。在system/core/include/android/log.h定义了日志的级别：</span><br><span class="line"></span><br><span class="line"> 在system/core/include/cutils/log.h中，定义了对应的宏，如对应于ANDROID_LOG_VERBOSE的宏LOGV：</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> 再来看Android系统中的Java日志接口。Android系统在Frameworks层中定义了Log接口（frameworks/base/core/java/android/util/Log.java）：</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Logger驱动程序源码分析</span></span><br><span class="line"> Logger驱动程序主要由两个文件构成，分别是：</span><br><span class="line"> kernel/drivers/staging/android/logger.c</span><br><span class="line"> kernel/drivers/staging/android/logger.h</span><br><span class="line"></span><br><span class="line"><span class="comment">## 日志系统数据结构</span></span><br><span class="line"></span><br><span class="line"> 先来看一下logger.h头文件的内容：</span><br><span class="line">``` bash</span><br><span class="line"><span class="comment">#ifndef _LINUX_LOGGER_H</span></span><br><span class="line"><span class="comment">#define _LINUX_LOGGER_H</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#include &lt;linux/types.h&gt;</span></span><br><span class="line"><span class="comment">#include &lt;linux/ioctl.h&gt;</span></span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * struct user_logger_entry_compat - defines a single entry that is given to a logger</span><br><span class="line"> * @len:	The length of the payload  //有效负载长度</span><br><span class="line"> * @__pad:	Two bytes of padding that appear to be required //两个字节的空格</span><br><span class="line"> * @pid:	The generating process<span class="string">' process ID  //进程ID</span></span><br><span class="line"><span class="string"> * @tid:	The generating process'</span> thread ID   //线程ID</span><br><span class="line"> * @sec:	The number of seconds that have elapsed since the Epoch  //秒数</span><br><span class="line"> * @nsec:	The number of nanoseconds that have elapsed since @sec   //纳秒数</span><br><span class="line"> * @msg:	The message that is to be logged  //<span class="built_in">log</span>的内容</span><br><span class="line"> *</span><br><span class="line"> * The userspace structure <span class="keyword">for</span> version 1 of the logger_entry ABI.</span><br><span class="line"> * This structure is returned to userspace unless the <span class="built_in">caller</span> requests</span><br><span class="line"> * an upgrade to a newer ABI version.</span><br><span class="line"> */</span><br><span class="line">struct user_logger_entry_compat &#123;</span><br><span class="line">	__u16		len;</span><br><span class="line">	__u16		__pad;</span><br><span class="line">	__s32		pid;</span><br><span class="line">	__s32		tid;</span><br><span class="line">	__s32		sec;</span><br><span class="line">	__s32		nsec;</span><br><span class="line">	char		msg[0];</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * struct logger_entry - defines a single entry that is given to a logger</span><br><span class="line"> * @len:	The length of the payload  //有效负载长度</span><br><span class="line"> * @hdr_size:	sizeof(struct logger_entry_v2) //</span><br><span class="line"> * @pid:	The generating process<span class="string">' process ID</span></span><br><span class="line"><span class="string"> * @tid:	The generating process'</span> thread ID</span><br><span class="line"> * @sec:	The number of seconds that have elapsed since the Epoch</span><br><span class="line"> * @nsec:	The number of nanoseconds that have elapsed since @sec</span><br><span class="line"> * @euid:	Effective UID of logger //User Identifier 用户ID</span><br><span class="line"> * @msg:	The message that is to be logged</span><br><span class="line"> *</span><br><span class="line"> * The structure <span class="keyword">for</span> version 2 of the logger_entry ABI.</span><br><span class="line"> * This structure is returned to userspace <span class="keyword">if</span> ioctl(LOGGER_SET_VERSION)</span><br><span class="line"> * is called with version &gt;= 2</span><br><span class="line"> */</span><br><span class="line">struct logger_entry &#123;</span><br><span class="line">	__u16		len;</span><br><span class="line">	__u16		hdr_size;</span><br><span class="line">	__s32		pid;</span><br><span class="line">	__s32		tid;</span><br><span class="line">	__s32		sec;</span><br><span class="line">	__s32		nsec;</span><br><span class="line">	kuid_t		euid;</span><br><span class="line">	char		msg[0];</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">#define LOGGER_LOG_RADIO	"log_radio"	/* radio-related messages */</span></span><br><span class="line"><span class="comment">#define LOGGER_LOG_EVENTS	"log_events"	/* system/hardware events */</span></span><br><span class="line"><span class="comment">#define LOGGER_LOG_SYSTEM	"log_system"	/* system/framework messages */</span></span><br><span class="line"><span class="comment">#define LOGGER_LOG_MAIN		"log_main"	/* everything else */</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#define LOGGER_ENTRY_MAX_PAYLOAD	4076 //每条日志记录最大长度</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#define __LOGGERIO	0xAE</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#define LOGGER_GET_LOG_BUF_SIZE		_IO(__LOGGERIO, 1) /* size of log */</span></span><br><span class="line"><span class="comment">#define LOGGER_GET_LOG_LEN		_IO(__LOGGERIO, 2) /* used log len */</span></span><br><span class="line"><span class="comment">#define LOGGER_GET_NEXT_ENTRY_LEN	_IO(__LOGGERIO, 3) /* next entry len */</span></span><br><span class="line"><span class="comment">#define LOGGER_FLUSH_LOG		_IO(__LOGGERIO, 4) /* flush log */</span></span><br><span class="line"><span class="comment">#define LOGGER_GET_VERSION		_IO(__LOGGERIO, 5) /* abi version */</span></span><br><span class="line"><span class="comment">#define LOGGER_SET_VERSION		_IO(__LOGGERIO, 6) /* abi version */</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#endif /* _LINUX_LOGGER_H */</span></span><br></pre></td></tr></table></figure></p>
+<p> 我们看到有两个结构体user_logger_entry_compat 和 logger_entry，均用来描述一条Log记录.</p>
+<p> struct logger_entry是一个用于描述一条Log记录的结构体。len成员变量记录了这条记录的有效负载的长度，有效负载指定的日志记录本身的长度，但是不包括用于描述这个记录的struct logger_entry结构体。回忆一下我们调用android.util.Log接口来使用日志系统时，会指定日志的优先级别Priority、Tag字符串以及Msg字符串，Priority + Tag + Msg三者内容的长度加起来就是记录的有效负载长度了。__pad成员变量是用来对齐结构体的。pid和tid成员变量分别用来记录是哪条进程和线程写入了这条记录。sec和nsec成员变量记录日志写的时间。msg成员变量记录的就有效负载的内容了，它的大小由len成员变量来确定。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * struct logger_log - represents a specific <span class="built_in">log</span>, such as <span class="string">'main'</span> or <span class="string">'radio'</span></span><br><span class="line"> * @buffer:	The actual ring buffer</span><br><span class="line"> * @misc:	The <span class="string">"misc"</span> device representing the <span class="built_in">log</span></span><br><span class="line"> * @wq:		The <span class="built_in">wait</span> queue <span class="keyword">for</span> @readers</span><br><span class="line"> * @readers:	This <span class="built_in">log</span><span class="string">'s readers</span></span><br><span class="line"><span class="string"> * @mutex:	The mutex that protects the @buffer</span></span><br><span class="line"><span class="string"> * @w_off:	The current write head offset</span></span><br><span class="line"><span class="string"> * @head:	The head, or location that readers start reading at.</span></span><br><span class="line"><span class="string"> * @size:	The size of the log</span></span><br><span class="line"><span class="string"> * @logs:	The list of log channels</span></span><br><span class="line"><span class="string"> *</span></span><br><span class="line"><span class="string"> * This structure lives from module insertion until module removal, so it does</span></span><br><span class="line"><span class="string"> * not need additional reference counting. The structure is protected by the</span></span><br><span class="line"><span class="string"> * mutex '</span>mutex<span class="string">'.</span></span><br><span class="line"><span class="string"> */</span></span><br><span class="line"><span class="string">struct logger_log &#123;</span></span><br><span class="line"><span class="string">	unsigned char		*buffer;</span></span><br><span class="line"><span class="string">	struct miscdevice	misc;</span></span><br><span class="line"><span class="string">	wait_queue_head_t	wq;</span></span><br><span class="line"><span class="string">	struct list_head	readers;</span></span><br><span class="line"><span class="string">	struct mutex		mutex;</span></span><br><span class="line"><span class="string">	size_t			w_off;</span></span><br><span class="line"><span class="string">	size_t			head;</span></span><br><span class="line"><span class="string">	size_t			size;</span></span><br><span class="line"><span class="string">	struct list_head	logs;</span></span><br><span class="line"><span class="string">&#125;;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">static LIST_HEAD(log_list);</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">/**</span></span><br><span class="line"><span class="string"> * struct logger_reader - a logging device open for reading</span></span><br><span class="line"><span class="string"> * @log:	The associated log</span></span><br><span class="line"><span class="string"> * @list:	The associated entry in @logger_log'</span>s list</span><br><span class="line"> * @r_off:	The current <span class="built_in">read</span> head offset.</span><br><span class="line"> * @r_all:	Reader can <span class="built_in">read</span> all entries</span><br><span class="line"> * @r_ver:	Reader ABI version</span><br><span class="line"> *</span><br><span class="line"> * This object lives from open to release, so we don<span class="string">'t need additional</span></span><br><span class="line"><span class="string"> * reference counting. The structure is protected by log-&gt;mutex.</span></span><br><span class="line"><span class="string"> */</span></span><br><span class="line"><span class="string">struct logger_reader &#123;</span></span><br><span class="line"><span class="string">	struct logger_log	*log;</span></span><br><span class="line"><span class="string">	struct list_head	list;</span></span><br><span class="line"><span class="string">	size_t			r_off;</span></span><br><span class="line"><span class="string">	bool			r_all;</span></span><br><span class="line"><span class="string">	int			r_ver;</span></span><br><span class="line"><span class="string">&#125;;</span></span><br></pre></td></tr></table></figure>
+<p>   结构体struct logger_log就是真正用来保存日志的地方了。buffer成员变量变是用保存日志信息的内存缓冲区，它的大小由size成员变量确定。从misc成员变量可以看出，logger驱动程序使用的设备属于misc类型的设备，通过在Android模拟器上执行cat /proc/devices命令（可参考在Ubuntu上下载、编译和安装Android最新内核源代码（Linux Kernel）一文），可以看出，misc类型设备的主设备号是10。关于主设备号的相关知识，可以参考Android学习启动篇一文中提到的Linux Driver Development一书。wq成员变量是一个等待队列，用于保存正在等待读取日志的进程。readers成员变量用来保存当前正在读取日志的进程，正在读取日志的进程由结构体logger_reader来描述。mutex成员变量是一个互斥量，用来保护log的并发访问。可以看出，这里的日志系统的读写问题，其实是一个生产者-消费者的问题，因此，需要互斥量来保护log的并发访问。 w_off成员变量用来记录下一条日志应该从哪里开始写。head成员变量用来表示打开日志文件中，应该从哪一个位置开始读取日志</p>
+<p>   结构体struct logger_reader用来表示一个读取日志的进程，log成员变量指向要读取的日志缓冲区。list成员变量用来连接其它读者进程。r_off成员变量表示当前要读取的日志在缓冲区中的位置。</p>
+<p>   struct logger_log结构体中用于保存日志信息的内存缓冲区buffer是一个循环使用的环形缓冲区，缓冲区中保存的内容是以struct logger_entry为单位的，每个单位的组成为：</p>
+<pre><code>struct logger_entry | priority | tag | msg
+
+由于是内存缓冲区buffer是一个循环使用的环形缓冲区，给定一个偏移值，它在buffer中的位置由下logger_offset来确定：
+
+#define logger_offset(n)          ((n) &amp; (log-&gt;size - 1))
+</code></pre><h2 id="Logger驱动程序模块的初始化过程分析"><a href="#Logger驱动程序模块的初始化过程分析" class="headerlink" title="Logger驱动程序模块的初始化过程分析"></a>Logger驱动程序模块的初始化过程分析</h2><p> 继续看logger.c文件，定义了三个日志设备：</p>
+<h2 id="日志系统读取"><a href="#日志系统读取" class="headerlink" title="日志系统读取"></a>日志系统读取</h2><h2 id="日志系统写入"><a href="#日志系统写入" class="headerlink" title="日志系统写入"></a>日志系统写入</h2><h1 id="AP侧Log调用流程解析"><a href="#AP侧Log调用流程解析" class="headerlink" title="AP侧Log调用流程解析"></a>AP侧Log调用流程解析</h1><h1 id="Logcat源码简析"><a href="#Logcat源码简析" class="headerlink" title="Logcat源码简析"></a>Logcat源码简析</h1><h1 id="Android中其他log分析"><a href="#Android中其他log分析" class="headerlink" title="Android中其他log分析"></a>Android中其他log分析</h1><h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a href="https://blog.csdn.net/luoshengyang/article/details/8923485" target="_blank" rel="noopener">那两年炼就的Android内功修养</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6581828" target="_blank" rel="noopener">浅谈Android系统开发中LOG的使用</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6595744" target="_blank" rel="noopener">Android日志系统驱动程序Logger源代码分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6598703" target="_blank" rel="noopener">Android应用程序框架层和系统运行库层日志系统源代码分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6606957" target="_blank" rel="noopener">Android日志系统Logcat源代码简要分析</a></p>
+<p><a href="https://blog.csdn.net/armwind/article/details/52166139" target="_blank" rel="noopener">misc设备</a> 杂项设备<br>[mutex互斥锁]</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Android-Log/" rel="tag"># Android Log</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/06/25/Android8-0充电图标不显示/" rel="next" title="Android8.0充电图标不显示">
+                <i class="fa fa-chevron-left"></i> Android8.0充电图标不显示
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/06/28/Android中广播注册和发送机制分析/" rel="prev" title="Android中广播注册和发送机制分">
+                Android中广播注册和发送机制分 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  
+    <div id="gitalk-container"></div>
+  
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/myapple.jpg"
+                alt="Eric Chows" />
+            
+              <p class="site-author-name" itemprop="name">Eric Chows</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">52</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">50</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/ericchows" target="_blank" title="GitHub">
+                    
+                      <i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:xnzds2008@163.com" target="_blank" title="E-Mail">
+                    
+                      <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://plus.google.com" target="_blank" title="Google">
+                    
+                      <i class="fa fa-fw fa-google"></i>Google</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://twitter.com" target="_blank" title="Twitter">
+                    
+                      <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.facebook.com" target="_blank" title="FB Page">
+                    
+                      <i class="fa fa-fw fa-facebook"></i>FB Page</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://vk.com" target="_blank" title="VK Group">
+                    
+                      <i class="fa fa-fw fa-vk"></i>VK Group</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://stackoverflow.com/users/8872810/eric" target="_blank" title="StackOverflow">
+                    
+                      <i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://youtube.com" target="_blank" title="YouTube">
+                    
+                      <i class="fa fa-fw fa-youtube"></i>YouTube</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://instagram.com" target="_blank" title="Instagram">
+                    
+                      <i class="fa fa-fw fa-instagram"></i>Instagram</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="skype" target="_blank" title="Skype">
+                    
+                      <i class="fa fa-fw fa-skype"></i>Skype</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="/images/wechat.jpg" target="_blank" title="Wechat">
+                    
+                      <i class="fa fa-fw fa-globe"></i>Wechat</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://blog.csdn.net/Cxiaolinxiaozi" target="_blank" title="CSDN">
+                    
+                      <i class="fa fa-fw fa-globe"></i>CSDN</a>
+                </span>
+              
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#需要对Android的log机制有深入的研究"><span class="nav-number">1.</span> <span class="nav-text">需要对Android的log机制有深入的研究</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#logcat源码分析"><span class="nav-number">2.</span> <span class="nav-text">logcat源码分析</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Logger驱动程序模块的初始化过程分析"><span class="nav-number">2.1.</span> <span class="nav-text">Logger驱动程序模块的初始化过程分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#日志系统读取"><span class="nav-number">2.2.</span> <span class="nav-text">日志系统读取</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#日志系统写入"><span class="nav-number">2.3.</span> <span class="nav-text">日志系统写入</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#AP侧Log调用流程解析"><span class="nav-number">3.</span> <span class="nav-text">AP侧Log调用流程解析</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Logcat源码简析"><span class="nav-number">4.</span> <span class="nav-text">Logcat源码简析</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Android中其他log分析"><span class="nav-number">5.</span> <span class="nav-text">Android中其他log分析</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">6.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2015 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">EricChows</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="//s95.cnzz.com/z_stat.php?id=1274018749&web_id=1274018749" language="JavaScript"></script>
+  </div>
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.3"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+   <script type="text/javascript">
+		var gitalk = new Gitalk({
+		  clientID: '2f039a8ed54186479946',
+		  clientSecret: 'bc88282455b50fbc8c5d9502d17621a4f9e48d18',
+		  repo: 'myblog-comment',
+		  owner: 'EricChows',
+		  admin: ['EricChows'],
+		  id: location.pathname,
+		  distractionFreeMode: 'true'
+		})
+		gitalk.render('gitalk-container')           
+       </script>
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('-1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("ANlC6pJEdxOLHAcDbFuHuXrF-gzGzoHsz", "tNpAWjkmbhhKnsB3bcDooRrl");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.3"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.3"></script>
+
+
+  
+
+</body>
+</html>

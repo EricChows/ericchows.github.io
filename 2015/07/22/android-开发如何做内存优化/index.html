@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="EricChows">
 <meta property="og:description" content="概述   不少人认为JAVA程序，因为有垃圾回收机制，应该没有内存泄露。其实如果我们一个程序中，已经不再使用某个对象，但是因为仍然有引用指向它，垃圾回收器就无法回收它，当然该对象占用的内存就无法被使用，这就造成了内存泄露。如果我们的java运行很久,而这种内存泄露不断的发生，最后就没内存可用了。当然java的，内存泄漏和C/C++是不一样的。如果java程序完全结束后，它所有的对象就都不可达了，系">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-02T06:04:08.428Z">
+<meta property="og:updated_time" content="2018-07-04T03:09:37.364Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android 开发如何做内存优化">
 <meta name="twitter:description" content="概述   不少人认为JAVA程序，因为有垃圾回收机制，应该没有内存泄露。其实如果我们一个程序中，已经不再使用某个对象，但是因为仍然有引用指向它，垃圾回收器就无法回收它，当然该对象占用的内存就无法被使用，这就造成了内存泄露。如果我们的java运行很久,而这种内存泄露不断的发生，最后就没内存可用了。当然java的，内存泄漏和C/C++是不一样的。如果java程序完全结束后，它所有的对象就都不可达了，系">
@@ -420,17 +420,21 @@
 <h2 id="集合中对象没清理造成的内存泄露"><a href="#集合中对象没清理造成的内存泄露" class="headerlink" title="集合中对象没清理造成的内存泄露"></a>集合中对象没清理造成的内存泄露</h2><p>　　我们通常把一些对象的引用加入到了集合中，当我们不需要该对象时，并没有把它的引用从集合中清理掉，这样这个集合就会越来越大。如果这个集合是static的话，那情况就更严重了。  </p>
 <h1 id="资源对象没关闭造成的内存泄露"><a href="#资源对象没关闭造成的内存泄露" class="headerlink" title="资源对象没关闭造成的内存泄露"></a>资源对象没关闭造成的内存泄露</h1><p>　　资源性对象比如（Cursor，File文件等）往往都用了一些缓冲，我们在不使用的时候，应该及时关闭它们，以便它们的缓冲及时回收内存。它们的缓冲不仅存在于java虚拟机内，还存在于java虚拟机外。如果我们仅仅是把它的引用设置为null,而不关闭它们，往往会造成内存泄露。因为有些资源性对象，比如SQLiteCursor（在析构函数finalize（）,如果我们没有关闭它，它自己会调close()关闭），如果我们没有关闭它，系统在回收它时也会关闭它，但是这样的效率太低了。因此对于资源性对象在不使用的时候，应该调用它的close()函数，将其关闭掉，然后才置为null.在我们的程序退出时一定要确保我们的资源性对象已经关闭。<br>　　程序中经常会进行查询数据库的操作，但是经常会有使用完毕Cursor后没有关闭的情况。如果我们的查询结果集比较小，对内存的消耗不容易被发现，只有在常时间大量操作的情况下才会复现内存问题，这样就会给以后的测试和问题排查带来困难和风险。  </p>
 <h1 id="一些不良代码成内存压力"><a href="#一些不良代码成内存压力" class="headerlink" title="一些不良代码成内存压力"></a>一些不良代码成内存压力</h1><p>　　有些代码并不造成内存泄露，但是它们，或是对没使用的内存没进行有效及时的释放，或是没有有效的利用已有的对象而是频繁的申请新内存，对内存的回收和分配造成很大影响的，容易迫使虚拟机不得不给该应用进程分配更多的内存，造成不必要的内存开支。  </p>
-<h2 id="Bitmap没调用recycle"><a href="#Bitmap没调用recycle" class="headerlink" title="Bitmap没调用recycle()"></a>Bitmap没调用recycle()</h2><p>　　Bitmap对象在不使用时,我们应该先调用recycle()释放内存，然后才它设置为null.虽然recycle()从源码上看，调用它应该能立即释放Bitmap的主要内存，但是测试结果显示它并没能立即释放内存。但是我它应该还是能大大的加速Bitmap的主要内存的释放。  </p>
+<h2 id="Bitmap没调用recycle"><a href="#Bitmap没调用recycle" class="headerlink" title="Bitmap没调用recycle()"></a>Bitmap没调用recycle()</h2><p>　　Bitmap对象在不使用时,我们应该先调用recycle()释放内存，然后才它设置为null.虽然recycle()从源码上看，调用它应该能立即释放Bitmap的主要内存，但是测试结果显示它并没能立即释放内存。但是我它应该还是能大大的加速Bitmap的主要内存的释放。 </p>
 <h2 id="构造Adapter时，没有使用缓存的-convertView"><a href="#构造Adapter时，没有使用缓存的-convertView" class="headerlink" title="构造Adapter时，没有使用缓存的 convertView"></a>构造Adapter时，没有使用缓存的 convertView</h2><p>　　以构造ListView的BaseAdapter为例，在BaseAdapter中提共了方法：<br>public View getView(int position, View convertView, ViewGroup parent)来向ListView提供每一个item所需要的view对象。初始时ListView会从BaseAdapter中根据当前的屏幕布局实例化一定数量的view对象，同时ListView会将这些view对象缓存起来。当向上滚动ListView时，原先位于最上面的list item的view对象会被回收，然后被用来构造新出现的最下面的list item。这个构造过程就是由getView()方法完成的，getView()的第二个形参 View convertView就是被缓存起来的list item的view对象(初始化时缓存中没有view对象则convertView是null)。<br>　　由此可以看出，如果我们不去使用convertView，而是每次都在getView()中重新实例化一个View对象的话，即浪费时间，也造成内存垃圾，给垃圾回收增加压力，如果垃圾回收来不及的话，虚拟机将不得不给该应用进程分配更多的内存，造成不必要的内存开支。ListView回收list item的view对象的过程可以查看:<br>view plaincopy to clipboardprint?<br>android.widget.AbsListView.java –&gt; void addScrapView(View scrap) 方法。</p>
 <p>示例代码：</p>
 <p>复制代码<br>1 public View getView(int position, View convertView, ViewGroup parent) {<br>2<br>3 View view = new Xxx(…);<br>4<br>5 … …<br>6<br>7 return view;<br>8<br>9 }<br>复制代码<br>修正示例代码：</p>
 <p>Android内存管理</p>
-<p>复制代码<br>1 public View getView(int position, View convertView, ViewGroup parent) {<br>2<br>3 View view = null;<br>4<br>5 if (convertView != null) {<br>6<br>7 view = convertView;<br>8<br>9 populate(view, getItem(position));<br>10<br>11 …<br>12<br>13 } else {<br>14<br>15 view = new Xxx(…);<br>16<br>17 …<br>18<br>19 }<br>20<br>21 return view;<br>22<br>23 }<br>复制代码<br>概述：<br>　　在android的开发中，要时刻主要内存的分配和垃圾回收，因为系统为每一个dalvik虚拟机分配的内存是有限的，在google的G1中，分配的最大堆大小只有16M，后来的机器一般都为24M，实在是少的可怜。这样就需要我们在开发过程中要时刻注意。不要因为自己的代码问题而造成OOM错误。<br>JAVA的内存管理：<br>　　大家都知道，android应用层是由java开发的，android的davlik虚拟机与jvm也类似，只不过它是基于寄存器的。因此要了解android的内存管理就必须得了解java的内存分配和垃圾回收机制。<br>　　在java中，是通过new关键字来为对象分配内存的，而内存的释放是由垃圾收集器（GC）来回收的，工程师在开发的过程中，不需要显式的去管理内存。但是这样有可能在不知不觉中就会浪费了很多内存，最终导致java虚拟机花费很多时间去进行垃圾回收，更严重的是造成JVM的OOM。因此，java工程师还是有必要了解JAVA的内存分配和垃圾回收机制。</p>
+<p>复制代码<br>1 public View getView(int position, View convertView, ViewGroup parent) {<br>2<br>3 View view = null;<br>4<br>5 if (convertView != null) {<br>6<br>7 view = convertView;<br>8<br>9 populate(view, getItem(position));<br>10<br>11 …<br>12<br>13 } else {<br>14<br>15 view = new Xxx(…);<br>16<br>17 …<br>18<br>19 }<br>20<br>21 return view;<br>22<br>23 }<br>复制代码  </p>
+<p>概述：<br>　　在android的开发中，要时刻主要内存的分配和垃圾回收，因为系统为每一个dalvik虚拟机分配的内存是有限的，在google的G1中，分配的最大堆大小只有16M，后来的机器一般都为24M，实在是少的可怜。这样就需要我们在开发过程中要时刻注意。不要因为自己的代码问题而造成OOM错误。  </p>
+<pre><code>JAVA的内存管理：  
+</code></pre><p>　　大家都知道，android应用层是由java开发的，android的davlik虚拟机与jvm也类似，只不过它是基于寄存器的。因此要了解android的内存管理就必须得了解java的内存分配和垃圾回收机制。<br>　　在java中，是通过new关键字来为对象分配内存的，而内存的释放是由垃圾收集器（GC）来回收的，工程师在开发的过程中，不需要显式的去管理内存。但是这样有可能在不知不觉中就会浪费了很多内存，最终导致java虚拟机花费很多时间去进行垃圾回收，更严重的是造成JVM的OOM。因此，java工程师还是有必要了解JAVA的内存分配和垃圾回收机制。</p>
 <p>内存结构<br>file:///C:/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ksohtml/wps_clip_image-6926.png<br>上面这张图是JVM的结构图，它主要四个部分组成：Class Loader子系统和执行引擎，运行时方法区和本地方法区，我们主要来看下RUNTIME DATA AREA区，也就是我们常说的JVM内存。从图中可以看出，RUNTIMEDATA AREA区主要由5个部分组成：<br>· Method Area:被装载的class的元信息存储在Method Area中，它是线程共享的<br>· Heap(堆)：一个java虚拟机实例中只存在一个堆空间，存放一些对象信息，它是线程共享的<br>· Java栈： java虚拟机直接对java栈进行两种操作，以帧为单位的压栈和出栈（非线程共享）<br>· 程序计数器（非线程共享）<br>· 本地方法栈（非线程共享）</p>
 <p>JVM的垃圾回收（GC）<br>file:///C:/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ksohtml/wps_clip_image-12485.png<br>JVM的垃圾原理是这样的，它把对象分为年轻代（Young）、年老代（Tenured）、持久代（Perm），对不同生命周期的对象使用不同的垃圾回收算法。<br>· 年轻代(Young)<br>年轻代分为三个区，一个eden区，两个Survivor区。程序中生成的大部分新的对象都在Eden区中，当Eden区满时，还存活的对象将被复制到其中一个Survivor区，当此Survivor区的对象占用空间满了时，此区存活的对象又被复制到另外一个Survivor区，当这个Survivor区也满了的时候，从第一个Survivor区复制过来的并且此时还存活的对象，将被复制到年老代。<br>· 年老代（Tenured）<br>年老代存放的是上面年轻代复制过来的对象，也就是在年轻代中还存活的对象，并且区满了复制过来的。一般来说，年老代中的对象生命周期都比较长。<br>· 持久代（Perm）<br>用于存放静态的类和方法，持久代对垃圾回收没有显著的影响。<br>Android中内存泄露监测<br>在了解了JVM的内存管理后，我们再回过头来看看，在android中应该怎样来监测内存，从而看在应用中是否存在内存分配和垃圾回收问题而造成内存泄露情况。<br>在android中，有一个相对来说还不错的工具，可以用来监测内存是否存在泄露情况：DDMS—Heap<br>file:///C:/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ksohtml/wps_clip_image-22715.png<br>使用方法比较简单：<br>· 选择DDMS视图，并打开Devices视图和Heap视图<br>· 点击选择要监控的进程，比如：上图中我选择的是system_process<br>· 选中Devices视图界面上的”update heap” 图标<br>· 点击Heap视图中的”Cause GC” 按钮（相当于向虚拟机发送了一次GC请求的操作）<br>在Heap视图中选择想要监控的Type，一般我们会观察dataobject的 total size的变化，正常情况下total size的值会稳定在一个有限的范围内，也就说程序中的代码良好，没有造成程序中的对象不被回收的情况。如果代码中存在没有释放对象引用的情况，那么data object的total size在每次GC之后都不会有明显的回落，随着操作次数的增加而total size也在不断的增加。（说明：选择好data object后，不断的操作应用，这样才可以看出total size的变化）。如果totalsize确实是在不断增加而没有回落，说明程序中有没有被释放的资源引用。那么我们应该怎么来定位呢？<br>Android中内存泄露定位<br>Mat(memory analyzer tools)是我们常用的用来定位内存泄露的工具，如果你使用ADT，并且安装了MAT的eclipse插件，你需要做的是进入DDMS视图的Devices视图：<br>file:///C:/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ksohtml/wps_clip_image-2165.png<br>点击”dump HPROF file”按钮，然后使用MAT分析下载下来的文件。<br>file:///C:/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ksohtml/wps_clip_image-6565.png</p>
 <p>下面列出了存在的问题，点击detail进去，会列出详细的，可能会存在问题的代码：<br>file:///C:/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ksohtml/wps_clip_image-32625.png<br>file:///C:/DOCUME~1/ADMINI~1/LOCALS~1/Temp/ksohtml/wps_clip_image-21158.png<br>关于MAT的使用可以参考：<a href="http://www.blogjava.net/rosen/" target="_blank" rel="noopener">http://www.blogjava.net/rosen/</a> … .html<br>这位兄弟写的比较详细。</p>
 <p>总结</p>
-<p>不管是java还是android，都应该了解内存分配和垃圾回收机制，工程师要做到写的代码中没有bad code很难，关键是在出现问题的时候该怎么去排查Android内存优化<br>一、 Android的内存机制<br>　　Android的程序由Java语言编写，所以Android的内存管理与Java的内存管理相似。程序员通过new为对象分配内存，所有对象在java堆内分配空间；然而对象的释放是由垃圾回收器来完成的。C／C++中的内存机制是“谁污染，谁治理”，java的就比较人性化了，给我们请了一个专门的清洁工（GC）。<br>　　那么GC怎么能够确认某一个对象是不是已经被废弃了呢？Java采用了有向图的原理。Java将引用关系考虑为图的有向边，有向边从引用者指向引用对象。线程对象可以作为有向图的起始顶点，该图就是从起始顶点开始的一棵树，根顶点可以到达的对象都是有效对象，GC不会回收这些对象。如果某个对象 (连通子图)与这个根顶点不可达(注意，该图为有向图)，那么我们认为这个(这些)对象不再被引用，可以被GC回收。<br>二、Android的内存溢出<br>Android的内存溢出是如何发生的?<br>　　Android的虚拟机是基于寄存器的Dalvik，它的最大堆大小一般是16M，有的机器为24M。因此我们所能利用的内存空间是有限的。如果我们的内存占用超过了一定的水平就会出现OutOfMemory的错误。<br>为什么会出现内存不够用的情况呢？我想原因主要有两个：</p>
+<p>不管是java还是android，都应该了解内存分配和垃圾回收机制，工程师要做到写的代码中没有bad code很难，关键是在出现问题的时候该怎么去排查Android内存优化  </p>
+<p>一、 Android的内存机制<br>　　Android的程序由Java语言编写，所以Android的内存管理与Java的内存管理相似。程序员通过new为对象分配内存，所有对象在java堆内分配空间；然而对象的释放是由垃圾回收器来完成的。C／C++中的内存机制是“谁污染，谁治理”，java的就比较人性化了，给我们请了一个专门的清洁工（GC）。<br>　　那么GC怎么能够确认某一个对象是不是已经被废弃了呢？Java采用了有向图的原理。Java将引用关系考虑为图的有向边，有向边从引用者指向引用对象。线程对象可以作为有向图的起始顶点，该图就是从起始顶点开始的一棵树，根顶点可以到达的对象都是有效对象，GC不会回收这些对象。如果某个对象 (连通子图)与这个根顶点不可达(注意，该图为有向图)，那么我们认为这个(这些)对象不再被引用，可以被GC回收。<br>二、Android的内存溢出<br>Android的内存溢出是如何发生的?<br>　　Android的虚拟机是基于寄存器的Dalvik，它的最大堆大小一般是16M，有的机器为24M。因此我们所能利用的内存空间是有限的。如果我们的内存占用超过了一定的水平就会出现OutOfMemory的错误。<br>为什么会出现内存不够用的情况呢？我想原因主要有两个：</p>
 <p>由于我们程序的失误，长期保持某些资源（如Context）的引用，造成内存泄露，资源造成得不到释放。</p>
 <p>保存了多个耗用内存过大的对象（如Bitmap），造成内存超出限制。</p>
 <p>三、万恶的static<br>　　static是Java中的一个关键字，当用它来修饰成员变量时，那么该变量就属于该类，而不是该类的实例。所以用static修饰的变量，它的生命周期是很长的，如果用它来引用一些资源耗费过多的实例（Context的情况最多），这时就要谨慎对待了。</p>
@@ -580,7 +584,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">35</span>
+                  <span class="site-state-item-count">52</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -591,7 +595,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -602,7 +606,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">32</span>
+                  <span class="site-state-item-count">50</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
