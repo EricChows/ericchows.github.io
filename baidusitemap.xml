@@ -4,8 +4,28 @@
 
     
   <url>
+    <loc>http://yoursite.com/2018/06/27/A-Ongoing-Android%E7%9A%84Log%E6%9C%BA%E5%88%B6%E5%88%86%E6%9E%90/</loc>
+    <lastmod>2018-07-10T13:00:37.345Z</lastmod>
+    <data>
+        <display>
+        <title>Android的Log机制分析</title>
+        <pubTime>2018-06-27T15:45:18.115Z</pubTime>
+        
+        <tag>Android Log</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="http://yoursite.com/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2016/01/01/A-Ongoing-Android%E4%B8%ADKeyguard%E8%A7%A3%E6%9E%90/</loc>
-    <lastmod>2018-07-05T14:31:10.332Z</lastmod>
+    <lastmod>2018-07-10T12:53:15.302Z</lastmod>
     <data>
         <display>
         <title>Android中Keyguard解析</title>
@@ -22,6 +42,160 @@
           
              
               <breadCrumb title="Keyguard" url="http://yoursite.com/categories/Android/Keyguard/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2015/08/01/Android%E4%B8%ADView%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86%E7%82%B9/</loc>
+    <lastmod>2018-07-10T01:47:07.774Z</lastmod>
+    <data>
+        <display>
+        <title>Android中View相关知识点</title>
+        <pubTime>2015-08-01T09:49:07.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+        <tag>View</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="http://yoursite.com/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2017/01/01/Android-%E5%A5%BD%E6%96%87/</loc>
+    <lastmod>2018-07-07T14:30:05.969Z</lastmod>
+    <data>
+        <display>
+        <title>Android 好文</title>
+        <pubTime>2016-12-31T16:00:00.000Z</pubTime>
+        
+        <tag>好文</tag>
+         
+        <tag>good</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="http://yoursite.com/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2015/01/01/Myblog/</loc>
+    <lastmod>2018-07-06T14:32:19.936Z</lastmod>
+    <data>
+        <display>
+        <title>Myblog</title>
+        <pubTime>2014-12-31T16:00:00.000Z</pubTime>
+        
+        <tag>Hexo</tag>
+         
+        <tag>Myblog</tag>
+         
+         
+           
+             
+              <breadCrumb title="Hexo" url="http://yoursite.com/categories/Hexo/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/05/28/Android%E7%B3%BB%E7%BB%9F%E6%80%A7%E8%83%BD%E8%B0%83%E4%BC%98%E5%B7%A5%E5%85%B7/</loc>
+    <lastmod>2018-07-06T09:59:00.461Z</lastmod>
+    <data>
+        <display>
+        <title>Android系统性能调优工具</title>
+        <pubTime>2018-05-28T13:23:33.000Z</pubTime>
+        
+        <tag>性能</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="http://yoursite.com/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2015/06/29/%E9%97%AE%E9%A2%98%E9%94%A6%E9%9B%86-%E9%80%9F%E6%9F%A5/</loc>
+    <lastmod>2018-07-06T09:55:10.221Z</lastmod>
+    <data>
+        <display>
+        <title>问题锦集-速查</title>
+        <pubTime>2015-06-29T06:17:50.000Z</pubTime>
+        
+        <tag>问题 锦集 速查</tag>
+         
+         
+           
+             
+              <breadCrumb title="问题" url="http://yoursite.com/categories/%E9%97%AE%E9%A2%98/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+  <url>
+    <loc>http://yoursite.com/2018/06/23/year-06-23-Android/</loc>
+    <lastmod>2018-07-06T07:17:38.975Z</lastmod>
+    <data>
+        <display>
+        <title>Android</title>
+        <pubTime>2018-06-23T12:26:02.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+        <tag>Hexo</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="http://yoursite.com/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2016/01/01/A-Ongoing-Android%E4%B8%ADSystemUI%E8%A7%A3%E6%9E%90/</loc>
+    <lastmod>2018-07-06T06:18:42.384Z</lastmod>
+    <data>
+        <display>
+        <title>Android中SystemUI解析</title>
+        <pubTime>2015-12-31T16:00:00.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+        <tag>SystemUI</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="http://yoursite.com/categories/Android/"/>
+          
+             
+              <breadCrumb title="SystemUI" url="http://yoursite.com/categories/Android/SystemUI/"/>
           
         </display>
     </data>
@@ -49,28 +223,6 @@
           
              
               <breadCrumb title="启动" url="http://yoursite.com/categories/Android/%E5%90%AF%E5%8A%A8/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2017/01/01/Android-%E5%A5%BD%E6%96%87/</loc>
-    <lastmod>2018-07-05T07:48:12.262Z</lastmod>
-    <data>
-        <display>
-        <title>Android 好文</title>
-        <pubTime>2016-12-31T16:00:00.000Z</pubTime>
-        
-        <tag>好文</tag>
-         
-        <tag>good</tag>
-         
-         
-           
-             
-              <breadCrumb title="Android" url="http://yoursite.com/categories/Android/"/>
           
         </display>
     </data>
@@ -123,51 +275,6 @@
           
              
               <breadCrumb title="Launcher" url="http://yoursite.com/categories/Android/Launcher/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2016/01/01/A-Ongoing-Android%E4%B8%ADSystemUI%E8%A7%A3%E6%9E%90/</loc>
-    <lastmod>2018-07-05T03:42:21.492Z</lastmod>
-    <data>
-        <display>
-        <title>Android中SystemUI解析</title>
-        <pubTime>2015-12-31T16:00:00.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-        <tag>SystemUI</tag>
-         
-         
-           
-             
-              <breadCrumb title="Android" url="http://yoursite.com/categories/Android/"/>
-          
-             
-              <breadCrumb title="SystemUI" url="http://yoursite.com/categories/Android/SystemUI/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2018/06/27/A-Ongoing-Android%E7%9A%84Log%E6%9C%BA%E5%88%B6%E5%88%86%E6%9E%90/</loc>
-    <lastmod>2018-07-05T01:15:19.892Z</lastmod>
-    <data>
-        <display>
-        <title>Android的Log机制分析</title>
-        <pubTime>2018-06-27T15:45:18.115Z</pubTime>
-        
-        <tag>Android Log</tag>
-         
-         
-           
-             
-              <breadCrumb title="Android" url="http://yoursite.com/categories/Android/"/>
           
         </display>
     </data>
@@ -519,7 +626,6 @@
     </url>
 
     
-    
   <url>
     <loc>http://yoursite.com/2015/07/22/Android-%E5%BC%80%E5%8F%91%E5%A6%82%E4%BD%95%E5%81%9A%E5%86%85%E5%AD%98%E4%BC%98%E5%8C%96/</loc>
     <lastmod>2018-07-04T03:09:37.364Z</lastmod>
@@ -583,28 +689,6 @@
 
     
   <url>
-    <loc>http://yoursite.com/2015/01/01/Myblog/</loc>
-    <lastmod>2018-07-03T04:03:41.374Z</lastmod>
-    <data>
-        <display>
-        <title>Myblog</title>
-        <pubTime>2014-12-31T16:00:00.000Z</pubTime>
-        
-        <tag>Hexo</tag>
-         
-        <tag>Myblog</tag>
-         
-         
-           
-             
-              <breadCrumb title="Hexo" url="http://yoursite.com/categories/Hexo/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://yoursite.com/2015/06/29/ADB-Android-Debug-Bridge-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</loc>
     <lastmod>2018-07-02T11:53:40.037Z</lastmod>
     <data>
@@ -614,24 +698,6 @@
         
         <tag>Android ADB</tag>
          
-         
-           
-             
-              <breadCrumb title="Android" url="http://yoursite.com/categories/Android/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2015/08/01/Android-%E7%BC%96%E7%A8%8B%E4%B8%8B-Touch-%E4%BA%8B%E4%BB%B6%E7%9A%84%E5%88%86%E5%8F%91%E5%92%8C%E6%B6%88%E8%B4%B9%E6%9C%BA%E5%88%B6/</loc>
-    <lastmod>2018-07-02T06:27:49.796Z</lastmod>
-    <data>
-        <display>
-        <title>Android 编程下 Touch 事件的分发和消费机制</title>
-        <pubTime>2015-08-01T09:49:07.000Z</pubTime>
-        
          
            
              
@@ -701,26 +767,6 @@
 
     
   <url>
-    <loc>http://yoursite.com/2015/06/29/%E9%97%AE%E9%A2%98%E9%94%A6%E9%9B%86-%E9%80%9F%E6%9F%A5/</loc>
-    <lastmod>2018-07-01T11:01:48.410Z</lastmod>
-    <data>
-        <display>
-        <title>问题锦集-速查</title>
-        <pubTime>2015-06-29T06:17:50.000Z</pubTime>
-        
-        <tag>问题 锦集 速查</tag>
-         
-         
-           
-             
-              <breadCrumb title="问题" url="http://yoursite.com/categories/%E9%97%AE%E9%A2%98/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://yoursite.com/2015/06/29/%E5%90%84%E7%B1%BB%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E5%B0%8F%E6%8A%80%E5%B7%A7/</loc>
     <lastmod>2018-07-01T10:47:06.687Z</lastmod>
     <data>
@@ -754,26 +800,6 @@
            
              
               <breadCrumb title="批处理" url="http://yoursite.com/categories/%E6%89%B9%E5%A4%84%E7%90%86/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2018/05/28/Android%E7%B3%BB%E7%BB%9F%E6%80%A7%E8%83%BD%E8%B0%83%E4%BC%98%E5%B7%A5%E5%85%B7/</loc>
-    <lastmod>2018-06-30T06:40:46.255Z</lastmod>
-    <data>
-        <display>
-        <title>Android系统性能调优工具</title>
-        <pubTime>2018-05-28T13:23:33.000Z</pubTime>
-        
-        <tag>性能</tag>
-         
-         
-           
-             
-              <breadCrumb title="Android" url="http://yoursite.com/categories/Android/"/>
           
         </display>
     </data>
@@ -984,28 +1010,6 @@
     </url>
 
     
-  <url>
-    <loc>http://yoursite.com/2018/06/23/year-06-23-Android/</loc>
-    <lastmod>2018-06-24T12:27:49.481Z</lastmod>
-    <data>
-        <display>
-        <title>Android</title>
-        <pubTime>2018-06-23T12:26:02.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-        <tag>Hexo</tag>
-         
-         
-           
-             
-              <breadCrumb title="Android" url="http://yoursite.com/categories/Android/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
     
     
     
@@ -1047,15 +1051,13 @@
 
     
   <url>
-    <loc>http://yoursite.com/2015/07/22/android%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D/</loc>
+    <loc>http://yoursite.com/2015/07/29/Java%E4%B8%AD%E5%A0%86%E5%86%85%E5%AD%98%E5%92%8C%E6%A0%88%E5%86%85%E5%AD%98%E8%AF%A6%E8%A7%A3/</loc>
     <lastmod>2018-06-23T15:24:29.018Z</lastmod>
     <data>
         <display>
-        <title>android数字签名</title>
-        <pubTime>2015-07-22T02:33:38.000Z</pubTime>
+        <title>Java中堆内存和栈内存详解</title>
+        <pubTime>2015-07-29T14:20:41.000Z</pubTime>
         
-        <tag>android</tag>
-         
          
            
              
@@ -1067,13 +1069,15 @@
 
     
   <url>
-    <loc>http://yoursite.com/2015/07/29/Java%E4%B8%AD%E5%A0%86%E5%86%85%E5%AD%98%E5%92%8C%E6%A0%88%E5%86%85%E5%AD%98%E8%AF%A6%E8%A7%A3/</loc>
+    <loc>http://yoursite.com/2015/07/22/android%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D/</loc>
     <lastmod>2018-06-23T15:24:29.018Z</lastmod>
     <data>
         <display>
-        <title>Java中堆内存和栈内存详解</title>
-        <pubTime>2015-07-29T14:20:41.000Z</pubTime>
+        <title>android数字签名</title>
+        <pubTime>2015-07-22T02:33:38.000Z</pubTime>
         
+        <tag>android</tag>
+         
          
            
              
