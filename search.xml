@@ -387,16 +387,16 @@
     </entry>
     
     <entry>
-      <title>Android中Activity解析</title>
-      <link href="/2016/01/01/A-Ongoing-Android%E4%B8%ADActivity%E8%A7%A3%E6%9E%90/"/>
-      <url>/2016/01/01/A-Ongoing-Android%E4%B8%ADActivity%E8%A7%A3%E6%9E%90/</url>
-      <content type="html"><![CDATA[<h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p><a href="https://blog.csdn.net/luoshengyang/article/details/8923485" target="_blank" rel="noopener">那两年炼就的Android内功修养</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6685853" target="_blank" rel="noopener">Android应用程序的Activity启动过程简要介绍和学习计划</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6689748" target="_blank" rel="noopener">Android应用程序启动过程源代码分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6703247" target="_blank" rel="noopener">Android应用程序内部启动Activity过程（startActivity）的源代码分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6720261" target="_blank" rel="noopener">Android应用程序在新的进程中启动新的Activity的方法和过程分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6714543" target="_blank" rel="noopener">解开Android应用程序组件Activity的”singleTask”之谜</a></p>]]></content>
+      <title>Android中SurfaceFlinger解析</title>
+      <link href="/2016/01/01/A-Ongoing-Android%E4%B8%ADSurfaceFlinger%E8%A7%A3%E6%9E%90/"/>
+      <url>/2016/01/01/A-Ongoing-Android%E4%B8%ADSurfaceFlinger%E8%A7%A3%E6%9E%90/</url>
+      <content type="html"><![CDATA[<h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p><a href="https://blog.csdn.net/luoshengyang/article/details/8923485" target="_blank" rel="noopener">那两年炼就的Android内功修养</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/7846923" target="_blank" rel="noopener">Android应用程序与SurfaceFlinger服务的关系概述和学习计划</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/7857163" target="_blank" rel="noopener">Android应用程序与SurfaceFlinger服务的连接过程分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/7867340" target="_blank" rel="noopener">Android应用程序与SurfaceFlinger服务之间的共享UI元数据（SharedClient）的创建过程分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/7884628" target="_blank" rel="noopener">Android应用程序请求SurfaceFlinger服务创建Surface的过程分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/7932268" target="_blank" rel="noopener">Android应用程序请求SurfaceFlinger服务渲染Surface的过程分析</a></p><p><a href="https://blog.csdn.net/luoshengyang/article/details/8010977" target="_blank" rel="noopener">Android系统Surface机制的SurfaceFlinger服务简要介绍和学习计划</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8022957" target="_blank" rel="noopener">Android系统Surface机制的SurfaceFlinger服务的启动过程分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8046659" target="_blank" rel="noopener">Android系统Surface机制的SurfaceFlinger服务对帧缓冲区（Frame Buffer）的管理分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8062945" target="_blank" rel="noopener">Android系统Surface机制的SurfaceFlinger服务的线程模型分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8079456" target="_blank" rel="noopener">Android系统Surface机制的SurfaceFlinger服务渲染应用程序UI的过程分析</a></p>]]></content>
       
       <categories>
           
           <category> Android </category>
           
-          <category> Activity </category>
+          <category> SurfaceFlinger </category>
           
       </categories>
       
@@ -405,7 +405,159 @@
             
             <tag> Android </tag>
             
-            <tag> Activity </tag>
+            <tag> SurfaceFlinger </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>Android中Binder机制解析</title>
+      <link href="/2016/01/01/A-Ongoing-Android%E4%B8%ADBinder%E6%9C%BA%E5%88%B6%E8%A7%A3%E6%9E%90/"/>
+      <url>/2016/01/01/A-Ongoing-Android%E4%B8%ADBinder%E6%9C%BA%E5%88%B6%E8%A7%A3%E6%9E%90/</url>
+      <content type="html"><![CDATA[<h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p><a href="https://blog.csdn.net/luoshengyang/article/details/8923485" target="_blank" rel="noopener">那两年炼就的Android内功修养</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6618363" target="_blank" rel="noopener">Android进程间通信（IPC）机制Binder简要介绍和学习计划</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6621566" target="_blank" rel="noopener">浅谈Service Manager成为Android进程间通信（IPC）机制Binder守护进程之路</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6627260" target="_blank" rel="noopener">浅谈Android系统进程间通信（IPC）机制Binder中的Server和Client获得Service Manager接口之路</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6629298" target="_blank" rel="noopener">Android系统进程间通信（IPC）机制Binder中的Server启动过程源代码分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6633311" target="_blank" rel="noopener">Android系统进程间通信（IPC）机制Binder中的Client获得Server远程接口过程源代码分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6642463" target="_blank" rel="noopener">Android系统进程间通信Binder机制在应用程序框架层的Java接口源代码分析</a></p><p>目标：通过阅读罗升阳的这几篇文章，形成自己的理解，并加深自己的理解。</p>]]></content>
+      
+      <categories>
+          
+          <category> Android </category>
+          
+          <category> Binder </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Android </tag>
+            
+            <tag> Binder </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>Android中SurfaceFlinger解析</title>
+      <link href="/2016/01/01/A-Ongoing-Android%E4%B8%ADService%E8%A7%A3%E6%9E%90/"/>
+      <url>/2016/01/01/A-Ongoing-Android%E4%B8%ADService%E8%A7%A3%E6%9E%90/</url>
+      <content type="html"><![CDATA[<h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p><a href="https://blog.csdn.net/luoshengyang/article/details/8923485" target="_blank" rel="noopener">那两年炼就的Android内功修养</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/7846923" target="_blank" rel="noopener">Android应用程序与SurfaceFlinger服务的关系概述和学习计划</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/7857163" target="_blank" rel="noopener">Android应用程序与SurfaceFlinger服务的连接过程分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/7867340" target="_blank" rel="noopener">Android应用程序与SurfaceFlinger服务之间的共享UI元数据（SharedClient）的创建过程分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/7884628" target="_blank" rel="noopener">Android应用程序请求SurfaceFlinger服务创建Surface的过程分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/7932268" target="_blank" rel="noopener">Android应用程序请求SurfaceFlinger服务渲染Surface的过程分析</a></p><p><a href="https://blog.csdn.net/luoshengyang/article/details/8010977" target="_blank" rel="noopener">Android系统Surface机制的SurfaceFlinger服务简要介绍和学习计划</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8022957" target="_blank" rel="noopener">Android系统Surface机制的SurfaceFlinger服务的启动过程分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8046659" target="_blank" rel="noopener">Android系统Surface机制的SurfaceFlinger服务对帧缓冲区（Frame Buffer）的管理分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8062945" target="_blank" rel="noopener">Android系统Surface机制的SurfaceFlinger服务的线程模型分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8079456" target="_blank" rel="noopener">Android系统Surface机制的SurfaceFlinger服务渲染应用程序UI的过程分析</a></p>]]></content>
+      
+      <categories>
+          
+          <category> Android </category>
+          
+          <category> SurfaceFlinger </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Android </tag>
+            
+            <tag> SurfaceFlinger </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>Android中BroadcastRecevier解析</title>
+      <link href="/2016/01/01/A-Ongoing-Android%E4%B8%ADBroadcastRecevier%E8%A7%A3%E6%9E%90/"/>
+      <url>/2016/01/01/A-Ongoing-Android%E4%B8%ADBroadcastRecevier%E8%A7%A3%E6%9E%90/</url>
+      <content type="html"><![CDATA[<h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p><a href="https://blog.csdn.net/luoshengyang/article/details/8923485" target="_blank" rel="noopener">那两年炼就的Android内功修养</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6730748" target="_blank" rel="noopener">Android系统中的广播（Broadcast）机制简要介绍和学习计划</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6737352" target="_blank" rel="noopener">Android应用程序注册广播接收器（registerReceiver）的过程分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6744448" target="_blank" rel="noopener">Android应用程序发送广播（sendBroadcast）的过程分析</a></p>]]></content>
+      
+      <categories>
+          
+          <category> Android </category>
+          
+          <category> BroadcastRecevier </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Android </tag>
+            
+            <tag> BroadcastRecevier </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>Android中Launcher解析</title>
+      <link href="/2016/01/01/A-Ongoing-Android%E4%B8%ADLauncher%E8%A7%A3%E6%9E%90/"/>
+      <url>/2016/01/01/A-Ongoing-Android%E4%B8%ADLauncher%E8%A7%A3%E6%9E%90/</url>
+      <content type="html"><![CDATA[<h1 id="Keygaurd-滑动解锁，绘制"><a href="#Keygaurd-滑动解锁，绘制" class="headerlink" title="Keygaurd 滑动解锁，绘制"></a>Keygaurd 滑动解锁，绘制</h1><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p><a href="https://blog.csdn.net/yj934672573/article/details/54571704" target="_blank" rel="noopener">Android 7.0 Keyguard流程分析</a></p>]]></content>
+      
+      <categories>
+          
+          <category> Android </category>
+          
+          <category> Launcher </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Android </tag>
+            
+            <tag> Launcher </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>Android中Handler解析</title>
+      <link href="/2016/01/01/A-Ongoing-Android%E4%B8%ADHandler%E8%A7%A3%E6%9E%90/"/>
+      <url>/2016/01/01/A-Ongoing-Android%E4%B8%ADHandler%E8%A7%A3%E6%9E%90/</url>
+      <content type="html"><![CDATA[<h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p><a href="https://blog.csdn.net/luoshengyang/article/details/8923485" target="_blank" rel="noopener">那两年炼就的Android内功修养</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6817933" target="_blank" rel="noopener">Android应用程序消息处理机制（Looper、Handler）分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6882903" target="_blank" rel="noopener">Android应用程序键盘（Keyboard）消息处理机制分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6905587" target="_blank" rel="noopener">Android应用程序线程消息循环模型分析</a></p>]]></content>
+      
+      <categories>
+          
+          <category> Android </category>
+          
+          <category> Handler </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Android </tag>
+            
+            <tag> Handler </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>Android中启动过程解析</title>
+      <link href="/2016/01/01/A-Ongoing-Android%E5%BC%82%E5%B8%B8%E8%A7%A3%E6%9E%90/"/>
+      <url>/2016/01/01/A-Ongoing-Android%E5%BC%82%E5%B8%B8%E8%A7%A3%E6%9E%90/</url>
+      <content type="html"><![CDATA[<p>android系统常见异常现象有应用无响应、应用停止运行、冻屏、重启、死机</p><p>应用程序无响应：ANR</p><p>应用停止运行：  </p><p>冻屏</p><p>黑屏</p><p>重启</p><p>死机：</p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p><a href="https://blog.csdn.net/zwq1457/article/details/75529264" target="_blank" rel="noopener">Android异常分析</a></p>]]></content>
+      
+      <categories>
+          
+          <category> Android </category>
+          
+          <category> 启动 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Android </tag>
+            
+            <tag> Zegote </tag>
+            
+            <tag> Init </tag>
             
         </tags>
       
@@ -433,6 +585,31 @@
             <tag> ActivityManagerService </tag>
             
             <tag> AMS </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>Android中ContentProvider解析</title>
+      <link href="/2016/01/01/A-Ongoing-Android%E4%B8%ADContentProvider%E8%A7%A3%E6%9E%90/"/>
+      <url>/2016/01/01/A-Ongoing-Android%E4%B8%ADContentProvider%E8%A7%A3%E6%9E%90/</url>
+      <content type="html"><![CDATA[<h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p><a href="https://blog.csdn.net/luoshengyang/article/details/8923485" target="_blank" rel="noopener">那两年炼就的Android内功修养</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6946067" target="_blank" rel="noopener">Android应用程序组件Content Provider简要介绍和学习计划</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6950440" target="_blank" rel="noopener">Android应用程序组件Content Provider应用实例</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6963418" target="_blank" rel="noopener">Android应用程序组件Content Provider的启动过程源代码分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6967204" target="_blank" rel="noopener">Android应用程序组件Content Provider在应用程序之间共享数据的原理分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6985171" target="_blank" rel="noopener">Android应用程序组件Content Provider的共享数据更新通知机制分析</a></p>]]></content>
+      
+      <categories>
+          
+          <category> Android </category>
+          
+          <category> ContentProvider </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Android </tag>
+            
+            <tag> ContentProvider </tag>
             
         </tags>
       
@@ -493,106 +670,6 @@
     </entry>
     
     <entry>
-      <title>Android中BroadcastRecevier解析</title>
-      <link href="/2016/01/01/A-Ongoing-Android%E4%B8%ADBroadcastRecevier%E8%A7%A3%E6%9E%90/"/>
-      <url>/2016/01/01/A-Ongoing-Android%E4%B8%ADBroadcastRecevier%E8%A7%A3%E6%9E%90/</url>
-      <content type="html"><![CDATA[<h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p><a href="https://blog.csdn.net/luoshengyang/article/details/8923485" target="_blank" rel="noopener">那两年炼就的Android内功修养</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6730748" target="_blank" rel="noopener">Android系统中的广播（Broadcast）机制简要介绍和学习计划</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6737352" target="_blank" rel="noopener">Android应用程序注册广播接收器（registerReceiver）的过程分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6744448" target="_blank" rel="noopener">Android应用程序发送广播（sendBroadcast）的过程分析</a></p>]]></content>
-      
-      <categories>
-          
-          <category> Android </category>
-          
-          <category> BroadcastRecevier </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Android </tag>
-            
-            <tag> BroadcastRecevier </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>Android中Launcher解析</title>
-      <link href="/2016/01/01/A-Ongoing-Android%E4%B8%ADLauncher%E8%A7%A3%E6%9E%90/"/>
-      <url>/2016/01/01/A-Ongoing-Android%E4%B8%ADLauncher%E8%A7%A3%E6%9E%90/</url>
-      <content type="html"><![CDATA[<h1 id="Keygaurd-滑动解锁，绘制"><a href="#Keygaurd-滑动解锁，绘制" class="headerlink" title="Keygaurd 滑动解锁，绘制"></a>Keygaurd 滑动解锁，绘制</h1><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p><a href="https://blog.csdn.net/yj934672573/article/details/54571704" target="_blank" rel="noopener">Android 7.0 Keyguard流程分析</a></p>]]></content>
-      
-      <categories>
-          
-          <category> Android </category>
-          
-          <category> Launcher </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Android </tag>
-            
-            <tag> Launcher </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>Android中Binder机制解析</title>
-      <link href="/2016/01/01/A-Ongoing-Android%E4%B8%ADBinder%E6%9C%BA%E5%88%B6%E8%A7%A3%E6%9E%90/"/>
-      <url>/2016/01/01/A-Ongoing-Android%E4%B8%ADBinder%E6%9C%BA%E5%88%B6%E8%A7%A3%E6%9E%90/</url>
-      <content type="html"><![CDATA[<h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p><a href="https://blog.csdn.net/luoshengyang/article/details/8923485" target="_blank" rel="noopener">那两年炼就的Android内功修养</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6618363" target="_blank" rel="noopener">Android进程间通信（IPC）机制Binder简要介绍和学习计划</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6621566" target="_blank" rel="noopener">浅谈Service Manager成为Android进程间通信（IPC）机制Binder守护进程之路</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6627260" target="_blank" rel="noopener">浅谈Android系统进程间通信（IPC）机制Binder中的Server和Client获得Service Manager接口之路</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6629298" target="_blank" rel="noopener">Android系统进程间通信（IPC）机制Binder中的Server启动过程源代码分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6633311" target="_blank" rel="noopener">Android系统进程间通信（IPC）机制Binder中的Client获得Server远程接口过程源代码分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6642463" target="_blank" rel="noopener">Android系统进程间通信Binder机制在应用程序框架层的Java接口源代码分析</a></p><p>目标：通过阅读罗升阳的这几篇文章，形成自己的理解，并加深自己的理解。</p>]]></content>
-      
-      <categories>
-          
-          <category> Android </category>
-          
-          <category> Binder </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Android </tag>
-            
-            <tag> Binder </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>Android中Handler解析</title>
-      <link href="/2016/01/01/A-Ongoing-Android%E4%B8%ADHandler%E8%A7%A3%E6%9E%90/"/>
-      <url>/2016/01/01/A-Ongoing-Android%E4%B8%ADHandler%E8%A7%A3%E6%9E%90/</url>
-      <content type="html"><![CDATA[<h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p><a href="https://blog.csdn.net/luoshengyang/article/details/8923485" target="_blank" rel="noopener">那两年炼就的Android内功修养</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6817933" target="_blank" rel="noopener">Android应用程序消息处理机制（Looper、Handler）分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6882903" target="_blank" rel="noopener">Android应用程序键盘（Keyboard）消息处理机制分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6905587" target="_blank" rel="noopener">Android应用程序线程消息循环模型分析</a></p>]]></content>
-      
-      <categories>
-          
-          <category> Android </category>
-          
-          <category> Handler </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Android </tag>
-            
-            <tag> Handler </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
       <title>Android中Keyguard解析</title>
       <link href="/2016/01/01/A-Ongoing-Android%E4%B8%ADKeyguard%E8%A7%A3%E6%9E%90/"/>
       <url>/2016/01/01/A-Ongoing-Android%E4%B8%ADKeyguard%E8%A7%A3%E6%9E%90/</url>
@@ -618,108 +695,6 @@
     </entry>
     
     <entry>
-      <title>Android中SurfaceFlinger解析</title>
-      <link href="/2016/01/01/A-Ongoing-Android%E4%B8%ADSurfaceFlinger%E8%A7%A3%E6%9E%90/"/>
-      <url>/2016/01/01/A-Ongoing-Android%E4%B8%ADSurfaceFlinger%E8%A7%A3%E6%9E%90/</url>
-      <content type="html"><![CDATA[<h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p><a href="https://blog.csdn.net/luoshengyang/article/details/8923485" target="_blank" rel="noopener">那两年炼就的Android内功修养</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/7846923" target="_blank" rel="noopener">Android应用程序与SurfaceFlinger服务的关系概述和学习计划</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/7857163" target="_blank" rel="noopener">Android应用程序与SurfaceFlinger服务的连接过程分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/7867340" target="_blank" rel="noopener">Android应用程序与SurfaceFlinger服务之间的共享UI元数据（SharedClient）的创建过程分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/7884628" target="_blank" rel="noopener">Android应用程序请求SurfaceFlinger服务创建Surface的过程分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/7932268" target="_blank" rel="noopener">Android应用程序请求SurfaceFlinger服务渲染Surface的过程分析</a></p><p><a href="https://blog.csdn.net/luoshengyang/article/details/8010977" target="_blank" rel="noopener">Android系统Surface机制的SurfaceFlinger服务简要介绍和学习计划</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8022957" target="_blank" rel="noopener">Android系统Surface机制的SurfaceFlinger服务的启动过程分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8046659" target="_blank" rel="noopener">Android系统Surface机制的SurfaceFlinger服务对帧缓冲区（Frame Buffer）的管理分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8062945" target="_blank" rel="noopener">Android系统Surface机制的SurfaceFlinger服务的线程模型分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8079456" target="_blank" rel="noopener">Android系统Surface机制的SurfaceFlinger服务渲染应用程序UI的过程分析</a></p>]]></content>
-      
-      <categories>
-          
-          <category> Android </category>
-          
-          <category> SurfaceFlinger </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Android </tag>
-            
-            <tag> SurfaceFlinger </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>Android中启动过程解析</title>
-      <link href="/2016/01/01/A-Ongoing-Android%E5%BC%82%E5%B8%B8%E8%A7%A3%E6%9E%90/"/>
-      <url>/2016/01/01/A-Ongoing-Android%E5%BC%82%E5%B8%B8%E8%A7%A3%E6%9E%90/</url>
-      <content type="html"><![CDATA[<p>android系统常见异常现象有应用无响应、应用停止运行、冻屏、重启、死机</p><p>应用程序无响应：ANR</p><p>应用停止运行：  </p><p>冻屏</p><p>黑屏</p><p>重启</p><p>死机：</p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p><a href="https://blog.csdn.net/zwq1457/article/details/75529264" target="_blank" rel="noopener">Android异常分析</a></p>]]></content>
-      
-      <categories>
-          
-          <category> Android </category>
-          
-          <category> 启动 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Android </tag>
-            
-            <tag> Zegote </tag>
-            
-            <tag> Init </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>Android中ContentProvider解析</title>
-      <link href="/2016/01/01/A-Ongoing-Android%E4%B8%ADContentProvider%E8%A7%A3%E6%9E%90/"/>
-      <url>/2016/01/01/A-Ongoing-Android%E4%B8%ADContentProvider%E8%A7%A3%E6%9E%90/</url>
-      <content type="html"><![CDATA[<h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p><a href="https://blog.csdn.net/luoshengyang/article/details/8923485" target="_blank" rel="noopener">那两年炼就的Android内功修养</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6946067" target="_blank" rel="noopener">Android应用程序组件Content Provider简要介绍和学习计划</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6950440" target="_blank" rel="noopener">Android应用程序组件Content Provider应用实例</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6963418" target="_blank" rel="noopener">Android应用程序组件Content Provider的启动过程源代码分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6967204" target="_blank" rel="noopener">Android应用程序组件Content Provider在应用程序之间共享数据的原理分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6985171" target="_blank" rel="noopener">Android应用程序组件Content Provider的共享数据更新通知机制分析</a></p>]]></content>
-      
-      <categories>
-          
-          <category> Android </category>
-          
-          <category> ContentProvider </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Android </tag>
-            
-            <tag> ContentProvider </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>Android中SurfaceFlinger解析</title>
-      <link href="/2016/01/01/A-Ongoing-Android%E4%B8%ADService%E8%A7%A3%E6%9E%90/"/>
-      <url>/2016/01/01/A-Ongoing-Android%E4%B8%ADService%E8%A7%A3%E6%9E%90/</url>
-      <content type="html"><![CDATA[<h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p><a href="https://blog.csdn.net/luoshengyang/article/details/8923485" target="_blank" rel="noopener">那两年炼就的Android内功修养</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/7846923" target="_blank" rel="noopener">Android应用程序与SurfaceFlinger服务的关系概述和学习计划</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/7857163" target="_blank" rel="noopener">Android应用程序与SurfaceFlinger服务的连接过程分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/7867340" target="_blank" rel="noopener">Android应用程序与SurfaceFlinger服务之间的共享UI元数据（SharedClient）的创建过程分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/7884628" target="_blank" rel="noopener">Android应用程序请求SurfaceFlinger服务创建Surface的过程分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/7932268" target="_blank" rel="noopener">Android应用程序请求SurfaceFlinger服务渲染Surface的过程分析</a></p><p><a href="https://blog.csdn.net/luoshengyang/article/details/8010977" target="_blank" rel="noopener">Android系统Surface机制的SurfaceFlinger服务简要介绍和学习计划</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8022957" target="_blank" rel="noopener">Android系统Surface机制的SurfaceFlinger服务的启动过程分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8046659" target="_blank" rel="noopener">Android系统Surface机制的SurfaceFlinger服务对帧缓冲区（Frame Buffer）的管理分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8062945" target="_blank" rel="noopener">Android系统Surface机制的SurfaceFlinger服务的线程模型分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8079456" target="_blank" rel="noopener">Android系统Surface机制的SurfaceFlinger服务渲染应用程序UI的过程分析</a></p>]]></content>
-      
-      <categories>
-          
-          <category> Android </category>
-          
-          <category> SurfaceFlinger </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Android </tag>
-            
-            <tag> SurfaceFlinger </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
       <title>Android中SystemUI解析</title>
       <link href="/2016/01/01/A-Ongoing-Android%E4%B8%ADSystemUI%E8%A7%A3%E6%9E%90/"/>
       <url>/2016/01/01/A-Ongoing-Android%E4%B8%ADSystemUI%E8%A7%A3%E6%9E%90/</url>
@@ -739,6 +714,31 @@
             <tag> Android </tag>
             
             <tag> SystemUI </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>Android中Activity解析</title>
+      <link href="/2016/01/01/A-Ongoing-Android%E4%B8%ADActivity%E8%A7%A3%E6%9E%90/"/>
+      <url>/2016/01/01/A-Ongoing-Android%E4%B8%ADActivity%E8%A7%A3%E6%9E%90/</url>
+      <content type="html"><![CDATA[<h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p><a href="https://blog.csdn.net/luoshengyang/article/details/8923485" target="_blank" rel="noopener">那两年炼就的Android内功修养</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6685853" target="_blank" rel="noopener">Android应用程序的Activity启动过程简要介绍和学习计划</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6689748" target="_blank" rel="noopener">Android应用程序启动过程源代码分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6703247" target="_blank" rel="noopener">Android应用程序内部启动Activity过程（startActivity）的源代码分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6720261" target="_blank" rel="noopener">Android应用程序在新的进程中启动新的Activity的方法和过程分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6714543" target="_blank" rel="noopener">解开Android应用程序组件Activity的”singleTask”之谜</a></p>]]></content>
+      
+      <categories>
+          
+          <category> Android </category>
+          
+          <category> Activity </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Android </tag>
+            
+            <tag> Activity </tag>
             
         </tags>
       
@@ -1076,6 +1076,33 @@
     </entry>
     
     <entry>
+      <title>Android中WindowManagerService解析</title>
+      <link href="/2015/01/01/A-Ongoing-Android%E4%B8%ADWindowManagerService%E8%A7%A3%E6%9E%90/"/>
+      <url>/2015/01/01/A-Ongoing-Android%E4%B8%ADWindowManagerService%E8%A7%A3%E6%9E%90/</url>
+      <content type="html"><![CDATA[<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a href="https://blog.csdn.net/luoshengyang/article/details/8923485" target="_blank" rel="noopener">那两年炼就的Android内功修养</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8462738" target="_blank" rel="noopener">Android窗口管理服务WindowManagerService的简要介绍和学习计划</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8479101" target="_blank" rel="noopener">Android窗口管理服务WindowManagerService计算Activity窗口大小的过程分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8498908" target="_blank" rel="noopener">Android窗口管理服务WindowManagerService对窗口的组织方式分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8526644" target="_blank" rel="noopener">Android窗口管理服务WindowManagerService对输入法窗口（Input Method Window）的管理分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8550820" target="_blank" rel="noopener">Android窗口管理服务WindowManagerService对壁纸窗口（Wallpaper Window）的管理分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8570428" target="_blank" rel="noopener">Android窗口管理服务WindowManagerService计算窗口Z轴位置的过程分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8577789" target="_blank" rel="noopener">Android窗口管理服务WindowManagerService显示Activity组件的启动窗口（Starting Window）的过程分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8596449" target="_blank" rel="noopener">Android窗口管理服务WindowManagerService切换Activity窗口（App Transition）的过程分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8611754" target="_blank" rel="noopener">Android窗口管理服务WindowManagerService显示窗口动画的原理分析</a></p>]]></content>
+      
+      <categories>
+          
+          <category> Android </category>
+          
+          <category> WindowManagerService </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Android </tag>
+            
+            <tag> WindowManagerService </tag>
+            
+            <tag> WMS </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>Android匿名共享内存Ashmem解析</title>
       <link href="/2015/01/01/A-Ongoing-Android%E5%8C%BF%E5%90%8D%E5%85%B1%E4%BA%AB%E5%86%85%E5%AD%98Ashmem%E8%A7%A3%E6%9E%90/"/>
       <url>/2015/01/01/A-Ongoing-Android%E5%8C%BF%E5%90%8D%E5%85%B1%E4%BA%AB%E5%86%85%E5%AD%98Ashmem%E8%A7%A3%E6%9E%90/</url>
@@ -1118,33 +1145,6 @@
             <tag> Hexo </tag>
             
             <tag> Myblog </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>Android中WindowManagerService解析</title>
-      <link href="/2015/01/01/A-Ongoing-Android%E4%B8%ADWindowManagerService%E8%A7%A3%E6%9E%90/"/>
-      <url>/2015/01/01/A-Ongoing-Android%E4%B8%ADWindowManagerService%E8%A7%A3%E6%9E%90/</url>
-      <content type="html"><![CDATA[<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a href="https://blog.csdn.net/luoshengyang/article/details/8923485" target="_blank" rel="noopener">那两年炼就的Android内功修养</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8462738" target="_blank" rel="noopener">Android窗口管理服务WindowManagerService的简要介绍和学习计划</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8479101" target="_blank" rel="noopener">Android窗口管理服务WindowManagerService计算Activity窗口大小的过程分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8498908" target="_blank" rel="noopener">Android窗口管理服务WindowManagerService对窗口的组织方式分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8526644" target="_blank" rel="noopener">Android窗口管理服务WindowManagerService对输入法窗口（Input Method Window）的管理分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8550820" target="_blank" rel="noopener">Android窗口管理服务WindowManagerService对壁纸窗口（Wallpaper Window）的管理分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8570428" target="_blank" rel="noopener">Android窗口管理服务WindowManagerService计算窗口Z轴位置的过程分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8577789" target="_blank" rel="noopener">Android窗口管理服务WindowManagerService显示Activity组件的启动窗口（Starting Window）的过程分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8596449" target="_blank" rel="noopener">Android窗口管理服务WindowManagerService切换Activity窗口（App Transition）的过程分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8611754" target="_blank" rel="noopener">Android窗口管理服务WindowManagerService显示窗口动画的原理分析</a></p>]]></content>
-      
-      <categories>
-          
-          <category> Android </category>
-          
-          <category> WindowManagerService </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Android </tag>
-            
-            <tag> WindowManagerService </tag>
-            
-            <tag> WMS </tag>
             
         </tags>
       
