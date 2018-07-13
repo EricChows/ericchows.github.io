@@ -5,7 +5,7 @@
     
   <url>
     <loc>http://yoursite.com/2018/06/27/A-Ongoing-Android%E7%9A%84Log%E6%9C%BA%E5%88%B6%E5%88%86%E6%9E%90/</loc>
-    <lastmod>2018-07-10T13:00:37.345Z</lastmod>
+    <lastmod>2018-07-13T03:21:30.167Z</lastmod>
     <data>
         <display>
         <title>Android的Log机制分析</title>
@@ -24,8 +24,53 @@
 
     
   <url>
+    <loc>http://yoursite.com/2015/01/01/Myblog/</loc>
+    <lastmod>2018-07-12T11:11:10.725Z</lastmod>
+    <data>
+        <display>
+        <title>Myblog</title>
+        <pubTime>2014-12-31T16:00:00.000Z</pubTime>
+        
+        <tag>Hexo</tag>
+         
+        <tag>Myblog</tag>
+         
+         
+           
+             
+              <breadCrumb title="Hexo" url="http://yoursite.com/categories/Hexo/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+  <url>
+    <loc>http://yoursite.com/2017/01/01/Android-%E5%A5%BD%E6%96%87/</loc>
+    <lastmod>2018-07-11T06:53:41.285Z</lastmod>
+    <data>
+        <display>
+        <title>Android 好文</title>
+        <pubTime>2016-12-31T16:00:00.000Z</pubTime>
+        
+        <tag>好文</tag>
+         
+        <tag>good</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="http://yoursite.com/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2016/01/01/A-Ongoing-Android%E4%B8%ADKeyguard%E8%A7%A3%E6%9E%90/</loc>
-    <lastmod>2018-07-10T12:53:15.302Z</lastmod>
+    <lastmod>2018-07-10T14:17:13.876Z</lastmod>
     <data>
         <display>
         <title>Android中Keyguard解析</title>
@@ -71,50 +116,6 @@
 
     
   <url>
-    <loc>http://yoursite.com/2017/01/01/Android-%E5%A5%BD%E6%96%87/</loc>
-    <lastmod>2018-07-07T14:30:05.969Z</lastmod>
-    <data>
-        <display>
-        <title>Android 好文</title>
-        <pubTime>2016-12-31T16:00:00.000Z</pubTime>
-        
-        <tag>好文</tag>
-         
-        <tag>good</tag>
-         
-         
-           
-             
-              <breadCrumb title="Android" url="http://yoursite.com/categories/Android/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2015/01/01/Myblog/</loc>
-    <lastmod>2018-07-06T14:32:19.936Z</lastmod>
-    <data>
-        <display>
-        <title>Myblog</title>
-        <pubTime>2014-12-31T16:00:00.000Z</pubTime>
-        
-        <tag>Hexo</tag>
-         
-        <tag>Myblog</tag>
-         
-         
-           
-             
-              <breadCrumb title="Hexo" url="http://yoursite.com/categories/Hexo/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://yoursite.com/2018/05/28/Android%E7%B3%BB%E7%BB%9F%E6%80%A7%E8%83%BD%E8%B0%83%E4%BC%98%E5%B7%A5%E5%85%B7/</loc>
     <lastmod>2018-07-06T09:59:00.461Z</lastmod>
     <data>
@@ -153,7 +154,6 @@
     </data>
     </url>
 
-    
     
   <url>
     <loc>http://yoursite.com/2018/06/23/year-06-23-Android/</loc>
@@ -409,7 +409,7 @@
 
     
   <url>
-    <loc>http://yoursite.com/2016/01/01/A-Ongoing-Android%E4%B8%ADService%E8%A7%A3%E6%9E%90/</loc>
+    <loc>http://yoursite.com/2016/01/01/A-Ongoing-Android%E4%B8%ADSurfaceFlinger%E8%A7%A3%E6%9E%90/</loc>
     <lastmod>2018-07-04T14:10:14.193Z</lastmod>
     <data>
         <display>
@@ -434,7 +434,7 @@
 
     
   <url>
-    <loc>http://yoursite.com/2016/01/01/A-Ongoing-Android%E4%B8%ADSurfaceFlinger%E8%A7%A3%E6%9E%90/</loc>
+    <loc>http://yoursite.com/2016/01/01/A-Ongoing-Android%E4%B8%ADService%E8%A7%A3%E6%9E%90/</loc>
     <lastmod>2018-07-04T14:10:14.193Z</lastmod>
     <data>
         <display>
@@ -1051,15 +1051,13 @@
 
     
   <url>
-    <loc>http://yoursite.com/2015/07/22/android%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D/</loc>
+    <loc>http://yoursite.com/2015/07/29/Java%E4%B8%AD%E5%A0%86%E5%86%85%E5%AD%98%E5%92%8C%E6%A0%88%E5%86%85%E5%AD%98%E8%AF%A6%E8%A7%A3/</loc>
     <lastmod>2018-06-23T15:24:29.018Z</lastmod>
     <data>
         <display>
-        <title>android数字签名</title>
-        <pubTime>2015-07-22T02:33:38.000Z</pubTime>
+        <title>Java中堆内存和栈内存详解</title>
+        <pubTime>2015-07-29T14:20:41.000Z</pubTime>
         
-        <tag>android</tag>
-         
          
            
              
@@ -1071,13 +1069,15 @@
 
     
   <url>
-    <loc>http://yoursite.com/2015/07/29/Java%E4%B8%AD%E5%A0%86%E5%86%85%E5%AD%98%E5%92%8C%E6%A0%88%E5%86%85%E5%AD%98%E8%AF%A6%E8%A7%A3/</loc>
+    <loc>http://yoursite.com/2015/07/22/android%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D/</loc>
     <lastmod>2018-06-23T15:24:29.018Z</lastmod>
     <data>
         <display>
-        <title>Java中堆内存和栈内存详解</title>
-        <pubTime>2015-07-29T14:20:41.000Z</pubTime>
+        <title>android数字签名</title>
+        <pubTime>2015-07-22T02:33:38.000Z</pubTime>
         
+        <tag>android</tag>
+         
          
            
              

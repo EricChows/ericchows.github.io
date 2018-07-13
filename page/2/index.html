@@ -1602,7 +1602,7 @@ Android博客周刊
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/01/01/A-Ongoing-Android中SurfaceFlinger解析/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/01/01/A-Ongoing-Android中Handler解析/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Eric Chows">
@@ -1621,7 +1621,7 @@ Android博客周刊
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/01/01/A-Ongoing-Android中SurfaceFlinger解析/" itemprop="url">Android中SurfaceFlinger解析</a></h2>
+                <a class="post-title-link" href="/2016/01/01/A-Ongoing-Android中Handler解析/" itemprop="url">Android中Handler解析</a></h2>
         
 
         <div class="post-meta">
@@ -1667,8 +1667,8 @@ Android博客周刊
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android/SurfaceFlinger/" itemprop="url" rel="index">
-                    <span itemprop="name">SurfaceFlinger</span>
+                  <a href="/categories/Android/Handler/" itemprop="url" rel="index">
+                    <span itemprop="name">Handler</span>
                   </a>
                 </span>
 
@@ -1684,7 +1684,7 @@ Android博客周刊
 
           
           
-             <span id="/2016/01/01/A-Ongoing-Android中SurfaceFlinger解析/" class="leancloud_visitors" data-flag-title="Android中SurfaceFlinger解析">
+             <span id="/2016/01/01/A-Ongoing-Android中Handler解析/" class="leancloud_visitors" data-flag-title="Android中Handler解析">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1717,11 +1717,12 @@ Android博客周刊
       
         
           
-          参考文献那两年炼就的Android内功修养Android应用程序与SurfaceFlinger服务的关系概述和学习计划Android应用程序与SurfaceFlinger服务的连接过程分析Android应用程序与SurfaceFlinger服务之间的共享UI元数据（SharedClient）的创建过程分析Android应用程序请求SurfaceFlinger服务创建Surface的过程分析Andr
-          ...
+          参考文献那两年炼就的Android内功修养Android应用程序消息处理机制（Looper、Handler）分析Android应用程序键盘（Keyboard）消息处理机制分析Android应用程序线程消息循环模型分析
+
+          
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2016/01/01/A-Ongoing-Android中SurfaceFlinger解析/#more" rel="contents">
+            <a class="btn" href="/2016/01/01/A-Ongoing-Android中Handler解析/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1772,7 +1773,7 @@ Android博客周刊
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/01/01/A-Ongoing-Android中Binder机制解析/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/01/01/A-Ongoing-Android中Keyguard解析/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Eric Chows">
@@ -1791,7 +1792,7 @@ Android博客周刊
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/01/01/A-Ongoing-Android中Binder机制解析/" itemprop="url">Android中Binder机制解析</a></h2>
+                <a class="post-title-link" href="/2016/01/01/A-Ongoing-Android中Keyguard解析/" itemprop="url">Android中Keyguard解析</a></h2>
         
 
         <div class="post-meta">
@@ -1837,8 +1838,8 @@ Android博客周刊
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android/Binder/" itemprop="url" rel="index">
-                    <span itemprop="name">Binder</span>
+                  <a href="/categories/Android/Keyguard/" itemprop="url" rel="index">
+                    <span itemprop="name">Keyguard</span>
                   </a>
                 </span>
 
@@ -1854,7 +1855,7 @@ Android博客周刊
 
           
           
-             <span id="/2016/01/01/A-Ongoing-Android中Binder机制解析/" class="leancloud_visitors" data-flag-title="Android中Binder机制解析">
+             <span id="/2016/01/01/A-Ongoing-Android中Keyguard解析/" class="leancloud_visitors" data-flag-title="Android中Keyguard解析">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1887,11 +1888,12 @@ Android博客周刊
       
         
           
-          参考文献那两年炼就的Android内功修养Android进程间通信（IPC）机制Binder简要介绍和学习计划浅谈Service Manager成为Android进程间通信（IPC）机制Binder守护进程之路浅谈Android系统进程间通信（IPC）机制Binder中的Server和Client获得Service Manager接口之路Android系统进程间通信（IPC）机制Binder中的S
+          概述 本文是基于Android版本：8.1.0来讨论Keyguard相关代码.
+ 在Android 8.1.0版本中，将Keyguard模块的代码完全移到了SystemUI，将其和SystemUI进行了合并。那么为何要把SystemUI和Keyguard代码放在一起呢？估计基于以下几点考虑： a) 虽然在之前的版本中，Keyguard模块和SystemUI模块的代码是分开放在两个目录，且单独参与编
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2016/01/01/A-Ongoing-Android中Binder机制解析/#more" rel="contents">
+            <a class="btn" href="/2016/01/01/A-Ongoing-Android中Keyguard解析/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
