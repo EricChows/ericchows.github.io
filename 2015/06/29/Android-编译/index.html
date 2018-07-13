@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="EricChows">
 <meta property="og:description" content="概述本文的目的是讲述Android代码编译过程,以及编译过程中Android.mk,Android.bp等文件里面变量的作用分析 Android编译过程分析Android7.0 编译系统流程分析深入理解：Android 编译系统 Android.mk一个Android.mk file用来向编译系统描述你的源代码。具体来说：该文件是GNU Makefile的一小部分，会被编译系统解析一次或多次。你可">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-01T11:11:00.992Z">
+<meta property="og:updated_time" content="2018-07-13T03:59:09.283Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android 编译">
 <meta name="twitter:description" content="概述本文的目的是讲述Android代码编译过程,以及编译过程中Android.mk,Android.bp等文件里面变量的作用分析 Android编译过程分析Android7.0 编译系统流程分析深入理解：Android 编译系统 Android.mk一个Android.mk file用来向编译系统描述你的源代码。具体来说：该文件是GNU Makefile的一小部分，会被编译系统解析一次或多次。你可">
@@ -435,7 +435,10 @@ LOCAL_PATH :=(BUILD\_STATIC\_LIBRARY) 一般的和上面相似，BUILD\_STATIC\_
 #LOCAL\_SHARED\_LIBRARIES :=    
  include(CLEAR\_VARS) LOCAL\_SRC\_FILES:= / helloworld.c LOCAL\_MODULE:= libtest\_shared TARGET\_PRELINK\_MODULES := false #LOCAL\_C\_INCLUDES := #LOCAL\_STATIC\_LIBRARIES := #LOCAL\_SHARED_LIBRARIES := include (BUILD\_SHARED\_LIBRARY)  
 </code></pre><p>一般的和上面相似，BUILD_SHARED_LIBRARY表示编译一个动态库。<br>以上三者的生成结果分别在如下，generic依具体target会变：<br>out/target/product/generic/obj/EXECUTABLE<br>out/target/product/generic/obj/STATIC_LIBRARY<br>out/target/product/generic/obj/SHARED_LIBRARY<br>每个模块的目标文件夹分别为：<br>可执行程序：XXX_intermediates<br>静态库： XXX_static_intermediates<br>动态库： XXX_shared_intermediates<br>另外，在Android.mk文件中，还可以指定最后的目标安装路径，用LOCAL_MODULE_PATH和LOCAL_UNSTRIPPED_PATH来指定。不同的文件系统路径用以下的宏进行选择：<br>TARGET_ROOT_OUT：表示根文件系统out/target/product/generic/root。<br>TARGET_OUT：表示system文件系统out/target/product/generic/system。<br>TARGET_OUT_DATA：表示data文件系统out/target/product/generic/data。<br>OUT_DIR：代码工程编译时的out生成目录<br>PRODUCT_OUT：映象生成目录</p>
-<h1 id="Android-bp"><a href="#Android-bp" class="headerlink" title="Android.bp"></a>Android.bp</h1><p>待补充</p>
+<h1 id="Android-bp"><a href="#Android-bp" class="headerlink" title="Android.bp"></a>Android.bp</h1><p> 从Android 7.0 (N)开始, Google开始逐步使用Android.bp代替原来的Android.mk进行编译.<br> Google称之为soong, 具体可以参考:<br> <a href="https://android.googlesource.com/platform/build/soong" target="_blank" rel="noopener">https://android.googlesource.com/platform/build/soong</a><br> 使用Android.bp编译时, 目前还存在一些问题:<br> 1.对C/C++代码, 如果需要使用宏开关时, 由于android整个编译系统还没完全切换过来, 导致 在项目mk文件定义的开关, 还不能生效.<br> 2.对于条件编译, 需要添加go文件进行控制.</p>
+<p> 对于问题1, 一是通过export命令, 把相应的开关设置到环境变量, go文件就能读取到了.<br> 二是, 把开关集中放到某一个文件中, 然后在go文件中直接读取这个文件.<br> 对于问题2, 下面会通过例子给出一个说明.<br> 下面是一个libsysutils模块Android.bp的内容: libsysutils_defaults以上及相关内容是新添加关键部分, 用来支持go文件进行条件编译. 如果想让TLV_FEATURE_ENABLED起作用, 需要export TLV_FEATURE_ENABLED=yes.</p>
+<p>待补充</p>
+<p><a href="https://blog.csdn.net/drageon_j/article/details/77336817" target="_blank" rel="noopener">Android 编译系统之Android.bp</a></p>
 
       
     </div>
