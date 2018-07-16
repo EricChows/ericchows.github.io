@@ -1,0 +1,1480 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Android,PackageManagerService," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="EricChows" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="概要每一个社会群落都有管理机制，其中有三个要素：被管理者、管理者以及管理机制的运转。在Android的世界中，有一处群落叫“包管理”，要研究Android的包管理机制，同样可以从以下几个角度来思考：  被管理的对象是什么？ 管理者的职能是什么？ 管理机制是如何运转的？所谓包，其实就是一种文件格式，譬如APK包、JAR包等。在Android中存活着很多包，所有的应用程序都是APK包，很多构成Andr">
+<meta name="keywords" content="Android,PackageManagerService">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android中PackageManagerService机制分析">
+<meta property="og:url" content="http://yoursite.com/Android-PackageManagerService-Analysis/index.html">
+<meta property="og:site_name" content="EricChows">
+<meta property="og:description" content="概要每一个社会群落都有管理机制，其中有三个要素：被管理者、管理者以及管理机制的运转。在Android的世界中，有一处群落叫“包管理”，要研究Android的包管理机制，同样可以从以下几个角度来思考：  被管理的对象是什么？ 管理者的职能是什么？ 管理机制是如何运转的？所谓包，其实就是一种文件格式，譬如APK包、JAR包等。在Android中存活着很多包，所有的应用程序都是APK包，很多构成Andr">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/Android-PackageManagerService-Analysis/1-packagemanager-package-from-static-to-dynamic.png">
+<meta property="og:image" content="http://yoursite.com/Android-PackageManagerService-Analysis/2-packagemanager-packageparser.png">
+<meta property="og:image" content="http://yoursite.com/Android-PackageManagerService-Analysis/3-packagemanager-packageparser-parcelable.png">
+<meta property="og:image" content="http://yoursite.com/Android-PackageManagerService-Analysis/4-packagemanager-packageparser-parcelable.png">
+<meta property="og:image" content="http://yoursite.com/Android-PackageManagerService-Analysis/5-packagemanager-scan-seq.png">
+<meta property="og:updated_time" content="2018-07-16T11:23:21.878Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android中PackageManagerService机制分析">
+<meta name="twitter:description" content="概要每一个社会群落都有管理机制，其中有三个要素：被管理者、管理者以及管理机制的运转。在Android的世界中，有一处群落叫“包管理”，要研究Android的包管理机制，同样可以从以下几个角度来思考：  被管理的对象是什么？ 管理者的职能是什么？ 管理机制是如何运转的？所谓包，其实就是一种文件格式，譬如APK包、JAR包等。在Android中存活着很多包，所有的应用程序都是APK包，很多构成Andr">
+<meta name="twitter:image" content="http://yoursite.com/Android-PackageManagerService-Analysis/1-packagemanager-package-from-static-to-dynamic.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/Android-PackageManagerService-Analysis/"/>
+
+
+
+
+
+  <title>Android中PackageManagerService机制分析 | EricChows</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">EricChows</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">Android Developer</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Android-PackageManagerService-Analysis/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Eric Chows">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/myapple.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="EricChows">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Android中PackageManagerService机制分析</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-31T22:13:56+08:00">
+                2018-05-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/Android-PackageManagerService-Analysis/" class="leancloud_visitors" data-flag-title="Android中PackageManagerService机制分析">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="概要"><a href="#概要" class="headerlink" title="概要"></a>概要</h1><p>每一个社会群落都有管理机制，其中有三个要素：被管理者、管理者以及管理机制的运转。在Android的世界中，有一处群落叫“包管理”，要研究Android的包管理机制，同样可以从以下几个角度来思考：</p>
+<ol>
+<li>被管理的对象是什么？</li>
+<li>管理者的职能是什么？</li>
+<li>管理机制是如何运转的？<br>所谓包，其实就是一种文件格式，譬如APK包、JAR包等。在Android中存活着很多包，所有的应用程序都是APK包，很多构成Android运行环境的都是JAR包，还有一些以so为后缀的库文件，包管理者很重要的一个职能就是识别不同的包，统一维护这些包的信息。当有一个包进入或离开Android世界，都需要向包管理者申报，其他管理部门要获取包的具体信息，也都需要向包管理者申请。</li>
+</ol>
+<p>如同社会是由人与人的协作形成，不同的包之间也需要进行协作。既然有协作，自然就有协作的规范，一个包可以干什么，不可以干什么，都需要有一个明确的范围界定，这就是包管理中的权限设计。涉及到的内容非常广泛，Linux的UGO（User Group Other）和ACL（Access Control List，访问控制列表）权限管理、数字签名与验证、Android授权机制、Selinux，都是包管理中权限设计的组成部分。</p>
+<p>Android的世界就如同一个井然有序的人类社会，除了包管理部门，还有其他各种管理部门，譬如电源管理、窗口管理、活动管理等等，大家不仅各司其职，而且也有交流往来。从APK的安装到Activity的显示这么一个看似简单的过程，却需要大量管理部门参与进来，不断地进行数据解析、封装、传递、呈现，内部机理十分复杂。</p>
+<blockquote>
+<p>PackageManagerService是包管理中最重要的服务，为了描述方便，本文会简写成PMS。<br>PMS的部分函数带有LI后缀，表示需要获取mInstalllock这个锁时才能执行；部分函数带有LP后缀，表示需要获取mPackages这个锁才能执行。</p>
+</blockquote>
+<p>PackageManagerService相关的代码路径如下：<br><a href="https://android.googlesource.com/platform/frameworks/base/+/master/core/java/android/content/pm/" target="_blank" rel="noopener">frameworks/base/core/java/android/content/pm/</a><br><a href="https://android.googlesource.com/platform/frameworks/base/+/master/services/core/java/com/android/server/pm/" target="_blank" rel="noopener">frameworks/base/services/core/java/com/android/server/pm</a></p>
+<h1 id="被管理对象的形态"><a href="#被管理对象的形态" class="headerlink" title="被管理对象的形态"></a>被管理对象的形态</h1><p>Android中的APK和JAR包都以静态文件的形式分布在不同的硬件分区，包管理者面临的第一个任务就是将这些静态的文件转化成内存的数据结构，这样才能将其管理起来。Android中最重要的包管理对象就是APK，APK可以包含so文件，负责将静态文件转换内存中数据结构的工具就是PackageParser，包解析器。<br><img src="/Android-PackageManagerService-Analysis/1-packagemanager-package-from-static-to-dynamic.png" alt="PackageParser"></p>
+<p>Android L(5.0)以后，支持APK拆分，即一个APK可以分割成很多部分，位于相同的目录下，每一个部分都是一个单独的APK文件，所有的APK文件具备相同的签名，在APK解析过程中，会将拆分的APK重新组合成内存中的一个Package。对于一个完整的APK，Android称其为Monolithic；对于拆分后的APK，Android称其为Cluster。</p>
+<blockquote>
+<p>在Android L(5.0)以前，APK文件都是直接位于app或priv-app目录下，譬如短彩信APK的目录就是/system/priv-app/Mms.apk；到了Android L(5.0)之后，多了一级目录结构，譬如短彩信APK的目录是/system/priv-app/Mms/Mms.apk，这是Android为了支持APK拆分而做的改动，如果要将短彩信APK进行拆分，那所有被拆出来的APK都位于/system/priv-app/Mms/即可，这样在包解析时，就会变成以Cluster的方式解析目录。</p>
+</blockquote>
+<p>一个包在内存中的数据结构就是Package，那么，Package有一些什么属性?是怎么从APK文件中获取数据的呢？ 这就涉及到包解析器的工作原理。</p>
+<h1 id="包解析器"><a href="#包解析器" class="headerlink" title="包解析器"></a>包解析器</h1><p>为了先让读者对被管理对象有一个初步的认识，我们先把一个包最终在内存中的数据结构拎出来。其实生成这个数据结构，需要包管理者进行大量的调度工作，调度中心是PMS，包解析的过程也都是由PMS驱动的。在分析包解析过程之前，我们先上包解析的结果：<br><img src="/Android-PackageManagerService-Analysis/2-packagemanager-packageparser.png" alt="包解析结果"><br>这个类图，示意了一个包最终在内存中的数据结构Package，它包含很多属性，部分属性还是包解析器中的子数据结构。我们可以从设计的角度来理解这个类图：</p>
+<ul>
+<li><p>一个包中有很多组件，为此设计了一个高层的基类Component，所有具体的组件都是Component的子类。什么是组件呢？AndroidManifest.xml文件中所定义的的一些标签，就是组件，譬如<activity>，<service>，<provider>，<permission>等，这些标签分别对应到包解析器中的一个数据结构，它们各自有自身的属性。</permission></provider></service></activity></p>
+</li>
+<li><p>诸如<activity>，<service>标签，都可以配置<intent-filter>，来过滤其可以接收的Intent，这些信息也需要在包解析器中体现出来，为此组件Component依赖于IntentInfo这个数据结构。每一个具体的组件所依赖的IntentInfo不同，所以Component和IntentInfo之间的依赖关系采用了桥接(Bridge)这种设计模式，通过泛型的手段实现。</intent-filter></service></activity></p>
+</li>
+<li><p>各种组件最终聚合到Package这个数据结构中，形成了最终包解析器的输出。当然，在解析的过程中，还有利用了一些数据结构来优化设计，PackageLite和ApkLite就是一些很简单的数据封装。</p>
+</li>
+</ul>
+<p>要得到以上的数据结构，包解析器<a href="https://android.googlesource.com/platform/frameworks/base/+/master/core/java/android/content/pm/PackageParser.java" target="_blank" rel="noopener">PackageParser</a>功不可没，从接收一个静态的文件(File类型)开始，会经过一个漫长的包解析过程，直到生成最终的Package：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">parsePackages(File file...)</span><br><span class="line">└── parseClusterPackage(File packageDir...)</span><br><span class="line">    └── parseClusterPackageLite(File packageDir...)</span><br><span class="line">    |   └── parseApkLite(File apkFile...)</span><br><span class="line">    |       └── parseApkLite(String codePath...)</span><br><span class="line">    └── parseBaseApk()</span><br><span class="line">        └── parseBaseApplication()</span><br><span class="line">        |    └── parseActivity()</span><br><span class="line">        |    └── parseService()</span><br><span class="line">        |    └── ...</span><br><span class="line">        └── parseInstrumentation()</span><br><span class="line">        └── ...</span><br></pre></td></tr></table></figure></p>
+<p>这些函数的具体逻辑本文不予分析，仅把关键的流程捋出来:</p>
+<ol>
+<li><p>PackageParser.parsePackages()是包解析器的入口函数，它首先会判定给定的输入是否为一个目录，如果是目录，则以为着目录下可能存在多个拆分后的APK，这就需要以Cluster的方式进行解析；如果仅仅是一个APK文件，就以Monolithic的方式解析；</p>
+</li>
+<li><p>解析APK，需要先得到一个中间数据结构PacakgeLite，包名、版本、拆分包等信息都会保存在这个数据结构中；由于一个包可能有多个拆分的APK，所以PackageLite可能关联到多个APK，每一个APK都对应到ApkLite这个数据结构，也是一些基本信息的封装。之所以以Lite为后缀命名，是因为这两个数据结构都比较轻量，只保存APK中很少信息；</p>
+</li>
+<li><p>一个APK真正的信息都写在AndroidManifest.xml这个文件中，PackageParser.parseBaseApk()这个函数就是用来解析该文件。其解析过程与AndroidManifest.xml的文件结构一一对应，譬如先解析<application>标签的内容，然后解析其下的<activity>,<service>等标签。由于AndroidManifest.xml文件的结构非常复杂，所以该函数逻辑也非常庞大，读者们可以自行分析源码。<br>至此，包解析器PackageParser就将一个静态的文件，转换成了内存中的数据结构Package，它包含了一个包的所有信息，如包名、包路径、权限、四大组件等，其数据来源主要就是AndroidManifest.xml文件。</service></activity></application></p>
+</li>
+</ol>
+<h1 id="包信息体"><a href="#包信息体" class="headerlink" title="包信息体"></a>包信息体</h1><p>包解析器从静态文件中获取的数据，很多都是需要用于跨进程传递的，譬如初次启动Activity时，就需要把包信息从系统进程传递到应用进程，先完成应用进程的启动。在包解析器的类图中，我们看到Activity、Service、Provider、Permission、Instrumentaion这些类都有一个共同的特征：都具备info这个属性，其实这些类的结构非常简单，就是对info的一次封装，info这个结构体才是真正的包数据，笔者暂且称之为“包信息体”:<br><img src="/Android-PackageManagerService-Analysis/3-packagemanager-packageparser-parcelable.png" alt="包信息体"><br>所有的info都实现了Parcelable接口，意图很明显，info是可以进行跨进程传递的。不同组件的info类型是不同的，除了实现了Parcelable接口，它们之间又构成了一个庞大的数据结构，把这些具体的info类型展开，就是以下的类图：<br><img src="/Android-PackageManagerService-Analysis/4-packagemanager-packageparser-parcelable.png" alt="Info展开图"><br>可以看到，这个类图与PackageParser中的类图在结构上很相似，我们依旧是从设计的角度来理解这个类图：</p>
+<ul>
+<li>PackageItemInfo作为包每一项信息的高层基类：<ul>
+<li>针对permission，permission，instrumentation等，分别为其设计了一个类，都继承自PackageItemInfo</li>
+<li>针对activity，service，provider等四大组件，在PackageItemInfo之下又多设计了一层：ComponentInfo作为四大组件的基类</li>
+</ul>
+</li>
+<li>ApplicationInfo也是包信息中的一项，但与四大组件紧密相连，四大组件肯定都属于某个Application，所以ComponentInfo与Application存在依赖关系，继而，具体到每个组件都与Application存在依赖关系</li>
+<li>所有的包信息都聚合到PackageInfo这个类中，PackageInfo就是一个包向外提供的所有信息。其实除了上图列出来的类，还有一些类没有示意出来，譬如ConfigurationInfo，FeatureInfo，它们都可以对应到AndroidManifest.xml中的标签。<br>这些结构体中的数据，都是在包解析器时初始化的，譬如Activity依赖于ActivityInfo，在解析Activity时，就会创建一个ActivityInfo对象，把<activity>所定义的数据全都填充到ActivityInfo中。读者可以思考一下PackageParser中的Activity与此处的ActivityInfo的分开设计的目的和好处是什么？<blockquote>
+<p>在分析包的形态时，我们见到了很多类，类的命名方式还有点相似，初读代码的时候，很容易陷入各个类之间复杂的关系网之中。不得不说，包在内存中的数据结构是比较庞大的，因为它蕴含的信息大多了。</p>
+</blockquote>
+</activity></li>
+</ul>
+<h1 id="PMS的启动过程"><a href="#PMS的启动过程" class="headerlink" title="PMS的启动过程"></a>PMS的启动过程</h1><p><a href="https://android.googlesource.com/platform/frameworks/base/+/master/services/core/java/com/android/server/pm/PackageManagerService.java" target="_blank" rel="noopener">frameworks/base/services/core/java/com/android/server/pm/PackageManagerService.java</a></p>
+<h2 id="对象创建"><a href="#对象创建" class="headerlink" title="对象创建"></a>对象创建</h2><h3 id="PMS部分属性初始化"><a href="#PMS部分属性初始化" class="headerlink" title="PMS部分属性初始化"></a>PMS部分属性初始化</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 代码片段1：PMS部分属性的初始化</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">PackageManagerService</span><span class="params">(Context context, Installer installer,</span></span></span><br><span class="line"><span class="function"><span class="params">        <span class="keyword">boolean</span> factoryTest, <span class="keyword">boolean</span> onlyCore)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 关键的Event日志，PMS开始启动了</span></span><br><span class="line">    EventLog.writeEvent(EventLogTags.BOOT_PROGRESS_PMS_START,</span><br><span class="line">            SystemClock.uptimeMillis());</span><br><span class="line"></span><br><span class="line">    mContext = context;</span><br><span class="line">    mFactoryTest = factoryTest;</span><br><span class="line">    mOnlyCore = onlyCore;</span><br><span class="line">    <span class="comment">// 如果是eng版，则延迟做DexOpt</span></span><br><span class="line">    mLazyDexOpt = <span class="string">"eng"</span>.equals(SystemProperties.get(<span class="string">"ro.build.type"</span>));</span><br><span class="line">    mMetrics = <span class="keyword">new</span> DisplayMetrics();</span><br><span class="line">    <span class="comment">// Settings是包管理中一个很重要的数据结构，用于维护所有包的信息</span></span><br><span class="line">    mSettings = <span class="keyword">new</span> Settings(mPackages);</span><br><span class="line">    mSettings.addSharedUserLPw(<span class="string">"android.uid.system"</span>, Process.SYSTEM_UID,</span><br><span class="line">            ApplicationInfo.FLAG_SYSTEM, ApplicationInfo.PRIVATE_FLAG_PRIVILEGED);</span><br><span class="line">    mSettings.addSharedUserLPw(<span class="string">"android.uid.phone"</span>, RADIO_UID,</span><br><span class="line">            ApplicationInfo.FLAG_SYSTEM, ApplicationInfo.PRIVATE_FLAG_PRIVILEGED);</span><br><span class="line">    mSettings.addSharedUserLPw(<span class="string">"android.uid.log"</span>, LOG_UID,</span><br><span class="line">            ApplicationInfo.FLAG_SYSTEM, ApplicationInfo.PRIVATE_FLAG_PRIVILEGED);</span><br><span class="line">    mSettings.addSharedUserLPw(<span class="string">"android.uid.nfc"</span>, NFC_UID,</span><br><span class="line">            ApplicationInfo.FLAG_SYSTEM, ApplicationInfo.PRIVATE_FLAG_PRIVILEGED);</span><br><span class="line">    mSettings.addSharedUserLPw(<span class="string">"android.uid.bluetooth"</span>, BLUETOOTH_UID,</span><br><span class="line">            ApplicationInfo.FLAG_SYSTEM, ApplicationInfo.PRIVATE_FLAG_PRIVILEGED);</span><br><span class="line">    mSettings.addSharedUserLPw(<span class="string">"android.uid.shell"</span>, SHELL_UID,</span><br><span class="line">            ApplicationInfo.FLAG_SYSTEM, ApplicationInfo.PRIVATE_FLAG_PRIVILEGED);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">long</span> dexOptLRUThresholdInMinutes;</span><br><span class="line">    <span class="keyword">if</span> (mLazyDexOpt) &#123;</span><br><span class="line">        dexOptLRUThresholdInMinutes = <span class="number">30</span>; <span class="comment">// only last 30 minutes of apps for eng builds.</span></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        dexOptLRUThresholdInMinutes = <span class="number">7</span> * <span class="number">24</span> * <span class="number">60</span>; <span class="comment">// apps used in the 7 days for users.</span></span><br><span class="line">    &#125;</span><br><span class="line">    mDexOptLRUThresholdInMills = dexOptLRUThresholdInMinutes * <span class="number">60</span> * <span class="number">1000</span>;</span><br><span class="line">    ...</span><br><span class="line">    mInstaller = installer;</span><br><span class="line">    <span class="comment">// DexOpt工具类</span></span><br><span class="line">    mPackageDexOptimizer = <span class="keyword">new</span> PackageDexOptimizer(<span class="keyword">this</span>);</span><br><span class="line">    mMoveCallbacks = <span class="keyword">new</span> MoveCallbacks(FgThread.get().getLooper());</span><br><span class="line">    mOnPermissionChangeListeners = <span class="keyword">new</span> OnPermissionChangeListeners(</span><br><span class="line">                FgThread.get().getLooper());</span><br><span class="line">    getDefaultDisplayMetrics(context, mMetrics);</span><br><span class="line">    <span class="comment">// 读取系统默认的权限</span></span><br><span class="line">    SystemConfig systemConfig = SystemConfig.getInstance();</span><br><span class="line">    mGlobalGids = systemConfig.getGlobalGids();</span><br><span class="line">    mSystemPermissions = systemConfig.getSystemPermissions();</span><br><span class="line">    mAvailableFeatures = systemConfig.getAvailableFeatures();</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 这里上了两把锁: mInstallLock是安装APK时需要用到的锁；mPackage是更新APK信息时需要的锁</span></span><br><span class="line">    <span class="keyword">synchronized</span> (mInstallLock) &#123;</span><br><span class="line">    <span class="keyword">synchronized</span> (mPackages) &#123;</span><br><span class="line">        <span class="comment">// 构建一个后台线程，并将线程的消息队列绑定到Handler</span></span><br><span class="line">        mHandlerThread = <span class="keyword">new</span> ServiceThread(TAG,</span><br><span class="line">                Process.THREAD_PRIORITY_BACKGROUND, <span class="keyword">true</span> <span class="comment">/*allowIo*/</span>);</span><br><span class="line">        mHandlerThread.start();</span><br><span class="line">        mHandler = <span class="keyword">new</span> PackageHandler(mHandlerThread.getLooper());</span><br><span class="line">        <span class="comment">// 将PMS加入Watchdog的监控列表</span></span><br><span class="line">        Watchdog.getInstance().addThread(mHandler, WATCHDOG_TIMEOUT);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 初始化一些文件目录</span></span><br><span class="line">        File dataDir = Environment.getDataDirectory();</span><br><span class="line">        mAppDataDir = <span class="keyword">new</span> File(dataDir, <span class="string">"data"</span>);</span><br><span class="line">        mAppInstallDir = <span class="keyword">new</span> File(dataDir, <span class="string">"app"</span>);</span><br><span class="line">        mAppLib32InstallDir = <span class="keyword">new</span> File(dataDir, <span class="string">"app-lib"</span>);</span><br><span class="line">        mAsecInternalPath = <span class="keyword">new</span> File(dataDir, <span class="string">"app-asec"</span>).getPath();</span><br><span class="line">        mUserAppDataDir = <span class="keyword">new</span> File(dataDir, <span class="string">"user"</span>);</span><br><span class="line">        mDrmAppPrivateInstallDir = <span class="keyword">new</span> File(dataDir, <span class="string">"app-private"</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 初始化系统权限</span></span><br><span class="line">        ArrayMap&lt;String, SystemConfig.PermissionEntry&gt; permConfig</span><br><span class="line">                = systemConfig.getPermissions();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;permConfig.size(); i++) &#123;</span><br><span class="line">            SystemConfig.PermissionEntry perm = permConfig.valueAt(i);</span><br><span class="line">            BasePermission bp = mSettings.mPermissions.get(perm.name);</span><br><span class="line">            <span class="keyword">if</span> (bp == <span class="keyword">null</span>) &#123;</span><br><span class="line">                bp = <span class="keyword">new</span> BasePermission(perm.name, <span class="string">"android"</span>, BasePermission.TYPE_BUILTIN);</span><br><span class="line">                mSettings.mPermissions.put(perm.name, bp);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (perm.gids != <span class="keyword">null</span>) &#123;</span><br><span class="line">                bp.setGids(perm.gids, perm.perUser);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 初始化PMS中的ShareLibraries</span></span><br><span class="line">        ArrayMap&lt;String, String&gt; libConfig = systemConfig.getSharedLibraries();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;libConfig.size(); i++) &#123;</span><br><span class="line">            mSharedLibraries.put(libConfig.keyAt(i),</span><br><span class="line">                    <span class="keyword">new</span> SharedLibraryEntry(libConfig.valueAt(i), <span class="keyword">null</span>));</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 读取mac_permission.xml文件的内容</span></span><br><span class="line">        mFoundPolicyFile = SELinuxMMAC.readInstallPolicy();</span><br><span class="line"></span><br><span class="line">        mRestoredSettings = mSettings.readLPw(<span class="keyword">this</span>, sUserManager.getUsers(<span class="keyword">false</span>),</span><br><span class="line">                mSdkVersion, mOnlyCore);</span><br><span class="line">        String customResolverActivity = Resources.getSystem().getString(</span><br><span class="line">                        R.string.config_customResolverActivity);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 未完接代码片段2</span></span><br></pre></td></tr></table></figure>
+<p>【代码片段1】完成了很多PMS的属性初始化操作，几个重要的属性如下：</p>
+<ul>
+<li><p><strong>mSettings：</strong>PMS内部有一个Settings数据结构，用于维护所有包的信息。写过Android应用程序的朋友可能知道两个APK可以运行在相同的进程中，前提是两个APK具有相同的签名和ShareUid。Android系统中定义了一些默认的ShareUid，譬如android.uid.system表示系统进程的UID，如果有一个APK想要运行在系统进程中，则其需要在AndroidManifest.xml文件中声明ShareUid为android.uid.system，并且该APK的签名必须与framework-res.apk的签名一致，即platform签名。</p>
+<p>PMS在创建完Settings对象之后，便把很多系统默认的ShareUid加入其中。</p>
+</li>
+</ul>
+<p>• <strong>mInstaller：</strong>Installer是一个系统服务，它封装了很多PMS进行包管理需要用到的函数，譬如install()、 dexopt()、rename()等。在Installer内部，其实是通过Socket连接installd，将执行指令发送到installd完成具体的操作。</p>
+<p>• <strong>mPackageDexOptimizer:</strong> 进行Dex优化的工具类。对于一个APK而言，编译后其APK包中可执行文件的格式dex，安装到了手机上以后，需要经过文件格式转化才能运行，譬如APK需要转换成oat格式才能在ART虚拟机上运行，文件格式转换的过程就叫DexOpt。</p>
+<p>  DalvikVM的时代，Android可执行文件的格式是dex，有一种进一步优化的格式叫odex；ART虚拟机的时代，Android可执行文件的格式是oat。虽然都叫做DexOpt，但在DalvikVM和ART两种不同虚拟机的时代分别有不同的内涵。</p>
+<p>• <strong>SystemConfig:</strong> 系统全局的配置信息的数据结构。原始的数据来源于/system/etc/sysconfig和/system/etc/permissions目录下的XML文件,XML文件的详细信息见 Android中PackageManagerService相关的文件 这篇文章，在SystemConfig对象构建时，会读取这两个目录下所有XML文件的内容，主要有以下几个维度：</p>
+<ul>
+<li><p>权限与GID的映射关系，譬如，以下内容表示属于inet这个组的用户都拥有android.permission.INTERNET权限：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;permission name=<span class="string">"android.permission.INTERNET"</span> &gt;</span><br><span class="line">  &lt;group git=<span class="string">"inet"</span>&gt;</span><br><span class="line">&lt;/permission&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>权限与UID的映射关系，譬如，以下内容表示UID为meida用户拥有android.permission.CAMERA这个权限:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;assign-permission name=<span class="string">"android.permission.CAMERA"</span> uid=<span class="string">"media"</span> /&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>公共库的定义。Android中有很多公共库，除了BOOTCLASSPATH中定义的，框架层还支持额外的扩展，譬如，以下内容表示公共库的包名和其路径的关系：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;library name=<span class="string">"android.test.runner"</span></span><br><span class="line">       file=<span class="string">"/system/framework/android.test.runner.jar"</span> /&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>• <strong>mHandler：</strong> 创建PackageHandler对象，将其绑定到一个后台线程的消息队列。可想而知，一些厚重的活，譬如安装APK，就交由这个后台线程完成了。由于PMS是一个重要的系统服务，这个后台线程的消息队列如果过于忙碌，则会导致系统一直卡住，所以需要将这个消息队列加入Watchdog的监控列表，以便在这种情况下，Watchdog可以做出一些应急操作。</p>
+<p>• <strong>初始化一些/data文件目录：</strong>应用程序的安装和运行都需要用到Data分区，PMS会在Data分区新建一些子目录。</p>
+<p>• <strong>初始化系统权限：</strong>在SystemConfig初始化的时候，从/system/etc/permissions和/system/etc/sysconfig目录下读取了XML文件，这些信息要添加到Settings这个数据结构中。Android设计了一个BasePermission的数据结构，主要用于保存权限与包名之间的映射关系，此处，添加的权限是从SystemConfig中取出，包名是android，也就是先将系统权限添加到Settings中。</p>
+<p>• <strong>mFoundPolicyFile:</strong> 有了SeLinux以后，Android会为每个文件打上SE Label，对于APK而言，打SE Label的准则就是签名，即根据签名信息打上不同的SE Label。Android将签名分类成为platform，testkey, media等，签名与类别的映射关系就存在一个叫mac_permission.xml的文件中。此处，需要读取该文件的内容。</p>
+<h3 id="PMS-系统文件Dexopt扫描"><a href="#PMS-系统文件Dexopt扫描" class="headerlink" title="PMS 系统文件Dexopt扫描"></a>PMS 系统文件Dexopt扫描</h3><p>在完成部分属性的初始化之后，PMS要进入扫描安装阶段了。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//代码片段2：DexOpt处理，扫描系统文件</span></span><br><span class="line">    <span class="comment">// 关键日志，开始扫描系统APP</span></span><br><span class="line">    EventLog.writeEvent(EventLogTags.BOOT_PROGRESS_PMS_SYSTEM_SCAN_START,</span><br><span class="line">            startTime);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 设置扫描参数</span></span><br><span class="line">    <span class="keyword">final</span> <span class="keyword">int</span> scanFlags = SCAN_NO_PATHS | SCAN_DEFER_DEX | SCAN_BOOTING | SCAN_INITIAL;</span><br><span class="line">    <span class="comment">// 1. 构建数组变量用于保存已经做过DexOpt的文件，后文中，会往这个数组变量中添加元素</span></span><br><span class="line">    <span class="keyword">final</span> ArraySet&lt;String&gt; alreadyDexOpted = <span class="keyword">new</span> ArraySet&lt;String&gt;();</span><br><span class="line">    <span class="keyword">final</span> String bootClassPath = System.getenv(<span class="string">"BOOTCLASSPATH"</span>);</span><br><span class="line">    <span class="keyword">final</span> String systemServerClassPath = System.getenv(<span class="string">"SYSTEMSERVERCLASSPATH"</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// BOOTCLASSPATH环境变量所定义的文件已经做过DexOpt</span></span><br><span class="line">    <span class="keyword">if</span> (bootClassPath != <span class="keyword">null</span>) &#123;</span><br><span class="line">        String[] bootClassPathElements = splitString(bootClassPath, <span class="string">':'</span>);</span><br><span class="line">        <span class="keyword">for</span> (String element : bootClassPathElements) &#123;</span><br><span class="line">            alreadyDexOpted.add(element);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// SYSTEMSERVERCLASSPATH环境变量所定义的文件已经做过了DexOpt</span></span><br><span class="line">    <span class="keyword">if</span> (systemServerClassPath != <span class="keyword">null</span>) &#123;</span><br><span class="line">        String[] systemServerClassPathElements = splitString(systemServerClassPath, <span class="string">':'</span>);</span><br><span class="line">        <span class="keyword">for</span> (String element : systemServerClassPathElements) &#123;</span><br><span class="line">            alreadyDexOpted.add(element);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 获取指令集，以便后续进行DexOpt</span></span><br><span class="line">    <span class="keyword">final</span> List&lt;String&gt; allInstructionSets = InstructionSets.getAllInstructionSets();</span><br><span class="line">    <span class="keyword">final</span> String[] dexCodeInstructionSets =</span><br><span class="line">            getDexCodeInstructionSets(</span><br><span class="line">                        allInstructionSets.toArray(<span class="keyword">new</span> String[allInstructionSets.size()]));</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 公共库是定义在 etc/sysconfig 和 etc/permissions 文件夹下的XML文件中</span></span><br><span class="line">    <span class="comment">// 需要这些公共库进行DexOpt处理</span></span><br><span class="line">    <span class="keyword">if</span> (mSharedLibraries.size() &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">for</span> (String dexCodeInstructionSet : dexCodeInstructionSets) &#123;</span><br><span class="line">            <span class="keyword">for</span> (SharedLibraryEntry libEntry : mSharedLibraries.values()) &#123;</span><br><span class="line">                <span class="keyword">final</span> String lib = libEntry.path;</span><br><span class="line">                <span class="keyword">if</span> (lib == <span class="keyword">null</span>) &#123;</span><br><span class="line">                    <span class="keyword">continue</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    <span class="keyword">int</span> dexoptNeeded = DexFile.getDexOptNeeded(lib, <span class="keyword">null</span>, dexCodeInstructionSet, <span class="keyword">false</span>);</span><br><span class="line">                    <span class="keyword">if</span> (dexoptNeeded != DexFile.NO_DEXOPT_NEEDED) &#123;</span><br><span class="line">                        alreadyDexOpted.add(lib);</span><br><span class="line">                        mInstaller.dexopt(lib, Process.SYSTEM_UID, <span class="keyword">true</span>, dexCodeInstructionSet, dexoptNeeded);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125; <span class="keyword">catch</span> (...)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    File frameworkDir = <span class="keyword">new</span> File(Environment.getRootDirectory(), <span class="string">"framework"</span>);</span><br><span class="line">    alreadyDexOpted.add(frameworkDir.getPath() + <span class="string">"/framework-res.apk"</span>);</span><br><span class="line">    alreadyDexOpted.add(frameworkDir.getPath() + <span class="string">"/core-libart.jar"</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// system/framework目录下，除了framework-res.apk和core-libart.jar这两个文件外</span></span><br><span class="line">    <span class="comment">// 其他的APK和JAR文件都需要进行DexOpt处理</span></span><br><span class="line">    String[] frameworkFiles = frameworkDir.list();</span><br><span class="line">    <span class="keyword">if</span> (frameworkFiles != <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">for</span> (String dexCodeInstructionSet : dexCodeInstructionSets) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;frameworkFiles.length; i++) &#123;</span><br><span class="line">                File libPath = <span class="keyword">new</span> File(frameworkDir, frameworkFiles[i]);</span><br><span class="line">                String path = libPath.getPath();</span><br><span class="line">                <span class="keyword">if</span> (alreadyDexOpted.contains(path)) &#123;</span><br><span class="line">                    <span class="keyword">continue</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span> (!path.endsWith(<span class="string">".apk"</span>) &amp;&amp; !path.endsWith(<span class="string">".jar"</span>)) &#123;</span><br><span class="line">                    <span class="keyword">continue</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    <span class="keyword">int</span> dexoptNeeded = DexFile.getDexOptNeeded(path, <span class="keyword">null</span>, dexCodeInstructionSet, <span class="keyword">false</span>);</span><br><span class="line">                    <span class="keyword">if</span> (dexoptNeeded != DexFile.NO_DEXOPT_NEEDED) &#123;</span><br><span class="line">                        mInstaller.dexopt(path, Process.SYSTEM_UID, <span class="keyword">true</span>, dexCodeInstructionSet, dexoptNeeded);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125; <span class="keyword">catch</span>(...)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 2. Android M的APK授权机制有了变化，此处是与授权相关的版本兼容处理</span></span><br><span class="line">    <span class="keyword">final</span> VersionInfo ver = mSettings.getInternalVersion();</span><br><span class="line">    mIsUpgrade = !Build.FINGERPRINT.equals(ver.fingerprint);</span><br><span class="line">    mPromoteSystemApps =</span><br><span class="line">            mIsUpgrade &amp;&amp; ver.sdkVersion &lt;= Build.VERSION_CODES.LOLLIPOP_MR1;</span><br><span class="line">    <span class="keyword">if</span> (mPromoteSystemApps) &#123;</span><br><span class="line">        Iterator&lt;PackageSetting&gt; pkgSettingIter = mSettings.mPackages.values().iterator();</span><br><span class="line">        <span class="keyword">while</span> (pkgSettingIter.hasNext()) &#123;</span><br><span class="line">            PackageSetting ps = pkgSettingIter.next();</span><br><span class="line">            <span class="keyword">if</span> (isSystemApp(ps)) &#123;</span><br><span class="line">                mExistingSystemPackages.add(ps.name);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 3. 扫描系统文件</span></span><br><span class="line">    File vendorOverlayDir = <span class="keyword">new</span> File(VENDOR_OVERLAY_DIR);</span><br><span class="line">    <span class="comment">// 扫描 /vendor/overlay 目录下的文件</span></span><br><span class="line">    scanDirLI(vendorOverlayDir, PackageParser.PARSE_IS_SYSTEM</span><br><span class="line">            | PackageParser.PARSE_IS_SYSTEM_DIR, scanFlags | SCAN_TRUSTED_OVERLAY, <span class="number">0</span>);</span><br><span class="line">    <span class="comment">// 扫描 /system/framework 目录下的文件</span></span><br><span class="line">    scanDirLI(frameworkDir, PackageParser.PARSE_IS_SYSTEM</span><br><span class="line">            | PackageParser.PARSE_IS_SYSTEM_DIR</span><br><span class="line">            | PackageParser.PARSE_IS_PRIVILEGED,</span><br><span class="line">            scanFlags | SCAN_NO_DEX, <span class="number">0</span>);</span><br><span class="line">    <span class="comment">// 扫描 /system/priv-app 目录下的文件</span></span><br><span class="line">    <span class="keyword">final</span> File privilegedAppDir = <span class="keyword">new</span> File(Environment.getRootDirectory(), <span class="string">"priv-app"</span>);</span><br><span class="line">    scanDirLI(privilegedAppDir, PackageParser.PARSE_IS_SYSTEM</span><br><span class="line">            | PackageParser.PARSE_IS_SYSTEM_DIR</span><br><span class="line">            | PackageParser.PARSE_IS_PRIVILEGED, scanFlags, <span class="number">0</span>);</span><br><span class="line">    <span class="comment">// 扫描 /system/app 目录下的文件</span></span><br><span class="line">    <span class="keyword">final</span> File systemAppDir = <span class="keyword">new</span> File(Environment.getRootDirectory(), <span class="string">"app"</span>);</span><br><span class="line">    scanDirLI(systemAppDir, PackageParser.PARSE_IS_SYSTEM</span><br><span class="line">            | PackageParser.PARSE_IS_SYSTEM_DIR, scanFlags, <span class="number">0</span>);</span><br><span class="line">    <span class="comment">// 扫描 /vendor/app 目录下的文件</span></span><br><span class="line">    File vendorAppDir = <span class="keyword">new</span> File(<span class="string">"/vendor/app"</span>);</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        vendorAppDir = vendorAppDir.getCanonicalFile();</span><br><span class="line">    &#125; <span class="keyword">catch</span> (IOException e) &#123;&#125;</span><br><span class="line">    scanDirLI(vendorAppDir, PackageParser.PARSE_IS_SYSTEM</span><br><span class="line">            | PackageParser.PARSE_IS_SYSTEM_DIR, scanFlags, <span class="number">0</span>);</span><br><span class="line">    <span class="comment">// 扫描 /oem/app 目录下的文件</span></span><br><span class="line">    <span class="keyword">final</span> File oemAppDir = <span class="keyword">new</span> File(Environment.getOemDirectory(), <span class="string">"app"</span>);</span><br><span class="line">    scanDirLI(oemAppDir, PackageParser.PARSE_IS_SYSTEM</span><br><span class="line">            | PackageParser.PARSE_IS_SYSTEM_DIR, scanFlags, <span class="number">0</span>);</span><br><span class="line">    mInstaller.moveFiles();</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 4. 对扫描到的系统文件善后处理</span></span><br><span class="line">    <span class="keyword">final</span> List&lt;String&gt; possiblyDeletedUpdatedSystemApps = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">    <span class="keyword">if</span> (!mOnlyCore) &#123;</span><br><span class="line">        Iterator&lt;PackageSetting&gt; psit = mSettings.mPackages.values().iterator();</span><br><span class="line">        <span class="keyword">while</span> (psit.hasNext()) &#123;</span><br><span class="line">            PackageSetting ps = psit.next();</span><br><span class="line">            <span class="keyword">if</span> ((ps.pkgFlags &amp; ApplicationInfo.FLAG_SYSTEM) == <span class="number">0</span>) &#123;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">final</span> PackageParser.Package scannedPkg = mPackages.get(ps.name);</span><br><span class="line">            <span class="keyword">if</span> (scannedPkg != <span class="keyword">null</span>) &#123;</span><br><span class="line">                <span class="keyword">if</span> (mSettings.isDisabledSystemPackageLPr(ps.name)) &#123;</span><br><span class="line">                    removePackageLI(ps, <span class="keyword">true</span>);</span><br><span class="line">                    mExpectingBetter.put(ps.name, ps.codePath);</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (!mSettings.isDisabledSystemPackageLPr(ps.name)) &#123;</span><br><span class="line">                psit.remove();</span><br><span class="line">                removeDataDirsLI(<span class="keyword">null</span>, ps.name);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">final</span> PackageSetting disabledPs = mSettings.getDisabledSystemPkgLPr(ps.name);</span><br><span class="line">                <span class="keyword">if</span> (disabledPs.codePath == <span class="keyword">null</span> || !disabledPs.codePath.exists()) &#123;</span><br><span class="line">                    possiblyDeletedUpdatedSystemApps.add(ps.name);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    ArrayList&lt;PackageSetting&gt; deletePkgsList = mSettings.getListOfIncompleteInstallPackagesLPr();</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; deletePkgsList.size(); i++) &#123;</span><br><span class="line">        cleanupInstallFailedPackage(deletePkgsList.get(i));</span><br><span class="line">    &#125;</span><br><span class="line">    deleteTempPackageFiles();</span><br><span class="line">    mSettings.pruneSharedUsersLPw();</span><br><span class="line"><span class="comment">// 未完接代码片段3</span></span><br></pre></td></tr></table></figure></p>
+<p>【代码片段2】的主体逻辑如下：</p>
+<ol>
+<li><p>通过不断往alreadyDexOpted数组中填充元素，来略过不需要做DexOpt的文件：BOOTCLASSPATH和SYSTEMSERVERPATH这两个环境变量中定义的文件、system/framework-res.apk、system/core-libart.jar。除略过的文件外，其他APK和JAR文件都是需要做DexOpt处理的，通过调用Installer.dexopt()函数完成，这个函数只是将dexopt命令发送给installd。</p>
+</li>
+<li><p>由于Android M的APK授权机制发生了变化，在扫描系统文件之前，做了一些简单的记录，以便后续的授权处理：</p>
+<blockquote>
+<p>mIsUpgrade：如果当前版本的指纹与历史版本的指纹信息不一致，表示当前版本是一次OTA升级上来更新版本<br>mPromoteSystemApps：如果历史版本是Android M之前的版本(ver.sdkVersion &lt;= Build.VERSION_CODES.LOLLIPOP_MR1)，当前又有版本升级，则需要用一个布尔变量，表示当前需要对系统应用的授权做特殊处理，此时会先把已有的系统应用都保存在mExistingSystemPackages这个数组中</p>
+</blockquote>
+</li>
+<li><p>扫描系统文件，PMS中所有的文件扫描都是调用scanDirLI()函数，扫描系统文件重要的参数就是 PackageParser.PARSE_IS_SYSTEM和PackageParser.PARSE_IS_SYSTEM_DIR，在后文中我们会剖析这个函数。此处，需要注意的是被扫描目录的顺序，这个顺序意味着：先被扫描到的文件，就是最终被用到的文件。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/vendor/overlay &gt;&gt; /system/framework &gt;&gt; /system/priv-app &gt;&gt; /system/app &gt;&gt; /vendor/app &gt;&gt; /oem/app</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>possiblyDeletedUpdatedSystemApps这个变量表示“可能被删除的系统APP”，这是一个什么概念呢？除了 possiblyDeletedUpdatedSystemApps ，还有mExpectingBetter，表示当前这个APK有更好的选择，这又是什么概念呢？对于一个系统APP而言，在一次OTA升级的过程中，有三种可能：</p>
+<ul>
+<li>保持原状。即这个系统APP没有任何更新。</li>
+<li>更新版本。即新的OTA版本中，这个系统APP有更新。<br>-不复存在。在新的OTA版本中已经删除了这个系统APP。<br>当系统APP升级过后，PMS的Settings中会将原来的系统APP标识为Disable状态，这时候通过Settings.isDisabledSystemPackageLPr()函数调用便返回了false。因此，如果系统APP有更新版本，则属于mExpectingBetter这一类，接下来会扫描Data分区的文件，更新的系统APP就安装在Data分区。</li>
+</ul>
+</li>
+</ol>
+<p>如果一个系统APP不复存在，而且也没有被标记为Disable状态，说明这个系统APP已经彻底不存在了，需要把其在Data分区下的数据删除；如果不复存在的系统APP被标记为Disable状态，那还不能确定该系统APP是否已经被删除，因为还没有扫描Data分区的文件，所以，只能暂时将其放到possiblyDeletedUpdatedSystemApps变量中，表示“可能被删除”，在扫描Data分区之前，这是不能确定的。</p>
+<h3 id="PMS-Data分区扫描"><a href="#PMS-Data分区扫描" class="headerlink" title="PMS Data分区扫描"></a>PMS Data分区扫描</h3><p>扫描完系统文件之后，接下来会扫描Data分区的文件。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 代码片段3：扫描Data分区文件，更新公共库信息</span></span><br><span class="line">    <span class="keyword">if</span> (!mOnlyCore) &#123;</span><br><span class="line">        <span class="comment">// 关键日志，PMS对Data分区的文件扫描开始了</span></span><br><span class="line">        EventLog.writeEvent(EventLogTags.BOOT_PROGRESS_PMS_DATA_SCAN_START,</span><br><span class="line">                SystemClock.uptimeMillis());</span><br><span class="line">        <span class="comment">// 1. 扫描Data分区的文件目录</span></span><br><span class="line">        scanDirLI(mAppInstallDir, <span class="number">0</span>, scanFlags | SCAN_REQUIRE_KNOWN, <span class="number">0</span>);</span><br><span class="line">        scanDirLI(mDrmAppPrivateInstallDir, PackageParser.PARSE_FORWARD_LOCK,</span><br><span class="line">                scanFlags | SCAN_REQUIRE_KNOWN, <span class="number">0</span>);</span><br><span class="line">        <span class="comment">// 2. 扫描完Data分区后，处理“可能被删除的系统应用”</span></span><br><span class="line">        <span class="keyword">for</span> (String deletedAppName : possiblyDeletedUpdatedSystemApps) &#123;</span><br><span class="line">            PackageParser.Package deletedPkg = mPackages.get(deletedAppName);</span><br><span class="line">            mSettings.removeDisabledSystemPackageLPw(deletedAppName);</span><br><span class="line">            String msg;</span><br><span class="line">            <span class="keyword">if</span> (deletedPkg == <span class="keyword">null</span>) &#123;</span><br><span class="line">                removeDataDirsLI(<span class="keyword">null</span>, deletedAppName);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">               deletedPkg.applicationInfo.flags &amp;= ~ApplicationInfo.FLAG_SYSTEM;</span><br><span class="line">               PackageSetting deletedPs = mSettings.mPackages.get(deletedAppName);</span><br><span class="line">               deletedPs.pkgFlags &amp;= ~ApplicationInfo.FLAG_SYSTEM;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 3. 处理有版本更新的系统应用</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; mExpectingBetter.size(); i++) &#123;</span><br><span class="line">            <span class="keyword">final</span> String packageName = mExpectingBetter.keyAt(i);</span><br><span class="line">            <span class="keyword">if</span> (!mPackages.containsKey(packageName)) &#123;</span><br><span class="line">                <span class="keyword">final</span> File scanFile = mExpectingBetter.valueAt(i);</span><br><span class="line">                <span class="keyword">final</span> <span class="keyword">int</span> reparseFlags;</span><br><span class="line">                <span class="comment">// 设置重新扫描的解析参数</span></span><br><span class="line">                <span class="keyword">if</span> (FileUtils.contains(privilegedAppDir, scanFile)) &#123;</span><br><span class="line">                    reparseFlags = PackageParser.PARSE_IS_SYSTEM</span><br><span class="line">                            | PackageParser.PARSE_IS_SYSTEM_DIR</span><br><span class="line">                            | PackageParser.PARSE_IS_PRIVILEGED;</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;...&#125;</span><br><span class="line"></span><br><span class="line">                <span class="comment">// 将原来的系统应用重新置为Enable状态</span></span><br><span class="line">                mSettings.enableSystemPackageLPw(packageName);</span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    scanPackageLI(scanFile, reparseFlags, scanFlags, <span class="number">0</span>, <span class="keyword">null</span>);</span><br><span class="line">                &#125; <span class="keyword">catch</span> (PackageManagerException e) &#123; ... &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="comment">// end of "if (!mOnlyCore)"</span></span><br><span class="line">    mExpectingBetter.clear();</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 4. 处理公共库</span></span><br><span class="line">    updateAllSharedLibrariesLPw();</span><br><span class="line">    <span class="keyword">for</span> (SharedUserSetting setting : mSettings.getAllSharedUsersLPw()) &#123;</span><br><span class="line">         adjustCpuAbisForSharedUserLPw(setting.packages, <span class="keyword">null</span> <span class="comment">/* scanned package */</span>,</span><br><span class="line">                 <span class="keyword">false</span> <span class="comment">/* force dexopt */</span>, <span class="keyword">false</span> <span class="comment">/* defer dexopt */</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    mPackageUsage.readLP();</span><br><span class="line">    <span class="comment">// 关键日志，PMS扫描结束了</span></span><br><span class="line">    EventLog.writeEvent(EventLogTags.BOOT_PROGRESS_PMS_SCAN_END,</span><br><span class="line">            SystemClock.uptimeMillis());</span><br><span class="line"><span class="comment">// 未完接代码片段4</span></span><br></pre></td></tr></table></figure></p>
+<p>Data分区文件的扫描都被mOnlyCore这个布尔变量笼罩，当其为true时，表示只需要扫描系统文件；当其为false时，才会扫描Data分区文件。【代码片段3】的主体逻辑如下：</p>
+<ol>
+<li><p>调用PMS.scanDirLI()函数扫描 /data/app 和 /data/app-private两个目录的文件。后文会详细剖析该函数。</p>
+</li>
+<li><p>扫描完Data分区的文件后，需要对之前系统文件的余孽做一些处理，第一类是possiblyDeletedUpdatedSystemApps，因为在扫描Data分区文件之前，不能确定系统应用有没有被彻底删除，如果在Data分区也无法找到了不复存在的系统应用，则需要彻底删除该系统应用；如果在Data分区找到了不复存在的系统应用，则需要去除其系统应用的标识。</p>
+</li>
+<li><p>另外一类系统应用的余孽是mExpectingBetter，表示系统应用已经升级过。如果在Data分区无法找到这些升级过的系统应用，那很可能是用户在OTA升级时，清除了Data分区的数据，对于这种场景，需要重新扫描一下该应用原来位于系统分区的文件。</p>
+</li>
+<li><p>SystemConfig中定义了公共库，在APK的AndroidManifest.xml文件中，会通过<use-library>标签标记该APK动态依赖的公共库，此处的逻辑就是将APK与SystemConfig中的公共库关联起来。如果APK使用的公共库并不存在，则会抛出异常(INSTALL_FAILED_MISSING_SHARED_LIBRARY)。</use-library></p>
+</li>
+</ol>
+<h3 id="收尾工作"><a href="#收尾工作" class="headerlink" title="收尾工作"></a>收尾工作</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 代码片段4：收尾工作</span></span><br><span class="line">    <span class="comment">// 授权</span></span><br><span class="line">    <span class="keyword">int</span> updateFlags = UPDATE_PERMISSIONS_ALL;</span><br><span class="line">    <span class="keyword">if</span> (ver.sdkVersion != mSdkVersion) &#123;</span><br><span class="line">        updateFlags |= UPDATE_PERMISSIONS_REPLACE_PKG | UPDATE_PERMISSIONS_REPLACE_ALL;</span><br><span class="line">    &#125;</span><br><span class="line">    updatePermissionsLPw(<span class="keyword">null</span>, <span class="keyword">null</span>, updateFlags);</span><br><span class="line">    ver.sdkVersion = mSdkVersion;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 多用户场景下的版本兼容处理</span></span><br><span class="line">    <span class="keyword">if</span> (!onlyCore &amp;&amp; (mPromoteSystemApps || !mRestoredSettings)) &#123;</span><br><span class="line">        <span class="keyword">for</span> (UserInfo user : sUserManager.getUsers(<span class="keyword">true</span>)) &#123;</span><br><span class="line">            mSettings.applyDefaultPreferredAppsLPw(<span class="keyword">this</span>, user.id);</span><br><span class="line">            applyFactoryDefaultBrowserLPw(user.id);</span><br><span class="line">            primeDomainVerificationsLPw(user.id);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 如果是升级新版本，则需要清除已有的Code cache目录</span></span><br><span class="line">    <span class="keyword">if</span> (mIsUpgrade &amp;&amp; !onlyCore) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; mSettings.mPackages.size(); i++) &#123;</span><br><span class="line">            <span class="keyword">final</span> PackageSetting ps = mSettings.mPackages.valueAt(i);</span><br><span class="line">            <span class="keyword">if</span> (Objects.equals(StorageManager.UUID_PRIVATE_INTERNAL, ps.volumeUuid)) &#123;</span><br><span class="line">                deleteCodeCacheDirsLI(ps.volumeUuid, ps.name);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        ver.fingerprint = Build.FINGERPRINT;</span><br><span class="line">    &#125;</span><br><span class="line">    checkDefaultBrowser();</span><br><span class="line">    mExistingSystemPackages.clear();</span><br><span class="line">    mPromoteSystemApps = <span class="keyword">false</span>;</span><br><span class="line">    ver.databaseVersion = Settings.CURRENT_DATABASE_VERSION;</span><br><span class="line">    mSettings.writeLPr();</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 关键日志，PMS已经启动完毕了</span></span><br><span class="line">    EventLog.writeEvent(EventLogTags.BOOT_PROGRESS_PMS_READY,</span><br><span class="line">            SystemClock.uptimeMillis());</span><br><span class="line"></span><br><span class="line">    mRequiredVerifierPackage = getRequiredVerifierLPr();</span><br><span class="line">    mRequiredInstallerPackage = getRequiredInstallerLPr();</span><br><span class="line">    <span class="comment">// 初始化包安装服务</span></span><br><span class="line">    mInstallerService = <span class="keyword">new</span> PackageInstallerService(context, <span class="keyword">this</span>);</span><br><span class="line">    mIntentFilterVerifierComponent = getIntentFilterVerifierComponentNameLPr();</span><br><span class="line">    mIntentFilterVerifier = <span class="keyword">new</span> IntentVerifierProxy(mContext,</span><br><span class="line">            mIntentFilterVerifierComponent);</span><br><span class="line">    &#125; <span class="comment">// synchronized (mPackages)</span></span><br><span class="line">    &#125; <span class="comment">// synchronized (mInstallLock)</span></span><br><span class="line"></span><br><span class="line">    Runtime.getRuntime().gc();</span><br><span class="line">    LocalServices.addService(PackageManagerInternal.class, <span class="keyword">new</span> PackageManagerInternalImpl());</span><br><span class="line">&#125; <span class="comment">// PMS构造函数完结</span></span><br></pre></td></tr></table></figure>
+<p>【代码片段4】主要进行一些收尾工作，有几个关键点：</p>
+<ul>
+<li>授权，通过调用PMS.updatePermissionsLPw()函数，后文会详细分析</li>
+<li>版本兼容处理，Android M引入了多用户，需要更新每个APK关联到的userid</li>
+<li>将PMS的Settings信息写入/system/packages.xml文件中，Settings是PMS中所有包信息的汇总的数据结构，PMS对包的管理极其依赖于这个数据结构。</li>
+<li>初始化包安装服务PackageInstallerService。<br>至此，PMS对象的构建过程已经分析完毕，整个逻辑还是较为清晰的，但其实这是一个非常耗时的过程，开机时间大部分都耗在文件扫描上。</li>
+</ul>
+<h2 id="文件扫描"><a href="#文件扫描" class="headerlink" title="文件扫描"></a>文件扫描</h2><p>scanDirLI()只是文件扫描的起点，由此引发出一串的与文件扫描相关的函数。<br><img src="/Android-PackageManagerService-Analysis/5-packagemanager-scan-seq.png" alt="文件扫描"><br>接下来，笔者会按照调用时序，对关键函数进行分析。PMS对象构建时，待扫描的目录有很多，不同目录的文件扫描，只是在扫描参数上略有区别，整体逻辑上并无不同。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">scanDirLI</span><span class="params">(File dir, <span class="keyword">int</span> parseFlags, <span class="keyword">int</span> scanFlags, <span class="keyword">long</span> currentTime)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">final</span> File[] files = dir.listFiles();</span><br><span class="line">    <span class="keyword">if</span> (ArrayUtils.isEmpty(files)) &#123;</span><br><span class="line">         <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (File file : files) &#123;</span><br><span class="line">        <span class="keyword">final</span> <span class="keyword">boolean</span> isPackage = (isApkFile(file) || file.isDirectory())</span><br><span class="line">            &amp;&amp; !PackageInstallerService.isStageName(file.getName());</span><br><span class="line">        <span class="keyword">if</span> (!isPackage) &#123;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            scanPackageLI(file, parseFlags | PackageParser.PARSE_MUST_BE_APK,</span><br><span class="line">                    scanFlags, currentTime, <span class="keyword">null</span>);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (PackageManagerException e) &#123;</span><br><span class="line">            <span class="keyword">if</span> ((parseFlags &amp; PackageParser.PARSE_IS_SYSTEM) == <span class="number">0</span> &amp;&amp;</span><br><span class="line">                    e.error == PackageManager.INSTALL_FAILED_INVALID_APK) &#123;</span><br><span class="line">                <span class="comment">// 如果扫描Data分区的APK失败，则删除Data分区扫描失败的文件</span></span><br><span class="line">                <span class="keyword">if</span> (file.isDirectory()) &#123;</span><br><span class="line">                    mInstaller.rmPackageDir(file.getAbsolutePath());</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    file.delete();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Ongoing—</p>
+<p>## </p>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a href="http://duanqz.github.io/2017-01-04-Package-Manage-Mechanism#1-%E6%A6%82%E8%A6%81" target="_blank" rel="noopener">Android包管理机制</a><br><a href="https://blog.csdn.net/linliang815/article/details/76640262" target="_blank" rel="noopener">Android 包管理（PackageManagerService）</a><br><a href="https://blog.csdn.net/innost/article/details/47253179" target="_blank" rel="noopener">第4章  深入理解PackageManagerService</a><br><a href="http://wiki.jikexueyuan.com/project/deep-android-v2/packagemanagerservice.html" target="_blank" rel="noopener">深入理解 PackageManagerService</a><br><a href="https://blog.csdn.net/gaugamela/article/details/52619720" target="_blank" rel="noopener">Android7.0 PackageManagerService (1) 通信结构、启动和main函数</a><br><a href="https://www.cnblogs.com/chenlong-50954265/p/5729553.html" target="_blank" rel="noopener">Android PackageManagerService详细分析</a><br><a href="https://blog.csdn.net/xiashaohua/article/details/75129690" target="_blank" rel="noopener">Android8.0 PackageManagerService相关 – APK安装和install 的变更和源码浅析</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Android/" rel="tag"># Android</a>
+          
+            <a href="/tags/PackageManagerService/" rel="tag"># PackageManagerService</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/Ubuntu-OpenGork/" rel="next" title="Ubuntu 配置 OpenGork 服务">
+                <i class="fa fa-chevron-left"></i> Ubuntu 配置 OpenGork 服务
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/Android中PackageManagerService相关的文件/" rel="prev" title="Android中PackageManagerService相关的文件">
+                Android中PackageManagerService相关的文件 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  
+    <div id="gitalk-container"></div>
+  
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/myapple.jpg"
+                alt="Eric Chows" />
+            
+              <p class="site-author-name" itemprop="name">Eric Chows</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">52</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">30</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">53</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/ericchows" target="_blank" title="GitHub">
+                    
+                      <i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:xnzds2008@163.com" target="_blank" title="E-Mail">
+                    
+                      <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://plus.google.com" target="_blank" title="Google">
+                    
+                      <i class="fa fa-fw fa-google"></i>Google</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://twitter.com" target="_blank" title="Twitter">
+                    
+                      <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.facebook.com" target="_blank" title="FB Page">
+                    
+                      <i class="fa fa-fw fa-facebook"></i>FB Page</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://vk.com" target="_blank" title="VK Group">
+                    
+                      <i class="fa fa-fw fa-vk"></i>VK Group</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://stackoverflow.com/users/8872810/eric" target="_blank" title="StackOverflow">
+                    
+                      <i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://youtube.com" target="_blank" title="YouTube">
+                    
+                      <i class="fa fa-fw fa-youtube"></i>YouTube</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://instagram.com" target="_blank" title="Instagram">
+                    
+                      <i class="fa fa-fw fa-instagram"></i>Instagram</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="skype" target="_blank" title="Skype">
+                    
+                      <i class="fa fa-fw fa-skype"></i>Skype</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="/images/wechat.jpg" target="_blank" title="Wechat">
+                    
+                      <i class="fa fa-fw fa-globe"></i>Wechat</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://blog.csdn.net/Cxiaolinxiaozi" target="_blank" title="CSDN">
+                    
+                      <i class="fa fa-fw fa-globe"></i>CSDN</a>
+                </span>
+              
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#概要"><span class="nav-number">1.</span> <span class="nav-text">概要</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#被管理对象的形态"><span class="nav-number">2.</span> <span class="nav-text">被管理对象的形态</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#包解析器"><span class="nav-number">3.</span> <span class="nav-text">包解析器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#包信息体"><span class="nav-number">4.</span> <span class="nav-text">包信息体</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#PMS的启动过程"><span class="nav-number">5.</span> <span class="nav-text">PMS的启动过程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#对象创建"><span class="nav-number">5.1.</span> <span class="nav-text">对象创建</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#PMS部分属性初始化"><span class="nav-number">5.1.1.</span> <span class="nav-text">PMS部分属性初始化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PMS-系统文件Dexopt扫描"><span class="nav-number">5.1.2.</span> <span class="nav-text">PMS 系统文件Dexopt扫描</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PMS-Data分区扫描"><span class="nav-number">5.1.3.</span> <span class="nav-text">PMS Data分区扫描</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#收尾工作"><span class="nav-number">5.1.4.</span> <span class="nav-text">收尾工作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件扫描"><span class="nav-number">5.2.</span> <span class="nav-text">文件扫描</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">6.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2015 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">EricChows</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="//s95.cnzz.com/z_stat.php?id=1274018749&web_id=1274018749" language="JavaScript"></script>
+  </div>
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.3"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+   <script type="text/javascript">
+		var gitalk = new Gitalk({
+		  clientID: '2f039a8ed54186479946',
+		  clientSecret: 'bc88282455b50fbc8c5d9502d17621a4f9e48d18',
+		  repo: 'myblog-comment',
+		  owner: 'EricChows',
+		  admin: ['EricChows'],
+		  id: location.pathname,
+		  distractionFreeMode: 'true'
+		})
+		gitalk.render('gitalk-container')           
+       </script>
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('-1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("ANlC6pJEdxOLHAcDbFuHuXrF-gzGzoHsz", "tNpAWjkmbhhKnsB3bcDooRrl");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.3"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.3"></script>
+
+
+  
+
+</body>
+</html>

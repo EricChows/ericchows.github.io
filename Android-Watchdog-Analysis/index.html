@@ -1,0 +1,1525 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Watchdog," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="EricChows" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="概览Watchdog的中文的“看门狗”，有保护的意思。最早引入Watchdog是在单片机系统中，由于单片机的工作环境容易受到外界磁场的干扰，导致程序“跑飞”，造成整个系统无法正常工作，因此，引入了一个“看门狗”，对单片机的运行状态进行实时监测，针对运行故障做一些保护处理，譬如让系统重启。这种Watchdog属于硬件层面，必须有硬件电路的支持。 Linux也引入了Watchdog，在Linux内核下">
+<meta name="keywords" content="Watchdog">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Watchdog机制以及问题分析">
+<meta property="og:url" content="http://yoursite.com/Android-Watchdog-Analysis/index.html">
+<meta property="og:site_name" content="EricChows">
+<meta property="og:description" content="概览Watchdog的中文的“看门狗”，有保护的意思。最早引入Watchdog是在单片机系统中，由于单片机的工作环境容易受到外界磁场的干扰，导致程序“跑飞”，造成整个系统无法正常工作，因此，引入了一个“看门狗”，对单片机的运行状态进行实时监测，针对运行故障做一些保护处理，譬如让系统重启。这种Watchdog属于硬件层面，必须有硬件电路的支持。 Linux也引入了Watchdog，在Linux内核下">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-07-16T12:53:08.684Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Watchdog机制以及问题分析">
+<meta name="twitter:description" content="概览Watchdog的中文的“看门狗”，有保护的意思。最早引入Watchdog是在单片机系统中，由于单片机的工作环境容易受到外界磁场的干扰，导致程序“跑飞”，造成整个系统无法正常工作，因此，引入了一个“看门狗”，对单片机的运行状态进行实时监测，针对运行故障做一些保护处理，譬如让系统重启。这种Watchdog属于硬件层面，必须有硬件电路的支持。 Linux也引入了Watchdog，在Linux内核下">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/Android-Watchdog-Analysis/"/>
+
+
+
+
+
+  <title>Watchdog机制以及问题分析 | EricChows</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">EricChows</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">Android Developer</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Android-Watchdog-Analysis/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Eric Chows">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/myapple.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="EricChows">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Watchdog机制以及问题分析</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-01T21:23:33+08:00">
+                2018-06-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/Android-Watchdog-Analysis/" class="leancloud_visitors" data-flag-title="Watchdog机制以及问题分析">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="概览"><a href="#概览" class="headerlink" title="概览"></a>概览</h1><p>Watchdog的中文的“看门狗”，有保护的意思。最早引入Watchdog是在单片机系统中，由于单片机的工作环境容易受到外界磁场的干扰，导致程序“跑飞”，造成整个系统无法正常工作，因此，引入了一个“看门狗”，对单片机的运行状态进行实时监测，针对运行故障做一些保护处理，譬如让系统重启。这种Watchdog属于硬件层面，必须有硬件电路的支持。</p>
+<p>Linux也引入了Watchdog，在Linux内核下，当Watchdog启动后，便设定了一个定时器，如果在超时时间内没有对/dev/Watchdog进行写操作，则会导致系统重启。通过定时器实现的Watchdog属于软件层面。</p>
+<p>Android设计了一个软件层面Watchdog，用于保护一些重要的系统服务，当出现故障时，通常会让Android系统重启。由于这种机制的存在，就经常会出现一些system_server进程被Watchdog杀掉而发生手机重启的问题。</p>
+<p>本文期望回答以下问题：</p>
+<ul>
+<li>1)Watchdog是怎么工作的？这涉及到Watchdog的工作机制。</li>
+<li>2)遇到Watchdog的问题该怎么办？这涉及到分析Watchdog问题的惯用方法。</li>
+</ul>
+<p><strong>本文主要分析的是Framework中的Watchdog，底层(Kernel)侧也有Watchdog机制。但本文不分析。</strong></p>
+<h1 id="Watchdog机制"><a href="#Watchdog机制" class="headerlink" title="Watchdog机制"></a>Watchdog机制</h1><p>本文以<a href="https://android.googlesource.com/platform/frameworks/base/+/master/services/core/java/com/android/server/Watchdog.java" target="_blank" rel="noopener">frameworks/base/services/core/java/com/android/server/Watchdog.java</a>为蓝本，分析Watchdog的实现逻辑。为了描述方便，ActivityManagerService， PackageManagerService， WindowManagerService会分别简称为AMS, PKMS, WMS。</p>
+<h2 id="Watchdog的初始化"><a href="#Watchdog的初始化" class="headerlink" title="Watchdog的初始化"></a>Watchdog的初始化</h2><p>Android的Watchdog是一个单例线程，在System Server时就会初始化Watchdog。Watchdog在初始化时，会构建很多HandlerChecker，大致可以分为两类：</p>
+<ul>
+<li>Monitor Checker，用于检查是Monitor对象可能发生的死锁, AMS, PKMS, WMS等核心的系统服务都是Monitor对象。</li>
+<li>Looper Checker，用于检查线程的消息队列是否长时间处于工作状态。Watchdog自身的消息队列，Ui, Io, Display这些全局的消息队列都是被检查的对象。此外，一些重要的线程的消息队列，也会加入到Looper Checker中，譬如AMS, PKMS，这些是在对应的对象初始化时加入的。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="title">Watchdog</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ....</span><br><span class="line">    mMonitorChecker = <span class="keyword">new</span> HandlerChecker(FgThread.getHandler(),</span><br><span class="line">                <span class="string">"foreground thread"</span>, DEFAULT_TIMEOUT);</span><br><span class="line">    mHandlerCheckers.add(mMonitorChecker);</span><br><span class="line">    mHandlerCheckers.add(<span class="keyword">new</span> HandlerChecker(<span class="keyword">new</span> Handler(Looper.getMainLooper()),</span><br><span class="line">                <span class="string">"main thread"</span>, DEFAULT_TIMEOUT));</span><br><span class="line">    mHandlerCheckers.add(<span class="keyword">new</span> HandlerChecker(UiThread.getHandler(),</span><br><span class="line">                <span class="string">"ui thread"</span>, DEFAULT_TIMEOUT));</span><br><span class="line">    mHandlerCheckers.add(<span class="keyword">new</span> HandlerChecker(IoThread.getHandler(),</span><br><span class="line">                <span class="string">"i/o thread"</span>, DEFAULT_TIMEOUT));</span><br><span class="line">    mHandlerCheckers.add(<span class="keyword">new</span> HandlerChecker(DisplayThread.getHandler(),</span><br><span class="line">                <span class="string">"display thread"</span>, DEFAULT_TIMEOUT));</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>两类HandlerChecker的侧重点不同，Monitor Checker预警我们不能长时间持有核心系统服务的对象锁，否则会阻塞很多函数的运行; Looper Checker预警我们不能长时间的霸占消息队列，否则其他消息将得不到处理。这两类都会导致系统卡住(System Not Responding)。</p>
+<h2 id="添加Watchdog监测对象"><a href="#添加Watchdog监测对象" class="headerlink" title="添加Watchdog监测对象"></a>添加Watchdog监测对象</h2><p>Watchdog初始化以后，就可以作为system_server进程中的一个单独的线程运行了。但这个时候，还不能触发Watchdog的运行，因为AMS, PKMS等系统服务还没有加入到Watchdog的监测集。 所谓监测集，就是需要Watchdog关注的对象，Android中有成千上万的消息队列在同时运行，然而，Watchdog毕竟是系统层面的东西，它只会关注一些核心的系统服务。</p>
+<p>Watchdog提供两个方法，分别用于添加Monitor Checker对象和Looper Checker对象:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addMonitor</span><span class="params">(Monitor monitor)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 将monitor对象添加到Monitor Checker中，</span></span><br><span class="line">    <span class="comment">// 在Watchdog初始化时，可以看到Monitor Checker本身也是一个HandlerChecker对象</span></span><br><span class="line">    mMonitors.add(monitor);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addThread</span><span class="params">(Handler thread, <span class="keyword">long</span> timeoutMillis)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">synchronized</span> (<span class="keyword">this</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (isAlive()) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(<span class="string">"Threads can't be added once the Watchdog is running"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">final</span> String name = thread.getLooper().getThread().getName();</span><br><span class="line">        <span class="comment">// 为Handler构建一个HandlerChecker对象，其实就是**Looper Checker**</span></span><br><span class="line">        mHandlerCheckers.add(<span class="keyword">new</span> HandlerChecker(thread, name, timeoutMillis));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>被Watchdog监测的对象，都需要将自己添加到Watchdog的监测集中。以下是AMS的类定义和构造器的代码片段：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">ActivityManagerService</span> <span class="keyword">extends</span> <span class="title">ActivityManagerNative</span></span></span><br><span class="line"><span class="class">        <span class="keyword">implements</span> <span class="title">Watchdog</span>.<span class="title">Monitor</span>, <span class="title">BatteryStatsImpl</span>.<span class="title">BatteryCallback</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ActivityManagerService</span><span class="params">(Context systemContext)</span> </span>&#123;</span><br><span class="line">        ...</span><br><span class="line">        Watchdog.getInstance().addMonitor(<span class="keyword">this</span>);</span><br><span class="line">        Watchdog.getInstance().addThread(mHandler);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">monitor</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">synchronized</span> (<span class="keyword">this</span>) &#123; &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>AMS实现了Watchdog.Monitor接口，这个接口只有一个方法，就是monitor()，它的作用后文会再解释。这里可以看到在AMS的构造器中，将自己添加到Monitor Checker对象中，然后将自己的handler添加到Looper Checker对象中。 其他重要的系统服务添加到Watchdog的代码逻辑都与AMS差不多。</p>
+<p>整个Android系统中，被monitor的对象并不多，十个手指头就能数出来Watchdog.Monitor的实现类的个数。</p>
+<h2 id="Watchdog的监测机制"><a href="#Watchdog的监测机制" class="headerlink" title="Watchdog的监测机制"></a>Watchdog的监测机制</h2><p>Watchdog本身是一个线程，它的run()方法实现如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">boolean</span> waitedHalf = <span class="keyword">false</span>;</span><br><span class="line">    <span class="keyword">while</span> (<span class="keyword">true</span>) &#123;</span><br><span class="line">        ...</span><br><span class="line">        <span class="keyword">synchronized</span> (<span class="keyword">this</span>) &#123;</span><br><span class="line">            ...</span><br><span class="line">            <span class="comment">// 1. 调度所有的HandlerChecker</span></span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;mHandlerCheckers.size(); i++) &#123;</span><br><span class="line">                HandlerChecker hc = mHandlerCheckers.get(i);</span><br><span class="line">                hc.scheduleCheckLocked();</span><br><span class="line">            &#125;</span><br><span class="line">            ...</span><br><span class="line">            <span class="comment">// 2. 开始定期检查</span></span><br><span class="line">            <span class="keyword">long</span> start = SystemClock.uptimeMillis();</span><br><span class="line">            <span class="keyword">while</span> (timeout &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                ...</span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    wait(timeout);</span><br><span class="line">                &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">                    Log.wtf(TAG, e);</span><br><span class="line">                &#125;</span><br><span class="line">                ...</span><br><span class="line">                timeout = CHECK_INTERVAL - (SystemClock.uptimeMillis() - start);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 3. 检查HandlerChecker的完成状态</span></span><br><span class="line">            <span class="keyword">final</span> <span class="keyword">int</span> waitState = evaluateCheckerCompletionLocked();</span><br><span class="line">            <span class="keyword">if</span> (waitState == COMPLETED) &#123;</span><br><span class="line">                ...</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (waitState == WAITING) &#123;</span><br><span class="line">                ...</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (waitState == WAITED_HALF) &#123;</span><br><span class="line">                ...</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 4. 存在超时的HandlerChecker</span></span><br><span class="line">            blockedCheckers = getBlockedCheckersLocked();</span><br><span class="line">            subject = describeCheckersLocked(blockedCheckers);</span><br><span class="line">            allowRestart = mAllowRestart;</span><br><span class="line">        &#125;</span><br><span class="line">        ...</span><br><span class="line">        <span class="comment">// 5. 保存日志，判断是否需要杀掉系统进程</span></span><br><span class="line">        Slog.w(TAG, <span class="string">"*** GOODBYE!"</span>);</span><br><span class="line">        Process.killProcess(Process.myPid());</span><br><span class="line">        System.exit(<span class="number">10</span>);</span><br><span class="line">    &#125; <span class="comment">// end of while (true)</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>以上代码片段主要的运行逻辑如下：</p>
+<ol>
+<li>Watchdog运行后，便开始无限循环，依次调用每一个HandlerChecker的scheduleCheckLocked()方法</li>
+<li>调度完HandlerChecker之后，便开始定期检查是否超时，每一次检查的间隔时间由CHECK_INTERVAL常量设定，为30秒</li>
+<li>每一次检查都会调用evaluateCheckerCompletionLocked()方法来评估一下HandlerChecker的完成状态：<ul>
+<li>COMPLETED表示已经完成</li>
+<li>WAITING和WAITED_HALF表示还在等待，但未超时</li>
+<li>OVERDUE表示已经超时。默认情况下，timeout是1分钟，但监测对象可以通过传参自行设定，譬如PKMS的Handler Checker的超时是10分钟</li>
+</ul>
+</li>
+<li>如果超时时间到了，还有HandlerChecker处于未完成的状态(OVERDUE)，则通过getBlockedCheckersLocked()方法，获取阻塞的HandlerChecker，生成一些描述信息</li>
+<li>保存日志，包括一些运行时的堆栈信息，这些日志是我们解决Watchdog问题的重要依据。如果判断需要杀掉system_server进程，则给当前进程(system_server)发送signal 9</li>
+</ol>
+<p>只要Watchdog没有发现超时的任务，HandlerChecker就会被不停的调度，那HandlerChecker具体做一些什么检查呢？ 直接上代码：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">HandlerChecker</span> <span class="keyword">implements</span> <span class="title">Runnable</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">scheduleCheckLocked</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">// Looper Checker中是不包含monitor对象的，判断消息队列是否处于空闲</span></span><br><span class="line">        <span class="keyword">if</span> (mMonitors.size() == <span class="number">0</span> &amp;&amp; mHandler.getLooper().isIdling()) &#123;</span><br><span class="line">            mCompleted = <span class="keyword">true</span>;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        ...</span><br><span class="line">        <span class="comment">// 将Monitor Checker的对象置于消息队列之前，优先运行</span></span><br><span class="line">        mHandler.postAtFrontOfQueue(<span class="keyword">this</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 依次调用Monitor对象的monitor()方法</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span> ; i &lt; size ; i++) &#123;</span><br><span class="line">            <span class="keyword">synchronized</span> (Watchdog.<span class="keyword">this</span>) &#123;</span><br><span class="line">                mCurrentMonitor = mMonitors.get(i);</span><br><span class="line">            &#125;</span><br><span class="line">            mCurrentMonitor.monitor();</span><br><span class="line">        &#125;</span><br><span class="line">        ...</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>对于Looper Checker而言，会判断线程的消息队列是否处于空闲状态。 如果被监测的消息队列一直闲不下来，则说明可能已经阻塞等待了很长时间</li>
+<li>对于Monitor Checker而言，会调用实现类的monitor方法，譬如上文中提到的AMS.monitor()方法， 方法实现一般很简单，就是获取当前类的对象锁，如果当前对象锁已经被持有，则monitor()会一直处于wait状态，直到超时，这种情况下，很可能是线程发生了死锁</li>
+</ul>
+<p>至此，我们已经分析了Watchdog的工作机制，回答了我们提出的第一个问题：<br>Watchdog定时检查一些重要的系统服务，举报长时间阻塞的事件，甚至杀掉system_server进程，让Android系统重启。</p>
+<h1 id="问题分析方法"><a href="#问题分析方法" class="headerlink" title="问题分析方法"></a>问题分析方法</h1><h2 id="日志获取"><a href="#日志获取" class="headerlink" title="日志获取"></a>日志获取</h2><p>Andriod的日志门类繁多，而且，为了调试的需要，设备厂商和应用开发者都会在AOSP的基础上增加很多日志。 面对如此庞大复杂的日志系统，通常只有对应领域的专家才能看懂其透露的细节信息，就像去医院就诊，医生一看检查报告就知道患者身体出了什么问题，而外行对这些诊断信息往往是束手无策的。</p>
+<p>解决Watchdog相关的问题，对日志的要求比较高，有些问题与当时的系统环境相关，仅仅凭借单一的日志并不能定位问题。 以下罗列出获取Android日志的一些重要手段，部分场景下，Watchdog相关的问题甚至需要以下所有的日志：</p>
+<p>• <strong>logcat</strong> 通过adb logcat命令输出Android的一些当前运行日志，可以通过logcat的 -b 参数指定要输出的日志缓冲区，缓冲区对应着logcat的一种日志类型。 高版本的logcat可以使用 -b all 获取到所有缓冲区的日志</p>
+<ul>
+<li><strong>event</strong> 通过android.util.EventLog工具类打印的日志，一些重要的系统事件会使用此类日志</li>
+<li><strong>main</strong> 通过android.util.Log工具类打印的日志，应用程序，尤其是基于SDK的应用程序，会使用此类日志</li>
+<li><strong>system</strong> 通过android.util.Slog工具类打印的日志，系统相关的日志一般都是使用此类日志，譬如SystemServer</li>
+<li><strong>radio</strong> 通过android.util.Rlog工具类打印的日志，通信模块相关的日志一般都是使用此类日志，譬如RIL<br>• <strong>dumpsys</strong> 通过adb dumpsys命令输出一些重要的系统服务信息，譬如内存、电源、磁盘等， 工作原理可以查阅dumpsys介绍一文</li>
+</ul>
+<p>• <strong>traces</strong> 该文件记录了一个时间段的函数调用栈信息，通常在应用发生ANR(Application Not Responding)时，会触发打印各进程的函数调用栈。 站在Linux的角度，其实就是向进程发送SIGNAL_QUIT(3)请求，譬如，我们可以通过adb shell kill -3 <pid>命令，打印指定进程的的trace。 SIGNAL_QUIT(3)表面意思有一点误导，它其实并不会导致进程退出。输出一般在 <em>/data/anr/traces.txt</em> 文件中，当然，这是可以灵活配置的， Android提供的系统属性dalvik.vm.stack-trace-file可以用来配置生成traces文件的位置。</pid></p>
+<p>• <strong>binder</strong> 通过Binder跨进程调用的日志，可以通过adb shell cat命令从 /proc/binder 下取出对应的日志</p>
+<ul>
+<li><strong>failed_transaction_log</strong></li>
+<li><strong>transaction_log</strong></li>
+<li><strong>transactions</strong></li>
+<li><strong>stats</strong></li>
+</ul>
+<p>• <strong>dropbox</strong> 为了记录历史的logcat日志，Android引入了Dropbox，将历史日志持久化到磁盘中(/data/system/dropbox)。 logcat的缓冲区大小毕竟是有限的，所以需要循环利用，这样历史的日志信息就会被冲掉。在一些自动化测试的场景下，譬如Monkey需要长时间的运行， 就需要把历史的日志全都保存下来。</p>
+<p>• <strong>tombstone</strong> tombstone错误一般由Dalvik错误、native层的代码问题导致的。当系统发生tombstone时，内核会上报一个严重的警告信号， 上层收到后，把当前的调用栈信息持久化到磁盘中(/data/tombstone)</p>
+<p>• <strong>bugreport</strong> 通过adb bugreport命令输出，日志内容多到爆，logcat, traces, dmesg, dumpsys, binder的日志都包含在其中。 由于输出bugreport的时间很长，当系统发生错误时，我们再执行bugreport往往就来不及了(此时，系统可能都已经重启了)，所以，要动用bugreport就需要结合一些其他机制， 譬如在杀掉system_server进程之前，先让bugreport运行完。</p>
+<h2 id="问题定位"><a href="#问题定位" class="headerlink" title="问题定位"></a>问题定位</h2><p>Watchdog出现的日志很明显，logcat中的event, system中都会有体现，要定位问题，可以从检索日志中的watchdog关键字开始。</p>
+<p>发生Watchdog检测超时这么重要的系统事件，Android会打印一个EventLog：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">watchdog: Blocked in handler XXX    # 表示HandlerChecker超时了</span><br><span class="line">watchdog: Blocked in monitor XXX    # 表示MonitorChecker超时了</span><br></pre></td></tr></table></figure></p>
+<p>Watchdog是运行在system_server进程中，会打印一些System类型的日志。在手机处于非调试状态时，伴随Watchdog出现的往往是system_server进程被杀，从而系统重启。 当Watchdog要主动杀掉system_server进程时，以下关键字就会出现在SystemLog中：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Watchdog: *** WATCHDOG KILLING SYSTEM PROCESS: XXX</span><br><span class="line">Watchdog: XXX</span><br><span class="line">Watchdog: <span class="string">"*** GOODBYE!</span></span><br></pre></td></tr></table></figure></p>
+<p>当我们在日志中检索到上述两类关键信息时，说明“Watchdog显灵”了，从另一个角度来理解，就是“System Not Responding”了。 接下来，我们需要进一步定位在watchdog出现之前，system_server进程在干什么，处于一个什么状态。 这与排除”Application Not Responding“问题差不多，我们需要进程的traces信息、当前系统的CPU运行信息、IO信息。</p>
+<p>找到Watchddog出现之前的traces.txt文件，这个时间差最好不要太大，因为Watchdog默认的超时时间是1分钟，太久以前的traces并不能说明问题。 诱导Watchdong出现的直接原因其实就是system_server中某个线程被阻塞了，这个信息在event和system的log中清晰可见。 我们以一个systemLog为例：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">W Watchdog: *** WATCHDOG KILLING SYSTEM PROCESS: Blocked in monitor com.android.server.wm.<span class="function">WindowManagerService on foreground <span class="title">thread</span> <span class="params">(android.fg)</span></span></span><br></pre></td></tr></table></figure></p>
+<p>Watchdog告诉我们Monitor Checker超时了，具体在哪呢？ 名为android.fg的线程在WindowManagerService的monitor()方法被阻塞了。这里隐含了两层意思：</p>
+<ol>
+<li>WindowManagerService实现了Watchdog.Monitor这个接口，并将自己作为Monitor Checker的对象加入到了Watchdog的监测集中</li>
+<li>monitor()方法是运行在android.fg线程中的。Android将android.fg设计为一个全局共享的线程，意味着它的消息队列可以被其他线程共享， Watchdog的Monitor Checker就是使用的android.fg线程的消息队列。因此，出现Monitor Checker的超时，肯定是android.fg线程阻塞在monitor()方法上。</li>
+</ol>
+<p>我们打开system_server进程的traces，检索 android.fg 可以快速定位到该线程的函数调用栈：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"android.fg"</span> prio=<span class="number">5</span> tid=<span class="number">25</span> Blocked</span><br><span class="line">  | group=<span class="string">"main"</span> sCount=<span class="number">1</span> dsCount=<span class="number">0</span> obj=<span class="number">0x12eef900</span> self=<span class="number">0x7f7a8b1000</span></span><br><span class="line">  | sysTid=<span class="number">973</span> nice=<span class="number">0</span> cgrp=<span class="keyword">default</span> sched=<span class="number">0</span>/<span class="number">0</span> handle=<span class="number">0x7f644e9000</span></span><br><span class="line">  | state=S schedstat=( <span class="number">3181688530</span> <span class="number">2206454929</span> <span class="number">8991</span> ) utm=<span class="number">251</span> stm=<span class="number">67</span> core=<span class="number">1</span> HZ=<span class="number">100</span></span><br><span class="line">  | stack=<span class="number">0x7f643e7000</span>-<span class="number">0x7f643e9000</span> stackSize=<span class="number">1036</span>KB</span><br><span class="line">  | held mutexes=</span><br><span class="line">  at com.android.server.wm.WindowManagerService.monitor(WindowManagerService.java:<span class="number">13125</span>)</span><br><span class="line">  - waiting to lock &lt;<span class="number">0x126dccb8</span>&gt; (a java.util.HashMap) held by thread <span class="number">91</span></span><br><span class="line">  at com.android.server.Watchdog$HandlerChecker.run(Watchdog.java:<span class="number">204</span>)</span><br><span class="line">  at android.os.Handler.handleCallback(Handler.java:<span class="number">815</span>)</span><br><span class="line">  at android.os.Handler.dispatchMessage(Handler.java:<span class="number">104</span>)</span><br><span class="line">  at android.os.Looper.loop(Looper.java:<span class="number">194</span>)</span><br><span class="line">  at android.os.HandlerThread.run(HandlerThread.java:<span class="number">61</span>)</span><br><span class="line">  at com.android.server.ServiceThread.run(ServiceThread.java:<span class="number">46</span>)</span><br></pre></td></tr></table></figure></p>
+<p>android.fg线程调用栈告诉我们几个关键的信息：</p>
+<ul>
+<li>这个线程当前的状态是Blocked，阻塞</li>
+<li>由Watchdog发起调用monitor()，这是一个Watchdog检查，阻塞已经超时</li>
+<li>waiting to lock <0x126dccb8>： 阻塞的原因是monitor()方法中在等锁<0x126dccb8></0x126dccb8></0x126dccb8></li>
+<li>held by thread 91： 这个锁被编号为91的线程持有，需要进一步观察91号线程的状态。</li>
+</ul>
+<blockquote>
+<p>题外话：每一个进程都会对自己所辖的线程编号，从1开始。1号线程通常就是我们所说的主线程。 线程在Linux系统中还有一个全局的编号，由sysTid表示。我们在logcat等日志中看到的一般是线程的全局编号。 譬如，本例中android.fg线程在system_server进程中的编号是25，系统全局编号是973。</p>
+</blockquote>
+<p>可以在traces.txt文件中检索 tid=91 来快速找到91号线程的函数调用栈信息：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"Binder_C"</span> prio=<span class="number">5</span> tid=<span class="number">91</span> Native</span><br><span class="line">  | group=<span class="string">"main"</span> sCount=<span class="number">1</span> dsCount=<span class="number">0</span> obj=<span class="number">0x12e540a0</span> self=<span class="number">0x7f63289000</span></span><br><span class="line">  | sysTid=<span class="number">1736</span> nice=<span class="number">0</span> cgrp=<span class="keyword">default</span> sched=<span class="number">0</span>/<span class="number">0</span> handle=<span class="number">0x7f6127c000</span></span><br><span class="line">  | state=S schedstat=( <span class="number">96931835222</span> <span class="number">49673449591</span> <span class="number">260122</span> ) utm=<span class="number">7046</span> stm=<span class="number">2647</span> core=<span class="number">2</span> HZ=<span class="number">100</span></span><br><span class="line">  | stack=<span class="number">0x7f5ffbc000</span>-<span class="number">0x7f5ffbe000</span> stackSize=<span class="number">1008</span>KB</span><br><span class="line">  | held mutexes=</span><br><span class="line">  at libcore.io.Posix.writeBytes(Native method)</span><br><span class="line">  at libcore.io.Posix.write(Posix.java:<span class="number">258</span>)</span><br><span class="line">  at libcore.io.BlockGuardOs.write(BlockGuardOs.java:<span class="number">313</span>)</span><br><span class="line">  at libcore.io.IoBridge.write(IoBridge.java:<span class="number">537</span>)</span><br><span class="line">  at java.io.FileOutputStream.write(FileOutputStream.java:<span class="number">186</span>)</span><br><span class="line">  at com.android.internal.util.FastPrintWriter.flushBytesLocked(FastPrintWriter.java:<span class="number">334</span>)</span><br><span class="line">  at com.android.internal.util.FastPrintWriter.flushLocked(FastPrintWriter.java:<span class="number">355</span>)</span><br><span class="line">  at com.android.internal.util.FastPrintWriter.appendLocked(FastPrintWriter.java:<span class="number">303</span>)</span><br><span class="line">  at com.android.internal.util.FastPrintWriter.print(FastPrintWriter.java:<span class="number">466</span>)</span><br><span class="line">  - locked &lt;<span class="meta">@addr</span>=<span class="number">0x134c4910</span>&gt; (a com.android.internal.util.FastPrintWriter$DummyWriter)</span><br><span class="line">  at com.android.server.wm.WindowState.dump(WindowState.java:<span class="number">1510</span>)</span><br><span class="line">  at com.android.server.wm.WindowManagerService.dumpWindowsNoHeaderLocked(WindowManagerService.java:<span class="number">12279</span>)</span><br><span class="line">  at com.android.server.wm.WindowManagerService.dumpWindowsLocked(WindowManagerService.java:<span class="number">12266</span>)</span><br><span class="line">  at com.android.server.wm.WindowManagerService.dump(WindowManagerService.java:<span class="number">12654</span>)</span><br><span class="line">  - locked &lt;<span class="number">0x126dccb8</span>&gt; (a java.util.HashMap)</span><br><span class="line">  at android.os.Binder.dump(Binder.java:<span class="number">324</span>)</span><br><span class="line">  at android.os.Binder.onTransact(Binder.java:<span class="number">290</span>)</span><br></pre></td></tr></table></figure></p>
+<p>91号线程的名字是Binder_C，它的函数调用栈告诉我们几个关键信息：</p>
+<ul>
+<li>Native，表示线程处于运行状态(RUNNING)，并且正在执行JNI方法</li>
+<li>在WindowManagerService.dump()方法申请了锁<0x126dccb8>，这个锁正是android.fg线程所等待的</0x126dccb8></li>
+<li>FileOutputStream.write()表示Binder_C线程在执行IO写操作，正式因为这个写操作一直在阻塞，导致线程持有的锁不能释放</li>
+</ul>
+<blockquote>
+<p>题外话：关于Binder线程。当Android进程启动时，就会创建一个线程池，专门处理Binder事务。线程池中会根据当前的binder线程计数器的值来构造新创建的binder线程, 线程名”Binder_%X”，X是十六进制。当然，线程池的线程数也有上限，默认情况下为16，所以，可以看到 Binder_1 ~ Binder_F 这样的线程命名。</p>
+</blockquote>
+<p>聪明的你看到这或许已经能够想到解决办法了，在这个IO写操作上加一个超时机制，并且这个超时小于Watchdog的超时，不就可以让线程释放它所占有的锁了吗？ 是的，这确实可以作为一个临时解决方案(Workaround)，或者说一个保护机制。但我们可以再往深处想一想，这个IO写操作为什么会阻塞：</p>
+<ul>
+<li>是不是IO缓冲区满了，导致写阻塞呢？</li>
+<li>是不是写操作有什么锁，导致这个write方法在等锁呢？</li>
+<li>是不是当前系统的IO负载过于高，导致写操作效率很低呢？</li>
+</ul>
+<p>这都需要我们再进一步从日志中去找原因。如果已有的日志不全，找不到论据，我们还需要设计场景来验证假设，解决问题的难度陡然上升。</p>
+<h2 id="场景还原"><a href="#场景还原" class="headerlink" title="场景还原"></a>场景还原</h2><p>我们经历了两个关键步骤：</p>
+<ol>
+<li>通过event或system类型的日志，发现了Watchdog杀掉system_server导致系统重启</li>
+<li>通过traces日志，发了导致Watchdog出现的具体线程操作</li>
+</ol>
+<p>这两个过程基本就涵盖了Watchdog的运行机制了，但这并没有解决问题啊。我们需要找到线程阻塞的原因是什么，然而，线程阻塞的原因就千奇百怪了。 如果有问题出现的现场，并且问题可以重现，那么我们可以通过调试的手段来分析问题产生的原因。 如果问题只是偶然出现，甚至只有一堆日志，我们就需要从日志中来还原问题出现的场景，这一步才是真正考验大家Android/Linux功底的地方。</p>
+<p>继续以上述问题为例，我们来进一步还原问题出现的场景，从Java层的函数调用栈来看：</p>
+<ul>
+<li>首先，跨进程发起了Binder.dump()方法的调用：at android.os.Binder.dump(Binder.java:324)</li>
+<li>然后，进入了WMS的dump()：at com.android.server.wm.WindowManagerService.dump(WindowManagerService.java:12654)</li>
+<li>接着，发生了写文件操作：at java.io.FileOutputStream.write(FileOutputStream.java:186)</li>
+<li>最后，调用了JNI方法：at libcore.io.Posix.writeBytes(Native method)</li>
+</ul>
+<p>Binder_C线程要出现这种函数调用栈，我们可以初步确定是Android接受了如下命令:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ adb shell dumpsys window</span><br></pre></td></tr></table></figure></p>
+<p>当通过命令行运行以上命令时，客户端(PC)的adb server会向服务端(手机)的adbd发送指令， adbd进程会fork出一个叫做dumpsys的子进程，dumpsys进程再利用Binder机制和system_server通信</p>
+<p>仅凭这个还是分析不出问题所在，我们需要启用内核的日志了。当调用JNI方法libcore.io.Posix.writeBytes()时，会触发系统调用， Linux会从用户态切换到内核态，内核的函数调用栈也可以从traces中找到：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">kernel: __switch_to+<span class="number">0x74</span>/<span class="number">0x8c</span></span><br><span class="line">kernel: pipe_wait+<span class="number">0x60</span>/<span class="number">0x9c</span></span><br><span class="line">kernel: pipe_write+<span class="number">0x278</span>/<span class="number">0x5cc</span></span><br><span class="line">kernel: do_sync_write+<span class="number">0x90</span>/<span class="number">0xcc</span></span><br><span class="line">kernel: vfs_write+<span class="number">0xa4</span>/<span class="number">0x194</span></span><br><span class="line">kernel: SyS_write+<span class="number">0x40</span>/<span class="number">0x8c</span></span><br><span class="line">kernel: cpu_switch_to+<span class="number">0x48</span>/<span class="number">0x4c</span></span><br></pre></td></tr></table></figure></p>
+<p>在Java层，明确指明要写文件(FileOutputStream)，正常情况下，系统调用write()就完事了，但Kernel却打开了一个管道，最终阻塞在了pipe_wait()方法。 什么场景下会打开一个管道，而且管道会阻塞呢？一系列的猜想和验证过程接踵而至。</p>
+<p>这里有必要先补充一些基础知识了：</p>
+<blockquote>
+<p><a href="http://www.cnblogs.com/biyeymyhjob/archive/2012/11/03/2751593.html" target="_blank" rel="noopener">Linux进程间通信之管道(pipe)</a><br>   Linux的管道实现借助了文件系统的file结构和VFS(Virtual File System)，通过将两个file结构指向同一个临时的VFS索引节点，而这个VFS索引节点又指向一个物理页面时， 实际上就建立了一个管道。<br>这就解释了为什么发起系统调用write的时候，打开了一个管道。因为dumpsys和system_server进程，将自己的file结构指向了同一个VFS索引节点。</p>
+</blockquote>
+<blockquote>
+<p><a href="https://blog.csdn.net/sj13051180/article/details/47865803" target="_blank" rel="noopener">管道挂起的案例</a><br>  管道是一个生产者-消费者模型，当缓冲区满时，则生产者不能往管道中再写数据了，需等到消费者读数据。如果消费者来不及处理缓冲区的数据，或者锁定缓冲区，则生产者就挂起了。<br>结合到例子中的场景，system_server进程无法往管道中写数据，很可能是dumpsys进程一直忙碌来不及处理新的数据。</p>
+</blockquote>
+<p>接下来，需要再从日志中寻找dumpsys进程的运行状态了：</p>
+<ul>
+<li>是不是dumpsys进程的负载太高？</li>
+<li>是不是dumpsys进程死掉了，导致一直没有处理缓冲区数据？</li>
+<li>是不是dumpsys进程有死锁？</li>
+</ul>
+<p>接下来的分析过程已经偏离Watchdog机制越来越远了，我们点到为止。</p>
+<p>小伙伴们可以看到，场景还原涉及到的知识点非常之宽泛，而且有一定的深度。在没有现场的情况下，伴随一系列的假设和验证过程，充满了不确定性和发现问题的喜悦。 正所谓，同问题做斗争，其乐无穷！</p>
+<p>至此，我们分析Watchdog问题的惯用方法，回答前面提出来的第二个问题：<br>通过event或system类型的logcat日志，检索Watchdog出现的关键信息；通过traces，分析出导致Watchdog检查超时的直接原因；通过其他日志，还原出问题出现的场景。</p>
+<h1 id="实例分析"><a href="#实例分析" class="headerlink" title="实例分析"></a>实例分析</h1><p>在上面介绍Watchdog问题分析方法的时候，我们其实已经举了一个例子。通常，比较容易定位导致Watchdog出现的直接原因(Direct Cause)，但很难找到更深层次的原因(Root Cause)。 这个小节，我们再介绍一个实例，来分析Watchdog出现的另一种场景。诚然，仅凭几个例子，远不够涵盖Watchdog的所有问题，我们的章法还是按照一定的方法论来深究问题。</p>
+<p>回顾一下解决问题三部曲：</p>
+<ol>
+<li>日志获取。日志种类繁多，分析Watchdog问题，宁滥毋缺</li>
+<li>问题定位。从logcat中锁定watchdog的出现，从traces锁定直接原因</li>
+<li>场景还原。结合各类日志，不断假设验证</li>
+</ol>
+<p>以CPU占用过高的场景为例：<br>从sys_log中，检索到了Watchdog的出现关键信息</p>
+<blockquote>
+<p>TIPS: 在sys_log中搜索关键字”WATCHDOG KILLING SYSTEM PROCESS”<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">10</span>-<span class="number">14</span> <span class="number">17</span>:<span class="number">10</span>:<span class="number">51.548</span>   <span class="number">892</span>  <span class="number">1403</span> W Watchdog: *** WATCHDOG KILLING SYSTEM PROCESS: <span class="function">Blocked in handler on <span class="title">ActivityManager</span> <span class="params">(ActivityManager)</span></span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>这是一个Watchdog的Looper Checker超时，由于ActivityManager这个线程一直处于忙碌状态，导致Watchdog检查超时。 Watchdog出现的时间是10-14 17:10:51.548左右，需要从traces.txt中找到这个时间段的system_server进程的函数调用栈信息， system_server的进程号是892。</p>
+<p>从traces.txt中找到对应的函数调用栈</p>
+<p>traces.txt包含很多进程在不同时间段的函数调用栈信息，为了检索的方便，首先可以将traces.txt分块。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"ActivityManager"</span> prio=<span class="number">5</span> tid=<span class="number">17</span> TimedWaiting</span><br><span class="line">  | group=<span class="string">"main"</span> sCount=<span class="number">1</span> dsCount=<span class="number">0</span> obj=<span class="number">0x12c0e6d0</span> self=<span class="number">0x7f84caf000</span></span><br><span class="line">  | sysTid=<span class="number">938</span> nice=-<span class="number">2</span> cgrp=<span class="keyword">default</span> sched=<span class="number">0</span>/<span class="number">0</span> handle=<span class="number">0x7f7d887000</span></span><br><span class="line">  | state=S schedstat=( <span class="number">107864628645</span> <span class="number">628257779012</span> <span class="number">60356</span> ) utm=<span class="number">7799</span> stm=<span class="number">2987</span> core=<span class="number">2</span> HZ=<span class="number">100</span></span><br><span class="line">  | stack=<span class="number">0x7f6e68f000</span>-<span class="number">0x7f6e691000</span> stackSize=<span class="number">1036</span>KB</span><br><span class="line">  | held mutexes=</span><br><span class="line">  at java.lang.Object.wait!(Native method)</span><br><span class="line">  - waiting on &lt;<span class="number">0x264ff09d</span>&gt; (a com.android.server.am.ActivityManagerService$<span class="number">5</span>)</span><br><span class="line">  at java.lang.Object.wait(Object.java:<span class="number">422</span>)</span><br><span class="line">  at com.android.server.am.ActivityManagerService.dumpStackTraces(ActivityManagerService.java:<span class="number">5395</span>)</span><br><span class="line">  at com.android.server.am.ActivityManagerService.dumpStackTraces(ActivityManagerService.java:<span class="number">5282</span>)</span><br><span class="line">  at com.android.server.am.ActivityManagerService$AnrActivityManagerService.dumpStackTraces(ActivityManagerService.java:<span class="number">22676</span>)</span><br><span class="line">  at com.mediatek.anrmanager.ANRManager$AnrDumpMgr.dumpAnrDebugInfoLocked(SourceFile:<span class="number">1023</span>)</span><br><span class="line">  at com.mediatek.anrmanager.ANRManager$AnrDumpMgr.dumpAnrDebugInfo(SourceFile:<span class="number">881</span>)</span><br><span class="line">  at com.android.server.am.ActivityManagerService.appNotResponding(ActivityManagerService.java:<span class="number">6122</span>)</span><br><span class="line">  - locked &lt;<span class="number">0x21c77912</span>&gt; (a com.mediatek.anrmanager.ANRManager$AnrDumpRecord)</span><br><span class="line">  at com.android.server.am.BroadcastQueue$AppNotResponding.run(BroadcastQueue.java:<span class="number">228</span>)</span><br><span class="line">  at android.os.Handler.handleCallback(Handler.java:<span class="number">815</span>)</span><br><span class="line">  at android.os.Handler.dispatchMessage(Handler.java:<span class="number">104</span>)</span><br><span class="line">  at android.os.Looper.loop(Looper.java:<span class="number">192</span>)</span><br><span class="line">  at android.os.HandlerThread.run(HandlerThread.java:<span class="number">61</span>)</span><br><span class="line">  at com.android.server.ServiceThread.run(ServiceThread.java:<span class="number">46</span>)</span><br></pre></td></tr></table></figure></p>
+<p>ActivityManager线程实际上运行着AMS的消息队列，这个函数调用栈的关键信息：</p>
+<ul>
+<li>线程状态为TimedWaiting, 这表示当前线程阻塞在一个超时的wait()方法</li>
+<li>正在处理广播消息超时发生的ANR(Application Not Responding)，需要将当前的函数调用栈打印出来</li>
+<li>最终在<0x264ff09d>等待，可以从AMS的源码 中找到这一处锁的源码，因为dumpStackTraces()会写文件，所以AMS设计了一个200毫秒的超时锁。<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">observer.wait(<span class="number">200</span>);  <span class="comment">// Wait for write-close, give up after 200msec</span></span><br></pre></td></tr></table></figure>
+</0x264ff09d></li>
+</ul>
+<p>还原问题的场景<br>从ActivityManager这个线程的调用栈，我们就会有一些疑惑：</p>
+<ul>
+<li>是哪个应用发生了ANR？为什么会发生ANR？</li>
+<li>超时锁只用200毫秒就释放了，为什么会导致Watchdog检查超时？(AMS的Looper默认超时是1分钟)<br>带着这些疑惑，我们再回到日志中：</li>
+</ul>
+<p>从sys_log中，可以检索到Watchdog出现的时间点(17:10:51.548)之前，com.android.systemui发生了ANR，从而引发AMS打印函数调用栈:</p>
+<blockquote>
+<p>TIPS: 在sys_log中检索”ANR in”关键字或在event_log中检索”anr”关键字<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">10</span>-<span class="number">14</span> <span class="number">17</span>:<span class="number">10</span>:<span class="number">04.215</span>   <span class="number">892</span>   <span class="number">938</span> E ANRManager: ANR in com.android.systemui, time=<span class="number">27097912</span></span><br><span class="line"><span class="number">10</span>-<span class="number">14</span> <span class="number">17</span>:<span class="number">10</span>:<span class="number">04.215</span>   <span class="number">892</span>   <span class="number">938</span> E ANRManager: Reason: Broadcast of Intent &#123; act=android.intent.action.TIME_TICK flg=<span class="number">0x50000114</span> (has extras) &#125;</span><br><span class="line"><span class="number">10</span>-<span class="number">14</span> <span class="number">17</span>:<span class="number">10</span>:<span class="number">04.215</span>   <span class="number">892</span>   <span class="number">938</span> E ANRManager: Load: <span class="number">89.22</span> / <span class="number">288.15</span> / <span class="number">201.91</span></span><br><span class="line"><span class="number">10</span>-<span class="number">14</span> <span class="number">17</span>:<span class="number">10</span>:<span class="number">04.215</span>   <span class="number">892</span>   <span class="number">938</span> E ANRManager: Android time :[<span class="number">2015</span>-<span class="number">10</span>-<span class="number">14</span> <span class="number">17</span>:<span class="number">10</span>:<span class="number">04.14</span>] [<span class="number">27280.396</span>]</span><br><span class="line"><span class="number">10</span>-<span class="number">14</span> <span class="number">17</span>:<span class="number">10</span>:<span class="number">04.215</span>   <span class="number">892</span>   <span class="number">938</span> E ANRManager: CPU usage from <span class="number">17016</span>ms to <span class="number">0</span>ms ago:</span><br><span class="line"><span class="number">10</span>-<span class="number">14</span> <span class="number">17</span>:<span class="number">10</span>:<span class="number">04.215</span>   <span class="number">892</span>   <span class="number">938</span> E ANRManager:   <span class="number">358</span>% <span class="number">23682</span>/float_bessel: <span class="number">358</span>% user + <span class="number">0</span>% kernel</span><br><span class="line"><span class="number">10</span>-<span class="number">14</span> <span class="number">17</span>:<span class="number">10</span>:<span class="number">04.215</span>   <span class="number">892</span>   <span class="number">938</span> E ANRManager:   <span class="number">57</span>% <span class="number">23604</span>/debuggerd64: <span class="number">3.8</span>% user + <span class="number">53</span>% kernel / faults: <span class="number">11369</span> minor</span><br><span class="line"><span class="number">10</span>-<span class="number">14</span> <span class="number">17</span>:<span class="number">10</span>:<span class="number">04.215</span>   <span class="number">892</span>   <span class="number">938</span> E ANRManager:   <span class="number">2</span>% <span class="number">892</span>/system_server: <span class="number">0.9</span>% user + <span class="number">1</span>% kernel / faults: <span class="number">136</span> minor</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>从这个日志信息中，我们两个疑惑就释然了：</p>
+<p>发生ANR之前的CPU负载远高于正常情况好几倍(Load： 89.22 / 288.15 / 201.91)，在这种CPU负载下，com.android.systemui进程发生处理广播消息超时(Reason: Broadcast of Intent)再正常不过了。 在这之前CPU都被float_bessel这个进程给占了，这货仅凭一己之力就耗了358%的CPU资源。</p>
+<p>observer.wait(200)在调用后，便进入排队等待唤醒状态(Waiting)，在等待200毫秒后，便重新开始申请CPU资源，而此时，CPU资源一直被float_bessel占着没有释放，所以该线程一直在等CPU资源。 等了1分钟后，Watchdog跳出来说“不行，你已经等了1分钟了，handler处理其他消息了”。</p>
+<p>在多核情况下，CPU的使用率统计会累加多个核的使用率，所以会出现超过100%的情况。那么float_bessel究竟是什么呢？它是一个Linux的测试样本，贝塞尔函数的计算，耗的就是CPU。</p>
+<p>这样，该问题的场景我们就还原出来了：在压力测试的环境下，CPU被float_bessel运算占用，导致com.android.systemui进程发生ANR，从而引发AMS打印trace; 但由于AMS一直等不到CPU资源，Watchdog检测超时，杀掉system_server进程，系统重启。</p>
+<p>对于压力测试而言，我们一般会设定一个通过标准，在某些压力情况下，出现一些错误是允许的。对于Android实际用户的使用场景而言，本例中的压力通常是不存在的，所以在实际项目中，这种类型的Watchdog问题，我们一般不解决。</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>Android中Watchdog用来看护system_server进程，system_server进程运行着系统最终要的服务，譬如AMS、PKMS、WMS等， 当这些服务不能正常运转时，Watchdog可能会杀掉system_server，让系统重启。</p>
+<p>Watchdog的实现利用了锁和消息队列机制。当system_server发生死锁或消息队列一直处于忙碌状态时，则认为系统已经没有响应了(System Not Responding)。</p>
+<p>在分析Watchdog问题的时候，首先要有详尽的日志，其次要能定位出导致Watchdog超时的直接原因，最重要的是能还原出问题发生的场景。</p>
+<!-- 可以用来注释，参与编译，在Html文档中会有这句话，但是不会显示 ^-^ -->
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a href="http://duanqz.github.io/2015-10-12-Watchdog-Analysis#section-2" target="_blank" rel="noopener">Watchdog机制以及问题分析</a><br><a href="https://blog.csdn.net/fu_kevin0606/article/details/64479489" target="_blank" rel="noopener">Android7.0 Watchdog机制</a><br><a href="https://blog.csdn.net/xichangbao/article/details/76727425" target="_blank" rel="noopener">Android系统高通平台Kernel Watchdog</a><br><a href="https://blog.csdn.net/yangwen123/article/details/11264461" target="_blank" rel="noopener">Android软Watchdog源码分析</a></p>
+<h1 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h1><p><a href="https://android.googlesource.com/platform/frameworks/base/+/master/services/core/java/com/android/server/Watchdog.java" target="_blank" rel="noopener">Watchdog.java</a> </p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Watchdog/" rel="tag"># Watchdog</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/Android中PackageManagerService相关的文件/" rel="next" title="Android中PackageManagerService相关的文件">
+                <i class="fa fa-chevron-left"></i> Android中PackageManagerService相关的文件
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/Android-StrictMode-Analysis/" rel="prev" title="StrictMode 机制以及性能调优">
+                StrictMode 机制以及性能调优 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  
+    <div id="gitalk-container"></div>
+  
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/myapple.jpg"
+                alt="Eric Chows" />
+            
+              <p class="site-author-name" itemprop="name">Eric Chows</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">52</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">30</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">53</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/ericchows" target="_blank" title="GitHub">
+                    
+                      <i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:xnzds2008@163.com" target="_blank" title="E-Mail">
+                    
+                      <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://plus.google.com" target="_blank" title="Google">
+                    
+                      <i class="fa fa-fw fa-google"></i>Google</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://twitter.com" target="_blank" title="Twitter">
+                    
+                      <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.facebook.com" target="_blank" title="FB Page">
+                    
+                      <i class="fa fa-fw fa-facebook"></i>FB Page</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://vk.com" target="_blank" title="VK Group">
+                    
+                      <i class="fa fa-fw fa-vk"></i>VK Group</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://stackoverflow.com/users/8872810/eric" target="_blank" title="StackOverflow">
+                    
+                      <i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://youtube.com" target="_blank" title="YouTube">
+                    
+                      <i class="fa fa-fw fa-youtube"></i>YouTube</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://instagram.com" target="_blank" title="Instagram">
+                    
+                      <i class="fa fa-fw fa-instagram"></i>Instagram</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="skype" target="_blank" title="Skype">
+                    
+                      <i class="fa fa-fw fa-skype"></i>Skype</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="/images/wechat.jpg" target="_blank" title="Wechat">
+                    
+                      <i class="fa fa-fw fa-globe"></i>Wechat</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://blog.csdn.net/Cxiaolinxiaozi" target="_blank" title="CSDN">
+                    
+                      <i class="fa fa-fw fa-globe"></i>CSDN</a>
+                </span>
+              
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#概览"><span class="nav-number">1.</span> <span class="nav-text">概览</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Watchdog机制"><span class="nav-number">2.</span> <span class="nav-text">Watchdog机制</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Watchdog的初始化"><span class="nav-number">2.1.</span> <span class="nav-text">Watchdog的初始化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加Watchdog监测对象"><span class="nav-number">2.2.</span> <span class="nav-text">添加Watchdog监测对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Watchdog的监测机制"><span class="nav-number">2.3.</span> <span class="nav-text">Watchdog的监测机制</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#问题分析方法"><span class="nav-number">3.</span> <span class="nav-text">问题分析方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#日志获取"><span class="nav-number">3.1.</span> <span class="nav-text">日志获取</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#问题定位"><span class="nav-number">3.2.</span> <span class="nav-text">问题定位</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#场景还原"><span class="nav-number">3.3.</span> <span class="nav-text">场景还原</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实例分析"><span class="nav-number">4.</span> <span class="nav-text">实例分析</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">5.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">6.</span> <span class="nav-text">参考资料</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#源码"><span class="nav-number">7.</span> <span class="nav-text">源码</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2015 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">EricChows</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="//s95.cnzz.com/z_stat.php?id=1274018749&web_id=1274018749" language="JavaScript"></script>
+  </div>
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.3"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+   <script type="text/javascript">
+		var gitalk = new Gitalk({
+		  clientID: '2f039a8ed54186479946',
+		  clientSecret: 'bc88282455b50fbc8c5d9502d17621a4f9e48d18',
+		  repo: 'myblog-comment',
+		  owner: 'EricChows',
+		  admin: ['EricChows'],
+		  id: location.pathname,
+		  distractionFreeMode: 'true'
+		})
+		gitalk.render('gitalk-container')           
+       </script>
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('-1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("ANlC6pJEdxOLHAcDbFuHuXrF-gzGzoHsz", "tNpAWjkmbhhKnsB3bcDooRrl");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.3"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.3"></script>
+
+
+  
+
+</body>
+</html>

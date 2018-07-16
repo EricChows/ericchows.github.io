@@ -1,0 +1,1363 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="指南,Guides," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="EricChows" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="Android 开发者指南进入https://developer.android.com -&amp;gt; Doc -&amp;gt; Guides即可 由于东西太多，就先从自己感兴趣的开始翻译。已经完成：Best practices└── Performance APP Basics应用基础知识 IntroductionBuild your first appApp fundamentalsApp resou">
+<meta name="keywords" content="指南,Guides">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android 开发者指南阅读">
+<meta property="og:url" content="http://yoursite.com/Android-开发者指南阅读/index.html">
+<meta property="og:site_name" content="EricChows">
+<meta property="og:description" content="Android 开发者指南进入https://developer.android.com -&amp;gt; Doc -&amp;gt; Guides即可 由于东西太多，就先从自己感兴趣的开始翻译。已经完成：Best practices└── Performance APP Basics应用基础知识 IntroductionBuild your first appApp fundamentalsApp resou">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-06-29T12:23:03.635Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android 开发者指南阅读">
+<meta name="twitter:description" content="Android 开发者指南进入https://developer.android.com -&amp;gt; Doc -&amp;gt; Guides即可 由于东西太多，就先从自己感兴趣的开始翻译。已经完成：Best practices└── Performance APP Basics应用基础知识 IntroductionBuild your first appApp fundamentalsApp resou">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/Android-开发者指南阅读/"/>
+
+
+
+
+
+  <title>Android 开发者指南阅读 | EricChows</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">EricChows</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">Android Developer</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Android-开发者指南阅读/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Eric Chows">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/myapple.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="EricChows">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Android 开发者指南阅读</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-02T21:23:33+08:00">
+                2018-05-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/Android-开发者指南阅读/" class="leancloud_visitors" data-flag-title="Android 开发者指南阅读">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><a href="https://developer.android.com/guide/" target="_blank" rel="noopener">Android 开发者指南</a><br>进入<a href="https://developer.android.com" target="_blank" rel="noopener">https://developer.android.com</a> -&gt; Doc -&gt; Guides即可</p>
+<p>由于东西太多，就先从自己感兴趣的开始翻译。<br>已经完成：<br>Best practices<br>└── Performance</p>
+<h1 id="APP-Basics"><a href="#APP-Basics" class="headerlink" title="APP Basics"></a>APP Basics</h1><p>应用基础知识</p>
+<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><h2 id="Build-your-first-app"><a href="#Build-your-first-app" class="headerlink" title="Build your first app"></a>Build your first app</h2><h2 id="App-fundamentals"><a href="#App-fundamentals" class="headerlink" title="App fundamentals"></a>App fundamentals</h2><h2 id="App-resources"><a href="#App-resources" class="headerlink" title="App resources"></a>App resources</h2><h2 id="App-manifest-file"><a href="#App-manifest-file" class="headerlink" title="App manifest file"></a>App manifest file</h2><h2 id="App-permissions"><a href="#App-permissions" class="headerlink" title="App permissions"></a>App permissions</h2><h1 id="Devices"><a href="#Devices" class="headerlink" title="Devices"></a>Devices</h1><p>设备</p>
+<h2 id="Device-compatibility"><a href="#Device-compatibility" class="headerlink" title="Device compatibility"></a>Device compatibility</h2><h2 id="Wear"><a href="#Wear" class="headerlink" title="Wear"></a>Wear</h2><h2 id="Android-TV"><a href="#Android-TV" class="headerlink" title="Android TV"></a>Android TV</h2><h2 id="Android-Auto"><a href="#Android-Auto" class="headerlink" title="Android Auto"></a>Android Auto</h2><h2 id="Android-Things"><a href="#Android-Things" class="headerlink" title="Android Things"></a>Android Things</h2><h2 id="Chrome-OS-devices"><a href="#Chrome-OS-devices" class="headerlink" title="Chrome OS devices"></a>Chrome OS devices</h2><h1 id="Core-topics"><a href="#Core-topics" class="headerlink" title="Core topics"></a>Core topics</h1><h2 id="Activities"><a href="#Activities" class="headerlink" title="Activities"></a>Activities</h2><h3 id="Introduction-to-activities"><a href="#Introduction-to-activities" class="headerlink" title="Introduction to activities"></a>Introduction to activities</h3><h3 id="The-activity-lifecycle"><a href="#The-activity-lifecycle" class="headerlink" title="The activity lifecycle"></a>The activity lifecycle</h3><h3 id="Activity-state-changes"><a href="#Activity-state-changes" class="headerlink" title="Activity state changes"></a>Activity state changes</h3><h3 id="Tasks-and-back-stack"><a href="#Tasks-and-back-stack" class="headerlink" title="Tasks and back stack"></a>Tasks and back stack</h3><h3 id="Processes-and-app-lifecycle"><a href="#Processes-and-app-lifecycle" class="headerlink" title="Processes and app lifecycle"></a>Processes and app lifecycle</h3><h3 id="Parcelables-and-bundles"><a href="#Parcelables-and-bundles" class="headerlink" title="Parcelables and bundles"></a>Parcelables and bundles</h3><h3 id="Fragments"><a href="#Fragments" class="headerlink" title="Fragments"></a>Fragments</h3><h3 id="Interact-with-other-apps"><a href="#Interact-with-other-apps" class="headerlink" title="Interact with other apps"></a>Interact with other apps</h3><h3 id="Handling-app-links"><a href="#Handling-app-links" class="headerlink" title="Handling app links"></a>Handling app links</h3><h3 id="Loaders"><a href="#Loaders" class="headerlink" title="Loaders"></a>Loaders</h3><h3 id="Recents-screen"><a href="#Recents-screen" class="headerlink" title="Recents screen"></a>Recents screen</h3><h3 id="Multi-window-support"><a href="#Multi-window-support" class="headerlink" title="Multi-window support"></a>Multi-window support</h3><h3 id="App-shorcuts"><a href="#App-shorcuts" class="headerlink" title="App shorcuts"></a>App shorcuts</h3><h3 id="App-widgets"><a href="#App-widgets" class="headerlink" title="App widgets"></a>App widgets</h3><h2 id="Intents-and-intent-filters"><a href="#Intents-and-intent-filters" class="headerlink" title="Intents and intent filters"></a>Intents and intent filters</h2><h3 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h3><h3 id="Common-intents"><a href="#Common-intents" class="headerlink" title="Common intents"></a>Common intents</h3><h2 id="User-interface-amp-navigation"><a href="#User-interface-amp-navigation" class="headerlink" title="User interface &amp; navigation"></a>User interface &amp; navigation</h2><h3 id="Overview-1"><a href="#Overview-1" class="headerlink" title="Overview"></a>Overview</h3><h3 id="Layouts"><a href="#Layouts" class="headerlink" title="Layouts"></a>Layouts</h3><h3 id="Look-and-feel"><a href="#Look-and-feel" class="headerlink" title="Look and feel"></a>Look and feel</h3><h3 id="Notifications"><a href="#Notifications" class="headerlink" title="Notifications"></a>Notifications</h3><h3 id="Add-the-app-bar"><a href="#Add-the-app-bar" class="headerlink" title="Add the app bar"></a>Add the app bar</h3><h3 id="Control-the-system-UI-visibility"><a href="#Control-the-system-UI-visibility" class="headerlink" title="Control the system UI visibility"></a>Control the system UI visibility</h3><h3 id="Designing-effective-navigation"><a href="#Designing-effective-navigation" class="headerlink" title="Designing effective navigation"></a>Designing effective navigation</h3><h3 id="Implementing-effective"><a href="#Implementing-effective" class="headerlink" title="Implementing effective"></a>Implementing effective</h3><h3 id="navigation"><a href="#navigation" class="headerlink" title="navigation"></a>navigation</h3><h3 id="Slide-between-fragments-using-ViewPager"><a href="#Slide-between-fragments-using-ViewPager" class="headerlink" title="Slide between fragments using ViewPager"></a>Slide between fragments using ViewPager</h3><h3 id="Supporting-swipe-to-refresh"><a href="#Supporting-swipe-to-refresh" class="headerlink" title="Supporting swipe-to-refresh"></a>Supporting swipe-to-refresh</h3><h3 id="Toasts-overview"><a href="#Toasts-overview" class="headerlink" title="Toasts overview"></a>Toasts overview</h3><h3 id="Pop-up-messages-overview"><a href="#Pop-up-messages-overview" class="headerlink" title="Pop-up messages overview"></a>Pop-up messages overview</h3><h3 id="Dialogs"><a href="#Dialogs" class="headerlink" title="Dialogs"></a>Dialogs</h3><h3 id="Menus"><a href="#Menus" class="headerlink" title="Menus"></a>Menus</h3><h3 id="Settings"><a href="#Settings" class="headerlink" title="Settings"></a>Settings</h3><h3 id="Search"><a href="#Search" class="headerlink" title="Search"></a>Search</h3><h3 id="Copy-and-paste"><a href="#Copy-and-paste" class="headerlink" title="Copy and paste"></a>Copy and paste</h3><h3 id="Drag-and-drop"><a href="#Drag-and-drop" class="headerlink" title="Drag and drop"></a>Drag and drop</h3><h3 id="Creating-backward-compatible"><a href="#Creating-backward-compatible" class="headerlink" title="Creating backward-compatible"></a>Creating backward-compatible</h3><h3 id="Uis"><a href="#Uis" class="headerlink" title="Uis"></a>Uis</h3><h2 id="Animations-amp-transitions"><a href="#Animations-amp-transitions" class="headerlink" title="Animations &amp; transitions"></a>Animations &amp; transitions</h2><h3 id="Overview-2"><a href="#Overview-2" class="headerlink" title="Overview"></a>Overview</h3><h3 id="Animations-overview"><a href="#Animations-overview" class="headerlink" title="Animations overview"></a>Animations overview</h3><h3 id="Property-animation-overview"><a href="#Property-animation-overview" class="headerlink" title="Property animation overview"></a>Property animation overview</h3><h3 id="Animate-drawable-graphics"><a href="#Animate-drawable-graphics" class="headerlink" title="Animate drawable graphics"></a>Animate drawable graphics</h3><h3 id="Reveal-or-hide-a-view-using-animation"><a href="#Reveal-or-hide-a-view-using-animation" class="headerlink" title="Reveal or hide a view using animation"></a>Reveal or hide a view using animation</h3><h3 id="Move-a-view-using-animation"><a href="#Move-a-view-using-animation" class="headerlink" title="Move a view using animation"></a>Move a view using animation</h3><h3 id="Move-a-view-using-fling-animation"><a href="#Move-a-view-using-fling-animation" class="headerlink" title="Move a view using fling animation"></a>Move a view using fling animation</h3><h3 id="Enlarge-a-view-using-a-zoom-animation"><a href="#Enlarge-a-view-using-a-zoom-animation" class="headerlink" title="Enlarge a view using a zoom animation"></a>Enlarge a view using a zoom animation</h3><h3 id="Animate-movement-using-spring-physics"><a href="#Animate-movement-using-spring-physics" class="headerlink" title="Animate movement using spring physics"></a>Animate movement using spring physics</h3><h3 id="Auto-animate-layout-updates"><a href="#Auto-animate-layout-updates" class="headerlink" title="Auto animate layout updates"></a>Auto animate layout updates</h3><h3 id="Animate-layout-changes-using-a-transtiton"><a href="#Animate-layout-changes-using-a-transtiton" class="headerlink" title="Animate layout changes using a transtiton"></a>Animate layout changes using a transtiton</h3><h3 id="Create-a-custom-transition"><a href="#Create-a-custom-transition" class="headerlink" title="Create a custom transition"></a>Create a custom transition</h3><h3 id="Start-an-activity-using-an-animation"><a href="#Start-an-activity-using-an-animation" class="headerlink" title="Start an activity using an animation"></a>Start an activity using an animation</h3><h2 id="Images-amp-graphics"><a href="#Images-amp-graphics" class="headerlink" title="Images &amp; graphics"></a>Images &amp; graphics</h2><h3 id="Overview-3"><a href="#Overview-3" class="headerlink" title="Overview"></a>Overview</h3><h3 id="Drawable-overview"><a href="#Drawable-overview" class="headerlink" title="Drawable overview"></a>Drawable overview</h3><h3 id="Vector-drawables-overview"><a href="#Vector-drawables-overview" class="headerlink" title="Vector drawables overview"></a>Vector drawables overview</h3><h3 id="Handling-bitmaps"><a href="#Handling-bitmaps" class="headerlink" title="Handling bitmaps"></a>Handling bitmaps</h3><h3 id="Selecting-colors-with-the-palette-API"><a href="#Selecting-colors-with-the-palette-API" class="headerlink" title="Selecting colors with the palette API"></a>Selecting colors with the palette API</h3><h3 id="Reducing-image-download-size"><a href="#Reducing-image-download-size" class="headerlink" title="Reducing image download size"></a>Reducing image download size</h3><h3 id="Hardware-accelertation"><a href="#Hardware-accelertation" class="headerlink" title="Hardware accelertation"></a>Hardware accelertation</h3><h3 id="OpenGL-ES"><a href="#OpenGL-ES" class="headerlink" title="OpenGL ES"></a>OpenGL ES</h3><h3 id="Displaying-graphics-with-OpenGL"><a href="#Displaying-graphics-with-OpenGL" class="headerlink" title="Displaying graphics with OpenGL"></a>Displaying graphics with OpenGL</h3><h3 id="ES"><a href="#ES" class="headerlink" title="ES"></a>ES</h3><h3 id="Rendering"><a href="#Rendering" class="headerlink" title="Rendering"></a>Rendering</h3><h3 id="Enhancing-graphics-with-wide-color-content"><a href="#Enhancing-graphics-with-wide-color-content" class="headerlink" title="Enhancing graphics with wide color content"></a>Enhancing graphics with wide color content</h3><h2 id="Audio-amp-Video"><a href="#Audio-amp-Video" class="headerlink" title="Audio &amp; Video"></a>Audio &amp; Video</h2><h3 id="Audio-amp-video-overview"><a href="#Audio-amp-video-overview" class="headerlink" title="Audio &amp; video overview"></a>Audio &amp; video overview</h3><h3 id="Supported-media-formats"><a href="#Supported-media-formats" class="headerlink" title="Supported media formats"></a>Supported media formats</h3><h3 id="Media-app-architecture"><a href="#Media-app-architecture" class="headerlink" title="Media app architecture"></a>Media app architecture</h3><h3 id="Routing-between-devices"><a href="#Routing-between-devices" class="headerlink" title="Routing between devices"></a>Routing between devices</h3><h3 id="Control-amplitude-with-VolumeShaper"><a href="#Control-amplitude-with-VolumeShaper" class="headerlink" title="Control amplitude with VolumeShaper"></a>Control amplitude with VolumeShaper</h3><h3 id="MediaPlayer-overview"><a href="#MediaPlayer-overview" class="headerlink" title="MediaPlayer overview"></a>MediaPlayer overview</h3><h3 id="MediaRecorder-overview"><a href="#MediaRecorder-overview" class="headerlink" title="MediaRecorder overview"></a>MediaRecorder overview</h3><h3 id="ExoPlayer"><a href="#ExoPlayer" class="headerlink" title="ExoPlayer"></a>ExoPlayer</h3><h2 id="Background-tasks"><a href="#Background-tasks" class="headerlink" title="Background tasks"></a>Background tasks</h2><h3 id="Overview-4"><a href="#Overview-4" class="headerlink" title="Overview"></a>Overview</h3><h3 id="Guide-to-background-processing"><a href="#Guide-to-background-processing" class="headerlink" title="Guide to background processing"></a>Guide to background processing</h3><h3 id="Sending-operations-to-multiple"><a href="#Sending-operations-to-multiple" class="headerlink" title="Sending operations to multiple"></a>Sending operations to multiple</h3><h3 id="threads"><a href="#threads" class="headerlink" title="threads"></a>threads</h3><h3 id="Schedule-jobs-intelligently"><a href="#Schedule-jobs-intelligently" class="headerlink" title="Schedule jobs intelligently"></a>Schedule jobs intelligently</h3><h3 id="Services"><a href="#Services" class="headerlink" title="Services"></a>Services</h3><h3 id="Background-optimizations"><a href="#Background-optimizations" class="headerlink" title="Background optimizations"></a>Background optimizations</h3><h3 id="Broadcastes-overview"><a href="#Broadcastes-overview" class="headerlink" title="Broadcastes overview"></a>Broadcastes overview</h3><h3 id="Manage-device-awake-state"><a href="#Manage-device-awake-state" class="headerlink" title="Manage device awake state"></a>Manage device awake state</h3><h2 id="App-data-amp-files"><a href="#App-data-amp-files" class="headerlink" title="App data &amp; files"></a>App data &amp; files</h2><h3 id="Overview-5"><a href="#Overview-5" class="headerlink" title="Overview"></a>Overview</h3><h3 id="Storage-overview"><a href="#Storage-overview" class="headerlink" title="Storage overview"></a>Storage overview</h3><h3 id="Save-files-on-device-storage"><a href="#Save-files-on-device-storage" class="headerlink" title="Save files on device storage"></a>Save files on device storage</h3><p>…….太多了，先不加了</p>
+<h1 id="Best-practices"><a href="#Best-practices" class="headerlink" title="Best practices"></a>Best practices</h1><h2 id="Testing"><a href="#Testing" class="headerlink" title="Testing"></a>Testing</h2><h2 id="Performance"><a href="#Performance" class="headerlink" title="Performance"></a>Performance</h2><p>性能</p>
+<h3 id="Overview-6"><a href="#Overview-6" class="headerlink" title="Overview"></a>Overview</h3><p>性能表现在：</p>
+<ul>
+<li>快速启动</li>
+<li>快速响应用户交互<h3 id="Android-Vitals"><a href="#Android-Vitals" class="headerlink" title="Android Vitals"></a>Android Vitals</h3></li>
+</ul>
+<h3 id="Processes-and-Threads-Overview"><a href="#Processes-and-Threads-Overview" class="headerlink" title="Processes and Threads Overview"></a>Processes and Threads Overview</h3><h3 id="Better-Performance-through-Threading"><a href="#Better-Performance-through-Threading" class="headerlink" title="Better Performance through Threading"></a>Better Performance through Threading</h3><h3 id="Optimizing-for-Battery-Life"><a href="#Optimizing-for-Battery-Life" class="headerlink" title="Optimizing for Battery Life"></a>Optimizing for Battery Life</h3><h3 id="Reducing-APK-Size"><a href="#Reducing-APK-Size" class="headerlink" title="Reducing APK Size"></a>Reducing APK Size</h3><h3 id="Manager-Your-App’s-Memory"><a href="#Manager-Your-App’s-Memory" class="headerlink" title="Manager Your App’s Memory"></a>Manager Your App’s Memory</h3><h3 id="Overview-of-Memory-Managemement"><a href="#Overview-of-Memory-Managemement" class="headerlink" title="Overview of Memory Managemement"></a>Overview of Memory Managemement</h3><h3 id="Designing-for-Seamlessness"><a href="#Designing-for-Seamlessness" class="headerlink" title="Designing for Seamlessness"></a>Designing for Seamlessness</h3><h3 id="Keeping-Your-App-Responsive"><a href="#Keeping-Your-App-Responsive" class="headerlink" title="Keeping Your App Responsive"></a>Keeping Your App Responsive</h3><h3 id="Performance-Tips"><a href="#Performance-Tips" class="headerlink" title="Performance Tips"></a>Performance Tips</h3><h3 id="SMP-Primer-for-Android"><a href="#SMP-Primer-for-Android" class="headerlink" title="SMP Primer for Android"></a>SMP Primer for Android</h3><h3 id="Verifying-App-Behavior-on-th-ANdroid-Runtime-ART"><a href="#Verifying-App-Behavior-on-th-ANdroid-Runtime-ART" class="headerlink" title="Verifying App Behavior on th ANdroid Runtime(ART)"></a>Verifying App Behavior on th ANdroid Runtime(ART)</h3><h2 id="Accessibility"><a href="#Accessibility" class="headerlink" title="Accessibility"></a>Accessibility</h2><h2 id="Security"><a href="#Security" class="headerlink" title="Security"></a>Security</h2><h2 id="Build-for-Billions"><a href="#Build-for-Billions" class="headerlink" title="Build for Billions"></a>Build for Billions</h2><h2 id="Build-for-Enterprise"><a href="#Build-for-Enterprise" class="headerlink" title="Build for Enterprise"></a>Build for Enterprise</h2><h2 id="Google-Play"><a href="#Google-Play" class="headerlink" title="Google Play"></a>Google Play</h2>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/指南/" rel="tag"># 指南</a>
+          
+            <a href="/tags/Guides/" rel="tag"># Guides</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/IT学习方法论/" rel="next" title="IT学习方法论">
+                <i class="fa fa-chevron-left"></i> IT学习方法论
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/Android-Performance/" rel="prev" title="Android系统性能调优工具">
+                Android系统性能调优工具 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  
+    <div id="gitalk-container"></div>
+  
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/myapple.jpg"
+                alt="Eric Chows" />
+            
+              <p class="site-author-name" itemprop="name">Eric Chows</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">52</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">30</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">53</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/ericchows" target="_blank" title="GitHub">
+                    
+                      <i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:xnzds2008@163.com" target="_blank" title="E-Mail">
+                    
+                      <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://plus.google.com" target="_blank" title="Google">
+                    
+                      <i class="fa fa-fw fa-google"></i>Google</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://twitter.com" target="_blank" title="Twitter">
+                    
+                      <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.facebook.com" target="_blank" title="FB Page">
+                    
+                      <i class="fa fa-fw fa-facebook"></i>FB Page</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://vk.com" target="_blank" title="VK Group">
+                    
+                      <i class="fa fa-fw fa-vk"></i>VK Group</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://stackoverflow.com/users/8872810/eric" target="_blank" title="StackOverflow">
+                    
+                      <i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://youtube.com" target="_blank" title="YouTube">
+                    
+                      <i class="fa fa-fw fa-youtube"></i>YouTube</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://instagram.com" target="_blank" title="Instagram">
+                    
+                      <i class="fa fa-fw fa-instagram"></i>Instagram</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="skype" target="_blank" title="Skype">
+                    
+                      <i class="fa fa-fw fa-skype"></i>Skype</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="/images/wechat.jpg" target="_blank" title="Wechat">
+                    
+                      <i class="fa fa-fw fa-globe"></i>Wechat</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://blog.csdn.net/Cxiaolinxiaozi" target="_blank" title="CSDN">
+                    
+                      <i class="fa fa-fw fa-globe"></i>CSDN</a>
+                </span>
+              
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#APP-Basics"><span class="nav-number">1.</span> <span class="nav-text">APP Basics</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Introduction"><span class="nav-number">1.1.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Build-your-first-app"><span class="nav-number">1.2.</span> <span class="nav-text">Build your first app</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#App-fundamentals"><span class="nav-number">1.3.</span> <span class="nav-text">App fundamentals</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#App-resources"><span class="nav-number">1.4.</span> <span class="nav-text">App resources</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#App-manifest-file"><span class="nav-number">1.5.</span> <span class="nav-text">App manifest file</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#App-permissions"><span class="nav-number">1.6.</span> <span class="nav-text">App permissions</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Devices"><span class="nav-number">2.</span> <span class="nav-text">Devices</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Device-compatibility"><span class="nav-number">2.1.</span> <span class="nav-text">Device compatibility</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Wear"><span class="nav-number">2.2.</span> <span class="nav-text">Wear</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Android-TV"><span class="nav-number">2.3.</span> <span class="nav-text">Android TV</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Android-Auto"><span class="nav-number">2.4.</span> <span class="nav-text">Android Auto</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Android-Things"><span class="nav-number">2.5.</span> <span class="nav-text">Android Things</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Chrome-OS-devices"><span class="nav-number">2.6.</span> <span class="nav-text">Chrome OS devices</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Core-topics"><span class="nav-number">3.</span> <span class="nav-text">Core topics</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Activities"><span class="nav-number">3.1.</span> <span class="nav-text">Activities</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Introduction-to-activities"><span class="nav-number">3.1.1.</span> <span class="nav-text">Introduction to activities</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-activity-lifecycle"><span class="nav-number">3.1.2.</span> <span class="nav-text">The activity lifecycle</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Activity-state-changes"><span class="nav-number">3.1.3.</span> <span class="nav-text">Activity state changes</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Tasks-and-back-stack"><span class="nav-number">3.1.4.</span> <span class="nav-text">Tasks and back stack</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Processes-and-app-lifecycle"><span class="nav-number">3.1.5.</span> <span class="nav-text">Processes and app lifecycle</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Parcelables-and-bundles"><span class="nav-number">3.1.6.</span> <span class="nav-text">Parcelables and bundles</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Fragments"><span class="nav-number">3.1.7.</span> <span class="nav-text">Fragments</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Interact-with-other-apps"><span class="nav-number">3.1.8.</span> <span class="nav-text">Interact with other apps</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Handling-app-links"><span class="nav-number">3.1.9.</span> <span class="nav-text">Handling app links</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Loaders"><span class="nav-number">3.1.10.</span> <span class="nav-text">Loaders</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Recents-screen"><span class="nav-number">3.1.11.</span> <span class="nav-text">Recents screen</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Multi-window-support"><span class="nav-number">3.1.12.</span> <span class="nav-text">Multi-window support</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#App-shorcuts"><span class="nav-number">3.1.13.</span> <span class="nav-text">App shorcuts</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#App-widgets"><span class="nav-number">3.1.14.</span> <span class="nav-text">App widgets</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Intents-and-intent-filters"><span class="nav-number">3.2.</span> <span class="nav-text">Intents and intent filters</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Overview"><span class="nav-number">3.2.1.</span> <span class="nav-text">Overview</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Common-intents"><span class="nav-number">3.2.2.</span> <span class="nav-text">Common intents</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#User-interface-amp-navigation"><span class="nav-number">3.3.</span> <span class="nav-text">User interface &amp; navigation</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Overview-1"><span class="nav-number">3.3.1.</span> <span class="nav-text">Overview</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Layouts"><span class="nav-number">3.3.2.</span> <span class="nav-text">Layouts</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Look-and-feel"><span class="nav-number">3.3.3.</span> <span class="nav-text">Look and feel</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Notifications"><span class="nav-number">3.3.4.</span> <span class="nav-text">Notifications</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Add-the-app-bar"><span class="nav-number">3.3.5.</span> <span class="nav-text">Add the app bar</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Control-the-system-UI-visibility"><span class="nav-number">3.3.6.</span> <span class="nav-text">Control the system UI visibility</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Designing-effective-navigation"><span class="nav-number">3.3.7.</span> <span class="nav-text">Designing effective navigation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Implementing-effective"><span class="nav-number">3.3.8.</span> <span class="nav-text">Implementing effective</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#navigation"><span class="nav-number">3.3.9.</span> <span class="nav-text">navigation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Slide-between-fragments-using-ViewPager"><span class="nav-number">3.3.10.</span> <span class="nav-text">Slide between fragments using ViewPager</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Supporting-swipe-to-refresh"><span class="nav-number">3.3.11.</span> <span class="nav-text">Supporting swipe-to-refresh</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Toasts-overview"><span class="nav-number">3.3.12.</span> <span class="nav-text">Toasts overview</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pop-up-messages-overview"><span class="nav-number">3.3.13.</span> <span class="nav-text">Pop-up messages overview</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Dialogs"><span class="nav-number">3.3.14.</span> <span class="nav-text">Dialogs</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Menus"><span class="nav-number">3.3.15.</span> <span class="nav-text">Menus</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Settings"><span class="nav-number">3.3.16.</span> <span class="nav-text">Settings</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Search"><span class="nav-number">3.3.17.</span> <span class="nav-text">Search</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Copy-and-paste"><span class="nav-number">3.3.18.</span> <span class="nav-text">Copy and paste</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Drag-and-drop"><span class="nav-number">3.3.19.</span> <span class="nav-text">Drag and drop</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Creating-backward-compatible"><span class="nav-number">3.3.20.</span> <span class="nav-text">Creating backward-compatible</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Uis"><span class="nav-number">3.3.21.</span> <span class="nav-text">Uis</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Animations-amp-transitions"><span class="nav-number">3.4.</span> <span class="nav-text">Animations &amp; transitions</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Overview-2"><span class="nav-number">3.4.1.</span> <span class="nav-text">Overview</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Animations-overview"><span class="nav-number">3.4.2.</span> <span class="nav-text">Animations overview</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Property-animation-overview"><span class="nav-number">3.4.3.</span> <span class="nav-text">Property animation overview</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Animate-drawable-graphics"><span class="nav-number">3.4.4.</span> <span class="nav-text">Animate drawable graphics</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Reveal-or-hide-a-view-using-animation"><span class="nav-number">3.4.5.</span> <span class="nav-text">Reveal or hide a view using animation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Move-a-view-using-animation"><span class="nav-number">3.4.6.</span> <span class="nav-text">Move a view using animation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Move-a-view-using-fling-animation"><span class="nav-number">3.4.7.</span> <span class="nav-text">Move a view using fling animation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Enlarge-a-view-using-a-zoom-animation"><span class="nav-number">3.4.8.</span> <span class="nav-text">Enlarge a view using a zoom animation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Animate-movement-using-spring-physics"><span class="nav-number">3.4.9.</span> <span class="nav-text">Animate movement using spring physics</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Auto-animate-layout-updates"><span class="nav-number">3.4.10.</span> <span class="nav-text">Auto animate layout updates</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Animate-layout-changes-using-a-transtiton"><span class="nav-number">3.4.11.</span> <span class="nav-text">Animate layout changes using a transtiton</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-custom-transition"><span class="nav-number">3.4.12.</span> <span class="nav-text">Create a custom transition</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Start-an-activity-using-an-animation"><span class="nav-number">3.4.13.</span> <span class="nav-text">Start an activity using an animation</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Images-amp-graphics"><span class="nav-number">3.5.</span> <span class="nav-text">Images &amp; graphics</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Overview-3"><span class="nav-number">3.5.1.</span> <span class="nav-text">Overview</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Drawable-overview"><span class="nav-number">3.5.2.</span> <span class="nav-text">Drawable overview</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Vector-drawables-overview"><span class="nav-number">3.5.3.</span> <span class="nav-text">Vector drawables overview</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Handling-bitmaps"><span class="nav-number">3.5.4.</span> <span class="nav-text">Handling bitmaps</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Selecting-colors-with-the-palette-API"><span class="nav-number">3.5.5.</span> <span class="nav-text">Selecting colors with the palette API</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Reducing-image-download-size"><span class="nav-number">3.5.6.</span> <span class="nav-text">Reducing image download size</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hardware-accelertation"><span class="nav-number">3.5.7.</span> <span class="nav-text">Hardware accelertation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#OpenGL-ES"><span class="nav-number">3.5.8.</span> <span class="nav-text">OpenGL ES</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Displaying-graphics-with-OpenGL"><span class="nav-number">3.5.9.</span> <span class="nav-text">Displaying graphics with OpenGL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ES"><span class="nav-number">3.5.10.</span> <span class="nav-text">ES</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Rendering"><span class="nav-number">3.5.11.</span> <span class="nav-text">Rendering</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Enhancing-graphics-with-wide-color-content"><span class="nav-number">3.5.12.</span> <span class="nav-text">Enhancing graphics with wide color content</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Audio-amp-Video"><span class="nav-number">3.6.</span> <span class="nav-text">Audio &amp; Video</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Audio-amp-video-overview"><span class="nav-number">3.6.1.</span> <span class="nav-text">Audio &amp; video overview</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Supported-media-formats"><span class="nav-number">3.6.2.</span> <span class="nav-text">Supported media formats</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Media-app-architecture"><span class="nav-number">3.6.3.</span> <span class="nav-text">Media app architecture</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Routing-between-devices"><span class="nav-number">3.6.4.</span> <span class="nav-text">Routing between devices</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Control-amplitude-with-VolumeShaper"><span class="nav-number">3.6.5.</span> <span class="nav-text">Control amplitude with VolumeShaper</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MediaPlayer-overview"><span class="nav-number">3.6.6.</span> <span class="nav-text">MediaPlayer overview</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MediaRecorder-overview"><span class="nav-number">3.6.7.</span> <span class="nav-text">MediaRecorder overview</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ExoPlayer"><span class="nav-number">3.6.8.</span> <span class="nav-text">ExoPlayer</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Background-tasks"><span class="nav-number">3.7.</span> <span class="nav-text">Background tasks</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Overview-4"><span class="nav-number">3.7.1.</span> <span class="nav-text">Overview</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Guide-to-background-processing"><span class="nav-number">3.7.2.</span> <span class="nav-text">Guide to background processing</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Sending-operations-to-multiple"><span class="nav-number">3.7.3.</span> <span class="nav-text">Sending operations to multiple</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#threads"><span class="nav-number">3.7.4.</span> <span class="nav-text">threads</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Schedule-jobs-intelligently"><span class="nav-number">3.7.5.</span> <span class="nav-text">Schedule jobs intelligently</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Services"><span class="nav-number">3.7.6.</span> <span class="nav-text">Services</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Background-optimizations"><span class="nav-number">3.7.7.</span> <span class="nav-text">Background optimizations</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Broadcastes-overview"><span class="nav-number">3.7.8.</span> <span class="nav-text">Broadcastes overview</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Manage-device-awake-state"><span class="nav-number">3.7.9.</span> <span class="nav-text">Manage device awake state</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#App-data-amp-files"><span class="nav-number">3.8.</span> <span class="nav-text">App data &amp; files</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Overview-5"><span class="nav-number">3.8.1.</span> <span class="nav-text">Overview</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Storage-overview"><span class="nav-number">3.8.2.</span> <span class="nav-text">Storage overview</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Save-files-on-device-storage"><span class="nav-number">3.8.3.</span> <span class="nav-text">Save files on device storage</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Best-practices"><span class="nav-number">4.</span> <span class="nav-text">Best practices</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Testing"><span class="nav-number">4.1.</span> <span class="nav-text">Testing</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Performance"><span class="nav-number">4.2.</span> <span class="nav-text">Performance</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Overview-6"><span class="nav-number">4.2.1.</span> <span class="nav-text">Overview</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Android-Vitals"><span class="nav-number">4.2.2.</span> <span class="nav-text">Android Vitals</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Processes-and-Threads-Overview"><span class="nav-number">4.2.3.</span> <span class="nav-text">Processes and Threads Overview</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Better-Performance-through-Threading"><span class="nav-number">4.2.4.</span> <span class="nav-text">Better Performance through Threading</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Optimizing-for-Battery-Life"><span class="nav-number">4.2.5.</span> <span class="nav-text">Optimizing for Battery Life</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Reducing-APK-Size"><span class="nav-number">4.2.6.</span> <span class="nav-text">Reducing APK Size</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Manager-Your-App’s-Memory"><span class="nav-number">4.2.7.</span> <span class="nav-text">Manager Your App’s Memory</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Overview-of-Memory-Managemement"><span class="nav-number">4.2.8.</span> <span class="nav-text">Overview of Memory Managemement</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Designing-for-Seamlessness"><span class="nav-number">4.2.9.</span> <span class="nav-text">Designing for Seamlessness</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Keeping-Your-App-Responsive"><span class="nav-number">4.2.10.</span> <span class="nav-text">Keeping Your App Responsive</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Performance-Tips"><span class="nav-number">4.2.11.</span> <span class="nav-text">Performance Tips</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SMP-Primer-for-Android"><span class="nav-number">4.2.12.</span> <span class="nav-text">SMP Primer for Android</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Verifying-App-Behavior-on-th-ANdroid-Runtime-ART"><span class="nav-number">4.2.13.</span> <span class="nav-text">Verifying App Behavior on th ANdroid Runtime(ART)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Accessibility"><span class="nav-number">4.3.</span> <span class="nav-text">Accessibility</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Security"><span class="nav-number">4.4.</span> <span class="nav-text">Security</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Build-for-Billions"><span class="nav-number">4.5.</span> <span class="nav-text">Build for Billions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Build-for-Enterprise"><span class="nav-number">4.6.</span> <span class="nav-text">Build for Enterprise</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Google-Play"><span class="nav-number">4.7.</span> <span class="nav-text">Google Play</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2015 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">EricChows</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="//s95.cnzz.com/z_stat.php?id=1274018749&web_id=1274018749" language="JavaScript"></script>
+  </div>
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.3"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+   <script type="text/javascript">
+		var gitalk = new Gitalk({
+		  clientID: '2f039a8ed54186479946',
+		  clientSecret: 'bc88282455b50fbc8c5d9502d17621a4f9e48d18',
+		  repo: 'myblog-comment',
+		  owner: 'EricChows',
+		  admin: ['EricChows'],
+		  id: location.pathname,
+		  distractionFreeMode: 'true'
+		})
+		gitalk.render('gitalk-container')           
+       </script>
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('-1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("ANlC6pJEdxOLHAcDbFuHuXrF-gzGzoHsz", "tNpAWjkmbhhKnsB3bcDooRrl");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.3"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.3"></script>
+
+
+  
+
+</body>
+</html>

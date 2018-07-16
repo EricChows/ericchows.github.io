@@ -1,0 +1,1481 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Android,StrictMode," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="EricChows" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="作为Android开发，日常的开发工作中或多或少要接触到性能问题，比如我的Android程序运行缓慢卡顿，并且常常出现ANR对话框等等问题。既然有性能问题，就需要进行性能优化。正所谓工欲善其事，必先利其器。一个好的工具，可以帮助我们发现并定位问题，进而有的放矢进行解决。本文主要介绍StrictMode 在Android 应用开发中的应用和一些问题。 Google 官方的StrictMode文档：">
+<meta name="keywords" content="Android,StrictMode">
+<meta property="og:type" content="article">
+<meta property="og:title" content="StrictMode 机制以及性能调优">
+<meta property="og:url" content="http://yoursite.com/Android-StrictMode-Analysis/index.html">
+<meta property="og:site_name" content="EricChows">
+<meta property="og:description" content="作为Android开发，日常的开发工作中或多或少要接触到性能问题，比如我的Android程序运行缓慢卡顿，并且常常出现ANR对话框等等问题。既然有性能问题，就需要进行性能优化。正所谓工欲善其事，必先利其器。一个好的工具，可以帮助我们发现并定位问题，进而有的放矢进行解决。本文主要介绍StrictMode 在Android 应用开发中的应用和一些问题。 Google 官方的StrictMode文档：">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-07-16T11:46:09.153Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="StrictMode 机制以及性能调优">
+<meta name="twitter:description" content="作为Android开发，日常的开发工作中或多或少要接触到性能问题，比如我的Android程序运行缓慢卡顿，并且常常出现ANR对话框等等问题。既然有性能问题，就需要进行性能优化。正所谓工欲善其事，必先利其器。一个好的工具，可以帮助我们发现并定位问题，进而有的放矢进行解决。本文主要介绍StrictMode 在Android 应用开发中的应用和一些问题。 Google 官方的StrictMode文档：">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/Android-StrictMode-Analysis/"/>
+
+
+
+
+
+  <title>StrictMode 机制以及性能调优 | EricChows</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">EricChows</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">Android Developer</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Android-StrictMode-Analysis/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Eric Chows">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/myapple.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="EricChows">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">StrictMode 机制以及性能调优</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-10T09:26:27+08:00">
+                2018-06-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/StrictMode/" itemprop="url" rel="index">
+                    <span itemprop="name">StrictMode</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/Android-StrictMode-Analysis/" class="leancloud_visitors" data-flag-title="StrictMode 机制以及性能调优">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>作为Android开发，日常的开发工作中或多或少要接触到性能问题，比如我的Android程序运行缓慢卡顿，并且常常出现ANR对话框等等问题。既然有性能问题，就需要进行性能优化。正所谓工欲善其事，必先利其器。一个好的工具，可以帮助我们发现并定位问题，进而有的放矢进行解决。本文主要介绍StrictMode 在Android 应用开发中的应用和一些问题。</p>
+<p>Google 官方的StrictMode文档： <a href="https://developer.android.com/reference/android/os/StrictMode" target="_blank" rel="noopener">https://developer.android.com/reference/android/os/StrictMode</a></p>
+<hr>
+<h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>StrictMode，严苛模式，是Android提供的一种运行时检测机制，用于检测代码运行时的一些不规范的操作，最常见的场景是用于发现主线程的IO操作和网络读写等耗时的操作。</p>
+<p>StrictMode包含两个维度的概念：<br>• <strong>Policy(策略):</strong> 是指StrictMode对一些违规操作的发现策略，分为两类：<br>   一类是针对一个具体的线程(<strong>ThreadPolicy</strong>)。<br>   线程策略检测的内容有</p>
+<ul>
+<li>自定义的耗时调用 使用detectCustomSlowCalls()开启</li>
+<li>磁盘读取操作 使用detectDiskReads()开启</li>
+<li>磁盘写入操作 使用detectDiskWrites()开启</li>
+<li><p>网络操作 使用detectNetwork()开启</p>
+<p>另一类是针对虚拟机的所有对象(<strong>VMPolicy</strong>)。<br>虚拟机策略检测的内容有</p>
+</li>
+<li>Activity泄露 使用detectActivityLeaks()开启</li>
+<li>未关闭的Closable对象泄露 使用detectLeakedClosableObjects()开启</li>
+<li>泄露的Sqlite对象 使用detectLeakedSqlLiteObjects()开启</li>
+<li>检测实例数量 使用setClassInstanceLimit()开启</li>
+</ul>
+<p>• <strong>Penalty(惩罚)：</strong>是指StrictMode发现违规操作后进行惩罚的方式，譬如绘制红框、打印日志、显示对话框、杀掉进程等。</p>
+<p>Android在很多关键的代码路径上都植入了StrictMode，譬如磁盘读写、网络访问、系统进程启动等。StrictMode会根据设置的策略进行检查，如果某个进程在代码运行时出现了违规操作，那么就会受到”惩罚”。</p>
+<p>应用程序可以利用StrictMode尽可能的发现一些编码的疏漏， Android在 packages/experimental/StrictModeTest 这个APK中提供了常见违规操作的样例， 谨作为大家的反面教材。</p>
+<p>本文深入分析StrictMode背后的实现原理以及使用场景。</p>
+<h1 id="StrictMode机制"><a href="#StrictMode机制" class="headerlink" title="StrictMode机制"></a>StrictMode机制</h1><p>StrictMode的实现涉及到以下源码：<br>• <a href="https://android.googlesource.com/platform/libcore/+/master/dalvik/src/main/java/dalvik/system/BlockGuard.java" target="_blank" rel="noopener">libcore/dalvik/src/main/java/dalvik/system/BlockGuard.java</a><br>• <a href="https://android.googlesource.com/platform/libcore/+/master/dalvik/src/main/java/dalvik/system/CloseGuard.java" target="_blank" rel="noopener">libcore/dalvik/src/main/java/dalvik/system/CloseGuard.java</a><br>• <a href="https://android.googlesource.com/platform/frameworks/base/+/master/core/java/android/os/StrictMode.java" target="_blank" rel="noopener">frameworks/base/core/java/android/os/StrictMode.java</a></p>
+<ul>
+<li><a href="https://android.googlesource.com/platform/frameworks/base/+/master/core/java/android/os/StrictMode.aidl" target="_blank" rel="noopener">StrictMode.aidl</a></li>
+</ul>
+<p>总体而言，StrictMode机制所涉及到的代码量并不大，但Android中植入StrictMode的地方都是一些重要的关口，StrictMode所体现的面向接口编程的思想以及设计模式的应用，值得我们好好学习。 下面，我们就深入源码，分析一下StrictMode机制的内部实现。</p>
+<h2 id="BlockGuard和CloseGuard"><a href="#BlockGuard和CloseGuard" class="headerlink" title="BlockGuard和CloseGuard"></a>BlockGuard和CloseGuard</h2><p>StrictMode针对单个线程和虚拟机的所有对象都定义了检查策略，用来发现一些违规操作，譬如：主线程中的磁盘读/写、网络访问、未关闭cursor，这些操作都能够被StrictMode检查出来。 怎么做到的呢？在做这些操作时，植入StrictMode的检查代码就可以了。有一部分植入代码是建立在BlockGuard和CloseGuard之上的，可以说，StrictMode是建立在BlockGuard和CloseGuard之上的机制。</p>
+<p><strong>Guard</strong>有“守卫”的意思，<strong>Block</strong>是阻塞的意思，在进行一些耗时操作时，譬如磁盘读写、网络操作，有一个守卫在监测着，它就是BlockGuard，如果这些耗时的操作导致主线程阻塞，BlockGuard就会发出通知; <strong>Close</strong>对应到可打开的文件，在文件被打开后，也有一个守卫在监测着，它就是CloseGuard，如果没有关闭文件，则CloseGuard就会发出通知。</p>
+<p>对应的来看一下 <a href="https://android.googlesource.com/platform/libcore/+/master/dalvik/src/main/java/dalvik/system/BlockGuard.java" target="_blank" rel="noopener">BlockGuard.java</a>的代码：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> dalvik.system;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.FileDescriptor;</span><br><span class="line"><span class="keyword">import</span> java.io.FileNotFoundException;</span><br><span class="line"><span class="keyword">import</span> java.io.FileOutputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.math.BigInteger;</span><br><span class="line"><span class="keyword">import</span> java.net.SocketException;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Mechanism to let threads set restrictions on what code is allowed</span></span><br><span class="line"><span class="comment"> * to do in their thread.</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * &lt;p&gt;This is meant for applications to prevent certain blocking</span></span><br><span class="line"><span class="comment"> * operations from running on their main event loop (or "UI") threads.</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * &lt;p&gt;Note that this is all best-effort to catch most accidental mistakes</span></span><br><span class="line"><span class="comment"> * and isn't intended to be a perfect mechanism, nor provide any sort of</span></span><br><span class="line"><span class="comment"> * security.</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@hide</span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">BlockGuard</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// <span class="doctag">TODO:</span> refactor class name to something more generic, since its scope is</span></span><br><span class="line">    <span class="comment">// growing beyond just blocking/logging.</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> DISALLOW_DISK_WRITE = <span class="number">0x01</span>;<span class="comment">//不允许磁盘盘写</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> DISALLOW_DISK_READ = <span class="number">0x02</span>;<span class="comment">//不允许从磁盘读</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> DISALLOW_NETWORK = <span class="number">0x04</span>;<span class="comment">//不允许有网络操作</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> PASS_RESTRICTIONS_VIA_RPC = <span class="number">0x08</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> PENALTY_LOG = <span class="number">0x10</span>;<span class="comment">//惩罚的log</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> PENALTY_DIALOG = <span class="number">0x20</span>;<span class="comment">//惩罚的dialog</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> PENALTY_DEATH = <span class="number">0x40</span>;<span class="comment">//惩罚kill</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Policy</span> </span>&#123;</span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">         * Called on disk writes.</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        <span class="function"><span class="keyword">void</span> <span class="title">onWriteToDisk</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">         * Called on disk reads.</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        <span class="function"><span class="keyword">void</span> <span class="title">onReadFromDisk</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">         * Called on network operations.</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        <span class="function"><span class="keyword">void</span> <span class="title">onNetwork</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">         * Called on unbuffered input/ouput operations.</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        <span class="function"><span class="keyword">void</span> <span class="title">onUnbufferedIO</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">         * Returns the policy bitmask, for shipping over Binder calls</span></span><br><span class="line"><span class="comment">         * to remote threads/processes and reinstantiating the policy</span></span><br><span class="line"><span class="comment">         * there.  The bits in the mask are from the DISALLOW_* and</span></span><br><span class="line"><span class="comment">         * PENALTY_* constants.</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        <span class="function"><span class="keyword">int</span> <span class="title">getPolicyMask</span><span class="params">()</span></span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">BlockGuardPolicyException</span> <span class="keyword">extends</span> <span class="title">RuntimeException</span> </span>&#123;</span><br><span class="line">        <span class="comment">// bitmask of DISALLOW_*, PENALTY_*, etc flags</span></span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">int</span> mPolicyState;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">int</span> mPolicyViolated;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">final</span> String mMessage;   <span class="comment">// may be null</span></span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">BlockGuardPolicyException</span><span class="params">(<span class="keyword">int</span> policyState, <span class="keyword">int</span> policyViolated)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">this</span>(policyState, policyViolated, <span class="keyword">null</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">BlockGuardPolicyException</span><span class="params">(<span class="keyword">int</span> policyState, <span class="keyword">int</span> policyViolated, String message)</span> </span>&#123;</span><br><span class="line">            mPolicyState = policyState;</span><br><span class="line">            mPolicyViolated = policyViolated;</span><br><span class="line">            mMessage = message;</span><br><span class="line">            fillInStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getPolicy</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> mPolicyState;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getPolicyViolation</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> mPolicyViolated;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> String <span class="title">getMessage</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="comment">// Note: do not change this format casually.  It's</span></span><br><span class="line">            <span class="comment">// somewhat unfortunately Parceled and passed around</span></span><br><span class="line">            <span class="comment">// Binder calls and parsed back into an Exception by</span></span><br><span class="line">            <span class="comment">// Android's StrictMode.  This was the least invasive</span></span><br><span class="line">            <span class="comment">// option and avoided a gross mix of Java Serialization</span></span><br><span class="line">            <span class="comment">// combined with Parcels.</span></span><br><span class="line">            <span class="keyword">return</span> <span class="string">"policy="</span> + mPolicyState + <span class="string">" violation="</span> + mPolicyViolated +</span><br><span class="line">                    (mMessage == <span class="keyword">null</span> ? <span class="string">""</span> : (<span class="string">" msg="</span> + mMessage));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * The default, permissive policy that doesn't prevent any operations.</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> Policy LAX_POLICY = <span class="keyword">new</span> Policy() &#123;</span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onWriteToDisk</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onReadFromDisk</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onNetwork</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onUnbufferedIO</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getPolicyMask</span><span class="params">()</span> </span>&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> ThreadLocal&lt;Policy&gt; threadPolicy = <span class="keyword">new</span> ThreadLocal&lt;Policy&gt;() &#123;</span><br><span class="line">        <span class="meta">@Override</span> <span class="function"><span class="keyword">protected</span> Policy <span class="title">initialValue</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> LAX_POLICY;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Get the current thread's policy.</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> the current thread's policy.  Never returns null.</span></span><br><span class="line"><span class="comment">     *     Will return the LAX_POLICY instance if nothing else is set.</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Policy <span class="title">getThreadPolicy</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> threadPolicy.get();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Sets the current thread's block guard policy.</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> policy policy to set.  May not be null.  Use the public LAX_POLICY</span></span><br><span class="line"><span class="comment">     *   if you want to unset the active policy.</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">setThreadPolicy</span><span class="params">(Policy policy)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (policy == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> NullPointerException(<span class="string">"policy == null"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        threadPolicy.set(policy);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">BlockGuard</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>从BlockGuard的代码来看，很简单，就定义了一些类型和方法接口。</p>
+<p>同样的看看<a href="https://android.googlesource.com/platform/libcore/+/master/dalvik/src/main/java/dalvik/system/CloseGuard.java" target="_blank" rel="noopener">CloseGuard.java</a>方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> dalvik.system;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * CloseGuard is a mechanism for flagging implicit finalizer cleanup of</span></span><br><span class="line"><span class="comment"> * resources that should have been cleaned up by explicit close</span></span><br><span class="line"><span class="comment"> * methods (aka "explicit termination methods" in Effective Java).</span></span><br><span class="line"><span class="comment"> * &lt;p&gt;</span></span><br><span class="line"><span class="comment"> * A simple example: &lt;pre&gt;   &#123;<span class="doctag">@code</span></span></span><br><span class="line"><span class="comment"> *   class Foo &#123;</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> *       private final CloseGuard guard = CloseGuard.get();</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> *       ...</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> *       public Foo() &#123;</span></span><br><span class="line"><span class="comment"> *           ...;</span></span><br><span class="line"><span class="comment"> *           guard.open("cleanup");</span></span><br><span class="line"><span class="comment"> *       &#125;</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> *       public void cleanup() &#123;</span></span><br><span class="line"><span class="comment"> *          guard.close();</span></span><br><span class="line"><span class="comment"> *          ...;</span></span><br><span class="line"><span class="comment"> *       &#125;</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> *       protected void finalize() throws Throwable &#123;</span></span><br><span class="line"><span class="comment"> *           try &#123;</span></span><br><span class="line"><span class="comment"> *               // Note that guard could be null if the constructor threw.</span></span><br><span class="line"><span class="comment"> *               if (guard != null) &#123;</span></span><br><span class="line"><span class="comment"> *                   guard.warnIfOpen();</span></span><br><span class="line"><span class="comment"> *               &#125;</span></span><br><span class="line"><span class="comment"> *               cleanup();</span></span><br><span class="line"><span class="comment"> *           &#125; finally &#123;</span></span><br><span class="line"><span class="comment"> *               super.finalize();</span></span><br><span class="line"><span class="comment"> *           &#125;</span></span><br><span class="line"><span class="comment"> *       &#125;</span></span><br><span class="line"><span class="comment"> *   &#125;</span></span><br><span class="line"><span class="comment"> * &#125;&lt;/pre&gt;</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * In usage where the resource to be explicitly cleaned up are</span></span><br><span class="line"><span class="comment"> * allocated after object construction, CloseGuard protection can</span></span><br><span class="line"><span class="comment"> * be deferred. For example: &lt;pre&gt;   &#123;<span class="doctag">@code</span></span></span><br><span class="line"><span class="comment"> *   class Bar &#123;</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> *       private final CloseGuard guard = CloseGuard.get();</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> *       ...</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> *       public Bar() &#123;</span></span><br><span class="line"><span class="comment"> *           ...;</span></span><br><span class="line"><span class="comment"> *       &#125;</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> *       public void connect() &#123;</span></span><br><span class="line"><span class="comment"> *          ...;</span></span><br><span class="line"><span class="comment"> *          guard.open("cleanup");</span></span><br><span class="line"><span class="comment"> *       &#125;</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> *       public void cleanup() &#123;</span></span><br><span class="line"><span class="comment"> *          guard.close();</span></span><br><span class="line"><span class="comment"> *          ...;</span></span><br><span class="line"><span class="comment"> *       &#125;</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> *       protected void finalize() throws Throwable &#123;</span></span><br><span class="line"><span class="comment"> *           try &#123;</span></span><br><span class="line"><span class="comment"> *               // Note that guard could be null if the constructor threw.</span></span><br><span class="line"><span class="comment"> *               if (guard != null) &#123;</span></span><br><span class="line"><span class="comment"> *                   guard.warnIfOpen();</span></span><br><span class="line"><span class="comment"> *               &#125;</span></span><br><span class="line"><span class="comment"> *               cleanup();</span></span><br><span class="line"><span class="comment"> *           &#125; finally &#123;</span></span><br><span class="line"><span class="comment"> *               super.finalize();</span></span><br><span class="line"><span class="comment"> *           &#125;</span></span><br><span class="line"><span class="comment"> *       &#125;</span></span><br><span class="line"><span class="comment"> *   &#125;</span></span><br><span class="line"><span class="comment"> * &#125;&lt;/pre&gt;</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * When used in a constructor calls to &#123;<span class="doctag">@code</span> open&#125; should occur at</span></span><br><span class="line"><span class="comment"> * the end of the constructor since an exception that would cause</span></span><br><span class="line"><span class="comment"> * abrupt termination of the constructor will mean that the user will</span></span><br><span class="line"><span class="comment"> * not have a reference to the object to cleanup explicitly. When used</span></span><br><span class="line"><span class="comment"> * in a method, the call to &#123;<span class="doctag">@code</span> open&#125; should occur just after</span></span><br><span class="line"><span class="comment"> * resource acquisition.</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@hide</span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">CloseGuard</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Instance used when CloseGuard is disabled to avoid allocation.</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> CloseGuard NOOP = <span class="keyword">new</span> CloseGuard();</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Enabled by default so we can catch issues early in VM startup.</span></span><br><span class="line"><span class="comment">     * Note, however, that Android disables this early in its startup,</span></span><br><span class="line"><span class="comment">     * but enables it with DropBoxing for system apps on debug builds.</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">volatile</span> <span class="keyword">boolean</span> ENABLED = <span class="keyword">true</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Hook for customizing how CloseGuard issues are reported.</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">volatile</span> Reporter REPORTER = <span class="keyword">new</span> DefaultReporter();</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * The default &#123;<span class="doctag">@link</span> Tracker&#125;.</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> DefaultTracker DEFAULT_TRACKER = <span class="keyword">new</span> DefaultTracker();</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Hook for customizing how CloseGuard issues are tracked.</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">volatile</span> Tracker currentTracker = DEFAULT_TRACKER;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Returns a CloseGuard instance. If CloseGuard is enabled, &#123;<span class="doctag">@code</span></span></span><br><span class="line"><span class="comment">     * #open(String)&#125; can be used to set up the instance to warn on</span></span><br><span class="line"><span class="comment">     * failure to close. If CloseGuard is disabled, a non-null no-op</span></span><br><span class="line"><span class="comment">     * instance is returned.</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> CloseGuard <span class="title">get</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (!ENABLED) &#123;</span><br><span class="line">            <span class="keyword">return</span> NOOP;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> CloseGuard();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Used to enable or disable CloseGuard. Note that CloseGuard only</span></span><br><span class="line"><span class="comment">     * warns if it is enabled for both allocation and finalization.</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">setEnabled</span><span class="params">(<span class="keyword">boolean</span> enabled)</span> </span>&#123;</span><br><span class="line">        ENABLED = enabled;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * True if CloseGuard mechanism is enabled.</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isEnabled</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> ENABLED;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Used to replace default Reporter used to warn of CloseGuard</span></span><br><span class="line"><span class="comment">     * violations. Must be non-null.</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">setReporter</span><span class="params">(Reporter reporter)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (reporter == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> NullPointerException(<span class="string">"reporter == null"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        REPORTER = reporter;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Returns non-null CloseGuard.Reporter.</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Reporter <span class="title">getReporter</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> REPORTER;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Sets the &#123;<span class="doctag">@link</span> Tracker&#125; that is notified when resources are allocated and released.</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * &lt;p&gt;This is only intended for use by &#123;<span class="doctag">@code</span> dalvik.system.CloseGuardSupport&#125; class and so</span></span><br><span class="line"><span class="comment">     * MUST NOT be used for any other purposes.</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@throws</span> NullPointerException if tracker is null</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">setTracker</span><span class="params">(Tracker tracker)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (tracker == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> NullPointerException(<span class="string">"tracker == null"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        currentTracker = tracker;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Returns &#123;<span class="doctag">@link</span> #setTracker(Tracker) last Tracker that was set&#125;, or otherwise a default</span></span><br><span class="line"><span class="comment">     * Tracker that does nothing.</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * &lt;p&gt;This is only intended for use by &#123;<span class="doctag">@code</span> dalvik.system.CloseGuardSupport&#125; class and so</span></span><br><span class="line"><span class="comment">     * MUST NOT be used for any other purposes.</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Tracker <span class="title">getTracker</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> currentTracker;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">CloseGuard</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * If CloseGuard is enabled, &#123;<span class="doctag">@code</span> open&#125; initializes the instance</span></span><br><span class="line"><span class="comment">     * with a warning that the caller should have explicitly called the</span></span><br><span class="line"><span class="comment">     * &#123;<span class="doctag">@code</span> closer&#125; method instead of relying on finalization.</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> closer non-null name of explicit termination method</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@throws</span> NullPointerException if closer is null, regardless of</span></span><br><span class="line"><span class="comment">     * whether or not CloseGuard is enabled</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">open</span><span class="params">(String closer)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// always perform the check for valid API usage...</span></span><br><span class="line">        <span class="keyword">if</span> (closer == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> NullPointerException(<span class="string">"closer == null"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// ...but avoid allocating an allocationSite if disabled</span></span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">this</span> == NOOP || !ENABLED) &#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        String message = <span class="string">"Explicit termination method '"</span> + closer + <span class="string">"' not called"</span>;</span><br><span class="line">        allocationSite = <span class="keyword">new</span> Throwable(message);</span><br><span class="line">        currentTracker.open(allocationSite);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> Throwable allocationSite;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Marks this CloseGuard instance as closed to avoid warnings on</span></span><br><span class="line"><span class="comment">     * finalization.</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">close</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        currentTracker.close(allocationSite);</span><br><span class="line">        allocationSite = <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * If CloseGuard is enabled, logs a warning if the caller did not</span></span><br><span class="line"><span class="comment">     * properly cleanup by calling an explicit close method</span></span><br><span class="line"><span class="comment">     * before finalization. If CloseGuard is disabled, no action is</span></span><br><span class="line"><span class="comment">     * performed.</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">warnIfOpen</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (allocationSite == <span class="keyword">null</span> || !ENABLED) &#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        String message =</span><br><span class="line">                (<span class="string">"A resource was acquired at attached stack trace but never released. "</span></span><br><span class="line">                 + <span class="string">"See java.io.Closeable for information on avoiding resource leaks."</span>);</span><br><span class="line"></span><br><span class="line">        REPORTER.report(message, allocationSite);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Interface to allow customization of tracking behaviour.</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * &lt;p&gt;This is only intended for use by &#123;<span class="doctag">@code</span> dalvik.system.CloseGuardSupport&#125; class and so</span></span><br><span class="line"><span class="comment">     * MUST NOT be used for any other purposes.</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Tracker</span> </span>&#123;</span><br><span class="line">        <span class="function"><span class="keyword">void</span> <span class="title">open</span><span class="params">(Throwable allocationSite)</span></span>;</span><br><span class="line">        <span class="function"><span class="keyword">void</span> <span class="title">close</span><span class="params">(Throwable allocationSite)</span></span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Default tracker which does nothing special and simply leaves it up to the GC to detect a</span></span><br><span class="line"><span class="comment">     * leak.</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">DefaultTracker</span> <span class="keyword">implements</span> <span class="title">Tracker</span> </span>&#123;</span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">open</span><span class="params">(Throwable allocationSite)</span> </span>&#123;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">close</span><span class="params">(Throwable allocationSite)</span> </span>&#123;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Interface to allow customization of reporting behavior.</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Reporter</span> </span>&#123;</span><br><span class="line">        <span class="function"><span class="keyword">void</span> <span class="title">report</span> <span class="params">(String message, Throwable allocationSite)</span></span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Default Reporter which reports CloseGuard violations to the log.</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">DefaultReporter</span> <span class="keyword">implements</span> <span class="title">Reporter</span> </span>&#123;</span><br><span class="line">        <span class="meta">@Override</span> <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">report</span> <span class="params">(String message, Throwable allocationSite)</span> </span>&#123;</span><br><span class="line">            System.logW(message, allocationSite);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Android在很多代码中植入了BlockGuard，以BlockGuardOs为例，这个类代理大部分POSIX系统调用接口，所谓代理，从代码角度，就是在一个类外层再做一层封装。 BlockGuardOs代理了Os类，并植入了BlockGuard，譬如BlockGuardOs.read()这个系统调用：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">(FileDescriptor fd, <span class="keyword">byte</span>[] bytes, <span class="keyword">int</span> byteOffset, <span class="keyword">int</span> byteCount)</span> <span class="keyword">throws</span> ErrnoException, InterruptedIOException </span>&#123;</span><br><span class="line">    BlockGuard.getThreadPolicy().onReadFromDisk();</span><br><span class="line">    <span class="keyword">return</span> os.read(fd, bytes, byteOffset, byteCount);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>经过BlockGuard的一层封装，在每次进行read()系统调用时，都会通过BlockGuard通知发生了读磁盘的操作：BlockGuard.getThreadPolicy().onReadFromDisk()<br>这里用到了BlockGuard的getThreadPolicy()方法，其实BlockGuard内部有一个Policy，定义了可能导致阻塞的方法：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Policy</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">onWriteToDisk</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">onReadFromDisk</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">onNetwork</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">getPolicyMask</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这个Policy只是一个接口定义，专门暴露给外部的 ，StrictMode就实现了BlockGuard.Policy：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">AndroidBlockGuardPolicy</span> <span class="keyword">implements</span> <span class="title">BlockGuard</span>.<span class="title">Policy</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> mPolicyMask;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Map from violation stacktrace hashcode -&gt; uptimeMillis of</span></span><br><span class="line">    <span class="comment">// last violation.  No locking needed, as this is only</span></span><br><span class="line">    <span class="comment">// accessed by the same thread.</span></span><br><span class="line">    <span class="keyword">private</span> ArrayMap&lt;Integer, Long&gt; mLastViolationTime;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">AndroidBlockGuardPolicy</span><span class="params">(<span class="keyword">final</span> <span class="keyword">int</span> policyMask)</span> </span>&#123;</span><br><span class="line">        mPolicyMask = policyMask;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"AndroidBlockGuardPolicy; mPolicyMask="</span> + mPolicyMask;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Part of BlockGuard.Policy interface:</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getPolicyMask</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> mPolicyMask;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Part of BlockGuard.Policy interface:</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onWriteToDisk</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> ((mPolicyMask &amp; DETECT_DISK_WRITE) == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (tooManyViolationsThisLoop()) &#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        BlockGuard.BlockGuardPolicyException e = <span class="keyword">new</span> StrictModeDiskWriteViolation(mPolicyMask);</span><br><span class="line">        e.fillInStackTrace();</span><br><span class="line">        startHandlingViolationException(e);</span><br><span class="line">    &#125;</span><br><span class="line">    ....</span><br></pre></td></tr></table></figure></p>
+<p>StrictMode不仅针对BlockGuard.Policy实现了自身的处理逻辑，还扩展了一个方法onCustomSlowCall()，通过BlockGuard.setThreadPolicy()就能够将AndroidBlockGuardPolicy植入到BlockGuard中。</p>
+<p>再来看CloseGuard，与BlockGuard一样，Android在很多代码中也植入了CloseGuard，以FileInputStream为例：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FileInputStream</span> <span class="keyword">extends</span> <span class="title">InputStream</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 1. 新建CloseGuard全局变量</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> CloseGuard guard = CloseGuard.get();</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">FileInputStream</span><span class="params">(File file)</span> <span class="keyword">throws</span> FileNotFoundException </span>&#123;</span><br><span class="line">        ...</span><br><span class="line">        <span class="comment">// 2. 设置CloseGuard标志</span></span><br><span class="line">        guard.open(<span class="string">"close"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">close</span><span class="params">()</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        <span class="comment">// 3. 清除CloseGuard标志</span></span><br><span class="line">        guard.close();</span><br><span class="line">        ...</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">finalize</span><span class="params">()</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        <span class="comment">// 4. 判断Close标志是否被清除</span></span><br><span class="line">        <span class="keyword">if</span> (guard != <span class="keyword">null</span>) &#123;</span><br><span class="line">            guard.warnIfOpen();</span><br><span class="line">        &#125;</span><br><span class="line">        ...</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>CloseGuard的植入逻辑很清晰，一共分为4部分：</p>
+<ul>
+<li>1)新建一个CloseGuard全局变量</li>
+<li>2)在对象初始化时，设置一个标志，表示需要调用close()方法关闭该对象</li>
+<li>3)在关闭方法中，调用CloseGuard.close()方法，清除标志</li>
+<li>4)在对象销毁时，调用CloaseGuard.warnIfOpen()方法，判断标志是否被清除：<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">warnIfOpen</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (allocationSite == <span class="keyword">null</span> || !ENABLED) &#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    String message =</span><br><span class="line">        (<span class="string">"A resource was acquired at attached stack trace but never released. "</span></span><br><span class="line">        + <span class="string">"See java.io.Closeable for information on avoiding resource leaks."</span>);</span><br><span class="line"></span><br><span class="line">    REPORTER.report(message, allocationSite);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>从CloseGuard.warnIfOpen()方法中，可以看到，设置的标志就是allocationSite变量，如果该变量已经置空了，表示已经被清除过了; 否则，就会通过REPORTER报告违规操作。</p>
+<p>REPORTER是CloseGuard暴露一个接口，StrictMode就实现了这个接口：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">AndroidCloseGuardReporter</span> <span class="keyword">implements</span> <span class="title">CloseGuard</span>.<span class="title">Reporter</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">report</span> <span class="params">(String message, Throwable allocationSite)</span> </span>&#123;</span><br><span class="line">        onVmPolicyViolation(message, allocationSite);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>当StrictMode启用时，REPORTER就被设置成了AndroidCloseGuardReporter对象，如此一来，StrictMode就能够收集到CloseGuard报告的未关闭文件。</p>
+<p>至此，我们揭开了StrictMode的面纱：Android通过BlockGuard和CloseGuard在一些执行路径中埋入了一些切点，譬如磁盘读写时BlockGuard会收到通知，对象销毁时CloseGuard就会收到通知。 BlockGuard和CloseGuard都设计了一套接口：BlockGuard.Policy和CloseGuard.Reporter，其实就是切点的不同分类，StrictMode正是利用这两个接口所定义的一些切点，切入了自已的处理逻辑。</p>
+<blockquote>
+<p>题外话: 得益于面向接口的设计，我们可以另起炉灶，完全独立于StrictMode再实现其他BlockGuard.Policy和CloseGuard.Reporter的处理逻辑; 也可以对BlockGuard.Policy和CloseGuard.Reporter进行扩展，StrictMode只需要实现新的处理逻辑即可，这都不会影响已有的架构。 接口定义和接口实现分离，两者可以独立变化，适应新的需求，这是桥接模式(Bridge Pattern)的精髓，它降低了Guard和StrictMode两者之间的耦合度。<br>从BlockGuardOs的设计中，我们也看到了代理模式(Proxy Pattern)，BlockGuardOs对被代理的Os类进行了简单控制，植入了BlockGuard的逻辑，作为一个中间者，处于调用者和被调用实体中间，能够降低两者的耦合度。</p>
+</blockquote>
+<h2 id="StrictMode-Policy"><a href="#StrictMode-Policy" class="headerlink" title="StrictMode Policy"></a>StrictMode Policy</h2><p>StrictMode利用了BlockGuard和CloseGuard，不仅实现了两者定义的一些策略(Policy)，还进行了扩展。 这些策略，在StrictMode看来，就是一些违规操作，下面我们深入介绍StrictMode定义的每一项违规操作。</p>
+<h3 id="ThreadPolicy"><a href="#ThreadPolicy" class="headerlink" title="ThreadPolicy"></a>ThreadPolicy</h3><p>ThreadPolicy细分为以下几种：<br>• Disk Write：实现了BlockGuard的策略，写磁盘操作<br>• Disk Read：实现了BlockGuard的策略，读磁盘操作<br>• Network Access：实现了BlockGuard的策略，网络访问操作<br>• Custom Slow Code：StrictMode扩展的策略，目前只有Webview中植入了这项检查<br>前三项的植入都是通过BlockGuard完成的，StrictMode只是实现了处理逻辑;最后一项是StrictMode扩展的， 如果一个方法执行的时间较长，可以调用StrictMode.noteSlowCall()方法来发出通知。 当这些操作发生后，最终都会调用StrictMode.handleViolation()方法进行处理，后文再展开讨论这个方法。</p>
+<p>StrictMode通过标志位来区别以上几项，为此还特意封装了一个内部类StrictMode.ThreadPlicy，目的是为了方便标志位的设定。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">ThreadPolicy</span> </span>&#123;</span><br><span class="line">    <span class="comment">// ThreadPolicy标志位</span></span><br><span class="line">    <span class="keyword">final</span> <span class="keyword">int</span> mask;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">ThreadPolicy</span><span class="params">(<span class="keyword">int</span> mask)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.mask = mask;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 利用Builder完成标志位的初始化</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">Builder</span> </span>&#123;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">int</span> mMask = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> Builder <span class="title">detectDiskReads</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> enable(DETECT_DISK_READ);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>ThreadPolicy的初始化采用了构建者模式(Builder Pattern)，这样一来，调用者在使用起来就会更加自然一点，不用记住各个标志位的意义。 为了完成标志位的设定，StrictMode提供setThreadPolicy()方法，接收ThreadPolicy类型的对象作为参数，该方法的实现就是直接调用setThreadPolicyMask()：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">setThreadPolicy</span><span class="params">(<span class="keyword">final</span> ThreadPolicy policy)</span> </span>&#123;</span><br><span class="line">    setThreadPolicyMask(policy.mask);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">pivate <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">setThreadPolicyMask</span><span class="params">(<span class="keyword">final</span> <span class="keyword">int</span> policyMask)</span> </span>&#123;</span><br><span class="line">    setBlockGuardPolicy(policyMask);</span><br><span class="line">    Binder.setThreadStrictModePolicy(policyMask);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这里完成了两个层面的ThreadPolicy设定：<br>• <strong>Java层</strong>，通过StrictMode.setBlockGuardPolicy()完成，最终会调用BlockGuard.setThreadPolicy()方法， 将AndroidBlockGuardPolicy对象设定为BlockGuard的Policy;</p>
+<p>• <strong>Native层</strong>，通过Binder.setThreadStrictModePolicy()完成，看到这里，想必各位读者心中有了疑问，为什么还会有Native层的ThreadPolicy设置？ 其实，看到Binder，就很容易联想到这是用作跨进程调用的，当进程A发起跨进程调用进入到进程B后，那进程B中的违规操作怎么判定呢？当然也需要一个ThreadPolicy， Binder.setThreadStrictModePolicy()就是用来设置其他进程的ThreadPolicy。进程B中的违规异常也会通过Binder再传回进程A中，如此一来， 一个方法执行路径上的所有违规操作都会被StrictMode发现。</p>
+<h3 id="VMPolicy"><a href="#VMPolicy" class="headerlink" title="VMPolicy"></a>VMPolicy</h3><p>ThreadPolicy主要用于发现一些容易导致主线程阻塞的操作，所以它针对的对象是单个线程; 而VMPolicy主要用于发现Java层的内存泄漏，所以它针对的是虚拟机的所有对象。 VMPolicy细分为以下几种：<br>• <strong>Cursor Leak：</strong> 如果注册SQlite Cursor后没有调用close()，则发生了泄漏。<br>• <strong>Closable Leak：</strong>这一项是CloseGuard的实现。如果存在未关闭的对象，则发生了泄漏。<br>• <strong>Activity Leak：</strong> 如果Activity在销毁后，其对象引用还被持有，则发生了泄漏。<br>• <strong>Instance Leak：</strong> StrictMode允许设置一个类的对象数量上限，在系统闲时，Strict会统计虚拟机中实际的对象数量，如果超出设定的上限，则判定为对象泄漏。<br>• <strong>Registion Leak：</strong> 如果注册IntentReceiver后没有调用unregisterReceiver()，则发生了泄漏<br>• <strong>File URI Exposure：</strong>这一项是安全性检查。通过file://的方式共享文件时，存在安全隐患。Android建议通过content://的方式共享文件。</p>
+<p>如同ThreadPolicy一样，VMPolicy也采用了构建者模式(Builder Pattern)进行初始化，在Closable Leak这一项的使用上，与BlockGuard有异曲同工之妙， 但除了Closable Leak是利用CloseGuard以外，其他违规项都是StrictMode自身的逻辑，需要在一些关键路径上植入StrictMode的代码，我们举出两例：</p>
+<p>例1：Cursor Leak</p>
+<p>以下是SQLite Cursor植入了StrictMode机制的代码片段：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">SQLiteCursor</span><span class="params">(SQLiteCursorDriver driver, String editTable, SQLiteQuery query)</span> </span>&#123;</span><br><span class="line">    ...</span><br><span class="line">    <span class="keyword">if</span> (StrictMode.vmSqliteObjectLeaksEnabled()) &#123;</span><br><span class="line">        mStackTrace = <span class="keyword">new</span> DatabaseObjectNotClosedException().fillInStackTrace();</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        mStackTrace = <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">finalize</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="comment">// if the cursor hasn't been closed yet, close it first</span></span><br><span class="line">        <span class="keyword">if</span> (mWindow != <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (mStackTrace != <span class="keyword">null</span>) &#123;</span><br><span class="line">                String sql = mQuery.getSql();</span><br><span class="line">                <span class="keyword">int</span> len = sql.length();</span><br><span class="line">                StrictMode.onSqliteObjectLeaked(</span><br><span class="line">                    <span class="string">"Finalizing a Cursor that has not been deactivated or closed. "</span> +</span><br><span class="line">                    <span class="string">"database = "</span> + mQuery.getDatabase().getLabel() +</span><br><span class="line">                    <span class="string">", table = "</span> + mEditTable +</span><br><span class="line">                    <span class="string">", query = "</span> + sql.substring(<span class="number">0</span>, (len &gt; <span class="number">1000</span>) ? <span class="number">1000</span> : len),</span><br><span class="line">                    mStackTrace);</span><br><span class="line">            &#125;</span><br><span class="line">            close();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">        <span class="keyword">super</span>.finalize();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>在SQLiteCursor对象初始化时，设置一个变量mStackTrace，如果开启了DETECT_VM_CURSOR_LEAKS，则将其置为非空。 在SQLiteCursor对象销毁时，会对Cursor是否关闭进行判断(如果CursorWindow非空，则说明没有显示关闭Cursor)。此时，如果mStackTrace变量非空，则向StrictMode报告。</p>
+<p>例2：Activity Leak</p>
+<p>再来一例Activity植入StrictMode的逻辑：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ActivityThread.performLaunchActivity()</span><br><span class="line">└── StrictMode.incrementExpectedActivityCount()</span><br><span class="line"></span><br><span class="line">ActivityThread.performDestroyActivity()</span><br><span class="line">└── StrictMode.decrementExpectedActivityCount()</span><br></pre></td></tr></table></figure></p>
+<p>StrictMode对象中维护了Activity的计数器，统计着Activity对象的数量。在Activity对象新建和销毁的时候，会分别调用increment和decrement，对计数进行增减调整。 每一次有Activity对象销毁，都会调用VMDebug.countInstancesOfClass()，计算虚拟机中实际的Activity对象数量，如果实际Activity对象的数量超出了StrictMode的统计值， 则说明Activity对象虽然销毁了，但其对象引用还在，这就存在泄漏。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">decrementExpectedActivityCount</span><span class="params">(Class klass)</span> </span>&#123;</span><br><span class="line">    ...</span><br><span class="line">    <span class="keyword">long</span> instances = VMDebug.countInstancesOfClass(klass, <span class="keyword">false</span>);</span><br><span class="line">    <span class="keyword">if</span> (instances &gt; limit) &#123;</span><br><span class="line">        Throwable tr = <span class="keyword">new</span> InstanceCountViolation(klass, instances, limit);</span><br><span class="line">        onVmPolicyViolation(tr.getMessage(), tr);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>从上述两例中，我们看到，虽然检测的形式各有不同，但本质都是在被检测的对象初始化时(constructor)设置一个标志，在对象销毁时(finalize)再对这个标志进行判断。其他的检测项的实现方式也都大同小异。</p>
+<h2 id="StrictMode-Penalty"><a href="#StrictMode-Penalty" class="headerlink" title="StrictMode Penalty"></a>StrictMode Penalty</h2><p>当StrictMode发现有违规操作后，提供一些惩罚的方式，使用者可以自行组合。<br>• <strong>penaltyDialog：</strong> 弹出对话框<br>• <strong>penaltyDeath：</strong> 杀掉进程<br>• <strong>penaltyDeathOnNetwork</strong><br>• <strong>penaltyFlashScreen：</strong> 在屏幕的最外围绘制一个红框<br>• <strong>penaltyLog：</strong>打印StrictMode日志<br>• <strong>penaltyDropBox：</strong>将日志保存到Dropbox中</p>
+<p>StrictMode内部是通过标志位来记录惩罚操作的类型的，并提供了上述的方法来设置不同的标志位。 StrictMode检测到违规操作后，最终都会调用StrictMode.handleViolation()方法，该方法中就会根据设置的标志位进行惩罚：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">handleViolation</span><span class="params">(<span class="keyword">final</span> ViolationInfo info)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">final</span> <span class="keyword">boolean</span> justDropBox = (info.policy &amp; THREAD_PENALTY_MASK) == PENALTY_DROPBOX;</span><br><span class="line">    <span class="keyword">if</span> (justDropBox) &#123;</span><br><span class="line">        dropboxViolationAsync(violationMaskSubset, info);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    ...</span><br><span class="line">    ActivityManagerNative.getDefault().handleApplicationStrictModeViolation(</span><br><span class="line">                    RuntimeInit.getApplicationObject(),</span><br><span class="line">                    violationMaskSubset,</span><br><span class="line">                    info);</span><br><span class="line">    ...</span><br><span class="line">    <span class="keyword">if</span> ((info.policy &amp; PENALTY_DEATH) != <span class="number">0</span>) &#123;</span><br><span class="line">        executeDeathPenalty(info);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>方法的实现逻辑一目了然，最终通过Binder发起跨进程调用，走到ActivityManagerService.handleApplicationStrictModeViolation()中.</p>
+<h1 id="StrictMode使用"><a href="#StrictMode使用" class="headerlink" title="StrictMode使用"></a>StrictMode使用</h1><p>StrictMode机制只是用于发现一些违规操作，这些违规操作一般都是我们编码的疏漏，在运行时会被StrictMode暴露出来，但StrictMode并非真正意思上的“动态代码检查”。 各位读者有必要知道StrictMode的使用范围：</p>
+<blockquote>
+<p>StrictMode只是用在开发调试阶段，在正式发布时，应该关掉StrictMode,</p>
+<blockquote>
+<p>AOSP的源码中，USER版并没有打开StrictMode<br>由于Android还会对StrictMode的检查策略进行调整，所以Google Play建议上架的APK都关闭StrictMode; 从另一个角度，Google认为所有StrictMode的错误，在正式发布前，都应该解决。<br>StrictMode并不能发现Native层的违规操作，仅仅是用在Java层<br>StrictMode的使用场景可以分为三类，使用方式也都比较固定，可见StrictMode的对外接口还是封装得比较优美的。 下面，我们逐个介绍一下StrictMode的使用场景。</p>
+</blockquote>
+</blockquote>
+<h2 id="普通应用开启StrictMode"><a href="#普通应用开启StrictMode" class="headerlink" title="普通应用开启StrictMode"></a>普通应用开启StrictMode</h2><p>对于应用程序而言，Android提供了一个最佳使用实践：尽可能早的在android.app.Application或android.app.Activity的生命周期使能StrictMode， onCreate()方法就是一个最佳的时机，越早开启就能在更多的代码执行路径上发现违规操作。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (DEVELOPER_MODE) &#123;</span><br><span class="line">       StrictMode.setThreadPolicy(<span class="keyword">new</span> StrictMode.ThreadPolicy.Builder()</span><br><span class="line">               .detectDiskReads()</span><br><span class="line">               .detectDiskWrites()</span><br><span class="line">               .detectNetwork()   <span class="comment">// or .detectAll() for all detectable problems</span></span><br><span class="line">               .penaltyLog()</span><br><span class="line">               .build());</span><br><span class="line">       StrictMode.setVmPolicy(<span class="keyword">new</span> StrictMode.VmPolicy.Builder()</span><br><span class="line">               .detectLeakedSqlLiteObjects()</span><br><span class="line">               .detectLeakedClosableObjects()</span><br><span class="line">               .penaltyLog()</span><br><span class="line">               .penaltyDeath()</span><br><span class="line">               .build());</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">super</span>.onCreate();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>以上StrictMode的使能代码限定在DEVELOPER_MODE：<br>• 设定了Disk Read, Disk Write, Network Access三项ThreadPolicy，惩罚是打印日志;<br>• 设定了Cursor Leak, Closable Leak两项VMPolicy，惩罚是打印日志和杀掉进程。<br>当出现一些ThreadPolicy相关违规操作时，Android也提供了很多标准的解决方案，譬如Handler， AsyncTask， IntentService，能够将耗时的操作从主线程中分离出来。</p>
+<h2 id="系统应用开启StrictMode"><a href="#系统应用开启StrictMode" class="headerlink" title="系统应用开启StrictMode"></a>系统应用开启StrictMode</h2><p>对于Android系统应用和系统进程(system_server)而言，其实默认就会开启StrictMode。 StrictMode提供了conditionallyEnableDebugLogging()方法：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">conditionallyEnableDebugLogging</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">boolean</span> doFlashes = SystemProperties.getBoolean(VISUAL_PROPERTY, <span class="keyword">false</span>)</span><br><span class="line">                &amp;&amp; !amTheSystemServerProcess();</span><br><span class="line">    <span class="keyword">final</span> <span class="keyword">boolean</span> suppress = SystemProperties.getBoolean(DISABLE_PROPERTY, <span class="keyword">false</span>);</span><br><span class="line">    <span class="keyword">if</span> (!doFlashes &amp;&amp; (IS_USER_BUILD || suppress)) &#123;</span><br><span class="line">        setCloseGuardEnabled(<span class="keyword">false</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">int</span> threadPolicyMask = StrictMode.DETECT_DISK_WRITE |</span><br><span class="line">            StrictMode.DETECT_DISK_READ |</span><br><span class="line">            StrictMode.DETECT_NETWORK;</span><br><span class="line">    ...</span><br><span class="line">    <span class="keyword">if</span> (!IS_USER_BUILD) &#123;</span><br><span class="line">        threadPolicyMask |= StrictMode.PENALTY_DROPBOX;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    StrictMode.setThreadPolicyMask(threadPolicyMask);</span><br><span class="line">    <span class="keyword">if</span> (IS_USER_BUILD) &#123;</span><br><span class="line">        setCloseGuardEnabled(<span class="keyword">false</span>);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        VmPolicy.Builder policyBuilder = <span class="keyword">new</span> VmPolicy.Builder().detectAll().penaltyDropBox();</span><br><span class="line">        ...</span><br><span class="line">        setVmPolicy(policyBuilder.build());</span><br><span class="line">        setCloseGuardEnabled(vmClosableObjectLeaksEnabled());</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>该方法的目的就是要设置ThreadPolicy和VMPolicy，不过会有一些条件判断，具体的逻辑不表。我们来看一下调用这个方法的地方：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">SystemServer.run()</span><br><span class="line">ServiceThread.run()</span><br><span class="line">ActivityThread.handleBindApplication()</span><br><span class="line">└── StrictMode.conditionallyEnableDebugLogging()</span><br></pre></td></tr></table></figure></p>
+<p>这表示在system_server进程、一些全局的消息线程(IoThread, UiThread, FgThread, DisplayThread)、应用进程这些东西启动的时候开启StrictMode。 在ActivityThread.handleBindApplication()中有这么一段限制：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">handleBindApplication</span><span class="params">(AppBindData data)</span> </span>&#123;</span><br><span class="line">    ...</span><br><span class="line">    <span class="keyword">if</span> ((data.appInfo.flags &amp;</span><br><span class="line">         (ApplicationInfo.FLAG_SYSTEM |</span><br><span class="line">          ApplicationInfo.FLAG_UPDATED_SYSTEM_APP)) != <span class="number">0</span>) &#123;</span><br><span class="line">        StrictMode.conditionallyEnableDebugLogging();</span><br><span class="line">    &#125;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>表示只为系统应用(FLAG_SYSTEM, FLAG_UPDATED_SYSTEM_APP)开启了StrictMode，其他应用还是需要自行开启。</p>
+<h2 id="临时关闭StrictMode"><a href="#临时关闭StrictMode" class="headerlink" title="临时关闭StrictMode"></a>临时关闭StrictMode</h2><p>对于某些操作而言，我们明确知道是StrictMode定义的违规操作，但实际上对性能并没有什么影响，那么，在执行这类操作的时候，可以临时关闭StrictMode。 譬如针对一些主线程快速写磁盘的操作：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">StrictMode.ThreadPolicy old = StrictMode.getThreadPolicy();</span><br><span class="line">StrictMode.setThreadPolicy(<span class="keyword">new</span> StrictMode.ThreadPolicy.Builder(old)</span><br><span class="line">                                 .permitDiskWrites()</span><br><span class="line">                                 .build());</span><br><span class="line"><span class="comment">// 进行磁盘写操作...</span></span><br><span class="line">StrictMode.setThreadPolicy(old);</span><br></pre></td></tr></table></figure></p>
+<p>首先，将旧的ThreadPolicy缓存一把; 然后，设置新的ThreadPolicy，并允许写磁盘操作; 最后，在进行完正常的写磁盘操作后，还原旧的ThreadPolicy。 这样就临时性的避开了StrictMode对写磁盘操作的检查。</p>
+<h2 id="查看开启StrictMode的结果"><a href="#查看开启StrictMode的结果" class="headerlink" title="查看开启StrictMode的结果"></a>查看开启StrictMode的结果</h2><p>严格模式有很多种报告违例的形式，但是想要分析具体违例情况，还是需要查看日志，终端下过滤StrictMode就能得到违例的具体stacktrace信息。<br>adb logcat -b all | grep -rn StrictMode</p>
+<h2 id="解决违例"><a href="#解决违例" class="headerlink" title="解决违例"></a>解决违例</h2><p>• 如果是主线程中出现文件读写违例，建议使用工作线程（必要时结合Handler）完成。<br>• 如果是对SharedPreferences写入操作，在API 9 以上 建议优先调用apply而非commit。<br>• 如果是存在未关闭的Closable对象，根据对应的stacktrace进行关闭。<br>• 如果是SQLite对象泄露，根据对应的stacktrace进行释放。</p>
+<p>举个例子<br>以主线程中的文件写入为例，引起违例警告的代码：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">writeToExternalStorage</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    File externalStorage = Environment.getExternalStorageDirectory();</span><br><span class="line">    File destFile = <span class="keyword">new</span> File(externalStorage, <span class="string">"dest.txt"</span>);</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">      OutputStream output = <span class="keyword">new</span> FileOutputStream(destFile, <span class="keyword">true</span>);</span><br><span class="line">        output.write(<span class="string">"droidyue.com"</span>.getBytes());</span><br><span class="line">        output.flush();</span><br><span class="line">        output.close();</span><br><span class="line">    &#125; <span class="keyword">catch</span> (FileNotFoundException e) &#123;</span><br><span class="line">          e.printStackTrace();</span><br><span class="line">    &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">      e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>引起的警告为:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">D/StrictMode( <span class="number">9730</span>): StrictMode policy violation; ~duration=<span class="number">20</span> ms: android.os.StrictMode$StrictModeDiskReadViolation: policy=<span class="number">31</span> violation=<span class="number">2</span></span><br><span class="line">D/StrictMode( <span class="number">9730</span>):    at android.os.StrictMode$AndroidBlockGuardPolicy.onReadFromDisk(StrictMode.java:<span class="number">1176</span>)</span><br><span class="line">D/StrictMode( <span class="number">9730</span>):    at libcore.io.BlockGuardOs.open(BlockGuardOs.java:<span class="number">106</span>)</span><br><span class="line">D/StrictMode( <span class="number">9730</span>):    at libcore.io.IoBridge.open(IoBridge.java:<span class="number">390</span>)</span><br><span class="line">D/StrictMode( <span class="number">9730</span>):    at java.io.FileOutputStream.&lt;init&gt;(FileOutputStream.java:<span class="number">88</span>)</span><br><span class="line">D/StrictMode( <span class="number">9730</span>):    at com.example.strictmodedemo.MainActivity.writeToExternalStorage(MainActivity.java:<span class="number">56</span>)</span><br><span class="line">D/StrictMode( <span class="number">9730</span>):    at com.example.strictmodedemo.MainActivity.onCreate(MainActivity.java:<span class="number">30</span>)</span><br><span class="line">D/StrictMode( <span class="number">9730</span>):    at android.app.Activity.performCreate(Activity.java:<span class="number">4543</span>)</span><br></pre></td></tr></table></figure></p>
+<p>因为上述属于主线程中的IO违例，解决方法就是讲写入操作放入工作线程。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">writeToExternalStorage</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">new</span> Thread() &#123;</span><br><span class="line">      <span class="meta">@Override</span></span><br><span class="line">      <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">          <span class="keyword">super</span>.run();</span><br><span class="line">          File externalStorage = Environment.getExternalStorageDirectory();</span><br><span class="line">          File destFile = <span class="keyword">new</span> File(externalStorage, <span class="string">"dest.txt"</span>);</span><br><span class="line">          <span class="keyword">try</span> &#123;</span><br><span class="line">              OutputStream output = <span class="keyword">new</span> FileOutputStream(destFile, <span class="keyword">true</span>);</span><br><span class="line">              output.write(<span class="string">"droidyue.com"</span>.getBytes());</span><br><span class="line">              output.flush();</span><br><span class="line">              output.close();</span><br><span class="line">          &#125; <span class="keyword">catch</span> (FileNotFoundException e) &#123;</span><br><span class="line">              e.printStackTrace();</span><br><span class="line">          &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">              e.printStackTrace();</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      &#125;.start();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>然而这并非完善，因为OutputStream.write方法可能抛出IOException，导致存在OutputStream对象未关闭的情况，仍然需要改进避免出现Closable对象未关闭的违例。改进如下:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">writeToExternalStorage</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">new</span> Thread() &#123;</span><br><span class="line">      <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">          <span class="keyword">super</span>.run();</span><br><span class="line">            File externalStorage = Environment.getExternalStorageDirectory();</span><br><span class="line">            File destFile = <span class="keyword">new</span> File(externalStorage, <span class="string">"dest.txt"</span>);</span><br><span class="line">            OutputStream output = <span class="keyword">null</span>;</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                output = <span class="keyword">new</span> FileOutputStream(destFile, <span class="keyword">true</span>);</span><br><span class="line">                output.write(<span class="string">"droidyue.com"</span>.getBytes());</span><br><span class="line">                output.flush();</span><br><span class="line">                output.close();</span><br><span class="line">            &#125; <span class="keyword">catch</span> (FileNotFoundException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">                <span class="keyword">if</span> (<span class="keyword">null</span> != output) &#123;</span><br><span class="line">                    <span class="keyword">try</span> &#123;</span><br><span class="line">                      output.close();</span><br><span class="line">                    &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">                        e.printStackTrace();</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;.start();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="使用StrictMode检测内存泄露"><a href="#使用StrictMode检测内存泄露" class="headerlink" title="使用StrictMode检测内存泄露"></a>使用StrictMode检测内存泄露</h2><p>通常情况下，检测内存泄露，我们需要使用MAT对heap dump 文件进行分析，这种操作不困难，但也不容易。使用严格模式，只需要过滤日志就能发现内存泄露。</p>
+<p>这里以Activity为例说明，首先我们需要开启对检测Activity泄露的违例检测。使用上面的detectAll或者detectActivityLeaks()均可。其次写一段能够产生Activity泄露的代码。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LeakyActivity</span> <span class="keyword">extends</span> <span class="title">Activity</span></span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">        MyApplication.sLeakyActivities.add(<span class="keyword">this</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>MyApplication中关于sLeakyActivities的部分实现<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyApplication</span> <span class="keyword">extends</span> <span class="title">Application</span> </span>&#123;</span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">boolean</span> IS_DEBUG = <span class="keyword">true</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> ArrayList&lt;Activity&gt; sLeakyActivities = <span class="keyword">new</span> ArrayList&lt;Activity&gt;();</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>当我们反复进入LeakyActivity再退出，过滤StrictMode就会得到这样的日志:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">E/StrictMode( <span class="number">2622</span>): <span class="class"><span class="keyword">class</span> <span class="title">com</span>.<span class="title">example</span>.<span class="title">strictmodedemo</span>.<span class="title">LeakyActivity</span></span>; instances=<span class="number">2</span>; limit=<span class="number">1</span></span><br><span class="line">E/StrictMode( <span class="number">2622</span>): android.os.StrictMode$InstanceCountViolation: <span class="class"><span class="keyword">class</span> <span class="title">com</span>.<span class="title">example</span>.<span class="title">strictmodedemo</span>.<span class="title">LeakyActivity</span></span>; instances=<span class="number">2</span>; limit=<span class="number">1</span></span><br><span class="line">E/StrictMode( <span class="number">2622</span>):    at android.os.StrictMode.setClassInstanceLimit(StrictMode.java:<span class="number">1</span>)</span><br></pre></td></tr></table></figure></p>
+<p>分析日志，LeakyActivity本应该是只存在一份实例，但现在出现了2个，说明LeakyActivity发生了内存泄露。</p>
+<p>严格模式除了可以检测Activity的内存泄露之外，还能自定义检测类的实例泄露。从API 11 开始，系统提供的这个方法可以实现我们的需求。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> StrictMode.VmPolicy.<span class="function">Builder <span class="title">setClassInstanceLimit</span> <span class="params">(Class klass, <span class="keyword">int</span> instanceLimit)</span></span></span><br></pre></td></tr></table></figure>
+<p>举个栗子，比如一个浏览器中只允许存在一个SearchBox实例，我们就可以这样设置已检测SearchBox实例的泄露<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">StrictMode.setVmPolicy(<span class="keyword">new</span> VmPolicy.Builder().setClassInstanceLimit(SearchBox.class, <span class="number">1</span>).penaltyLog().build());</span><br></pre></td></tr></table></figure></p>
+<h2 id="自定义-noteSlowCall"><a href="#自定义-noteSlowCall" class="headerlink" title="自定义 noteSlowCall"></a>自定义 noteSlowCall</h2><p>StrictMode从 API 11开始允许开发者自定义一些耗时调用违例，这种自定义适用于自定义的任务执行类中，比如我们有一个进行任务处理的类，为TaskExecutor。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TaskExecutor</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">execute</span><span class="params">(Runnable task)</span> </span>&#123;</span><br><span class="line">        task.run();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>先需要跟踪每个任务的耗时情况，如果大于500毫秒需要提示给开发者，noteSlowCall就可以实现这个功能，如下修改代码:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TaskExecutor</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">long</span> SLOW_CALL_THRESHOLD = <span class="number">500</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">executeTask</span><span class="params">(Runnable task)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">long</span> startTime = SystemClock.uptimeMillis();</span><br><span class="line">        task.run();</span><br><span class="line">        <span class="keyword">long</span> cost = SystemClock.uptimeMillis() - startTime;</span><br><span class="line">        <span class="keyword">if</span> (cost &gt; SLOW_CALL_THRESHOLD) &#123;</span><br><span class="line">            StrictMode.noteSlowCall(<span class="string">"slowCall cost="</span> + cost);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>执行一个耗时2000毫秒的任务<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">TaskExecutor executor = <span class="keyword">new</span> TaskExecutor();</span><br><span class="line">executor.executeTask(<span class="keyword">new</span> Runnable() &#123;</span><br><span class="line">  <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">          Thread.sleep(<span class="number">2000</span>);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p> 得到的违例日志，注意其中~duration=20 ms并非耗时任务的执行时间，而我们的自定义信息msg=slowCall cost=2000才包含了真正的耗时。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">D/StrictMode(<span class="number">23890</span>): StrictMode policy violation; ~duration=<span class="number">20</span> ms: android.os.StrictMode$StrictModeCustomViolation: policy=<span class="number">31</span> violation=<span class="number">8</span> msg=slowCall cost=<span class="number">2000</span></span><br><span class="line">D/StrictMode(<span class="number">23890</span>):    at android.os.StrictMode$AndroidBlockGuardPolicy.onCustomSlowCall(StrictMode.java:<span class="number">1163</span>)</span><br><span class="line">D/StrictMode(<span class="number">23890</span>):    at android.os.StrictMode.noteSlowCall(StrictMode.java:<span class="number">1974</span>)</span><br><span class="line">D/StrictMode(<span class="number">23890</span>):    at com.example.strictmodedemo.TaskExecutor.executeTask(TaskExecutor.java:<span class="number">17</span>)</span><br><span class="line">D/StrictMode(<span class="number">23890</span>):    at com.example.strictmodedemo.MainActivity.onCreate(MainActivity.java:<span class="number">36</span>)</span><br><span class="line">D/StrictMode(<span class="number">23890</span>):    at android.app.Activity.performCreate(Activity.java:<span class="number">4543</span>)</span><br><span class="line">D/StrictMode(<span class="number">23890</span>):    at android.app.Instrumentation.callActivityOnCreate(Instrumentation.java:<span class="number">1071</span>)</span><br><span class="line">D/StrictMode(<span class="number">23890</span>):    at android.app.ActivityThread.performLaunchActivity(ActivityThread.java:<span class="number">2158</span>)</span><br><span class="line">D/StrictMode(<span class="number">23890</span>):    at android.app.ActivityThread.handleLaunchActivity(ActivityThread.java:<span class="number">2237</span>)</span><br><span class="line">D/StrictMode(<span class="number">23890</span>):    at android.app.ActivityThread.access$<span class="number">600</span>(ActivityThread.java:<span class="number">139</span>)</span><br><span class="line">D/StrictMode(<span class="number">23890</span>):    at android.app.ActivityThread$H.handleMessage(ActivityThread.java:<span class="number">1262</span>)</span><br><span class="line">D/StrictMode(<span class="number">23890</span>):    at android.os.Handler.dispatchMessage(Handler.java:<span class="number">99</span>)</span><br><span class="line">D/StrictMode(<span class="number">23890</span>):    at android.os.Looper.loop(Looper.java:<span class="number">156</span>)</span><br><span class="line">D/StrictMode(<span class="number">23890</span>):    at android.app.ActivityThread.main(ActivityThread.java:<span class="number">5005</span>)</span><br><span class="line">D/StrictMode(<span class="number">23890</span>):    at java.lang.reflect.Method.invokeNative(Native Method)</span><br><span class="line">D/StrictMode(<span class="number">23890</span>):    at java.lang.reflect.Method.invoke(Method.java:<span class="number">511</span>)</span><br><span class="line">D/StrictMode(<span class="number">23890</span>):    at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:<span class="number">784</span>)</span><br><span class="line">D/StrictMode(<span class="number">23890</span>):    at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:<span class="number">551</span>)</span><br><span class="line">D/StrictMode(<span class="number">23890</span>):    at dalvik.system.NativeStart.main(Native Method)</span><br></pre></td></tr></table></figure>
+<h2 id="其他技巧"><a href="#其他技巧" class="headerlink" title="其他技巧"></a>其他技巧</h2><p>除了通过日志查看之外，我们也可以在开发者选项中开启严格模式，开启之后，如果主线程中有执行时间长的操作，屏幕则会闪烁，这是一个更加直接的方法。</p>
+<p><strong>注意</strong></p>
+<blockquote>
+<p>在线上环境即Release版本不建议开启严格模式。<br>严格模式无法监控JNI中的磁盘IO和网络请求。<br>应用中并非需要解决全部的违例情况，比如有些IO操作必须在主线程中进行。</p>
+</blockquote>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><blockquote>
+<ol>
+<li><a href="http://duanqz.github.io/2015-11-04-StrictMode-Analysis" target="_blank" rel="noopener">StrictMode机制以及使用场景</a></li>
+<li><a href="https://www.cnblogs.com/yaowen/p/6024690.html" target="_blank" rel="noopener">Android严苛模式StrictMode使用详解</a> </li>
+<li><a href="https://droidyue.com/blog/2015/09/26/android-tuning-tool-strictmode/index.html" target="_blank" rel="noopener">Android性能调优利器StrictMode</a></li>
+</ol>
+</blockquote>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Android/" rel="tag"># Android</a>
+          
+            <a href="/tags/StrictMode/" rel="tag"># StrictMode</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/Android-Watchdog-Analysis/" rel="next" title="Watchdog机制以及问题分析">
+                <i class="fa fa-chevron-left"></i> Watchdog机制以及问题分析
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/Android8-1-0-DeskClock横屏滑动冲突/" rel="prev" title="Android8.1.0 DeskClock横屏滑动冲突">
+                Android8.1.0 DeskClock横屏滑动冲突 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  
+    <div id="gitalk-container"></div>
+  
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/myapple.jpg"
+                alt="Eric Chows" />
+            
+              <p class="site-author-name" itemprop="name">Eric Chows</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">52</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">30</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">53</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/ericchows" target="_blank" title="GitHub">
+                    
+                      <i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:xnzds2008@163.com" target="_blank" title="E-Mail">
+                    
+                      <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://plus.google.com" target="_blank" title="Google">
+                    
+                      <i class="fa fa-fw fa-google"></i>Google</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://twitter.com" target="_blank" title="Twitter">
+                    
+                      <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.facebook.com" target="_blank" title="FB Page">
+                    
+                      <i class="fa fa-fw fa-facebook"></i>FB Page</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://vk.com" target="_blank" title="VK Group">
+                    
+                      <i class="fa fa-fw fa-vk"></i>VK Group</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://stackoverflow.com/users/8872810/eric" target="_blank" title="StackOverflow">
+                    
+                      <i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://youtube.com" target="_blank" title="YouTube">
+                    
+                      <i class="fa fa-fw fa-youtube"></i>YouTube</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://instagram.com" target="_blank" title="Instagram">
+                    
+                      <i class="fa fa-fw fa-instagram"></i>Instagram</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="skype" target="_blank" title="Skype">
+                    
+                      <i class="fa fa-fw fa-skype"></i>Skype</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="/images/wechat.jpg" target="_blank" title="Wechat">
+                    
+                      <i class="fa fa-fw fa-globe"></i>Wechat</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://blog.csdn.net/Cxiaolinxiaozi" target="_blank" title="CSDN">
+                    
+                      <i class="fa fa-fw fa-globe"></i>CSDN</a>
+                </span>
+              
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#StrictMode机制"><span class="nav-number">2.</span> <span class="nav-text">StrictMode机制</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#BlockGuard和CloseGuard"><span class="nav-number">2.1.</span> <span class="nav-text">BlockGuard和CloseGuard</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#StrictMode-Policy"><span class="nav-number">2.2.</span> <span class="nav-text">StrictMode Policy</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ThreadPolicy"><span class="nav-number">2.2.1.</span> <span class="nav-text">ThreadPolicy</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#VMPolicy"><span class="nav-number">2.2.2.</span> <span class="nav-text">VMPolicy</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#StrictMode-Penalty"><span class="nav-number">2.3.</span> <span class="nav-text">StrictMode Penalty</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#StrictMode使用"><span class="nav-number">3.</span> <span class="nav-text">StrictMode使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#普通应用开启StrictMode"><span class="nav-number">3.1.</span> <span class="nav-text">普通应用开启StrictMode</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#系统应用开启StrictMode"><span class="nav-number">3.2.</span> <span class="nav-text">系统应用开启StrictMode</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#临时关闭StrictMode"><span class="nav-number">3.3.</span> <span class="nav-text">临时关闭StrictMode</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看开启StrictMode的结果"><span class="nav-number">3.4.</span> <span class="nav-text">查看开启StrictMode的结果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决违例"><span class="nav-number">3.5.</span> <span class="nav-text">解决违例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用StrictMode检测内存泄露"><span class="nav-number">3.6.</span> <span class="nav-text">使用StrictMode检测内存泄露</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自定义-noteSlowCall"><span class="nav-number">3.7.</span> <span class="nav-text">自定义 noteSlowCall</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他技巧"><span class="nav-number">3.8.</span> <span class="nav-text">其他技巧</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">4.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2015 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">EricChows</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="//s95.cnzz.com/z_stat.php?id=1274018749&web_id=1274018749" language="JavaScript"></script>
+  </div>
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.3"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+   <script type="text/javascript">
+		var gitalk = new Gitalk({
+		  clientID: '2f039a8ed54186479946',
+		  clientSecret: 'bc88282455b50fbc8c5d9502d17621a4f9e48d18',
+		  repo: 'myblog-comment',
+		  owner: 'EricChows',
+		  admin: ['EricChows'],
+		  id: location.pathname,
+		  distractionFreeMode: 'true'
+		})
+		gitalk.render('gitalk-container')           
+       </script>
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('-1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("ANlC6pJEdxOLHAcDbFuHuXrF-gzGzoHsz", "tNpAWjkmbhhKnsB3bcDooRrl");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.3"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.3"></script>
+
+
+  
+
+</body>
+</html>
