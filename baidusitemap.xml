@@ -4,6 +4,28 @@
 
     
   <url>
+    <loc>http://yoursite.com/Android-PackageManagerService-Analysis/</loc>
+    <lastmod>2018-07-16T13:37:45.431Z</lastmod>
+    <data>
+        <display>
+        <title>Android中PackageManagerService机制分析</title>
+        <pubTime>2018-05-31T14:13:56.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+        <tag>PackageManagerService</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="http://yoursite.com/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/Android-Window-Mechanism/</loc>
     <lastmod>2018-07-16T13:31:18.814Z</lastmod>
     <data>
@@ -284,28 +306,6 @@
           
              
               <breadCrumb title="View" url="http://yoursite.com/categories/Android/View/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/Android-PackageManagerService-Analysis/</loc>
-    <lastmod>2018-07-16T11:23:21.878Z</lastmod>
-    <data>
-        <display>
-        <title>Android中PackageManagerService机制分析</title>
-        <pubTime>2018-05-31T14:13:56.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-        <tag>PackageManagerService</tag>
-         
-         
-           
-             
-              <breadCrumb title="Android" url="http://yoursite.com/categories/Android/"/>
           
         </display>
     </data>

@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/Android-PackageManagerService-Analysis/</loc>
+    
+    <lastmod>2018-07-16T13:37:45.431Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/Android-Window-Mechanism/</loc>
     
     <lastmod>2018-07-16T13:31:18.814Z</lastmod>
@@ -82,13 +89,6 @@
     <loc>http://yoursite.com/Android-View-Mechanism/</loc>
     
     <lastmod>2018-07-16T11:23:50.326Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/Android-PackageManagerService-Analysis/</loc>
-    
-    <lastmod>2018-07-16T11:23:21.878Z</lastmod>
     
   </url>
   
