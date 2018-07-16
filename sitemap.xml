@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/Android-Window-Mechanism/</loc>
+    
+    <lastmod>2018-07-16T13:22:11.189Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/Android-Launcher-Activity/</loc>
+    
+    <lastmod>2018-07-16T13:17:09.172Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/Myblog/</loc>
     
     <lastmod>2018-07-16T13:04:27.954Z</lastmod>
@@ -173,20 +187,6 @@
     <loc>http://yoursite.com/about/index.html</loc>
     
     <lastmod>2018-07-16T09:41:46.563Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/Android-Window-Mechanism/</loc>
-    
-    <lastmod>2018-07-16T09:39:02.807Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/Android-Launcher-Activity/</loc>
-    
-    <lastmod>2018-07-16T07:48:10.457Z</lastmod>
     
   </url>
   

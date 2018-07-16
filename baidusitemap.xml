@@ -4,6 +4,61 @@
 
     
   <url>
+    <loc>http://yoursite.com/Android-Window-Mechanism/</loc>
+    <lastmod>2018-07-16T13:22:11.189Z</lastmod>
+    <data>
+        <display>
+        <title>Android中Window机制</title>
+        <pubTime>2018-07-16T03:23:43.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+        <tag>Window</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="http://yoursite.com/categories/Android/"/>
+          
+             
+              <breadCrumb title="Window" url="http://yoursite.com/categories/Android/Window/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/Android-Launcher-Activity/</loc>
+    <lastmod>2018-07-16T13:17:09.172Z</lastmod>
+    <data>
+        <display>
+        <title>Android Launcher 启动Activity工作流程</title>
+        <pubTime>2018-07-16T07:45:27.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+        <tag>Activity</tag>
+         
+        <tag>Launcher</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="http://yoursite.com/categories/Android/"/>
+          
+             
+              <breadCrumb title="Launcher" url="http://yoursite.com/categories/Android/Launcher/"/>
+          
+             
+              <breadCrumb title="Activity" url="http://yoursite.com/categories/Android/Launcher/Activity/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/Myblog/</loc>
     <lastmod>2018-07-16T13:04:27.954Z</lastmod>
     <data>
@@ -572,61 +627,6 @@
     </url>
 
     
-    
-  <url>
-    <loc>http://yoursite.com/Android-Window-Mechanism/</loc>
-    <lastmod>2018-07-16T09:39:02.807Z</lastmod>
-    <data>
-        <display>
-        <title>Android中Window机制</title>
-        <pubTime>2018-07-16T03:23:43.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-        <tag>Window</tag>
-         
-         
-           
-             
-              <breadCrumb title="Android" url="http://yoursite.com/categories/Android/"/>
-          
-             
-              <breadCrumb title="Window" url="http://yoursite.com/categories/Android/Window/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/Android-Launcher-Activity/</loc>
-    <lastmod>2018-07-16T07:48:10.457Z</lastmod>
-    <data>
-        <display>
-        <title>Android Launcher 启动Activity工作流程</title>
-        <pubTime>2018-07-16T07:45:27.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-        <tag>Activity</tag>
-         
-        <tag>Launcher</tag>
-         
-         
-           
-             
-              <breadCrumb title="Android" url="http://yoursite.com/categories/Android/"/>
-          
-             
-              <breadCrumb title="Launcher" url="http://yoursite.com/categories/Android/Launcher/"/>
-          
-             
-              <breadCrumb title="Activity" url="http://yoursite.com/categories/Android/Launcher/Activity/"/>
-          
-        </display>
-    </data>
-    </url>
-
     
   <url>
     <loc>http://yoursite.com/Android-Log-Analysis/</loc>
