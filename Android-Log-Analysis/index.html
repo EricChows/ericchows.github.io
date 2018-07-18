@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="EricChows">
 <meta property="og:description" content="Android 解读main log和event log日志信息https://blog.csdn.net/yelangjueqi/article/details/52621903 Log中’main’, ‘system’, ‘radio’, ‘events’以及android log分析https://www.cnblogs.com/zhengtu2015/p/5134012.html 关于An">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-14T09:46:05.050Z">
+<meta property="og:updated_time" content="2018-07-18T08:55:48.809Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android的Log机制分析">
 <meta name="twitter:description" content="Android 解读main log和event log日志信息https://blog.csdn.net/yelangjueqi/article/details/52621903 Log中’main’, ‘system’, ‘radio’, ‘events’以及android log分析https://www.cnblogs.com/zhengtu2015/p/5134012.html 关于An">
@@ -102,7 +102,7 @@
     root: '/',
     scheme: 'Gemini',
     version: '5.1.3',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -522,6 +522,7 @@
 <p> logd模块相关的prop属性值<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
 <h2 id="logd-进程的启动"><a href="#logd-进程的启动" class="headerlink" title="logd 进程的启动"></a>logd 进程的启动</h2><p> 参考资料:<br> <a href="https://blog.csdn.net/yinjian1013/article/details/78261527" target="_blank" rel="noopener">android logd 原理及实现</a><br> <a href="https://blog.csdn.net/koffuxu/article/details/53893297" target="_blank" rel="noopener">Android L日志系统1——logd</a><br> <a href="https://zhuanlan.zhihu.com/p/24372024" target="_blank" rel="noopener">Android6.0 Log的工作机制</a></p>
 <h1 id="Logcat源码解析"><a href="#Logcat源码解析" class="headerlink" title="Logcat源码解析"></a>Logcat源码解析</h1><p> logcat源码位于：system/core/logcat/目录<br> Logcat模块代码结构如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">logcat</span><br><span class="line">  └── inclide</span><br><span class="line">  |      └── <span class="built_in">log</span></span><br><span class="line">  |           └── getopt.h</span><br><span class="line">  |           └── log.h</span><br><span class="line">  └── Android.mk</span><br><span class="line">  └── event.logtags</span><br><span class="line">  └── getopt_long.cpp</span><br><span class="line">  └── logcat_main.cpp</span><br><span class="line">  └── logcat_system.cpp</span><br><span class="line">  └── logcat.cpp</span><br><span class="line">  └── logcatd_main.cpp</span><br><span class="line">  └── logcatd.rc</span><br><span class="line">  └── logpersist</span><br><span class="line">  └── .clang.format</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">logcat</span><br><span class="line">├── Android.mk</span><br><span class="line">├── event.logtags</span><br><span class="line">├── getopt_long.cpp</span><br><span class="line">├── include</span><br><span class="line">│   └── <span class="built_in">log</span></span><br><span class="line">│       ├── getopt.h</span><br><span class="line">│       └── logcat.h</span><br><span class="line">├── logcat.cpp</span><br><span class="line">├── logcatd_main.cpp</span><br><span class="line">├── logcatd.rc</span><br><span class="line">├── logcat_main.cpp</span><br><span class="line">├── logcat_system.cpp</span><br><span class="line">├── logpersist</span><br><span class="line">├── MODULE_LICENSE_APACHE2</span><br><span class="line">├── NOTICE</span><br><span class="line">└── tests</span><br><span class="line">    ├── Android.mk</span><br><span class="line">    ├── exec_benchmark.cpp</span><br><span class="line">    ├── liblogcat_test.cpp</span><br><span class="line">    ├── logcat_benchmark.cpp</span><br><span class="line">    ├── logcatd_test.cpp</span><br><span class="line">    └── logcat_test.cpp</span><br></pre></td></tr></table></figure>
 <p> Q: 为何可以用adb 后面带 logcat 的方式来抓取log？<br>  <a href="https://blog.csdn.net/u010223349/article/details/41120255" target="_blank" rel="noopener">ADB实现解析</a><br>  <a href="https://blog.csdn.net/ysh149216447/article/details/53334015" target="_blank" rel="noopener">Android adb实现原理</a></p>
 <h2 id="模块文件分析"><a href="#模块文件分析" class="headerlink" title="模块文件分析"></a>模块文件分析</h2><p> 1) Android.mk<br> 从Android.mk文件来看，编译生成了logcat和logcatd两个可执行bin文件，一个liblogcat共享库文件，和一个logpersist.start文件<br> logcat 作用：  入口函数是logcat_main.cpp<br> logcatd 作用: 用于保存log的服务，入口函数是logcatd_main.cpp<br> liblogcat 作用: 给logcat test使用<br> logpersist.start : 依据logpersist会在system/bin目录，生成logpersist.start logpersist.stop logpersist.cat </p>
 <p> 2)event.logtags<br> 定义了一些Event log</p>
@@ -719,7 +720,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">30</span>
+                  <span class="site-state-item-count">32</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -730,7 +731,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">53</span>
+                  <span class="site-state-item-count">54</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -855,6 +856,13 @@
       
 
       
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
 
     </div>
   </aside>
@@ -921,13 +929,6 @@
       </div>
     </footer>
 
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-          <span id="scrollpercent"><span>0</span>%</span>
-        
-      </div>
     
 
   </div>

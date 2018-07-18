@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="EricChows">
 <meta property="og:description" content="上次我们讲到Activity的四种启动模式的时候，已经了解到一些关于task的技术，今天我再向大家介绍一下。task是一个具有栈结构的容器，可以放置多个Activity实例。启动一个应用，系统就会为之创建一个task，来放置根Activity；默认情况下，一个Activity启动另一个Activity时，两个Activity是放置在同一个task中的，后者被压入前者所在的task栈，当用户按下后退">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-16T11:26:02.561Z">
+<meta property="og:updated_time" content="2018-07-18T09:37:34.779Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android中Activity解析">
 <meta name="twitter:description" content="上次我们讲到Activity的四种启动模式的时候，已经了解到一些关于task的技术，今天我再向大家介绍一下。task是一个具有栈结构的容器，可以放置多个Activity实例。启动一个应用，系统就会为之创建一个task，来放置根Activity；默认情况下，一个Activity启动另一个Activity时，两个Activity是放置在同一个task中的，后者被压入前者所在的task栈，当用户按下后退">
@@ -102,7 +102,7 @@
     root: '/',
     scheme: 'Gemini',
     version: '5.1.3',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -436,6 +436,7 @@
 <p>Ongoing,待完成，Please wait.</p>
 <h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p><a href="https://blog.csdn.net/luoshengyang/article/details/8923485" target="_blank" rel="noopener">那两年炼就的Android内功修养</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6685853" target="_blank" rel="noopener">Android应用程序的Activity启动过程简要介绍和学习计划</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6689748" target="_blank" rel="noopener">Android应用程序启动过程源代码分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6703247" target="_blank" rel="noopener">Android应用程序内部启动Activity过程（startActivity）的源代码分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6720261" target="_blank" rel="noopener">Android应用程序在新的进程中启动新的Activity的方法和过程分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6714543" target="_blank" rel="noopener">解开Android应用程序组件Activity的”singleTask”之谜</a></p>
 <p><a href="http://www.cnblogs.com/CSU-PL/p/3794280.html" target="_blank" rel="noopener">android的task任务栈</a></p>
+<p><a href="https://www.jianshu.com/p/9ecea420eb52" target="_blank" rel="noopener">3分钟看懂Activity启动流程</a></p>
 
       
     </div>
@@ -572,7 +573,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">30</span>
+                  <span class="site-state-item-count">32</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -583,7 +584,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">53</span>
+                  <span class="site-state-item-count">54</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -708,6 +709,13 @@
       
 
       
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
 
     </div>
   </aside>
@@ -774,13 +782,6 @@
       </div>
     </footer>
 
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-          <span id="scrollpercent"><span>0</span>%</span>
-        
-      </div>
     
 
   </div>

@@ -2,6 +2,69 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/Android-Binder-Analysis/</loc>
+    
+    <lastmod>2018-07-18T12:53:59.107Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/Android-AIDL-Mechanism/</loc>
+    
+    <lastmod>2018-07-18T10:31:34.928Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/Android-Activity-Analysis/</loc>
+    
+    <lastmod>2018-07-18T09:37:34.779Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/Android-Log-Analysis/</loc>
+    
+    <lastmod>2018-07-18T08:55:48.809Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/Android-View-Mechanism/</loc>
+    
+    <lastmod>2018-07-18T06:15:58.111Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/Android-SystemUI-Analysis/</loc>
+    
+    <lastmod>2018-07-17T09:26:16.793Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/Myblog/</loc>
+    
+    <lastmod>2018-07-17T03:41:50.217Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/Android-ActivityManagerService-Analysis/</loc>
+    
+    <lastmod>2018-07-17T03:34:47.162Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/Android-Launcher-Activity/</loc>
+    
+    <lastmod>2018-07-17T03:24:55.564Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/Android-PackageManagerService-Analysis/</loc>
     
     <lastmod>2018-07-16T13:37:45.431Z</lastmod>
@@ -12,20 +75,6 @@
     <loc>http://yoursite.com/Android-Window-Mechanism/</loc>
     
     <lastmod>2018-07-16T13:31:18.814Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/Android-Launcher-Activity/</loc>
-    
-    <lastmod>2018-07-16T13:17:09.172Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/Myblog/</loc>
-    
-    <lastmod>2018-07-16T13:04:27.954Z</lastmod>
     
   </url>
   
@@ -72,23 +121,9 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/Android-Activity-Analysis/</loc>
-    
-    <lastmod>2018-07-16T11:26:02.561Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/Android-BroadcastRecevier-Analysis/</loc>
     
     <lastmod>2018-07-16T11:24:21.463Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/Android-View-Mechanism/</loc>
-    
-    <lastmod>2018-07-16T11:23:50.326Z</lastmod>
     
   </url>
   
@@ -107,13 +142,6 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/Android-AIDL-Mechanism/</loc>
-    
-    <lastmod>2018-07-16T09:55:16.678Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/Android-Boot-Process/</loc>
     
     <lastmod>2018-07-16T09:49:08.993Z</lastmod>
@@ -124,20 +152,6 @@
     <loc>http://yoursite.com/A-Ongoing-Android%E5%BC%82%E5%B8%B8%E8%A7%A3%E6%9E%90/</loc>
     
     <lastmod>2018-07-16T09:49:06.185Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/Android-ActivityManagerService-Analysis/</loc>
-    
-    <lastmod>2018-07-16T09:49:01.050Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/Android-Binder-Analysis/</loc>
-    
-    <lastmod>2018-07-16T09:48:56.911Z</lastmod>
     
   </url>
   
@@ -191,13 +205,6 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/Android-Log-Analysis/</loc>
-    
-    <lastmod>2018-07-14T09:46:05.050Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/ADB-Android-Debug-Bridge/</loc>
     
     <lastmod>2018-07-13T14:53:11.586Z</lastmod>
@@ -243,13 +250,6 @@
     <loc>http://yoursite.com/year-06-23-Android/</loc>
     
     <lastmod>2018-07-06T07:17:38.975Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/Android-SystemUI-Analysis/</loc>
-    
-    <lastmod>2018-07-06T06:18:42.384Z</lastmod>
     
   </url>
   

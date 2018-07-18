@@ -89,10 +89,12 @@
 <meta property="og:site_name" content="EricChows">
 <meta property="og:description" content="Android 编程下 Touch 事件的分发和消费机制Android 中与 Touch 事件相关的方法包括：dispatchTouchEvent(MotionEvent ev)、onInterceptTouchEvent(MotionEvent ev)、onTouchEvent(MotionEvent ev)；能够响应这些方法的控件包括：ViewGroup、View、Activity。方法与控件">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-16T11:23:50.326Z">
+<meta property="og:image" content="http://yoursite.com/Android-View-Mechanism/01-android-View.jpg">
+<meta property="og:updated_time" content="2018-07-18T06:15:58.111Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android中View机制">
 <meta name="twitter:description" content="Android 编程下 Touch 事件的分发和消费机制Android 中与 Touch 事件相关的方法包括：dispatchTouchEvent(MotionEvent ev)、onInterceptTouchEvent(MotionEvent ev)、onTouchEvent(MotionEvent ev)；能够响应这些方法的控件包括：ViewGroup、View、Activity。方法与控件">
+<meta name="twitter:image" content="http://yoursite.com/Android-View-Mechanism/01-android-View.jpg">
 
 
 
@@ -102,7 +104,7 @@
     root: '/',
     scheme: 'Gemini',
     version: '5.1.3',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -465,6 +467,7 @@
 <p>通过这些函数可以了解一个屏幕的宽、高及分辨率还有是横屏还坚屏等一些基本情况，透过这些函数，我们开发应用时可以方便的得到当前安装我这个应用的屏幕的 大小，以便调整应用使用户得到更好的用户体验。接下来我们看其它三者之间的关系，我想大家虽然看了前面的View的介绍和SDK中关系UI的基本介绍之后 还是对Android图形窗口十分困惑，看API也是，有WindowMangaer接口和Window类，但是在说明文档中，并未提到如何用这些。但实 际上这里面要去看到Android核心，Android核心底层GDI是SKIA，同chrome是一样的GDI，但是GUI是不一样的。这里面 Android实现的是C/S模式。如下图所示</p>
 <p>image</p>
 <p>从上图，我们可以理出大致的显示过程如下：<br>【1】ActivityManagerService创建Activity线程，激活一个activity<br>【2】系统调用Instrumentation.newActivity创建一个activity<br>【3】Activity创建后，attach到一个新创建的phonewindow中。这样Activity获取一个唯一的WindowManager服务的实例<br>【4】Activity创建过程中使用setcontentView设置用用户UI，这些VIEW被加入到PhoneWindow的ContentParent中。<br>【5】Activity线程继续执行，当执行到Activity.makeVisible是将根view DecoView加入到WindowManger中，WindowManger实全会为每个DecoView创建对应的ViewRoot<br>【6】每个ViewRoot拥有一个Surface，每个Surface将会调用底层库创建图形绘制的内存空间。这个底层库就是SurfaceFlinger。SurfaceFlinger同时也负责将个View绘制的图形合到一块（按照Z轴）显示到用户屏幕。<br>【7】如果用户直接在Canvas上绘制，实际上它直接操作Surface。但对每个View的变更，它是要通知到ViewRoot，然后 ViewRoot获取Canvas。如果绘制完成，surfaceFlinger得到通知，合并Surface成一个Surface到设备屏幕。<br>从上面的图形输出过程分析，我们可以知道真正显示图形的实际上跟Activity没有关系，完全由WindowManager来决定。 WindowManager是一个系统服务，因此可以直接调用这个服务来创建界面，并且更绝的是Dialog、Menu也是有WindowManager 来管理的。另外一个我们也可以看到，最底层都是Surface来，因此，常见开发游戏的人都推荐你使用SurfaceView来创建界面。</p>
+<p><img src="/Android-View-Mechanism/01-android-View.jpg" alt="Android中View的机制图"></p>
 <h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a href="https://www.jianshu.com/p/9e6c54739217" target="_blank" rel="noopener">ViewRootImpl源码分析事件分发</a><br><a href="https://blog.csdn.net/qian520ao/article/details/80954626" target="_blank" rel="noopener">Android 屏幕刷新机制</a><br><a href="https://mp.weixin.qq.com/s?__biz=MzA5MzI3NjE2MA%3D%3D&amp;mid=2650242156&amp;idx=1&amp;sn=e841a96007b7a0c58fc732d9c03dee6c&amp;scene=45#wechat_redirect" target="_blank" rel="noopener">Android View工作流程</a></p>
 <p><a href="http://www.cnblogs.com/sunzn/archive/2013/05/10/3064129.html" target="_blank" rel="noopener">Android 编程下 Touch 事件的分发和消费机制</a><br><a href="https://www.cnblogs.com/lucktian/p/6196786.html" target="_blank" rel="noopener">Android View 的事件体系</a> [推荐：★★★★★]<br><a href="http://www.gcssloop.com/customview/dispatch-touchevent-theory" target="_blank" rel="noopener">事件分发机制原理</a>[推荐：★★★★★]<br><a href="http://www.gcssloop.com/customview/dispatch-touchevent-source" target="_blank" rel="noopener">事件分发机制详解</a>[推荐：★★★★★]<br><a href="https://blog.csdn.net/vansbelove/article/details/78416791" target="_blank" rel="noopener">MotionEvent详解</a>[推荐：★★★★★]<br><a href="https://www.cnblogs.com/linjzong/p/4191891.html" target="_blank" rel="noopener">Android:30分钟弄明白Touch事件分发机制</a><br><a href="https://blog.csdn.net/shandian000/article/details/54584782" target="_blank" rel="noopener">Android-View的事件体系</a></p>
 
@@ -603,7 +606,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">30</span>
+                  <span class="site-state-item-count">32</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -614,7 +617,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">53</span>
+                  <span class="site-state-item-count">54</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -739,6 +742,13 @@
       
 
       
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
 
     </div>
   </aside>
@@ -805,13 +815,6 @@
       </div>
     </footer>
 
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-          <span id="scrollpercent"><span>0</span>%</span>
-        
-      </div>
     
 
   </div>
