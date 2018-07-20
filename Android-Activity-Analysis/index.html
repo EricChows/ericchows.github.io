@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="EricChows">
 <meta property="og:description" content="上次我们讲到Activity的四种启动模式的时候，已经了解到一些关于task的技术，今天我再向大家介绍一下。task是一个具有栈结构的容器，可以放置多个Activity实例。启动一个应用，系统就会为之创建一个task，来放置根Activity；默认情况下，一个Activity启动另一个Activity时，两个Activity是放置在同一个task中的，后者被压入前者所在的task栈，当用户按下后退">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-18T09:37:34.779Z">
+<meta property="og:updated_time" content="2018-07-18T13:39:43.407Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android中Activity解析">
 <meta name="twitter:description" content="上次我们讲到Activity的四种启动模式的时候，已经了解到一些关于task的技术，今天我再向大家介绍一下。task是一个具有栈结构的容器，可以放置多个Activity实例。启动一个应用，系统就会为之创建一个task，来放置根Activity；默认情况下，一个Activity启动另一个Activity时，两个Activity是放置在同一个task中的，后者被压入前者所在的task栈，当用户按下后退">
@@ -437,6 +437,7 @@
 <h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p><a href="https://blog.csdn.net/luoshengyang/article/details/8923485" target="_blank" rel="noopener">那两年炼就的Android内功修养</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6685853" target="_blank" rel="noopener">Android应用程序的Activity启动过程简要介绍和学习计划</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6689748" target="_blank" rel="noopener">Android应用程序启动过程源代码分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6703247" target="_blank" rel="noopener">Android应用程序内部启动Activity过程（startActivity）的源代码分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6720261" target="_blank" rel="noopener">Android应用程序在新的进程中启动新的Activity的方法和过程分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6714543" target="_blank" rel="noopener">解开Android应用程序组件Activity的”singleTask”之谜</a></p>
 <p><a href="http://www.cnblogs.com/CSU-PL/p/3794280.html" target="_blank" rel="noopener">android的task任务栈</a></p>
 <p><a href="https://www.jianshu.com/p/9ecea420eb52" target="_blank" rel="noopener">3分钟看懂Activity启动流程</a></p>
+<p><a href="">Android 7.0 startActivity()源码解析以及对几个问题的思考</a></p>
 
       
     </div>
@@ -469,8 +470,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/Android-ActivityManagerService-Analysis/" rel="next" title="Android中ActivityManagerService解析">
-                <i class="fa fa-chevron-left"></i> Android中ActivityManagerService解析
+              <a href="/Android-EventBus/" rel="next" title="Android中EventBus解析">
+                <i class="fa fa-chevron-left"></i> Android中EventBus解析
               </a>
             
           </div>
@@ -479,8 +480,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/Android-Binder-Analysis/" rel="prev" title="Android中Binder机制解析">
-                Android中Binder机制解析 <i class="fa fa-chevron-right"></i>
+              <a href="/Android-Boot-Process/" rel="prev" title="Android中启动过程解析">
+                Android中启动过程解析 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -562,7 +563,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">52</span>
+                  <span class="site-state-item-count">60</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -573,7 +574,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">32</span>
+                  <span class="site-state-item-count">42</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -584,7 +585,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">54</span>
+                  <span class="site-state-item-count">64</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

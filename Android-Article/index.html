@@ -1,0 +1,1389 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Android,Article," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="EricChows" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="Ongoing,待完成，Please wait. 重点关注深入理解Android卷III相关 杂看过的比较好的文章：Android 目前最稳定和高效的UI适配方案Android AccessibilityService机制源码解析译文：理解Android中垃圾回收日志信息从Java代码到字节码（1）细说 Java 中的字符和字符串（ 二 ）GitHub秘籍“黑暗潜伏者” – 手机病毒新型攻击方式缓">
+<meta name="keywords" content="Android,Article">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android好文">
+<meta property="og:url" content="http://yoursite.com/Android-Article/index.html">
+<meta property="og:site_name" content="EricChows">
+<meta property="og:description" content="Ongoing,待完成，Please wait. 重点关注深入理解Android卷III相关 杂看过的比较好的文章：Android 目前最稳定和高效的UI适配方案Android AccessibilityService机制源码解析译文：理解Android中垃圾回收日志信息从Java代码到字节码（1）细说 Java 中的字符和字符串（ 二 ）GitHub秘籍“黑暗潜伏者” – 手机病毒新型攻击方式缓">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-07-19T11:41:30.847Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android好文">
+<meta name="twitter:description" content="Ongoing,待完成，Please wait. 重点关注深入理解Android卷III相关 杂看过的比较好的文章：Android 目前最稳定和高效的UI适配方案Android AccessibilityService机制源码解析译文：理解Android中垃圾回收日志信息从Java代码到字节码（1）细说 Java 中的字符和字符串（ 二 ）GitHub秘籍“黑暗潜伏者” – 手机病毒新型攻击方式缓">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/Android-Article/"/>
+
+
+
+
+
+  <title>Android好文 | EricChows</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">EricChows</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">Android Developer</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Android-Article/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Eric Chows">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/myapple.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="EricChows">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Android好文</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-01-01T00:00:00+08:00">
+                2016-01-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/Article/" itemprop="url" rel="index">
+                    <span itemprop="name">Article</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/Android-Article/" class="leancloud_visitors" data-flag-title="Android好文">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Ongoing,待完成，Please wait.<br><!--
+    Module:
+    第一步:需要将这些文章都看几篇
+    第二步：形成自己的理解
+    第三步：可以按照非常有用的文章，重写写一遍
+    第四步：纠正或者延伸别人的文章
+--></p>
+<h1 id="重点关注"><a href="#重点关注" class="headerlink" title="重点关注"></a>重点关注</h1><p><a href="https://blog.csdn.net/innost" target="_blank" rel="noopener">深入理解Android卷III相关</a></p>
+<h1 id="杂"><a href="#杂" class="headerlink" title="杂"></a>杂</h1><p>看过的比较好的文章：<br><a href="https://www.jianshu.com/p/a4b8e4c5d9b0" target="_blank" rel="noopener">Android 目前最稳定和高效的UI适配方案</a><br><a href="https://xudeveloper.github.io/2018/06/18/Android%20AccessibilityService%E6%9C%BA%E5%88%B6%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90/" target="_blank" rel="noopener">Android AccessibilityService机制源码解析</a><br><a href="https://droidyue.com/blog/2014/11/08/understanding-garbage-collection-output-messages-in-android/" target="_blank" rel="noopener">译文：理解Android中垃圾回收日志信息</a><br><a href="http://www.importnew.com/13107.html" target="_blank" rel="noopener">从Java代码到字节码（1）</a><br><a href="http://www.importnew.com/29076.html" target="_blank" rel="noopener">细说 Java 中的字符和字符串（ 二 ）</a><br><a href="https://snowdream86.gitbooks.io/github-cheat-sheet/content/zh/index.html" target="_blank" rel="noopener">GitHub秘籍</a><br><a href="https://blog.csdn.net/androidsecurity/article/details/41207959" target="_blank" rel="noopener">“黑暗潜伏者” – 手机病毒新型攻击方式</a><br><a href="http://blog.jobbole.com/30940/" target="_blank" rel="noopener">缓存、缓存算法和缓存框架简介</a><br><a href="http://duanqz.github.io/2015-08-30-Intro-to-automerger" target="_blank" rel="noopener">AOSP代码管理</a><br><a href="https://blog.csdn.net/t12x3456/article/details/39958755" target="_blank" rel="noopener">Android 使用动态加载框架DL进行插件化开发</a><br><a href="https://blog.csdn.net/innost" target="_blank" rel="noopener">深入理解Android卷III相关</a><br><a href="https://blog.csdn.net/qq_23547831/article/details/51487978" target="_blank" rel="noopener">Android源码解析（二十八）–&gt;电源开关机按键事件流程</a>  有很多的流程分析的文章</p>
+<h1 id="优秀的网站"><a href="#优秀的网站" class="headerlink" title="优秀的网站"></a>优秀的网站</h1><p><a href="https://github.com/AweiLoveAndroid/CommonDevKnowledge" target="_blank" rel="noopener">常用的Android开发的一些技能点汇集</a><br><a href="https://github.com/DanluTeam/ColdStart" target="_blank" rel="noopener">awesome-android-performance</a> 性能优化<br><a href="https://github.com/EricChows/free-programming-books/blob/master/free-programming-books-zh.md" target="_blank" rel="noopener">免费的编程书籍</a><br><a href="https://github.com/EricChows/Worth-Reading-the-Android-technical-articles" target="_blank" rel="noopener">Android优质资源合集</a><br><a href="http://wiki.jikexueyuan.com/project/deep-android-v2/activity.html" target="_blank" rel="noopener">极客学院-深入理解 Android 卷II</a><br>有SystemServer/PackageManagerService/PowerManagerService/ActivityManagerService/ContentProvider等讲解<br><a href="http://top.jobbole.com/17733/" target="_blank" rel="noopener">每个程序员至少阅读两次的 10 篇技术论文</a></p>
+<h1 id="优秀的期刊"><a href="#优秀的期刊" class="headerlink" title="优秀的期刊"></a>优秀的期刊</h1><p><a href="https://www.androidweekly.cn/" target="_blank" rel="noopener">Android开发技术周刊</a><br><a href="http://www.androidblog.cn/" target="_blank" rel="noopener">Android博客周刊</a></p>
+<h1 id="重点阅读文章"><a href="#重点阅读文章" class="headerlink" title="重点阅读文章"></a>重点阅读文章</h1><p><a href="https://blog.csdn.net/luoshengyang/article/details/8923485" target="_blank" rel="noopener">罗升阳–那两年炼就的Android内功修养</a><br><a href="https://github.com/LRH1993/android_interview" target="_blank" rel="noopener">Android校招面试指南</a><br><a href="https://github.com/helen-x/AndroidInterview" target="_blank" rel="noopener">Android面试资料</a><br><a href="https://github.com/open-android/Android" target="_blank" rel="noopener">阅读里面的Android面试题</a><br><a href="https://github.com/tangqi92/Android-Tips" target="_blank" rel="noopener">Android踩坑历史</a><br><a href="https://github.com/lizhangqu/CoreLink" target="_blank" rel="noopener">Android 日常积累</a><br><a href="https://github.com/stormzhang/android-interview-questions-cn" target="_blank" rel="noopener">Android面试指南</a><br><a href="https://github.com/Juude/droidReverse" target="_blank" rel="noopener">Android一些重要知识点整理</a><br><a href="https://github.com/AweiLoveAndroid/CommonDevKnowledge" target="_blank" rel="noopener">常用的Android开发的一些技能点汇集</a></p>
+<p><a href="https://blog.csdn.net/china_style/article/details/79280137" target="_blank" rel="noopener">Android 8.0后台运行策略学习</a><br><a href="https://mp.weixin.qq.com/s?__biz=MzIwMzYwMTk1NA==&amp;mid=2247489819&amp;idx=1&amp;sn=a209e3ab126499cb91d6a79ae4cc1fe3&amp;chksm=96cdb856a1ba31408305784a58ec6333833efa28e66ddb5ded160496ff667c824a71075b27a9#rd" target="_blank" rel="noopener">Android面试大纲（集合）</a><br><a href="https://www.kancloud.cn/alex_wsc/androids/477708" target="_blank" rel="noopener">老罗的Android之旅（总结）</a></p>
+<h1 id="优秀的文章"><a href="#优秀的文章" class="headerlink" title="优秀的文章"></a>优秀的文章</h1><p><a href="https://github.com/AweiLoveAndroid/CommonDevKnowledge/blob/master/github_README/README%E6%96%87%E6%A1%A3%E7%9A%84%E8%A7%84%E8%8C%83%E5%86%99%E6%B3%95.md" target="_blank" rel="noopener">README文档的规范写法</a><br><a href="https://github.com/AweiLoveAndroid/CommonDevKnowledge/blob/master/interview/summary.md" target="_blank" rel="noopener">国内一线互联网公司面试题汇总</a><br><a href="https://mp.weixin.qq.com/s?__biz=MzIyMjQ0MTU0NA==&amp;mid=2247484617&amp;idx=1&amp;sn=3734e643d241ac9615424dd44462ee2d&amp;chksm=e82c3deedf5bb4f82e7be0823739774a0a2cf8372284c8409471c2752fea1f367ca3f6857795&amp;mpshare=1&amp;scene=23&amp;srcid=1128DKotEvTe4dheaTextbqp#rd" target="_blank" rel="noopener">阿里、腾讯、百度、华为、京东、搜狗和滴滴最新面试题汇集</a><br><a href="https://zhuanlan.zhihu.com/p/30016683" target="_blank" rel="noopener">2017下半年，一二线互联网公司Android面试题汇总</a><br><a href="https://zhuanlan.zhihu.com/p/26327485" target="_blank" rel="noopener">2017 年初、阿里、腾讯、百度、华为、京东、搜狗和滴滴面试题汇集（更新篇）</a>  带答案<br><a href="https://github.com/LRH1993/android_interview" target="_blank" rel="noopener">Android校招面试指南</a><br><a href="http://www.jackywang.tech/AndroidInterview-Q-A/" target="_blank" rel="noopener">The top Internet companies android interview questions and answers</a><br><a href="https://crossoverjie.top/2018/06/21/personal/Interview-experience/" target="_blank" rel="noopener">一个学渣的阿里之路</a><br><a href="https://github.com/DanluTeam/ColdStart" target="_blank" rel="noopener">App 启动优化</a><br><a href="http://zmywly8866.github.io/2016/05/04/android-application-leak-analysis-and-fix.html" target="_blank" rel="noopener">Android应用内存泄露分析、改善经验总结</a><br><a href="http://wiki.jikexueyuan.com/project/deep-android-v2/packagemanagerservice.html" target="_blank" rel="noopener">第4章  深入理解 PackageManagerService</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8923485" target="_blank" rel="noopener">罗升阳–那两年炼就的Android内功修养</a> 老罗博客的总纲<br>需要把 <a href="https://github.com/EricChows/Worth-Reading-the-Android-technical-articles" target="_blank" rel="noopener">https://github.com/EricChows/Worth-Reading-the-Android-technical-articles</a> 这里面的优秀文章一篇一篇的看完。<br><a href="https://github.com/helen-x/AndroidInterview" target="_blank" rel="noopener">Android面试资料</a></p>
+<h1 id="Android开发工具"><a href="#Android开发工具" class="headerlink" title="Android开发工具"></a>Android开发工具</h1><p><a href="http://www.androiddevtools.cn/" target="_blank" rel="noopener">AndroidDevTools</a><br><a href="https://github.com/inferjay/AndroidDevTools/" target="_blank" rel="noopener">AndroidDevTools(Github)</a><br><a href="http://androidblog.cn/tools/" target="_blank" rel="noopener">Android开发工具汇总</a><br><a href="http://editor.method.ac" target="_blank" rel="noopener">Method draw 矢量图 在线查看工具</a></p>
+<h1 id="Android官方文档-中文版"><a href="#Android官方文档-中文版" class="headerlink" title="Android官方文档 中文版"></a>Android官方文档 中文版</h1><p><a href="http://hukai.me/android-training-course-in-chinese/index.html" target="_blank" rel="noopener">AndroidTraning中文版</a></p>
+<h1 id="Android-精选资源"><a href="#Android-精选资源" class="headerlink" title="Android 精选资源"></a>Android 精选资源</h1><p><a href="https://github.com/android-cn/android-open-project-analysis" target="_blank" rel="noopener">Android 开源项目源码解析</a><br><a href="https://github.com/amitshekhariitbhu/awesome-android-complete-reference" target="_blank" rel="noopener">awesome-android-complete-reference</a><br><a href="https://github.com/LittleFriendsGroup/AndroidSdkSourceAnalysis" target="_blank" rel="noopener">Android源码解析</a> 一帮Android痴迷者，自己对Android源码进行解析，并共享<br><a href="https://github.com/zmywly8866/Worth-Reading-the-Android-technical-articles" target="_blank" rel="noopener">Android值得阅读的技术文章</a></p>
+<p><strong> 免费的编程中文书籍索引 </strong><br><a href="http://siberiawolf.com/free_programming/index.html?utm_source=androidweekly.io&amp;utm_medium=website" target="_blank" rel="noopener">http://siberiawolf.com/free_programming/index.html?utm_source=androidweekly.io&amp;utm_medium=website</a><br><a href="https://github.com/EricChows/free-programming-books/blob/master/free-programming-books-zh.md" target="_blank" rel="noopener">https://github.com/EricChows/free-programming-books/blob/master/free-programming-books-zh.md</a></p>
+<h1 id="Android-性能相关"><a href="#Android-性能相关" class="headerlink" title="Android 性能相关"></a>Android 性能相关</h1><p><a href="https://mp.weixin.qq.com/s/A8NZbHlU1J2CsoNhTFX8Dg?utm_source=androidweekly.io&amp;utm_medium=website" target="_blank" rel="noopener">Android性能优化来龙去脉总结</a><br>总结： 大概的讲述了性能优化的类型和方式<br><a href="https://github.com/DanluTeam/ColdStart?utm_source=androidweekly.io&amp;utm_medium=website" target="_blank" rel="noopener">App 启动优化</a><br>总结：<br><a href="https://github.com/Juude/awesome-android-performance" target="_blank" rel="noopener">Android性能优化视频，文档以及工具</a><br><a href="https://blog.csdn.net/innost/article/details/9008691" target="_blank" rel="noopener">Android系统性能调优工具介绍</a><br><a href="http://blog.jobbole.com/78995" target="_blank" rel="noopener">正确使用Android性能分析工具——TraceView</a><br><a href="http://www.codeceo.com/article/android-memory-manage.html" target="_blank" rel="noopener">每个Android开发者必须知道的内存管理知识</a></p>
+<h1 id="Android-内存相关"><a href="#Android-内存相关" class="headerlink" title="Android 内存相关"></a>Android 内存相关</h1><p><a href="http://www.cnblogs.com/kingOfPointer/archive/2012/12/21/2828018.html" target="_blank" rel="noopener">android 开发如何做内存优化</a><br><a href="https://www.cnblogs.com/ThinkVenus/p/6805495.html" target="_blank" rel="noopener">什么是java OOM？如何分析及解决oom问题？</a><br><a href="https://www.cnblogs.com/kongzhongqijing/articles/7283599.html" target="_blank" rel="noopener">常见OOM现象</a><br><a href="https://blog.csdn.net/a396901990/article/details/38904543" target="_blank" rel="noopener">ANDROID内存优化(大汇总——全)</a><br><a href="http://blog.csdn.net/imain/article/details/8560986" target="_blank" rel="noopener">Android内存优化</a><br><a href="http://blog.csdn.net/awangyunke/article/details/20380719" target="_blank" rel="noopener">Android 内存优化</a><br><a href="http://www.cnblogs.com/zyw-205520/archive/2013/02/17/2914190.htm" target="_blank" rel="noopener">关于android性能，内存优化</a><br><a href="http://www.360doc.com/content/11/0911/15/18042_147476260.shtml" target="_blank" rel="noopener">Java垃圾回收原理</a><br><a href="http://www.360doc.com/content/11/0911/16/18042_147492404.shtml" target="_blank" rel="noopener">JVM垃圾回收（GC）原理</a></p>
+<h1 id="Android-稳定性相关"><a href="#Android-稳定性相关" class="headerlink" title="Android 稳定性相关"></a>Android 稳定性相关</h1><h1 id="Android-功耗相关"><a href="#Android-功耗相关" class="headerlink" title="Android 功耗相关"></a>Android 功耗相关</h1><h1 id="Android-Flutter-相关"><a href="#Android-Flutter-相关" class="headerlink" title="Android Flutter 相关"></a>Android Flutter 相关</h1><p><a href="https://mp.weixin.qq.com/s/vlHt8jxbdzBqJZDobpsFVw?utm_source=androidweekly.io&amp;utm_medium=website" target="_blank" rel="noopener">深入理解flutter的编译原理与优化</a></p>
+<h1 id="Android-虚拟机相关"><a href="#Android-虚拟机相关" class="headerlink" title="Android 虚拟机相关"></a>Android 虚拟机相关</h1><h1 id="Android-AIDL-相关"><a href="#Android-AIDL-相关" class="headerlink" title="Android AIDL 相关"></a>Android AIDL 相关</h1><h1 id="Android-升级相关"><a href="#Android-升级相关" class="headerlink" title="Android 升级相关"></a>Android 升级相关</h1><h1 id="Android-Java-基础"><a href="#Android-Java-基础" class="headerlink" title="Android/Java 基础"></a>Android/Java 基础</h1><h1 id="线程、多线程和线程池"><a href="#线程、多线程和线程池" class="headerlink" title="线程、多线程和线程池"></a>线程、多线程和线程池</h1><h1 id="并发编程"><a href="#并发编程" class="headerlink" title="并发编程"></a>并发编程</h1><p>  Android方面，并发编程用的比较少，需要好好的研究一下</p>
+<h1 id="数据结构相关"><a href="#数据结构相关" class="headerlink" title="数据结构相关"></a>数据结构相关</h1><h1 id="工具使用："><a href="#工具使用：" class="headerlink" title="工具使用："></a>工具使用：</h1><p><a href="https://blog.csdn.net/maosidiaoxian/article/details/44992655" target="_blank" rel="noopener">打造你的开发神器——介绍Android Studio上的几个插件</a><br><a href="https://blog.csdn.net/maosidiaoxian/article/category/2380095" target="_blank" rel="noopener">Android 官方技术文档翻译</a><br><a href="http://duanqz.github.io/2015-05-21-Intro-adb" target="_blank" rel="noopener">adb 介绍</a><br><a href="http://duanqz.github.io/2015-07-19-Intro-to-dumpsys" target="_blank" rel="noopener">dumpsys 介绍</a><br><a href="http://duanqz.github.io/2015-06-25-Intro-to-Repo" target="_blank" rel="noopener">repo 介绍</a><br><a href="http://duanqz.github.io/2016-01-06-Intro-Google-Mobile-Service" target="_blank" rel="noopener">GMS 介绍</a></p>
+<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><p><a href="https://mp.weixin.qq.com/s/cXa6Rwiet5gN8bSe-h4QNw" target="_blank" rel="noopener">通过Google挖掘细分市场的一个案例</a></p>
+<p><a href="https://36kr.com/p/5107620.html" target="_blank" rel="noopener">Facebook PM谈顶级产品经理具备的4个特征</a></p>
+<p><a href="https://mp.weixin.qq.com/s/wqGgaH6EhSOqjj1SyJ4U7w" target="_blank" rel="noopener">陈春花：具有战略思维而非竞争理念</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Android/" rel="tag"># Android</a>
+          
+            <a href="/tags/Article/" rel="tag"># Article</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/Android-KeyEvent-Analysis/" rel="next" title="Android中按键事件传递分析">
+                <i class="fa fa-chevron-left"></i> Android中按键事件传递分析
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/Android-JNI-NDK/" rel="prev" title="Android中JNI与NDK">
+                Android中JNI与NDK <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  
+    <div id="gitalk-container"></div>
+  
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/myapple.jpg"
+                alt="Eric Chows" />
+            
+              <p class="site-author-name" itemprop="name">Eric Chows</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">60</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">42</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">64</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/ericchows" target="_blank" title="GitHub">
+                    
+                      <i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:xnzds2008@163.com" target="_blank" title="E-Mail">
+                    
+                      <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://plus.google.com" target="_blank" title="Google">
+                    
+                      <i class="fa fa-fw fa-google"></i>Google</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://twitter.com" target="_blank" title="Twitter">
+                    
+                      <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.facebook.com" target="_blank" title="FB Page">
+                    
+                      <i class="fa fa-fw fa-facebook"></i>FB Page</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://vk.com" target="_blank" title="VK Group">
+                    
+                      <i class="fa fa-fw fa-vk"></i>VK Group</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://stackoverflow.com/users/8872810/eric" target="_blank" title="StackOverflow">
+                    
+                      <i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://youtube.com" target="_blank" title="YouTube">
+                    
+                      <i class="fa fa-fw fa-youtube"></i>YouTube</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://instagram.com" target="_blank" title="Instagram">
+                    
+                      <i class="fa fa-fw fa-instagram"></i>Instagram</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="skype" target="_blank" title="Skype">
+                    
+                      <i class="fa fa-fw fa-skype"></i>Skype</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="/images/wechat.jpg" target="_blank" title="Wechat">
+                    
+                      <i class="fa fa-fw fa-globe"></i>Wechat</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://blog.csdn.net/Cxiaolinxiaozi" target="_blank" title="CSDN">
+                    
+                      <i class="fa fa-fw fa-globe"></i>CSDN</a>
+                </span>
+              
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#重点关注"><span class="nav-number">1.</span> <span class="nav-text">重点关注</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#杂"><span class="nav-number">2.</span> <span class="nav-text">杂</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#优秀的网站"><span class="nav-number">3.</span> <span class="nav-text">优秀的网站</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#优秀的期刊"><span class="nav-number">4.</span> <span class="nav-text">优秀的期刊</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#重点阅读文章"><span class="nav-number">5.</span> <span class="nav-text">重点阅读文章</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#优秀的文章"><span class="nav-number">6.</span> <span class="nav-text">优秀的文章</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Android开发工具"><span class="nav-number">7.</span> <span class="nav-text">Android开发工具</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Android官方文档-中文版"><span class="nav-number">8.</span> <span class="nav-text">Android官方文档 中文版</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Android-精选资源"><span class="nav-number">9.</span> <span class="nav-text">Android 精选资源</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Android-性能相关"><span class="nav-number">10.</span> <span class="nav-text">Android 性能相关</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Android-内存相关"><span class="nav-number">11.</span> <span class="nav-text">Android 内存相关</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Android-稳定性相关"><span class="nav-number">12.</span> <span class="nav-text">Android 稳定性相关</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Android-功耗相关"><span class="nav-number">13.</span> <span class="nav-text">Android 功耗相关</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Android-Flutter-相关"><span class="nav-number">14.</span> <span class="nav-text">Android Flutter 相关</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Android-虚拟机相关"><span class="nav-number">15.</span> <span class="nav-text">Android 虚拟机相关</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Android-AIDL-相关"><span class="nav-number">16.</span> <span class="nav-text">Android AIDL 相关</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Android-升级相关"><span class="nav-number">17.</span> <span class="nav-text">Android 升级相关</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Android-Java-基础"><span class="nav-number">18.</span> <span class="nav-text">Android/Java 基础</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#线程、多线程和线程池"><span class="nav-number">19.</span> <span class="nav-text">线程、多线程和线程池</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#并发编程"><span class="nav-number">20.</span> <span class="nav-text">并发编程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据结构相关"><span class="nav-number">21.</span> <span class="nav-text">数据结构相关</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#工具使用："><span class="nav-number">22.</span> <span class="nav-text">工具使用：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#其他"><span class="nav-number">23.</span> <span class="nav-text">其他</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2015 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">EricChows</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="//s95.cnzz.com/z_stat.php?id=1274018749&web_id=1274018749" language="JavaScript"></script>
+  </div>
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.3"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+   <script type="text/javascript">
+		var gitalk = new Gitalk({
+		  clientID: '2f039a8ed54186479946',
+		  clientSecret: 'bc88282455b50fbc8c5d9502d17621a4f9e48d18',
+		  repo: 'myblog-comment',
+		  owner: 'EricChows',
+		  admin: ['EricChows'],
+		  id: location.pathname,
+		  distractionFreeMode: 'true'
+		})
+		gitalk.render('gitalk-container')           
+       </script>
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('-1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("ANlC6pJEdxOLHAcDbFuHuXrF-gzGzoHsz", "tNpAWjkmbhhKnsB3bcDooRrl");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.3"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.3"></script>
+
+
+  
+
+</body>
+</html>

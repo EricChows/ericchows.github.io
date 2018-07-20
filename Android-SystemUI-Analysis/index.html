@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="EricChows">
 <meta property="og:description" content="Recent模块在AndroidManifest.xml里面，我们注意到SystemUISecondaryUserService，对于每一个用户都有一个SystemUI进程，所以在用户切换的时候，需要用SystemUISecondaryUserService来确保新的用户进程创建.123456&amp;lt;!-- Recents depends on every user having their ow">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-17T09:26:16.793Z">
+<meta property="og:updated_time" content="2018-07-19T02:02:25.875Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android中SystemUI解析">
 <meta name="twitter:description" content="Recent模块在AndroidManifest.xml里面，我们注意到SystemUISecondaryUserService，对于每一个用户都有一个SystemUI进程，所以在用户切换的时候，需要用SystemUISecondaryUserService来确保新的用户进程创建.123456&amp;lt;!-- Recents depends on every user having their ow">
@@ -427,7 +427,7 @@
       
         <h1 id="Recent模块"><a href="#Recent模块" class="headerlink" title="Recent模块"></a>Recent模块</h1><p>在AndroidManifest.xml里面，我们注意到SystemUISecondaryUserService，对于每一个用户都有一个SystemUI进程，所以在用户切换的时候，需要用SystemUISecondaryUserService来确保新的用户进程创建.<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- Recents depends on every user having their own SystemUI process, so on user switch,</span></span><br><span class="line"><span class="comment">     ensure that the process is created by starting this service.</span></span><br><span class="line"><span class="comment">     --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">service</span> <span class="attr">android:name</span>=<span class="string">"SystemUISecondaryUserService"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:exported</span>=<span class="string">"true"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:permission</span>=<span class="string">"com.android.systemui.permission.SELF"</span> /&gt;</span></span><br></pre></td></tr></table></figure></p>
 <p>RecentsActivity.java的onCreate函数开始<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RecentsActivity</span> <span class="keyword">extends</span> <span class="title">Activity</span> <span class="keyword">implements</span> <span class="title">ViewTreeObserver</span>.<span class="title">OnPreDrawListener</span>,</span></span><br><span class="line"><span class="class">        <span class="title">ColorExtractor</span>.<span class="title">OnColorsChangedListener</span> </span>&#123;</span><br><span class="line">        	...</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** Called with the activity is first created. */</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">        mFinishedOnStartup = <span class="keyword">false</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// In the case that the activity starts up before the Recents component has initialized</span></span><br><span class="line">        <span class="comment">// (usually when debugging/pushing the SysUI apk), just finish this activity.</span></span><br><span class="line">        SystemServicesProxy ssp = Recents.getSystemServices();</span><br><span class="line">        <span class="keyword">if</span> (ssp == <span class="keyword">null</span>) &#123;</span><br><span class="line">            mFinishedOnStartup = <span class="keyword">true</span>;</span><br><span class="line">            finish();</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure></p>
-<h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p>Doze模式<br><a href="https://blog.csdn.net/u013278940/article/details/50498304" target="_blank" rel="noopener">Android5.1 系统之省电模式探索一启动流程</a></p>
+<h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p>Doze模式<br><a href="https://blog.csdn.net/u013278940/article/details/50498304" target="_blank" rel="noopener">Android5.1 系统之省电模式探索一启动流程</a><br><a href="https://blog.csdn.net/innost/article/details/47660591" target="_blank" rel="noopener">《深入理解Android 卷III》第七章 深入理解SystemUI</a></p>
 
       
     </div>
@@ -460,8 +460,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/Android-Keyguard-Analysis/" rel="next" title="Android中Keyguard解析">
-                <i class="fa fa-chevron-left"></i> Android中Keyguard解析
+              <a href="/Android-JNI-NDK/" rel="next" title="Android中JNI与NDK">
+                <i class="fa fa-chevron-left"></i> Android中JNI与NDK
               </a>
             
           </div>
@@ -470,8 +470,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/Android-Handler-Analysis/" rel="prev" title="Android中Handler解析">
-                Android中Handler解析 <i class="fa fa-chevron-right"></i>
+              <a href="/Android-SurfaceFlinger-Analysis/" rel="prev" title="Android中SurfaceFlinger解析">
+                Android中SurfaceFlinger解析 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -553,7 +553,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">52</span>
+                  <span class="site-state-item-count">60</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -564,7 +564,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">32</span>
+                  <span class="site-state-item-count">42</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -575,7 +575,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">54</span>
+                  <span class="site-state-item-count">64</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
