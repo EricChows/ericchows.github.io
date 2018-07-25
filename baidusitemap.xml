@@ -4,6 +4,101 @@
 
     
   <url>
+    <loc>http://yoursite.com/Life-Advice/</loc>
+    <lastmod>2018-07-25T02:19:57.435Z</lastmod>
+    <data>
+        <display>
+        <title>关于工作和成长的121条具体建议</title>
+        <pubTime>2015-09-08T16:00:00.000Z</pubTime>
+        
+        <tag>Life</tag>
+         
+        <tag>Advice</tag>
+         
+         
+           
+             
+              <breadCrumb title="Life" url="http://yoursite.com/categories/Life/"/>
+          
+             
+              <breadCrumb title="Advice" url="http://yoursite.com/categories/Life/Advice/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/Myblog/</loc>
+    <lastmod>2018-07-25T02:13:43.831Z</lastmod>
+    <data>
+        <display>
+        <title>本站导航</title>
+        <pubTime>2098-12-31T16:00:00.000Z</pubTime>
+        
+        <tag>Myblog</tag>
+         
+         
+           
+             
+              <breadCrumb title="All" url="http://yoursite.com/categories/All/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/C-Base/</loc>
+    <lastmod>2018-07-20T01:41:34.102Z</lastmod>
+    <data>
+        <display>
+        <title>C++ 基础</title>
+        <pubTime>2015-12-31T16:00:00.000Z</pubTime>
+        
+        <tag>C++</tag>
+         
+        <tag>Base</tag>
+         
+         
+           
+             
+              <breadCrumb title="C++" url="http://yoursite.com/categories/C/"/>
+          
+             
+              <breadCrumb title="Base" url="http://yoursite.com/categories/C/Base/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/Android-Keyguard-Analysis/</loc>
+    <lastmod>2018-07-20T01:07:15.009Z</lastmod>
+    <data>
+        <display>
+        <title>Android中Keyguard解析</title>
+        <pubTime>2015-12-31T16:00:00.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+        <tag>Keyguard</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="http://yoursite.com/categories/Android/"/>
+          
+             
+              <breadCrumb title="Keyguard" url="http://yoursite.com/categories/Android/Keyguard/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/Android-KeyEvent-Analysis/</loc>
     <lastmod>2018-07-20T00:57:20.922Z</lastmod>
     <data>
@@ -156,26 +251,6 @@
         
          
            
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/Myblog/</loc>
-    <lastmod>2018-07-18T14:46:33.802Z</lastmod>
-    <data>
-        <display>
-        <title>本站导航</title>
-        <pubTime>2098-12-31T16:00:00.000Z</pubTime>
-        
-        <tag>Myblog</tag>
-         
-         
-           
-             
-              <breadCrumb title="All" url="http://yoursite.com/categories/All/"/>
-          
         </display>
     </data>
     </url>
@@ -583,9 +658,9 @@
         <title>Java基础知识汇总</title>
         <pubTime>2018-07-16T09:50:38.000Z</pubTime>
         
-        <tag>Java</tag>
-         
         <tag>Base</tag>
+         
+        <tag>Java</tag>
          
          
            
@@ -954,31 +1029,6 @@
            
              
               <breadCrumb title="Android" url="http://yoursite.com/categories/Android/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/Android-Keyguard-Analysis/</loc>
-    <lastmod>2018-07-10T14:17:13.876Z</lastmod>
-    <data>
-        <display>
-        <title>Android中Keyguard解析</title>
-        <pubTime>2015-12-31T16:00:00.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-        <tag>Keyguard</tag>
-         
-         
-           
-             
-              <breadCrumb title="Android" url="http://yoursite.com/categories/Android/"/>
-          
-             
-              <breadCrumb title="Keyguard" url="http://yoursite.com/categories/Android/Keyguard/"/>
           
         </display>
     </data>
