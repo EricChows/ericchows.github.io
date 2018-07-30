@@ -4,8 +4,303 @@
 
     
   <url>
+    <loc>http://yoursite.com/%E5%90%84%E7%B1%BB%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E5%B0%8F%E6%8A%80%E5%B7%A7/</loc>
+    <lastmod>2018-07-30T09:04:08.115Z</lastmod>
+    <data>
+        <display>
+        <title>各类工具使用小技巧</title>
+        <pubTime>2015-06-29T06:06:59.000Z</pubTime>
+        
+        <tag>小技巧 工具 vim shell putty</tag>
+         
+         
+           
+             
+              <breadCrumb title="Tools" url="http://yoursite.com/categories/Tools/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/Myblog/</loc>
+    <lastmod>2018-07-30T08:46:39.582Z</lastmod>
+    <data>
+        <display>
+        <title>本站导航</title>
+        <pubTime>2098-12-31T16:00:00.000Z</pubTime>
+        
+        <tag>Myblog</tag>
+         
+         
+           
+             
+              <breadCrumb title="All" url="http://yoursite.com/categories/All/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/Android-MVC-MVP/</loc>
+    <lastmod>2018-07-30T08:43:36.774Z</lastmod>
+    <data>
+        <display>
+        <title>Android中MVC模式和MVP模式</title>
+        <pubTime>2015-12-31T16:00:02.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+        <tag>MVC</tag>
+         
+        <tag>MVP</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="http://yoursite.com/categories/Android/"/>
+          
+             
+              <breadCrumb title="MVC" url="http://yoursite.com/categories/Android/MVC/"/>
+          
+             
+              <breadCrumb title="MVP" url="http://yoursite.com/categories/Android/MVC/MVP/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/Android-SystemUI-Analysis/</loc>
+    <lastmod>2018-07-30T08:33:56.200Z</lastmod>
+    <data>
+        <display>
+        <title>Android中SystemUI解析</title>
+        <pubTime>2015-12-31T16:00:00.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+        <tag>SystemUI</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="http://yoursite.com/categories/Android/"/>
+          
+             
+              <breadCrumb title="SystemUI" url="http://yoursite.com/categories/Android/SystemUI/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/IT-Other-one/</loc>
+    <lastmod>2018-07-30T08:23:44.199Z</lastmod>
+    <data>
+        <display>
+        <title>给技术人员一些技术以外的建议</title>
+        <pubTime>2015-12-31T16:00:00.000Z</pubTime>
+        
+        <tag>IT</tag>
+         
+        <tag>建议</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT" url="http://yoursite.com/categories/IT/"/>
+          
+             
+              <breadCrumb title="建议" url="http://yoursite.com/categories/IT/%E5%BB%BA%E8%AE%AE/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/Linux-Command/</loc>
+    <lastmod>2018-07-30T07:17:44.513Z</lastmod>
+    <data>
+        <display>
+        <title>Linux脚本编写基础</title>
+        <pubTime>2015-06-29T06:23:08.000Z</pubTime>
+        
+        <tag>Linux 脚本</tag>
+         
+         
+           
+             
+              <breadCrumb title="Linux 脚本" url="http://yoursite.com/categories/Linux-%E8%84%9A%E6%9C%AC/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/Python/</loc>
+    <lastmod>2018-07-30T07:16:38.275Z</lastmod>
+    <data>
+        <display>
+        <title>Python开发</title>
+        <pubTime>2015-12-31T16:00:00.000Z</pubTime>
+        
+        <tag>Python</tag>
+         
+         
+           
+             
+              <breadCrumb title="Python" url="http://yoursite.com/categories/Python/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/Block-Chain/</loc>
+    <lastmod>2018-07-30T07:07:51.247Z</lastmod>
+    <data>
+        <display>
+        <title>区块链开发</title>
+        <pubTime>2015-12-31T16:00:00.000Z</pubTime>
+        
+        <tag>区块链</tag>
+         
+        <tag>BlockChain</tag>
+         
+         
+           
+             
+              <breadCrumb title="区块链" url="http://yoursite.com/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+          
+             
+              <breadCrumb title="BlockChain" url="http://yoursite.com/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/BlockChain/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/Chrome/</loc>
+    <lastmod>2018-07-30T06:40:06.611Z</lastmod>
+    <data>
+        <display>
+        <title>Chrome</title>
+        <pubTime>2015-12-31T16:00:00.000Z</pubTime>
+        
+        <tag>Chrome</tag>
+         
+         
+           
+             
+              <breadCrumb title="Chrome" url="http://yoursite.com/categories/Chrome/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/Android-Keyguard-Analysis/</loc>
+    <lastmod>2018-07-30T06:30:27.424Z</lastmod>
+    <data>
+        <display>
+        <title>Android中Keyguard解析</title>
+        <pubTime>2015-12-31T16:00:00.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+        <tag>Keyguard</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="http://yoursite.com/categories/Android/"/>
+          
+             
+              <breadCrumb title="Keyguard" url="http://yoursite.com/categories/Android/Keyguard/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/Android-Performance/</loc>
+    <lastmod>2018-07-30T01:40:12.761Z</lastmod>
+    <data>
+        <display>
+        <title>Android系统性能调优工具</title>
+        <pubTime>2018-05-28T13:23:33.000Z</pubTime>
+        
+        <tag>性能</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="http://yoursite.com/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/Android-Launcher-Analysis/</loc>
+    <lastmod>2018-07-27T02:19:51.289Z</lastmod>
+    <data>
+        <display>
+        <title>Android中Launcher解析</title>
+        <pubTime>2015-12-31T16:00:00.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+        <tag>Launcher</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="http://yoursite.com/categories/Android/"/>
+          
+             
+              <breadCrumb title="Launcher" url="http://yoursite.com/categories/Android/Launcher/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/L-My-Approach-to-Getting-Dramatically-Better-as-a-Programmer/</loc>
+    <lastmod>2018-07-25T12:15:40.224Z</lastmod>
+    <data>
+        <display>
+        <title>My Approach to Getting Dramatically Better as a Programmer</title>
+        <pubTime>2015-12-31T16:00:00.000Z</pubTime>
+        
+        <tag>English</tag>
+         
+         
+           
+             
+              <breadCrumb title="English" url="http://yoursite.com/categories/English/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/Life-Advice/</loc>
-    <lastmod>2018-07-25T02:19:57.435Z</lastmod>
+    <lastmod>2018-07-25T02:24:14.661Z</lastmod>
     <data>
         <display>
         <title>关于工作和成长的121条具体建议</title>
@@ -22,26 +317,6 @@
           
              
               <breadCrumb title="Advice" url="http://yoursite.com/categories/Life/Advice/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/Myblog/</loc>
-    <lastmod>2018-07-25T02:13:43.831Z</lastmod>
-    <data>
-        <display>
-        <title>本站导航</title>
-        <pubTime>2098-12-31T16:00:00.000Z</pubTime>
-        
-        <tag>Myblog</tag>
-         
-         
-           
-             
-              <breadCrumb title="All" url="http://yoursite.com/categories/All/"/>
           
         </display>
     </data>
@@ -67,31 +342,6 @@
           
              
               <breadCrumb title="Base" url="http://yoursite.com/categories/C/Base/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/Android-Keyguard-Analysis/</loc>
-    <lastmod>2018-07-20T01:07:15.009Z</lastmod>
-    <data>
-        <display>
-        <title>Android中Keyguard解析</title>
-        <pubTime>2015-12-31T16:00:00.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-        <tag>Keyguard</tag>
-         
-         
-           
-             
-              <breadCrumb title="Android" url="http://yoursite.com/categories/Android/"/>
-          
-             
-              <breadCrumb title="Keyguard" url="http://yoursite.com/categories/Android/Keyguard/"/>
           
         </display>
     </data>
@@ -193,31 +443,6 @@
     </url>
 
     
-  <url>
-    <loc>http://yoursite.com/Android-SystemUI-Analysis/</loc>
-    <lastmod>2018-07-19T02:02:25.875Z</lastmod>
-    <data>
-        <display>
-        <title>Android中SystemUI解析</title>
-        <pubTime>2015-12-31T16:00:00.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-        <tag>SystemUI</tag>
-         
-         
-           
-             
-              <breadCrumb title="Android" url="http://yoursite.com/categories/Android/"/>
-          
-             
-              <breadCrumb title="SystemUI" url="http://yoursite.com/categories/Android/SystemUI/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
     
   <url>
     <loc>http://yoursite.com/IT%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95%E8%AE%BA/</loc>
@@ -227,9 +452,9 @@
         <title>IT学习方法论</title>
         <pubTime>2017-05-04T16:00:00.000Z</pubTime>
         
-        <tag>方法论</tag>
-         
         <tag>IT</tag>
+         
+        <tag>方法论</tag>
          
          
            
@@ -676,26 +901,6 @@
 
     
   <url>
-    <loc>http://yoursite.com/%E5%90%84%E7%B1%BB%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E5%B0%8F%E6%8A%80%E5%B7%A7/</loc>
-    <lastmod>2018-07-16T11:35:03.357Z</lastmod>
-    <data>
-        <display>
-        <title>各类工具使用小技巧</title>
-        <pubTime>2015-06-29T06:06:59.000Z</pubTime>
-        
-        <tag>小技巧 工具 vim shell putty</tag>
-         
-         
-           
-             
-              <breadCrumb title="Tools" url="http://yoursite.com/categories/Tools/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://yoursite.com/Android-Digital-Signature/</loc>
     <lastmod>2018-07-16T11:27:34.006Z</lastmod>
     <data>
@@ -899,31 +1104,6 @@
 
     
   <url>
-    <loc>http://yoursite.com/Android-Launcher-Analysis/</loc>
-    <lastmod>2018-07-16T09:48:41.956Z</lastmod>
-    <data>
-        <display>
-        <title>Android中Launcher解析</title>
-        <pubTime>2015-12-31T16:00:00.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-        <tag>Launcher</tag>
-         
-         
-           
-             
-              <breadCrumb title="Android" url="http://yoursite.com/categories/Android/"/>
-          
-             
-              <breadCrumb title="Launcher" url="http://yoursite.com/categories/Android/Launcher/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://yoursite.com/Android-Service-Analysis/</loc>
     <lastmod>2018-07-16T09:48:31.108Z</lastmod>
     <data>
@@ -1024,26 +1204,6 @@
         <tag>好文</tag>
          
         <tag>good</tag>
-         
-         
-           
-             
-              <breadCrumb title="Android" url="http://yoursite.com/categories/Android/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/Android-Performance/</loc>
-    <lastmod>2018-07-06T09:59:00.461Z</lastmod>
-    <data>
-        <display>
-        <title>Android系统性能调优工具</title>
-        <pubTime>2018-05-28T13:23:33.000Z</pubTime>
-        
-        <tag>性能</tag>
          
          
            
@@ -1247,26 +1407,6 @@
            
              
               <breadCrumb title="Android Tools" url="http://yoursite.com/categories/Android-Tools/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/Linux-Command/</loc>
-    <lastmod>2018-07-01T12:53:39.124Z</lastmod>
-    <data>
-        <display>
-        <title>Linux脚本编写基础</title>
-        <pubTime>2015-06-29T06:23:08.000Z</pubTime>
-        
-        <tag>Linux 脚本</tag>
-         
-         
-           
-             
-              <breadCrumb title="Linux 脚本" url="http://yoursite.com/categories/Linux-%E8%84%9A%E6%9C%AC/"/>
           
         </display>
     </data>
