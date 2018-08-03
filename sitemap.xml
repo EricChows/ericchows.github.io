@@ -2,16 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://yoursite.com/Kaios/</loc>
+    <loc>http://yoursite.com/%E5%90%84%E7%B1%BB%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E5%B0%8F%E6%8A%80%E5%B7%A7/</loc>
     
-    <lastmod>2018-08-03T02:34:36.823Z</lastmod>
+    <lastmod>2018-08-03T08:56:02.635Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/%E5%90%84%E7%B1%BB%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E5%B0%8F%E6%8A%80%E5%B7%A7/</loc>
+    <loc>http://yoursite.com/Kaios/</loc>
     
-    <lastmod>2018-08-02T08:51:03.117Z</lastmod>
+    <lastmod>2018-08-03T02:42:45.451Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/Myblog/</loc>
+    
+    <lastmod>2018-08-03T02:39:12.686Z</lastmod>
     
   </url>
   
@@ -26,13 +33,6 @@
     <loc>http://yoursite.com/IT%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95%E8%AE%BA/</loc>
     
     <lastmod>2018-08-01T02:13:03.571Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/Myblog/</loc>
-    
-    <lastmod>2018-07-30T08:46:39.582Z</lastmod>
     
   </url>
   

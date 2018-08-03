@@ -4,8 +4,28 @@
 
     
   <url>
+    <loc>http://yoursite.com/%E5%90%84%E7%B1%BB%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E5%B0%8F%E6%8A%80%E5%B7%A7/</loc>
+    <lastmod>2018-08-03T08:56:02.635Z</lastmod>
+    <data>
+        <display>
+        <title>各类工具使用小技巧</title>
+        <pubTime>2015-06-29T06:06:59.000Z</pubTime>
+        
+        <tag>小技巧 工具 vim shell putty</tag>
+         
+         
+           
+             
+              <breadCrumb title="Tools" url="http://yoursite.com/categories/Tools/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/Kaios/</loc>
-    <lastmod>2018-08-03T02:34:36.823Z</lastmod>
+    <lastmod>2018-08-03T02:42:45.451Z</lastmod>
     <data>
         <display>
         <title>Kaios</title>
@@ -29,19 +49,19 @@
 
     
   <url>
-    <loc>http://yoursite.com/%E5%90%84%E7%B1%BB%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E5%B0%8F%E6%8A%80%E5%B7%A7/</loc>
-    <lastmod>2018-08-02T08:51:03.117Z</lastmod>
+    <loc>http://yoursite.com/Myblog/</loc>
+    <lastmod>2018-08-03T02:39:12.686Z</lastmod>
     <data>
         <display>
-        <title>各类工具使用小技巧</title>
-        <pubTime>2015-06-29T06:06:59.000Z</pubTime>
+        <title>本站导航</title>
+        <pubTime>2098-12-31T16:00:00.000Z</pubTime>
         
-        <tag>小技巧 工具 vim shell putty</tag>
+        <tag>Myblog</tag>
          
          
            
              
-              <breadCrumb title="Tools" url="http://yoursite.com/categories/Tools/"/>
+              <breadCrumb title="All" url="http://yoursite.com/categories/All/"/>
           
         </display>
     </data>
@@ -89,26 +109,6 @@
            
              
               <breadCrumb title="Hexo" url="http://yoursite.com/categories/Hexo/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/Myblog/</loc>
-    <lastmod>2018-07-30T08:46:39.582Z</lastmod>
-    <data>
-        <display>
-        <title>本站导航</title>
-        <pubTime>2098-12-31T16:00:00.000Z</pubTime>
-        
-        <tag>Myblog</tag>
-         
-         
-           
-             
-              <breadCrumb title="All" url="http://yoursite.com/categories/All/"/>
           
         </display>
     </data>
