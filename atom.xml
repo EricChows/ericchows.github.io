@@ -684,6 +684,73 @@
   </entry>
   
   <entry>
+    <title>SELinux与SEAndroid解析</title>
+    <link href="http://yoursite.com/SELinux-SEAndroid/"/>
+    <id>http://yoursite.com/SELinux-SEAndroid/</id>
+    <published>2015-12-31T16:00:00.000Z</published>
+    <updated>2018-07-18T13:45:34.475Z</updated>
+    
+    <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.<br><!--    Module:    第一步:需要将这些文章都看几篇    第二步：形成自己的理解    第三步：可以按照非常有用的文章，重写写一遍    第四步：纠正或者延伸别人的文章--></p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><!--    阅读卡：    文章：    时间：--><p><a href="https://blog.csdn.net/luoshengyang/article/details/37613135" target="_blank" rel="noopener">SEAndroid安全机制框架分析</a></p><p><a href="https://my.csdn.net/huangyabin001" target="_blank" rel="noopener">SELinux学习</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Ongoing,待完成，Please wait.&lt;br&gt;&lt;!--
+    Module:
+    第一步:需要将这些文章都看几篇
+    第二步：形成自己的理解
+    第三步：可以按照非常有用的文章，重写写一遍
+    第四步：纠正或者延伸别人的文章
+--&gt;&lt;/p&gt;
+&lt;h
+      
+    
+    </summary>
+    
+      <category term="SEAndroid" scheme="http://yoursite.com/categories/SEAndroid/"/>
+    
+      <category term="SELinux" scheme="http://yoursite.com/categories/SEAndroid/SELinux/"/>
+    
+    
+      <category term="SEAndroid" scheme="http://yoursite.com/tags/SEAndroid/"/>
+    
+      <category term="SELinux" scheme="http://yoursite.com/tags/SELinux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Android中BroadcastRecevier解析</title>
+    <link href="http://yoursite.com/Android-BroadcastRecevier-Analysis/"/>
+    <id>http://yoursite.com/Android-BroadcastRecevier-Analysis/</id>
+    <published>2015-12-31T16:00:00.000Z</published>
+    <updated>2018-07-16T11:24:21.463Z</updated>
+    
+    <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.</p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><ol><li>Android Broadcast广播注册和发布方式以及机制流程 <a href="https://blog.csdn.net/liu_3262296/article/details/51935316" target="_blank" rel="noopener">https://blog.csdn.net/liu_3262296/article/details/51935316</a></li><li>Android广播之发送广播的源码分析 <a href="https://blog.csdn.net/zhangyongfeiyong/article/details/52022935" target="_blank" rel="noopener">https://blog.csdn.net/zhangyongfeiyong/article/details/52022935</a></li><li>Android广播机制实现源码浅析（一） <a href="https://blog.csdn.net/hehui1860/article/details/30726609" target="_blank" rel="noopener">https://blog.csdn.net/hehui1860/article/details/30726609</a></li><li>Android广播机制实现源码浅析（二） <a href="https://blog.csdn.net/hehui1860/article/details/30727075" target="_blank" rel="noopener">https://blog.csdn.net/hehui1860/article/details/30727075</a></li><li>Android广播机制实现源码浅析（三）<a href="https://blog.csdn.net/hehui1860/article/details/30727537" target="_blank" rel="noopener">https://blog.csdn.net/hehui1860/article/details/30727537</a></li><li>BroadcastReceiver源码解析(一)  <a href="https://blog.csdn.net/tiefeng0606/article/details/51354381" target="_blank" rel="noopener">https://blog.csdn.net/tiefeng0606/article/details/51354381</a></li><li>BroadcastReceiver源码解析（二） <a href="https://blog.csdn.net/tiefeng0606/article/details/51381221" target="_blank" rel="noopener">https://blog.csdn.net/tiefeng0606/article/details/51381221</a></li></ol><p><a href="https://blog.csdn.net/luoshengyang/article/details/8923485" target="_blank" rel="noopener">那两年炼就的Android内功修养</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6730748" target="_blank" rel="noopener">Android系统中的广播（Broadcast）机制简要介绍和学习计划</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6737352" target="_blank" rel="noopener">Android应用程序注册广播接收器（registerReceiver）的过程分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6744448" target="_blank" rel="noopener">Android应用程序发送广播（sendBroadcast）的过程分析</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Ongoing,待完成，Please wait.&lt;/p&gt;
+&lt;h1 id=&quot;参考文献&quot;&gt;&lt;a href=&quot;#参考文献&quot; class=&quot;headerlink&quot; title=&quot;参考文献&quot;&gt;&lt;/a&gt;参考文献&lt;/h1&gt;&lt;ol&gt;
+&lt;li&gt;Android Broadcast广播注册和发布
+      
+    
+    </summary>
+    
+      <category term="Android" scheme="http://yoursite.com/categories/Android/"/>
+    
+      <category term="BroadcastRecevier" scheme="http://yoursite.com/categories/Android/BroadcastRecevier/"/>
+    
+    
+      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
+    
+      <category term="BroadcastRecevier" scheme="http://yoursite.com/tags/BroadcastRecevier/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Android中Keyguard解析</title>
     <link href="http://yoursite.com/Android-Keyguard-Analysis/"/>
     <id>http://yoursite.com/Android-Keyguard-Analysis/</id>
@@ -710,72 +777,6 @@
       <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
     
       <category term="Keyguard" scheme="http://yoursite.com/tags/Keyguard/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Android中EventBus解析</title>
-    <link href="http://yoursite.com/Android-EventBus/"/>
-    <id>http://yoursite.com/Android-EventBus/</id>
-    <published>2015-12-31T16:00:00.000Z</published>
-    <updated>2018-07-18T13:38:26.810Z</updated>
-    
-    <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.<br><!--    Module:    第一步:需要将这些文章都看几篇    第二步：形成自己的理解    第三步：可以按照非常有用的文章，重写写一遍    第四步：纠正或者延伸别人的文章--></p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><!--    阅读卡：    文章：    时间：--><p><a href="https://xudeveloper.github.io/2018/01/20/EventBus%203.1.1%20%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90/" target="_blank" rel="noopener">EventBus 3.1.1 源码解析</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;Ongoing,待完成，Please wait.&lt;br&gt;&lt;!--
-    Module:
-    第一步:需要将这些文章都看几篇
-    第二步：形成自己的理解
-    第三步：可以按照非常有用的文章，重写写一遍
-    第四步：纠正或者延伸别人的文章
---&gt;&lt;/p&gt;
-&lt;h
-      
-    
-    </summary>
-    
-      <category term="Android" scheme="http://yoursite.com/categories/Android/"/>
-    
-      <category term="EventBus" scheme="http://yoursite.com/categories/Android/EventBus/"/>
-    
-    
-      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
-    
-      <category term="EventBus" scheme="http://yoursite.com/tags/EventBus/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Android中Handler解析</title>
-    <link href="http://yoursite.com/Android-Handler-Analysis/"/>
-    <id>http://yoursite.com/Android-Handler-Analysis/</id>
-    <published>2015-12-31T16:00:00.000Z</published>
-    <updated>2018-07-16T09:48:49.167Z</updated>
-    
-    <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.</p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p><a href="https://blog.csdn.net/luoshengyang/article/details/8923485" target="_blank" rel="noopener">那两年炼就的Android内功修养</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6817933" target="_blank" rel="noopener">Android应用程序消息处理机制（Looper、Handler）分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6882903" target="_blank" rel="noopener">Android应用程序键盘（Keyboard）消息处理机制分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6905587" target="_blank" rel="noopener">Android应用程序线程消息循环模型分析</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;Ongoing,待完成，Please wait.&lt;/p&gt;
-&lt;h1 id=&quot;参考文献&quot;&gt;&lt;a href=&quot;#参考文献&quot; class=&quot;headerlink&quot; title=&quot;参考文献&quot;&gt;&lt;/a&gt;参考文献&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://blog.csdn.net
-      
-    
-    </summary>
-    
-      <category term="Android" scheme="http://yoursite.com/categories/Android/"/>
-    
-      <category term="Handler" scheme="http://yoursite.com/categories/Android/Handler/"/>
-    
-    
-      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
-    
-      <category term="Handler" scheme="http://yoursite.com/tags/Handler/"/>
     
   </entry>
   
@@ -853,6 +854,36 @@
   
   <entry>
     <title>Android中SurfaceFlinger解析</title>
+    <link href="http://yoursite.com/Android-SurfaceFlinger-Analysis/"/>
+    <id>http://yoursite.com/Android-SurfaceFlinger-Analysis/</id>
+    <published>2015-12-31T16:00:00.000Z</published>
+    <updated>2018-07-16T09:48:26.208Z</updated>
+    
+    <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.</p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p><a href="https://blog.csdn.net/luoshengyang/article/details/8923485" target="_blank" rel="noopener">那两年炼就的Android内功修养</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/7846923" target="_blank" rel="noopener">Android应用程序与SurfaceFlinger服务的关系概述和学习计划</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/7857163" target="_blank" rel="noopener">Android应用程序与SurfaceFlinger服务的连接过程分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/7867340" target="_blank" rel="noopener">Android应用程序与SurfaceFlinger服务之间的共享UI元数据（SharedClient）的创建过程分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/7884628" target="_blank" rel="noopener">Android应用程序请求SurfaceFlinger服务创建Surface的过程分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/7932268" target="_blank" rel="noopener">Android应用程序请求SurfaceFlinger服务渲染Surface的过程分析</a></p><p><a href="https://blog.csdn.net/luoshengyang/article/details/8010977" target="_blank" rel="noopener">Android系统Surface机制的SurfaceFlinger服务简要介绍和学习计划</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8022957" target="_blank" rel="noopener">Android系统Surface机制的SurfaceFlinger服务的启动过程分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8046659" target="_blank" rel="noopener">Android系统Surface机制的SurfaceFlinger服务对帧缓冲区（Frame Buffer）的管理分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8062945" target="_blank" rel="noopener">Android系统Surface机制的SurfaceFlinger服务的线程模型分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8079456" target="_blank" rel="noopener">Android系统Surface机制的SurfaceFlinger服务渲染应用程序UI的过程分析</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Ongoing,待完成，Please wait.&lt;/p&gt;
+&lt;h1 id=&quot;参考文献&quot;&gt;&lt;a href=&quot;#参考文献&quot; class=&quot;headerlink&quot; title=&quot;参考文献&quot;&gt;&lt;/a&gt;参考文献&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://blog.csdn.net
+      
+    
+    </summary>
+    
+      <category term="Android" scheme="http://yoursite.com/categories/Android/"/>
+    
+      <category term="SurfaceFlinger" scheme="http://yoursite.com/categories/Android/SurfaceFlinger/"/>
+    
+    
+      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
+    
+      <category term="SurfaceFlinger" scheme="http://yoursite.com/tags/SurfaceFlinger/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Android中SurfaceFlinger解析</title>
     <link href="http://yoursite.com/Android-Service-Analysis/"/>
     <id>http://yoursite.com/Android-Service-Analysis/</id>
     <published>2015-12-31T16:00:00.000Z</published>
@@ -882,13 +913,13 @@
   </entry>
   
   <entry>
-    <title>Android中启动过程解析</title>
-    <link href="http://yoursite.com/Android-Boot-Process/"/>
-    <id>http://yoursite.com/Android-Boot-Process/</id>
+    <title>Android中JNI与NDK</title>
+    <link href="http://yoursite.com/Android-JNI-NDK/"/>
+    <id>http://yoursite.com/Android-JNI-NDK/</id>
     <published>2015-12-31T16:00:00.000Z</published>
-    <updated>2018-07-16T09:49:08.993Z</updated>
+    <updated>2018-07-16T09:48:46.781Z</updated>
     
-    <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.</p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p><a href="https://blog.csdn.net/luoshengyang/article/details/8923485" target="_blank" rel="noopener">那两年炼就的Android内功修养</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6768304" target="_blank" rel="noopener">Android系统进程Zygote启动过程的源代码分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6747696" target="_blank" rel="noopener">Android应用程序进程启动过程的源代码分析</a></p><p>Android开机流程概述：<br><a href="https://blog.csdn.net/h655370/article/details/77727554" target="_blank" rel="noopener">https://blog.csdn.net/h655370/article/details/77727554</a></p>]]></content>
+    <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.</p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p><a href="https://blog.csdn.net/carson_ho/article/details/73250163" target="_blank" rel="noopener">Android：JNI 与 NDK到底是什么？</a></p>]]></content>
     
     <summary type="html">
     
@@ -902,44 +933,16 @@
     
       <category term="Android" scheme="http://yoursite.com/categories/Android/"/>
     
-      <category term="启动" scheme="http://yoursite.com/categories/Android/%E5%90%AF%E5%8A%A8/"/>
+      <category term="JNI" scheme="http://yoursite.com/categories/Android/JNI/"/>
+    
+      <category term="NDK" scheme="http://yoursite.com/categories/Android/JNI/NDK/"/>
     
     
       <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
     
-      <category term="Zegote" scheme="http://yoursite.com/tags/Zegote/"/>
+      <category term="JNI" scheme="http://yoursite.com/tags/JNI/"/>
     
-      <category term="Init" scheme="http://yoursite.com/tags/Init/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Android中SurfaceFlinger解析</title>
-    <link href="http://yoursite.com/Android-SurfaceFlinger-Analysis/"/>
-    <id>http://yoursite.com/Android-SurfaceFlinger-Analysis/</id>
-    <published>2015-12-31T16:00:00.000Z</published>
-    <updated>2018-07-16T09:48:26.208Z</updated>
-    
-    <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.</p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p><a href="https://blog.csdn.net/luoshengyang/article/details/8923485" target="_blank" rel="noopener">那两年炼就的Android内功修养</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/7846923" target="_blank" rel="noopener">Android应用程序与SurfaceFlinger服务的关系概述和学习计划</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/7857163" target="_blank" rel="noopener">Android应用程序与SurfaceFlinger服务的连接过程分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/7867340" target="_blank" rel="noopener">Android应用程序与SurfaceFlinger服务之间的共享UI元数据（SharedClient）的创建过程分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/7884628" target="_blank" rel="noopener">Android应用程序请求SurfaceFlinger服务创建Surface的过程分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/7932268" target="_blank" rel="noopener">Android应用程序请求SurfaceFlinger服务渲染Surface的过程分析</a></p><p><a href="https://blog.csdn.net/luoshengyang/article/details/8010977" target="_blank" rel="noopener">Android系统Surface机制的SurfaceFlinger服务简要介绍和学习计划</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8022957" target="_blank" rel="noopener">Android系统Surface机制的SurfaceFlinger服务的启动过程分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8046659" target="_blank" rel="noopener">Android系统Surface机制的SurfaceFlinger服务对帧缓冲区（Frame Buffer）的管理分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8062945" target="_blank" rel="noopener">Android系统Surface机制的SurfaceFlinger服务的线程模型分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8079456" target="_blank" rel="noopener">Android系统Surface机制的SurfaceFlinger服务渲染应用程序UI的过程分析</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;Ongoing,待完成，Please wait.&lt;/p&gt;
-&lt;h1 id=&quot;参考文献&quot;&gt;&lt;a href=&quot;#参考文献&quot; class=&quot;headerlink&quot; title=&quot;参考文献&quot;&gt;&lt;/a&gt;参考文献&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://blog.csdn.net
-      
-    
-    </summary>
-    
-      <category term="Android" scheme="http://yoursite.com/categories/Android/"/>
-    
-      <category term="SurfaceFlinger" scheme="http://yoursite.com/categories/Android/SurfaceFlinger/"/>
-    
-    
-      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
-    
-      <category term="SurfaceFlinger" scheme="http://yoursite.com/tags/SurfaceFlinger/"/>
+      <category term="NDK" scheme="http://yoursite.com/tags/NDK/"/>
     
   </entry>
   
@@ -973,13 +976,13 @@
   </entry>
   
   <entry>
-    <title>Android中Binder机制解析</title>
-    <link href="http://yoursite.com/Android-Binder-Analysis/"/>
-    <id>http://yoursite.com/Android-Binder-Analysis/</id>
+    <title>Android好文</title>
+    <link href="http://yoursite.com/Android-Article/"/>
+    <id>http://yoursite.com/Android-Article/</id>
     <published>2015-12-31T16:00:00.000Z</published>
-    <updated>2018-07-18T13:03:43.255Z</updated>
+    <updated>2018-07-19T11:41:30.847Z</updated>
     
-    <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.<br><!--    Module:    第一步:需要将这些文章都看几篇    第二步：形成自己的理解    第三步：可以按照非常有用的文章，重写写一遍    第四步：纠正或者延伸别人的文章--></p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><!--    阅读卡：    文章：    时间：--><p>老罗系列<br><a href="https://blog.csdn.net/luoshengyang/article/details/8923485" target="_blank" rel="noopener">那两年炼就的Android内功修养</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6618363" target="_blank" rel="noopener">Android进程间通信（IPC）机制Binder简要介绍和学习计划</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6621566" target="_blank" rel="noopener">浅谈Service Manager成为Android进程间通信（IPC）机制Binder守护进程之路</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6627260" target="_blank" rel="noopener">浅谈Android系统进程间通信（IPC）机制Binder中的Server和Client获得Service Manager接口之路</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6629298" target="_blank" rel="noopener">Android系统进程间通信（IPC）机制Binder中的Server启动过程源代码分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6633311" target="_blank" rel="noopener">Android系统进程间通信（IPC）机制Binder中的Client获得Server远程接口过程源代码分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6642463" target="_blank" rel="noopener">Android系统进程间通信Binder机制在应用程序框架层的Java接口源代码分析</a></p><p><a href="https://blog.csdn.net/qian520ao/article/details/78089877" target="_blank" rel="noopener">Android Binder之应用层总结与分析</a><br><a href="https://cloud.tencent.com/developer/article/1005763" target="_blank" rel="noopener">Binder 总体架构及相关代码浅析</a><br><a href="http://weishu.me/2016/01/12/binder-index-for-newer/" target="_blank" rel="noopener">Binder学习指南</a><br><a href="https://mp.weixin.qq.com/s?__biz=MzA5MzI3NjE2MA==&amp;mid=2650241680&amp;idx=1&amp;sn=14648a37ff1e7844e33cd548b9ec5a71&amp;chksm=88638bffbf1402e9b6dbe6b186bc619a341fc5fe0fd2aefd4a7dd3ac70d0539573c48863de0f#rd" target="_blank" rel="noopener">带你一起剖析Android AIDL跨进程通信的实现原理</a></p><p>小米系统工程师–Gityuan 系列<br><a href="http://gityuan.com/2015/10/31/binder-prepare/" target="_blank" rel="noopener">Binder系列—开篇</a><br><a href="http://gityuan.com/2015/11/01/binder-driver/" target="_blank" rel="noopener">Binder系列1—Binder Driver初探</a><br><a href="http://gityuan.com/2015/11/02/binder-driver-2/" target="_blank" rel="noopener">Binder系列2—Binder Driver再探</a><br><a href="http://gityuan.com/2015/11/07/binder-start-sm/" target="_blank" rel="noopener">Binder系列3—启动ServiceManager</a><br><a href="http://gityuan.com/2015/11/08/binder-get-sm/" target="_blank" rel="noopener">Binder系列4—获取ServiceManager</a><br><a href="http://gityuan.com/2015/11/14/binder-add-service/" target="_blank" rel="noopener">Binder系列5—注册服务(addService)</a><br><a href="http://gityuan.com/2015/11/15/binder-get-service/" target="_blank" rel="noopener">Binder系列6—获取服务(getService)</a><br><a href="http://gityuan.com/2015/11/21/binder-framework/" target="_blank" rel="noopener">Binder系列7—framework层分析</a><br><a href="http://gityuan.com/2015/11/22/binder-use/" target="_blank" rel="noopener">Binder系列8—如何使用Binder</a><br><a href="http://gityuan.com/2015/11/23/binder-aidl/" target="_blank" rel="noopener">Binder系列9—如何使用AIDL</a><br><a href="http://gityuan.com/2015/11/28/binder-summary/" target="_blank" rel="noopener">Binder系列10—总结</a></p>]]></content>
+    <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.<br><!--    Module:    第一步:需要将这些文章都看几篇    第二步：形成自己的理解    第三步：可以按照非常有用的文章，重写写一遍    第四步：纠正或者延伸别人的文章--></p><h1 id="重点关注"><a href="#重点关注" class="headerlink" title="重点关注"></a>重点关注</h1><p><a href="https://blog.csdn.net/innost" target="_blank" rel="noopener">深入理解Android卷III相关</a></p><h1 id="杂"><a href="#杂" class="headerlink" title="杂"></a>杂</h1><p>看过的比较好的文章：<br><a href="https://www.jianshu.com/p/a4b8e4c5d9b0" target="_blank" rel="noopener">Android 目前最稳定和高效的UI适配方案</a><br><a href="https://xudeveloper.github.io/2018/06/18/Android%20AccessibilityService%E6%9C%BA%E5%88%B6%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90/" target="_blank" rel="noopener">Android AccessibilityService机制源码解析</a><br><a href="https://droidyue.com/blog/2014/11/08/understanding-garbage-collection-output-messages-in-android/" target="_blank" rel="noopener">译文：理解Android中垃圾回收日志信息</a><br><a href="http://www.importnew.com/13107.html" target="_blank" rel="noopener">从Java代码到字节码（1）</a><br><a href="http://www.importnew.com/29076.html" target="_blank" rel="noopener">细说 Java 中的字符和字符串（ 二 ）</a><br><a href="https://snowdream86.gitbooks.io/github-cheat-sheet/content/zh/index.html" target="_blank" rel="noopener">GitHub秘籍</a><br><a href="https://blog.csdn.net/androidsecurity/article/details/41207959" target="_blank" rel="noopener">“黑暗潜伏者” – 手机病毒新型攻击方式</a><br><a href="http://blog.jobbole.com/30940/" target="_blank" rel="noopener">缓存、缓存算法和缓存框架简介</a><br><a href="http://duanqz.github.io/2015-08-30-Intro-to-automerger" target="_blank" rel="noopener">AOSP代码管理</a><br><a href="https://blog.csdn.net/t12x3456/article/details/39958755" target="_blank" rel="noopener">Android 使用动态加载框架DL进行插件化开发</a><br><a href="https://blog.csdn.net/innost" target="_blank" rel="noopener">深入理解Android卷III相关</a><br><a href="https://blog.csdn.net/qq_23547831/article/details/51487978" target="_blank" rel="noopener">Android源码解析（二十八）–&gt;电源开关机按键事件流程</a>  有很多的流程分析的文章</p><h1 id="优秀的网站"><a href="#优秀的网站" class="headerlink" title="优秀的网站"></a>优秀的网站</h1><p><a href="https://github.com/AweiLoveAndroid/CommonDevKnowledge" target="_blank" rel="noopener">常用的Android开发的一些技能点汇集</a><br><a href="https://github.com/DanluTeam/ColdStart" target="_blank" rel="noopener">awesome-android-performance</a> 性能优化<br><a href="https://github.com/EricChows/free-programming-books/blob/master/free-programming-books-zh.md" target="_blank" rel="noopener">免费的编程书籍</a><br><a href="https://github.com/EricChows/Worth-Reading-the-Android-technical-articles" target="_blank" rel="noopener">Android优质资源合集</a><br><a href="http://wiki.jikexueyuan.com/project/deep-android-v2/activity.html" target="_blank" rel="noopener">极客学院-深入理解 Android 卷II</a><br>有SystemServer/PackageManagerService/PowerManagerService/ActivityManagerService/ContentProvider等讲解<br><a href="http://top.jobbole.com/17733/" target="_blank" rel="noopener">每个程序员至少阅读两次的 10 篇技术论文</a></p><h1 id="优秀的期刊"><a href="#优秀的期刊" class="headerlink" title="优秀的期刊"></a>优秀的期刊</h1><p><a href="https://www.androidweekly.cn/" target="_blank" rel="noopener">Android开发技术周刊</a><br><a href="http://www.androidblog.cn/" target="_blank" rel="noopener">Android博客周刊</a></p><h1 id="重点阅读文章"><a href="#重点阅读文章" class="headerlink" title="重点阅读文章"></a>重点阅读文章</h1><p><a href="https://blog.csdn.net/luoshengyang/article/details/8923485" target="_blank" rel="noopener">罗升阳–那两年炼就的Android内功修养</a><br><a href="https://github.com/LRH1993/android_interview" target="_blank" rel="noopener">Android校招面试指南</a><br><a href="https://github.com/helen-x/AndroidInterview" target="_blank" rel="noopener">Android面试资料</a><br><a href="https://github.com/open-android/Android" target="_blank" rel="noopener">阅读里面的Android面试题</a><br><a href="https://github.com/tangqi92/Android-Tips" target="_blank" rel="noopener">Android踩坑历史</a><br><a href="https://github.com/lizhangqu/CoreLink" target="_blank" rel="noopener">Android 日常积累</a><br><a href="https://github.com/stormzhang/android-interview-questions-cn" target="_blank" rel="noopener">Android面试指南</a><br><a href="https://github.com/Juude/droidReverse" target="_blank" rel="noopener">Android一些重要知识点整理</a><br><a href="https://github.com/AweiLoveAndroid/CommonDevKnowledge" target="_blank" rel="noopener">常用的Android开发的一些技能点汇集</a></p><p><a href="https://blog.csdn.net/china_style/article/details/79280137" target="_blank" rel="noopener">Android 8.0后台运行策略学习</a><br><a href="https://mp.weixin.qq.com/s?__biz=MzIwMzYwMTk1NA==&amp;mid=2247489819&amp;idx=1&amp;sn=a209e3ab126499cb91d6a79ae4cc1fe3&amp;chksm=96cdb856a1ba31408305784a58ec6333833efa28e66ddb5ded160496ff667c824a71075b27a9#rd" target="_blank" rel="noopener">Android面试大纲（集合）</a><br><a href="https://www.kancloud.cn/alex_wsc/androids/477708" target="_blank" rel="noopener">老罗的Android之旅（总结）</a></p><h1 id="优秀的文章"><a href="#优秀的文章" class="headerlink" title="优秀的文章"></a>优秀的文章</h1><p><a href="https://github.com/AweiLoveAndroid/CommonDevKnowledge/blob/master/github_README/README%E6%96%87%E6%A1%A3%E7%9A%84%E8%A7%84%E8%8C%83%E5%86%99%E6%B3%95.md" target="_blank" rel="noopener">README文档的规范写法</a><br><a href="https://github.com/AweiLoveAndroid/CommonDevKnowledge/blob/master/interview/summary.md" target="_blank" rel="noopener">国内一线互联网公司面试题汇总</a><br><a href="https://mp.weixin.qq.com/s?__biz=MzIyMjQ0MTU0NA==&amp;mid=2247484617&amp;idx=1&amp;sn=3734e643d241ac9615424dd44462ee2d&amp;chksm=e82c3deedf5bb4f82e7be0823739774a0a2cf8372284c8409471c2752fea1f367ca3f6857795&amp;mpshare=1&amp;scene=23&amp;srcid=1128DKotEvTe4dheaTextbqp#rd" target="_blank" rel="noopener">阿里、腾讯、百度、华为、京东、搜狗和滴滴最新面试题汇集</a><br><a href="https://zhuanlan.zhihu.com/p/30016683" target="_blank" rel="noopener">2017下半年，一二线互联网公司Android面试题汇总</a><br><a href="https://zhuanlan.zhihu.com/p/26327485" target="_blank" rel="noopener">2017 年初、阿里、腾讯、百度、华为、京东、搜狗和滴滴面试题汇集（更新篇）</a>  带答案<br><a href="https://github.com/LRH1993/android_interview" target="_blank" rel="noopener">Android校招面试指南</a><br><a href="http://www.jackywang.tech/AndroidInterview-Q-A/" target="_blank" rel="noopener">The top Internet companies android interview questions and answers</a><br><a href="https://crossoverjie.top/2018/06/21/personal/Interview-experience/" target="_blank" rel="noopener">一个学渣的阿里之路</a><br><a href="https://github.com/DanluTeam/ColdStart" target="_blank" rel="noopener">App 启动优化</a><br><a href="http://zmywly8866.github.io/2016/05/04/android-application-leak-analysis-and-fix.html" target="_blank" rel="noopener">Android应用内存泄露分析、改善经验总结</a><br><a href="http://wiki.jikexueyuan.com/project/deep-android-v2/packagemanagerservice.html" target="_blank" rel="noopener">第4章  深入理解 PackageManagerService</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8923485" target="_blank" rel="noopener">罗升阳–那两年炼就的Android内功修养</a> 老罗博客的总纲<br>需要把 <a href="https://github.com/EricChows/Worth-Reading-the-Android-technical-articles" target="_blank" rel="noopener">https://github.com/EricChows/Worth-Reading-the-Android-technical-articles</a> 这里面的优秀文章一篇一篇的看完。<br><a href="https://github.com/helen-x/AndroidInterview" target="_blank" rel="noopener">Android面试资料</a></p><h1 id="Android开发工具"><a href="#Android开发工具" class="headerlink" title="Android开发工具"></a>Android开发工具</h1><p><a href="http://www.androiddevtools.cn/" target="_blank" rel="noopener">AndroidDevTools</a><br><a href="https://github.com/inferjay/AndroidDevTools/" target="_blank" rel="noopener">AndroidDevTools(Github)</a><br><a href="http://androidblog.cn/tools/" target="_blank" rel="noopener">Android开发工具汇总</a><br><a href="http://editor.method.ac" target="_blank" rel="noopener">Method draw 矢量图 在线查看工具</a></p><h1 id="Android官方文档-中文版"><a href="#Android官方文档-中文版" class="headerlink" title="Android官方文档 中文版"></a>Android官方文档 中文版</h1><p><a href="http://hukai.me/android-training-course-in-chinese/index.html" target="_blank" rel="noopener">AndroidTraning中文版</a></p><h1 id="Android-精选资源"><a href="#Android-精选资源" class="headerlink" title="Android 精选资源"></a>Android 精选资源</h1><p><a href="https://github.com/android-cn/android-open-project-analysis" target="_blank" rel="noopener">Android 开源项目源码解析</a><br><a href="https://github.com/amitshekhariitbhu/awesome-android-complete-reference" target="_blank" rel="noopener">awesome-android-complete-reference</a><br><a href="https://github.com/LittleFriendsGroup/AndroidSdkSourceAnalysis" target="_blank" rel="noopener">Android源码解析</a> 一帮Android痴迷者，自己对Android源码进行解析，并共享<br><a href="https://github.com/zmywly8866/Worth-Reading-the-Android-technical-articles" target="_blank" rel="noopener">Android值得阅读的技术文章</a></p><p><strong> 免费的编程中文书籍索引 </strong><br><a href="http://siberiawolf.com/free_programming/index.html?utm_source=androidweekly.io&amp;utm_medium=website" target="_blank" rel="noopener">http://siberiawolf.com/free_programming/index.html?utm_source=androidweekly.io&amp;utm_medium=website</a><br><a href="https://github.com/EricChows/free-programming-books/blob/master/free-programming-books-zh.md" target="_blank" rel="noopener">https://github.com/EricChows/free-programming-books/blob/master/free-programming-books-zh.md</a></p><h1 id="Android-性能相关"><a href="#Android-性能相关" class="headerlink" title="Android 性能相关"></a>Android 性能相关</h1><p><a href="https://mp.weixin.qq.com/s/A8NZbHlU1J2CsoNhTFX8Dg?utm_source=androidweekly.io&amp;utm_medium=website" target="_blank" rel="noopener">Android性能优化来龙去脉总结</a><br>总结： 大概的讲述了性能优化的类型和方式<br><a href="https://github.com/DanluTeam/ColdStart?utm_source=androidweekly.io&amp;utm_medium=website" target="_blank" rel="noopener">App 启动优化</a><br>总结：<br><a href="https://github.com/Juude/awesome-android-performance" target="_blank" rel="noopener">Android性能优化视频，文档以及工具</a><br><a href="https://blog.csdn.net/innost/article/details/9008691" target="_blank" rel="noopener">Android系统性能调优工具介绍</a><br><a href="http://blog.jobbole.com/78995" target="_blank" rel="noopener">正确使用Android性能分析工具——TraceView</a><br><a href="http://www.codeceo.com/article/android-memory-manage.html" target="_blank" rel="noopener">每个Android开发者必须知道的内存管理知识</a></p><h1 id="Android-内存相关"><a href="#Android-内存相关" class="headerlink" title="Android 内存相关"></a>Android 内存相关</h1><p><a href="http://www.cnblogs.com/kingOfPointer/archive/2012/12/21/2828018.html" target="_blank" rel="noopener">android 开发如何做内存优化</a><br><a href="https://www.cnblogs.com/ThinkVenus/p/6805495.html" target="_blank" rel="noopener">什么是java OOM？如何分析及解决oom问题？</a><br><a href="https://www.cnblogs.com/kongzhongqijing/articles/7283599.html" target="_blank" rel="noopener">常见OOM现象</a><br><a href="https://blog.csdn.net/a396901990/article/details/38904543" target="_blank" rel="noopener">ANDROID内存优化(大汇总——全)</a><br><a href="http://blog.csdn.net/imain/article/details/8560986" target="_blank" rel="noopener">Android内存优化</a><br><a href="http://blog.csdn.net/awangyunke/article/details/20380719" target="_blank" rel="noopener">Android 内存优化</a><br><a href="http://www.cnblogs.com/zyw-205520/archive/2013/02/17/2914190.htm" target="_blank" rel="noopener">关于android性能，内存优化</a><br><a href="http://www.360doc.com/content/11/0911/15/18042_147476260.shtml" target="_blank" rel="noopener">Java垃圾回收原理</a><br><a href="http://www.360doc.com/content/11/0911/16/18042_147492404.shtml" target="_blank" rel="noopener">JVM垃圾回收（GC）原理</a></p><h1 id="Android-稳定性相关"><a href="#Android-稳定性相关" class="headerlink" title="Android 稳定性相关"></a>Android 稳定性相关</h1><h1 id="Android-功耗相关"><a href="#Android-功耗相关" class="headerlink" title="Android 功耗相关"></a>Android 功耗相关</h1><h1 id="Android-Flutter-相关"><a href="#Android-Flutter-相关" class="headerlink" title="Android Flutter 相关"></a>Android Flutter 相关</h1><p><a href="https://mp.weixin.qq.com/s/vlHt8jxbdzBqJZDobpsFVw?utm_source=androidweekly.io&amp;utm_medium=website" target="_blank" rel="noopener">深入理解flutter的编译原理与优化</a></p><h1 id="Android-虚拟机相关"><a href="#Android-虚拟机相关" class="headerlink" title="Android 虚拟机相关"></a>Android 虚拟机相关</h1><h1 id="Android-AIDL-相关"><a href="#Android-AIDL-相关" class="headerlink" title="Android AIDL 相关"></a>Android AIDL 相关</h1><h1 id="Android-升级相关"><a href="#Android-升级相关" class="headerlink" title="Android 升级相关"></a>Android 升级相关</h1><h1 id="Android-Java-基础"><a href="#Android-Java-基础" class="headerlink" title="Android/Java 基础"></a>Android/Java 基础</h1><h1 id="线程、多线程和线程池"><a href="#线程、多线程和线程池" class="headerlink" title="线程、多线程和线程池"></a>线程、多线程和线程池</h1><h1 id="并发编程"><a href="#并发编程" class="headerlink" title="并发编程"></a>并发编程</h1><p>  Android方面，并发编程用的比较少，需要好好的研究一下</p><h1 id="数据结构相关"><a href="#数据结构相关" class="headerlink" title="数据结构相关"></a>数据结构相关</h1><h1 id="工具使用："><a href="#工具使用：" class="headerlink" title="工具使用："></a>工具使用：</h1><p><a href="https://blog.csdn.net/maosidiaoxian/article/details/44992655" target="_blank" rel="noopener">打造你的开发神器——介绍Android Studio上的几个插件</a><br><a href="https://blog.csdn.net/maosidiaoxian/article/category/2380095" target="_blank" rel="noopener">Android 官方技术文档翻译</a><br><a href="http://duanqz.github.io/2015-05-21-Intro-adb" target="_blank" rel="noopener">adb 介绍</a><br><a href="http://duanqz.github.io/2015-07-19-Intro-to-dumpsys" target="_blank" rel="noopener">dumpsys 介绍</a><br><a href="http://duanqz.github.io/2015-06-25-Intro-to-Repo" target="_blank" rel="noopener">repo 介绍</a><br><a href="http://duanqz.github.io/2016-01-06-Intro-Google-Mobile-Service" target="_blank" rel="noopener">GMS 介绍</a></p><h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><p><a href="https://mp.weixin.qq.com/s/cXa6Rwiet5gN8bSe-h4QNw" target="_blank" rel="noopener">通过Google挖掘细分市场的一个案例</a></p><p><a href="https://36kr.com/p/5107620.html" target="_blank" rel="noopener">Facebook PM谈顶级产品经理具备的4个特征</a></p><p><a href="https://mp.weixin.qq.com/s/wqGgaH6EhSOqjj1SyJ4U7w" target="_blank" rel="noopener">陈春花：具有战略思维而非竞争理念</a></p>]]></content>
     
     <summary type="html">
     
@@ -999,12 +1002,42 @@
     
       <category term="Android" scheme="http://yoursite.com/categories/Android/"/>
     
-      <category term="Binder" scheme="http://yoursite.com/categories/Android/Binder/"/>
+      <category term="Article" scheme="http://yoursite.com/categories/Android/Article/"/>
     
     
       <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
     
-      <category term="Binder" scheme="http://yoursite.com/tags/Binder/"/>
+      <category term="Article" scheme="http://yoursite.com/tags/Article/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Android中Handler解析</title>
+    <link href="http://yoursite.com/Android-Handler-Analysis/"/>
+    <id>http://yoursite.com/Android-Handler-Analysis/</id>
+    <published>2015-12-31T16:00:00.000Z</published>
+    <updated>2018-07-16T09:48:49.167Z</updated>
+    
+    <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.</p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p><a href="https://blog.csdn.net/luoshengyang/article/details/8923485" target="_blank" rel="noopener">那两年炼就的Android内功修养</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6817933" target="_blank" rel="noopener">Android应用程序消息处理机制（Looper、Handler）分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6882903" target="_blank" rel="noopener">Android应用程序键盘（Keyboard）消息处理机制分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6905587" target="_blank" rel="noopener">Android应用程序线程消息循环模型分析</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Ongoing,待完成，Please wait.&lt;/p&gt;
+&lt;h1 id=&quot;参考文献&quot;&gt;&lt;a href=&quot;#参考文献&quot; class=&quot;headerlink&quot; title=&quot;参考文献&quot;&gt;&lt;/a&gt;参考文献&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://blog.csdn.net
+      
+    
+    </summary>
+    
+      <category term="Android" scheme="http://yoursite.com/categories/Android/"/>
+    
+      <category term="Handler" scheme="http://yoursite.com/categories/Android/Handler/"/>
+    
+    
+      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
+    
+      <category term="Handler" scheme="http://yoursite.com/tags/Handler/"/>
     
   </entry>
   
@@ -1047,83 +1080,13 @@
   </entry>
   
   <entry>
-    <title>Android中JNI与NDK</title>
-    <link href="http://yoursite.com/Android-JNI-NDK/"/>
-    <id>http://yoursite.com/Android-JNI-NDK/</id>
+    <title>Android中EventBus解析</title>
+    <link href="http://yoursite.com/Android-EventBus/"/>
+    <id>http://yoursite.com/Android-EventBus/</id>
     <published>2015-12-31T16:00:00.000Z</published>
-    <updated>2018-07-16T09:48:46.781Z</updated>
+    <updated>2018-07-18T13:38:26.810Z</updated>
     
-    <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.</p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p><a href="https://blog.csdn.net/carson_ho/article/details/73250163" target="_blank" rel="noopener">Android：JNI 与 NDK到底是什么？</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;Ongoing,待完成，Please wait.&lt;/p&gt;
-&lt;h1 id=&quot;参考文献&quot;&gt;&lt;a href=&quot;#参考文献&quot; class=&quot;headerlink&quot; title=&quot;参考文献&quot;&gt;&lt;/a&gt;参考文献&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://blog.csdn.net
-      
-    
-    </summary>
-    
-      <category term="Android" scheme="http://yoursite.com/categories/Android/"/>
-    
-      <category term="JNI" scheme="http://yoursite.com/categories/Android/JNI/"/>
-    
-      <category term="NDK" scheme="http://yoursite.com/categories/Android/JNI/NDK/"/>
-    
-    
-      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
-    
-      <category term="JNI" scheme="http://yoursite.com/tags/JNI/"/>
-    
-      <category term="NDK" scheme="http://yoursite.com/tags/NDK/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Android中按键事件传递分析</title>
-    <link href="http://yoursite.com/Android-KeyEvent-Analysis/"/>
-    <id>http://yoursite.com/Android-KeyEvent-Analysis/</id>
-    <published>2015-12-31T16:00:00.000Z</published>
-    <updated>2018-07-20T00:57:20.922Z</updated>
-    
-    <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.<br><!--    Module:    第一步:需要将这些文章都看几篇    第二步：形成自己的理解    第三步：可以按照非常有用的文章，重写写一遍    第四步：纠正或者延伸别人的文章--></p><p>Framework Native模块代码</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">frameworks/base/services/core/jni/</span><br><span class="line">├── com_android_server_input_InputManagerService.cpp</span><br><span class="line">├── com_android_server_input_InputApplicationHandle.h</span><br><span class="line">├── com_android_server_input_InputApplicationHandle.c</span><br><span class="line">├── com_android_server_input_InputWindowHandle.h</span><br><span class="line">├── com_android_server_input_InputWindowHandle.c</span><br><span class="line">└──</span><br></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">frameworks/native/include/android</span><br><span class="line">├── input.h</span><br><span class="line">└── keycodes.h</span><br></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">frameworks/native/include/input</span><br><span class="line">├── DisplayViewport.h</span><br><span class="line">├── IInputFlinger.h</span><br><span class="line">├── InputDevice.h</span><br><span class="line">├── InputEventLabels.h</span><br><span class="line">├── Input.h</span><br><span class="line">├── InputTransport.h</span><br><span class="line">├── Keyboard.h</span><br><span class="line">├── KeyCharacterMap.h</span><br><span class="line">├── KeyLayoutMap.h</span><br><span class="line">├── VelocityControl.h</span><br><span class="line">├── VelocityTracker.h</span><br><span class="line">└── VirtualKeyMap.h</span><br></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">frameworks/native/services/inputflinger</span><br><span class="line">├── Android.bp</span><br><span class="line">├── EventHub.cpp</span><br><span class="line">├── EventHub.h</span><br><span class="line">├── host</span><br><span class="line">│   ├── Android.bp</span><br><span class="line">│   ├── InputDriver.cpp</span><br><span class="line">│   ├── InputDriver.h</span><br><span class="line">│   ├── InputFlinger.cpp</span><br><span class="line">│   ├── InputFlinger.h</span><br><span class="line">│   ├── inputflinger.rc</span><br><span class="line">│   ├── InputHost.cpp</span><br><span class="line">│   ├── InputHost.h</span><br><span class="line">│   └── main.cpp</span><br><span class="line">├── InputApplication.cpp</span><br><span class="line">├── InputApplication.h</span><br><span class="line">├── InputDispatcher.cpp</span><br><span class="line">├── InputDispatcher.h</span><br><span class="line">├── InputListener.cpp</span><br><span class="line">├── InputListener.h</span><br><span class="line">├── InputManager.cpp</span><br><span class="line">├── InputManager.h</span><br><span class="line">├── InputReader.cpp</span><br><span class="line">├── InputReader.h</span><br><span class="line">├── InputWindow.cpp</span><br><span class="line">├── InputWindow.h</span><br><span class="line">├── PointerControllerInterface.h</span><br><span class="line">└── tests</span><br><span class="line">    ├── Android.bp</span><br><span class="line">    ├── InputDispatcher_test.cpp</span><br><span class="line">    └── InputReader_test.cpp</span><br></pre></td></tr></table></figure><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><!--    阅读卡：    文章：Android按键事件传递流程(一)    时间：2018/07/19--><p>[1095/1219] including ./vendor/qcom/proprietary/diag/Android.mk …<br>build/core/binary.mk:1522: error: vendor/qcom/proprietary/diag/diag_ep/Android.mk: diag_ep: C_INCLUDES must be under the source or output directories: /diag/diag_ep /diag/include /diag/src.</p><p>用户态</p><p>这两篇文章关注了很多的代码细节：<br><a href="https://blog.csdn.net/w690333243/article/details/77493981" target="_blank" rel="noopener">Android按键事件传递流程(一)</a><br><a href="https://blog.csdn.net/qidabing/article/details/74073515" target="_blank" rel="noopener">Android按键事件传递流程(二)</a></p><p>将Native层的Input子系统，起到承上启下的功能.连接Kernel 和 Fwk<br><a href="https://www.cnblogs.com/haiming/p/3318614.html" target="_blank" rel="noopener">Android Framework——之Input子系统</a></p><p>内核态<br><a href="https://www.jianshu.com/p/4f59efee9cd8" target="_blank" rel="noopener">Android物理按键输入事件(一)</a><br><a href="https://www.jianshu.com/p/3fe41b6d0c92" target="_blank" rel="noopener">Android物理输入事件(二)</a><br><a href="https://blog.csdn.net/u013308744/article/details/49274069" target="_blank" rel="noopener">android kl 文件的作用</a></p><p><a href="https://blog.csdn.net/woliuyunyicai/article/details/48577617" target="_blank" rel="noopener">View机制深入学习（三） View中的消息传递及InputManagerService</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;Ongoing,待完成，Please wait.&lt;br&gt;&lt;!--
-    Module:
-    第一步:需要将这些文章都看几篇
-    第二步：形成自己的理解
-    第三步：可以按照非常有用的文章，重写写一遍
-    第四步：纠正或者延伸别人的文章
---&gt;&lt;/p&gt;
-&lt;p
-      
-    
-    </summary>
-    
-      <category term="Android" scheme="http://yoursite.com/categories/Android/"/>
-    
-      <category term="KeyEvent" scheme="http://yoursite.com/categories/Android/KeyEvent/"/>
-    
-    
-      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
-    
-      <category term="KeyEvent" scheme="http://yoursite.com/tags/KeyEvent/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Android好文</title>
-    <link href="http://yoursite.com/Android-Article/"/>
-    <id>http://yoursite.com/Android-Article/</id>
-    <published>2015-12-31T16:00:00.000Z</published>
-    <updated>2018-07-19T11:41:30.847Z</updated>
-    
-    <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.<br><!--    Module:    第一步:需要将这些文章都看几篇    第二步：形成自己的理解    第三步：可以按照非常有用的文章，重写写一遍    第四步：纠正或者延伸别人的文章--></p><h1 id="重点关注"><a href="#重点关注" class="headerlink" title="重点关注"></a>重点关注</h1><p><a href="https://blog.csdn.net/innost" target="_blank" rel="noopener">深入理解Android卷III相关</a></p><h1 id="杂"><a href="#杂" class="headerlink" title="杂"></a>杂</h1><p>看过的比较好的文章：<br><a href="https://www.jianshu.com/p/a4b8e4c5d9b0" target="_blank" rel="noopener">Android 目前最稳定和高效的UI适配方案</a><br><a href="https://xudeveloper.github.io/2018/06/18/Android%20AccessibilityService%E6%9C%BA%E5%88%B6%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90/" target="_blank" rel="noopener">Android AccessibilityService机制源码解析</a><br><a href="https://droidyue.com/blog/2014/11/08/understanding-garbage-collection-output-messages-in-android/" target="_blank" rel="noopener">译文：理解Android中垃圾回收日志信息</a><br><a href="http://www.importnew.com/13107.html" target="_blank" rel="noopener">从Java代码到字节码（1）</a><br><a href="http://www.importnew.com/29076.html" target="_blank" rel="noopener">细说 Java 中的字符和字符串（ 二 ）</a><br><a href="https://snowdream86.gitbooks.io/github-cheat-sheet/content/zh/index.html" target="_blank" rel="noopener">GitHub秘籍</a><br><a href="https://blog.csdn.net/androidsecurity/article/details/41207959" target="_blank" rel="noopener">“黑暗潜伏者” – 手机病毒新型攻击方式</a><br><a href="http://blog.jobbole.com/30940/" target="_blank" rel="noopener">缓存、缓存算法和缓存框架简介</a><br><a href="http://duanqz.github.io/2015-08-30-Intro-to-automerger" target="_blank" rel="noopener">AOSP代码管理</a><br><a href="https://blog.csdn.net/t12x3456/article/details/39958755" target="_blank" rel="noopener">Android 使用动态加载框架DL进行插件化开发</a><br><a href="https://blog.csdn.net/innost" target="_blank" rel="noopener">深入理解Android卷III相关</a><br><a href="https://blog.csdn.net/qq_23547831/article/details/51487978" target="_blank" rel="noopener">Android源码解析（二十八）–&gt;电源开关机按键事件流程</a>  有很多的流程分析的文章</p><h1 id="优秀的网站"><a href="#优秀的网站" class="headerlink" title="优秀的网站"></a>优秀的网站</h1><p><a href="https://github.com/AweiLoveAndroid/CommonDevKnowledge" target="_blank" rel="noopener">常用的Android开发的一些技能点汇集</a><br><a href="https://github.com/DanluTeam/ColdStart" target="_blank" rel="noopener">awesome-android-performance</a> 性能优化<br><a href="https://github.com/EricChows/free-programming-books/blob/master/free-programming-books-zh.md" target="_blank" rel="noopener">免费的编程书籍</a><br><a href="https://github.com/EricChows/Worth-Reading-the-Android-technical-articles" target="_blank" rel="noopener">Android优质资源合集</a><br><a href="http://wiki.jikexueyuan.com/project/deep-android-v2/activity.html" target="_blank" rel="noopener">极客学院-深入理解 Android 卷II</a><br>有SystemServer/PackageManagerService/PowerManagerService/ActivityManagerService/ContentProvider等讲解<br><a href="http://top.jobbole.com/17733/" target="_blank" rel="noopener">每个程序员至少阅读两次的 10 篇技术论文</a></p><h1 id="优秀的期刊"><a href="#优秀的期刊" class="headerlink" title="优秀的期刊"></a>优秀的期刊</h1><p><a href="https://www.androidweekly.cn/" target="_blank" rel="noopener">Android开发技术周刊</a><br><a href="http://www.androidblog.cn/" target="_blank" rel="noopener">Android博客周刊</a></p><h1 id="重点阅读文章"><a href="#重点阅读文章" class="headerlink" title="重点阅读文章"></a>重点阅读文章</h1><p><a href="https://blog.csdn.net/luoshengyang/article/details/8923485" target="_blank" rel="noopener">罗升阳–那两年炼就的Android内功修养</a><br><a href="https://github.com/LRH1993/android_interview" target="_blank" rel="noopener">Android校招面试指南</a><br><a href="https://github.com/helen-x/AndroidInterview" target="_blank" rel="noopener">Android面试资料</a><br><a href="https://github.com/open-android/Android" target="_blank" rel="noopener">阅读里面的Android面试题</a><br><a href="https://github.com/tangqi92/Android-Tips" target="_blank" rel="noopener">Android踩坑历史</a><br><a href="https://github.com/lizhangqu/CoreLink" target="_blank" rel="noopener">Android 日常积累</a><br><a href="https://github.com/stormzhang/android-interview-questions-cn" target="_blank" rel="noopener">Android面试指南</a><br><a href="https://github.com/Juude/droidReverse" target="_blank" rel="noopener">Android一些重要知识点整理</a><br><a href="https://github.com/AweiLoveAndroid/CommonDevKnowledge" target="_blank" rel="noopener">常用的Android开发的一些技能点汇集</a></p><p><a href="https://blog.csdn.net/china_style/article/details/79280137" target="_blank" rel="noopener">Android 8.0后台运行策略学习</a><br><a href="https://mp.weixin.qq.com/s?__biz=MzIwMzYwMTk1NA==&amp;mid=2247489819&amp;idx=1&amp;sn=a209e3ab126499cb91d6a79ae4cc1fe3&amp;chksm=96cdb856a1ba31408305784a58ec6333833efa28e66ddb5ded160496ff667c824a71075b27a9#rd" target="_blank" rel="noopener">Android面试大纲（集合）</a><br><a href="https://www.kancloud.cn/alex_wsc/androids/477708" target="_blank" rel="noopener">老罗的Android之旅（总结）</a></p><h1 id="优秀的文章"><a href="#优秀的文章" class="headerlink" title="优秀的文章"></a>优秀的文章</h1><p><a href="https://github.com/AweiLoveAndroid/CommonDevKnowledge/blob/master/github_README/README%E6%96%87%E6%A1%A3%E7%9A%84%E8%A7%84%E8%8C%83%E5%86%99%E6%B3%95.md" target="_blank" rel="noopener">README文档的规范写法</a><br><a href="https://github.com/AweiLoveAndroid/CommonDevKnowledge/blob/master/interview/summary.md" target="_blank" rel="noopener">国内一线互联网公司面试题汇总</a><br><a href="https://mp.weixin.qq.com/s?__biz=MzIyMjQ0MTU0NA==&amp;mid=2247484617&amp;idx=1&amp;sn=3734e643d241ac9615424dd44462ee2d&amp;chksm=e82c3deedf5bb4f82e7be0823739774a0a2cf8372284c8409471c2752fea1f367ca3f6857795&amp;mpshare=1&amp;scene=23&amp;srcid=1128DKotEvTe4dheaTextbqp#rd" target="_blank" rel="noopener">阿里、腾讯、百度、华为、京东、搜狗和滴滴最新面试题汇集</a><br><a href="https://zhuanlan.zhihu.com/p/30016683" target="_blank" rel="noopener">2017下半年，一二线互联网公司Android面试题汇总</a><br><a href="https://zhuanlan.zhihu.com/p/26327485" target="_blank" rel="noopener">2017 年初、阿里、腾讯、百度、华为、京东、搜狗和滴滴面试题汇集（更新篇）</a>  带答案<br><a href="https://github.com/LRH1993/android_interview" target="_blank" rel="noopener">Android校招面试指南</a><br><a href="http://www.jackywang.tech/AndroidInterview-Q-A/" target="_blank" rel="noopener">The top Internet companies android interview questions and answers</a><br><a href="https://crossoverjie.top/2018/06/21/personal/Interview-experience/" target="_blank" rel="noopener">一个学渣的阿里之路</a><br><a href="https://github.com/DanluTeam/ColdStart" target="_blank" rel="noopener">App 启动优化</a><br><a href="http://zmywly8866.github.io/2016/05/04/android-application-leak-analysis-and-fix.html" target="_blank" rel="noopener">Android应用内存泄露分析、改善经验总结</a><br><a href="http://wiki.jikexueyuan.com/project/deep-android-v2/packagemanagerservice.html" target="_blank" rel="noopener">第4章  深入理解 PackageManagerService</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8923485" target="_blank" rel="noopener">罗升阳–那两年炼就的Android内功修养</a> 老罗博客的总纲<br>需要把 <a href="https://github.com/EricChows/Worth-Reading-the-Android-technical-articles" target="_blank" rel="noopener">https://github.com/EricChows/Worth-Reading-the-Android-technical-articles</a> 这里面的优秀文章一篇一篇的看完。<br><a href="https://github.com/helen-x/AndroidInterview" target="_blank" rel="noopener">Android面试资料</a></p><h1 id="Android开发工具"><a href="#Android开发工具" class="headerlink" title="Android开发工具"></a>Android开发工具</h1><p><a href="http://www.androiddevtools.cn/" target="_blank" rel="noopener">AndroidDevTools</a><br><a href="https://github.com/inferjay/AndroidDevTools/" target="_blank" rel="noopener">AndroidDevTools(Github)</a><br><a href="http://androidblog.cn/tools/" target="_blank" rel="noopener">Android开发工具汇总</a><br><a href="http://editor.method.ac" target="_blank" rel="noopener">Method draw 矢量图 在线查看工具</a></p><h1 id="Android官方文档-中文版"><a href="#Android官方文档-中文版" class="headerlink" title="Android官方文档 中文版"></a>Android官方文档 中文版</h1><p><a href="http://hukai.me/android-training-course-in-chinese/index.html" target="_blank" rel="noopener">AndroidTraning中文版</a></p><h1 id="Android-精选资源"><a href="#Android-精选资源" class="headerlink" title="Android 精选资源"></a>Android 精选资源</h1><p><a href="https://github.com/android-cn/android-open-project-analysis" target="_blank" rel="noopener">Android 开源项目源码解析</a><br><a href="https://github.com/amitshekhariitbhu/awesome-android-complete-reference" target="_blank" rel="noopener">awesome-android-complete-reference</a><br><a href="https://github.com/LittleFriendsGroup/AndroidSdkSourceAnalysis" target="_blank" rel="noopener">Android源码解析</a> 一帮Android痴迷者，自己对Android源码进行解析，并共享<br><a href="https://github.com/zmywly8866/Worth-Reading-the-Android-technical-articles" target="_blank" rel="noopener">Android值得阅读的技术文章</a></p><p><strong> 免费的编程中文书籍索引 </strong><br><a href="http://siberiawolf.com/free_programming/index.html?utm_source=androidweekly.io&amp;utm_medium=website" target="_blank" rel="noopener">http://siberiawolf.com/free_programming/index.html?utm_source=androidweekly.io&amp;utm_medium=website</a><br><a href="https://github.com/EricChows/free-programming-books/blob/master/free-programming-books-zh.md" target="_blank" rel="noopener">https://github.com/EricChows/free-programming-books/blob/master/free-programming-books-zh.md</a></p><h1 id="Android-性能相关"><a href="#Android-性能相关" class="headerlink" title="Android 性能相关"></a>Android 性能相关</h1><p><a href="https://mp.weixin.qq.com/s/A8NZbHlU1J2CsoNhTFX8Dg?utm_source=androidweekly.io&amp;utm_medium=website" target="_blank" rel="noopener">Android性能优化来龙去脉总结</a><br>总结： 大概的讲述了性能优化的类型和方式<br><a href="https://github.com/DanluTeam/ColdStart?utm_source=androidweekly.io&amp;utm_medium=website" target="_blank" rel="noopener">App 启动优化</a><br>总结：<br><a href="https://github.com/Juude/awesome-android-performance" target="_blank" rel="noopener">Android性能优化视频，文档以及工具</a><br><a href="https://blog.csdn.net/innost/article/details/9008691" target="_blank" rel="noopener">Android系统性能调优工具介绍</a><br><a href="http://blog.jobbole.com/78995" target="_blank" rel="noopener">正确使用Android性能分析工具——TraceView</a><br><a href="http://www.codeceo.com/article/android-memory-manage.html" target="_blank" rel="noopener">每个Android开发者必须知道的内存管理知识</a></p><h1 id="Android-内存相关"><a href="#Android-内存相关" class="headerlink" title="Android 内存相关"></a>Android 内存相关</h1><p><a href="http://www.cnblogs.com/kingOfPointer/archive/2012/12/21/2828018.html" target="_blank" rel="noopener">android 开发如何做内存优化</a><br><a href="https://www.cnblogs.com/ThinkVenus/p/6805495.html" target="_blank" rel="noopener">什么是java OOM？如何分析及解决oom问题？</a><br><a href="https://www.cnblogs.com/kongzhongqijing/articles/7283599.html" target="_blank" rel="noopener">常见OOM现象</a><br><a href="https://blog.csdn.net/a396901990/article/details/38904543" target="_blank" rel="noopener">ANDROID内存优化(大汇总——全)</a><br><a href="http://blog.csdn.net/imain/article/details/8560986" target="_blank" rel="noopener">Android内存优化</a><br><a href="http://blog.csdn.net/awangyunke/article/details/20380719" target="_blank" rel="noopener">Android 内存优化</a><br><a href="http://www.cnblogs.com/zyw-205520/archive/2013/02/17/2914190.htm" target="_blank" rel="noopener">关于android性能，内存优化</a><br><a href="http://www.360doc.com/content/11/0911/15/18042_147476260.shtml" target="_blank" rel="noopener">Java垃圾回收原理</a><br><a href="http://www.360doc.com/content/11/0911/16/18042_147492404.shtml" target="_blank" rel="noopener">JVM垃圾回收（GC）原理</a></p><h1 id="Android-稳定性相关"><a href="#Android-稳定性相关" class="headerlink" title="Android 稳定性相关"></a>Android 稳定性相关</h1><h1 id="Android-功耗相关"><a href="#Android-功耗相关" class="headerlink" title="Android 功耗相关"></a>Android 功耗相关</h1><h1 id="Android-Flutter-相关"><a href="#Android-Flutter-相关" class="headerlink" title="Android Flutter 相关"></a>Android Flutter 相关</h1><p><a href="https://mp.weixin.qq.com/s/vlHt8jxbdzBqJZDobpsFVw?utm_source=androidweekly.io&amp;utm_medium=website" target="_blank" rel="noopener">深入理解flutter的编译原理与优化</a></p><h1 id="Android-虚拟机相关"><a href="#Android-虚拟机相关" class="headerlink" title="Android 虚拟机相关"></a>Android 虚拟机相关</h1><h1 id="Android-AIDL-相关"><a href="#Android-AIDL-相关" class="headerlink" title="Android AIDL 相关"></a>Android AIDL 相关</h1><h1 id="Android-升级相关"><a href="#Android-升级相关" class="headerlink" title="Android 升级相关"></a>Android 升级相关</h1><h1 id="Android-Java-基础"><a href="#Android-Java-基础" class="headerlink" title="Android/Java 基础"></a>Android/Java 基础</h1><h1 id="线程、多线程和线程池"><a href="#线程、多线程和线程池" class="headerlink" title="线程、多线程和线程池"></a>线程、多线程和线程池</h1><h1 id="并发编程"><a href="#并发编程" class="headerlink" title="并发编程"></a>并发编程</h1><p>  Android方面，并发编程用的比较少，需要好好的研究一下</p><h1 id="数据结构相关"><a href="#数据结构相关" class="headerlink" title="数据结构相关"></a>数据结构相关</h1><h1 id="工具使用："><a href="#工具使用：" class="headerlink" title="工具使用："></a>工具使用：</h1><p><a href="https://blog.csdn.net/maosidiaoxian/article/details/44992655" target="_blank" rel="noopener">打造你的开发神器——介绍Android Studio上的几个插件</a><br><a href="https://blog.csdn.net/maosidiaoxian/article/category/2380095" target="_blank" rel="noopener">Android 官方技术文档翻译</a><br><a href="http://duanqz.github.io/2015-05-21-Intro-adb" target="_blank" rel="noopener">adb 介绍</a><br><a href="http://duanqz.github.io/2015-07-19-Intro-to-dumpsys" target="_blank" rel="noopener">dumpsys 介绍</a><br><a href="http://duanqz.github.io/2015-06-25-Intro-to-Repo" target="_blank" rel="noopener">repo 介绍</a><br><a href="http://duanqz.github.io/2016-01-06-Intro-Google-Mobile-Service" target="_blank" rel="noopener">GMS 介绍</a></p><h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><p><a href="https://mp.weixin.qq.com/s/cXa6Rwiet5gN8bSe-h4QNw" target="_blank" rel="noopener">通过Google挖掘细分市场的一个案例</a></p><p><a href="https://36kr.com/p/5107620.html" target="_blank" rel="noopener">Facebook PM谈顶级产品经理具备的4个特征</a></p><p><a href="https://mp.weixin.qq.com/s/wqGgaH6EhSOqjj1SyJ4U7w" target="_blank" rel="noopener">陈春花：具有战略思维而非竞争理念</a></p>]]></content>
+    <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.<br><!--    Module:    第一步:需要将这些文章都看几篇    第二步：形成自己的理解    第三步：可以按照非常有用的文章，重写写一遍    第四步：纠正或者延伸别人的文章--></p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><!--    阅读卡：    文章：    时间：--><p><a href="https://xudeveloper.github.io/2018/01/20/EventBus%203.1.1%20%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90/" target="_blank" rel="noopener">EventBus 3.1.1 源码解析</a></p>]]></content>
     
     <summary type="html">
     
@@ -1143,12 +1106,12 @@
     
       <category term="Android" scheme="http://yoursite.com/categories/Android/"/>
     
-      <category term="Article" scheme="http://yoursite.com/categories/Android/Article/"/>
+      <category term="EventBus" scheme="http://yoursite.com/categories/Android/EventBus/"/>
     
     
       <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
     
-      <category term="Article" scheme="http://yoursite.com/tags/Article/"/>
+      <category term="EventBus" scheme="http://yoursite.com/tags/EventBus/"/>
     
   </entry>
   
@@ -1181,37 +1144,6 @@
       <category term="ActivityManagerService" scheme="http://yoursite.com/tags/ActivityManagerService/"/>
     
       <category term="AMS" scheme="http://yoursite.com/tags/AMS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Android中BroadcastRecevier解析</title>
-    <link href="http://yoursite.com/Android-BroadcastRecevier-Analysis/"/>
-    <id>http://yoursite.com/Android-BroadcastRecevier-Analysis/</id>
-    <published>2015-12-31T16:00:00.000Z</published>
-    <updated>2018-07-16T11:24:21.463Z</updated>
-    
-    <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.</p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><ol><li>Android Broadcast广播注册和发布方式以及机制流程 <a href="https://blog.csdn.net/liu_3262296/article/details/51935316" target="_blank" rel="noopener">https://blog.csdn.net/liu_3262296/article/details/51935316</a></li><li>Android广播之发送广播的源码分析 <a href="https://blog.csdn.net/zhangyongfeiyong/article/details/52022935" target="_blank" rel="noopener">https://blog.csdn.net/zhangyongfeiyong/article/details/52022935</a></li><li>Android广播机制实现源码浅析（一） <a href="https://blog.csdn.net/hehui1860/article/details/30726609" target="_blank" rel="noopener">https://blog.csdn.net/hehui1860/article/details/30726609</a></li><li>Android广播机制实现源码浅析（二） <a href="https://blog.csdn.net/hehui1860/article/details/30727075" target="_blank" rel="noopener">https://blog.csdn.net/hehui1860/article/details/30727075</a></li><li>Android广播机制实现源码浅析（三）<a href="https://blog.csdn.net/hehui1860/article/details/30727537" target="_blank" rel="noopener">https://blog.csdn.net/hehui1860/article/details/30727537</a></li><li>BroadcastReceiver源码解析(一)  <a href="https://blog.csdn.net/tiefeng0606/article/details/51354381" target="_blank" rel="noopener">https://blog.csdn.net/tiefeng0606/article/details/51354381</a></li><li>BroadcastReceiver源码解析（二） <a href="https://blog.csdn.net/tiefeng0606/article/details/51381221" target="_blank" rel="noopener">https://blog.csdn.net/tiefeng0606/article/details/51381221</a></li></ol><p><a href="https://blog.csdn.net/luoshengyang/article/details/8923485" target="_blank" rel="noopener">那两年炼就的Android内功修养</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6730748" target="_blank" rel="noopener">Android系统中的广播（Broadcast）机制简要介绍和学习计划</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6737352" target="_blank" rel="noopener">Android应用程序注册广播接收器（registerReceiver）的过程分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6744448" target="_blank" rel="noopener">Android应用程序发送广播（sendBroadcast）的过程分析</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;Ongoing,待完成，Please wait.&lt;/p&gt;
-&lt;h1 id=&quot;参考文献&quot;&gt;&lt;a href=&quot;#参考文献&quot; class=&quot;headerlink&quot; title=&quot;参考文献&quot;&gt;&lt;/a&gt;参考文献&lt;/h1&gt;&lt;ol&gt;
-&lt;li&gt;Android Broadcast广播注册和发布
-      
-    
-    </summary>
-    
-      <category term="Android" scheme="http://yoursite.com/categories/Android/"/>
-    
-      <category term="BroadcastRecevier" scheme="http://yoursite.com/categories/Android/BroadcastRecevier/"/>
-    
-    
-      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
-    
-      <category term="BroadcastRecevier" scheme="http://yoursite.com/tags/BroadcastRecevier/"/>
     
   </entry>
   
@@ -1252,13 +1184,13 @@
   </entry>
   
   <entry>
-    <title>C++ 基础</title>
-    <link href="http://yoursite.com/C-Base/"/>
-    <id>http://yoursite.com/C-Base/</id>
+    <title>Android中按键事件传递分析</title>
+    <link href="http://yoursite.com/Android-KeyEvent-Analysis/"/>
+    <id>http://yoursite.com/Android-KeyEvent-Analysis/</id>
     <published>2015-12-31T16:00:00.000Z</published>
-    <updated>2018-07-20T01:41:34.102Z</updated>
+    <updated>2018-07-20T00:57:20.922Z</updated>
     
-    <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.<br><!--    Module:    第一步:需要将这些文章都看几篇    第二步：形成自己的理解    第三步：可以按照非常有用的文章，重写写一遍    第四步：纠正或者延伸别人的文章--></p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><!--    阅读卡：    文章：    时间：--><p><a href="http://www.runoob.com/cplusplus/cpp-tutorial.html" target="_blank" rel="noopener">C++菜鸟教程</a><br><a href="https://www.w3cschool.cn/cpp/" target="_blank" rel="noopener">W3-C++教程</a></p>]]></content>
+    <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.<br><!--    Module:    第一步:需要将这些文章都看几篇    第二步：形成自己的理解    第三步：可以按照非常有用的文章，重写写一遍    第四步：纠正或者延伸别人的文章--></p><p>Framework Native模块代码</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">frameworks/base/services/core/jni/</span><br><span class="line">├── com_android_server_input_InputManagerService.cpp</span><br><span class="line">├── com_android_server_input_InputApplicationHandle.h</span><br><span class="line">├── com_android_server_input_InputApplicationHandle.c</span><br><span class="line">├── com_android_server_input_InputWindowHandle.h</span><br><span class="line">├── com_android_server_input_InputWindowHandle.c</span><br><span class="line">└──</span><br></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">frameworks/native/include/android</span><br><span class="line">├── input.h</span><br><span class="line">└── keycodes.h</span><br></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">frameworks/native/include/input</span><br><span class="line">├── DisplayViewport.h</span><br><span class="line">├── IInputFlinger.h</span><br><span class="line">├── InputDevice.h</span><br><span class="line">├── InputEventLabels.h</span><br><span class="line">├── Input.h</span><br><span class="line">├── InputTransport.h</span><br><span class="line">├── Keyboard.h</span><br><span class="line">├── KeyCharacterMap.h</span><br><span class="line">├── KeyLayoutMap.h</span><br><span class="line">├── VelocityControl.h</span><br><span class="line">├── VelocityTracker.h</span><br><span class="line">└── VirtualKeyMap.h</span><br></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">frameworks/native/services/inputflinger</span><br><span class="line">├── Android.bp</span><br><span class="line">├── EventHub.cpp</span><br><span class="line">├── EventHub.h</span><br><span class="line">├── host</span><br><span class="line">│   ├── Android.bp</span><br><span class="line">│   ├── InputDriver.cpp</span><br><span class="line">│   ├── InputDriver.h</span><br><span class="line">│   ├── InputFlinger.cpp</span><br><span class="line">│   ├── InputFlinger.h</span><br><span class="line">│   ├── inputflinger.rc</span><br><span class="line">│   ├── InputHost.cpp</span><br><span class="line">│   ├── InputHost.h</span><br><span class="line">│   └── main.cpp</span><br><span class="line">├── InputApplication.cpp</span><br><span class="line">├── InputApplication.h</span><br><span class="line">├── InputDispatcher.cpp</span><br><span class="line">├── InputDispatcher.h</span><br><span class="line">├── InputListener.cpp</span><br><span class="line">├── InputListener.h</span><br><span class="line">├── InputManager.cpp</span><br><span class="line">├── InputManager.h</span><br><span class="line">├── InputReader.cpp</span><br><span class="line">├── InputReader.h</span><br><span class="line">├── InputWindow.cpp</span><br><span class="line">├── InputWindow.h</span><br><span class="line">├── PointerControllerInterface.h</span><br><span class="line">└── tests</span><br><span class="line">    ├── Android.bp</span><br><span class="line">    ├── InputDispatcher_test.cpp</span><br><span class="line">    └── InputReader_test.cpp</span><br></pre></td></tr></table></figure><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><!--    阅读卡：    文章：Android按键事件传递流程(一)    时间：2018/07/19--><p>[1095/1219] including ./vendor/qcom/proprietary/diag/Android.mk …<br>build/core/binary.mk:1522: error: vendor/qcom/proprietary/diag/diag_ep/Android.mk: diag_ep: C_INCLUDES must be under the source or output directories: /diag/diag_ep /diag/include /diag/src.</p><p>用户态</p><p>这两篇文章关注了很多的代码细节：<br><a href="https://blog.csdn.net/w690333243/article/details/77493981" target="_blank" rel="noopener">Android按键事件传递流程(一)</a><br><a href="https://blog.csdn.net/qidabing/article/details/74073515" target="_blank" rel="noopener">Android按键事件传递流程(二)</a></p><p>将Native层的Input子系统，起到承上启下的功能.连接Kernel 和 Fwk<br><a href="https://www.cnblogs.com/haiming/p/3318614.html" target="_blank" rel="noopener">Android Framework——之Input子系统</a></p><p>内核态<br><a href="https://www.jianshu.com/p/4f59efee9cd8" target="_blank" rel="noopener">Android物理按键输入事件(一)</a><br><a href="https://www.jianshu.com/p/3fe41b6d0c92" target="_blank" rel="noopener">Android物理输入事件(二)</a><br><a href="https://blog.csdn.net/u013308744/article/details/49274069" target="_blank" rel="noopener">android kl 文件的作用</a></p><p><a href="https://blog.csdn.net/woliuyunyicai/article/details/48577617" target="_blank" rel="noopener">View机制深入学习（三） View中的消息传递及InputManagerService</a></p>]]></content>
     
     <summary type="html">
     
@@ -1271,30 +1203,30 @@
     第三步：可以按照非常有用的文章，重写写一遍
     第四步：纠正或者延伸别人的文章
 --&gt;&lt;/p&gt;
-&lt;h
+&lt;p
       
     
     </summary>
     
-      <category term="C++" scheme="http://yoursite.com/categories/C/"/>
+      <category term="Android" scheme="http://yoursite.com/categories/Android/"/>
     
-      <category term="Base" scheme="http://yoursite.com/categories/C/Base/"/>
+      <category term="KeyEvent" scheme="http://yoursite.com/categories/Android/KeyEvent/"/>
     
     
-      <category term="C++" scheme="http://yoursite.com/tags/C/"/>
+      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
     
-      <category term="Base" scheme="http://yoursite.com/tags/Base/"/>
+      <category term="KeyEvent" scheme="http://yoursite.com/tags/KeyEvent/"/>
     
   </entry>
   
   <entry>
-    <title>SELinux与SEAndroid解析</title>
-    <link href="http://yoursite.com/SELinux-SEAndroid/"/>
-    <id>http://yoursite.com/SELinux-SEAndroid/</id>
+    <title>Android中Binder机制解析</title>
+    <link href="http://yoursite.com/Android-Binder-Analysis/"/>
+    <id>http://yoursite.com/Android-Binder-Analysis/</id>
     <published>2015-12-31T16:00:00.000Z</published>
-    <updated>2018-07-18T13:45:34.475Z</updated>
+    <updated>2018-07-18T13:03:43.255Z</updated>
     
-    <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.<br><!--    Module:    第一步:需要将这些文章都看几篇    第二步：形成自己的理解    第三步：可以按照非常有用的文章，重写写一遍    第四步：纠正或者延伸别人的文章--></p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><!--    阅读卡：    文章：    时间：--><p><a href="https://blog.csdn.net/luoshengyang/article/details/37613135" target="_blank" rel="noopener">SEAndroid安全机制框架分析</a></p><p><a href="https://my.csdn.net/huangyabin001" target="_blank" rel="noopener">SELinux学习</a></p>]]></content>
+    <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.<br><!--    Module:    第一步:需要将这些文章都看几篇    第二步：形成自己的理解    第三步：可以按照非常有用的文章，重写写一遍    第四步：纠正或者延伸别人的文章--></p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><!--    阅读卡：    文章：    时间：--><p>老罗系列<br><a href="https://blog.csdn.net/luoshengyang/article/details/8923485" target="_blank" rel="noopener">那两年炼就的Android内功修养</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6618363" target="_blank" rel="noopener">Android进程间通信（IPC）机制Binder简要介绍和学习计划</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6621566" target="_blank" rel="noopener">浅谈Service Manager成为Android进程间通信（IPC）机制Binder守护进程之路</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6627260" target="_blank" rel="noopener">浅谈Android系统进程间通信（IPC）机制Binder中的Server和Client获得Service Manager接口之路</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6629298" target="_blank" rel="noopener">Android系统进程间通信（IPC）机制Binder中的Server启动过程源代码分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6633311" target="_blank" rel="noopener">Android系统进程间通信（IPC）机制Binder中的Client获得Server远程接口过程源代码分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6642463" target="_blank" rel="noopener">Android系统进程间通信Binder机制在应用程序框架层的Java接口源代码分析</a></p><p><a href="https://blog.csdn.net/qian520ao/article/details/78089877" target="_blank" rel="noopener">Android Binder之应用层总结与分析</a><br><a href="https://cloud.tencent.com/developer/article/1005763" target="_blank" rel="noopener">Binder 总体架构及相关代码浅析</a><br><a href="http://weishu.me/2016/01/12/binder-index-for-newer/" target="_blank" rel="noopener">Binder学习指南</a><br><a href="https://mp.weixin.qq.com/s?__biz=MzA5MzI3NjE2MA==&amp;mid=2650241680&amp;idx=1&amp;sn=14648a37ff1e7844e33cd548b9ec5a71&amp;chksm=88638bffbf1402e9b6dbe6b186bc619a341fc5fe0fd2aefd4a7dd3ac70d0539573c48863de0f#rd" target="_blank" rel="noopener">带你一起剖析Android AIDL跨进程通信的实现原理</a></p><p>小米系统工程师–Gityuan 系列<br><a href="http://gityuan.com/2015/10/31/binder-prepare/" target="_blank" rel="noopener">Binder系列—开篇</a><br><a href="http://gityuan.com/2015/11/01/binder-driver/" target="_blank" rel="noopener">Binder系列1—Binder Driver初探</a><br><a href="http://gityuan.com/2015/11/02/binder-driver-2/" target="_blank" rel="noopener">Binder系列2—Binder Driver再探</a><br><a href="http://gityuan.com/2015/11/07/binder-start-sm/" target="_blank" rel="noopener">Binder系列3—启动ServiceManager</a><br><a href="http://gityuan.com/2015/11/08/binder-get-sm/" target="_blank" rel="noopener">Binder系列4—获取ServiceManager</a><br><a href="http://gityuan.com/2015/11/14/binder-add-service/" target="_blank" rel="noopener">Binder系列5—注册服务(addService)</a><br><a href="http://gityuan.com/2015/11/15/binder-get-service/" target="_blank" rel="noopener">Binder系列6—获取服务(getService)</a><br><a href="http://gityuan.com/2015/11/21/binder-framework/" target="_blank" rel="noopener">Binder系列7—framework层分析</a><br><a href="http://gityuan.com/2015/11/22/binder-use/" target="_blank" rel="noopener">Binder系列8—如何使用Binder</a><br><a href="http://gityuan.com/2015/11/23/binder-aidl/" target="_blank" rel="noopener">Binder系列9—如何使用AIDL</a><br><a href="http://gityuan.com/2015/11/28/binder-summary/" target="_blank" rel="noopener">Binder系列10—总结</a></p>]]></content>
     
     <summary type="html">
     
@@ -1312,14 +1244,161 @@
     
     </summary>
     
-      <category term="SEAndroid" scheme="http://yoursite.com/categories/SEAndroid/"/>
+      <category term="Android" scheme="http://yoursite.com/categories/Android/"/>
     
-      <category term="SELinux" scheme="http://yoursite.com/categories/SEAndroid/SELinux/"/>
+      <category term="Binder" scheme="http://yoursite.com/categories/Android/Binder/"/>
     
     
-      <category term="SEAndroid" scheme="http://yoursite.com/tags/SEAndroid/"/>
+      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
     
-      <category term="SELinux" scheme="http://yoursite.com/tags/SELinux/"/>
+      <category term="Binder" scheme="http://yoursite.com/tags/Binder/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Android中启动过程解析</title>
+    <link href="http://yoursite.com/Android-Boot-Process/"/>
+    <id>http://yoursite.com/Android-Boot-Process/</id>
+    <published>2015-12-31T16:00:00.000Z</published>
+    <updated>2018-07-16T09:49:08.993Z</updated>
+    
+    <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.</p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p><a href="https://blog.csdn.net/luoshengyang/article/details/8923485" target="_blank" rel="noopener">那两年炼就的Android内功修养</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6768304" target="_blank" rel="noopener">Android系统进程Zygote启动过程的源代码分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6747696" target="_blank" rel="noopener">Android应用程序进程启动过程的源代码分析</a></p><p>Android开机流程概述：<br><a href="https://blog.csdn.net/h655370/article/details/77727554" target="_blank" rel="noopener">https://blog.csdn.net/h655370/article/details/77727554</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Ongoing,待完成，Please wait.&lt;/p&gt;
+&lt;h1 id=&quot;参考文献&quot;&gt;&lt;a href=&quot;#参考文献&quot; class=&quot;headerlink&quot; title=&quot;参考文献&quot;&gt;&lt;/a&gt;参考文献&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://blog.csdn.net
+      
+    
+    </summary>
+    
+      <category term="Android" scheme="http://yoursite.com/categories/Android/"/>
+    
+      <category term="启动" scheme="http://yoursite.com/categories/Android/%E5%90%AF%E5%8A%A8/"/>
+    
+    
+      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
+    
+      <category term="Zegote" scheme="http://yoursite.com/tags/Zegote/"/>
+    
+      <category term="Init" scheme="http://yoursite.com/tags/Init/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Chrome</title>
+    <link href="http://yoursite.com/Chrome/"/>
+    <id>http://yoursite.com/Chrome/</id>
+    <published>2015-12-31T16:00:00.000Z</published>
+    <updated>2018-07-30T06:40:06.611Z</updated>
+    
+    <content type="html"><![CDATA[<p>Chrome相关</p><ol><li>Chrome 插件开发<br><a href="https://developer.chrome.com/extensions" target="_blank" rel="noopener">官方文档</a><br><a href="http://open.chrome.360.cn/extension_dev/overview.html" target="_blank" rel="noopener">综述–扩展开发文档</a></li></ol><!--    Module:    第一步:需要将这些文章都看几篇    第二步：形成自己的理解    第三步：可以按照非常有用的文章，重写写一遍    第四步：纠正或者延伸别人的文章--><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><!--    阅读卡：    文章：    时间：--><p><a href="https://juejin.im/post/5b24956951882574d73c6f78?utm_source=gold_browser_extension" target="_blank" rel="noopener">写个Markdown插件,讲讲Chrome扩展开发</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Chrome相关&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Chrome 插件开发&lt;br&gt;&lt;a href=&quot;https://developer.chrome.com/extensions&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;官方文档&lt;/a&gt;&lt;br&gt;&lt;a href
+      
+    
+    </summary>
+    
+      <category term="Chrome" scheme="http://yoursite.com/categories/Chrome/"/>
+    
+    
+      <category term="Chrome" scheme="http://yoursite.com/tags/Chrome/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Android中Activity解析</title>
+    <link href="http://yoursite.com/Android-Activity-Analysis/"/>
+    <id>http://yoursite.com/Android-Activity-Analysis/</id>
+    <published>2015-12-31T16:00:00.000Z</published>
+    <updated>2018-07-18T13:39:43.407Z</updated>
+    
+    <content type="html"><![CDATA[<p>上次我们讲到Activity的四种启动模式的时候，已经了解到一些关于task的技术，今天我再向大家介绍一下。task是一个具有栈结构的容器，可以放置多个Activity实例。启动一个应用，系统就会为之创建一个task，来放置根Activity；默认情况下，一个Activity启动另一个Activity时，两个Activity是放置在同一个task中的，后者被压入前者所在的task栈，当用户按下后退键，后者从task被弹出，前者又显示在幕前，特别是启动其他应用中的Activity时，两个Activity对用户来说就好像是属于同一个应用；系统task和task之间是互相独立的，当我们运行一个应用时，按下Home键回到主屏，启动另一个应用，这个过程中，之前的task被转移到后台，新的task被转移到前台，其根Activity也会显示到幕前，过了一会之后，在此按下Home键回到主屏，再选择之前的应用，之前的task会被转移到前台，系统仍然保留着task内的所有Activity实例，而那个新的task会被转移到后台，如果这时用户再做后退等动作，就是针对该task内部进行操作了。</p><p>我们今天就讲一下和task相关的知识，主要分一下几点：</p><p>1.Activity的affinity(亲和力)</p><p>2.Intent几种常见的flags</p><p>3.与task相关属性</p><p>affinity：</p><p>task对于Activity来说就好像它的身份证一样，可以告诉所在的task，自己属于这个task中的一员；拥有相同affinity的多个Activity理论同属于一个task，task自身的affinity决定于根Activity的affinity值。affinity在什么场合应用呢？1.根据affinity重新为Activity选择宿主task（与allowTaskReparenting属性配合工作）；2.启动一个Activity过程中Intent使用了FLAG_ACTIVITY_NEW_TASK标记，根据affinity查找或创建一个新的具有对应affinity的task。我们会在后面进行详细讲解。</p><p>默认情况下，一个应用内的所有Activity都具有相同的affinity，都是从Application（参考的taskAffinity属性）继承而来，而Application默认的affinity是中的包名，我们可以为设置taskAffinity属性值，这样可以应用到下的所有，也可以单独为某个Activity设置taskAffinity。例如：在系统自带的Browser中，package为com.android.browser，但是却自定义一个taskAffinity属性值：</p><p>Ongoing,待完成，Please wait.</p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p><a href="https://blog.csdn.net/luoshengyang/article/details/8923485" target="_blank" rel="noopener">那两年炼就的Android内功修养</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6685853" target="_blank" rel="noopener">Android应用程序的Activity启动过程简要介绍和学习计划</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6689748" target="_blank" rel="noopener">Android应用程序启动过程源代码分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6703247" target="_blank" rel="noopener">Android应用程序内部启动Activity过程（startActivity）的源代码分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6720261" target="_blank" rel="noopener">Android应用程序在新的进程中启动新的Activity的方法和过程分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6714543" target="_blank" rel="noopener">解开Android应用程序组件Activity的”singleTask”之谜</a></p><p><a href="http://www.cnblogs.com/CSU-PL/p/3794280.html" target="_blank" rel="noopener">android的task任务栈</a></p><p><a href="https://www.jianshu.com/p/9ecea420eb52" target="_blank" rel="noopener">3分钟看懂Activity启动流程</a></p><p><a href="">Android 7.0 startActivity()源码解析以及对几个问题的思考</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;上次我们讲到Activity的四种启动模式的时候，已经了解到一些关于task的技术，今天我再向大家介绍一下。task是一个具有栈结构的容器，可以放置多个Activity实例。启动一个应用，系统就会为之创建一个task，来放置根Activity；默认情况下，一个Activit
+      
+    
+    </summary>
+    
+      <category term="Android" scheme="http://yoursite.com/categories/Android/"/>
+    
+      <category term="Activity" scheme="http://yoursite.com/categories/Android/Activity/"/>
+    
+    
+      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
+    
+      <category term="Activity" scheme="http://yoursite.com/tags/Activity/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Fuchsia</title>
+    <link href="http://yoursite.com/Fuchsia/"/>
+    <id>http://yoursite.com/Fuchsia/</id>
+    <published>2015-12-31T16:00:00.000Z</published>
+    <updated>2018-08-03T09:49:19.068Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Fuchsia"><a href="#Fuchsia" class="headerlink" title="Fuchsia"></a>Fuchsia</h1><p><a href="https://fuchsia.googlesource.com/" target="_blank" rel="noopener">Fuchsia官网</a></p><p><a href="https://github.com/zhangpf/fuchsia-docs-zh-CN" target="_blank" rel="noopener">Google Fuchsia文档的简体中文翻译</a> ★★★★★</p><p><a href="https://github.com/fuchsia-mirror" target="_blank" rel="noopener">Fuchsia项目在github的镜像</a></p><p>Fuchsia涉及到的开发语言： C   C++   Go   Python   Rust  Dart</p><!--    Module:    第一步:需要将这些文章都看几篇    第二步：形成自己的理解    第三步：可以按照非常有用的文章，重写写一遍    第四步：纠正或者延伸别人的文章--><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><!--    阅读卡：    文章：    时间：-->]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Fuchsia&quot;&gt;&lt;a href=&quot;#Fuchsia&quot; class=&quot;headerlink&quot; title=&quot;Fuchsia&quot;&gt;&lt;/a&gt;Fuchsia&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://fuchsia.googlesource.com/&quot; target
+      
+    
+    </summary>
+    
+      <category term="Fuchsia" scheme="http://yoursite.com/categories/Fuchsia/"/>
+    
+      <category term="Flutter" scheme="http://yoursite.com/categories/Fuchsia/Flutter/"/>
+    
+    
+      <category term="Fuchsia" scheme="http://yoursite.com/tags/Fuchsia/"/>
+    
+      <category term="Flutter" scheme="http://yoursite.com/tags/Flutter/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Kaios</title>
+    <link href="http://yoursite.com/Kaios/"/>
+    <id>http://yoursite.com/Kaios/</id>
+    <published>2015-12-31T16:00:00.000Z</published>
+    <updated>2018-08-03T11:58:52.492Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>官方网站</p><p><a href="https://www.kaiostech.com/" target="_blank" rel="noopener">Kaios官网</a></p><p><a href="https://developer.kaiostech.com/" target="_blank" rel="noopener">Kaios开发者官网</a></p><p><a href="https://developer.mozilla.org/zh-CN/" target="_blank" rel="noopener">火狐开发者官网</a></p><p><a href="https://developer.kaiostech.com/environment-setup" target="_blank" rel="noopener">开发环境配置</a></p><p><a href="https://wiki.mozilla.org/Firefox_OS/TCP" target="_blank" rel="noopener">Firefox OS/TCP</a> ★★★★★</p><p><a href="https://github.com/mozilla-b2g/B2G.git" target="_blank" rel="noopener">Kaios源码</a></p><p><a href="https://www.androidcentral.com/firefox-os" target="_blank" rel="noopener">Firefox OS</a></p><p><a href="https://developer.mozilla.org/en-US/docs/Archive/B2G_OS" target="_blank" rel="noopener">B2G OS</a> ★★★★★</p><p><a href="https://developer.mozilla.org/zh-CN/docs/Archive/B2G_OS/Platform/Architecture" target="_blank" rel="noopener">Firefox OS架构</a></p><p><a href="https://developer.mozilla.org/zh-CN/docs/Archive/B2G_OS/Simulator" target="_blank" rel="noopener">Firefox OS 模拟器</a></p><p><a href="https://hacks.mozilla.org/category/firefox-os/" target="_blank" rel="noopener">Firefox OS Articles</a></p><p><a href="https://www.xda-developers.com/tag/firefox-os/" target="_blank" rel="noopener">FIREFOX OS Posts on XDA</a></p><h2 id="国内开发-Kaios"><a href="#国内开发-Kaios" class="headerlink" title="国内开发 Kaios"></a>国内开发 Kaios</h2><p><a href="https://blog.csdn.net/chieftain01/article/details/21450707" target="_blank" rel="noopener">Firefox OS简介</a></p><p><a href="https://blog.csdn.net/alwaysxihe/article/details/45561559" target="_blank" rel="noopener">Mozilla Firefox os系统构架详解</a></p><p><a href="https://blog.csdn.net/nxh_love/article/details/10610197" target="_blank" rel="noopener">Firefox OS 学习——学习目录</a><br><a href="https://blog.csdn.net/nxh_love/article/category/1524457" target="_blank" rel="noopener">Firefox OS 学习</a><br><a href="https://blog.csdn.net/nxh_love/article/details/9467707" target="_blank" rel="noopener">Firefox OS 学习——B2G 源码获取和build code</a></p><p><a href="https://blog.csdn.net/YAJUN0601/article/details/8620889" target="_blank" rel="noopener">FirefoxOS 系统进程初步分析 底层系统继承自 android</a></p><p><a href="https://blog.csdn.net/zembers/article/details/48495627" target="_blank" rel="noopener">Firefox OS启动过程分析－b2g进程启动</a></p><p><a href="https://blog.csdn.net/xiaowublog/article/details/21822917" target="_blank" rel="noopener">Firefox OS手机应用开发（三）：第一个Firefox OS应用程序</a></p><p><a href="https://blog.csdn.net/u013935416/article/details/25145239" target="_blank" rel="noopener">Firefox OS 2.0 模拟器 – 使用官方火狐浏览器扩展无痛完美模拟体验火狐手机系统</a></p><p><a href="https://blog.csdn.net/WY16223864/article/details/8299245" target="_blank" rel="noopener">Firefox OS编译</a></p><p><a href="https://git.kaiostech.com/" target="_blank" rel="noopener">Kaios</a> <!-- 账号： ganxiao@hymost.com 密码： hymostsw  --></p><!--    Module:    第一步:需要将这些文章都看几篇    第二步：形成自己的理解    第三步：可以按照非常有用的文章，重写写一遍    第四步：纠正或者延伸别人的文章--><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><!--    阅读卡：    文章：    时间：-->]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h1&gt;&lt;p&gt;官方网站&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.kaiostech.com/&quot; target=&quot;_blank&quot; rel=&quot;
+      
+    
+    </summary>
+    
+      <category term="Kaios" scheme="http://yoursite.com/categories/Kaios/"/>
+    
+      <category term="Firefox OS" scheme="http://yoursite.com/categories/Kaios/Firefox-OS/"/>
+    
+    
+      <category term="Kaios" scheme="http://yoursite.com/tags/Kaios/"/>
+    
+      <category term="Firefox OS" scheme="http://yoursite.com/tags/Firefox-OS/"/>
     
   </entry>
   
@@ -1384,127 +1463,6 @@
   </entry>
   
   <entry>
-    <title>Android中Activity解析</title>
-    <link href="http://yoursite.com/Android-Activity-Analysis/"/>
-    <id>http://yoursite.com/Android-Activity-Analysis/</id>
-    <published>2015-12-31T16:00:00.000Z</published>
-    <updated>2018-07-18T13:39:43.407Z</updated>
-    
-    <content type="html"><![CDATA[<p>上次我们讲到Activity的四种启动模式的时候，已经了解到一些关于task的技术，今天我再向大家介绍一下。task是一个具有栈结构的容器，可以放置多个Activity实例。启动一个应用，系统就会为之创建一个task，来放置根Activity；默认情况下，一个Activity启动另一个Activity时，两个Activity是放置在同一个task中的，后者被压入前者所在的task栈，当用户按下后退键，后者从task被弹出，前者又显示在幕前，特别是启动其他应用中的Activity时，两个Activity对用户来说就好像是属于同一个应用；系统task和task之间是互相独立的，当我们运行一个应用时，按下Home键回到主屏，启动另一个应用，这个过程中，之前的task被转移到后台，新的task被转移到前台，其根Activity也会显示到幕前，过了一会之后，在此按下Home键回到主屏，再选择之前的应用，之前的task会被转移到前台，系统仍然保留着task内的所有Activity实例，而那个新的task会被转移到后台，如果这时用户再做后退等动作，就是针对该task内部进行操作了。</p><p>我们今天就讲一下和task相关的知识，主要分一下几点：</p><p>1.Activity的affinity(亲和力)</p><p>2.Intent几种常见的flags</p><p>3.与task相关属性</p><p>affinity：</p><p>task对于Activity来说就好像它的身份证一样，可以告诉所在的task，自己属于这个task中的一员；拥有相同affinity的多个Activity理论同属于一个task，task自身的affinity决定于根Activity的affinity值。affinity在什么场合应用呢？1.根据affinity重新为Activity选择宿主task（与allowTaskReparenting属性配合工作）；2.启动一个Activity过程中Intent使用了FLAG_ACTIVITY_NEW_TASK标记，根据affinity查找或创建一个新的具有对应affinity的task。我们会在后面进行详细讲解。</p><p>默认情况下，一个应用内的所有Activity都具有相同的affinity，都是从Application（参考的taskAffinity属性）继承而来，而Application默认的affinity是中的包名，我们可以为设置taskAffinity属性值，这样可以应用到下的所有，也可以单独为某个Activity设置taskAffinity。例如：在系统自带的Browser中，package为com.android.browser，但是却自定义一个taskAffinity属性值：</p><p>Ongoing,待完成，Please wait.</p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p><a href="https://blog.csdn.net/luoshengyang/article/details/8923485" target="_blank" rel="noopener">那两年炼就的Android内功修养</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6685853" target="_blank" rel="noopener">Android应用程序的Activity启动过程简要介绍和学习计划</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6689748" target="_blank" rel="noopener">Android应用程序启动过程源代码分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6703247" target="_blank" rel="noopener">Android应用程序内部启动Activity过程（startActivity）的源代码分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6720261" target="_blank" rel="noopener">Android应用程序在新的进程中启动新的Activity的方法和过程分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6714543" target="_blank" rel="noopener">解开Android应用程序组件Activity的”singleTask”之谜</a></p><p><a href="http://www.cnblogs.com/CSU-PL/p/3794280.html" target="_blank" rel="noopener">android的task任务栈</a></p><p><a href="https://www.jianshu.com/p/9ecea420eb52" target="_blank" rel="noopener">3分钟看懂Activity启动流程</a></p><p><a href="">Android 7.0 startActivity()源码解析以及对几个问题的思考</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;上次我们讲到Activity的四种启动模式的时候，已经了解到一些关于task的技术，今天我再向大家介绍一下。task是一个具有栈结构的容器，可以放置多个Activity实例。启动一个应用，系统就会为之创建一个task，来放置根Activity；默认情况下，一个Activit
-      
-    
-    </summary>
-    
-      <category term="Android" scheme="http://yoursite.com/categories/Android/"/>
-    
-      <category term="Activity" scheme="http://yoursite.com/categories/Android/Activity/"/>
-    
-    
-      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
-    
-      <category term="Activity" scheme="http://yoursite.com/tags/Activity/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Android中ContentProvider解析</title>
-    <link href="http://yoursite.com/Android-ContentProvider-Analysis/"/>
-    <id>http://yoursite.com/Android-ContentProvider-Analysis/</id>
-    <published>2015-12-31T16:00:00.000Z</published>
-    <updated>2018-07-16T09:48:52.886Z</updated>
-    
-    <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.</p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p><a href="https://blog.csdn.net/luoshengyang/article/details/8923485" target="_blank" rel="noopener">那两年炼就的Android内功修养</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6946067" target="_blank" rel="noopener">Android应用程序组件Content Provider简要介绍和学习计划</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6950440" target="_blank" rel="noopener">Android应用程序组件Content Provider应用实例</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6963418" target="_blank" rel="noopener">Android应用程序组件Content Provider的启动过程源代码分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6967204" target="_blank" rel="noopener">Android应用程序组件Content Provider在应用程序之间共享数据的原理分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6985171" target="_blank" rel="noopener">Android应用程序组件Content Provider的共享数据更新通知机制分析</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;Ongoing,待完成，Please wait.&lt;/p&gt;
-&lt;h1 id=&quot;参考文献&quot;&gt;&lt;a href=&quot;#参考文献&quot; class=&quot;headerlink&quot; title=&quot;参考文献&quot;&gt;&lt;/a&gt;参考文献&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://blog.csdn.net
-      
-    
-    </summary>
-    
-      <category term="Android" scheme="http://yoursite.com/categories/Android/"/>
-    
-      <category term="ContentProvider" scheme="http://yoursite.com/categories/Android/ContentProvider/"/>
-    
-    
-      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
-    
-      <category term="ContentProvider" scheme="http://yoursite.com/tags/ContentProvider/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Kaios</title>
-    <link href="http://yoursite.com/Kaios/"/>
-    <id>http://yoursite.com/Kaios/</id>
-    <published>2015-12-31T16:00:00.000Z</published>
-    <updated>2018-08-03T02:42:45.451Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>官方网站</p><p><a href="https://www.kaiostech.com/" target="_blank" rel="noopener">Kaios官网</a></p><p><a href="https://developer.kaiostech.com/" target="_blank" rel="noopener">Kaios开发者官网</a></p><p><a href="https://developer.mozilla.org/zh-CN/" target="_blank" rel="noopener">火狐开发者官网</a></p><p><a href="https://developer.kaiostech.com/environment-setup" target="_blank" rel="noopener">开发环境配置</a></p><p><a href="https://wiki.mozilla.org/Firefox_OS/TCP" target="_blank" rel="noopener">Firefox OS/TCP</a> ★★★★★</p><p><a href="https://github.com/mozilla-b2g/B2G.git" target="_blank" rel="noopener">Kaios源码</a></p><p><a href="https://www.androidcentral.com/firefox-os" target="_blank" rel="noopener">Firefox OS</a></p><p><a href="https://developer.mozilla.org/en-US/docs/Archive/B2G_OS" target="_blank" rel="noopener">B2G OS</a> ★★★★★</p><p><a href="https://developer.mozilla.org/zh-CN/docs/Archive/B2G_OS/Platform/Architecture" target="_blank" rel="noopener">Firefox OS架构</a></p><p><a href="https://developer.mozilla.org/zh-CN/docs/Archive/B2G_OS/Simulator" target="_blank" rel="noopener">Firefox OS 模拟器</a></p><p><a href="https://hacks.mozilla.org/category/firefox-os/" target="_blank" rel="noopener">Firefox OS Articles</a></p><p><a href="https://www.xda-developers.com/tag/firefox-os/" target="_blank" rel="noopener">FIREFOX OS Posts on XDA</a></p><h2 id="国内开发-Kaios"><a href="#国内开发-Kaios" class="headerlink" title="国内开发 Kaios"></a>国内开发 Kaios</h2><p><a href="https://blog.csdn.net/chieftain01/article/details/21450707" target="_blank" rel="noopener">Firefox OS简介</a></p><p><a href="https://blog.csdn.net/alwaysxihe/article/details/45561559" target="_blank" rel="noopener">Mozilla Firefox os系统构架详解</a></p><p><a href="https://blog.csdn.net/nxh_love/article/details/10610197" target="_blank" rel="noopener">Firefox OS 学习——学习目录</a><br><a href="https://blog.csdn.net/nxh_love/article/category/1524457" target="_blank" rel="noopener">Firefox OS 学习</a><br><a href="https://blog.csdn.net/nxh_love/article/details/9467707" target="_blank" rel="noopener">Firefox OS 学习——B2G 源码获取和build code</a></p><p><a href="https://blog.csdn.net/YAJUN0601/article/details/8620889" target="_blank" rel="noopener">FirefoxOS 系统进程初步分析 底层系统继承自 android</a></p><p><a href="https://blog.csdn.net/zembers/article/details/48495627" target="_blank" rel="noopener">Firefox OS启动过程分析－b2g进程启动</a></p><p><a href="https://blog.csdn.net/xiaowublog/article/details/21822917" target="_blank" rel="noopener">Firefox OS手机应用开发（三）：第一个Firefox OS应用程序</a></p><p><a href="https://blog.csdn.net/u013935416/article/details/25145239" target="_blank" rel="noopener">Firefox OS 2.0 模拟器 – 使用官方火狐浏览器扩展无痛完美模拟体验火狐手机系统</a></p><p><a href="https://blog.csdn.net/WY16223864/article/details/8299245" target="_blank" rel="noopener">Firefox OS编译</a></p><!--    Module:    第一步:需要将这些文章都看几篇    第二步：形成自己的理解    第三步：可以按照非常有用的文章，重写写一遍    第四步：纠正或者延伸别人的文章--><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><!--    阅读卡：    文章：    时间：-->]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h1&gt;&lt;p&gt;官方网站&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.kaiostech.com/&quot; target=&quot;_blank&quot; rel=&quot;
-      
-    
-    </summary>
-    
-      <category term="Kaios" scheme="http://yoursite.com/categories/Kaios/"/>
-    
-      <category term="Firefox OS" scheme="http://yoursite.com/categories/Kaios/Firefox-OS/"/>
-    
-    
-      <category term="Kaios" scheme="http://yoursite.com/tags/Kaios/"/>
-    
-      <category term="Firefox OS" scheme="http://yoursite.com/tags/Firefox-OS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>My Approach to Getting Dramatically Better as a Programmer</title>
-    <link href="http://yoursite.com/L-My-Approach-to-Getting-Dramatically-Better-as-a-Programmer/"/>
-    <id>http://yoursite.com/L-My-Approach-to-Getting-Dramatically-Better-as-a-Programmer/</id>
-    <published>2015-12-31T16:00:00.000Z</published>
-    <updated>2018-07-25T12:15:40.224Z</updated>
-    
-    <content type="html"><![CDATA[<!--    Module:    第一步:需要将这些文章都看几篇    第二步：形成自己的理解    第三步：可以按照非常有用的文章，重写写一遍    第四步：纠正或者延伸别人的文章--><p>There was a recent discussion among my social group about what “getting dramatically better as a programmer” means. Based on that discussion, I’ve decided to share my own approach to becoming a “dramatically better programmer”. I want others to understand what practices I’ve found useful, so they can incorporate them into their own life.</p><p>My approach to getting dramatically better is built around a training regime. There are a specific set of “exercises” I do every week. I designed the training regime with two explicit goals in mind:</p><p>Learning how to solve problems I didn’t know how to solve before.<br>Learning how to write correct programs faster.<br>My training routine consists of a total of four different exercises. Each one helps me achieve the two objectives above. The four different exercises are:</p><p>Reading a paper.<br>Learning a new tool.<br>Reading several chapters of a book.<br>Recording my screen as I write a program. Then reviewing the footage and seeing how I could have written the program faster.<br>Let me explain each of the exercises in a bit more depth. I want to share some details on how each exercise works and the main benefits I’ve had from doing each exercise.</p><p>Reading a Paper<br>This exercise is designed to expand my knowledge of Computer Science. I’ve found two direct benefits to reading papers. The first benefit is that some papers have changed my model of certain problems. A good example of this is The Tail at Scale. That paper examines the counter intuitive nature of long tail latency.</p><p>One interesting lesson I learned from the paper was how running a request on multiple machines affects latency. The authors looked at empirical data from a Google service.  The service processes a request by distributing parts of the request across many different services. They used the data to estimate what would happen if you distributed requests across 100 different services. The authors found that if you measure the time it takes to get a response from all 100 severs, half of that time will be spent waiting for only the last five! This is because the slowest 5% of requests is that much slower than all the other requests. The paper also gives several approaches on how to reduce tail latency. I have found those approaches useful in my own work.</p><p>The other benefit I’ve found from reading papers is that they give me the knowledge to understand different systems as a whole. As an example, take Spanner, Google’s distributed database. Spanner uses many different techniques such as Paxos, two phase commit, MVCC, and predicate locks. I’ve been able to build up an understanding of these different techniques through reading papers. In turn, this enables me to reason the Spanner as a whole and reason about the trade offs Spanner makes compared to other systems.</p><p>I find most papers I read by either following the references of papers I have read or following up on a paper covered in the Morning Paper. The book Designing Data Intensive Applications also has a lot of references to papers that are worth reading.</p><p>Learning a New Tool<br>One of the easiest ways to solve problems is to use an existing tool that already solves that problem. For this exercise, I pick a tool and learn a bit about it. Usually I setup the tool locally, go through a few tutorials, and read a bit of the manual. Tools that I’ve learned in the past range from bash utils such as jq or sed to distributed systems such as Kafka or Zookeeper.</p><p>Learning the bash utilities helps me get solve many common tasks quicker than I could have otherwise. Simple text processing is often easier with sed than it is with a programming language. Likewise, learning about different distributed systems come in handy for understanding what tools work well for solving different problems. That way I know what tool I should use when faced with a given problem.</p><p>Reading Several Chapters of a Book<br>I use books to supplement the knowledge I don’t get from reading a paper or<br>learning a tool. The books I read cover a wide range of topics. Books I’ve read<br>recently include:</p><p>Refactoring – I found this to be a great way to understand what good code should look like and how to turn bad code into good code.<br>Getting Things Done – I found this book to be helpful for prioritizing and keeping track of things. It helped me build a system to make sure I get done what’s important for me to get done.<br>The First Time Manager – I recently became the team coordinator for my team at work. As team coordinator, my main responsibility is communicating with other teams when necessary. I also lead my team’s meetings. I found this book to be great for getting an understanding of basic management principles.<br>Recording My Screen<br>This exercise is my favorite. It’s the exercise that’s changed how I approach problems the most. It’s common for athletes to review footage of themselves to understand how they could have done better. I decided to apply the same approach to programming. Some of the lessons I’ve learned by recording my screen include:</p><p>It helps to test code as it’s written. Doing this reduces the amount of time it takes to debug code by reducing the time you spend locating where the bug is. If all your existing code is bug free, the bug has to be in the new code you just wrote.<br>When debugging a problem, adding functionality only for the purpose debugging is often well worth the cost. As an example, one toy problem I worked on was writing an LRU cache. I had a bug where it wasn’t evicting the right elements. I was able to quickly determine what was wrong by adding a function to print the state of the cache. I could then see where the expected behavior of the cache differed from the actual behavior. This allowed me to quickly locate the bug.<br>Spending five minutes deciding on an approach up front before writing any code is worth it. I’ve found two benefits to doing this. It helps me make sure my approach is correct. More importantly, it forces me to decide on a single approach. By watching a recording of myself, I found I wasted a lot of time switching my code between two different approaches. In reality, either approach would have worked fine.<br>All these lessons are obvious in retrospect. but I had no clue that any of these were issues until I recorded my screen and saw where I was actually spending time.</p><p>The steps I take for this exercise are:</p><p>Record myself writing some problem. This can either be a problem I worked on at work or a problem from a programming challenge website such as Leetcode.<br>Go through the recording at 10x speed and annotate what I was doing at each moment.<br>Total how much time I spent into high level categories. How much time did I spend debugging some bug? How much time did I spend building some feature<br>Look at the categories I spent the most time in. Then dig into what actually took up that time.<br>Come up with approaches that would have allowed me to save time. Often there are ways I could have structured my code up front that would have allowed me to write less code or find bugs earlier.<br>I highly recommend recording your screen. It’s one of the easiest ways to find small changes you can make to make yourself a lot more productive.</p><p>I’ve been doing this training regime over the past year. I’ve definitely noticed a huge difference. There’s a large amount of knowledge about systems and tools that I wouldn’t have developed otherwise. I’m also able to solve problems more quickly than I was able to before. I hope you reflect on these exercises and implement a few of them yourself.</p><p>Going forward, I’m going to start sharing what I find through my training regime. I’m going to start off by writing a blog post every time I do one of the exercises. I’ll share what I learned and found during the exercise. I think it would be beneficial for me to explain what I learned, as well as make a great learning resource for others.</p><!--    阅读卡：    文章：    时间：--><!--    阅读卡：    文章：    时间：    --><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p><a href="http://malisper.me/my-approach-to-getting-dramatically-better-as-a-programmer/?utm_source=wanqu.co&amp;utm_campaign=Wanqu+Daily&amp;utm_medium=website" target="_blank" rel="noopener">My Approach to Getting Dramatically Better as a Programmer</a><br>[My Approach to Getting Dramatically Better as a Programmer]:<a href="http://malisper.me/my-approach-to-getting-dramatically-better-as-a-programmer/?utm_source=wanqu.co&amp;utm_campaign=Wanqu+Daily&amp;utm_medium=website" target="_blank" rel="noopener">http://malisper.me/my-approach-to-getting-dramatically-better-as-a-programmer/?utm_source=wanqu.co&amp;utm_campaign=Wanqu+Daily&amp;utm_medium=website</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;!--
-    Module:
-    第一步:需要将这些文章都看几篇
-    第二步：形成自己的理解
-    第三步：可以按照非常有用的文章，重写写一遍
-    第四步：纠正或者延伸别人的文章
---&gt;
-&lt;p&gt;There was a recent discussion amon
-      
-    
-    </summary>
-    
-      <category term="English" scheme="http://yoursite.com/categories/English/"/>
-    
-    
-      <category term="English" scheme="http://yoursite.com/tags/English/"/>
-    
-  </entry>
-  
-  <entry>
     <title>RxJava/RxAndroid</title>
     <link href="http://yoursite.com/RxJava-RxAndroid/"/>
     <id>http://yoursite.com/RxJava-RxAndroid/</id>
@@ -1541,34 +1499,34 @@
   </entry>
   
   <entry>
-    <title>React Native</title>
-    <link href="http://yoursite.com/React-Native/"/>
-    <id>http://yoursite.com/React-Native/</id>
+    <title>My Approach to Getting Dramatically Better as a Programmer</title>
+    <link href="http://yoursite.com/L-My-Approach-to-Getting-Dramatically-Better-as-a-Programmer/"/>
+    <id>http://yoursite.com/L-My-Approach-to-Getting-Dramatically-Better-as-a-Programmer/</id>
     <published>2015-12-31T16:00:00.000Z</published>
-    <updated>2018-07-19T03:04:04.994Z</updated>
+    <updated>2018-07-25T12:15:40.224Z</updated>
     
-    <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.<br><!--    Module:    第一步:需要将这些文章都看几篇    第二步：形成自己的理解    第三步：可以按照非常有用的文章，重写写一遍    第四步：纠正或者延伸别人的文章--></p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><!--    阅读卡：    文章：    时间：--><p><a href="https://reactnative.cn/docs/0.36/getting-started.html" target="_blank" rel="noopener">React Native简介教程</a></p>]]></content>
+    <content type="html"><![CDATA[<!--    Module:    第一步:需要将这些文章都看几篇    第二步：形成自己的理解    第三步：可以按照非常有用的文章，重写写一遍    第四步：纠正或者延伸别人的文章--><p>There was a recent discussion among my social group about what “getting dramatically better as a programmer” means. Based on that discussion, I’ve decided to share my own approach to becoming a “dramatically better programmer”. I want others to understand what practices I’ve found useful, so they can incorporate them into their own life.</p><p>My approach to getting dramatically better is built around a training regime. There are a specific set of “exercises” I do every week. I designed the training regime with two explicit goals in mind:</p><p>Learning how to solve problems I didn’t know how to solve before.<br>Learning how to write correct programs faster.<br>My training routine consists of a total of four different exercises. Each one helps me achieve the two objectives above. The four different exercises are:</p><p>Reading a paper.<br>Learning a new tool.<br>Reading several chapters of a book.<br>Recording my screen as I write a program. Then reviewing the footage and seeing how I could have written the program faster.<br>Let me explain each of the exercises in a bit more depth. I want to share some details on how each exercise works and the main benefits I’ve had from doing each exercise.</p><p>Reading a Paper<br>This exercise is designed to expand my knowledge of Computer Science. I’ve found two direct benefits to reading papers. The first benefit is that some papers have changed my model of certain problems. A good example of this is The Tail at Scale. That paper examines the counter intuitive nature of long tail latency.</p><p>One interesting lesson I learned from the paper was how running a request on multiple machines affects latency. The authors looked at empirical data from a Google service.  The service processes a request by distributing parts of the request across many different services. They used the data to estimate what would happen if you distributed requests across 100 different services. The authors found that if you measure the time it takes to get a response from all 100 severs, half of that time will be spent waiting for only the last five! This is because the slowest 5% of requests is that much slower than all the other requests. The paper also gives several approaches on how to reduce tail latency. I have found those approaches useful in my own work.</p><p>The other benefit I’ve found from reading papers is that they give me the knowledge to understand different systems as a whole. As an example, take Spanner, Google’s distributed database. Spanner uses many different techniques such as Paxos, two phase commit, MVCC, and predicate locks. I’ve been able to build up an understanding of these different techniques through reading papers. In turn, this enables me to reason the Spanner as a whole and reason about the trade offs Spanner makes compared to other systems.</p><p>I find most papers I read by either following the references of papers I have read or following up on a paper covered in the Morning Paper. The book Designing Data Intensive Applications also has a lot of references to papers that are worth reading.</p><p>Learning a New Tool<br>One of the easiest ways to solve problems is to use an existing tool that already solves that problem. For this exercise, I pick a tool and learn a bit about it. Usually I setup the tool locally, go through a few tutorials, and read a bit of the manual. Tools that I’ve learned in the past range from bash utils such as jq or sed to distributed systems such as Kafka or Zookeeper.</p><p>Learning the bash utilities helps me get solve many common tasks quicker than I could have otherwise. Simple text processing is often easier with sed than it is with a programming language. Likewise, learning about different distributed systems come in handy for understanding what tools work well for solving different problems. That way I know what tool I should use when faced with a given problem.</p><p>Reading Several Chapters of a Book<br>I use books to supplement the knowledge I don’t get from reading a paper or<br>learning a tool. The books I read cover a wide range of topics. Books I’ve read<br>recently include:</p><p>Refactoring – I found this to be a great way to understand what good code should look like and how to turn bad code into good code.<br>Getting Things Done – I found this book to be helpful for prioritizing and keeping track of things. It helped me build a system to make sure I get done what’s important for me to get done.<br>The First Time Manager – I recently became the team coordinator for my team at work. As team coordinator, my main responsibility is communicating with other teams when necessary. I also lead my team’s meetings. I found this book to be great for getting an understanding of basic management principles.<br>Recording My Screen<br>This exercise is my favorite. It’s the exercise that’s changed how I approach problems the most. It’s common for athletes to review footage of themselves to understand how they could have done better. I decided to apply the same approach to programming. Some of the lessons I’ve learned by recording my screen include:</p><p>It helps to test code as it’s written. Doing this reduces the amount of time it takes to debug code by reducing the time you spend locating where the bug is. If all your existing code is bug free, the bug has to be in the new code you just wrote.<br>When debugging a problem, adding functionality only for the purpose debugging is often well worth the cost. As an example, one toy problem I worked on was writing an LRU cache. I had a bug where it wasn’t evicting the right elements. I was able to quickly determine what was wrong by adding a function to print the state of the cache. I could then see where the expected behavior of the cache differed from the actual behavior. This allowed me to quickly locate the bug.<br>Spending five minutes deciding on an approach up front before writing any code is worth it. I’ve found two benefits to doing this. It helps me make sure my approach is correct. More importantly, it forces me to decide on a single approach. By watching a recording of myself, I found I wasted a lot of time switching my code between two different approaches. In reality, either approach would have worked fine.<br>All these lessons are obvious in retrospect. but I had no clue that any of these were issues until I recorded my screen and saw where I was actually spending time.</p><p>The steps I take for this exercise are:</p><p>Record myself writing some problem. This can either be a problem I worked on at work or a problem from a programming challenge website such as Leetcode.<br>Go through the recording at 10x speed and annotate what I was doing at each moment.<br>Total how much time I spent into high level categories. How much time did I spend debugging some bug? How much time did I spend building some feature<br>Look at the categories I spent the most time in. Then dig into what actually took up that time.<br>Come up with approaches that would have allowed me to save time. Often there are ways I could have structured my code up front that would have allowed me to write less code or find bugs earlier.<br>I highly recommend recording your screen. It’s one of the easiest ways to find small changes you can make to make yourself a lot more productive.</p><p>I’ve been doing this training regime over the past year. I’ve definitely noticed a huge difference. There’s a large amount of knowledge about systems and tools that I wouldn’t have developed otherwise. I’m also able to solve problems more quickly than I was able to before. I hope you reflect on these exercises and implement a few of them yourself.</p><p>Going forward, I’m going to start sharing what I find through my training regime. I’m going to start off by writing a blog post every time I do one of the exercises. I’ll share what I learned and found during the exercise. I think it would be beneficial for me to explain what I learned, as well as make a great learning resource for others.</p><!--    阅读卡：    文章：    时间：--><!--    阅读卡：    文章：    时间：    --><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p><a href="http://malisper.me/my-approach-to-getting-dramatically-better-as-a-programmer/?utm_source=wanqu.co&amp;utm_campaign=Wanqu+Daily&amp;utm_medium=website" target="_blank" rel="noopener">My Approach to Getting Dramatically Better as a Programmer</a><br>[My Approach to Getting Dramatically Better as a Programmer]:<a href="http://malisper.me/my-approach-to-getting-dramatically-better-as-a-programmer/?utm_source=wanqu.co&amp;utm_campaign=Wanqu+Daily&amp;utm_medium=website" target="_blank" rel="noopener">http://malisper.me/my-approach-to-getting-dramatically-better-as-a-programmer/?utm_source=wanqu.co&amp;utm_campaign=Wanqu+Daily&amp;utm_medium=website</a></p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;Ongoing,待完成，Please wait.&lt;br&gt;&lt;!--
+        &lt;!--
     Module:
     第一步:需要将这些文章都看几篇
     第二步：形成自己的理解
     第三步：可以按照非常有用的文章，重写写一遍
     第四步：纠正或者延伸别人的文章
---&gt;&lt;/p&gt;
-&lt;h
+--&gt;
+&lt;p&gt;There was a recent discussion amon
       
     
     </summary>
     
-      <category term="React Native" scheme="http://yoursite.com/categories/React-Native/"/>
+      <category term="English" scheme="http://yoursite.com/categories/English/"/>
     
     
-      <category term="React Native" scheme="http://yoursite.com/tags/React-Native/"/>
+      <category term="English" scheme="http://yoursite.com/tags/English/"/>
     
   </entry>
   
@@ -1605,29 +1563,100 @@
   </entry>
   
   <entry>
-    <title>Chrome</title>
-    <link href="http://yoursite.com/Chrome/"/>
-    <id>http://yoursite.com/Chrome/</id>
+    <title>React Native</title>
+    <link href="http://yoursite.com/React-Native/"/>
+    <id>http://yoursite.com/React-Native/</id>
     <published>2015-12-31T16:00:00.000Z</published>
-    <updated>2018-07-30T06:40:06.611Z</updated>
+    <updated>2018-07-19T03:04:04.994Z</updated>
     
-    <content type="html"><![CDATA[<p>Chrome相关</p><ol><li>Chrome 插件开发<br><a href="https://developer.chrome.com/extensions" target="_blank" rel="noopener">官方文档</a><br><a href="http://open.chrome.360.cn/extension_dev/overview.html" target="_blank" rel="noopener">综述–扩展开发文档</a></li></ol><!--    Module:    第一步:需要将这些文章都看几篇    第二步：形成自己的理解    第三步：可以按照非常有用的文章，重写写一遍    第四步：纠正或者延伸别人的文章--><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><!--    阅读卡：    文章：    时间：--><p><a href="https://juejin.im/post/5b24956951882574d73c6f78?utm_source=gold_browser_extension" target="_blank" rel="noopener">写个Markdown插件,讲讲Chrome扩展开发</a></p>]]></content>
+    <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.<br><!--    Module:    第一步:需要将这些文章都看几篇    第二步：形成自己的理解    第三步：可以按照非常有用的文章，重写写一遍    第四步：纠正或者延伸别人的文章--></p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><!--    阅读卡：    文章：    时间：--><p><a href="https://reactnative.cn/docs/0.36/getting-started.html" target="_blank" rel="noopener">React Native简介教程</a></p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;Chrome相关&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Chrome 插件开发&lt;br&gt;&lt;a href=&quot;https://developer.chrome.com/extensions&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;官方文档&lt;/a&gt;&lt;br&gt;&lt;a href
+        &lt;p&gt;Ongoing,待完成，Please wait.&lt;br&gt;&lt;!--
+    Module:
+    第一步:需要将这些文章都看几篇
+    第二步：形成自己的理解
+    第三步：可以按照非常有用的文章，重写写一遍
+    第四步：纠正或者延伸别人的文章
+--&gt;&lt;/p&gt;
+&lt;h
       
     
     </summary>
     
-      <category term="Chrome" scheme="http://yoursite.com/categories/Chrome/"/>
+      <category term="React Native" scheme="http://yoursite.com/categories/React-Native/"/>
     
     
-      <category term="Chrome" scheme="http://yoursite.com/tags/Chrome/"/>
+      <category term="React Native" scheme="http://yoursite.com/tags/React-Native/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Android中ContentProvider解析</title>
+    <link href="http://yoursite.com/Android-ContentProvider-Analysis/"/>
+    <id>http://yoursite.com/Android-ContentProvider-Analysis/</id>
+    <published>2015-12-31T16:00:00.000Z</published>
+    <updated>2018-07-16T09:48:52.886Z</updated>
+    
+    <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.</p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p><a href="https://blog.csdn.net/luoshengyang/article/details/8923485" target="_blank" rel="noopener">那两年炼就的Android内功修养</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6946067" target="_blank" rel="noopener">Android应用程序组件Content Provider简要介绍和学习计划</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6950440" target="_blank" rel="noopener">Android应用程序组件Content Provider应用实例</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6963418" target="_blank" rel="noopener">Android应用程序组件Content Provider的启动过程源代码分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6967204" target="_blank" rel="noopener">Android应用程序组件Content Provider在应用程序之间共享数据的原理分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6985171" target="_blank" rel="noopener">Android应用程序组件Content Provider的共享数据更新通知机制分析</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Ongoing,待完成，Please wait.&lt;/p&gt;
+&lt;h1 id=&quot;参考文献&quot;&gt;&lt;a href=&quot;#参考文献&quot; class=&quot;headerlink&quot; title=&quot;参考文献&quot;&gt;&lt;/a&gt;参考文献&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://blog.csdn.net
+      
+    
+    </summary>
+    
+      <category term="Android" scheme="http://yoursite.com/categories/Android/"/>
+    
+      <category term="ContentProvider" scheme="http://yoursite.com/categories/Android/ContentProvider/"/>
+    
+    
+      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
+    
+      <category term="ContentProvider" scheme="http://yoursite.com/tags/ContentProvider/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>C++ 基础</title>
+    <link href="http://yoursite.com/C-Base/"/>
+    <id>http://yoursite.com/C-Base/</id>
+    <published>2015-12-31T16:00:00.000Z</published>
+    <updated>2018-07-20T01:41:34.102Z</updated>
+    
+    <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.<br><!--    Module:    第一步:需要将这些文章都看几篇    第二步：形成自己的理解    第三步：可以按照非常有用的文章，重写写一遍    第四步：纠正或者延伸别人的文章--></p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><!--    阅读卡：    文章：    时间：--><p><a href="http://www.runoob.com/cplusplus/cpp-tutorial.html" target="_blank" rel="noopener">C++菜鸟教程</a><br><a href="https://www.w3cschool.cn/cpp/" target="_blank" rel="noopener">W3-C++教程</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Ongoing,待完成，Please wait.&lt;br&gt;&lt;!--
+    Module:
+    第一步:需要将这些文章都看几篇
+    第二步：形成自己的理解
+    第三步：可以按照非常有用的文章，重写写一遍
+    第四步：纠正或者延伸别人的文章
+--&gt;&lt;/p&gt;
+&lt;h
+      
+    
+    </summary>
+    
+      <category term="C++" scheme="http://yoursite.com/categories/C/"/>
+    
+      <category term="Base" scheme="http://yoursite.com/categories/C/Base/"/>
+    
+    
+      <category term="C++" scheme="http://yoursite.com/tags/C/"/>
+    
+      <category term="Base" scheme="http://yoursite.com/tags/Base/"/>
     
   </entry>
   

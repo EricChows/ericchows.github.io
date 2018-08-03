@@ -2,16 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://yoursite.com/%E5%90%84%E7%B1%BB%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E5%B0%8F%E6%8A%80%E5%B7%A7/</loc>
+    <loc>http://yoursite.com/Kaios/</loc>
     
-    <lastmod>2018-08-03T08:56:02.635Z</lastmod>
+    <lastmod>2018-08-03T11:58:52.492Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/Kaios/</loc>
+    <loc>http://yoursite.com/Fuchsia/</loc>
     
-    <lastmod>2018-08-03T02:42:45.451Z</lastmod>
+    <lastmod>2018-08-03T09:49:19.068Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/%E5%90%84%E7%B1%BB%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E5%B0%8F%E6%8A%80%E5%B7%A7/</loc>
+    
+    <lastmod>2018-08-03T08:56:02.635Z</lastmod>
     
   </url>
   

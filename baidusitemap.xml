@@ -4,28 +4,8 @@
 
     
   <url>
-    <loc>http://yoursite.com/%E5%90%84%E7%B1%BB%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E5%B0%8F%E6%8A%80%E5%B7%A7/</loc>
-    <lastmod>2018-08-03T08:56:02.635Z</lastmod>
-    <data>
-        <display>
-        <title>各类工具使用小技巧</title>
-        <pubTime>2015-06-29T06:06:59.000Z</pubTime>
-        
-        <tag>小技巧 工具 vim shell putty</tag>
-         
-         
-           
-             
-              <breadCrumb title="Tools" url="http://yoursite.com/categories/Tools/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://yoursite.com/Kaios/</loc>
-    <lastmod>2018-08-03T02:42:45.451Z</lastmod>
+    <lastmod>2018-08-03T11:58:52.492Z</lastmod>
     <data>
         <display>
         <title>Kaios</title>
@@ -42,6 +22,51 @@
           
              
               <breadCrumb title="Firefox OS" url="http://yoursite.com/categories/Kaios/Firefox-OS/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/Fuchsia/</loc>
+    <lastmod>2018-08-03T09:49:19.068Z</lastmod>
+    <data>
+        <display>
+        <title>Fuchsia</title>
+        <pubTime>2015-12-31T16:00:00.000Z</pubTime>
+        
+        <tag>Fuchsia</tag>
+         
+        <tag>Flutter</tag>
+         
+         
+           
+             
+              <breadCrumb title="Fuchsia" url="http://yoursite.com/categories/Fuchsia/"/>
+          
+             
+              <breadCrumb title="Flutter" url="http://yoursite.com/categories/Fuchsia/Flutter/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/%E5%90%84%E7%B1%BB%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E5%B0%8F%E6%8A%80%E5%B7%A7/</loc>
+    <lastmod>2018-08-03T08:56:02.635Z</lastmod>
+    <data>
+        <display>
+        <title>各类工具使用小技巧</title>
+        <pubTime>2015-06-29T06:06:59.000Z</pubTime>
+        
+        <tag>小技巧 工具 vim shell putty</tag>
+         
+         
+           
+             
+              <breadCrumb title="Tools" url="http://yoursite.com/categories/Tools/"/>
           
         </display>
     </data>
