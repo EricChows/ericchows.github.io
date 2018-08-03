@@ -2,9 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/Kaios/</loc>
+    
+    <lastmod>2018-08-03T02:12:21.782Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/%E5%90%84%E7%B1%BB%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E5%B0%8F%E6%8A%80%E5%B7%A7/</loc>
     
-    <lastmod>2018-07-30T09:04:08.115Z</lastmod>
+    <lastmod>2018-08-02T08:51:03.117Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/Android-Launcher-Analysis/</loc>
+    
+    <lastmod>2018-08-01T07:27:33.690Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/IT%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95%E8%AE%BA/</loc>
+    
+    <lastmod>2018-08-01T02:13:03.571Z</lastmod>
     
   </url>
   
@@ -79,13 +100,6 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/Android-Launcher-Analysis/</loc>
-    
-    <lastmod>2018-07-27T02:19:51.289Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/L-My-Approach-to-Getting-Dramatically-Better-as-a-Programmer/</loc>
     
     <lastmod>2018-07-25T12:15:40.224Z</lastmod>
@@ -138,13 +152,6 @@
     <loc>http://yoursite.com/about/index.html</loc>
     
     <lastmod>2018-07-18T15:01:13.616Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/IT%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95%E8%AE%BA/</loc>
-    
-    <lastmod>2018-07-18T14:54:45.580Z</lastmod>
     
   </url>
   
