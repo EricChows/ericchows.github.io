@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="EricChows">
 <meta property="og:description" content="简介官方网站 Kaios官网 Kaios开发者官网 火狐开发者官网 开发环境配置 Firefox OS/TCP ★★★★★ Kaios源码 Firefox OS B2G OS ★★★★★ Firefox OS架构 Firefox OS 模拟器 Firefox OS Articles FIREFOX OS Posts on XDA 国内开发 KaiosFirefox OS简介 Mozilla Fir">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-03T11:58:52.492Z">
+<meta property="og:updated_time" content="2018-08-03T14:03:59.327Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Kaios">
 <meta name="twitter:description" content="简介官方网站 Kaios官网 Kaios开发者官网 火狐开发者官网 开发环境配置 Firefox OS/TCP ★★★★★ Kaios源码 Firefox OS B2G OS ★★★★★ Firefox OS架构 Firefox OS 模拟器 Firefox OS Articles FIREFOX OS Posts on XDA 国内开发 KaiosFirefox OS简介 Mozilla Fir">
@@ -445,7 +445,9 @@
 <p><a href="https://blog.csdn.net/zembers/article/details/48495627" target="_blank" rel="noopener">Firefox OS启动过程分析－b2g进程启动</a></p>
 <p><a href="https://blog.csdn.net/xiaowublog/article/details/21822917" target="_blank" rel="noopener">Firefox OS手机应用开发（三）：第一个Firefox OS应用程序</a></p>
 <p><a href="https://blog.csdn.net/u013935416/article/details/25145239" target="_blank" rel="noopener">Firefox OS 2.0 模拟器 – 使用官方火狐浏览器扩展无痛完美模拟体验火狐手机系统</a></p>
-<p><a href="https://blog.csdn.net/WY16223864/article/details/8299245" target="_blank" rel="noopener">Firefox OS编译</a></p>
+<p><a href="https://blog.csdn.net/WY16223864/article/details/8299245" target="_blank" rel="noopener">Firefox OS编译</a><br>编译的时候遇到一个问题,报错<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Install dir: out/target/product/msm8909_q11/system/b2g</span><br><span class="line">rm -rf out/target/product/msm8909_q11/system/b2g/defaults</span><br><span class="line">mkdir -p out/target/product/msm8909_q11/system/b2g/defaults/pref</span><br><span class="line">cp -r /home/zds/Code/Q11/gaia/profile/defaults/* out/target/product/msm8909_q11/system/b2g/defaults/</span><br><span class="line">cp: cannot <span class="built_in">stat</span> `/home/zds/Code/Q11/gaia/profile/defaults/*<span class="string">': No such file or directory</span></span><br><span class="line"><span class="string">make: *** [out/target/product/msm8909_q11/system/gecko] Error 1</span></span><br></pre></td></tr></table></figure></p>
+<p>查找发现解压有问题.到gaia目录手动把profile.tar.gz解压就行.就可以编译过</p>
+<p>高通平台的话单模块编译，可以直接make 模块名</p>
 <p><a href="https://git.kaiostech.com/" target="_blank" rel="noopener">Kaios</a> <!-- 账号： ganxiao@hymost.com 密码： hymostsw  --></p>
 <!--
     Module:
@@ -491,8 +493,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/IT-Other-one/" rel="next" title="给技术人员一些技术以外的建议">
-                <i class="fa fa-chevron-left"></i> 给技术人员一些技术以外的建议
+              <a href="/L-My-Approach-to-Getting-Dramatically-Better-as-a-Programmer/" rel="next" title="My Approach to Getting Dramatically Better as a Programmer">
+                <i class="fa fa-chevron-left"></i> My Approach to Getting Dramatically Better as a Programmer
               </a>
             
           </div>
@@ -501,8 +503,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/Fuchsia/" rel="prev" title="Fuchsia">
-                Fuchsia <i class="fa fa-chevron-right"></i>
+              <a href="/Android-ActivityManagerService-Analysis/" rel="prev" title="Android中ActivityManagerService解析">
+                Android中ActivityManagerService解析 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -584,7 +586,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">70</span>
+                  <span class="site-state-item-count">72</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -595,7 +597,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">59</span>
+                  <span class="site-state-item-count">62</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -606,7 +608,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">79</span>
+                  <span class="site-state-item-count">82</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
