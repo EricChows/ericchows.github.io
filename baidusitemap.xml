@@ -5,20 +5,23 @@
     
   <url>
     <loc>http://yoursite.com/IT%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95%E8%AE%BA/</loc>
-    <lastmod>2018-08-05T09:36:57.630Z</lastmod>
+    <lastmod>2018-08-05T13:28:45.336Z</lastmod>
     <data>
         <display>
         <title>IT学习方法论</title>
         <pubTime>2017-05-04T16:00:00.000Z</pubTime>
         
-        <tag>IT</tag>
-         
         <tag>方法论</tag>
+         
+        <tag>IT</tag>
          
          
            
              
-              <breadCrumb title="Hexo" url="http://yoursite.com/categories/Hexo/"/>
+              <breadCrumb title="方法论" url="http://yoursite.com/categories/%E6%96%B9%E6%B3%95%E8%AE%BA/"/>
+          
+             
+              <breadCrumb title="IT" url="http://yoursite.com/categories/%E6%96%B9%E6%B3%95%E8%AE%BA/IT/"/>
           
         </display>
     </data>
