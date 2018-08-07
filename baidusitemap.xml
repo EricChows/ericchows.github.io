@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://yoursite.com/Myblog/</loc>
+    <lastmod>2018-08-07T08:16:37.026Z</lastmod>
+    <data>
+        <display>
+        <title>★★★★★博客导航★★★★★</title>
+        <pubTime>2098-12-31T16:00:00.000Z</pubTime>
+        
+        <tag>Myblog</tag>
+         
+         
+           
+             
+              <breadCrumb title="All" url="http://yoursite.com/categories/All/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/Android-%E5%BC%80%E5%8F%91%E8%80%85%E6%8C%87%E5%8D%97%E9%98%85%E8%AF%BB/</loc>
     <lastmod>2018-08-07T08:04:30.742Z</lastmod>
     <data>
@@ -143,26 +163,6 @@
           
              
               <breadCrumb title="Base" url="http://yoursite.com/categories/Java/Base/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/Myblog/</loc>
-    <lastmod>2018-08-07T07:47:18.830Z</lastmod>
-    <data>
-        <display>
-        <title>本站导航</title>
-        <pubTime>2098-12-31T16:00:00.000Z</pubTime>
-        
-        <tag>Myblog</tag>
-         
-         
-           
-             
-              <breadCrumb title="All" url="http://yoursite.com/categories/All/"/>
           
         </display>
     </data>
