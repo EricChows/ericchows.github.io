@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/Ubuntu-OpenGork/</loc>
+    
+    <lastmod>2018-08-07T07:57:04.288Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/Android%E4%B8%ADPackageManagerService%E7%9B%B8%E5%85%B3%E7%9A%84%E6%96%87%E4%BB%B6/</loc>
     
     <lastmod>2018-08-07T07:50:07.306Z</lastmod>
@@ -467,13 +474,6 @@
     <loc>http://yoursite.com/2017-04-23-Android%E5%BC%80%E5%8F%91%E5%B8%B8%E7%94%A8%E7%BD%91%E7%AB%99/</loc>
     
     <lastmod>2018-07-03T13:20:07.790Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/Ubuntu-OpenGork/</loc>
-    
-    <lastmod>2018-07-01T11:48:33.229Z</lastmod>
     
   </url>
   

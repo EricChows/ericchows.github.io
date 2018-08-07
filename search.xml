@@ -72,21 +72,6 @@
     </entry>
     
     <entry>
-      <title>Ubuntu 配置 OpenGork 服务</title>
-      <link href="/Ubuntu-OpenGork/"/>
-      <url>/Ubuntu-OpenGork/</url>
-      <content type="html"><![CDATA[<h1 id="OpenGork的配置"><a href="#OpenGork的配置" class="headerlink" title="OpenGork的配置"></a>OpenGork的配置</h1><p>OpenGork的好处，这里不做介绍了，可以参考<a href="https://zhuanlan.zhihu.com/p/24369747" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/24369747</a><br>OpenGork是用Java实现的，源码见 <a href="https://github.com/oracle/opengrok/" target="_blank" rel="noopener">https://github.com/oracle/opengrok/</a><br>OpenGork官网：<a href="http://oracle.github.io/opengrok/" target="_blank" rel="noopener">http://oracle.github.io/opengrok/</a><br>OpenGork下载地址：<a href="https://github.com/oracle/opengrok/releases" target="_blank" rel="noopener">https://github.com/oracle/opengrok/releases</a> 这里可以下载编译好的文件，或者下载源码</p><p>配置OpenGork之前需要一些其他的环境：  </p><ol><li>Java环境：JDK 以及配置好环境变量<br>—如何实现请自行查找  </li><li>Tomcat 服务：需要下载Tomcat服务<br>下载地址：<a href="http://tomcat.apache.org/" target="_blank" rel="noopener">http://tomcat.apache.org/</a><br><strong>注意一：Tomcat7.0版本和JDK1.8版本无法兼容</strong>  </li><li>OpenGork：<a href="https://github.com/oracle/opengrok/releases" target="_blank" rel="noopener">https://github.com/oracle/opengrok/releases</a>  </li><li>遗漏了ctags，如果这个工具没有安装和在Opengork里面配置的话，就算Tomcat和Opengork都配置好了，且都能正常运行，还是无法进行搜索，而且Opengork网站里面也无法打开文件。根本原因是ctags 就是用来建立索引的工具，没了它，后面的搜索就无从说起。<br>Ubuntu 安装ctags命令:sudo apt-get install ctags<br>Ubuntu自带了exuberant ctags,在后面的OpenGork的配置文件中，需要FindExuberanCtags()函数的binary中需要填写为binay=”exuberant ctags”</li></ol><p><strong>注意二：Tomcat 和 Jdk不要直接用sudo apt-get install的命令方式来安装。这样做了，后面改配置文件会很痛苦</strong></p><p>前期准备工作做好了之后，下面来进行安装和配置：  </p><ol><li><p>安装Tomcat<br>1)解压下载下来的Tomcat压缩包<br>进入Tomcat解压目录/bin 下执行sudo ./startup.sh<br>启动Tomcat<br>2).在浏览器输入<a href="http://localhost:8080" target="_blank" rel="noopener">http://localhost:8080</a> 或者192.168.0.1:8080<br>局域网内其他机器可以输入<a href="http://ip:8080" target="_blank" rel="noopener">http://ip:8080</a>来测试Tomcat服务是否启动成功</p></li><li><p>安装OpenGork<br>1)在/opt目录下新建opengork目录<br>2)将下载下来的opengork压缩包解压到/opt/opengork目录下<br>3)opengrok/lib目录下的source.war包拷贝到apache-tomcat/webapps目录下<br>4)在浏览器输入<a href="http://localhost:8080/source" target="_blank" rel="noopener">http://localhost:8080/source</a><br>5)能正常看到opengork起来了的界面就Ok了。<br>如果Tomcat版本是7.0，JDK版本是1.8的话，或在这个界面报各种http 400/500等各种乱七八糟的错误</p></li><li><p>配置OpenGork<br>在/opt/opengrok目录的bin文件下 vim OpenGork文件<br>找到DefaultInstanceConfiguration函数里面的<br>OPENGROK_INSTANCE_BASE=”${OPENGROK_INSTANCE_BASE:-/var/opengrok}”</p></li></ol><p>这一块<a href="https://blog.csdn.net/tyronne/article/details/34984805" target="_blank" rel="noopener">https://blog.csdn.net/tyronne/article/details/34984805</a> 这篇文章写的蛮好，可以参考</p><ol start="4"><li>客制化Opengork<br>由于Opengork的代码需要建立索引，一般是在/opt/opengork/有src data等目录<br>其实可以自己克制化这个目录<br>比如：在/home/xxx/Code/目录下新建一个opengork目录<br>在里面再建好src data etc三个目录</li></ol><p>在第三步的/opt/opengork/bin/OpenGork这个配置文件里面和Tomcat的web.xml文件里面<br>把路径都配置成/home/xxx/Code/opengork就可以了</p><p>后面可以把代码放在/home/xxx/Code/src目录下面</p><h1 id="Android源码-OpenGork"><a href="#Android源码-OpenGork" class="headerlink" title="Android源码 OpenGork"></a>Android源码 OpenGork</h1><p>以下三个OpenGork都已经部署好，可以查询从Android1.6到最新版本的Android 以及Kernel代码</p><p><a href="http://androidxref.com/" target="_blank" rel="noopener">androidxref</a><br><a href="https://www.androidos.net.cn/" target="_blank" rel="noopener">androidos</a><br><a href="http://android.macpod.net/" target="_blank" rel="noopener">macpod</a></p><p>这三个网站各有各自的优点</p>]]></content>
-      
-      <categories>
-          
-          <category> Tools </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
       <title>Android系统性能调优工具</title>
       <link href="/Android-Performance/"/>
       <url>/Android-Performance/</url>
@@ -453,6 +438,21 @@
     </entry>
     
     <entry>
+      <title>Ubuntu 配置 OpenGork 服务</title>
+      <link href="/Ubuntu-OpenGork/"/>
+      <url>/Ubuntu-OpenGork/</url>
+      <content type="html"><![CDATA[<h1 id="OpenGork的配置"><a href="#OpenGork的配置" class="headerlink" title="OpenGork的配置"></a>OpenGork的配置</h1><p>OpenGork的好处，这里不做介绍了，可以参考<a href="https://zhuanlan.zhihu.com/p/24369747" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/24369747</a><br>OpenGork是用Java实现的，源码见 <a href="https://github.com/oracle/opengrok/" target="_blank" rel="noopener">https://github.com/oracle/opengrok/</a><br>OpenGork官网：<a href="http://oracle.github.io/opengrok/" target="_blank" rel="noopener">http://oracle.github.io/opengrok/</a><br>OpenGork下载地址：<a href="https://github.com/oracle/opengrok/releases" target="_blank" rel="noopener">https://github.com/oracle/opengrok/releases</a> 这里可以下载编译好的文件，或者下载源码</p><p>配置OpenGork之前需要一些其他的环境：  </p><ol><li>Java环境：JDK 以及配置好环境变量<br>—如何实现请自行查找  </li><li>Tomcat 服务：需要下载Tomcat服务<br>下载地址：<a href="http://tomcat.apache.org/" target="_blank" rel="noopener">http://tomcat.apache.org/</a><br><strong>注意一：Tomcat7.0版本和JDK1.8版本无法兼容</strong>  </li><li>OpenGork：<a href="https://github.com/oracle/opengrok/releases" target="_blank" rel="noopener">https://github.com/oracle/opengrok/releases</a>  </li><li>遗漏了ctags，如果这个工具没有安装和在Opengork里面配置的话，就算Tomcat和Opengork都配置好了，且都能正常运行，还是无法进行搜索，而且Opengork网站里面也无法打开文件。根本原因是ctags 就是用来建立索引的工具，没了它，后面的搜索就无从说起。<br>Ubuntu 安装ctags命令:sudo apt-get install ctags<br>Ubuntu自带了exuberant ctags,在后面的OpenGork的配置文件中，需要FindExuberanCtags()函数的binary中需要填写为binay=”exuberant ctags”</li></ol><p><strong>注意二：Tomcat 和 Jdk不要直接用sudo apt-get install的命令方式来安装。这样做了，后面改配置文件会很痛苦</strong></p><p>前期准备工作做好了之后，下面来进行安装和配置：  </p><ol><li><p>安装Tomcat<br>1)解压下载下来的Tomcat压缩包<br>进入Tomcat解压目录/bin 下执行sudo ./startup.sh<br>启动Tomcat<br>2).在浏览器输入<a href="http://localhost:8080" target="_blank" rel="noopener">http://localhost:8080</a> 或者192.168.0.1:8080<br>局域网内其他机器可以输入<a href="http://ip:8080" target="_blank" rel="noopener">http://ip:8080</a>来测试Tomcat服务是否启动成功</p></li><li><p>安装OpenGork<br>1)在/opt目录下新建opengork目录<br>2)将下载下来的opengork压缩包解压到/opt/opengork目录下<br>3)opengrok/lib目录下的source.war包拷贝到apache-tomcat/webapps目录下<br>4)在浏览器输入<a href="http://localhost:8080/source" target="_blank" rel="noopener">http://localhost:8080/source</a><br>5)能正常看到opengork起来了的界面就Ok了。<br>如果Tomcat版本是7.0，JDK版本是1.8的话，或在这个界面报各种http 400/500等各种乱七八糟的错误</p></li><li><p>配置OpenGork<br>在/opt/opengrok目录的bin文件下 vim OpenGork文件<br>找到DefaultInstanceConfiguration函数里面的<br>OPENGROK_INSTANCE_BASE=”${OPENGROK_INSTANCE_BASE:-/var/opengrok}”</p></li></ol><p>这一块<a href="https://blog.csdn.net/tyronne/article/details/34984805" target="_blank" rel="noopener">https://blog.csdn.net/tyronne/article/details/34984805</a> 这篇文章写的蛮好，可以参考</p><ol start="4"><li>客制化Opengork<br>由于Opengork的代码需要建立索引，一般是在/opt/opengork/有src data等目录<br>其实可以自己克制化这个目录<br>比如：在/home/xxx/Code/目录下新建一个opengork目录<br>在里面再建好src data etc三个目录</li></ol><p>在第三步的/opt/opengork/bin/OpenGork这个配置文件里面和Tomcat的web.xml文件里面<br>把路径都配置成/home/xxx/Code/opengork就可以了</p><p>后面可以把代码放在/home/xxx/Code/src目录下面</p><h1 id="Android源码-OpenGork"><a href="#Android源码-OpenGork" class="headerlink" title="Android源码 OpenGork"></a>Android源码 OpenGork</h1><p>以下三个OpenGork都已经部署好，可以查询从Android1.6到最新版本的Android 以及Kernel代码</p><p><a href="http://androidxref.com/" target="_blank" rel="noopener">androidxref</a><br><a href="https://www.androidos.net.cn/" target="_blank" rel="noopener">androidos</a><br><a href="http://android.macpod.net/" target="_blank" rel="noopener">macpod</a></p><p>这三个网站各有各自的优点</p>]]></content>
+      
+      <categories>
+          
+          <category> Tools </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
       <title>IT学习方法论</title>
       <link href="/IT%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95%E8%AE%BA/"/>
       <url>/IT%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95%E8%AE%BA/</url>
@@ -528,31 +528,6 @@
     </entry>
     
     <entry>
-      <title>Android中EventBus解析</title>
-      <link href="/Android-EventBus/"/>
-      <url>/Android-EventBus/</url>
-      <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.<br><!--    Module:    第一步:需要将这些文章都看几篇    第二步：形成自己的理解    第三步：可以按照非常有用的文章，重写写一遍    第四步：纠正或者延伸别人的文章--></p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><!--    阅读卡：    文章：    时间：--><p><a href="https://xudeveloper.github.io/2018/01/20/EventBus%203.1.1%20%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90/" target="_blank" rel="noopener">EventBus 3.1.1 源码解析</a></p>]]></content>
-      
-      <categories>
-          
-          <category> Android </category>
-          
-          <category> EventBus </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Android </tag>
-            
-            <tag> EventBus </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
       <title>SELinux与SEAndroid解析</title>
       <link href="/SELinux-SEAndroid/"/>
       <url>/SELinux-SEAndroid/</url>
@@ -572,6 +547,31 @@
             <tag> SEAndroid </tag>
             
             <tag> SELinux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>Android中ContentProvider解析</title>
+      <link href="/Android-ContentProvider-Analysis/"/>
+      <url>/Android-ContentProvider-Analysis/</url>
+      <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.</p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p><a href="https://blog.csdn.net/luoshengyang/article/details/8923485" target="_blank" rel="noopener">那两年炼就的Android内功修养</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6946067" target="_blank" rel="noopener">Android应用程序组件Content Provider简要介绍和学习计划</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6950440" target="_blank" rel="noopener">Android应用程序组件Content Provider应用实例</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6963418" target="_blank" rel="noopener">Android应用程序组件Content Provider的启动过程源代码分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6967204" target="_blank" rel="noopener">Android应用程序组件Content Provider在应用程序之间共享数据的原理分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6985171" target="_blank" rel="noopener">Android应用程序组件Content Provider的共享数据更新通知机制分析</a></p>]]></content>
+      
+      <categories>
+          
+          <category> Android </category>
+          
+          <category> ContentProvider </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Android </tag>
+            
+            <tag> ContentProvider </tag>
             
         </tags>
       
@@ -653,16 +653,16 @@
     </entry>
     
     <entry>
-      <title>Android中ContentProvider解析</title>
-      <link href="/Android-ContentProvider-Analysis/"/>
-      <url>/Android-ContentProvider-Analysis/</url>
-      <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.</p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p><a href="https://blog.csdn.net/luoshengyang/article/details/8923485" target="_blank" rel="noopener">那两年炼就的Android内功修养</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6946067" target="_blank" rel="noopener">Android应用程序组件Content Provider简要介绍和学习计划</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6950440" target="_blank" rel="noopener">Android应用程序组件Content Provider应用实例</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6963418" target="_blank" rel="noopener">Android应用程序组件Content Provider的启动过程源代码分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6967204" target="_blank" rel="noopener">Android应用程序组件Content Provider在应用程序之间共享数据的原理分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6985171" target="_blank" rel="noopener">Android应用程序组件Content Provider的共享数据更新通知机制分析</a></p>]]></content>
+      <title>Android中BroadcastRecevier解析</title>
+      <link href="/Android-BroadcastRecevier-Analysis/"/>
+      <url>/Android-BroadcastRecevier-Analysis/</url>
+      <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.</p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><ol><li>Android Broadcast广播注册和发布方式以及机制流程 <a href="https://blog.csdn.net/liu_3262296/article/details/51935316" target="_blank" rel="noopener">https://blog.csdn.net/liu_3262296/article/details/51935316</a></li><li>Android广播之发送广播的源码分析 <a href="https://blog.csdn.net/zhangyongfeiyong/article/details/52022935" target="_blank" rel="noopener">https://blog.csdn.net/zhangyongfeiyong/article/details/52022935</a></li><li>Android广播机制实现源码浅析（一） <a href="https://blog.csdn.net/hehui1860/article/details/30726609" target="_blank" rel="noopener">https://blog.csdn.net/hehui1860/article/details/30726609</a></li><li>Android广播机制实现源码浅析（二） <a href="https://blog.csdn.net/hehui1860/article/details/30727075" target="_blank" rel="noopener">https://blog.csdn.net/hehui1860/article/details/30727075</a></li><li>Android广播机制实现源码浅析（三）<a href="https://blog.csdn.net/hehui1860/article/details/30727537" target="_blank" rel="noopener">https://blog.csdn.net/hehui1860/article/details/30727537</a></li><li>BroadcastReceiver源码解析(一)  <a href="https://blog.csdn.net/tiefeng0606/article/details/51354381" target="_blank" rel="noopener">https://blog.csdn.net/tiefeng0606/article/details/51354381</a></li><li>BroadcastReceiver源码解析（二） <a href="https://blog.csdn.net/tiefeng0606/article/details/51381221" target="_blank" rel="noopener">https://blog.csdn.net/tiefeng0606/article/details/51381221</a></li></ol><p><a href="https://blog.csdn.net/luoshengyang/article/details/8923485" target="_blank" rel="noopener">那两年炼就的Android内功修养</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6730748" target="_blank" rel="noopener">Android系统中的广播（Broadcast）机制简要介绍和学习计划</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6737352" target="_blank" rel="noopener">Android应用程序注册广播接收器（registerReceiver）的过程分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6744448" target="_blank" rel="noopener">Android应用程序发送广播（sendBroadcast）的过程分析</a></p>]]></content>
       
       <categories>
           
           <category> Android </category>
           
-          <category> ContentProvider </category>
+          <category> BroadcastRecevier </category>
           
       </categories>
       
@@ -671,7 +671,7 @@
             
             <tag> Android </tag>
             
-            <tag> ContentProvider </tag>
+            <tag> BroadcastRecevier </tag>
             
         </tags>
       
@@ -722,31 +722,6 @@
             <tag> RxJava </tag>
             
             <tag> RxAndroid </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>Android中BroadcastRecevier解析</title>
-      <link href="/Android-BroadcastRecevier-Analysis/"/>
-      <url>/Android-BroadcastRecevier-Analysis/</url>
-      <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.</p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><ol><li>Android Broadcast广播注册和发布方式以及机制流程 <a href="https://blog.csdn.net/liu_3262296/article/details/51935316" target="_blank" rel="noopener">https://blog.csdn.net/liu_3262296/article/details/51935316</a></li><li>Android广播之发送广播的源码分析 <a href="https://blog.csdn.net/zhangyongfeiyong/article/details/52022935" target="_blank" rel="noopener">https://blog.csdn.net/zhangyongfeiyong/article/details/52022935</a></li><li>Android广播机制实现源码浅析（一） <a href="https://blog.csdn.net/hehui1860/article/details/30726609" target="_blank" rel="noopener">https://blog.csdn.net/hehui1860/article/details/30726609</a></li><li>Android广播机制实现源码浅析（二） <a href="https://blog.csdn.net/hehui1860/article/details/30727075" target="_blank" rel="noopener">https://blog.csdn.net/hehui1860/article/details/30727075</a></li><li>Android广播机制实现源码浅析（三）<a href="https://blog.csdn.net/hehui1860/article/details/30727537" target="_blank" rel="noopener">https://blog.csdn.net/hehui1860/article/details/30727537</a></li><li>BroadcastReceiver源码解析(一)  <a href="https://blog.csdn.net/tiefeng0606/article/details/51354381" target="_blank" rel="noopener">https://blog.csdn.net/tiefeng0606/article/details/51354381</a></li><li>BroadcastReceiver源码解析（二） <a href="https://blog.csdn.net/tiefeng0606/article/details/51381221" target="_blank" rel="noopener">https://blog.csdn.net/tiefeng0606/article/details/51381221</a></li></ol><p><a href="https://blog.csdn.net/luoshengyang/article/details/8923485" target="_blank" rel="noopener">那两年炼就的Android内功修养</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6730748" target="_blank" rel="noopener">Android系统中的广播（Broadcast）机制简要介绍和学习计划</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6737352" target="_blank" rel="noopener">Android应用程序注册广播接收器（registerReceiver）的过程分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6744448" target="_blank" rel="noopener">Android应用程序发送广播（sendBroadcast）的过程分析</a></p>]]></content>
-      
-      <categories>
-          
-          <category> Android </category>
-          
-          <category> BroadcastRecevier </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Android </tag>
-            
-            <tag> BroadcastRecevier </tag>
             
         </tags>
       
@@ -847,6 +822,31 @@
     </entry>
     
     <entry>
+      <title>Android中EventBus解析</title>
+      <link href="/Android-EventBus/"/>
+      <url>/Android-EventBus/</url>
+      <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.<br><!--    Module:    第一步:需要将这些文章都看几篇    第二步：形成自己的理解    第三步：可以按照非常有用的文章，重写写一遍    第四步：纠正或者延伸别人的文章--></p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><!--    阅读卡：    文章：    时间：--><p><a href="https://xudeveloper.github.io/2018/01/20/EventBus%203.1.1%20%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90/" target="_blank" rel="noopener">EventBus 3.1.1 源码解析</a></p>]]></content>
+      
+      <categories>
+          
+          <category> Android </category>
+          
+          <category> EventBus </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Android </tag>
+            
+            <tag> EventBus </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>Android中启动过程解析</title>
       <link href="/A-Ongoing-Android%E5%BC%82%E5%B8%B8%E8%A7%A3%E6%9E%90/"/>
       <url>/A-Ongoing-Android%E5%BC%82%E5%B8%B8%E8%A7%A3%E6%9E%90/</url>
@@ -874,16 +874,16 @@
     </entry>
     
     <entry>
-      <title>Android中Handler解析</title>
-      <link href="/Android-Handler-Analysis/"/>
-      <url>/Android-Handler-Analysis/</url>
-      <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.</p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p><a href="https://blog.csdn.net/luoshengyang/article/details/8923485" target="_blank" rel="noopener">那两年炼就的Android内功修养</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6817933" target="_blank" rel="noopener">Android应用程序消息处理机制（Looper、Handler）分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6882903" target="_blank" rel="noopener">Android应用程序键盘（Keyboard）消息处理机制分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6905587" target="_blank" rel="noopener">Android应用程序线程消息循环模型分析</a></p>]]></content>
+      <title>Android中Activity解析</title>
+      <link href="/Android-Activity-Analysis/"/>
+      <url>/Android-Activity-Analysis/</url>
+      <content type="html"><![CDATA[<p>上次我们讲到Activity的四种启动模式的时候，已经了解到一些关于task的技术，今天我再向大家介绍一下。task是一个具有栈结构的容器，可以放置多个Activity实例。启动一个应用，系统就会为之创建一个task，来放置根Activity；默认情况下，一个Activity启动另一个Activity时，两个Activity是放置在同一个task中的，后者被压入前者所在的task栈，当用户按下后退键，后者从task被弹出，前者又显示在幕前，特别是启动其他应用中的Activity时，两个Activity对用户来说就好像是属于同一个应用；系统task和task之间是互相独立的，当我们运行一个应用时，按下Home键回到主屏，启动另一个应用，这个过程中，之前的task被转移到后台，新的task被转移到前台，其根Activity也会显示到幕前，过了一会之后，在此按下Home键回到主屏，再选择之前的应用，之前的task会被转移到前台，系统仍然保留着task内的所有Activity实例，而那个新的task会被转移到后台，如果这时用户再做后退等动作，就是针对该task内部进行操作了。</p><p>我们今天就讲一下和task相关的知识，主要分一下几点：</p><p>1.Activity的affinity(亲和力)</p><p>2.Intent几种常见的flags</p><p>3.与task相关属性</p><p>affinity：</p><p>task对于Activity来说就好像它的身份证一样，可以告诉所在的task，自己属于这个task中的一员；拥有相同affinity的多个Activity理论同属于一个task，task自身的affinity决定于根Activity的affinity值。affinity在什么场合应用呢？1.根据affinity重新为Activity选择宿主task（与allowTaskReparenting属性配合工作）；2.启动一个Activity过程中Intent使用了FLAG_ACTIVITY_NEW_TASK标记，根据affinity查找或创建一个新的具有对应affinity的task。我们会在后面进行详细讲解。</p><p>默认情况下，一个应用内的所有Activity都具有相同的affinity，都是从Application（参考的taskAffinity属性）继承而来，而Application默认的affinity是中的包名，我们可以为设置taskAffinity属性值，这样可以应用到下的所有，也可以单独为某个Activity设置taskAffinity。例如：在系统自带的Browser中，package为com.android.browser，但是却自定义一个taskAffinity属性值：</p><p>Ongoing,待完成，Please wait.</p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p><a href="https://blog.csdn.net/luoshengyang/article/details/8923485" target="_blank" rel="noopener">那两年炼就的Android内功修养</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6685853" target="_blank" rel="noopener">Android应用程序的Activity启动过程简要介绍和学习计划</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6689748" target="_blank" rel="noopener">Android应用程序启动过程源代码分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6703247" target="_blank" rel="noopener">Android应用程序内部启动Activity过程（startActivity）的源代码分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6720261" target="_blank" rel="noopener">Android应用程序在新的进程中启动新的Activity的方法和过程分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6714543" target="_blank" rel="noopener">解开Android应用程序组件Activity的”singleTask”之谜</a></p><p><a href="http://www.cnblogs.com/CSU-PL/p/3794280.html" target="_blank" rel="noopener">android的task任务栈</a></p><p><a href="https://www.jianshu.com/p/9ecea420eb52" target="_blank" rel="noopener">3分钟看懂Activity启动流程</a></p><p><a href="">Android 7.0 startActivity()源码解析以及对几个问题的思考</a></p>]]></content>
       
       <categories>
           
           <category> Android </category>
           
-          <category> Handler </category>
+          <category> Activity </category>
           
       </categories>
       
@@ -892,7 +892,7 @@
             
             <tag> Android </tag>
             
-            <tag> Handler </tag>
+            <tag> Activity </tag>
             
         </tags>
       
@@ -1041,52 +1041,6 @@
     </entry>
     
     <entry>
-      <title>Android中按键事件传递分析</title>
-      <link href="/Android-KeyEvent-Analysis/"/>
-      <url>/Android-KeyEvent-Analysis/</url>
-      <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.<br><!--    Module:    第一步:需要将这些文章都看几篇    第二步：形成自己的理解    第三步：可以按照非常有用的文章，重写写一遍    第四步：纠正或者延伸别人的文章--></p><p>Framework Native模块代码</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">frameworks/base/services/core/jni/</span><br><span class="line">├── com_android_server_input_InputManagerService.cpp</span><br><span class="line">├── com_android_server_input_InputApplicationHandle.h</span><br><span class="line">├── com_android_server_input_InputApplicationHandle.c</span><br><span class="line">├── com_android_server_input_InputWindowHandle.h</span><br><span class="line">├── com_android_server_input_InputWindowHandle.c</span><br><span class="line">└──</span><br></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">frameworks/native/include/android</span><br><span class="line">├── input.h</span><br><span class="line">└── keycodes.h</span><br></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">frameworks/native/include/input</span><br><span class="line">├── DisplayViewport.h</span><br><span class="line">├── IInputFlinger.h</span><br><span class="line">├── InputDevice.h</span><br><span class="line">├── InputEventLabels.h</span><br><span class="line">├── Input.h</span><br><span class="line">├── InputTransport.h</span><br><span class="line">├── Keyboard.h</span><br><span class="line">├── KeyCharacterMap.h</span><br><span class="line">├── KeyLayoutMap.h</span><br><span class="line">├── VelocityControl.h</span><br><span class="line">├── VelocityTracker.h</span><br><span class="line">└── VirtualKeyMap.h</span><br></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">frameworks/native/services/inputflinger</span><br><span class="line">├── Android.bp</span><br><span class="line">├── EventHub.cpp</span><br><span class="line">├── EventHub.h</span><br><span class="line">├── host</span><br><span class="line">│   ├── Android.bp</span><br><span class="line">│   ├── InputDriver.cpp</span><br><span class="line">│   ├── InputDriver.h</span><br><span class="line">│   ├── InputFlinger.cpp</span><br><span class="line">│   ├── InputFlinger.h</span><br><span class="line">│   ├── inputflinger.rc</span><br><span class="line">│   ├── InputHost.cpp</span><br><span class="line">│   ├── InputHost.h</span><br><span class="line">│   └── main.cpp</span><br><span class="line">├── InputApplication.cpp</span><br><span class="line">├── InputApplication.h</span><br><span class="line">├── InputDispatcher.cpp</span><br><span class="line">├── InputDispatcher.h</span><br><span class="line">├── InputListener.cpp</span><br><span class="line">├── InputListener.h</span><br><span class="line">├── InputManager.cpp</span><br><span class="line">├── InputManager.h</span><br><span class="line">├── InputReader.cpp</span><br><span class="line">├── InputReader.h</span><br><span class="line">├── InputWindow.cpp</span><br><span class="line">├── InputWindow.h</span><br><span class="line">├── PointerControllerInterface.h</span><br><span class="line">└── tests</span><br><span class="line">    ├── Android.bp</span><br><span class="line">    ├── InputDispatcher_test.cpp</span><br><span class="line">    └── InputReader_test.cpp</span><br></pre></td></tr></table></figure><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><!--    阅读卡：    文章：Android按键事件传递流程(一)    时间：2018/07/19--><p>[1095/1219] including ./vendor/qcom/proprietary/diag/Android.mk …<br>build/core/binary.mk:1522: error: vendor/qcom/proprietary/diag/diag_ep/Android.mk: diag_ep: C_INCLUDES must be under the source or output directories: /diag/diag_ep /diag/include /diag/src.</p><p>用户态</p><p>这两篇文章关注了很多的代码细节：<br><a href="https://blog.csdn.net/w690333243/article/details/77493981" target="_blank" rel="noopener">Android按键事件传递流程(一)</a><br><a href="https://blog.csdn.net/qidabing/article/details/74073515" target="_blank" rel="noopener">Android按键事件传递流程(二)</a></p><p>将Native层的Input子系统，起到承上启下的功能.连接Kernel 和 Fwk<br><a href="https://www.cnblogs.com/haiming/p/3318614.html" target="_blank" rel="noopener">Android Framework——之Input子系统</a></p><p>内核态<br><a href="https://www.jianshu.com/p/4f59efee9cd8" target="_blank" rel="noopener">Android物理按键输入事件(一)</a><br><a href="https://www.jianshu.com/p/3fe41b6d0c92" target="_blank" rel="noopener">Android物理输入事件(二)</a><br><a href="https://blog.csdn.net/u013308744/article/details/49274069" target="_blank" rel="noopener">android kl 文件的作用</a></p><p><a href="https://blog.csdn.net/woliuyunyicai/article/details/48577617" target="_blank" rel="noopener">View机制深入学习（三） View中的消息传递及InputManagerService</a></p>]]></content>
-      
-      <categories>
-          
-          <category> Android </category>
-          
-          <category> KeyEvent </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Android </tag>
-            
-            <tag> KeyEvent </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>WordPress</title>
-      <link href="/WordPress/"/>
-      <url>/WordPress/</url>
-      <content type="html"><![CDATA[<h1 id="官网"><a href="#官网" class="headerlink" title="官网"></a>官网</h1><p><a href="https://cn.wordpress.org/download/" target="_blank" rel="noopener">下载</a><br><a href="https://codex.wordpress.org/zh-cn:Main_Page" target="_blank" rel="noopener">官网中文文档</a></p><h1 id="开发步骤"><a href="#开发步骤" class="headerlink" title="开发步骤"></a>开发步骤</h1><ol><li><p>下载WordPress</p></li><li><p>本地调试代码<br>第一步：安装 XAMPP<br>第二步:启动Apache，改端口到8080<br>第三步：启动MySQL，注意：点击Admin的时候，<a href="http://localhost/phpmyadmin/是无法访问的，需要改端口号http://localhost:8080/phpmyadmin/才能访问" target="_blank" rel="noopener">http://localhost/phpmyadmin/是无法访问的，需要改端口号http://localhost:8080/phpmyadmin/才能访问</a><br>新建用户账户: </p></li></ol><p><a href="https://jingyan.baidu.com/article/1e5468f955d65b484961b7bb.html" target="_blank" rel="noopener">本地安装wordpress教程</a></p><ol start="3"><li>安装主题</li></ol><p><a href="https://www.wpdaxue.com/install-wordpress-theme-and-plugin.html" target="_blank" rel="noopener">WordPress入门 之 安装主题和插件</a></p><p>ecommerce-lite 是一个购物商城的模式，暂时不适用</p><ol start="4"><li>Logo的设计<br>a) <a href="https://www.logosc.cn/" target="_blank" rel="noopener">https://www.logosc.cn/</a> 不错<br>b) <a href="http://www.logomaker.com.cn/logo-maker.jsp" target="_blank" rel="noopener">http://www.logomaker.com.cn/logo-maker.jsp</a></li></ol><h1 id="遇到的问题："><a href="#遇到的问题：" class="headerlink" title="遇到的问题："></a>遇到的问题：</h1><ol><li>上传的文件尺寸超过php.ini中定义的upload_max_filesize值。<br>解决方案： <a href="https://www.cnblogs.com/bhlsheji/p/5356564.html" target="_blank" rel="noopener">https://www.cnblogs.com/bhlsheji/p/5356564.html</a></li></ol><!--    Module:    第一步:需要将这些文章都看几篇    第二步：形成自己的理解    第三步：可以按照非常有用的文章，重写写一遍    第四步：纠正或者延伸别人的文章--><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><!--    阅读卡：    文章：    时间：-->]]></content>
-      
-      <categories>
-          
-          <category> WordPress </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> WordPress </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
       <title>Android中JNI与NDK</title>
       <link href="/Android-JNI-NDK/"/>
       <url>/Android-JNI-NDK/</url>
@@ -1116,16 +1070,37 @@
     </entry>
     
     <entry>
-      <title>Android中Activity解析</title>
-      <link href="/Android-Activity-Analysis/"/>
-      <url>/Android-Activity-Analysis/</url>
-      <content type="html"><![CDATA[<p>上次我们讲到Activity的四种启动模式的时候，已经了解到一些关于task的技术，今天我再向大家介绍一下。task是一个具有栈结构的容器，可以放置多个Activity实例。启动一个应用，系统就会为之创建一个task，来放置根Activity；默认情况下，一个Activity启动另一个Activity时，两个Activity是放置在同一个task中的，后者被压入前者所在的task栈，当用户按下后退键，后者从task被弹出，前者又显示在幕前，特别是启动其他应用中的Activity时，两个Activity对用户来说就好像是属于同一个应用；系统task和task之间是互相独立的，当我们运行一个应用时，按下Home键回到主屏，启动另一个应用，这个过程中，之前的task被转移到后台，新的task被转移到前台，其根Activity也会显示到幕前，过了一会之后，在此按下Home键回到主屏，再选择之前的应用，之前的task会被转移到前台，系统仍然保留着task内的所有Activity实例，而那个新的task会被转移到后台，如果这时用户再做后退等动作，就是针对该task内部进行操作了。</p><p>我们今天就讲一下和task相关的知识，主要分一下几点：</p><p>1.Activity的affinity(亲和力)</p><p>2.Intent几种常见的flags</p><p>3.与task相关属性</p><p>affinity：</p><p>task对于Activity来说就好像它的身份证一样，可以告诉所在的task，自己属于这个task中的一员；拥有相同affinity的多个Activity理论同属于一个task，task自身的affinity决定于根Activity的affinity值。affinity在什么场合应用呢？1.根据affinity重新为Activity选择宿主task（与allowTaskReparenting属性配合工作）；2.启动一个Activity过程中Intent使用了FLAG_ACTIVITY_NEW_TASK标记，根据affinity查找或创建一个新的具有对应affinity的task。我们会在后面进行详细讲解。</p><p>默认情况下，一个应用内的所有Activity都具有相同的affinity，都是从Application（参考的taskAffinity属性）继承而来，而Application默认的affinity是中的包名，我们可以为设置taskAffinity属性值，这样可以应用到下的所有，也可以单独为某个Activity设置taskAffinity。例如：在系统自带的Browser中，package为com.android.browser，但是却自定义一个taskAffinity属性值：</p><p>Ongoing,待完成，Please wait.</p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p><a href="https://blog.csdn.net/luoshengyang/article/details/8923485" target="_blank" rel="noopener">那两年炼就的Android内功修养</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6685853" target="_blank" rel="noopener">Android应用程序的Activity启动过程简要介绍和学习计划</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6689748" target="_blank" rel="noopener">Android应用程序启动过程源代码分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6703247" target="_blank" rel="noopener">Android应用程序内部启动Activity过程（startActivity）的源代码分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6720261" target="_blank" rel="noopener">Android应用程序在新的进程中启动新的Activity的方法和过程分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6714543" target="_blank" rel="noopener">解开Android应用程序组件Activity的”singleTask”之谜</a></p><p><a href="http://www.cnblogs.com/CSU-PL/p/3794280.html" target="_blank" rel="noopener">android的task任务栈</a></p><p><a href="https://www.jianshu.com/p/9ecea420eb52" target="_blank" rel="noopener">3分钟看懂Activity启动流程</a></p><p><a href="">Android 7.0 startActivity()源码解析以及对几个问题的思考</a></p>]]></content>
+      <title>WordPress</title>
+      <link href="/WordPress/"/>
+      <url>/WordPress/</url>
+      <content type="html"><![CDATA[<h1 id="官网"><a href="#官网" class="headerlink" title="官网"></a>官网</h1><p><a href="https://cn.wordpress.org/download/" target="_blank" rel="noopener">下载</a><br><a href="https://codex.wordpress.org/zh-cn:Main_Page" target="_blank" rel="noopener">官网中文文档</a></p><h1 id="开发步骤"><a href="#开发步骤" class="headerlink" title="开发步骤"></a>开发步骤</h1><ol><li><p>下载WordPress</p></li><li><p>本地调试代码<br>第一步：安装 XAMPP<br>第二步:启动Apache，改端口到8080<br>第三步：启动MySQL，注意：点击Admin的时候，<a href="http://localhost/phpmyadmin/是无法访问的，需要改端口号http://localhost:8080/phpmyadmin/才能访问" target="_blank" rel="noopener">http://localhost/phpmyadmin/是无法访问的，需要改端口号http://localhost:8080/phpmyadmin/才能访问</a><br>新建用户账户: </p></li></ol><p><a href="https://jingyan.baidu.com/article/1e5468f955d65b484961b7bb.html" target="_blank" rel="noopener">本地安装wordpress教程</a></p><ol start="3"><li>安装主题</li></ol><p><a href="https://www.wpdaxue.com/install-wordpress-theme-and-plugin.html" target="_blank" rel="noopener">WordPress入门 之 安装主题和插件</a></p><p>ecommerce-lite 是一个购物商城的模式，暂时不适用</p><ol start="4"><li>Logo的设计<br>a) <a href="https://www.logosc.cn/" target="_blank" rel="noopener">https://www.logosc.cn/</a> 不错<br>b) <a href="http://www.logomaker.com.cn/logo-maker.jsp" target="_blank" rel="noopener">http://www.logomaker.com.cn/logo-maker.jsp</a></li></ol><h1 id="遇到的问题："><a href="#遇到的问题：" class="headerlink" title="遇到的问题："></a>遇到的问题：</h1><ol><li>上传的文件尺寸超过php.ini中定义的upload_max_filesize值。<br>解决方案： <a href="https://www.cnblogs.com/bhlsheji/p/5356564.html" target="_blank" rel="noopener">https://www.cnblogs.com/bhlsheji/p/5356564.html</a></li></ol><!--    Module:    第一步:需要将这些文章都看几篇    第二步：形成自己的理解    第三步：可以按照非常有用的文章，重写写一遍    第四步：纠正或者延伸别人的文章--><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><!--    阅读卡：    文章：    时间：-->]]></content>
+      
+      <categories>
+          
+          <category> WordPress </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> WordPress </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>Android中Handler解析</title>
+      <link href="/Android-Handler-Analysis/"/>
+      <url>/Android-Handler-Analysis/</url>
+      <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.</p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p><a href="https://blog.csdn.net/luoshengyang/article/details/8923485" target="_blank" rel="noopener">那两年炼就的Android内功修养</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6817933" target="_blank" rel="noopener">Android应用程序消息处理机制（Looper、Handler）分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6882903" target="_blank" rel="noopener">Android应用程序键盘（Keyboard）消息处理机制分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6905587" target="_blank" rel="noopener">Android应用程序线程消息循环模型分析</a></p>]]></content>
       
       <categories>
           
           <category> Android </category>
           
-          <category> Activity </category>
+          <category> Handler </category>
           
       </categories>
       
@@ -1134,7 +1109,32 @@
             
             <tag> Android </tag>
             
-            <tag> Activity </tag>
+            <tag> Handler </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>Android中按键事件传递分析</title>
+      <link href="/Android-KeyEvent-Analysis/"/>
+      <url>/Android-KeyEvent-Analysis/</url>
+      <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.<br><!--    Module:    第一步:需要将这些文章都看几篇    第二步：形成自己的理解    第三步：可以按照非常有用的文章，重写写一遍    第四步：纠正或者延伸别人的文章--></p><p>Framework Native模块代码</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">frameworks/base/services/core/jni/</span><br><span class="line">├── com_android_server_input_InputManagerService.cpp</span><br><span class="line">├── com_android_server_input_InputApplicationHandle.h</span><br><span class="line">├── com_android_server_input_InputApplicationHandle.c</span><br><span class="line">├── com_android_server_input_InputWindowHandle.h</span><br><span class="line">├── com_android_server_input_InputWindowHandle.c</span><br><span class="line">└──</span><br></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">frameworks/native/include/android</span><br><span class="line">├── input.h</span><br><span class="line">└── keycodes.h</span><br></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">frameworks/native/include/input</span><br><span class="line">├── DisplayViewport.h</span><br><span class="line">├── IInputFlinger.h</span><br><span class="line">├── InputDevice.h</span><br><span class="line">├── InputEventLabels.h</span><br><span class="line">├── Input.h</span><br><span class="line">├── InputTransport.h</span><br><span class="line">├── Keyboard.h</span><br><span class="line">├── KeyCharacterMap.h</span><br><span class="line">├── KeyLayoutMap.h</span><br><span class="line">├── VelocityControl.h</span><br><span class="line">├── VelocityTracker.h</span><br><span class="line">└── VirtualKeyMap.h</span><br></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">frameworks/native/services/inputflinger</span><br><span class="line">├── Android.bp</span><br><span class="line">├── EventHub.cpp</span><br><span class="line">├── EventHub.h</span><br><span class="line">├── host</span><br><span class="line">│   ├── Android.bp</span><br><span class="line">│   ├── InputDriver.cpp</span><br><span class="line">│   ├── InputDriver.h</span><br><span class="line">│   ├── InputFlinger.cpp</span><br><span class="line">│   ├── InputFlinger.h</span><br><span class="line">│   ├── inputflinger.rc</span><br><span class="line">│   ├── InputHost.cpp</span><br><span class="line">│   ├── InputHost.h</span><br><span class="line">│   └── main.cpp</span><br><span class="line">├── InputApplication.cpp</span><br><span class="line">├── InputApplication.h</span><br><span class="line">├── InputDispatcher.cpp</span><br><span class="line">├── InputDispatcher.h</span><br><span class="line">├── InputListener.cpp</span><br><span class="line">├── InputListener.h</span><br><span class="line">├── InputManager.cpp</span><br><span class="line">├── InputManager.h</span><br><span class="line">├── InputReader.cpp</span><br><span class="line">├── InputReader.h</span><br><span class="line">├── InputWindow.cpp</span><br><span class="line">├── InputWindow.h</span><br><span class="line">├── PointerControllerInterface.h</span><br><span class="line">└── tests</span><br><span class="line">    ├── Android.bp</span><br><span class="line">    ├── InputDispatcher_test.cpp</span><br><span class="line">    └── InputReader_test.cpp</span><br></pre></td></tr></table></figure><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><!--    阅读卡：    文章：Android按键事件传递流程(一)    时间：2018/07/19--><p>[1095/1219] including ./vendor/qcom/proprietary/diag/Android.mk …<br>build/core/binary.mk:1522: error: vendor/qcom/proprietary/diag/diag_ep/Android.mk: diag_ep: C_INCLUDES must be under the source or output directories: /diag/diag_ep /diag/include /diag/src.</p><p>用户态</p><p>这两篇文章关注了很多的代码细节：<br><a href="https://blog.csdn.net/w690333243/article/details/77493981" target="_blank" rel="noopener">Android按键事件传递流程(一)</a><br><a href="https://blog.csdn.net/qidabing/article/details/74073515" target="_blank" rel="noopener">Android按键事件传递流程(二)</a></p><p>将Native层的Input子系统，起到承上启下的功能.连接Kernel 和 Fwk<br><a href="https://www.cnblogs.com/haiming/p/3318614.html" target="_blank" rel="noopener">Android Framework——之Input子系统</a></p><p>内核态<br><a href="https://www.jianshu.com/p/4f59efee9cd8" target="_blank" rel="noopener">Android物理按键输入事件(一)</a><br><a href="https://www.jianshu.com/p/3fe41b6d0c92" target="_blank" rel="noopener">Android物理输入事件(二)</a><br><a href="https://blog.csdn.net/u013308744/article/details/49274069" target="_blank" rel="noopener">android kl 文件的作用</a></p><p><a href="https://blog.csdn.net/woliuyunyicai/article/details/48577617" target="_blank" rel="noopener">View机制深入学习（三） View中的消息传递及InputManagerService</a></p>]]></content>
+      
+      <categories>
+          
+          <category> Android </category>
+          
+          <category> KeyEvent </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Android </tag>
+            
+            <tag> KeyEvent </tag>
             
         </tags>
       
@@ -1517,16 +1517,16 @@
     </entry>
     
     <entry>
-      <title>Android匿名共享内存Ashmem解析</title>
-      <link href="/Android-Ashmem-Analysis/"/>
-      <url>/Android-Ashmem-Analysis/</url>
-      <content type="html"><![CDATA[<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a href="https://blog.csdn.net/luoshengyang/article/details/8923485" target="_blank" rel="noopener">那两年炼就的Android内功修养</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6651971" target="_blank" rel="noopener">Android系统匿名共享内存Ashmem（Anonymous Shared Memory）简要介绍和学习计划</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6664554" target="_blank" rel="noopener">Android系统匿名共享内存Ashmem（Anonymous Shared Memory）驱动程序源代码分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6666491" target="_blank" rel="noopener">Android系统匿名共享内存Ashmem（Anonymous Shared Memory）在进程间共享的原理分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6939890" target="_blank" rel="noopener">Android系统匿名共享内存（Anonymous Shared Memory）C++调用接口分析</a></p>]]></content>
+      <title>Android中WindowManagerService解析</title>
+      <link href="/Android-WindowManagerService-Analysis/"/>
+      <url>/Android-WindowManagerService-Analysis/</url>
+      <content type="html"><![CDATA[<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a href="https://blog.csdn.net/luoshengyang/article/details/8923485" target="_blank" rel="noopener">那两年炼就的Android内功修养</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8462738" target="_blank" rel="noopener">Android窗口管理服务WindowManagerService的简要介绍和学习计划</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8479101" target="_blank" rel="noopener">Android窗口管理服务WindowManagerService计算Activity窗口大小的过程分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8498908" target="_blank" rel="noopener">Android窗口管理服务WindowManagerService对窗口的组织方式分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8526644" target="_blank" rel="noopener">Android窗口管理服务WindowManagerService对输入法窗口（Input Method Window）的管理分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8550820" target="_blank" rel="noopener">Android窗口管理服务WindowManagerService对壁纸窗口（Wallpaper Window）的管理分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8570428" target="_blank" rel="noopener">Android窗口管理服务WindowManagerService计算窗口Z轴位置的过程分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8577789" target="_blank" rel="noopener">Android窗口管理服务WindowManagerService显示Activity组件的启动窗口（Starting Window）的过程分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8596449" target="_blank" rel="noopener">Android窗口管理服务WindowManagerService切换Activity窗口（App Transition）的过程分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8611754" target="_blank" rel="noopener">Android窗口管理服务WindowManagerService显示窗口动画的原理分析</a></p>]]></content>
       
       <categories>
           
           <category> Android </category>
           
-          <category> Ashmem </category>
+          <category> WindowManagerService </category>
           
       </categories>
       
@@ -1535,7 +1535,9 @@
             
             <tag> Android </tag>
             
-            <tag> Ashmem </tag>
+            <tag> WindowManagerService </tag>
+            
+            <tag> WMS </tag>
             
         </tags>
       
@@ -1642,16 +1644,16 @@
     </entry>
     
     <entry>
-      <title>Android中WindowManagerService解析</title>
-      <link href="/Android-WindowManagerService-Analysis/"/>
-      <url>/Android-WindowManagerService-Analysis/</url>
-      <content type="html"><![CDATA[<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a href="https://blog.csdn.net/luoshengyang/article/details/8923485" target="_blank" rel="noopener">那两年炼就的Android内功修养</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8462738" target="_blank" rel="noopener">Android窗口管理服务WindowManagerService的简要介绍和学习计划</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8479101" target="_blank" rel="noopener">Android窗口管理服务WindowManagerService计算Activity窗口大小的过程分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8498908" target="_blank" rel="noopener">Android窗口管理服务WindowManagerService对窗口的组织方式分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8526644" target="_blank" rel="noopener">Android窗口管理服务WindowManagerService对输入法窗口（Input Method Window）的管理分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8550820" target="_blank" rel="noopener">Android窗口管理服务WindowManagerService对壁纸窗口（Wallpaper Window）的管理分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8570428" target="_blank" rel="noopener">Android窗口管理服务WindowManagerService计算窗口Z轴位置的过程分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8577789" target="_blank" rel="noopener">Android窗口管理服务WindowManagerService显示Activity组件的启动窗口（Starting Window）的过程分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8596449" target="_blank" rel="noopener">Android窗口管理服务WindowManagerService切换Activity窗口（App Transition）的过程分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8611754" target="_blank" rel="noopener">Android窗口管理服务WindowManagerService显示窗口动画的原理分析</a></p>]]></content>
+      <title>Android匿名共享内存Ashmem解析</title>
+      <link href="/Android-Ashmem-Analysis/"/>
+      <url>/Android-Ashmem-Analysis/</url>
+      <content type="html"><![CDATA[<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a href="https://blog.csdn.net/luoshengyang/article/details/8923485" target="_blank" rel="noopener">那两年炼就的Android内功修养</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6651971" target="_blank" rel="noopener">Android系统匿名共享内存Ashmem（Anonymous Shared Memory）简要介绍和学习计划</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6664554" target="_blank" rel="noopener">Android系统匿名共享内存Ashmem（Anonymous Shared Memory）驱动程序源代码分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6666491" target="_blank" rel="noopener">Android系统匿名共享内存Ashmem（Anonymous Shared Memory）在进程间共享的原理分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6939890" target="_blank" rel="noopener">Android系统匿名共享内存（Anonymous Shared Memory）C++调用接口分析</a></p>]]></content>
       
       <categories>
           
           <category> Android </category>
           
-          <category> WindowManagerService </category>
+          <category> Ashmem </category>
           
       </categories>
       
@@ -1660,9 +1662,7 @@
             
             <tag> Android </tag>
             
-            <tag> WindowManagerService </tag>
-            
-            <tag> WMS </tag>
+            <tag> Ashmem </tag>
             
         </tags>
       

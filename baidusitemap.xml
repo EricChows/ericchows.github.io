@@ -4,6 +4,24 @@
 
     
   <url>
+    <loc>http://yoursite.com/Ubuntu-OpenGork/</loc>
+    <lastmod>2018-08-07T07:57:04.288Z</lastmod>
+    <data>
+        <display>
+        <title>Ubuntu 配置 OpenGork 服务</title>
+        <pubTime>2017-05-31T09:38:08.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="Tools" url="http://yoursite.com/categories/Tools/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/Android%E4%B8%ADPackageManagerService%E7%9B%B8%E5%85%B3%E7%9A%84%E6%96%87%E4%BB%B6/</loc>
     <lastmod>2018-08-07T07:50:07.306Z</lastmod>
     <data>
@@ -1543,24 +1561,6 @@
            
              
               <breadCrumb title="Android Tools" url="http://yoursite.com/categories/Android-Tools/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/Ubuntu-OpenGork/</loc>
-    <lastmod>2018-07-01T11:48:33.229Z</lastmod>
-    <data>
-        <display>
-        <title>Ubuntu 配置 OpenGork 服务</title>
-        <pubTime>2018-05-31T09:38:08.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="Tools" url="http://yoursite.com/categories/Tools/"/>
           
         </display>
     </data>
