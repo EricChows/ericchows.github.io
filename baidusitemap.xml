@@ -4,16 +4,56 @@
 
     
   <url>
+    <loc>http://yoursite.com/WordPress/</loc>
+    <lastmod>2018-08-06T13:55:27.772Z</lastmod>
+    <data>
+        <display>
+        <title>WordPress</title>
+        <pubTime>2015-12-31T16:00:00.000Z</pubTime>
+        
+        <tag>WordPress</tag>
+         
+         
+           
+             
+              <breadCrumb title="WordPress" url="http://yoursite.com/categories/WordPress/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/%E5%90%84%E7%B1%BB%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E5%B0%8F%E6%8A%80%E5%B7%A7/</loc>
+    <lastmod>2018-08-06T08:22:35.237Z</lastmod>
+    <data>
+        <display>
+        <title>各类工具使用小技巧</title>
+        <pubTime>2015-06-29T06:06:59.000Z</pubTime>
+        
+        <tag>小技巧 工具 vim shell putty</tag>
+         
+         
+           
+             
+              <breadCrumb title="Tools" url="http://yoursite.com/categories/Tools/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/IT%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95%E8%AE%BA/</loc>
-    <lastmod>2018-08-05T13:28:45.336Z</lastmod>
+    <lastmod>2018-08-06T02:24:21.328Z</lastmod>
     <data>
         <display>
         <title>IT学习方法论</title>
         <pubTime>2017-05-04T16:00:00.000Z</pubTime>
         
-        <tag>方法论</tag>
-         
         <tag>IT</tag>
+         
+        <tag>方法论</tag>
          
          
            
@@ -117,26 +157,6 @@
            
              
               <breadCrumb title="MAC OS" url="http://yoursite.com/categories/MAC-OS/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/%E5%90%84%E7%B1%BB%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E5%B0%8F%E6%8A%80%E5%B7%A7/</loc>
-    <lastmod>2018-08-04T05:54:03.835Z</lastmod>
-    <data>
-        <display>
-        <title>各类工具使用小技巧</title>
-        <pubTime>2015-06-29T06:06:59.000Z</pubTime>
-        
-        <tag>小技巧 工具 vim shell putty</tag>
-         
-         
-           
-             
-              <breadCrumb title="Tools" url="http://yoursite.com/categories/Tools/"/>
           
         </display>
     </data>
