@@ -4,6 +4,132 @@
 
     
   <url>
+    <loc>http://yoursite.com/Android%E4%B8%ADPackageManagerService%E7%9B%B8%E5%85%B3%E7%9A%84%E6%96%87%E4%BB%B6/</loc>
+    <lastmod>2018-08-07T07:50:07.306Z</lastmod>
+    <data>
+        <display>
+        <title>Android中PackageManagerService相关的文件</title>
+        <pubTime>2018-05-31T13:55:56.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+        <tag>PackageManagerService</tag>
+         
+        <tag>File</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="http://yoursite.com/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/year-06-23-Android/</loc>
+    <lastmod>2018-08-07T07:49:28.436Z</lastmod>
+    <data>
+        <display>
+        <title>Android</title>
+        <pubTime>2015-06-23T12:26:02.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+        <tag>Hexo</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="http://yoursite.com/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/Android8-0-charging-icon-cannot-show/</loc>
+    <lastmod>2018-08-07T07:48:17.416Z</lastmod>
+    <data>
+        <display>
+        <title>Android8.0充电图标不显示</title>
+        <pubTime>2018-04-25T09:06:20.000Z</pubTime>
+        
+        <tag>Android PMS</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="http://yoursite.com/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/Java-VirtualMachine/</loc>
+    <lastmod>2018-08-07T07:48:04.149Z</lastmod>
+    <data>
+        <display>
+        <title>Java-VirtualMachine</title>
+        <pubTime>2017-07-16T09:42:53.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/Java-Base/</loc>
+    <lastmod>2018-08-07T07:47:35.910Z</lastmod>
+    <data>
+        <display>
+        <title>Java基础知识汇总</title>
+        <pubTime>2017-07-16T09:50:38.000Z</pubTime>
+        
+        <tag>Base</tag>
+         
+        <tag>Java</tag>
+         
+         
+           
+             
+              <breadCrumb title="Java" url="http://yoursite.com/categories/Java/"/>
+          
+             
+              <breadCrumb title="Base" url="http://yoursite.com/categories/Java/Base/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/Myblog/</loc>
+    <lastmod>2018-08-07T07:47:18.830Z</lastmod>
+    <data>
+        <display>
+        <title>本站导航</title>
+        <pubTime>2098-12-31T16:00:00.000Z</pubTime>
+        
+        <tag>Myblog</tag>
+         
+         
+           
+             
+              <breadCrumb title="All" url="http://yoursite.com/categories/All/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/SELinux-SEAndroid/</loc>
     <lastmod>2018-08-07T07:31:55.456Z</lastmod>
     <data>
@@ -22,26 +148,6 @@
           
              
               <breadCrumb title="SELinux" url="http://yoursite.com/categories/SEAndroid/SELinux/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/Myblog/</loc>
-    <lastmod>2018-08-07T07:31:41.989Z</lastmod>
-    <data>
-        <display>
-        <title>本站导航</title>
-        <pubTime>2098-12-31T16:00:00.000Z</pubTime>
-        
-        <tag>Myblog</tag>
-         
-         
-           
-             
-              <breadCrumb title="All" url="http://yoursite.com/categories/All/"/>
           
         </display>
     </data>
@@ -272,31 +378,6 @@
           
              
               <breadCrumb title="Keyguard" url="http://yoursite.com/categories/Android/Keyguard/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/Java-Base/</loc>
-    <lastmod>2018-08-07T07:00:30.575Z</lastmod>
-    <data>
-        <display>
-        <title>Java基础知识汇总</title>
-        <pubTime>2018-07-16T09:50:38.000Z</pubTime>
-        
-        <tag>Base</tag>
-         
-        <tag>Java</tag>
-         
-         
-           
-             
-              <breadCrumb title="Java" url="http://yoursite.com/categories/Java/"/>
-          
-             
-              <breadCrumb title="Base" url="http://yoursite.com/categories/Java/Base/"/>
           
         </display>
     </data>
@@ -959,21 +1040,6 @@
     
     
   <url>
-    <loc>http://yoursite.com/Java-VirtualMachine/</loc>
-    <lastmod>2018-07-18T14:50:24.742Z</lastmod>
-    <data>
-        <display>
-        <title>Java-VirtualMachine</title>
-        <pubTime>2018-07-16T09:42:53.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://yoursite.com/Android-Activity-Analysis/</loc>
     <lastmod>2018-07-18T13:39:43.407Z</lastmod>
     <data>
@@ -1164,30 +1230,6 @@
           
              
               <breadCrumb title="BroadcastRecevier" url="http://yoursite.com/categories/Android/BroadcastRecevier/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/Android%E4%B8%ADPackageManagerService%E7%9B%B8%E5%85%B3%E7%9A%84%E6%96%87%E4%BB%B6/</loc>
-    <lastmod>2018-07-16T11:10:10.662Z</lastmod>
-    <data>
-        <display>
-        <title>Android中PackageManagerService相关的文件</title>
-        <pubTime>2018-05-31T14:55:56.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-        <tag>PackageManagerService</tag>
-         
-        <tag>File</tag>
-         
-         
-           
-             
-              <breadCrumb title="Android" url="http://yoursite.com/categories/Android/"/>
           
         </display>
     </data>
@@ -1414,28 +1456,6 @@
 
     
   <url>
-    <loc>http://yoursite.com/year-06-23-Android/</loc>
-    <lastmod>2018-07-06T07:17:38.975Z</lastmod>
-    <data>
-        <display>
-        <title>Android</title>
-        <pubTime>2018-06-23T12:26:02.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-        <tag>Hexo</tag>
-         
-         
-           
-             
-              <breadCrumb title="Android" url="http://yoursite.com/categories/Android/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://yoursite.com/Android-Ashmem-Analysis/</loc>
     <lastmod>2018-07-04T13:55:09.749Z</lastmod>
     <data>
@@ -1589,47 +1609,9 @@
     </url>
 
     
-  <url>
-    <loc>http://yoursite.com/Android8-0-charging-icon-cannot-show/</loc>
-    <lastmod>2018-06-26T08:00:26.991Z</lastmod>
-    <data>
-        <display>
-        <title>Android8.0充电图标不显示</title>
-        <pubTime>2018-06-25T09:06:20.000Z</pubTime>
-        
-        <tag>Android PMS</tag>
-         
-         
-           
-             
-              <breadCrumb title="Android" url="http://yoursite.com/categories/Android/"/>
-          
-        </display>
-    </data>
-    </url>
-
     
     
     
-    
-    
-  <url>
-    <loc>http://yoursite.com/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/</loc>
-    <lastmod>2018-06-23T15:24:29.019Z</lastmod>
-    <data>
-        <display>
-        <title>观察者模式</title>
-        <pubTime>2015-08-01T05:21:22.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="Android" url="http://yoursite.com/categories/Android/"/>
-          
-        </display>
-    </data>
-    </url>
-
     
   <url>
     <loc>http://yoursite.com/%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F/</loc>
@@ -1638,6 +1620,24 @@
         <display>
         <title>适配器模式</title>
         <pubTime>2015-08-01T09:34:49.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="Android" url="http://yoursite.com/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/</loc>
+    <lastmod>2018-06-23T15:24:29.019Z</lastmod>
+    <data>
+        <display>
+        <title>观察者模式</title>
+        <pubTime>2015-08-01T05:21:22.000Z</pubTime>
         
          
            

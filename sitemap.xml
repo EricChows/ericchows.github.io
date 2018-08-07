@@ -2,16 +2,51 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://yoursite.com/SELinux-SEAndroid/</loc>
+    <loc>http://yoursite.com/Android%E4%B8%ADPackageManagerService%E7%9B%B8%E5%85%B3%E7%9A%84%E6%96%87%E4%BB%B6/</loc>
     
-    <lastmod>2018-08-07T07:31:55.456Z</lastmod>
+    <lastmod>2018-08-07T07:50:07.306Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/year-06-23-Android/</loc>
+    
+    <lastmod>2018-08-07T07:49:28.436Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/Android8-0-charging-icon-cannot-show/</loc>
+    
+    <lastmod>2018-08-07T07:48:17.416Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/Java-VirtualMachine/</loc>
+    
+    <lastmod>2018-08-07T07:48:04.149Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/Java-Base/</loc>
+    
+    <lastmod>2018-08-07T07:47:35.910Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://yoursite.com/Myblog/</loc>
     
-    <lastmod>2018-08-07T07:31:41.989Z</lastmod>
+    <lastmod>2018-08-07T07:47:18.830Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/SELinux-SEAndroid/</loc>
+    
+    <lastmod>2018-08-07T07:31:55.456Z</lastmod>
     
   </url>
   
@@ -82,13 +117,6 @@
     <loc>http://yoursite.com/Android-Keyguard-Analysis/</loc>
     
     <lastmod>2018-08-07T07:01:26.882Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/Java-Base/</loc>
-    
-    <lastmod>2018-08-07T07:00:30.575Z</lastmod>
     
   </url>
   
@@ -296,13 +324,6 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/Java-VirtualMachine/</loc>
-    
-    <lastmod>2018-07-18T14:50:24.742Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/Android-Activity-Analysis/</loc>
     
     <lastmod>2018-07-18T13:39:43.407Z</lastmod>
@@ -355,13 +376,6 @@
     <loc>http://yoursite.com/Android-BroadcastRecevier-Analysis/</loc>
     
     <lastmod>2018-07-16T11:24:21.463Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/Android%E4%B8%ADPackageManagerService%E7%9B%B8%E5%85%B3%E7%9A%84%E6%96%87%E4%BB%B6/</loc>
-    
-    <lastmod>2018-07-16T11:10:10.662Z</lastmod>
     
   </url>
   
@@ -429,13 +443,6 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/year-06-23-Android/</loc>
-    
-    <lastmod>2018-07-06T07:17:38.975Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/Android-Ashmem-Analysis/</loc>
     
     <lastmod>2018-07-04T13:55:09.749Z</lastmod>
@@ -485,13 +492,6 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/Android8-0-charging-icon-cannot-show/</loc>
-    
-    <lastmod>2018-06-26T08:00:26.991Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/categories/index.html</loc>
     
     <lastmod>2018-06-24T11:33:05.484Z</lastmod>
@@ -520,14 +520,14 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/</loc>
+    <loc>http://yoursite.com/%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F/</loc>
     
     <lastmod>2018-06-23T15:24:29.019Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F/</loc>
+    <loc>http://yoursite.com/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/</loc>
     
     <lastmod>2018-06-23T15:24:29.019Z</lastmod>
     
