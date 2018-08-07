@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="Android 解读main log和event log日志信息https://blog.csdn.net/yelangjueqi/article/details/52621903 Log中’main’, ‘system’, ‘radio’, ‘events’以及android log分析https://www.cnblogs.com/zhengtu2015/p/5134012.html 关于An">
+<meta name="description" content="概述LOG是广泛使用的用来记录程序执行过程的机制，它既可以用于程序调试，也可以用于产品运营中的事件记录。在Android系统中，提供了简单、便利的LOG机制，开发人员可以方便地使用。 Log的使用 本节介绍Kernel中内核态的printk和用户态的Log使用 内核态Kernel log的使用printk的使用 Android是基于Linux内核的，所以Linux中的printk同样适用于Andr">
 <meta name="keywords" content="Android Log">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android的Log机制分析">
 <meta property="og:url" content="http://yoursite.com/Android-Log-Analysis/index.html">
 <meta property="og:site_name" content="EricChows">
-<meta property="og:description" content="Android 解读main log和event log日志信息https://blog.csdn.net/yelangjueqi/article/details/52621903 Log中’main’, ‘system’, ‘radio’, ‘events’以及android log分析https://www.cnblogs.com/zhengtu2015/p/5134012.html 关于An">
+<meta property="og:description" content="概述LOG是广泛使用的用来记录程序执行过程的机制，它既可以用于程序调试，也可以用于产品运营中的事件记录。在Android系统中，提供了简单、便利的LOG机制，开发人员可以方便地使用。 Log的使用 本节介绍Kernel中内核态的printk和用户态的Log使用 内核态Kernel log的使用printk的使用 Android是基于Linux内核的，所以Linux中的printk同样适用于Andr">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-18T08:55:48.809Z">
+<meta property="og:updated_time" content="2018-08-07T06:57:21.274Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android的Log机制分析">
-<meta name="twitter:description" content="Android 解读main log和event log日志信息https://blog.csdn.net/yelangjueqi/article/details/52621903 Log中’main’, ‘system’, ‘radio’, ‘events’以及android log分析https://www.cnblogs.com/zhengtu2015/p/5134012.html 关于An">
+<meta name="twitter:description" content="概述LOG是广泛使用的用来记录程序执行过程的机制，它既可以用于程序调试，也可以用于产品运营中的事件记录。在Android系统中，提供了简单、便利的LOG机制，开发人员可以方便地使用。 Log的使用 本节介绍Kernel中内核态的printk和用户态的Log使用 内核态Kernel log的使用printk的使用 Android是基于Linux内核的，所以Linux中的printk同样适用于Andr">
 
 
 
@@ -338,8 +338,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-27T23:45:18+08:00">
-                2018-06-27
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-03T11:23:43+08:00">
+                2018-03-03
               </time>
             
 
@@ -414,27 +414,7 @@
       
 
       
-        <p>Android 解读main log和event log日志信息<br><a href="https://blog.csdn.net/yelangjueqi/article/details/52621903" target="_blank" rel="noopener">https://blog.csdn.net/yelangjueqi/article/details/52621903</a></p>
-<p>Log中’main’, ‘system’, ‘radio’, ‘events’以及android log分析<br><a href="https://www.cnblogs.com/zhengtu2015/p/5134012.html" target="_blank" rel="noopener">https://www.cnblogs.com/zhengtu2015/p/5134012.html</a></p>
-<p>关于Android Log的一些思考<br><a href="https://droidyue.com/blog/2015/11/01/thinking-about-android-log/" target="_blank" rel="noopener">https://droidyue.com/blog/2015/11/01/thinking-about-android-log/</a></p>
-<p><a href="https://blog.csdn.net/fishmai/article/details/52398537" target="_blank" rel="noopener">https://blog.csdn.net/fishmai/article/details/52398537</a></p>
-<p>crash/WTF/ANR/Low on memory  —dropbox</p>
-<p>手机的默认的日志目录：</p>
-<p> /data/local/tmp/*</p>
-<p>/data/tmp/*</p>
-<p>/data/system/usagestats/*</p>
-<p>/data/system/appusagestates/*</p>
-<p>/data/system/dropbox/*</p>
-<p>/data/tombstones/*</p>
-<p>/data/anr/*</p>
-<p>logcat的日志在</p>
-<p>/dev/log/main</p>
-<p>有/data/local/log目录的，可以保存3-4天的log。</p>
-<p> 需要对Android的log机制有深入的研究</p>
-<p> logd源码分析</p>
-<p>logd源码位置:<a href="">system/core/logd</a></p>
-<p>  logwraper 源码分析<br>logwraper源码位置：<a href="">system/core/logwrapper/logwrap.c</a></p>
-<h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>LOG是广泛使用的用来记录程序执行过程的机制，它既可以用于程序调试，也可以用于产品运营中的事件记录。在Android系统中，提供了简单、便利的LOG机制，开发人员可以方便地使用。</p>
+        <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>LOG是广泛使用的用来记录程序执行过程的机制，它既可以用于程序调试，也可以用于产品运营中的事件记录。在Android系统中，提供了简单、便利的LOG机制，开发人员可以方便地使用。</p>
 <h1 id="Log的使用"><a href="#Log的使用" class="headerlink" title="Log的使用"></a>Log的使用</h1><p> 本节介绍Kernel中内核态的printk和用户态的Log使用</p>
 <h2 id="内核态Kernel-log的使用"><a href="#内核态Kernel-log的使用" class="headerlink" title="内核态Kernel log的使用"></a>内核态Kernel log的使用</h2><h3 id="printk的使用"><a href="#printk的使用" class="headerlink" title="printk的使用"></a>printk的使用</h3><p> Android是基于Linux内核的，所以Linux中的printk同样适用于Android.printk提供了8种日志级别<br> kernel/include/linux/kern_levels.h<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> __KERN_LEVELS_H__</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> __KERN_LEVELS_H__</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> KERN_SOH	<span class="meta-string">"\001"</span>		<span class="comment">/* ASCII Start Of Header */</span></span></span><br><span class="line">#define KERN_SOH_ASCII	'\001'</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> KERN_EMERG	KERN_SOH <span class="meta-string">"0"</span>	<span class="comment">/* system is unusable */</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> KERN_ALERT	KERN_SOH <span class="meta-string">"1"</span>	<span class="comment">/* action must be taken immediately */</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> KERN_CRIT	KERN_SOH <span class="meta-string">"2"</span>	<span class="comment">/* critical conditions */</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> KERN_ERR	KERN_SOH <span class="meta-string">"3"</span>	<span class="comment">/* error conditions */</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> KERN_WARNING	KERN_SOH <span class="meta-string">"4"</span>	<span class="comment">/* warning conditions */</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> KERN_NOTICE	KERN_SOH <span class="meta-string">"5"</span>	<span class="comment">/* normal but significant condition */</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> KERN_INFO	KERN_SOH <span class="meta-string">"6"</span>	<span class="comment">/* informational */</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> KERN_DEBUG	KERN_SOH <span class="meta-string">"7"</span>	<span class="comment">/* debug-level messages */</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> KERN_DEFAULT	KERN_SOH <span class="meta-string">"d"</span>	<span class="comment">/* the default kernel loglevel */</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * Annotation for a "continued" line of log printout (only done after a</span></span><br><span class="line"><span class="comment"> * line that had no enclosing \n). Only to be used by core/arch code</span></span><br><span class="line"><span class="comment"> * during early bootup (a continued line is not SMP-safe otherwise).</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> KERN_CONT	<span class="meta-string">""</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br></pre></td></tr></table></figure></p>
 <p> printk在代码中的<strong>使用方法</strong>：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">printk(KERN_ALERT<span class="string">"This is the log printed by printk in linux kernel space."</span>);</span><br></pre></td></tr></table></figure></p>
@@ -584,6 +564,26 @@
 <p>参考阅读：<br><a href="https://blog.csdn.net/yaowei514473839/article/details/53513435" target="_blank" rel="noopener">Android event日志打印原理</a><br><a href="https://blog.csdn.net/darkengine/article/details/8477502" target="_blank" rel="noopener">【framework】EventLog分析</a></p>
 <h1 id="Android中其他log分析"><a href="#Android中其他log分析" class="headerlink" title="Android中其他log分析"></a>Android中其他log分析</h1><h1 id="LINUX-KERNEL源代码目录结构"><a href="#LINUX-KERNEL源代码目录结构" class="headerlink" title="LINUX KERNEL源代码目录结构"></a>LINUX KERNEL源代码目录结构</h1><p>/arch：硬件体系结构相关的代码，每种平台占一个相应的目录<br>/drivers：设备驱动程序，每个不同的驱动占用一个子目录<br>/fs：文件系统，包含所有的文件系统代码和各种类型的文件操作代码，它的每一个子目录支持一个文件系统<br>/include：包括编译核心所需要的大部分头文件。与平台无关的头文件在 include/linux 子目录下，与intel cpu 相关的头文件在 include/asm-i386<br>          子目录下，而 include/scsi 目录则是有关scsi 设备的头文件目录<br>init：这个目录包含核心的初始化代码（不是系统的引导代码），包含两个文件 main.c 和 Version.c，这是研究核心如何工作的好起点之一<br>/ipc：核心的进程间通讯的代码<br>/kernel：主要的核心代码，此目录下的文件是内核的最核心部分，包括进程调度、定时器等，实现了大多数Linux 系统的内核函数，其中重要的<br>         文件尾 sched.c ；同样，和体系结构相关的代码在 arch/*/kernel 中<br>/lib：放置核心库代码<br>/mm：这个目录包括所有独立于 CPU 体系机构的内存管理代码，如页式存储管理内存的分配和释放等；而合体系结构相关的内存管理代码则<br>     位于 arch/*/mm<br>/net：网络相关代码，实现了各种常见的网络协议<br>/scripts：描述文件，脚本，用于对核心的配置<br>/security：主要是一个SELinux 的模块<br>/sound：常用音频设备的驱动程序等<br>/usr：实现了一个 cpio<br>/block：部分块设备驱动程序<br>/crypto：常用加密和散列算法（如AES、SHA等），以及一些压缩和CRC 校验算法<br>/Documentation：一套关于内核部分的调用解释和注释用的英文文档</p>
 <p>根目录下几个文件：<br>COPYING：GPL 版权申明，对具有GPL 版权的源代码改动而形成的程序，具有使用GPL 发表的义务，如公开源代码<br>CREDITS：光荣榜。对Linux 做出过很大贡献的一些人的信息<br>Kbuild：是编译内核的软件环境，它泛指构建一个完全并能够运行Linux 内核所需要的一切资源。这些资源包含构建程序、脚本、中间件、配置<br>        文件和Makefile<br>MAINTAINERS：维护人员列表，对当前版本的内核部分都有谁负责<br>Makefile：第一个Makefile 文件。用来组织内核的各模块，记录了各模块相互之间的联系和依托关系，编译时使用；仔细阅读各子目录下的<br>          Makefile文件对弄清各个文件之间的联系和依托关系很有帮助<br>ReadMe：核心以及编译配置方法简单介绍取模<br>REPORING-BUGS：有关报告 Bug 的一些内容</p>
+<p>Android 解读main log和event log日志信息<br><a href="https://blog.csdn.net/yelangjueqi/article/details/52621903" target="_blank" rel="noopener">https://blog.csdn.net/yelangjueqi/article/details/52621903</a></p>
+<p>Log中’main’, ‘system’, ‘radio’, ‘events’以及android log分析<br><a href="https://www.cnblogs.com/zhengtu2015/p/5134012.html" target="_blank" rel="noopener">https://www.cnblogs.com/zhengtu2015/p/5134012.html</a></p>
+<p>关于Android Log的一些思考<br><a href="https://droidyue.com/blog/2015/11/01/thinking-about-android-log/" target="_blank" rel="noopener">https://droidyue.com/blog/2015/11/01/thinking-about-android-log/</a></p>
+<p><a href="https://blog.csdn.net/fishmai/article/details/52398537" target="_blank" rel="noopener">https://blog.csdn.net/fishmai/article/details/52398537</a></p>
+<p>crash/WTF/ANR/Low on memory  —dropbox</p>
+<p>手机的默认的日志目录：</p>
+<p> /data/local/tmp/*</p>
+<p>/data/tmp/*</p>
+<p>/data/system/usagestats/*</p>
+<p>/data/system/appusagestates/*</p>
+<p>/data/system/dropbox/*</p>
+<p>/data/tombstones/*</p>
+<p>/data/anr/*</p>
+<p>logcat的日志在</p>
+<p>/dev/log/main</p>
+<p>有/data/local/log目录的，可以保存3-4天的log。</p>
+<p> 需要对Android的log机制有深入的研究</p>
+<p> logd源码分析</p>
+<p>logd源码位置:<a href="">system/core/logd</a></p>
+<p>  logwraper 源码分析<br>logwraper源码位置：<a href="">system/core/logwrapper/logwrap.c</a></p>
 <h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a href="https://blog.csdn.net/luoshengyang/article/details/8923485" target="_blank" rel="noopener">那两年炼就的Android内功修养</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6581828" target="_blank" rel="noopener">浅谈Android系统开发中LOG的使用</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6595744" target="_blank" rel="noopener">Android日志系统驱动程序Logger源代码分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6598703" target="_blank" rel="noopener">Android应用程序框架层和系统运行库层日志系统源代码分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6606957" target="_blank" rel="noopener">Android日志系统Logcat源代码简要分析</a></p>
 <p><a href="https://blog.csdn.net/armwind/article/details/52166139" target="_blank" rel="noopener">misc设备</a> 杂项设备<br>[mutex互斥锁]<br><a href="https://blog.csdn.net/koffuxu/article/details/53997348" target="_blank" rel="noopener">Android L日志系统2——JavaAPI与liblog</a><br><a href="https://www.cnblogs.com/palance/p/5247093.html" target="_blank" rel="noopener">Android6的Logger日志系统</a><br><a href="https://zhuanlan.zhihu.com/p/24372024" target="_blank" rel="noopener">Android6.0 Log的工作机制</a><br><a href="https://blog.csdn.net/shusuanly/article/details/80577306" target="_blank" rel="noopener">Android O 配置logcatd日志系统</a></p>
 
@@ -616,8 +616,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/Android8-0-charging-icon-cannot-show/" rel="next" title="Android8.0充电图标不显示">
-                <i class="fa fa-chevron-left"></i> Android8.0充电图标不显示
+              <a href="/Android-Launcher-Activity/" rel="next" title="Android Launcher 启动Activity工作流程">
+                <i class="fa fa-chevron-left"></i> Android Launcher 启动Activity工作流程
               </a>
             
           </div>
@@ -709,7 +709,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">73</span>
+                  <span class="site-state-item-count">72</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -731,7 +731,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">83</span>
+                  <span class="site-state-item-count">81</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

@@ -2,9 +2,163 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/SELinux-SEAndroid/</loc>
+    
+    <lastmod>2018-08-07T07:31:55.456Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/Myblog/</loc>
+    
+    <lastmod>2018-08-07T07:31:41.989Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/Android%E5%BC%80%E5%8F%91%E5%A6%82%E4%BD%95%E5%81%9A%E5%86%85%E5%AD%98%E4%BC%98%E5%8C%96/</loc>
+    
+    <lastmod>2018-08-07T07:26:11.582Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/Android8-1-0-DeskClock%E6%A8%AA%E5%B1%8F%E6%BB%91%E5%8A%A8%E5%86%B2%E7%AA%81/</loc>
+    
+    <lastmod>2018-08-07T07:24:33.066Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/Android-View-Mechanism/</loc>
+    
+    <lastmod>2018-08-07T07:23:03.713Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/Android-Service-Analysis/</loc>
+    
+    <lastmod>2018-08-07T07:22:01.003Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/Android-Digital-Signature/</loc>
+    
+    <lastmod>2018-08-07T07:16:47.675Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/Android-Article/</loc>
+    
+    <lastmod>2018-08-07T07:12:56.142Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/ActionBar%E9%9A%90%E8%97%8F%E6%96%B9%E6%B3%95/</loc>
+    
+    <lastmod>2018-08-07T07:07:06.066Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/Android-Launcher-Analysis/</loc>
+    
+    <lastmod>2018-08-07T07:02:15.695Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/Android-SystemUI-Analysis/</loc>
+    
+    <lastmod>2018-08-07T07:01:53.057Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/Android-Keyguard-Analysis/</loc>
+    
+    <lastmod>2018-08-07T07:01:26.882Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/Java-Base/</loc>
+    
+    <lastmod>2018-08-07T07:00:30.575Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/Android-ActivityManagerService-Analysis/</loc>
+    
+    <lastmod>2018-08-07T06:59:44.978Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/Android-AIDL-Mechanism/</loc>
+    
+    <lastmod>2018-08-07T06:59:10.093Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/Android-Launcher-Activity/</loc>
+    
+    <lastmod>2018-08-07T06:57:46.212Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/Android-Log-Analysis/</loc>
+    
+    <lastmod>2018-08-07T06:57:21.274Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/Android-Window-Mechanism/</loc>
+    
+    <lastmod>2018-08-07T06:56:11.164Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/Android-Watchdog-Analysis/</loc>
+    
+    <lastmod>2018-08-07T06:55:39.715Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/Android-ANR-Analysis/</loc>
+    
+    <lastmod>2018-08-07T06:55:15.734Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/Android-StrictMode-Analysis/</loc>
+    
+    <lastmod>2018-08-07T06:54:50.787Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</loc>
+    
+    <lastmod>2018-08-07T06:38:26.131Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/WordPress/</loc>
     
-    <lastmod>2018-08-06T13:55:27.772Z</lastmod>
+    <lastmod>2018-08-07T02:01:44.103Z</lastmod>
     
   </url>
   
@@ -37,13 +191,6 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/Android-Article/</loc>
-    
-    <lastmod>2018-08-05T07:18:37.126Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/Mac-OS/</loc>
     
     <lastmod>2018-08-04T09:29:58.672Z</lastmod>
@@ -58,30 +205,9 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/Myblog/</loc>
-    
-    <lastmod>2018-08-03T02:39:12.686Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/Android-Launcher-Analysis/</loc>
-    
-    <lastmod>2018-08-01T07:27:33.690Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/Android-MVC-MVP/</loc>
     
     <lastmod>2018-07-30T08:43:36.774Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/Android-SystemUI-Analysis/</loc>
-    
-    <lastmod>2018-07-30T08:33:56.200Z</lastmod>
     
   </url>
   
@@ -121,13 +247,6 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/Android-Keyguard-Analysis/</loc>
-    
-    <lastmod>2018-07-30T06:30:27.424Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/Android-Performance/</loc>
     
     <lastmod>2018-07-30T01:40:12.761Z</lastmod>
@@ -163,13 +282,6 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/Android-View-Mechanism/</loc>
-    
-    <lastmod>2018-07-19T06:27:08.450Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/React-Native/</loc>
     
     <lastmod>2018-07-19T03:04:04.994Z</lastmod>
@@ -187,13 +299,6 @@
     <loc>http://yoursite.com/Java-VirtualMachine/</loc>
     
     <lastmod>2018-07-18T14:50:24.742Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/SELinux-SEAndroid/</loc>
-    
-    <lastmod>2018-07-18T13:45:34.475Z</lastmod>
     
   </url>
   
@@ -240,79 +345,9 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/Android-AIDL-Mechanism/</loc>
-    
-    <lastmod>2018-07-18T10:31:34.928Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/Android-Log-Analysis/</loc>
-    
-    <lastmod>2018-07-18T08:55:48.809Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/Android-ActivityManagerService-Analysis/</loc>
-    
-    <lastmod>2018-07-17T03:34:47.162Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/Android-Launcher-Activity/</loc>
-    
-    <lastmod>2018-07-17T03:24:55.564Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/Android-PackageManagerService-Analysis/</loc>
     
     <lastmod>2018-07-16T13:37:45.431Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/Android-Window-Mechanism/</loc>
-    
-    <lastmod>2018-07-16T13:31:18.814Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/Android-Watchdog-Analysis/</loc>
-    
-    <lastmod>2018-07-16T12:53:08.684Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/Android-ANR-Analysis/</loc>
-    
-    <lastmod>2018-07-16T12:46:11.324Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/Android-StrictMode-Analysis/</loc>
-    
-    <lastmod>2018-07-16T11:46:09.153Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/Java-Base/</loc>
-    
-    <lastmod>2018-07-16T11:36:39.270Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/Android-Digital-Signature/</loc>
-    
-    <lastmod>2018-07-16T11:27:34.006Z</lastmod>
     
   </url>
   
@@ -366,13 +401,6 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/Android-Service-Analysis/</loc>
-    
-    <lastmod>2018-07-16T09:48:31.108Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/Android-SurfaceFlinger-Analysis/</loc>
     
     <lastmod>2018-07-16T09:48:26.208Z</lastmod>
@@ -390,13 +418,6 @@
     <loc>http://yoursite.com/Android-Make/</loc>
     
     <lastmod>2018-07-13T03:59:09.283Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/Android-%E5%A5%BD%E6%96%87/</loc>
-    
-    <lastmod>2018-07-11T06:53:41.285Z</lastmod>
     
   </url>
   
@@ -436,27 +457,6 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/ActionBar%E9%9A%90%E8%97%8F%E6%96%B9%E6%B3%95/</loc>
-    
-    <lastmod>2018-07-04T08:45:20.662Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</loc>
-    
-    <lastmod>2018-07-04T07:18:35.710Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/Android-%E5%BC%80%E5%8F%91%E5%A6%82%E4%BD%95%E5%81%9A%E5%86%85%E5%AD%98%E4%BC%98%E5%8C%96/</loc>
-    
-    <lastmod>2018-07-04T03:09:37.364Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/2017-04-23-Android%E5%BC%80%E5%8F%91%E5%B8%B8%E7%94%A8%E7%BD%91%E7%AB%99/</loc>
     
     <lastmod>2018-07-03T13:20:07.790Z</lastmod>
@@ -481,13 +481,6 @@
     <loc>http://yoursite.com/Android-%E5%BC%80%E5%8F%91%E8%80%85%E6%8C%87%E5%8D%97%E9%98%85%E8%AF%BB/</loc>
     
     <lastmod>2018-06-29T12:23:03.635Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/Android8-1-0-DeskClock%E6%A8%AA%E5%B1%8F%E6%BB%91%E5%8A%A8%E5%86%B2%E7%AA%81/</loc>
-    
-    <lastmod>2018-06-26T08:16:48.745Z</lastmod>
     
   </url>
   
@@ -527,14 +520,14 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F/</loc>
+    <loc>http://yoursite.com/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/</loc>
     
     <lastmod>2018-06-23T15:24:29.019Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/</loc>
+    <loc>http://yoursite.com/%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F/</loc>
     
     <lastmod>2018-06-23T15:24:29.019Z</lastmod>
     
