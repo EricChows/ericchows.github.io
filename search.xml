@@ -143,29 +143,6 @@
     </entry>
     
     <entry>
-      <title>Android 开发者指南阅读</title>
-      <link href="/Android-%E5%BC%80%E5%8F%91%E8%80%85%E6%8C%87%E5%8D%97%E9%98%85%E8%AF%BB/"/>
-      <url>/Android-%E5%BC%80%E5%8F%91%E8%80%85%E6%8C%87%E5%8D%97%E9%98%85%E8%AF%BB/</url>
-      <content type="html"><![CDATA[<p><a href="https://developer.android.com/guide/" target="_blank" rel="noopener">Android 开发者指南</a><br>进入<a href="https://developer.android.com" target="_blank" rel="noopener">https://developer.android.com</a> -&gt; Doc -&gt; Guides即可</p><p>由于东西太多，就先从自己感兴趣的开始翻译。<br>已经完成：<br>Best practices<br>└── Performance</p><h1 id="APP-Basics"><a href="#APP-Basics" class="headerlink" title="APP Basics"></a>APP Basics</h1><p>应用基础知识</p><h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><h2 id="Build-your-first-app"><a href="#Build-your-first-app" class="headerlink" title="Build your first app"></a>Build your first app</h2><h2 id="App-fundamentals"><a href="#App-fundamentals" class="headerlink" title="App fundamentals"></a>App fundamentals</h2><h2 id="App-resources"><a href="#App-resources" class="headerlink" title="App resources"></a>App resources</h2><h2 id="App-manifest-file"><a href="#App-manifest-file" class="headerlink" title="App manifest file"></a>App manifest file</h2><h2 id="App-permissions"><a href="#App-permissions" class="headerlink" title="App permissions"></a>App permissions</h2><h1 id="Devices"><a href="#Devices" class="headerlink" title="Devices"></a>Devices</h1><p>设备</p><h2 id="Device-compatibility"><a href="#Device-compatibility" class="headerlink" title="Device compatibility"></a>Device compatibility</h2><h2 id="Wear"><a href="#Wear" class="headerlink" title="Wear"></a>Wear</h2><h2 id="Android-TV"><a href="#Android-TV" class="headerlink" title="Android TV"></a>Android TV</h2><h2 id="Android-Auto"><a href="#Android-Auto" class="headerlink" title="Android Auto"></a>Android Auto</h2><h2 id="Android-Things"><a href="#Android-Things" class="headerlink" title="Android Things"></a>Android Things</h2><h2 id="Chrome-OS-devices"><a href="#Chrome-OS-devices" class="headerlink" title="Chrome OS devices"></a>Chrome OS devices</h2><h1 id="Core-topics"><a href="#Core-topics" class="headerlink" title="Core topics"></a>Core topics</h1><h2 id="Activities"><a href="#Activities" class="headerlink" title="Activities"></a>Activities</h2><h3 id="Introduction-to-activities"><a href="#Introduction-to-activities" class="headerlink" title="Introduction to activities"></a>Introduction to activities</h3><h3 id="The-activity-lifecycle"><a href="#The-activity-lifecycle" class="headerlink" title="The activity lifecycle"></a>The activity lifecycle</h3><h3 id="Activity-state-changes"><a href="#Activity-state-changes" class="headerlink" title="Activity state changes"></a>Activity state changes</h3><h3 id="Tasks-and-back-stack"><a href="#Tasks-and-back-stack" class="headerlink" title="Tasks and back stack"></a>Tasks and back stack</h3><h3 id="Processes-and-app-lifecycle"><a href="#Processes-and-app-lifecycle" class="headerlink" title="Processes and app lifecycle"></a>Processes and app lifecycle</h3><h3 id="Parcelables-and-bundles"><a href="#Parcelables-and-bundles" class="headerlink" title="Parcelables and bundles"></a>Parcelables and bundles</h3><h3 id="Fragments"><a href="#Fragments" class="headerlink" title="Fragments"></a>Fragments</h3><h3 id="Interact-with-other-apps"><a href="#Interact-with-other-apps" class="headerlink" title="Interact with other apps"></a>Interact with other apps</h3><h3 id="Handling-app-links"><a href="#Handling-app-links" class="headerlink" title="Handling app links"></a>Handling app links</h3><h3 id="Loaders"><a href="#Loaders" class="headerlink" title="Loaders"></a>Loaders</h3><h3 id="Recents-screen"><a href="#Recents-screen" class="headerlink" title="Recents screen"></a>Recents screen</h3><h3 id="Multi-window-support"><a href="#Multi-window-support" class="headerlink" title="Multi-window support"></a>Multi-window support</h3><h3 id="App-shorcuts"><a href="#App-shorcuts" class="headerlink" title="App shorcuts"></a>App shorcuts</h3><h3 id="App-widgets"><a href="#App-widgets" class="headerlink" title="App widgets"></a>App widgets</h3><h2 id="Intents-and-intent-filters"><a href="#Intents-and-intent-filters" class="headerlink" title="Intents and intent filters"></a>Intents and intent filters</h2><h3 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h3><h3 id="Common-intents"><a href="#Common-intents" class="headerlink" title="Common intents"></a>Common intents</h3><h2 id="User-interface-amp-navigation"><a href="#User-interface-amp-navigation" class="headerlink" title="User interface &amp; navigation"></a>User interface &amp; navigation</h2><h3 id="Overview-1"><a href="#Overview-1" class="headerlink" title="Overview"></a>Overview</h3><h3 id="Layouts"><a href="#Layouts" class="headerlink" title="Layouts"></a>Layouts</h3><h3 id="Look-and-feel"><a href="#Look-and-feel" class="headerlink" title="Look and feel"></a>Look and feel</h3><h3 id="Notifications"><a href="#Notifications" class="headerlink" title="Notifications"></a>Notifications</h3><h3 id="Add-the-app-bar"><a href="#Add-the-app-bar" class="headerlink" title="Add the app bar"></a>Add the app bar</h3><h3 id="Control-the-system-UI-visibility"><a href="#Control-the-system-UI-visibility" class="headerlink" title="Control the system UI visibility"></a>Control the system UI visibility</h3><h3 id="Designing-effective-navigation"><a href="#Designing-effective-navigation" class="headerlink" title="Designing effective navigation"></a>Designing effective navigation</h3><h3 id="Implementing-effective"><a href="#Implementing-effective" class="headerlink" title="Implementing effective"></a>Implementing effective</h3><h3 id="navigation"><a href="#navigation" class="headerlink" title="navigation"></a>navigation</h3><h3 id="Slide-between-fragments-using-ViewPager"><a href="#Slide-between-fragments-using-ViewPager" class="headerlink" title="Slide between fragments using ViewPager"></a>Slide between fragments using ViewPager</h3><h3 id="Supporting-swipe-to-refresh"><a href="#Supporting-swipe-to-refresh" class="headerlink" title="Supporting swipe-to-refresh"></a>Supporting swipe-to-refresh</h3><h3 id="Toasts-overview"><a href="#Toasts-overview" class="headerlink" title="Toasts overview"></a>Toasts overview</h3><h3 id="Pop-up-messages-overview"><a href="#Pop-up-messages-overview" class="headerlink" title="Pop-up messages overview"></a>Pop-up messages overview</h3><h3 id="Dialogs"><a href="#Dialogs" class="headerlink" title="Dialogs"></a>Dialogs</h3><h3 id="Menus"><a href="#Menus" class="headerlink" title="Menus"></a>Menus</h3><h3 id="Settings"><a href="#Settings" class="headerlink" title="Settings"></a>Settings</h3><h3 id="Search"><a href="#Search" class="headerlink" title="Search"></a>Search</h3><h3 id="Copy-and-paste"><a href="#Copy-and-paste" class="headerlink" title="Copy and paste"></a>Copy and paste</h3><h3 id="Drag-and-drop"><a href="#Drag-and-drop" class="headerlink" title="Drag and drop"></a>Drag and drop</h3><h3 id="Creating-backward-compatible"><a href="#Creating-backward-compatible" class="headerlink" title="Creating backward-compatible"></a>Creating backward-compatible</h3><h3 id="Uis"><a href="#Uis" class="headerlink" title="Uis"></a>Uis</h3><h2 id="Animations-amp-transitions"><a href="#Animations-amp-transitions" class="headerlink" title="Animations &amp; transitions"></a>Animations &amp; transitions</h2><h3 id="Overview-2"><a href="#Overview-2" class="headerlink" title="Overview"></a>Overview</h3><h3 id="Animations-overview"><a href="#Animations-overview" class="headerlink" title="Animations overview"></a>Animations overview</h3><h3 id="Property-animation-overview"><a href="#Property-animation-overview" class="headerlink" title="Property animation overview"></a>Property animation overview</h3><h3 id="Animate-drawable-graphics"><a href="#Animate-drawable-graphics" class="headerlink" title="Animate drawable graphics"></a>Animate drawable graphics</h3><h3 id="Reveal-or-hide-a-view-using-animation"><a href="#Reveal-or-hide-a-view-using-animation" class="headerlink" title="Reveal or hide a view using animation"></a>Reveal or hide a view using animation</h3><h3 id="Move-a-view-using-animation"><a href="#Move-a-view-using-animation" class="headerlink" title="Move a view using animation"></a>Move a view using animation</h3><h3 id="Move-a-view-using-fling-animation"><a href="#Move-a-view-using-fling-animation" class="headerlink" title="Move a view using fling animation"></a>Move a view using fling animation</h3><h3 id="Enlarge-a-view-using-a-zoom-animation"><a href="#Enlarge-a-view-using-a-zoom-animation" class="headerlink" title="Enlarge a view using a zoom animation"></a>Enlarge a view using a zoom animation</h3><h3 id="Animate-movement-using-spring-physics"><a href="#Animate-movement-using-spring-physics" class="headerlink" title="Animate movement using spring physics"></a>Animate movement using spring physics</h3><h3 id="Auto-animate-layout-updates"><a href="#Auto-animate-layout-updates" class="headerlink" title="Auto animate layout updates"></a>Auto animate layout updates</h3><h3 id="Animate-layout-changes-using-a-transtiton"><a href="#Animate-layout-changes-using-a-transtiton" class="headerlink" title="Animate layout changes using a transtiton"></a>Animate layout changes using a transtiton</h3><h3 id="Create-a-custom-transition"><a href="#Create-a-custom-transition" class="headerlink" title="Create a custom transition"></a>Create a custom transition</h3><h3 id="Start-an-activity-using-an-animation"><a href="#Start-an-activity-using-an-animation" class="headerlink" title="Start an activity using an animation"></a>Start an activity using an animation</h3><h2 id="Images-amp-graphics"><a href="#Images-amp-graphics" class="headerlink" title="Images &amp; graphics"></a>Images &amp; graphics</h2><h3 id="Overview-3"><a href="#Overview-3" class="headerlink" title="Overview"></a>Overview</h3><h3 id="Drawable-overview"><a href="#Drawable-overview" class="headerlink" title="Drawable overview"></a>Drawable overview</h3><h3 id="Vector-drawables-overview"><a href="#Vector-drawables-overview" class="headerlink" title="Vector drawables overview"></a>Vector drawables overview</h3><h3 id="Handling-bitmaps"><a href="#Handling-bitmaps" class="headerlink" title="Handling bitmaps"></a>Handling bitmaps</h3><h3 id="Selecting-colors-with-the-palette-API"><a href="#Selecting-colors-with-the-palette-API" class="headerlink" title="Selecting colors with the palette API"></a>Selecting colors with the palette API</h3><h3 id="Reducing-image-download-size"><a href="#Reducing-image-download-size" class="headerlink" title="Reducing image download size"></a>Reducing image download size</h3><h3 id="Hardware-accelertation"><a href="#Hardware-accelertation" class="headerlink" title="Hardware accelertation"></a>Hardware accelertation</h3><h3 id="OpenGL-ES"><a href="#OpenGL-ES" class="headerlink" title="OpenGL ES"></a>OpenGL ES</h3><h3 id="Displaying-graphics-with-OpenGL"><a href="#Displaying-graphics-with-OpenGL" class="headerlink" title="Displaying graphics with OpenGL"></a>Displaying graphics with OpenGL</h3><h3 id="ES"><a href="#ES" class="headerlink" title="ES"></a>ES</h3><h3 id="Rendering"><a href="#Rendering" class="headerlink" title="Rendering"></a>Rendering</h3><h3 id="Enhancing-graphics-with-wide-color-content"><a href="#Enhancing-graphics-with-wide-color-content" class="headerlink" title="Enhancing graphics with wide color content"></a>Enhancing graphics with wide color content</h3><h2 id="Audio-amp-Video"><a href="#Audio-amp-Video" class="headerlink" title="Audio &amp; Video"></a>Audio &amp; Video</h2><h3 id="Audio-amp-video-overview"><a href="#Audio-amp-video-overview" class="headerlink" title="Audio &amp; video overview"></a>Audio &amp; video overview</h3><h3 id="Supported-media-formats"><a href="#Supported-media-formats" class="headerlink" title="Supported media formats"></a>Supported media formats</h3><h3 id="Media-app-architecture"><a href="#Media-app-architecture" class="headerlink" title="Media app architecture"></a>Media app architecture</h3><h3 id="Routing-between-devices"><a href="#Routing-between-devices" class="headerlink" title="Routing between devices"></a>Routing between devices</h3><h3 id="Control-amplitude-with-VolumeShaper"><a href="#Control-amplitude-with-VolumeShaper" class="headerlink" title="Control amplitude with VolumeShaper"></a>Control amplitude with VolumeShaper</h3><h3 id="MediaPlayer-overview"><a href="#MediaPlayer-overview" class="headerlink" title="MediaPlayer overview"></a>MediaPlayer overview</h3><h3 id="MediaRecorder-overview"><a href="#MediaRecorder-overview" class="headerlink" title="MediaRecorder overview"></a>MediaRecorder overview</h3><h3 id="ExoPlayer"><a href="#ExoPlayer" class="headerlink" title="ExoPlayer"></a>ExoPlayer</h3><h2 id="Background-tasks"><a href="#Background-tasks" class="headerlink" title="Background tasks"></a>Background tasks</h2><h3 id="Overview-4"><a href="#Overview-4" class="headerlink" title="Overview"></a>Overview</h3><h3 id="Guide-to-background-processing"><a href="#Guide-to-background-processing" class="headerlink" title="Guide to background processing"></a>Guide to background processing</h3><h3 id="Sending-operations-to-multiple"><a href="#Sending-operations-to-multiple" class="headerlink" title="Sending operations to multiple"></a>Sending operations to multiple</h3><h3 id="threads"><a href="#threads" class="headerlink" title="threads"></a>threads</h3><h3 id="Schedule-jobs-intelligently"><a href="#Schedule-jobs-intelligently" class="headerlink" title="Schedule jobs intelligently"></a>Schedule jobs intelligently</h3><h3 id="Services"><a href="#Services" class="headerlink" title="Services"></a>Services</h3><h3 id="Background-optimizations"><a href="#Background-optimizations" class="headerlink" title="Background optimizations"></a>Background optimizations</h3><h3 id="Broadcastes-overview"><a href="#Broadcastes-overview" class="headerlink" title="Broadcastes overview"></a>Broadcastes overview</h3><h3 id="Manage-device-awake-state"><a href="#Manage-device-awake-state" class="headerlink" title="Manage device awake state"></a>Manage device awake state</h3><h2 id="App-data-amp-files"><a href="#App-data-amp-files" class="headerlink" title="App data &amp; files"></a>App data &amp; files</h2><h3 id="Overview-5"><a href="#Overview-5" class="headerlink" title="Overview"></a>Overview</h3><h3 id="Storage-overview"><a href="#Storage-overview" class="headerlink" title="Storage overview"></a>Storage overview</h3><h3 id="Save-files-on-device-storage"><a href="#Save-files-on-device-storage" class="headerlink" title="Save files on device storage"></a>Save files on device storage</h3><p>…….太多了，先不加了</p><h1 id="Best-practices"><a href="#Best-practices" class="headerlink" title="Best practices"></a>Best practices</h1><h2 id="Testing"><a href="#Testing" class="headerlink" title="Testing"></a>Testing</h2><h2 id="Performance"><a href="#Performance" class="headerlink" title="Performance"></a>Performance</h2><p>性能</p><h3 id="Overview-6"><a href="#Overview-6" class="headerlink" title="Overview"></a>Overview</h3><p>性能表现在：</p><ul><li>快速启动</li><li>快速响应用户交互<h3 id="Android-Vitals"><a href="#Android-Vitals" class="headerlink" title="Android Vitals"></a>Android Vitals</h3></li></ul><h3 id="Processes-and-Threads-Overview"><a href="#Processes-and-Threads-Overview" class="headerlink" title="Processes and Threads Overview"></a>Processes and Threads Overview</h3><h3 id="Better-Performance-through-Threading"><a href="#Better-Performance-through-Threading" class="headerlink" title="Better Performance through Threading"></a>Better Performance through Threading</h3><h3 id="Optimizing-for-Battery-Life"><a href="#Optimizing-for-Battery-Life" class="headerlink" title="Optimizing for Battery Life"></a>Optimizing for Battery Life</h3><h3 id="Reducing-APK-Size"><a href="#Reducing-APK-Size" class="headerlink" title="Reducing APK Size"></a>Reducing APK Size</h3><h3 id="Manager-Your-App’s-Memory"><a href="#Manager-Your-App’s-Memory" class="headerlink" title="Manager Your App’s Memory"></a>Manager Your App’s Memory</h3><h3 id="Overview-of-Memory-Managemement"><a href="#Overview-of-Memory-Managemement" class="headerlink" title="Overview of Memory Managemement"></a>Overview of Memory Managemement</h3><h3 id="Designing-for-Seamlessness"><a href="#Designing-for-Seamlessness" class="headerlink" title="Designing for Seamlessness"></a>Designing for Seamlessness</h3><h3 id="Keeping-Your-App-Responsive"><a href="#Keeping-Your-App-Responsive" class="headerlink" title="Keeping Your App Responsive"></a>Keeping Your App Responsive</h3><h3 id="Performance-Tips"><a href="#Performance-Tips" class="headerlink" title="Performance Tips"></a>Performance Tips</h3><h3 id="SMP-Primer-for-Android"><a href="#SMP-Primer-for-Android" class="headerlink" title="SMP Primer for Android"></a>SMP Primer for Android</h3><h3 id="Verifying-App-Behavior-on-th-ANdroid-Runtime-ART"><a href="#Verifying-App-Behavior-on-th-ANdroid-Runtime-ART" class="headerlink" title="Verifying App Behavior on th ANdroid Runtime(ART)"></a>Verifying App Behavior on th ANdroid Runtime(ART)</h3><h2 id="Accessibility"><a href="#Accessibility" class="headerlink" title="Accessibility"></a>Accessibility</h2><h2 id="Security"><a href="#Security" class="headerlink" title="Security"></a>Security</h2><h2 id="Build-for-Billions"><a href="#Build-for-Billions" class="headerlink" title="Build for Billions"></a>Build for Billions</h2><h2 id="Build-for-Enterprise"><a href="#Build-for-Enterprise" class="headerlink" title="Build for Enterprise"></a>Build for Enterprise</h2><h2 id="Google-Play"><a href="#Google-Play" class="headerlink" title="Google Play"></a>Google Play</h2>]]></content>
-      
-      <categories>
-          
-          <category> Android </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 指南 </tag>
-            
-            <tag> Guides </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
       <title>ANR 机制以及问题分析</title>
       <link href="/Android-ANR-Analysis/"/>
       <url>/Android-ANR-Analysis/</url>
@@ -478,6 +455,29 @@
     </entry>
     
     <entry>
+      <title>Android 开发者指南阅读</title>
+      <link href="/Android-%E5%BC%80%E5%8F%91%E8%80%85%E6%8C%87%E5%8D%97%E9%98%85%E8%AF%BB/"/>
+      <url>/Android-%E5%BC%80%E5%8F%91%E8%80%85%E6%8C%87%E5%8D%97%E9%98%85%E8%AF%BB/</url>
+      <content type="html"><![CDATA[<p><a href="https://developer.android.com/guide/" target="_blank" rel="noopener">Android 开发者指南</a><br>进入<a href="https://developer.android.com" target="_blank" rel="noopener">https://developer.android.com</a> -&gt; Doc -&gt; Guides即可</p><p>由于东西太多，就先从自己感兴趣的开始翻译。<br>已经完成：<br>Best practices<br>└── Performance</p><h1 id="APP-Basics"><a href="#APP-Basics" class="headerlink" title="APP Basics"></a>APP Basics</h1><p>应用基础知识</p><h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><h2 id="Build-your-first-app"><a href="#Build-your-first-app" class="headerlink" title="Build your first app"></a>Build your first app</h2><h2 id="App-fundamentals"><a href="#App-fundamentals" class="headerlink" title="App fundamentals"></a>App fundamentals</h2><h2 id="App-resources"><a href="#App-resources" class="headerlink" title="App resources"></a>App resources</h2><h2 id="App-manifest-file"><a href="#App-manifest-file" class="headerlink" title="App manifest file"></a>App manifest file</h2><h2 id="App-permissions"><a href="#App-permissions" class="headerlink" title="App permissions"></a>App permissions</h2><h1 id="Devices"><a href="#Devices" class="headerlink" title="Devices"></a>Devices</h1><p>设备</p><h2 id="Device-compatibility"><a href="#Device-compatibility" class="headerlink" title="Device compatibility"></a>Device compatibility</h2><h2 id="Wear"><a href="#Wear" class="headerlink" title="Wear"></a>Wear</h2><h2 id="Android-TV"><a href="#Android-TV" class="headerlink" title="Android TV"></a>Android TV</h2><h2 id="Android-Auto"><a href="#Android-Auto" class="headerlink" title="Android Auto"></a>Android Auto</h2><h2 id="Android-Things"><a href="#Android-Things" class="headerlink" title="Android Things"></a>Android Things</h2><h2 id="Chrome-OS-devices"><a href="#Chrome-OS-devices" class="headerlink" title="Chrome OS devices"></a>Chrome OS devices</h2><h1 id="Core-topics"><a href="#Core-topics" class="headerlink" title="Core topics"></a>Core topics</h1><h2 id="Activities"><a href="#Activities" class="headerlink" title="Activities"></a>Activities</h2><h3 id="Introduction-to-activities"><a href="#Introduction-to-activities" class="headerlink" title="Introduction to activities"></a>Introduction to activities</h3><h3 id="The-activity-lifecycle"><a href="#The-activity-lifecycle" class="headerlink" title="The activity lifecycle"></a>The activity lifecycle</h3><h3 id="Activity-state-changes"><a href="#Activity-state-changes" class="headerlink" title="Activity state changes"></a>Activity state changes</h3><h3 id="Tasks-and-back-stack"><a href="#Tasks-and-back-stack" class="headerlink" title="Tasks and back stack"></a>Tasks and back stack</h3><h3 id="Processes-and-app-lifecycle"><a href="#Processes-and-app-lifecycle" class="headerlink" title="Processes and app lifecycle"></a>Processes and app lifecycle</h3><h3 id="Parcelables-and-bundles"><a href="#Parcelables-and-bundles" class="headerlink" title="Parcelables and bundles"></a>Parcelables and bundles</h3><h3 id="Fragments"><a href="#Fragments" class="headerlink" title="Fragments"></a>Fragments</h3><h3 id="Interact-with-other-apps"><a href="#Interact-with-other-apps" class="headerlink" title="Interact with other apps"></a>Interact with other apps</h3><h3 id="Handling-app-links"><a href="#Handling-app-links" class="headerlink" title="Handling app links"></a>Handling app links</h3><h3 id="Loaders"><a href="#Loaders" class="headerlink" title="Loaders"></a>Loaders</h3><h3 id="Recents-screen"><a href="#Recents-screen" class="headerlink" title="Recents screen"></a>Recents screen</h3><h3 id="Multi-window-support"><a href="#Multi-window-support" class="headerlink" title="Multi-window support"></a>Multi-window support</h3><h3 id="App-shorcuts"><a href="#App-shorcuts" class="headerlink" title="App shorcuts"></a>App shorcuts</h3><h3 id="App-widgets"><a href="#App-widgets" class="headerlink" title="App widgets"></a>App widgets</h3><h2 id="Intents-and-intent-filters"><a href="#Intents-and-intent-filters" class="headerlink" title="Intents and intent filters"></a>Intents and intent filters</h2><h3 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h3><h3 id="Common-intents"><a href="#Common-intents" class="headerlink" title="Common intents"></a>Common intents</h3><h2 id="User-interface-amp-navigation"><a href="#User-interface-amp-navigation" class="headerlink" title="User interface &amp; navigation"></a>User interface &amp; navigation</h2><h3 id="Overview-1"><a href="#Overview-1" class="headerlink" title="Overview"></a>Overview</h3><h3 id="Layouts"><a href="#Layouts" class="headerlink" title="Layouts"></a>Layouts</h3><h3 id="Look-and-feel"><a href="#Look-and-feel" class="headerlink" title="Look and feel"></a>Look and feel</h3><h3 id="Notifications"><a href="#Notifications" class="headerlink" title="Notifications"></a>Notifications</h3><h3 id="Add-the-app-bar"><a href="#Add-the-app-bar" class="headerlink" title="Add the app bar"></a>Add the app bar</h3><h3 id="Control-the-system-UI-visibility"><a href="#Control-the-system-UI-visibility" class="headerlink" title="Control the system UI visibility"></a>Control the system UI visibility</h3><h3 id="Designing-effective-navigation"><a href="#Designing-effective-navigation" class="headerlink" title="Designing effective navigation"></a>Designing effective navigation</h3><h3 id="Implementing-effective"><a href="#Implementing-effective" class="headerlink" title="Implementing effective"></a>Implementing effective</h3><h3 id="navigation"><a href="#navigation" class="headerlink" title="navigation"></a>navigation</h3><h3 id="Slide-between-fragments-using-ViewPager"><a href="#Slide-between-fragments-using-ViewPager" class="headerlink" title="Slide between fragments using ViewPager"></a>Slide between fragments using ViewPager</h3><h3 id="Supporting-swipe-to-refresh"><a href="#Supporting-swipe-to-refresh" class="headerlink" title="Supporting swipe-to-refresh"></a>Supporting swipe-to-refresh</h3><h3 id="Toasts-overview"><a href="#Toasts-overview" class="headerlink" title="Toasts overview"></a>Toasts overview</h3><h3 id="Pop-up-messages-overview"><a href="#Pop-up-messages-overview" class="headerlink" title="Pop-up messages overview"></a>Pop-up messages overview</h3><h3 id="Dialogs"><a href="#Dialogs" class="headerlink" title="Dialogs"></a>Dialogs</h3><h3 id="Menus"><a href="#Menus" class="headerlink" title="Menus"></a>Menus</h3><h3 id="Settings"><a href="#Settings" class="headerlink" title="Settings"></a>Settings</h3><h3 id="Search"><a href="#Search" class="headerlink" title="Search"></a>Search</h3><h3 id="Copy-and-paste"><a href="#Copy-and-paste" class="headerlink" title="Copy and paste"></a>Copy and paste</h3><h3 id="Drag-and-drop"><a href="#Drag-and-drop" class="headerlink" title="Drag and drop"></a>Drag and drop</h3><h3 id="Creating-backward-compatible"><a href="#Creating-backward-compatible" class="headerlink" title="Creating backward-compatible"></a>Creating backward-compatible</h3><h3 id="Uis"><a href="#Uis" class="headerlink" title="Uis"></a>Uis</h3><h2 id="Animations-amp-transitions"><a href="#Animations-amp-transitions" class="headerlink" title="Animations &amp; transitions"></a>Animations &amp; transitions</h2><h3 id="Overview-2"><a href="#Overview-2" class="headerlink" title="Overview"></a>Overview</h3><h3 id="Animations-overview"><a href="#Animations-overview" class="headerlink" title="Animations overview"></a>Animations overview</h3><h3 id="Property-animation-overview"><a href="#Property-animation-overview" class="headerlink" title="Property animation overview"></a>Property animation overview</h3><h3 id="Animate-drawable-graphics"><a href="#Animate-drawable-graphics" class="headerlink" title="Animate drawable graphics"></a>Animate drawable graphics</h3><h3 id="Reveal-or-hide-a-view-using-animation"><a href="#Reveal-or-hide-a-view-using-animation" class="headerlink" title="Reveal or hide a view using animation"></a>Reveal or hide a view using animation</h3><h3 id="Move-a-view-using-animation"><a href="#Move-a-view-using-animation" class="headerlink" title="Move a view using animation"></a>Move a view using animation</h3><h3 id="Move-a-view-using-fling-animation"><a href="#Move-a-view-using-fling-animation" class="headerlink" title="Move a view using fling animation"></a>Move a view using fling animation</h3><h3 id="Enlarge-a-view-using-a-zoom-animation"><a href="#Enlarge-a-view-using-a-zoom-animation" class="headerlink" title="Enlarge a view using a zoom animation"></a>Enlarge a view using a zoom animation</h3><h3 id="Animate-movement-using-spring-physics"><a href="#Animate-movement-using-spring-physics" class="headerlink" title="Animate movement using spring physics"></a>Animate movement using spring physics</h3><h3 id="Auto-animate-layout-updates"><a href="#Auto-animate-layout-updates" class="headerlink" title="Auto animate layout updates"></a>Auto animate layout updates</h3><h3 id="Animate-layout-changes-using-a-transtiton"><a href="#Animate-layout-changes-using-a-transtiton" class="headerlink" title="Animate layout changes using a transtiton"></a>Animate layout changes using a transtiton</h3><h3 id="Create-a-custom-transition"><a href="#Create-a-custom-transition" class="headerlink" title="Create a custom transition"></a>Create a custom transition</h3><h3 id="Start-an-activity-using-an-animation"><a href="#Start-an-activity-using-an-animation" class="headerlink" title="Start an activity using an animation"></a>Start an activity using an animation</h3><h2 id="Images-amp-graphics"><a href="#Images-amp-graphics" class="headerlink" title="Images &amp; graphics"></a>Images &amp; graphics</h2><h3 id="Overview-3"><a href="#Overview-3" class="headerlink" title="Overview"></a>Overview</h3><h3 id="Drawable-overview"><a href="#Drawable-overview" class="headerlink" title="Drawable overview"></a>Drawable overview</h3><h3 id="Vector-drawables-overview"><a href="#Vector-drawables-overview" class="headerlink" title="Vector drawables overview"></a>Vector drawables overview</h3><h3 id="Handling-bitmaps"><a href="#Handling-bitmaps" class="headerlink" title="Handling bitmaps"></a>Handling bitmaps</h3><h3 id="Selecting-colors-with-the-palette-API"><a href="#Selecting-colors-with-the-palette-API" class="headerlink" title="Selecting colors with the palette API"></a>Selecting colors with the palette API</h3><h3 id="Reducing-image-download-size"><a href="#Reducing-image-download-size" class="headerlink" title="Reducing image download size"></a>Reducing image download size</h3><h3 id="Hardware-accelertation"><a href="#Hardware-accelertation" class="headerlink" title="Hardware accelertation"></a>Hardware accelertation</h3><h3 id="OpenGL-ES"><a href="#OpenGL-ES" class="headerlink" title="OpenGL ES"></a>OpenGL ES</h3><h3 id="Displaying-graphics-with-OpenGL"><a href="#Displaying-graphics-with-OpenGL" class="headerlink" title="Displaying graphics with OpenGL"></a>Displaying graphics with OpenGL</h3><h3 id="ES"><a href="#ES" class="headerlink" title="ES"></a>ES</h3><h3 id="Rendering"><a href="#Rendering" class="headerlink" title="Rendering"></a>Rendering</h3><h3 id="Enhancing-graphics-with-wide-color-content"><a href="#Enhancing-graphics-with-wide-color-content" class="headerlink" title="Enhancing graphics with wide color content"></a>Enhancing graphics with wide color content</h3><h2 id="Audio-amp-Video"><a href="#Audio-amp-Video" class="headerlink" title="Audio &amp; Video"></a>Audio &amp; Video</h2><h3 id="Audio-amp-video-overview"><a href="#Audio-amp-video-overview" class="headerlink" title="Audio &amp; video overview"></a>Audio &amp; video overview</h3><h3 id="Supported-media-formats"><a href="#Supported-media-formats" class="headerlink" title="Supported media formats"></a>Supported media formats</h3><h3 id="Media-app-architecture"><a href="#Media-app-architecture" class="headerlink" title="Media app architecture"></a>Media app architecture</h3><h3 id="Routing-between-devices"><a href="#Routing-between-devices" class="headerlink" title="Routing between devices"></a>Routing between devices</h3><h3 id="Control-amplitude-with-VolumeShaper"><a href="#Control-amplitude-with-VolumeShaper" class="headerlink" title="Control amplitude with VolumeShaper"></a>Control amplitude with VolumeShaper</h3><h3 id="MediaPlayer-overview"><a href="#MediaPlayer-overview" class="headerlink" title="MediaPlayer overview"></a>MediaPlayer overview</h3><h3 id="MediaRecorder-overview"><a href="#MediaRecorder-overview" class="headerlink" title="MediaRecorder overview"></a>MediaRecorder overview</h3><h3 id="ExoPlayer"><a href="#ExoPlayer" class="headerlink" title="ExoPlayer"></a>ExoPlayer</h3><h2 id="Background-tasks"><a href="#Background-tasks" class="headerlink" title="Background tasks"></a>Background tasks</h2><h3 id="Overview-4"><a href="#Overview-4" class="headerlink" title="Overview"></a>Overview</h3><h3 id="Guide-to-background-processing"><a href="#Guide-to-background-processing" class="headerlink" title="Guide to background processing"></a>Guide to background processing</h3><h3 id="Sending-operations-to-multiple"><a href="#Sending-operations-to-multiple" class="headerlink" title="Sending operations to multiple"></a>Sending operations to multiple</h3><h3 id="threads"><a href="#threads" class="headerlink" title="threads"></a>threads</h3><h3 id="Schedule-jobs-intelligently"><a href="#Schedule-jobs-intelligently" class="headerlink" title="Schedule jobs intelligently"></a>Schedule jobs intelligently</h3><h3 id="Services"><a href="#Services" class="headerlink" title="Services"></a>Services</h3><h3 id="Background-optimizations"><a href="#Background-optimizations" class="headerlink" title="Background optimizations"></a>Background optimizations</h3><h3 id="Broadcastes-overview"><a href="#Broadcastes-overview" class="headerlink" title="Broadcastes overview"></a>Broadcastes overview</h3><h3 id="Manage-device-awake-state"><a href="#Manage-device-awake-state" class="headerlink" title="Manage device awake state"></a>Manage device awake state</h3><h2 id="App-data-amp-files"><a href="#App-data-amp-files" class="headerlink" title="App data &amp; files"></a>App data &amp; files</h2><h3 id="Overview-5"><a href="#Overview-5" class="headerlink" title="Overview"></a>Overview</h3><h3 id="Storage-overview"><a href="#Storage-overview" class="headerlink" title="Storage overview"></a>Storage overview</h3><h3 id="Save-files-on-device-storage"><a href="#Save-files-on-device-storage" class="headerlink" title="Save files on device storage"></a>Save files on device storage</h3><p>…….太多了，先不加了</p><h1 id="Best-practices"><a href="#Best-practices" class="headerlink" title="Best practices"></a>Best practices</h1><h2 id="Testing"><a href="#Testing" class="headerlink" title="Testing"></a>Testing</h2><h2 id="Performance"><a href="#Performance" class="headerlink" title="Performance"></a>Performance</h2><p>性能</p><h3 id="Overview-6"><a href="#Overview-6" class="headerlink" title="Overview"></a>Overview</h3><p>性能表现在：</p><ul><li>快速启动</li><li>快速响应用户交互<h3 id="Android-Vitals"><a href="#Android-Vitals" class="headerlink" title="Android Vitals"></a>Android Vitals</h3></li></ul><h3 id="Processes-and-Threads-Overview"><a href="#Processes-and-Threads-Overview" class="headerlink" title="Processes and Threads Overview"></a>Processes and Threads Overview</h3><h3 id="Better-Performance-through-Threading"><a href="#Better-Performance-through-Threading" class="headerlink" title="Better Performance through Threading"></a>Better Performance through Threading</h3><h3 id="Optimizing-for-Battery-Life"><a href="#Optimizing-for-Battery-Life" class="headerlink" title="Optimizing for Battery Life"></a>Optimizing for Battery Life</h3><h3 id="Reducing-APK-Size"><a href="#Reducing-APK-Size" class="headerlink" title="Reducing APK Size"></a>Reducing APK Size</h3><h3 id="Manager-Your-App’s-Memory"><a href="#Manager-Your-App’s-Memory" class="headerlink" title="Manager Your App’s Memory"></a>Manager Your App’s Memory</h3><h3 id="Overview-of-Memory-Managemement"><a href="#Overview-of-Memory-Managemement" class="headerlink" title="Overview of Memory Managemement"></a>Overview of Memory Managemement</h3><h3 id="Designing-for-Seamlessness"><a href="#Designing-for-Seamlessness" class="headerlink" title="Designing for Seamlessness"></a>Designing for Seamlessness</h3><h3 id="Keeping-Your-App-Responsive"><a href="#Keeping-Your-App-Responsive" class="headerlink" title="Keeping Your App Responsive"></a>Keeping Your App Responsive</h3><h3 id="Performance-Tips"><a href="#Performance-Tips" class="headerlink" title="Performance Tips"></a>Performance Tips</h3><h3 id="SMP-Primer-for-Android"><a href="#SMP-Primer-for-Android" class="headerlink" title="SMP Primer for Android"></a>SMP Primer for Android</h3><h3 id="Verifying-App-Behavior-on-th-ANdroid-Runtime-ART"><a href="#Verifying-App-Behavior-on-th-ANdroid-Runtime-ART" class="headerlink" title="Verifying App Behavior on th ANdroid Runtime(ART)"></a>Verifying App Behavior on th ANdroid Runtime(ART)</h3><h2 id="Accessibility"><a href="#Accessibility" class="headerlink" title="Accessibility"></a>Accessibility</h2><h2 id="Security"><a href="#Security" class="headerlink" title="Security"></a>Security</h2><h2 id="Build-for-Billions"><a href="#Build-for-Billions" class="headerlink" title="Build for Billions"></a>Build for Billions</h2><h2 id="Build-for-Enterprise"><a href="#Build-for-Enterprise" class="headerlink" title="Build for Enterprise"></a>Build for Enterprise</h2><h2 id="Google-Play"><a href="#Google-Play" class="headerlink" title="Google Play"></a>Google Play</h2>]]></content>
+      
+      <categories>
+          
+          <category> Android </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 指南 </tag>
+            
+            <tag> Guides </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>Android开发常用网站</title>
       <link href="/2017-04-23-Android%E5%BC%80%E5%8F%91%E5%B8%B8%E7%94%A8%E7%BD%91%E7%AB%99/"/>
       <url>/2017-04-23-Android%E5%BC%80%E5%8F%91%E5%B8%B8%E7%94%A8%E7%BD%91%E7%AB%99/</url>
@@ -528,31 +528,6 @@
     </entry>
     
     <entry>
-      <title>SELinux与SEAndroid解析</title>
-      <link href="/SELinux-SEAndroid/"/>
-      <url>/SELinux-SEAndroid/</url>
-      <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.<br><!--    Module:    第一步:需要将这些文章都看几篇    第二步：形成自己的理解    第三步：可以按照非常有用的文章，重写写一遍    第四步：纠正或者延伸别人的文章--></p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><!--    阅读卡：    文章：    时间：--><p><a href="https://blog.csdn.net/luoshengyang/article/details/37613135" target="_blank" rel="noopener">SEAndroid安全机制框架分析</a></p><p><a href="https://my.csdn.net/huangyabin001" target="_blank" rel="noopener">SELinux学习</a></p>]]></content>
-      
-      <categories>
-          
-          <category> SEAndroid </category>
-          
-          <category> SELinux </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> SEAndroid </tag>
-            
-            <tag> SELinux </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
       <title>Android中ContentProvider解析</title>
       <link href="/Android-ContentProvider-Analysis/"/>
       <url>/Android-ContentProvider-Analysis/</url>
@@ -572,6 +547,31 @@
             <tag> Android </tag>
             
             <tag> ContentProvider </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>Android中BroadcastRecevier解析</title>
+      <link href="/Android-BroadcastRecevier-Analysis/"/>
+      <url>/Android-BroadcastRecevier-Analysis/</url>
+      <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.</p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><ol><li>Android Broadcast广播注册和发布方式以及机制流程 <a href="https://blog.csdn.net/liu_3262296/article/details/51935316" target="_blank" rel="noopener">https://blog.csdn.net/liu_3262296/article/details/51935316</a></li><li>Android广播之发送广播的源码分析 <a href="https://blog.csdn.net/zhangyongfeiyong/article/details/52022935" target="_blank" rel="noopener">https://blog.csdn.net/zhangyongfeiyong/article/details/52022935</a></li><li>Android广播机制实现源码浅析（一） <a href="https://blog.csdn.net/hehui1860/article/details/30726609" target="_blank" rel="noopener">https://blog.csdn.net/hehui1860/article/details/30726609</a></li><li>Android广播机制实现源码浅析（二） <a href="https://blog.csdn.net/hehui1860/article/details/30727075" target="_blank" rel="noopener">https://blog.csdn.net/hehui1860/article/details/30727075</a></li><li>Android广播机制实现源码浅析（三）<a href="https://blog.csdn.net/hehui1860/article/details/30727537" target="_blank" rel="noopener">https://blog.csdn.net/hehui1860/article/details/30727537</a></li><li>BroadcastReceiver源码解析(一)  <a href="https://blog.csdn.net/tiefeng0606/article/details/51354381" target="_blank" rel="noopener">https://blog.csdn.net/tiefeng0606/article/details/51354381</a></li><li>BroadcastReceiver源码解析（二） <a href="https://blog.csdn.net/tiefeng0606/article/details/51381221" target="_blank" rel="noopener">https://blog.csdn.net/tiefeng0606/article/details/51381221</a></li></ol><p><a href="https://blog.csdn.net/luoshengyang/article/details/8923485" target="_blank" rel="noopener">那两年炼就的Android内功修养</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6730748" target="_blank" rel="noopener">Android系统中的广播（Broadcast）机制简要介绍和学习计划</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6737352" target="_blank" rel="noopener">Android应用程序注册广播接收器（registerReceiver）的过程分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6744448" target="_blank" rel="noopener">Android应用程序发送广播（sendBroadcast）的过程分析</a></p>]]></content>
+      
+      <categories>
+          
+          <category> Android </category>
+          
+          <category> BroadcastRecevier </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Android </tag>
+            
+            <tag> BroadcastRecevier </tag>
             
         </tags>
       
@@ -653,16 +653,16 @@
     </entry>
     
     <entry>
-      <title>Android中BroadcastRecevier解析</title>
-      <link href="/Android-BroadcastRecevier-Analysis/"/>
-      <url>/Android-BroadcastRecevier-Analysis/</url>
-      <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.</p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><ol><li>Android Broadcast广播注册和发布方式以及机制流程 <a href="https://blog.csdn.net/liu_3262296/article/details/51935316" target="_blank" rel="noopener">https://blog.csdn.net/liu_3262296/article/details/51935316</a></li><li>Android广播之发送广播的源码分析 <a href="https://blog.csdn.net/zhangyongfeiyong/article/details/52022935" target="_blank" rel="noopener">https://blog.csdn.net/zhangyongfeiyong/article/details/52022935</a></li><li>Android广播机制实现源码浅析（一） <a href="https://blog.csdn.net/hehui1860/article/details/30726609" target="_blank" rel="noopener">https://blog.csdn.net/hehui1860/article/details/30726609</a></li><li>Android广播机制实现源码浅析（二） <a href="https://blog.csdn.net/hehui1860/article/details/30727075" target="_blank" rel="noopener">https://blog.csdn.net/hehui1860/article/details/30727075</a></li><li>Android广播机制实现源码浅析（三）<a href="https://blog.csdn.net/hehui1860/article/details/30727537" target="_blank" rel="noopener">https://blog.csdn.net/hehui1860/article/details/30727537</a></li><li>BroadcastReceiver源码解析(一)  <a href="https://blog.csdn.net/tiefeng0606/article/details/51354381" target="_blank" rel="noopener">https://blog.csdn.net/tiefeng0606/article/details/51354381</a></li><li>BroadcastReceiver源码解析（二） <a href="https://blog.csdn.net/tiefeng0606/article/details/51381221" target="_blank" rel="noopener">https://blog.csdn.net/tiefeng0606/article/details/51381221</a></li></ol><p><a href="https://blog.csdn.net/luoshengyang/article/details/8923485" target="_blank" rel="noopener">那两年炼就的Android内功修养</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6730748" target="_blank" rel="noopener">Android系统中的广播（Broadcast）机制简要介绍和学习计划</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6737352" target="_blank" rel="noopener">Android应用程序注册广播接收器（registerReceiver）的过程分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6744448" target="_blank" rel="noopener">Android应用程序发送广播（sendBroadcast）的过程分析</a></p>]]></content>
+      <title>Android中启动过程解析</title>
+      <link href="/Android-Boot-Process/"/>
+      <url>/Android-Boot-Process/</url>
+      <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.</p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p><a href="https://blog.csdn.net/luoshengyang/article/details/8923485" target="_blank" rel="noopener">那两年炼就的Android内功修养</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6768304" target="_blank" rel="noopener">Android系统进程Zygote启动过程的源代码分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6747696" target="_blank" rel="noopener">Android应用程序进程启动过程的源代码分析</a></p><p>Android开机流程概述：<br><a href="https://blog.csdn.net/h655370/article/details/77727554" target="_blank" rel="noopener">https://blog.csdn.net/h655370/article/details/77727554</a></p>]]></content>
       
       <categories>
           
           <category> Android </category>
           
-          <category> BroadcastRecevier </category>
+          <category> 启动 </category>
           
       </categories>
       
@@ -671,7 +671,9 @@
             
             <tag> Android </tag>
             
-            <tag> BroadcastRecevier </tag>
+            <tag> Zegote </tag>
+            
+            <tag> Init </tag>
             
         </tags>
       
@@ -728,33 +730,6 @@
     </entry>
     
     <entry>
-      <title>Android中启动过程解析</title>
-      <link href="/Android-Boot-Process/"/>
-      <url>/Android-Boot-Process/</url>
-      <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.</p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p><a href="https://blog.csdn.net/luoshengyang/article/details/8923485" target="_blank" rel="noopener">那两年炼就的Android内功修养</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6768304" target="_blank" rel="noopener">Android系统进程Zygote启动过程的源代码分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6747696" target="_blank" rel="noopener">Android应用程序进程启动过程的源代码分析</a></p><p>Android开机流程概述：<br><a href="https://blog.csdn.net/h655370/article/details/77727554" target="_blank" rel="noopener">https://blog.csdn.net/h655370/article/details/77727554</a></p>]]></content>
-      
-      <categories>
-          
-          <category> Android </category>
-          
-          <category> 启动 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Android </tag>
-            
-            <tag> Zegote </tag>
-            
-            <tag> Init </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
       <title>Android中Binder机制解析</title>
       <link href="/Android-Binder-Analysis/"/>
       <url>/Android-Binder-Analysis/</url>
@@ -801,6 +776,31 @@
     </entry>
     
     <entry>
+      <title>Android中按键事件传递分析</title>
+      <link href="/Android-KeyEvent-Analysis/"/>
+      <url>/Android-KeyEvent-Analysis/</url>
+      <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.<br><!--    Module:    第一步:需要将这些文章都看几篇    第二步：形成自己的理解    第三步：可以按照非常有用的文章，重写写一遍    第四步：纠正或者延伸别人的文章--></p><p>Framework Native模块代码</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">frameworks/base/services/core/jni/</span><br><span class="line">├── com_android_server_input_InputManagerService.cpp</span><br><span class="line">├── com_android_server_input_InputApplicationHandle.h</span><br><span class="line">├── com_android_server_input_InputApplicationHandle.c</span><br><span class="line">├── com_android_server_input_InputWindowHandle.h</span><br><span class="line">├── com_android_server_input_InputWindowHandle.c</span><br><span class="line">└──</span><br></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">frameworks/native/include/android</span><br><span class="line">├── input.h</span><br><span class="line">└── keycodes.h</span><br></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">frameworks/native/include/input</span><br><span class="line">├── DisplayViewport.h</span><br><span class="line">├── IInputFlinger.h</span><br><span class="line">├── InputDevice.h</span><br><span class="line">├── InputEventLabels.h</span><br><span class="line">├── Input.h</span><br><span class="line">├── InputTransport.h</span><br><span class="line">├── Keyboard.h</span><br><span class="line">├── KeyCharacterMap.h</span><br><span class="line">├── KeyLayoutMap.h</span><br><span class="line">├── VelocityControl.h</span><br><span class="line">├── VelocityTracker.h</span><br><span class="line">└── VirtualKeyMap.h</span><br></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">frameworks/native/services/inputflinger</span><br><span class="line">├── Android.bp</span><br><span class="line">├── EventHub.cpp</span><br><span class="line">├── EventHub.h</span><br><span class="line">├── host</span><br><span class="line">│   ├── Android.bp</span><br><span class="line">│   ├── InputDriver.cpp</span><br><span class="line">│   ├── InputDriver.h</span><br><span class="line">│   ├── InputFlinger.cpp</span><br><span class="line">│   ├── InputFlinger.h</span><br><span class="line">│   ├── inputflinger.rc</span><br><span class="line">│   ├── InputHost.cpp</span><br><span class="line">│   ├── InputHost.h</span><br><span class="line">│   └── main.cpp</span><br><span class="line">├── InputApplication.cpp</span><br><span class="line">├── InputApplication.h</span><br><span class="line">├── InputDispatcher.cpp</span><br><span class="line">├── InputDispatcher.h</span><br><span class="line">├── InputListener.cpp</span><br><span class="line">├── InputListener.h</span><br><span class="line">├── InputManager.cpp</span><br><span class="line">├── InputManager.h</span><br><span class="line">├── InputReader.cpp</span><br><span class="line">├── InputReader.h</span><br><span class="line">├── InputWindow.cpp</span><br><span class="line">├── InputWindow.h</span><br><span class="line">├── PointerControllerInterface.h</span><br><span class="line">└── tests</span><br><span class="line">    ├── Android.bp</span><br><span class="line">    ├── InputDispatcher_test.cpp</span><br><span class="line">    └── InputReader_test.cpp</span><br></pre></td></tr></table></figure><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><!--    阅读卡：    文章：Android按键事件传递流程(一)    时间：2018/07/19--><p>[1095/1219] including ./vendor/qcom/proprietary/diag/Android.mk …<br>build/core/binary.mk:1522: error: vendor/qcom/proprietary/diag/diag_ep/Android.mk: diag_ep: C_INCLUDES must be under the source or output directories: /diag/diag_ep /diag/include /diag/src.</p><p>用户态</p><p>这两篇文章关注了很多的代码细节：<br><a href="https://blog.csdn.net/w690333243/article/details/77493981" target="_blank" rel="noopener">Android按键事件传递流程(一)</a><br><a href="https://blog.csdn.net/qidabing/article/details/74073515" target="_blank" rel="noopener">Android按键事件传递流程(二)</a></p><p>将Native层的Input子系统，起到承上启下的功能.连接Kernel 和 Fwk<br><a href="https://www.cnblogs.com/haiming/p/3318614.html" target="_blank" rel="noopener">Android Framework——之Input子系统</a></p><p>内核态<br><a href="https://www.jianshu.com/p/4f59efee9cd8" target="_blank" rel="noopener">Android物理按键输入事件(一)</a><br><a href="https://www.jianshu.com/p/3fe41b6d0c92" target="_blank" rel="noopener">Android物理输入事件(二)</a><br><a href="https://blog.csdn.net/u013308744/article/details/49274069" target="_blank" rel="noopener">android kl 文件的作用</a></p><p><a href="https://blog.csdn.net/woliuyunyicai/article/details/48577617" target="_blank" rel="noopener">View机制深入学习（三） View中的消息传递及InputManagerService</a></p>]]></content>
+      
+      <categories>
+          
+          <category> Android </category>
+          
+          <category> KeyEvent </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Android </tag>
+            
+            <tag> KeyEvent </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>Python开发</title>
       <link href="/Python/"/>
       <url>/Python/</url>
@@ -822,25 +822,21 @@
     </entry>
     
     <entry>
-      <title>Android中EventBus解析</title>
-      <link href="/Android-EventBus/"/>
-      <url>/Android-EventBus/</url>
-      <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.<br><!--    Module:    第一步:需要将这些文章都看几篇    第二步：形成自己的理解    第三步：可以按照非常有用的文章，重写写一遍    第四步：纠正或者延伸别人的文章--></p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><!--    阅读卡：    文章：    时间：--><p><a href="https://xudeveloper.github.io/2018/01/20/EventBus%203.1.1%20%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90/" target="_blank" rel="noopener">EventBus 3.1.1 源码解析</a></p>]]></content>
+      <title>WordPress</title>
+      <link href="/WordPress/"/>
+      <url>/WordPress/</url>
+      <content type="html"><![CDATA[<h1 id="官网"><a href="#官网" class="headerlink" title="官网"></a>官网</h1><p><a href="https://cn.wordpress.org/download/" target="_blank" rel="noopener">下载</a><br><a href="https://codex.wordpress.org/zh-cn:Main_Page" target="_blank" rel="noopener">官网中文文档</a></p><h1 id="开发步骤"><a href="#开发步骤" class="headerlink" title="开发步骤"></a>开发步骤</h1><ol><li><p>下载WordPress</p></li><li><p>本地调试代码<br>第一步：安装 XAMPP<br>第二步:启动Apache，改端口到8080<br>第三步：启动MySQL，注意：点击Admin的时候，<a href="http://localhost/phpmyadmin/是无法访问的，需要改端口号http://localhost:8080/phpmyadmin/才能访问" target="_blank" rel="noopener">http://localhost/phpmyadmin/是无法访问的，需要改端口号http://localhost:8080/phpmyadmin/才能访问</a><br>新建用户账户: </p></li></ol><p><a href="https://jingyan.baidu.com/article/1e5468f955d65b484961b7bb.html" target="_blank" rel="noopener">本地安装wordpress教程</a></p><ol start="3"><li>安装主题</li></ol><p><a href="https://www.wpdaxue.com/install-wordpress-theme-and-plugin.html" target="_blank" rel="noopener">WordPress入门 之 安装主题和插件</a></p><p>ecommerce-lite 是一个购物商城的模式，暂时不适用</p><ol start="4"><li>Logo的设计<br>a) <a href="https://www.logosc.cn/" target="_blank" rel="noopener">https://www.logosc.cn/</a> 不错<br>b) <a href="http://www.logomaker.com.cn/logo-maker.jsp" target="_blank" rel="noopener">http://www.logomaker.com.cn/logo-maker.jsp</a></li></ol><h1 id="遇到的问题："><a href="#遇到的问题：" class="headerlink" title="遇到的问题："></a>遇到的问题：</h1><ol><li>上传的文件尺寸超过php.ini中定义的upload_max_filesize值。<br>解决方案： <a href="https://www.cnblogs.com/bhlsheji/p/5356564.html" target="_blank" rel="noopener">https://www.cnblogs.com/bhlsheji/p/5356564.html</a></li></ol><!--    Module:    第一步:需要将这些文章都看几篇    第二步：形成自己的理解    第三步：可以按照非常有用的文章，重写写一遍    第四步：纠正或者延伸别人的文章--><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><!--    阅读卡：    文章：    时间：-->]]></content>
       
       <categories>
           
-          <category> Android </category>
-          
-          <category> EventBus </category>
+          <category> WordPress </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> Android </tag>
-            
-            <tag> EventBus </tag>
+            <tag> WordPress </tag>
             
         </tags>
       
@@ -1016,25 +1012,75 @@
     </entry>
     
     <entry>
-      <title>Git and Repo</title>
-      <link href="/Git-Repo/"/>
-      <url>/Git-Repo/</url>
-      <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.<br><!--    Module:    第一步:需要将这些文章都看几篇    第二步：形成自己的理解    第三步：可以按照非常有用的文章，重写写一遍    第四步：纠正或者延伸别人的文章--></p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><!--    阅读卡：    文章：    时间：--><p><a href="https://git-scm.com/doc" target="_blank" rel="noopener">Git官网</a></p>]]></content>
+      <title>Android中Handler解析</title>
+      <link href="/Android-Handler-Analysis/"/>
+      <url>/Android-Handler-Analysis/</url>
+      <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.</p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p><a href="https://blog.csdn.net/luoshengyang/article/details/8923485" target="_blank" rel="noopener">那两年炼就的Android内功修养</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6817933" target="_blank" rel="noopener">Android应用程序消息处理机制（Looper、Handler）分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6882903" target="_blank" rel="noopener">Android应用程序键盘（Keyboard）消息处理机制分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6905587" target="_blank" rel="noopener">Android应用程序线程消息循环模型分析</a></p>]]></content>
       
       <categories>
           
-          <category> Git </category>
+          <category> Android </category>
           
-          <category> Repo </category>
+          <category> Handler </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> Git </tag>
+            <tag> Android </tag>
             
-            <tag> Repo </tag>
+            <tag> Handler </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>给技术人员一些技术以外的建议</title>
+      <link href="/IT-Other-one/"/>
+      <url>/IT-Other-one/</url>
+      <content type="html"><![CDATA[<p>做 IT 也有好些年了，中间踩过很多坑，踩完坑之后也有不少收获。有些东西只有自己经历过才会印象深刻，不废话，先记录以下这些吧，后续想到再更新。</p><h1 id="需要及时反馈"><a href="#需要及时反馈" class="headerlink" title="需要及时反馈"></a>需要及时反馈</h1><p>举个例子，如果你手头有一个事情需要别人去完成。当你告诉别人这个需求的时候，很多情况下是希望那个人能够给你完成时间点的，而不是简单的告诉你会去做。更好的情况是，当你给出需求的时候，那个实现者能够提供出更好的方案，或者能够和你一起分析实现过程中可能遇到的问题，解决的大致计划，最后给到你一个完成的时间点，顺带说明下可能存在的风险。这样的回复，你会觉得这个人做事是靠谱的，是真正理解了你的需求去做的，而不是拿到需求后放在那里应付一下或者排计划(排计划最好也给出一个能够制定计划的时间点)，需要不断地 push 才能做。</p><p>工程师或者技术人员作为实现方，承接很多来自产品、运营、甚至市场的需求。这些需求当中，有些可以明确的确定相应的技术方案，有些需要调研，有些可能现阶段技术上还不够成熟。无论是以上哪种情况，在接受需求的那一刻，你需要及时的反馈一些信息给需求方。比如预计完成的时间，可能会遇到的困难。让需求方能够经常性的知道事情的进展情况。这个就好比我们网上买完东西后，会经常性的去查询当前货物的物流情况，大概什么时候能到。所以换位思考，当提了一个需求给你的时候，你也需要经常性的将这个信息反馈给需求方，让他实时了解进展。</p><h1 id="注重团队合作"><a href="#注重团队合作" class="headerlink" title="注重团队合作"></a>注重团队合作</h1><p>现在的软件开发，是一个分工合作，协同作战的过程。像张小龙一个人写出 foxmail 的年代已经一去不复返了。在开发的时候你需要将自己作为团队的一份子，互相合作。当自己遇到问题的时候，及时的抛出来给团队，而不是一个人在那边死磕。记住，你的背后是一个团队，你和他们在一起战斗。</p><p>在这个大规模协作的时代，一个人想要做出类似前辈们那种靠着单打独斗就做出类拔萃的成果已经变得极其困难了。这样的人，更多的时候是以领导者或者组织者的身份出现，但是真正的成绩都是靠背后的团队创造的。现在的产品想要成功，除了产品本身要可用、易用之外，很大程度上还依赖产品背后的运营、市场、投放、推广、数据挖掘、黑客增长等等方面。酒香不怕巷子深在现在这个快节奏的时代已经成为了历史。一个优秀的团队，是一个产品成功的必要条件。让自己融入优秀的团队，成为团队的一份子，荣辱与共，共同解决困难，一起分享喜悦。</p><h1 id="专业人做专业事"><a href="#专业人做专业事" class="headerlink" title="专业人做专业事"></a>专业人做专业事</h1><p>现在的社会分工很细，自己不懂的领域，找专业的人来解决。技术人有个特点是很多的事情喜欢刨根问底，追求知道所有的技术细节，甚至恨不得所有的东西都自己从头搞一遍。在现代软件规模下，自己搞完全是不现实的做法。术业有专攻，一个不专业的人去做一件事情，无论从时间成本还是经济成本肯定是不如专业人士，而且除此之外，往往还有看不见的成本，比如人的能力。即使时间充裕，资金充足，最终出来的产品也未必能够超越专业的。所以除了核心部分，其他的就交给专业人士去做吧。</p><h1 id="做事要讲究效率"><a href="#做事要讲究效率" class="headerlink" title="做事要讲究效率"></a>做事要讲究效率</h1><p>在外界看来，互联网有个特点就是加班多。996，997 也经常被周围的人提起。从效率上来说，程序员有效的工作时间也就那么几个小时。程序员是一种创造性的活动，需要的是灵感，而不是靠时间堆积的。所以更多的时候是需要找到自己效率最高的哪几个小时。在哪几个小时里去提高自己的生产力，而不是磨洋工。</p><p>还有一点，随着产品开发的节奏越来越快，手头的事情也会越来越多。永远不要想着把所有的事情全部处理完，总是有一些重要的，紧急的事情需要去处理。那些不重要和不紧急的事情，就随它去吧。大部分时间专注于那些重要不紧急的事情，才能避免经常处理重要紧急的事情。</p><h1 id="做好自己，再说别人"><a href="#做好自己，再说别人" class="headerlink" title="做好自己，再说别人"></a>做好自己，再说别人</h1><p>家里小朋友现在做一些事情，比如看电视，或者玩手机，我们都会有限制，而小朋友张口的理由就是爸爸妈妈也看电视和玩手机。比起看电视或者玩手机，被批评的时候总是先从别人身上找缺点这一点反而问题更严重。这就好比我们经常听到或者自己感受到的，一些电动车闯红灯，被交警抓到的时候可能首先会说你看前面谁骑电动车也闯红灯了，为什么没事，觉得自己心里不平衡。甚至说你看行人也闯红灯，为什么不用罚。</p><p>这里面其实我们往往忽视了一个重要的点：就是我们做这件事情的时候本身就是不对的，既然不对为什么不从自身先找找原因。我们总是乐于积极搜索别人的短处和自己的长处。而自动忽视自己不好的地方。做好自己，绝不是一件容易的事情。自己没做好，其实是没理由说别人的。但是反过来，别人没做好，没理由说自己，这就强词夺理了。</p><h1 id="凡事可以做的更好"><a href="#凡事可以做的更好" class="headerlink" title="凡事可以做的更好"></a>凡事可以做的更好</h1><p>这一条也算是对以上几条的补充。</p><p>大家都知道以前的汽车装配都是需要大量的工人来做的，很多装配工人成为熟练工之后就觉得装配是个体力活了。但是事实上，我们今天已经很少看到工厂里有大量的装配工人了。觉得体力活完全是认知问题，不代表做汽车装配这个没有提升的空间了，否则的话目前你去工厂可能还会看到大量的装配工人，而不会有现在流水线的装配作业了。有没有提升空间关键在于你是不是那个不安于现有的体力活，想把它做成流水线的那个装配工人。</p><p>有时候工程师业务做久了，业务层做的工作类似于装配工人做的事情，会觉得没有提升的空间或者提升的空间不大。其实大部分只是因为你用已有的认知思维用你熟悉的习惯方式做业务而已。拿到业务后，你会下意识的决定使用很多熟悉的技术方案，这些方案形成了你自己的舒适圈，你喜欢呆在这样的舒适圈中，没有想过去突破。渐渐的你就会觉得业务对你来说没有了挑战，觉得做着没意思。</p><p>其实写业务代码一样可以很牛逼，业务做多了之后，你需要思考的就是如何将业务封装和抽象出来，使业务代码可以更加方便的维护。或者从 SDK 的角度出发，如何让新人能够通过简单的文档就能实现业务。这些事情，同样都是业务层面的事情，但是在技术维度上却已经是两个完全不同的层次了。 有句广告词：没有最好，只有更好。同样的一件事情，做完和做好，结果上不一样，收获也不一样。</p><p>以上几点是平时工作中的一些感悟，自己有些也做的不好，拿出来分享给大家。也算是给自己一个警示，和大家一起共勉。</p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><!--    阅读卡：    文章：    时间：--><p><a href="https://juejin.im/post/5b266c5ee51d45587d2dc67c?utm_source=gold_browser_extension" target="_blank" rel="noopener">给技术人员一些技术以外的建议</a></p>]]></content>
+      
+      <categories>
+          
+          <category> IT </category>
+          
+          <category> 建议 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> IT </tag>
+            
+            <tag> 建议 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>Android中EventBus解析</title>
+      <link href="/Android-EventBus/"/>
+      <url>/Android-EventBus/</url>
+      <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.<br><!--    Module:    第一步:需要将这些文章都看几篇    第二步：形成自己的理解    第三步：可以按照非常有用的文章，重写写一遍    第四步：纠正或者延伸别人的文章--></p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><!--    阅读卡：    文章：    时间：--><p><a href="https://xudeveloper.github.io/2018/01/20/EventBus%203.1.1%20%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90/" target="_blank" rel="noopener">EventBus 3.1.1 源码解析</a></p>]]></content>
+      
+      <categories>
+          
+          <category> Android </category>
+          
+          <category> EventBus </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Android </tag>
+            
+            <tag> EventBus </tag>
             
         </tags>
       
@@ -1070,71 +1116,25 @@
     </entry>
     
     <entry>
-      <title>WordPress</title>
-      <link href="/WordPress/"/>
-      <url>/WordPress/</url>
-      <content type="html"><![CDATA[<h1 id="官网"><a href="#官网" class="headerlink" title="官网"></a>官网</h1><p><a href="https://cn.wordpress.org/download/" target="_blank" rel="noopener">下载</a><br><a href="https://codex.wordpress.org/zh-cn:Main_Page" target="_blank" rel="noopener">官网中文文档</a></p><h1 id="开发步骤"><a href="#开发步骤" class="headerlink" title="开发步骤"></a>开发步骤</h1><ol><li><p>下载WordPress</p></li><li><p>本地调试代码<br>第一步：安装 XAMPP<br>第二步:启动Apache，改端口到8080<br>第三步：启动MySQL，注意：点击Admin的时候，<a href="http://localhost/phpmyadmin/是无法访问的，需要改端口号http://localhost:8080/phpmyadmin/才能访问" target="_blank" rel="noopener">http://localhost/phpmyadmin/是无法访问的，需要改端口号http://localhost:8080/phpmyadmin/才能访问</a><br>新建用户账户: </p></li></ol><p><a href="https://jingyan.baidu.com/article/1e5468f955d65b484961b7bb.html" target="_blank" rel="noopener">本地安装wordpress教程</a></p><ol start="3"><li>安装主题</li></ol><p><a href="https://www.wpdaxue.com/install-wordpress-theme-and-plugin.html" target="_blank" rel="noopener">WordPress入门 之 安装主题和插件</a></p><p>ecommerce-lite 是一个购物商城的模式，暂时不适用</p><ol start="4"><li>Logo的设计<br>a) <a href="https://www.logosc.cn/" target="_blank" rel="noopener">https://www.logosc.cn/</a> 不错<br>b) <a href="http://www.logomaker.com.cn/logo-maker.jsp" target="_blank" rel="noopener">http://www.logomaker.com.cn/logo-maker.jsp</a></li></ol><h1 id="遇到的问题："><a href="#遇到的问题：" class="headerlink" title="遇到的问题："></a>遇到的问题：</h1><ol><li>上传的文件尺寸超过php.ini中定义的upload_max_filesize值。<br>解决方案： <a href="https://www.cnblogs.com/bhlsheji/p/5356564.html" target="_blank" rel="noopener">https://www.cnblogs.com/bhlsheji/p/5356564.html</a></li></ol><!--    Module:    第一步:需要将这些文章都看几篇    第二步：形成自己的理解    第三步：可以按照非常有用的文章，重写写一遍    第四步：纠正或者延伸别人的文章--><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><!--    阅读卡：    文章：    时间：-->]]></content>
+      <title>SELinux与SEAndroid解析</title>
+      <link href="/SELinux-SEAndroid/"/>
+      <url>/SELinux-SEAndroid/</url>
+      <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.<br><!--    Module:    第一步:需要将这些文章都看几篇    第二步：形成自己的理解    第三步：可以按照非常有用的文章，重写写一遍    第四步：纠正或者延伸别人的文章--></p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><!--    阅读卡：    文章：    时间：--><p><a href="https://blog.csdn.net/luoshengyang/article/details/37613135" target="_blank" rel="noopener">SEAndroid安全机制框架分析</a></p><p><a href="https://my.csdn.net/huangyabin001" target="_blank" rel="noopener">SELinux学习</a></p>]]></content>
       
       <categories>
           
-          <category> WordPress </category>
+          <category> SEAndroid </category>
+          
+          <category> SELinux </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> WordPress </tag>
+            <tag> SEAndroid </tag>
             
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>Android中Handler解析</title>
-      <link href="/Android-Handler-Analysis/"/>
-      <url>/Android-Handler-Analysis/</url>
-      <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.</p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p><a href="https://blog.csdn.net/luoshengyang/article/details/8923485" target="_blank" rel="noopener">那两年炼就的Android内功修养</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6817933" target="_blank" rel="noopener">Android应用程序消息处理机制（Looper、Handler）分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6882903" target="_blank" rel="noopener">Android应用程序键盘（Keyboard）消息处理机制分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6905587" target="_blank" rel="noopener">Android应用程序线程消息循环模型分析</a></p>]]></content>
-      
-      <categories>
-          
-          <category> Android </category>
-          
-          <category> Handler </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Android </tag>
-            
-            <tag> Handler </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>Android中按键事件传递分析</title>
-      <link href="/Android-KeyEvent-Analysis/"/>
-      <url>/Android-KeyEvent-Analysis/</url>
-      <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.<br><!--    Module:    第一步:需要将这些文章都看几篇    第二步：形成自己的理解    第三步：可以按照非常有用的文章，重写写一遍    第四步：纠正或者延伸别人的文章--></p><p>Framework Native模块代码</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">frameworks/base/services/core/jni/</span><br><span class="line">├── com_android_server_input_InputManagerService.cpp</span><br><span class="line">├── com_android_server_input_InputApplicationHandle.h</span><br><span class="line">├── com_android_server_input_InputApplicationHandle.c</span><br><span class="line">├── com_android_server_input_InputWindowHandle.h</span><br><span class="line">├── com_android_server_input_InputWindowHandle.c</span><br><span class="line">└──</span><br></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">frameworks/native/include/android</span><br><span class="line">├── input.h</span><br><span class="line">└── keycodes.h</span><br></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">frameworks/native/include/input</span><br><span class="line">├── DisplayViewport.h</span><br><span class="line">├── IInputFlinger.h</span><br><span class="line">├── InputDevice.h</span><br><span class="line">├── InputEventLabels.h</span><br><span class="line">├── Input.h</span><br><span class="line">├── InputTransport.h</span><br><span class="line">├── Keyboard.h</span><br><span class="line">├── KeyCharacterMap.h</span><br><span class="line">├── KeyLayoutMap.h</span><br><span class="line">├── VelocityControl.h</span><br><span class="line">├── VelocityTracker.h</span><br><span class="line">└── VirtualKeyMap.h</span><br></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">frameworks/native/services/inputflinger</span><br><span class="line">├── Android.bp</span><br><span class="line">├── EventHub.cpp</span><br><span class="line">├── EventHub.h</span><br><span class="line">├── host</span><br><span class="line">│   ├── Android.bp</span><br><span class="line">│   ├── InputDriver.cpp</span><br><span class="line">│   ├── InputDriver.h</span><br><span class="line">│   ├── InputFlinger.cpp</span><br><span class="line">│   ├── InputFlinger.h</span><br><span class="line">│   ├── inputflinger.rc</span><br><span class="line">│   ├── InputHost.cpp</span><br><span class="line">│   ├── InputHost.h</span><br><span class="line">│   └── main.cpp</span><br><span class="line">├── InputApplication.cpp</span><br><span class="line">├── InputApplication.h</span><br><span class="line">├── InputDispatcher.cpp</span><br><span class="line">├── InputDispatcher.h</span><br><span class="line">├── InputListener.cpp</span><br><span class="line">├── InputListener.h</span><br><span class="line">├── InputManager.cpp</span><br><span class="line">├── InputManager.h</span><br><span class="line">├── InputReader.cpp</span><br><span class="line">├── InputReader.h</span><br><span class="line">├── InputWindow.cpp</span><br><span class="line">├── InputWindow.h</span><br><span class="line">├── PointerControllerInterface.h</span><br><span class="line">└── tests</span><br><span class="line">    ├── Android.bp</span><br><span class="line">    ├── InputDispatcher_test.cpp</span><br><span class="line">    └── InputReader_test.cpp</span><br></pre></td></tr></table></figure><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><!--    阅读卡：    文章：Android按键事件传递流程(一)    时间：2018/07/19--><p>[1095/1219] including ./vendor/qcom/proprietary/diag/Android.mk …<br>build/core/binary.mk:1522: error: vendor/qcom/proprietary/diag/diag_ep/Android.mk: diag_ep: C_INCLUDES must be under the source or output directories: /diag/diag_ep /diag/include /diag/src.</p><p>用户态</p><p>这两篇文章关注了很多的代码细节：<br><a href="https://blog.csdn.net/w690333243/article/details/77493981" target="_blank" rel="noopener">Android按键事件传递流程(一)</a><br><a href="https://blog.csdn.net/qidabing/article/details/74073515" target="_blank" rel="noopener">Android按键事件传递流程(二)</a></p><p>将Native层的Input子系统，起到承上启下的功能.连接Kernel 和 Fwk<br><a href="https://www.cnblogs.com/haiming/p/3318614.html" target="_blank" rel="noopener">Android Framework——之Input子系统</a></p><p>内核态<br><a href="https://www.jianshu.com/p/4f59efee9cd8" target="_blank" rel="noopener">Android物理按键输入事件(一)</a><br><a href="https://www.jianshu.com/p/3fe41b6d0c92" target="_blank" rel="noopener">Android物理输入事件(二)</a><br><a href="https://blog.csdn.net/u013308744/article/details/49274069" target="_blank" rel="noopener">android kl 文件的作用</a></p><p><a href="https://blog.csdn.net/woliuyunyicai/article/details/48577617" target="_blank" rel="noopener">View机制深入学习（三） View中的消息传递及InputManagerService</a></p>]]></content>
-      
-      <categories>
-          
-          <category> Android </category>
-          
-          <category> KeyEvent </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Android </tag>
-            
-            <tag> KeyEvent </tag>
+            <tag> SELinux </tag>
             
         </tags>
       
@@ -1187,25 +1187,25 @@
     </entry>
     
     <entry>
-      <title>给技术人员一些技术以外的建议</title>
-      <link href="/IT-Other-one/"/>
-      <url>/IT-Other-one/</url>
-      <content type="html"><![CDATA[<p>做 IT 也有好些年了，中间踩过很多坑，踩完坑之后也有不少收获。有些东西只有自己经历过才会印象深刻，不废话，先记录以下这些吧，后续想到再更新。</p><h1 id="需要及时反馈"><a href="#需要及时反馈" class="headerlink" title="需要及时反馈"></a>需要及时反馈</h1><p>举个例子，如果你手头有一个事情需要别人去完成。当你告诉别人这个需求的时候，很多情况下是希望那个人能够给你完成时间点的，而不是简单的告诉你会去做。更好的情况是，当你给出需求的时候，那个实现者能够提供出更好的方案，或者能够和你一起分析实现过程中可能遇到的问题，解决的大致计划，最后给到你一个完成的时间点，顺带说明下可能存在的风险。这样的回复，你会觉得这个人做事是靠谱的，是真正理解了你的需求去做的，而不是拿到需求后放在那里应付一下或者排计划(排计划最好也给出一个能够制定计划的时间点)，需要不断地 push 才能做。</p><p>工程师或者技术人员作为实现方，承接很多来自产品、运营、甚至市场的需求。这些需求当中，有些可以明确的确定相应的技术方案，有些需要调研，有些可能现阶段技术上还不够成熟。无论是以上哪种情况，在接受需求的那一刻，你需要及时的反馈一些信息给需求方。比如预计完成的时间，可能会遇到的困难。让需求方能够经常性的知道事情的进展情况。这个就好比我们网上买完东西后，会经常性的去查询当前货物的物流情况，大概什么时候能到。所以换位思考，当提了一个需求给你的时候，你也需要经常性的将这个信息反馈给需求方，让他实时了解进展。</p><h1 id="注重团队合作"><a href="#注重团队合作" class="headerlink" title="注重团队合作"></a>注重团队合作</h1><p>现在的软件开发，是一个分工合作，协同作战的过程。像张小龙一个人写出 foxmail 的年代已经一去不复返了。在开发的时候你需要将自己作为团队的一份子，互相合作。当自己遇到问题的时候，及时的抛出来给团队，而不是一个人在那边死磕。记住，你的背后是一个团队，你和他们在一起战斗。</p><p>在这个大规模协作的时代，一个人想要做出类似前辈们那种靠着单打独斗就做出类拔萃的成果已经变得极其困难了。这样的人，更多的时候是以领导者或者组织者的身份出现，但是真正的成绩都是靠背后的团队创造的。现在的产品想要成功，除了产品本身要可用、易用之外，很大程度上还依赖产品背后的运营、市场、投放、推广、数据挖掘、黑客增长等等方面。酒香不怕巷子深在现在这个快节奏的时代已经成为了历史。一个优秀的团队，是一个产品成功的必要条件。让自己融入优秀的团队，成为团队的一份子，荣辱与共，共同解决困难，一起分享喜悦。</p><h1 id="专业人做专业事"><a href="#专业人做专业事" class="headerlink" title="专业人做专业事"></a>专业人做专业事</h1><p>现在的社会分工很细，自己不懂的领域，找专业的人来解决。技术人有个特点是很多的事情喜欢刨根问底，追求知道所有的技术细节，甚至恨不得所有的东西都自己从头搞一遍。在现代软件规模下，自己搞完全是不现实的做法。术业有专攻，一个不专业的人去做一件事情，无论从时间成本还是经济成本肯定是不如专业人士，而且除此之外，往往还有看不见的成本，比如人的能力。即使时间充裕，资金充足，最终出来的产品也未必能够超越专业的。所以除了核心部分，其他的就交给专业人士去做吧。</p><h1 id="做事要讲究效率"><a href="#做事要讲究效率" class="headerlink" title="做事要讲究效率"></a>做事要讲究效率</h1><p>在外界看来，互联网有个特点就是加班多。996，997 也经常被周围的人提起。从效率上来说，程序员有效的工作时间也就那么几个小时。程序员是一种创造性的活动，需要的是灵感，而不是靠时间堆积的。所以更多的时候是需要找到自己效率最高的哪几个小时。在哪几个小时里去提高自己的生产力，而不是磨洋工。</p><p>还有一点，随着产品开发的节奏越来越快，手头的事情也会越来越多。永远不要想着把所有的事情全部处理完，总是有一些重要的，紧急的事情需要去处理。那些不重要和不紧急的事情，就随它去吧。大部分时间专注于那些重要不紧急的事情，才能避免经常处理重要紧急的事情。</p><h1 id="做好自己，再说别人"><a href="#做好自己，再说别人" class="headerlink" title="做好自己，再说别人"></a>做好自己，再说别人</h1><p>家里小朋友现在做一些事情，比如看电视，或者玩手机，我们都会有限制，而小朋友张口的理由就是爸爸妈妈也看电视和玩手机。比起看电视或者玩手机，被批评的时候总是先从别人身上找缺点这一点反而问题更严重。这就好比我们经常听到或者自己感受到的，一些电动车闯红灯，被交警抓到的时候可能首先会说你看前面谁骑电动车也闯红灯了，为什么没事，觉得自己心里不平衡。甚至说你看行人也闯红灯，为什么不用罚。</p><p>这里面其实我们往往忽视了一个重要的点：就是我们做这件事情的时候本身就是不对的，既然不对为什么不从自身先找找原因。我们总是乐于积极搜索别人的短处和自己的长处。而自动忽视自己不好的地方。做好自己，绝不是一件容易的事情。自己没做好，其实是没理由说别人的。但是反过来，别人没做好，没理由说自己，这就强词夺理了。</p><h1 id="凡事可以做的更好"><a href="#凡事可以做的更好" class="headerlink" title="凡事可以做的更好"></a>凡事可以做的更好</h1><p>这一条也算是对以上几条的补充。</p><p>大家都知道以前的汽车装配都是需要大量的工人来做的，很多装配工人成为熟练工之后就觉得装配是个体力活了。但是事实上，我们今天已经很少看到工厂里有大量的装配工人了。觉得体力活完全是认知问题，不代表做汽车装配这个没有提升的空间了，否则的话目前你去工厂可能还会看到大量的装配工人，而不会有现在流水线的装配作业了。有没有提升空间关键在于你是不是那个不安于现有的体力活，想把它做成流水线的那个装配工人。</p><p>有时候工程师业务做久了，业务层做的工作类似于装配工人做的事情，会觉得没有提升的空间或者提升的空间不大。其实大部分只是因为你用已有的认知思维用你熟悉的习惯方式做业务而已。拿到业务后，你会下意识的决定使用很多熟悉的技术方案，这些方案形成了你自己的舒适圈，你喜欢呆在这样的舒适圈中，没有想过去突破。渐渐的你就会觉得业务对你来说没有了挑战，觉得做着没意思。</p><p>其实写业务代码一样可以很牛逼，业务做多了之后，你需要思考的就是如何将业务封装和抽象出来，使业务代码可以更加方便的维护。或者从 SDK 的角度出发，如何让新人能够通过简单的文档就能实现业务。这些事情，同样都是业务层面的事情，但是在技术维度上却已经是两个完全不同的层次了。 有句广告词：没有最好，只有更好。同样的一件事情，做完和做好，结果上不一样，收获也不一样。</p><p>以上几点是平时工作中的一些感悟，自己有些也做的不好，拿出来分享给大家。也算是给自己一个警示，和大家一起共勉。</p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><!--    阅读卡：    文章：    时间：--><p><a href="https://juejin.im/post/5b266c5ee51d45587d2dc67c?utm_source=gold_browser_extension" target="_blank" rel="noopener">给技术人员一些技术以外的建议</a></p>]]></content>
+      <title>Git and Repo</title>
+      <link href="/Git-Repo/"/>
+      <url>/Git-Repo/</url>
+      <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.<br><!--    Module:    第一步:需要将这些文章都看几篇    第二步：形成自己的理解    第三步：可以按照非常有用的文章，重写写一遍    第四步：纠正或者延伸别人的文章--></p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><!--    阅读卡：    文章：    时间：--><p><a href="https://git-scm.com/doc" target="_blank" rel="noopener">Git官网</a></p>]]></content>
       
       <categories>
           
-          <category> IT </category>
+          <category> Git </category>
           
-          <category> 建议 </category>
+          <category> Repo </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> IT </tag>
+            <tag> Git </tag>
             
-            <tag> 建议 </tag>
+            <tag> Repo </tag>
             
         </tags>
       
@@ -1474,7 +1474,7 @@
       <title>Android</title>
       <link href="/year-06-23-Android/"/>
       <url>/year-06-23-Android/</url>
-      <content type="html"><![CDATA[]]></content>
+      <content type="html"><![CDATA[<p></p>]]></content>
       
       <categories>
           
@@ -1517,6 +1517,29 @@
     </entry>
     
     <entry>
+      <title>读书笔记</title>
+      <link href="/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+      <url>/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</url>
+      <content type="html"><![CDATA[<h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>本文目的是记录阅读一些书籍过程中的知识点</p><h1 id="JVM-源码分析"><a href="#JVM-源码分析" class="headerlink" title="JVM 源码分析"></a>JVM 源码分析</h1><p> 下载JVM源码 <a href="https://download.java.net/openjdk/jdk7/" target="_blank" rel="noopener">https://download.java.net/openjdk/jdk7/</a><br> openjdk-7-ea-src-b31-17_jul_2008.zip中有hotspot目录,里面是vm的代码</p><h1 id="《剑指Offer-名企面试官精讲典型编程题》"><a href="#《剑指Offer-名企面试官精讲典型编程题》" class="headerlink" title="《剑指Offer:名企面试官精讲典型编程题》"></a>《剑指Offer:名企面试官精讲典型编程题》</h1><p>   2012年电子工业出版社,何海涛</p><p><a href="https://blog.csdn.net/Together_CZ/article/details/74906427" target="_blank" rel="noopener">剑指Offer学习</a><br><a href="https://blog.csdn.net/panda_AJ/article/details/69420293" target="_blank" rel="noopener">剑指offer题目及答案</a></p><p>#《Android应用安全防护和逆向分析》—姜维</p><ol><li>Android中锁屏密码加密算法分析<br>以Android 5.1版本，分析了密码算法 和手势密码算法</li><li>Android中NDK开发<br>写了简单的实例，实现Java调用C，C调用Java</li><li>Android 开发和逆向常用命令<br>介绍了一些常用的adb 命令</li><li>so文件格式解析<br>so文件是Android中C/C++模块编译出来的库，有静态库和动态库两种。Android中的so文件就是ELF文件。<br>文中介绍了阅读ELF文件的工具readelf的常用命令。</li><li><p>AndroidManifest.xml文件格式解析</p></li><li><p>resource.arsc文件格式解析<br>Resource.arsc文件对应的数据结构 frameworks/base/include/androidfw/ResourceTypes.h</p></li><li><p>dex 文件格式解析</p><p>防护篇</p></li><li><p>Android 应用安全防护的基本策略<br>1) 混淆机制.混淆不仅是为了安全防护，也是为了减小应用安装包的大小。混淆机制有两种:<br> a)代码混淆：混淆后的代码类名和方法名都变了<br> b)资源混淆： 微信已经开源资源混淆 <a href="http://github.com/shwenzhang/AndResGuard" target="_blank" rel="noopener">http://github.com/shwenzhang/AndResGuard</a><br>2) 签名保护<br>3）手动注册native方法<br>4）反调试监测</p></li><li>Android中常用权限分析</li></ol><p><a href="https://github.com/Juude/droidReverse" target="_blank" rel="noopener">逆向工程工具集</a></p>]]></content>
+      
+      <categories>
+          
+          <category> Hexo </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 逆向分析 </tag>
+            
+            <tag> 安全 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>Android中WindowManagerService解析</title>
       <link href="/Android-WindowManagerService-Analysis/"/>
       <url>/Android-WindowManagerService-Analysis/</url>
@@ -1538,6 +1561,31 @@
             <tag> WindowManagerService </tag>
             
             <tag> WMS </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>Android中Launcher解析</title>
+      <link href="/Android-Launcher-Analysis/"/>
+      <url>/Android-Launcher-Analysis/</url>
+      <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.</p><h1 id="Launcher"><a href="#Launcher" class="headerlink" title="Launcher"></a>Launcher</h1><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p><a href="https://blog.csdn.net/yj934672573/article/details/54571704" target="_blank" rel="noopener">Android 7.0 Keyguard流程分析</a></p><p><a href="https://blog.csdn.net/yin1031468524/article/details/62216934" target="_blank" rel="noopener">Android原生Launcher3简要分析</a></p><p><a href="https://blog.csdn.net/qq_30552095/article/details/80494770" target="_blank" rel="noopener">Android8.1 Launcher3 去掉抽屉(一）</a><br><a href="https://blog.csdn.net/qq_30552095/article/details/80500290" target="_blank" rel="noopener">Android8.1 Launcher3 去掉抽屉（二）</a><br><a href="https://blog.csdn.net/qq_30552095/article/details/80508449" target="_blank" rel="noopener">Android8.1 Launcher3 去掉抽屉（三）</a></p><p><a href="https://blog.csdn.net/qq_31012033/article/details/73289232" target="_blank" rel="noopener">Android 7.0 Launcher3 去掉应用抽屉</a></p>]]></content>
+      
+      <categories>
+          
+          <category> Android </category>
+          
+          <category> Launcher </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Android </tag>
+            
+            <tag> Launcher </tag>
             
         </tags>
       
@@ -1571,31 +1619,6 @@
     </entry>
     
     <entry>
-      <title>Android中Launcher解析</title>
-      <link href="/Android-Launcher-Analysis/"/>
-      <url>/Android-Launcher-Analysis/</url>
-      <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.</p><h1 id="Launcher"><a href="#Launcher" class="headerlink" title="Launcher"></a>Launcher</h1><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p><a href="https://blog.csdn.net/yj934672573/article/details/54571704" target="_blank" rel="noopener">Android 7.0 Keyguard流程分析</a></p><p><a href="https://blog.csdn.net/yin1031468524/article/details/62216934" target="_blank" rel="noopener">Android原生Launcher3简要分析</a></p><p><a href="https://blog.csdn.net/qq_30552095/article/details/80494770" target="_blank" rel="noopener">Android8.1 Launcher3 去掉抽屉(一）</a><br><a href="https://blog.csdn.net/qq_30552095/article/details/80500290" target="_blank" rel="noopener">Android8.1 Launcher3 去掉抽屉（二）</a><br><a href="https://blog.csdn.net/qq_30552095/article/details/80508449" target="_blank" rel="noopener">Android8.1 Launcher3 去掉抽屉（三）</a></p><p><a href="https://blog.csdn.net/qq_31012033/article/details/73289232" target="_blank" rel="noopener">Android 7.0 Launcher3 去掉应用抽屉</a></p>]]></content>
-      
-      <categories>
-          
-          <category> Android </category>
-          
-          <category> Launcher </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Android </tag>
-            
-            <tag> Launcher </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
       <title>Android中SystemUI解析</title>
       <link href="/Android-SystemUI-Analysis/"/>
       <url>/Android-SystemUI-Analysis/</url>
@@ -1615,29 +1638,6 @@
             <tag> Android </tag>
             
             <tag> SystemUI </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>读书笔记</title>
-      <link href="/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
-      <url>/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</url>
-      <content type="html"><![CDATA[<h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>本文目的是记录阅读一些书籍过程中的知识点</p><h1 id="JVM-源码分析"><a href="#JVM-源码分析" class="headerlink" title="JVM 源码分析"></a>JVM 源码分析</h1><p> 下载JVM源码 <a href="https://download.java.net/openjdk/jdk7/" target="_blank" rel="noopener">https://download.java.net/openjdk/jdk7/</a><br> openjdk-7-ea-src-b31-17_jul_2008.zip中有hotspot目录,里面是vm的代码</p><h1 id="《剑指Offer-名企面试官精讲典型编程题》"><a href="#《剑指Offer-名企面试官精讲典型编程题》" class="headerlink" title="《剑指Offer:名企面试官精讲典型编程题》"></a>《剑指Offer:名企面试官精讲典型编程题》</h1><p>   2012年电子工业出版社,何海涛</p><p><a href="https://blog.csdn.net/Together_CZ/article/details/74906427" target="_blank" rel="noopener">剑指Offer学习</a><br><a href="https://blog.csdn.net/panda_AJ/article/details/69420293" target="_blank" rel="noopener">剑指offer题目及答案</a></p><p>#《Android应用安全防护和逆向分析》—姜维</p><ol><li>Android中锁屏密码加密算法分析<br>以Android 5.1版本，分析了密码算法 和手势密码算法</li><li>Android中NDK开发<br>写了简单的实例，实现Java调用C，C调用Java</li><li>Android 开发和逆向常用命令<br>介绍了一些常用的adb 命令</li><li>so文件格式解析<br>so文件是Android中C/C++模块编译出来的库，有静态库和动态库两种。Android中的so文件就是ELF文件。<br>文中介绍了阅读ELF文件的工具readelf的常用命令。</li><li><p>AndroidManifest.xml文件格式解析</p></li><li><p>resource.arsc文件格式解析<br>Resource.arsc文件对应的数据结构 frameworks/base/include/androidfw/ResourceTypes.h</p></li><li><p>dex 文件格式解析</p><p>防护篇</p></li><li><p>Android 应用安全防护的基本策略<br>1) 混淆机制.混淆不仅是为了安全防护，也是为了减小应用安装包的大小。混淆机制有两种:<br> a)代码混淆：混淆后的代码类名和方法名都变了<br> b)资源混淆： 微信已经开源资源混淆 <a href="http://github.com/shwenzhang/AndResGuard" target="_blank" rel="noopener">http://github.com/shwenzhang/AndResGuard</a><br>2) 签名保护<br>3）手动注册native方法<br>4）反调试监测</p></li><li>Android中常用权限分析</li></ol><p><a href="https://github.com/Juude/droidReverse" target="_blank" rel="noopener">逆向工程工具集</a></p>]]></content>
-      
-      <categories>
-          
-          <category> Hexo </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 逆向分析 </tag>
-            
-            <tag> 安全 </tag>
             
         </tags>
       
