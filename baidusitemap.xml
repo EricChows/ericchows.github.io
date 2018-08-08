@@ -4,6 +4,156 @@
 
     
   <url>
+    <loc>http://yoursite.com/Android-InterView/</loc>
+    <lastmod>2018-08-08T13:48:06.008Z</lastmod>
+    <data>
+        <display>
+        <title>Android面试汇总</title>
+        <pubTime>2015-01-31T16:00:00.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+        <tag>面试</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="http://yoursite.com/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/Android%E5%BC%80%E5%8F%91%E5%A6%82%E4%BD%95%E5%81%9A%E5%86%85%E5%AD%98%E4%BC%98%E5%8C%96/</loc>
+    <lastmod>2018-08-08T07:11:31.932Z</lastmod>
+    <data>
+        <display>
+        <title>Android 开发如何做内存优化</title>
+        <pubTime>2015-07-22T00:50:06.000Z</pubTime>
+        
+        <tag>Android 内存</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="http://yoursite.com/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+  <url>
+    <loc>http://yoursite.com/Android-Activity-Analysis/</loc>
+    <lastmod>2018-08-08T05:59:22.924Z</lastmod>
+    <data>
+        <display>
+        <title>Android中Activity解析</title>
+        <pubTime>2015-12-31T16:00:00.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+        <tag>Activity</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="http://yoursite.com/categories/Android/"/>
+          
+             
+              <breadCrumb title="Activity" url="http://yoursite.com/categories/Android/Activity/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/Android-JNI-NDK/</loc>
+    <lastmod>2018-08-08T03:13:46.850Z</lastmod>
+    <data>
+        <display>
+        <title>Android中JNI与NDK</title>
+        <pubTime>2015-12-31T16:00:00.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+        <tag>JNI</tag>
+         
+        <tag>NDK</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="http://yoursite.com/categories/Android/"/>
+          
+             
+              <breadCrumb title="JNI" url="http://yoursite.com/categories/Android/JNI/"/>
+          
+             
+              <breadCrumb title="NDK" url="http://yoursite.com/categories/Android/JNI/NDK/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/Android-BroadcastRecevier-Analysis/</loc>
+    <lastmod>2018-08-08T02:29:07.413Z</lastmod>
+    <data>
+        <display>
+        <title>Android中BroadcastRecevier解析</title>
+        <pubTime>2015-12-31T16:00:00.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+        <tag>BroadcastRecevier</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="http://yoursite.com/categories/Android/"/>
+          
+             
+              <breadCrumb title="BroadcastRecevier" url="http://yoursite.com/categories/Android/BroadcastRecevier/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/Android-ActivityManagerService-Analysis/</loc>
+    <lastmod>2018-08-08T02:28:51.155Z</lastmod>
+    <data>
+        <display>
+        <title>Android中ActivityManagerService解析</title>
+        <pubTime>2014-12-31T16:00:00.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+        <tag>ActivityManagerService</tag>
+         
+        <tag>AMS</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="http://yoursite.com/categories/Android/"/>
+          
+             
+              <breadCrumb title="ActivityManagerService" url="http://yoursite.com/categories/Android/ActivityManagerService/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/Myblog/</loc>
     <lastmod>2018-08-07T08:16:37.026Z</lastmod>
     <data>
@@ -188,26 +338,6 @@
           
              
               <breadCrumb title="SELinux" url="http://yoursite.com/categories/SEAndroid/SELinux/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/Android%E5%BC%80%E5%8F%91%E5%A6%82%E4%BD%95%E5%81%9A%E5%86%85%E5%AD%98%E4%BC%98%E5%8C%96/</loc>
-    <lastmod>2018-08-07T07:26:11.582Z</lastmod>
-    <data>
-        <display>
-        <title>Android 开发如何做内存优化</title>
-        <pubTime>2015-07-22T00:50:06.000Z</pubTime>
-        
-        <tag>Android 内存</tag>
-         
-         
-           
-             
-              <breadCrumb title="Android" url="http://yoursite.com/categories/Android/"/>
           
         </display>
     </data>
@@ -425,33 +555,6 @@
 
     
   <url>
-    <loc>http://yoursite.com/Android-ActivityManagerService-Analysis/</loc>
-    <lastmod>2018-08-07T06:59:44.978Z</lastmod>
-    <data>
-        <display>
-        <title>Android中ActivityManagerService解析</title>
-        <pubTime>2014-12-31T16:00:00.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-        <tag>ActivityManagerService</tag>
-         
-        <tag>AMS</tag>
-         
-         
-           
-             
-              <breadCrumb title="Android" url="http://yoursite.com/categories/Android/"/>
-          
-             
-              <breadCrumb title="ActivityManagerService" url="http://yoursite.com/categories/Android/ActivityManagerService/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://yoursite.com/Android-AIDL-Mechanism/</loc>
     <lastmod>2018-08-07T06:59:10.093Z</lastmod>
     <data>
@@ -486,9 +589,9 @@
         
         <tag>Android</tag>
          
-        <tag>Activity</tag>
-         
         <tag>Launcher</tag>
+         
+        <tag>Activity</tag>
          
          
            
@@ -1078,32 +1181,6 @@
     </url>
 
     
-    
-  <url>
-    <loc>http://yoursite.com/Android-Activity-Analysis/</loc>
-    <lastmod>2018-07-18T13:39:43.407Z</lastmod>
-    <data>
-        <display>
-        <title>Android中Activity解析</title>
-        <pubTime>2015-12-31T16:00:00.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-        <tag>Activity</tag>
-         
-         
-           
-             
-              <breadCrumb title="Android" url="http://yoursite.com/categories/Android/"/>
-          
-             
-              <breadCrumb title="Activity" url="http://yoursite.com/categories/Android/Activity/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
   <url>
     <loc>http://yoursite.com/Android-EventBus/</loc>
     <lastmod>2018-07-18T13:38:26.810Z</lastmod>
@@ -1252,31 +1329,6 @@
 
     
   <url>
-    <loc>http://yoursite.com/Android-BroadcastRecevier-Analysis/</loc>
-    <lastmod>2018-07-16T11:24:21.463Z</lastmod>
-    <data>
-        <display>
-        <title>Android中BroadcastRecevier解析</title>
-        <pubTime>2015-12-31T16:00:00.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-        <tag>BroadcastRecevier</tag>
-         
-         
-           
-             
-              <breadCrumb title="Android" url="http://yoursite.com/categories/Android/"/>
-          
-             
-              <breadCrumb title="BroadcastRecevier" url="http://yoursite.com/categories/Android/BroadcastRecevier/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://yoursite.com/Android-Boot-Process/</loc>
     <lastmod>2018-07-16T09:49:08.993Z</lastmod>
     <data>
@@ -1374,36 +1426,6 @@
           
              
               <breadCrumb title="Handler" url="http://yoursite.com/categories/Android/Handler/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/Android-JNI-NDK/</loc>
-    <lastmod>2018-07-16T09:48:46.781Z</lastmod>
-    <data>
-        <display>
-        <title>Android中JNI与NDK</title>
-        <pubTime>2015-12-31T16:00:00.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-        <tag>JNI</tag>
-         
-        <tag>NDK</tag>
-         
-         
-           
-             
-              <breadCrumb title="Android" url="http://yoursite.com/categories/Android/"/>
-          
-             
-              <breadCrumb title="JNI" url="http://yoursite.com/categories/Android/JNI/"/>
-          
-             
-              <breadCrumb title="NDK" url="http://yoursite.com/categories/Android/JNI/NDK/"/>
           
         </display>
     </data>
@@ -1541,28 +1563,6 @@
           
              
               <breadCrumb title="WindowManagerService" url="http://yoursite.com/categories/Android/WindowManagerService/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/Android-InterView/</loc>
-    <lastmod>2018-07-04T10:22:00.973Z</lastmod>
-    <data>
-        <display>
-        <title>Android面试汇总</title>
-        <pubTime>2015-01-31T16:00:00.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-        <tag>面试</tag>
-         
-         
-           
-             
-              <breadCrumb title="Android" url="http://yoursite.com/categories/Android/"/>
           
         </display>
     </data>
