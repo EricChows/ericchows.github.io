@@ -99,7 +99,7 @@
 <meta property="og:image" content="https://camo.githubusercontent.com/fdb7d34b4c62c0dde7adca91c766e224ee3e11f3/687474703a2f2f75706c6f61642d696d616765732e6a69616e7368752e696f2f75706c6f61645f696d616765732f333938353536332d333863336561343536326436646265332e706e673f696d6167654d6f6772322f6175746f2d6f7269656e742f7374726970253743696d61676556696577322f322f772f31323430">
 <meta property="og:image" content="http://yoursite.com/Android-InterView/">
 <meta property="og:image" content="http://yoursite.com/Android-InterView/">
-<meta property="og:updated_time" content="2018-08-08T13:48:06.008Z">
+<meta property="og:updated_time" content="2018-08-09T07:34:09.437Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android面试汇总">
 <meta name="twitter:description" content="自己简历上写的技能：1.对Android非常感兴趣，对移动互联网充满激情，愿意未来二十年从事移动互联网行业;2.Android SDK以及Android各组件应用、JNI开发、多线程、线程池的使用;3.熟悉Android的SystemUI/Keyguard/Launcher三个模块;4.熟练掌握Git/SVN/Android Studio/Eclipse/ADT/MyEclipse/Vis">
@@ -521,7 +521,7 @@
 <p>网络优化工具：<br>1.tcpdump抓包<br>2.Wireshark抓包<br><a href="https://blog.csdn.net/java2013liu/article/details/53611913" target="_blank" rel="noopener">Android的app性能测试–流量</a></p>
 <p>6.流畅度<br>又叫FPS，或者刷新率VS帧率<br>刷新率：每秒屏幕刷新次数，手机屏幕的刷新率是60HZ<br>帧率：GPU在一秒内绘制的帧数<br>撕裂<br>因为屏幕的刷新过程是自上而下、自左向右的，如果帧率&gt;刷新率，当屏幕还没有刷新n-1帧的数据时，就开始生成第n帧的数据了，从上到下，覆盖第n-1帧。如果此时刷新屏幕，就会出现图像的上半部分是第n帧的，下半部分是第n帧的现象。CPU/GPU一直都在渲染。<br>丢帧<br>Android系统每隔16ms发出VSYNC信号，触发GPU对UI进行渲染，如果你的某个操作花费时间是24ms，系统在得到VSYNC信号的时候由于还没有准备好，就无法进行更新任何内容，那么用户在32ms内看到的会是同一帧画面（卡顿现象），即丢帧现象。<br><a href="https://www.cnblogs.com/cloudiest/p/8485711.html" target="_blank" rel="noopener">Android App性能评测分析－流畅度篇</a></p>
 <p><a href="https://blog.csdn.net/weixin_37730482/article/details/73810179" target="_blank" rel="noopener">Android流畅度总结</a></p>
-<p>稳定性：</p>
+<p>稳定性：<br>1.ANR<br>2.Crash<br>3.Tombstone<br>4.Freeze<br>5.黑屏<br>6.冻屏</p>
 <p>功耗：</p>
 <p>15薪是写在工资里面的，有绩效，每个月有1000左右的补贴</p>
 <h1 id="关于传音的招聘"><a href="#关于传音的招聘" class="headerlink" title="关于传音的招聘"></a>关于传音的招聘</h1><p>##职位一：android开发（Framework）<br>18-30万、包含年底双薪<br>职责描述：<br>1.紧跟行业水平，负责功耗相关标准的制定<br>2.负责用户实际场景下的功耗优化，解决相关的功耗问题；<br>3.紧跟行业技术，负责Android-Framework功耗优化相关的feature的设计和实现；<br>4.优化系统整体功耗，负责相关创新技术的设计和实现</p>
@@ -1524,8 +1524,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/读书笔记/" rel="next" title="读书笔记">
-                <i class="fa fa-chevron-left"></i> 读书笔记
+              <a href="/Android-Ashmem-Analysis/" rel="next" title="Android匿名共享内存Ashmem解析">
+                <i class="fa fa-chevron-left"></i> Android匿名共享内存Ashmem解析
               </a>
             
           </div>
@@ -1617,7 +1617,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">72</span>
+                  <span class="site-state-item-count">73</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1628,7 +1628,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">65</span>
+                  <span class="site-state-item-count">67</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1639,7 +1639,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">81</span>
+                  <span class="site-state-item-count">83</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

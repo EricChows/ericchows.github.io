@@ -5,7 +5,7 @@
     
   <url>
     <loc>http://yoursite.com/Android-InterView/</loc>
-    <lastmod>2018-08-08T13:48:06.008Z</lastmod>
+    <lastmod>2018-08-09T07:34:09.437Z</lastmod>
     <data>
         <display>
         <title>Android面试汇总</title>
@@ -19,6 +19,56 @@
            
              
               <breadCrumb title="Android" url="http://yoursite.com/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/%E5%90%84%E7%B1%BB%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E5%B0%8F%E6%8A%80%E5%B7%A7/</loc>
+    <lastmod>2018-08-09T06:40:02.513Z</lastmod>
+    <data>
+        <display>
+        <title>各类工具使用小技巧</title>
+        <pubTime>2015-06-29T06:06:59.000Z</pubTime>
+        
+        <tag>小技巧 工具 vim shell putty</tag>
+         
+         
+           
+             
+              <breadCrumb title="Tools" url="http://yoursite.com/categories/Tools/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/Android-Stability/</loc>
+    <lastmod>2018-08-09T05:50:09.637Z</lastmod>
+    <data>
+        <display>
+        <title>Android的稳定性</title>
+        <pubTime>2015-12-31T16:00:00.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+        <tag>Stability</tag>
+         
+        <tag>稳定性</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="http://yoursite.com/categories/Android/"/>
+          
+             
+              <breadCrumb title="Stability" url="http://yoursite.com/categories/Android/Stability/"/>
+          
+             
+              <breadCrumb title="稳定性" url="http://yoursite.com/categories/Android/Stability/%E7%A8%B3%E5%AE%9A%E6%80%A7/"/>
           
         </display>
     </data>
@@ -302,9 +352,9 @@
         <title>Java基础知识汇总</title>
         <pubTime>2017-07-16T09:50:38.000Z</pubTime>
         
-        <tag>Base</tag>
-         
         <tag>Java</tag>
+         
+        <tag>Base</tag>
          
          
            
@@ -589,9 +639,9 @@
         
         <tag>Android</tag>
          
-        <tag>Launcher</tag>
-         
         <tag>Activity</tag>
+         
+        <tag>Launcher</tag>
          
          
            
@@ -760,26 +810,6 @@
            
              
               <breadCrumb title="WordPress" url="http://yoursite.com/categories/WordPress/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/%E5%90%84%E7%B1%BB%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E5%B0%8F%E6%8A%80%E5%B7%A7/</loc>
-    <lastmod>2018-08-06T08:22:35.237Z</lastmod>
-    <data>
-        <display>
-        <title>各类工具使用小技巧</title>
-        <pubTime>2015-06-29T06:06:59.000Z</pubTime>
-        
-        <tag>小技巧 工具 vim shell putty</tag>
-         
-         
-           
-             
-              <breadCrumb title="Tools" url="http://yoursite.com/categories/Tools/"/>
           
         </display>
     </data>
@@ -1119,9 +1149,9 @@
         <title>C++ 基础</title>
         <pubTime>2015-12-31T16:00:00.000Z</pubTime>
         
-        <tag>C++</tag>
-         
         <tag>Base</tag>
+         
+        <tag>C++</tag>
          
          
            
