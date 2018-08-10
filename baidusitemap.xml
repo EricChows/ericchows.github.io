@@ -5,10 +5,10 @@
     
   <url>
     <loc>http://yoursite.com/Android-Base/</loc>
-    <lastmod>2018-08-10T03:39:35.634Z</lastmod>
+    <lastmod>2018-08-10T03:48:58.016Z</lastmod>
     <data>
         <display>
-        <title>Android基础</title>
+        <title>Android</title>
         <pubTime>2015-12-31T16:00:00.000Z</pubTime>
         
         <tag>Android</tag>
@@ -22,6 +22,51 @@
           
              
               <breadCrumb title="Base" url="http://yoursite.com/categories/Android/Base/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/Linux-Base/</loc>
+    <lastmod>2018-08-10T03:48:44.452Z</lastmod>
+    <data>
+        <display>
+        <title>Linux</title>
+        <pubTime>2015-12-31T16:00:00.000Z</pubTime>
+        
+        <tag>Base</tag>
+         
+        <tag>Linux</tag>
+         
+         
+           
+             
+              <breadCrumb title="Linux" url="http://yoursite.com/categories/Linux/"/>
+          
+             
+              <breadCrumb title="Base" url="http://yoursite.com/categories/Linux/Base/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/Myblog/</loc>
+    <lastmod>2018-08-10T03:47:35.235Z</lastmod>
+    <data>
+        <display>
+        <title>★★★★★博客导航★★★★★</title>
+        <pubTime>2098-12-31T16:00:00.000Z</pubTime>
+        
+        <tag>Myblog</tag>
+         
+         
+           
+             
+              <breadCrumb title="All" url="http://yoursite.com/categories/All/"/>
           
         </display>
     </data>
@@ -69,26 +114,6 @@
           
              
               <breadCrumb title="IT" url="http://yoursite.com/categories/%E6%96%B9%E6%B3%95%E8%AE%BA/IT/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/Myblog/</loc>
-    <lastmod>2018-08-10T03:31:55.155Z</lastmod>
-    <data>
-        <display>
-        <title>★★★★★博客导航★★★★★</title>
-        <pubTime>2098-12-31T16:00:00.000Z</pubTime>
-        
-        <tag>Myblog</tag>
-         
-         
-           
-             
-              <breadCrumb title="All" url="http://yoursite.com/categories/All/"/>
           
         </display>
     </data>
@@ -148,11 +173,11 @@
         <title>给技术人员一些技术以外的建议</title>
         <pubTime>2015-12-31T16:00:00.000Z</pubTime>
         
-        <tag>Advice</tag>
-         
         <tag>IT</tag>
          
         <tag>建议</tag>
+         
+        <tag>Advice</tag>
          
          
            
@@ -739,9 +764,9 @@
         
         <tag>Android</tag>
          
-        <tag>Launcher</tag>
-         
         <tag>Activity</tag>
+         
+        <tag>Launcher</tag>
          
          
            
@@ -1174,9 +1199,9 @@
         <title>关于工作和成长的121条具体建议</title>
         <pubTime>2015-09-08T16:00:00.000Z</pubTime>
         
-        <tag>Life</tag>
-         
         <tag>Advice</tag>
+         
+        <tag>Life</tag>
          
          
            

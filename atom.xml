@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-08-10T03:31:55.155Z</updated>
+  <updated>2018-08-10T03:47:35.235Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,17 +21,17 @@
     <link href="http://yoursite.com/Myblog/"/>
     <id>http://yoursite.com/Myblog/</id>
     <published>2098-12-31T16:00:00.000Z</published>
-    <updated>2018-08-10T03:31:55.155Z</updated>
+    <updated>2018-08-10T03:47:35.235Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h1><ol><li><a href="../Java-Base">Java基础知识汇总</a> Ongoing，待补充</li><li><a href="../Android-Base">Android基础知识</a> Ongoing,待补充</li><li><a href="../C++--Base">C++ 基础</a>  Ongoing，待补充</li></ol><h1 id="Framework源码解析"><a href="#Framework源码解析" class="headerlink" title="Framework源码解析"></a>Framework源码解析</h1><ol><li><a href="../Android-PackageManagerService-Analysis">Android中PackageManagerService机制分析</a>    进行到了30%，还未完成 </li><li><a href="../Android-StrictMode-Analysis">StrictMode 机制以及性能调优</a></li><li><a href="../Android-ANR-Analysis">ANR 机制以及问题分析</a></li><li><a href="../Android-Watchdog-Analysis">Watchdog机制以及问题分析</a></li><li><a href="../Android-Window-Mechanism">Android中Window机制</a></li><li><a href="../Android-Log-Analysis">Android的Log机制分析</a></li><li><a href="../Android-Launcher-Activity">Android Launcher 启动Activity工作流程</a> Ongoing</li><li><a href="../Android-AIDL-Mechanism">Andorid中AIDL解析</a> Ongoing</li><li><a href="../Android-ActivityManagerService-Analysis">Android中ActivityManagerService解析</a> 待完成</li><li><a href="../Android-Make">Android 编译</a></li><li><a href="../Android-Performance">Android系统性能调优工具</a></li><li><a href="../Android-Digital-Signature">Android数字签名</a></li></ol><h1 id="待完成"><a href="#待完成" class="headerlink" title="待完成"></a>待完成</h1><ol><li><a href="../Android-Activity-Analysis">Android中Activity解析</a></li><li><a href="../Android-Ashmem-Analysis">Android匿名共享内存Ashmem解析</a></li><li><a href="../Android-Binder-Analysis">Android中Binder机制解析</a></li><li><a href="../Android-Boot-Process">Android中启动过程解析</a></li><li><a href="../Android-BroadcastRecevier-Analysis">Android中BroadcastRecevier解析</a></li><li><a href="../Android-ContentProvider-Analysis">Android中ContentProvider解析</a></li><li><a href="../Android-EventBus">Android中EventBus解析</a></li><li><a href="../Android-Handler-Analysis">Android中Handler解析</a></li><li><a href="../Android-JNI-NDK">Android中JNI与NDK</a></li><li><a href="../Android-KeyEvent-Analysis">Android中按键事件传递分析</a></li><li><a href="../Android-MVC-MVP">Android中MVC模式和MVP模式</a></li><li><a href="../Android-Process-Analysis">Android中Process</a></li><li><a href="../Android-Service-Analysis">Android中Service解析</a></li><li><a href="../Android-SurfaceFlinger-Analysis">Android中SurfaceFlinger解析</a></li><li><a href="../Android-WindowManagerService-Analysis">Android中WindowManagerService解析</a></li><li><a href="../Java-VirtualMachine">Java虚拟机</a></li></ol><h1 id="Application源码解析"><a href="#Application源码解析" class="headerlink" title="Application源码解析"></a>Application源码解析</h1><ol><li><a href="../Android-Keyguard-Analysis">Android中Keyguard解析</a>   还未完成，需要继续补充</li><li><a href="../Android-SystemUI-Analysis">Android中SystemUI解析</a> 还没开始</li><li><a href="../Android-Launcher-Analysis">Android中Launcher解析</a> 还没开始</li></ol><h1 id="疑难杂症"><a href="#疑难杂症" class="headerlink" title="疑难杂症"></a>疑难杂症</h1><ol><li><a href="../Android8.0-charging-icon-cannot-show">Android8.0充电图标不显示</a></li></ol><h1 id="工具使用"><a href="#工具使用" class="headerlink" title="工具使用"></a>工具使用</h1><ol><li><a href="../ADB-Android-Debug-Bridge">ADB (Android Debug Bridge)常用命令</a></li><li><a href="../Android-Performance">Android系统性能调优工具</a></li><li><a href="../Git+Repo">Git and Repo</a>  待完成</li></ol><h1 id="试题"><a href="#试题" class="headerlink" title="试题"></a>试题</h1><ol><li><a href="../Android-InterView">Android面试汇总</a>  待完成</li></ol><p><a href="../Android-Article">看过或者需要重新看的文章</a></p><h1 id="新技术探索"><a href="#新技术探索" class="headerlink" title="新技术探索"></a>新技术探索</h1><ol><li><a href="../Block-Chain">区块链开发</a></li><li><a href="../Chrome">Chrome插件开发</a></li><li><a href="../Fuchsia">Fuchsia</a></li><li><a href="../Python">Python开发</a></li><li>[Flutter]</li><li>[Go]</li><li>[Dart]</li><li><a href="../Kotlin">Kotlin</a></li><li>[Firebase]</li><li>[Tensorflow]</li></ol><h1 id="Kaios"><a href="#Kaios" class="headerlink" title="Kaios"></a>Kaios</h1><p><a href="../Kaios">Kaios</a></p><h1 id="已经整理完成的文章"><a href="#已经整理完成的文章" class="headerlink" title="已经整理完成的文章"></a>已经整理完成的文章</h1><ol><li><a href="../ADB-Android-Debug-Bridge">ADB (Android Debug Bridge)常用命令</a><br>需要做的延伸是：分析adb 的源码</li><li><p><a href="../Window-Bat">windows批处理 BAT技巧</a><br>需要延伸的是： 用bat脚本抓所有的Android log<br>在Ubuntu环境下，使用其他脚本抓所有的Android log</p></li><li><p><a href="../各类工具使用小技巧">各类工具使用小技巧</a><br>需要延伸的是： 日常工作中使用过的工具的小技巧需要随时收录进来</p></li><li><p><a href="../问题锦集-速查">问题锦集-速查</a><br>需要延伸的是： 日常工作中遇到的常见的一些问题，最好都记录下来，保存到这里来</p></li><li><p><a href="../Android-Make">Android 编译</a><br>需要延伸的是： Android编译流程 和 编译过程中各个文件的作用</p></li><li><p><a href="../Linux-Command">Linux脚本编写基础</a><br>是一篇学习的文章： 还没有学习完，文章格式乱七八糟，继续维护</p></li><li><p><a href="../Android开发如何做内存优化">android 开发如何做内存优化</a></p></li><li><p><a href="../Android-View-Mechanism">Android 编程下 Touch 事件的分发和消费机制</a><br>需要延伸的是：案例</p></li></ol><p>常用图标：<br>└──<br>•<br>★</p><h1 id="语言手册"><a href="#语言手册" class="headerlink" title="语言手册"></a>语言手册</h1><p><a href="https://mirrors.segmentfault.com/" target="_blank" rel="noopener">https://mirrors.segmentfault.com/</a><br>Introduction to Tornado 中文翻译<br>Android 设计指南简体中文版<br>Swift语言指南<br>PHP 中文手册<br>Node.js 手册<br>Golang 手册<br>Python 2.x 手册<br>Python 3.x 手册<br>Laravel 手册<br>Rust 手册<br>React 手册<br>Kotlin 手册</p><h1 id="IT"><a href="#IT" class="headerlink" title="IT"></a>IT</h1><p><a href="../IT-Base">IT学习</a></p><h1 id="对技术的建议"><a href="#对技术的建议" class="headerlink" title="对技术的建议"></a>对技术的建议</h1><ol><li><a href="../IT-Advice-1">给技术人员一些技术以外的建议</a></li></ol><h1 id="生活"><a href="#生活" class="headerlink" title="生活"></a>生活</h1><ol><li><a href="../Life-Advice">关于工作和成长的121条具体建议</a></li></ol><h1 id="English"><a href="#English" class="headerlink" title="English"></a>English</h1><ol><li><a href="../L-My-Approach-to-Getting-Dramatically-Better-as-a-Programmer">My Approach to Getting Dramatically Better as a Programmer</a></li></ol><!--Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [documentation](https://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](https://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).## Quick Start### Create a new post<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html">Deployment</a><br>–&gt;</p>-->]]></content>
+    <content type="html"><![CDATA[<h1 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h1><ol><li><a href="../Java-Base">Java</a> Ongoing，待补充</li><li><a href="../Android-Base">Android</a> Ongoing</li><li><a href="../C++--Base">C++</a>  Ongoing</li><li><a href="../Linux-Base">Linux</a> Ongoing</li></ol><h1 id="Framework源码解析"><a href="#Framework源码解析" class="headerlink" title="Framework源码解析"></a>Framework源码解析</h1><ol><li><a href="../Android-PackageManagerService-Analysis">Android中PackageManagerService机制分析</a>    进行到了30%，还未完成 </li><li><a href="../Android-StrictMode-Analysis">StrictMode 机制以及性能调优</a></li><li><a href="../Android-ANR-Analysis">ANR 机制以及问题分析</a></li><li><a href="../Android-Watchdog-Analysis">Watchdog机制以及问题分析</a></li><li><a href="../Android-Window-Mechanism">Android中Window机制</a></li><li><a href="../Android-Log-Analysis">Android的Log机制分析</a></li><li><a href="../Android-Launcher-Activity">Android Launcher 启动Activity工作流程</a> Ongoing</li><li><a href="../Android-AIDL-Mechanism">Andorid中AIDL解析</a> Ongoing</li><li><a href="../Android-ActivityManagerService-Analysis">Android中ActivityManagerService解析</a> 待完成</li><li><a href="../Android-Make">Android 编译</a></li><li><a href="../Android-Performance">Android系统性能调优工具</a></li><li><a href="../Android-Digital-Signature">Android数字签名</a></li></ol><h1 id="待完成"><a href="#待完成" class="headerlink" title="待完成"></a>待完成</h1><ol><li><a href="../Android-Activity-Analysis">Android中Activity解析</a></li><li><a href="../Android-Ashmem-Analysis">Android匿名共享内存Ashmem解析</a></li><li><a href="../Android-Binder-Analysis">Android中Binder机制解析</a></li><li><a href="../Android-Boot-Process">Android中启动过程解析</a></li><li><a href="../Android-BroadcastRecevier-Analysis">Android中BroadcastRecevier解析</a></li><li><a href="../Android-ContentProvider-Analysis">Android中ContentProvider解析</a></li><li><a href="../Android-EventBus">Android中EventBus解析</a></li><li><a href="../Android-Handler-Analysis">Android中Handler解析</a></li><li><a href="../Android-JNI-NDK">Android中JNI与NDK</a></li><li><a href="../Android-KeyEvent-Analysis">Android中按键事件传递分析</a></li><li><a href="../Android-MVC-MVP">Android中MVC模式和MVP模式</a></li><li><a href="../Android-Process-Analysis">Android中Process</a></li><li><a href="../Android-Service-Analysis">Android中Service解析</a></li><li><a href="../Android-SurfaceFlinger-Analysis">Android中SurfaceFlinger解析</a></li><li><a href="../Android-WindowManagerService-Analysis">Android中WindowManagerService解析</a></li><li><a href="../Java-VirtualMachine">Java虚拟机</a></li></ol><h1 id="Application源码解析"><a href="#Application源码解析" class="headerlink" title="Application源码解析"></a>Application源码解析</h1><ol><li><a href="../Android-Keyguard-Analysis">Android中Keyguard解析</a>   还未完成，需要继续补充</li><li><a href="../Android-SystemUI-Analysis">Android中SystemUI解析</a> 还没开始</li><li><a href="../Android-Launcher-Analysis">Android中Launcher解析</a> 还没开始</li></ol><h1 id="疑难杂症"><a href="#疑难杂症" class="headerlink" title="疑难杂症"></a>疑难杂症</h1><ol><li><a href="../Android8.0-charging-icon-cannot-show">Android8.0充电图标不显示</a></li></ol><h1 id="工具使用"><a href="#工具使用" class="headerlink" title="工具使用"></a>工具使用</h1><ol><li><a href="../ADB-Android-Debug-Bridge">ADB (Android Debug Bridge)常用命令</a></li><li><a href="../Android-Performance">Android系统性能调优工具</a></li><li><a href="../Git+Repo">Git and Repo</a>  待完成</li></ol><h1 id="试题"><a href="#试题" class="headerlink" title="试题"></a>试题</h1><ol><li><a href="../Android-InterView">Android面试汇总</a>  待完成</li></ol><p><a href="../Android-Article">看过或者需要重新看的文章</a></p><h1 id="新技术探索"><a href="#新技术探索" class="headerlink" title="新技术探索"></a>新技术探索</h1><ol><li><a href="../Block-Chain">区块链开发</a></li><li><a href="../Chrome">Chrome插件开发</a></li><li><a href="../Fuchsia">Fuchsia</a></li><li><a href="../Python">Python开发</a></li><li>[Flutter]</li><li>[Go]</li><li>[Dart]</li><li><a href="../Kotlin">Kotlin</a></li><li>[Firebase]</li><li>[Tensorflow]</li></ol><h1 id="Kaios"><a href="#Kaios" class="headerlink" title="Kaios"></a>Kaios</h1><p><a href="../Kaios">Kaios</a></p><h1 id="已经整理完成的文章"><a href="#已经整理完成的文章" class="headerlink" title="已经整理完成的文章"></a>已经整理完成的文章</h1><ol><li><a href="../ADB-Android-Debug-Bridge">ADB (Android Debug Bridge)常用命令</a><br>需要做的延伸是：分析adb 的源码</li><li><p><a href="../Window-Bat">windows批处理 BAT技巧</a><br>需要延伸的是： 用bat脚本抓所有的Android log<br>在Ubuntu环境下，使用其他脚本抓所有的Android log</p></li><li><p><a href="../各类工具使用小技巧">各类工具使用小技巧</a><br>需要延伸的是： 日常工作中使用过的工具的小技巧需要随时收录进来</p></li><li><p><a href="../问题锦集-速查">问题锦集-速查</a><br>需要延伸的是： 日常工作中遇到的常见的一些问题，最好都记录下来，保存到这里来</p></li><li><p><a href="../Android-Make">Android 编译</a><br>需要延伸的是： Android编译流程 和 编译过程中各个文件的作用</p></li><li><p><a href="../Linux-Command">Linux脚本编写基础</a><br>是一篇学习的文章： 还没有学习完，文章格式乱七八糟，继续维护</p></li><li><p><a href="../Android开发如何做内存优化">android 开发如何做内存优化</a></p></li><li><p><a href="../Android-View-Mechanism">Android 编程下 Touch 事件的分发和消费机制</a><br>需要延伸的是：案例</p></li></ol><p>常用图标：<br>└──<br>•<br>★</p><h1 id="语言手册"><a href="#语言手册" class="headerlink" title="语言手册"></a>语言手册</h1><p><a href="https://mirrors.segmentfault.com/" target="_blank" rel="noopener">https://mirrors.segmentfault.com/</a><br>Introduction to Tornado 中文翻译<br>Android 设计指南简体中文版<br>Swift语言指南<br>PHP 中文手册<br>Node.js 手册<br>Golang 手册<br>Python 2.x 手册<br>Python 3.x 手册<br>Laravel 手册<br>Rust 手册<br>React 手册<br>Kotlin 手册</p><h1 id="IT"><a href="#IT" class="headerlink" title="IT"></a>IT</h1><p><a href="../IT-Base">IT学习</a></p><h1 id="对技术的建议"><a href="#对技术的建议" class="headerlink" title="对技术的建议"></a>对技术的建议</h1><ol><li><a href="../IT-Advice-1">给技术人员一些技术以外的建议</a></li></ol><h1 id="生活"><a href="#生活" class="headerlink" title="生活"></a>生活</h1><ol><li><a href="../Life-Advice">关于工作和成长的121条具体建议</a></li></ol><h1 id="English"><a href="#English" class="headerlink" title="English"></a>English</h1><ol><li><a href="../L-My-Approach-to-Getting-Dramatically-Better-as-a-Programmer">My Approach to Getting Dramatically Better as a Programmer</a></li></ol><!--Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [documentation](https://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](https://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).## Quick Start### Create a new post<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html">Deployment</a><br>–&gt;</p>-->]]></content>
     
     <summary type="html">
     
       
       
         &lt;h1 id=&quot;基础知识&quot;&gt;&lt;a href=&quot;#基础知识&quot; class=&quot;headerlink&quot; title=&quot;基础知识&quot;&gt;&lt;/a&gt;基础知识&lt;/h1&gt;&lt;ol&gt;
-&lt;li&gt;&lt;a href=&quot;../Java-Base&quot;&gt;Java基础知识汇总&lt;/a&gt; Ongoing，待补充&lt;/li&gt;
-&lt;
+&lt;li&gt;&lt;a href=&quot;../Java-Base&quot;&gt;Java&lt;/a&gt; Ongoing，待补充&lt;/li&gt;
+&lt;li&gt;&lt;a 
       
     
     </summary>
@@ -346,9 +346,9 @@
     
       <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
     
-      <category term="Launcher" scheme="http://yoursite.com/tags/Launcher/"/>
-    
       <category term="Activity" scheme="http://yoursite.com/tags/Activity/"/>
+    
+      <category term="Launcher" scheme="http://yoursite.com/tags/Launcher/"/>
     
   </entry>
   
@@ -645,13 +645,13 @@
   </entry>
   
   <entry>
-    <title>区块链开发</title>
-    <link href="http://yoursite.com/Block-Chain/"/>
-    <id>http://yoursite.com/Block-Chain/</id>
+    <title>Android中Binder机制解析</title>
+    <link href="http://yoursite.com/Android-Binder-Analysis/"/>
+    <id>http://yoursite.com/Android-Binder-Analysis/</id>
     <published>2015-12-31T16:00:00.000Z</published>
-    <updated>2018-07-30T07:07:51.247Z</updated>
+    <updated>2018-07-18T13:03:43.255Z</updated>
     
-    <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.<br><!--    Module:    第一步:需要将这些文章都看几篇    第二步：形成自己的理解    第三步：可以按照非常有用的文章，重写写一遍    第四步：纠正或者延伸别人的文章--></p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><!--    阅读卡：    文章：    时间：--><p><a href="https://juejin.im/entry/5a95511cf265da4e7d6070d7?utm_source=gold_browser_extension" target="_blank" rel="noopener">区块链技术开发相关资料 - 介绍、教程、项目、资料、应用</a></p>]]></content>
+    <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.<br><!--    Module:    第一步:需要将这些文章都看几篇    第二步：形成自己的理解    第三步：可以按照非常有用的文章，重写写一遍    第四步：纠正或者延伸别人的文章--></p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><!--    阅读卡：    文章：    时间：--><p>老罗系列<br><a href="https://blog.csdn.net/luoshengyang/article/details/8923485" target="_blank" rel="noopener">那两年炼就的Android内功修养</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6618363" target="_blank" rel="noopener">Android进程间通信（IPC）机制Binder简要介绍和学习计划</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6621566" target="_blank" rel="noopener">浅谈Service Manager成为Android进程间通信（IPC）机制Binder守护进程之路</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6627260" target="_blank" rel="noopener">浅谈Android系统进程间通信（IPC）机制Binder中的Server和Client获得Service Manager接口之路</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6629298" target="_blank" rel="noopener">Android系统进程间通信（IPC）机制Binder中的Server启动过程源代码分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6633311" target="_blank" rel="noopener">Android系统进程间通信（IPC）机制Binder中的Client获得Server远程接口过程源代码分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6642463" target="_blank" rel="noopener">Android系统进程间通信Binder机制在应用程序框架层的Java接口源代码分析</a></p><p><a href="https://blog.csdn.net/qian520ao/article/details/78089877" target="_blank" rel="noopener">Android Binder之应用层总结与分析</a><br><a href="https://cloud.tencent.com/developer/article/1005763" target="_blank" rel="noopener">Binder 总体架构及相关代码浅析</a><br><a href="http://weishu.me/2016/01/12/binder-index-for-newer/" target="_blank" rel="noopener">Binder学习指南</a><br><a href="https://mp.weixin.qq.com/s?__biz=MzA5MzI3NjE2MA==&amp;mid=2650241680&amp;idx=1&amp;sn=14648a37ff1e7844e33cd548b9ec5a71&amp;chksm=88638bffbf1402e9b6dbe6b186bc619a341fc5fe0fd2aefd4a7dd3ac70d0539573c48863de0f#rd" target="_blank" rel="noopener">带你一起剖析Android AIDL跨进程通信的实现原理</a></p><p>小米系统工程师–Gityuan 系列<br><a href="http://gityuan.com/2015/10/31/binder-prepare/" target="_blank" rel="noopener">Binder系列—开篇</a><br><a href="http://gityuan.com/2015/11/01/binder-driver/" target="_blank" rel="noopener">Binder系列1—Binder Driver初探</a><br><a href="http://gityuan.com/2015/11/02/binder-driver-2/" target="_blank" rel="noopener">Binder系列2—Binder Driver再探</a><br><a href="http://gityuan.com/2015/11/07/binder-start-sm/" target="_blank" rel="noopener">Binder系列3—启动ServiceManager</a><br><a href="http://gityuan.com/2015/11/08/binder-get-sm/" target="_blank" rel="noopener">Binder系列4—获取ServiceManager</a><br><a href="http://gityuan.com/2015/11/14/binder-add-service/" target="_blank" rel="noopener">Binder系列5—注册服务(addService)</a><br><a href="http://gityuan.com/2015/11/15/binder-get-service/" target="_blank" rel="noopener">Binder系列6—获取服务(getService)</a><br><a href="http://gityuan.com/2015/11/21/binder-framework/" target="_blank" rel="noopener">Binder系列7—framework层分析</a><br><a href="http://gityuan.com/2015/11/22/binder-use/" target="_blank" rel="noopener">Binder系列8—如何使用Binder</a><br><a href="http://gityuan.com/2015/11/23/binder-aidl/" target="_blank" rel="noopener">Binder系列9—如何使用AIDL</a><br><a href="http://gityuan.com/2015/11/28/binder-summary/" target="_blank" rel="noopener">Binder系列10—总结</a></p>]]></content>
     
     <summary type="html">
     
@@ -669,14 +669,46 @@
     
     </summary>
     
-      <category term="区块链" scheme="http://yoursite.com/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+      <category term="Android" scheme="http://yoursite.com/categories/Android/"/>
     
-      <category term="BlockChain" scheme="http://yoursite.com/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/BlockChain/"/>
+      <category term="Binder" scheme="http://yoursite.com/categories/Android/Binder/"/>
     
     
-      <category term="区块链" scheme="http://yoursite.com/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
     
-      <category term="BlockChain" scheme="http://yoursite.com/tags/BlockChain/"/>
+      <category term="Binder" scheme="http://yoursite.com/tags/Binder/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Android中启动过程解析</title>
+    <link href="http://yoursite.com/Android-Boot-Process/"/>
+    <id>http://yoursite.com/Android-Boot-Process/</id>
+    <published>2015-12-31T16:00:00.000Z</published>
+    <updated>2018-07-16T09:49:08.993Z</updated>
+    
+    <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.</p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p><a href="https://blog.csdn.net/luoshengyang/article/details/8923485" target="_blank" rel="noopener">那两年炼就的Android内功修养</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6768304" target="_blank" rel="noopener">Android系统进程Zygote启动过程的源代码分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6747696" target="_blank" rel="noopener">Android应用程序进程启动过程的源代码分析</a></p><p>Android开机流程概述：<br><a href="https://blog.csdn.net/h655370/article/details/77727554" target="_blank" rel="noopener">https://blog.csdn.net/h655370/article/details/77727554</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Ongoing,待完成，Please wait.&lt;/p&gt;
+&lt;h1 id=&quot;参考文献&quot;&gt;&lt;a href=&quot;#参考文献&quot; class=&quot;headerlink&quot; title=&quot;参考文献&quot;&gt;&lt;/a&gt;参考文献&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://blog.csdn.net
+      
+    
+    </summary>
+    
+      <category term="Android" scheme="http://yoursite.com/categories/Android/"/>
+    
+      <category term="启动" scheme="http://yoursite.com/categories/Android/%E5%90%AF%E5%8A%A8/"/>
+    
+    
+      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
+    
+      <category term="Zegote" scheme="http://yoursite.com/tags/Zegote/"/>
+    
+      <category term="Init" scheme="http://yoursite.com/tags/Init/"/>
     
   </entry>
   
@@ -783,32 +815,66 @@
   </entry>
   
   <entry>
-    <title>Android中ContentProvider解析</title>
-    <link href="http://yoursite.com/Android-ContentProvider-Analysis/"/>
-    <id>http://yoursite.com/Android-ContentProvider-Analysis/</id>
+    <title>Android的稳定性</title>
+    <link href="http://yoursite.com/Android-Stability/"/>
+    <id>http://yoursite.com/Android-Stability/</id>
     <published>2015-12-31T16:00:00.000Z</published>
-    <updated>2018-07-16T09:48:52.886Z</updated>
+    <updated>2018-08-10T01:46:12.605Z</updated>
     
-    <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.</p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p><a href="https://blog.csdn.net/luoshengyang/article/details/8923485" target="_blank" rel="noopener">那两年炼就的Android内功修养</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6946067" target="_blank" rel="noopener">Android应用程序组件Content Provider简要介绍和学习计划</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6950440" target="_blank" rel="noopener">Android应用程序组件Content Provider应用实例</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6963418" target="_blank" rel="noopener">Android应用程序组件Content Provider的启动过程源代码分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6967204" target="_blank" rel="noopener">Android应用程序组件Content Provider在应用程序之间共享数据的原理分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6985171" target="_blank" rel="noopener">Android应用程序组件Content Provider的共享数据更新通知机制分析</a></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>Android的稳定性包含以下几个方面：<br>1.ANR<br>2.Crash<br>3.Tombstone<br>4.Freeze<br>5.黑屏<br>6.冻屏</p><p>#稳定性问题分析以及需要的相关log<br>/data/anr/traces.txt<br>/data/system/dropbox<br>/data/tombstones</p><p><a href="https://www.aliyun.com/jiaocheng/2860.html" target="_blank" rel="noopener">Android系统各种稳定性问题所需要的log</a><br><a href="https://blog.csdn.net/u014134180/article/details/78122529" target="_blank" rel="noopener">Android系统各种稳定性问题所需要的log</a><br>adb shell bugreport &gt; bugreport.txt<br>adb shell dumpstate &gt; dumpstate.log  (this command will produce trace log about all process then u need adb pull /data/anr to collect the trace log)<br>adb shell dumpsys &gt; dumpsys.log </p><p>adb pull /data/tombstones (All log file time must be consistent with issue occurred time, it needs to clear /data/anr &amp;; /data/tombstones after stability issue occu)</p><p>System Freeze/ Touch panel freeze系统卡死/屏幕卡死</p><p>adb shell getevent  此命令可以获取实时触屏以及按键事件log<br>adb shell getevent -rtl /dev/input/event0 按键事件 </p><p>open echo w &gt; /proc/sysrq-trigger when capture dmesg and bugreport log as follows:<br>adb root<br>adb remount<br>adb shell<br>echo w &gt; /proc/sysrq-trigger<br>&amp;; then exit adb shell, then collect bugreport<br>adb shell bugreport &gt; bugreport.txt<br>adb shell kmesg &gt; kmesg.txt 没有kmesg<br><a href="https://blog.csdn.net/njuitjf/article/details/12045527" target="_blank" rel="noopener">/proc/sysrq-trigger文件的强大功能</a><br><a href="https://www.cnblogs.com/justin-y-lin/p/5424555.html" target="_blank" rel="noopener">Linux内核调试方法总结之sysrq</a><br><a href="https://blog.csdn.net/beckdon/article/details/41313713" target="_blank" rel="noopener">/proc/sysrq-trigger详解</a></p><p>adb pull /d/binder/ .  所有的binder信息</p><p>adb shell dumpsys window &gt; dump_window.txt </p><p>adb shell cat proc/meminfo &gt; meminfo.txt </p><p>adb shell procrank &gt; procrank.txt </p><p>adb shell top &gt; top.txt </p><p>##检查adb,TP,显卡驱动,按键是否正常工作<br>•Adb workable or not, ANR or not<br>•CTP workable or not -&gt;<br>touch screen and observe<br>the output of “adb shell getevent”.<br>•Display driver workable or not -&gt;<br>Use the screencast to see<br>if the screen can be displayed<br>•Power key/volume key work or not?<br>Menu/back/home key work or not? </p><p>##触发一次Dump，不同平台方式不一样<br>It’s better to trigger a ram dump<br>Before test:<br>adb root<br>adb shell “echo 0x843 &gt; /d/spmi/spmi-0/address”<br>adb shell “echo 0x80 &gt; /d/spmi/spmi-0/data”<br>Then long press power key more than 10~30s<br>could trigger a dump.<br>If device is rebooted, it needs to set again. </p><h2 id="Black-screen-黑屏"><a href="#Black-screen-黑屏" class="headerlink" title="Black screen 黑屏"></a>Black screen 黑屏</h2><p><a href="https://blog.csdn.net/zhangbijun1230/article/details/80739233" target="_blank" rel="noopener">Android系统（110）—稳定性问题总结</a></p><h1 id="ANR"><a href="#ANR" class="headerlink" title="ANR"></a>ANR</h1><p>思路： 机制 –&gt; 触发原因 –&gt; 如何避免 –&gt; 如何分析和解决问题<br><a href="https://blog.csdn.net/wei_lei/article/details/70311702" target="_blank" rel="noopener">Android稳定性专题之ANR</a></p><h1 id="Crash"><a href="#Crash" class="headerlink" title="Crash"></a>Crash</h1><p><a href="https://blog.csdn.net/wei_lei/article/details/69868280" target="_blank" rel="noopener">Android稳定性专题之CRASH</a><br><a href="https://blog.csdn.net/weilaideta/article/details/51348251" target="_blank" rel="noopener">Android系统稳定性—-Crash</a></p><h1 id="Watchdog"><a href="#Watchdog" class="headerlink" title="Watchdog"></a>Watchdog</h1><p>机制/原理 –&gt; 实现方式</p><p><a href="http://rayleeya.iteye.com/blog/1963408" target="_blank" rel="noopener">系统进程的Watchdog</a><br><a href="https://blog.csdn.net/yeqishi/article/details/50262087" target="_blank" rel="noopener">Android Watchdog框架看门狗解析、死锁应用与改造（上）</a><br><a href="https://blog.csdn.net/yeqishi/article/details/50262699" target="_blank" rel="noopener">Android Watchdog框架看门狗解析、死锁应用与改造（下）</a><br><a href="https://blog.csdn.net/lezhang123/article/details/72537647" target="_blank" rel="noopener">Watchdog机制以及问题分析</a><br><a href="http://duanqz.github.io/2015-10-12-Watchdog-Analysis#section-1" target="_blank" rel="noopener">Watchdog机制以及问题分析</a><br><a href="https://blog.csdn.net/wd229047557/article/details/79451969" target="_blank" rel="noopener">Android Watchdog机制介绍与分析</a></p><h1 id="Tombstone"><a href="#Tombstone" class="headerlink" title="Tombstone"></a>Tombstone</h1><h1 id="Panic"><a href="#Panic" class="headerlink" title="Panic"></a>Panic</h1><h1 id="OOM"><a href="#OOM" class="headerlink" title="OOM"></a>OOM</h1><h1 id="稳定性测试"><a href="#稳定性测试" class="headerlink" title="稳定性测试"></a>稳定性测试</h1><p><a href="https://blog.csdn.net/ljd2038/article/details/54561511" target="_blank" rel="noopener">Android稳定性测试工具Monkey的使用</a><br><a href="https://blog.csdn.net/tobetheender/article/details/54693874" target="_blank" rel="noopener">Android稳定性测试– Monkey二次开发</a></p><!--    Module:    第一步:需要将这些文章都看几篇    第二步：形成自己的理解    第三步：可以按照非常有用的文章，重写写一遍    第四步：纠正或者延伸别人的文章--><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><!--    阅读卡：    文章：    时间：--><p><a href="https://www.jianshu.com/p/32e6bde42185" target="_blank" rel="noopener">安卓App稳定性之旅</a></p><p><a href="http://rayleeya.iteye.com/blog/1956638" target="_blank" rel="noopener">Android 系统稳定性 - OOM（二）</a></p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;Ongoing,待完成，Please wait.&lt;/p&gt;
-&lt;h1 id=&quot;参考文献&quot;&gt;&lt;a href=&quot;#参考文献&quot; class=&quot;headerlink&quot; title=&quot;参考文献&quot;&gt;&lt;/a&gt;参考文献&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://blog.csdn.net
+        &lt;h1 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h1&gt;&lt;p&gt;Android的稳定性包含以下几个方面：&lt;br&gt;1.ANR&lt;br&gt;2.Crash&lt;br&gt;3.Tombstone&lt;br&gt;4.Freeze&lt;br
       
     
     </summary>
     
       <category term="Android" scheme="http://yoursite.com/categories/Android/"/>
     
-      <category term="ContentProvider" scheme="http://yoursite.com/categories/Android/ContentProvider/"/>
+      <category term="Stability" scheme="http://yoursite.com/categories/Android/Stability/"/>
+    
+      <category term="稳定性" scheme="http://yoursite.com/categories/Android/Stability/%E7%A8%B3%E5%AE%9A%E6%80%A7/"/>
     
     
       <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
     
-      <category term="ContentProvider" scheme="http://yoursite.com/tags/ContentProvider/"/>
+      <category term="Stability" scheme="http://yoursite.com/tags/Stability/"/>
+    
+      <category term="稳定性" scheme="http://yoursite.com/tags/%E7%A8%B3%E5%AE%9A%E6%80%A7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Android中BroadcastRecevier解析</title>
+    <link href="http://yoursite.com/Android-BroadcastRecevier-Analysis/"/>
+    <id>http://yoursite.com/Android-BroadcastRecevier-Analysis/</id>
+    <published>2015-12-31T16:00:00.000Z</published>
+    <updated>2018-08-08T02:29:07.413Z</updated>
+    
+    <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.</p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><ol><li>Android Broadcast广播注册和发布方式以及机制流程 <a href="https://blog.csdn.net/liu_3262296/article/details/51935316" target="_blank" rel="noopener">https://blog.csdn.net/liu_3262296/article/details/51935316</a></li><li>Android广播之发送广播的源码分析 <a href="https://blog.csdn.net/zhangyongfeiyong/article/details/52022935" target="_blank" rel="noopener">https://blog.csdn.net/zhangyongfeiyong/article/details/52022935</a></li><li>Android广播机制实现源码浅析（一） <a href="https://blog.csdn.net/hehui1860/article/details/30726609" target="_blank" rel="noopener">https://blog.csdn.net/hehui1860/article/details/30726609</a></li><li>Android广播机制实现源码浅析（二） <a href="https://blog.csdn.net/hehui1860/article/details/30727075" target="_blank" rel="noopener">https://blog.csdn.net/hehui1860/article/details/30727075</a></li><li>Android广播机制实现源码浅析（三）<a href="https://blog.csdn.net/hehui1860/article/details/30727537" target="_blank" rel="noopener">https://blog.csdn.net/hehui1860/article/details/30727537</a></li><li>BroadcastReceiver源码解析(一)  <a href="https://blog.csdn.net/tiefeng0606/article/details/51354381" target="_blank" rel="noopener">https://blog.csdn.net/tiefeng0606/article/details/51354381</a></li><li>BroadcastReceiver源码解析（二） <a href="https://blog.csdn.net/tiefeng0606/article/details/51381221" target="_blank" rel="noopener">https://blog.csdn.net/tiefeng0606/article/details/51381221</a></li></ol><p><a href="https://blog.csdn.net/luoshengyang/article/details/8923485" target="_blank" rel="noopener">那两年炼就的Android内功修养</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6730748" target="_blank" rel="noopener">Android系统中的广播（Broadcast）机制简要介绍和学习计划</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6737352" target="_blank" rel="noopener">Android应用程序注册广播接收器（registerReceiver）的过程分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6744448" target="_blank" rel="noopener">Android应用程序发送广播（sendBroadcast）的过程分析</a></p><p><a href="https://blog.csdn.net/gaugamela/article/details/53515680" target="_blank" rel="noopener">Android 7.0 ActivityManagerService(5) 广播(Broadcast)相关流程分析</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Ongoing,待完成，Please wait.&lt;/p&gt;
+&lt;h1 id=&quot;参考文献&quot;&gt;&lt;a href=&quot;#参考文献&quot; class=&quot;headerlink&quot; title=&quot;参考文献&quot;&gt;&lt;/a&gt;参考文献&lt;/h1&gt;&lt;ol&gt;
+&lt;li&gt;Android Broadcast广播注册和发布
+      
+    
+    </summary>
+    
+      <category term="Android" scheme="http://yoursite.com/categories/Android/"/>
+    
+      <category term="BroadcastRecevier" scheme="http://yoursite.com/categories/Android/BroadcastRecevier/"/>
+    
+    
+      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
+    
+      <category term="BroadcastRecevier" scheme="http://yoursite.com/tags/BroadcastRecevier/"/>
     
   </entry>
   
@@ -843,6 +909,72 @@
   </entry>
   
   <entry>
+    <title>RxJava/RxAndroid</title>
+    <link href="http://yoursite.com/RxJava-RxAndroid/"/>
+    <id>http://yoursite.com/RxJava-RxAndroid/</id>
+    <published>2015-12-31T16:00:00.000Z</published>
+    <updated>2018-07-18T13:22:12.844Z</updated>
+    
+    <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.<br><!--    Module:    第一步:需要将这些文章都看几篇    第二步：形成自己的理解    第三步：可以按照非常有用的文章，重写写一遍    第四步：纠正或者延伸别人的文章--></p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><!--    阅读卡：    文章：    时间：--><p><a href="https://gank.io/post/560e15be2dca930e00da1083" target="_blank" rel="noopener">RxJava</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Ongoing,待完成，Please wait.&lt;br&gt;&lt;!--
+    Module:
+    第一步:需要将这些文章都看几篇
+    第二步：形成自己的理解
+    第三步：可以按照非常有用的文章，重写写一遍
+    第四步：纠正或者延伸别人的文章
+--&gt;&lt;/p&gt;
+&lt;h
+      
+    
+    </summary>
+    
+      <category term="RxJava" scheme="http://yoursite.com/categories/RxJava/"/>
+    
+      <category term="RxAndroid" scheme="http://yoursite.com/categories/RxJava/RxAndroid/"/>
+    
+    
+      <category term="RxJava" scheme="http://yoursite.com/tags/RxJava/"/>
+    
+      <category term="RxAndroid" scheme="http://yoursite.com/tags/RxAndroid/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Android中ContentProvider解析</title>
+    <link href="http://yoursite.com/Android-ContentProvider-Analysis/"/>
+    <id>http://yoursite.com/Android-ContentProvider-Analysis/</id>
+    <published>2015-12-31T16:00:00.000Z</published>
+    <updated>2018-07-16T09:48:52.886Z</updated>
+    
+    <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.</p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p><a href="https://blog.csdn.net/luoshengyang/article/details/8923485" target="_blank" rel="noopener">那两年炼就的Android内功修养</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6946067" target="_blank" rel="noopener">Android应用程序组件Content Provider简要介绍和学习计划</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6950440" target="_blank" rel="noopener">Android应用程序组件Content Provider应用实例</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6963418" target="_blank" rel="noopener">Android应用程序组件Content Provider的启动过程源代码分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6967204" target="_blank" rel="noopener">Android应用程序组件Content Provider在应用程序之间共享数据的原理分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6985171" target="_blank" rel="noopener">Android应用程序组件Content Provider的共享数据更新通知机制分析</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Ongoing,待完成，Please wait.&lt;/p&gt;
+&lt;h1 id=&quot;参考文献&quot;&gt;&lt;a href=&quot;#参考文献&quot; class=&quot;headerlink&quot; title=&quot;参考文献&quot;&gt;&lt;/a&gt;参考文献&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://blog.csdn.net
+      
+    
+    </summary>
+    
+      <category term="Android" scheme="http://yoursite.com/categories/Android/"/>
+    
+      <category term="ContentProvider" scheme="http://yoursite.com/categories/Android/ContentProvider/"/>
+    
+    
+      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
+    
+      <category term="ContentProvider" scheme="http://yoursite.com/tags/ContentProvider/"/>
+    
+  </entry>
+  
+  <entry>
     <title>WordPress</title>
     <link href="http://yoursite.com/WordPress/"/>
     <id>http://yoursite.com/WordPress/</id>
@@ -864,44 +996,6 @@
     
     
       <category term="WordPress" scheme="http://yoursite.com/tags/WordPress/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Android中启动过程解析</title>
-    <link href="http://yoursite.com/A-Ongoing-Android%E5%BC%82%E5%B8%B8%E8%A7%A3%E6%9E%90/"/>
-    <id>http://yoursite.com/A-Ongoing-Android异常解析/</id>
-    <published>2015-12-31T16:00:00.000Z</published>
-    <updated>2018-07-16T09:49:06.185Z</updated>
-    
-    <content type="html"><![CDATA[<p>android系统常见异常现象有应用无响应、应用停止运行、冻屏、重启、死机</p><p>应用程序无响应：ANR</p><p>应用停止运行：  </p><p>冻屏</p><p>黑屏</p><p>重启</p><p>死机：</p><p>Ongoing,待完成，Please wait.</p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p><a href="https://blog.csdn.net/zwq1457/article/details/75529264" target="_blank" rel="noopener">Android异常分析</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;android系统常见异常现象有应用无响应、应用停止运行、冻屏、重启、死机&lt;/p&gt;
-&lt;p&gt;应用程序无响应：ANR&lt;/p&gt;
-&lt;p&gt;应用停止运行：  &lt;/p&gt;
-&lt;p&gt;冻屏&lt;/p&gt;
-&lt;p&gt;黑屏&lt;/p&gt;
-&lt;p&gt;重启&lt;/p&gt;
-&lt;p&gt;死机：&lt;/p&gt;
-&lt;p&gt;Ongoing,待完成，Ple
-      
-    
-    </summary>
-    
-      <category term="Android" scheme="http://yoursite.com/categories/Android/"/>
-    
-      <category term="启动" scheme="http://yoursite.com/categories/Android/%E5%90%AF%E5%8A%A8/"/>
-    
-    
-      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
-    
-      <category term="Zegote" scheme="http://yoursite.com/tags/Zegote/"/>
-    
-      <category term="Init" scheme="http://yoursite.com/tags/Init/"/>
     
   </entry>
   
@@ -938,6 +1032,38 @@
       <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
     
       <category term="EventBus" scheme="http://yoursite.com/tags/EventBus/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>React Native</title>
+    <link href="http://yoursite.com/React-Native/"/>
+    <id>http://yoursite.com/React-Native/</id>
+    <published>2015-12-31T16:00:00.000Z</published>
+    <updated>2018-07-19T03:04:04.994Z</updated>
+    
+    <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.<br><!--    Module:    第一步:需要将这些文章都看几篇    第二步：形成自己的理解    第三步：可以按照非常有用的文章，重写写一遍    第四步：纠正或者延伸别人的文章--></p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><!--    阅读卡：    文章：    时间：--><p><a href="https://reactnative.cn/docs/0.36/getting-started.html" target="_blank" rel="noopener">React Native简介教程</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Ongoing,待完成，Please wait.&lt;br&gt;&lt;!--
+    Module:
+    第一步:需要将这些文章都看几篇
+    第二步：形成自己的理解
+    第三步：可以按照非常有用的文章，重写写一遍
+    第四步：纠正或者延伸别人的文章
+--&gt;&lt;/p&gt;
+&lt;h
+      
+    
+    </summary>
+    
+      <category term="React Native" scheme="http://yoursite.com/categories/React-Native/"/>
+    
+    
+      <category term="React Native" scheme="http://yoursite.com/tags/React-Native/"/>
     
   </entry>
   
@@ -1005,6 +1131,38 @@
   </entry>
   
   <entry>
+    <title>Python开发</title>
+    <link href="http://yoursite.com/Python/"/>
+    <id>http://yoursite.com/Python/</id>
+    <published>2015-12-31T16:00:00.000Z</published>
+    <updated>2018-07-30T07:16:38.275Z</updated>
+    
+    <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.<br><!--    Module:    第一步:需要将这些文章都看几篇    第二步：形成自己的理解    第三步：可以按照非常有用的文章，重写写一遍    第四步：纠正或者延伸别人的文章--></p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><!--    阅读卡：    文章：    时间：--><p><a href="https://juejin.im/entry/5a6b4ae3f265da3e3245b66f?utm_source=gold_browser_extension" target="_blank" rel="noopener">Python从入门到转行</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Ongoing,待完成，Please wait.&lt;br&gt;&lt;!--
+    Module:
+    第一步:需要将这些文章都看几篇
+    第二步：形成自己的理解
+    第三步：可以按照非常有用的文章，重写写一遍
+    第四步：纠正或者延伸别人的文章
+--&gt;&lt;/p&gt;
+&lt;h
+      
+    
+    </summary>
+    
+      <category term="Python" scheme="http://yoursite.com/categories/Python/"/>
+    
+    
+      <category term="Python" scheme="http://yoursite.com/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Android中按键事件传递分析</title>
     <link href="http://yoursite.com/Android-KeyEvent-Analysis/"/>
     <id>http://yoursite.com/Android-KeyEvent-Analysis/</id>
@@ -1041,67 +1199,42 @@
   </entry>
   
   <entry>
-    <title>Kotlin</title>
-    <link href="http://yoursite.com/Kotlin/"/>
-    <id>http://yoursite.com/Kotlin/</id>
+    <title>Android中Activity解析</title>
+    <link href="http://yoursite.com/Android-Activity-Analysis/"/>
+    <id>http://yoursite.com/Android-Activity-Analysis/</id>
     <published>2015-12-31T16:00:00.000Z</published>
-    <updated>2018-08-10T03:20:31.093Z</updated>
+    <updated>2018-08-08T05:59:22.924Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="Kotlin-官方网站"><a href="#Kotlin-官方网站" class="headerlink" title="Kotlin 官方网站"></a>Kotlin 官方网站</h1><p><a href="https://developer.android.google.cn/kotlin/" target="_blank" rel="noopener">Kotlin </a><br><a href="https://android.github.io/kotlin-guides/" target="_blank" rel="noopener">Kotlin Home</a><br><a href="https://developer.android.google.cn/kotlin/resources" target="_blank" rel="noopener">Kotlin学习资源</a></p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><!--    阅读卡：    文章：    时间：-->]]></content>
+    <content type="html"><![CDATA[<p>上次我们讲到Activity的四种启动模式的时候，已经了解到一些关于task的技术，今天我再向大家介绍一下。task是一个具有栈结构的容器，可以放置多个Activity实例。启动一个应用，系统就会为之创建一个task，来放置根Activity；默认情况下，一个Activity启动另一个Activity时，两个Activity是放置在同一个task中的，后者被压入前者所在的task栈，当用户按下后退键，后者从task被弹出，前者又显示在幕前，特别是启动其他应用中的Activity时，两个Activity对用户来说就好像是属于同一个应用；系统task和task之间是互相独立的，当我们运行一个应用时，按下Home键回到主屏，启动另一个应用，这个过程中，之前的task被转移到后台，新的task被转移到前台，其根Activity也会显示到幕前，过了一会之后，在此按下Home键回到主屏，再选择之前的应用，之前的task会被转移到前台，系统仍然保留着task内的所有Activity实例，而那个新的task会被转移到后台，如果这时用户再做后退等动作，就是针对该task内部进行操作了。</p><p>我们今天就讲一下和task相关的知识，主要分一下几点：</p><p>1.Activity的affinity(亲和力)</p><p>2.Intent几种常见的flags</p><p>3.与task相关属性</p><p>affinity：</p><p>task对于Activity来说就好像它的身份证一样，可以告诉所在的task，自己属于这个task中的一员；拥有相同affinity的多个Activity理论同属于一个task，task自身的affinity决定于根Activity的affinity值。affinity在什么场合应用呢？1.根据affinity重新为Activity选择宿主task（与allowTaskReparenting属性配合工作）；2.启动一个Activity过程中Intent使用了FLAG_ACTIVITY_NEW_TASK标记，根据affinity查找或创建一个新的具有对应affinity的task。我们会在后面进行详细讲解。</p><p>默认情况下，一个应用内的所有Activity都具有相同的affinity，都是从Application（参考的taskAffinity属性）继承而来，而Application默认的affinity是中的包名，我们可以为设置taskAffinity属性值，这样可以应用到下的所有，也可以单独为某个Activity设置taskAffinity。例如：在系统自带的Browser中，package为com.android.browser，但是却自定义一个taskAffinity属性值：</p><p>Ongoing,待完成，Please wait.</p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p><a href="https://blog.csdn.net/luoshengyang/article/details/8923485" target="_blank" rel="noopener">那两年炼就的Android内功修养</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6685853" target="_blank" rel="noopener">Android应用程序的Activity启动过程简要介绍和学习计划</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6689748" target="_blank" rel="noopener">Android应用程序启动过程源代码分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6703247" target="_blank" rel="noopener">Android应用程序内部启动Activity过程（startActivity）的源代码分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6720261" target="_blank" rel="noopener">Android应用程序在新的进程中启动新的Activity的方法和过程分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6714543" target="_blank" rel="noopener">解开Android应用程序组件Activity的”singleTask”之谜</a></p><p><a href="http://www.cnblogs.com/CSU-PL/p/3794280.html" target="_blank" rel="noopener">android的task任务栈</a></p><p><a href="https://www.jianshu.com/p/9ecea420eb52" target="_blank" rel="noopener">3分钟看懂Activity启动流程</a></p><p><a href="">Android 7.0 startActivity()源码解析以及对几个问题的思考</a></p><p><a href="https://blog.csdn.net/windskier/article/details/7096521" target="_blank" rel="noopener">android Application Component研究之Activity(一)</a><br><a href="https://blog.csdn.net/a19891024/article/details/54342799" target="_blank" rel="noopener">Android instrumentation原理</a></p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h1 id=&quot;Kotlin-官方网站&quot;&gt;&lt;a href=&quot;#Kotlin-官方网站&quot; class=&quot;headerlink&quot; title=&quot;Kotlin 官方网站&quot;&gt;&lt;/a&gt;Kotlin 官方网站&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://developer.android
-      
-    
-    </summary>
-    
-      <category term="Kotlin" scheme="http://yoursite.com/categories/Kotlin/"/>
-    
-    
-      <category term="Kotlin" scheme="http://yoursite.com/tags/Kotlin/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Android基础</title>
-    <link href="http://yoursite.com/Android-Base/"/>
-    <id>http://yoursite.com/Android-Base/</id>
-    <published>2015-12-31T16:00:00.000Z</published>
-    <updated>2018-08-10T03:39:35.634Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="Android-官网相关"><a href="#Android-官网相关" class="headerlink" title="Android 官网相关"></a>Android 官网相关</h1><h2 id="Google开发技术资源"><a href="#Google开发技术资源" class="headerlink" title="Google开发技术资源"></a>Google开发技术资源</h2><p><a href="https://chinagdg.org/resource-list/" target="_blank" rel="noopener">Google开发技术资源汇总</a></p><p>##Android源码开发指导<br><a href="https://source.android.google.cn" target="_blank" rel="noopener">Android源码开发指导官网</a><br>包含Android的设置、安全性、移植、调整、兼容性、参考等几个模块.</p><p><a href="https://android-review.googlesource.com/" target="_blank" rel="noopener">Android源码</a><br>Android的源码网站，可以直接在线查看Android源码</p><p>##Android开发者网站<br><a href="https://developer.android.google.cn/" target="_blank" rel="noopener">Android开发者官网</a><br><a href="https://developer.android.google.cn/support" target="_blank" rel="noopener">Android开发者支持</a></p><p><a href="https://developer.android.google.cn/guide/" target="_blank" rel="noopener">Android技术简介-开发者指南</a><br><a href="https://developer.android.google.cn/guide/platform/" target="_blank" rel="noopener">Android平台技术</a><br><a href="https://developer.android.google.cn/reference/" target="_blank" rel="noopener">Android API</a><br><a href="https://developer.android.google.cn/samples/" target="_blank" rel="noopener">Android示例</a><br><a href="https://developer.android.google.cn/design/" target="_blank" rel="noopener">Android的材料设计</a><br><a href="https://developer.android.google.cn/jetpack/" target="_blank" rel="noopener">Android开发实用工具</a><br><a href="https://developer.android.google.cn/distribute/" target="_blank" rel="noopener">Android开发中Google Play商店</a>即Google的Android Market开发者网站<br><a href="https://developer.android.google.cn/preview/" target="_blank" rel="noopener">Android各版本功能预览</a><br><a href="https://developer.android.google.cn/studio/" target="_blank" rel="noopener">AndroidStudio官网</a><br><a href="https://developer.android.google.cn/studio/intro/" target="_blank" rel="noopener">AndroidStudio用户指南</a></p><p>Android App Bundles:Google最新推出的Apk动态打包，动态组件化的技术<br><a href="https://developer.android.google.cn/platform/technology/app-bundle/" target="_blank" rel="noopener">Android App Bundles</a><br><a href="https://developer.android.google.cn/guide/app-bundle/configure" target="_blank" rel="noopener">Android App Bundles</a></p><p><a href="https://developers.google.cn/programs/community/gdg/" target="_blank" rel="noopener">GDG Google开发者组</a></p><h2 id="GMS"><a href="#GMS" class="headerlink" title="GMS"></a>GMS</h2><p><a href="https://www.android.com/gms/" target="_blank" rel="noopener">GMS</a></p><h2 id="Google中国开发者"><a href="#Google中国开发者" class="headerlink" title="Google中国开发者"></a>Google中国开发者</h2><p><a href="https://developers.google.cn/china/" target="_blank" rel="noopener">Google中国开发者</a></p><h2 id="Android官方博客"><a href="#Android官方博客" class="headerlink" title="Android官方博客"></a>Android官方博客</h2><p><a href="https://blog.google/products/android" target="_blank" rel="noopener">Android官方博客</a> <a href="https://blog.google/products/android/rss/" target="_blank" rel="noopener">https://blog.google/products/android/rss/</a><br><a href="https://android-developers.googleblog.com/" target="_blank" rel="noopener">Android开发者博客</a><br><a href="https://security.googleblog.com/" target="_blank" rel="noopener">Google安全博客</a></p><p>#查看Android源码的方式<br>1) Google-github<br><a href="https://github.com/android/" target="_blank" rel="noopener">https://github.com/android/</a><br><a href="https://github.com/android/platform_frameworks_base/" target="_blank" rel="noopener">https://github.com/android/platform_frameworks_base/</a></p><p>2).OpenGork<br><a href="http://androidxref.com/" target="_blank" rel="noopener">http://androidxref.com/</a><br><a href="https://www.androidos.net.cn/" target="_blank" rel="noopener">https://www.androidos.net.cn/</a><br><a href="http://android.macpod.net/" target="_blank" rel="noopener">http://android.macpod.net/</a></p><p>3).Google官网 (需要翻墙，不会翻墙的同学，还是用上面两种吧)<br><a href="https://android-review.googlesource.com" target="_blank" rel="noopener">https://android-review.googlesource.com</a></p><p>4）<a href="https://aosp-mirror.github.io/" target="_blank" rel="noopener">https://aosp-mirror.github.io/</a></p><p>★<a href="../Android开发者指南阅读">Android 开发者指南阅读</a><br>★<a href="../Android开发常用网站">Android开发常用网站</a></p><h1 id="Android工具网站："><a href="#Android工具网站：" class="headerlink" title="Android工具网站："></a>Android工具网站：</h1><p><a href="http://www.androiddevtools.cn/" target="_blank" rel="noopener">http://www.androiddevtools.cn/</a><br><a href="http://www.android-studio.org/" target="_blank" rel="noopener">http://www.android-studio.org/</a></p><h1 id="Android-开发技术周报"><a href="#Android-开发技术周报" class="headerlink" title="Android 开发技术周报"></a>Android 开发技术周报</h1><p><a href="https://androidweekly.io/" target="_blank" rel="noopener">https://androidweekly.io/</a>  每周一篇最新的技术周报<br><a href="https://androidweekly.cn/" target="_blank" rel="noopener">https://androidweekly.cn/</a><br>Android 开发的技术文章、开源项目、开发工具、视频教程、Android 设计教程、设计资源等</p><h1 id="Android技术牛人"><a href="#Android技术牛人" class="headerlink" title="Android技术牛人"></a>Android技术牛人</h1><p>技术小黑屋 <a href="https://droidyue.com" target="_blank" rel="noopener">https://droidyue.com</a><br>干货铺子 <a href="https://droidyue.com/ninki/" target="_blank" rel="noopener">https://droidyue.com/ninki/</a></p><h2 id="技术牛人："><a href="#技术牛人：" class="headerlink" title="技术牛人："></a>技术牛人：</h2><p><a href="https://github.com/ColorfulCat/AndroidGuide#5-%E5%A4%A7%E7%A5%9E%E5%8D%9A%E5%AE%A2" target="_blank" rel="noopener">https://github.com/ColorfulCat/AndroidGuide#5-%E5%A4%A7%E7%A5%9E%E5%8D%9A%E5%AE%A2</a></p><p><a href="https://github.com/android-cn/android-dev-cn" target="_blank" rel="noopener">Android开发大牛部分汇总</a></p><p>罗升阳 <a href="https://blog.csdn.net/luoshengyang" target="_blank" rel="noopener">https://blog.csdn.net/luoshengyang</a></p><p>Duanqz：<br><a href="http://duanqz.github.io" target="_blank" rel="noopener">http://duanqz.github.io</a><br><a href="https://github.com/duanqz" target="_blank" rel="noopener">https://github.com/duanqz</a><br><a href="mailto:duanqz@gmail.com" target="_blank" rel="noopener">duanqz@gmail.com</a><br><a href="http://weibo.com/duanqz" target="_blank" rel="noopener">http://weibo.com/duanqz</a></p><p>阿拉神农<br><a href="http://wiki.jikexueyuan.com/project/deep-android-v2/" target="_blank" rel="noopener">http://wiki.jikexueyuan.com/project/deep-android-v2/</a><br><a href="http://blog.csdn.net/innost" target="_blank" rel="noopener">http://blog.csdn.net/innost</a><br><a href="mailto:fanping.deng@gmail.com" target="_blank" rel="noopener">fanping.deng@gmail.com</a></p><p>HenCoder：<br><a href="http://hencoder.com" target="_blank" rel="noopener">http://hencoder.com</a><br><a href="http://plus.hencoder.com" target="_blank" rel="noopener">http://plus.hencoder.com</a>  有部分MVC/MVP的知识<br><a href="https://gank.io/post/560e15be2dca930e00da1083" target="_blank" rel="noopener">https://gank.io/post/560e15be2dca930e00da1083</a><br>HenCoder Android 开发进阶：自定义 View: <a href="http://hencoder.com/ui-1-3/" target="_blank" rel="noopener">http://hencoder.com/ui-1-3/</a></p><p>xu的博客：<br><a href="https://xudeveloper.github.io" target="_blank" rel="noopener">https://xudeveloper.github.io</a><br>写了几篇源码解析，行文思路值得借鉴</p><p>技术小黑屋 androidyue<br><a href="https://droidyue.com/" target="_blank" rel="noopener">https://droidyue.com/</a></p><p>张明云<br><a href="http://zmywly8866.github.io/" target="_blank" rel="noopener">http://zmywly8866.github.io/</a><br><a href="https://github.com/zmywly8866" target="_blank" rel="noopener">https://github.com/zmywly8866</a><br><a href="https://blog.csdn.net/ekeuy" target="_blank" rel="noopener">https://blog.csdn.net/ekeuy</a></p><p>胡凯<br><a href="http://hukai.me/" target="_blank" rel="noopener">http://hukai.me/</a><br>有性能和内存优化的文章</p><p>张涛<br><a href="https://kymjs.com/" target="_blank" rel="noopener">https://kymjs.com/</a><br>Kotlin推广</p><p><a href="http://daemon369.github.io" target="_blank" rel="noopener">http://daemon369.github.io</a></p><p>GcsSloop<br><a href="https://github.com/GcsSloop/AndroidNote" target="_blank" rel="noopener">https://github.com/GcsSloop/AndroidNote</a></p><p>Android系统工程师，曾就职于IBM、Lenovo，目前就职于小米MIUI系统<br><a href="http://gityuan.com" target="_blank" rel="noopener">http://gityuan.com</a></p><p>凶残的程序员<br><a href="https://blog.csdn.net/qian520ao" target="_blank" rel="noopener">https://blog.csdn.net/qian520ao</a> 专长：Java基础、Window和View</p><p><a href="https://www.jianshu.com/u/107bd58d5bbb" target="_blank" rel="noopener">https://www.jianshu.com/u/107bd58d5bbb</a> 专长：讲Window和View、EventBus、OkHttp</p><p><a href="https://my.csdn.net/huangyabin001" target="_blank" rel="noopener">https://my.csdn.net/huangyabin001</a> </p><h1 id="值得关注的Android公众号"><a href="#值得关注的Android公众号" class="headerlink" title="值得关注的Android公众号:"></a>值得关注的Android公众号:</h1><p>Android面试启示录<br>郭霖<br>Android达摩院</p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><!--    阅读卡：    文章：    时间：-->]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;Android-官网相关&quot;&gt;&lt;a href=&quot;#Android-官网相关&quot; class=&quot;headerlink&quot; title=&quot;Android 官网相关&quot;&gt;&lt;/a&gt;Android 官网相关&lt;/h1&gt;&lt;h2 id=&quot;Google开发技术资源&quot;&gt;&lt;a href=&quot;#G
+        &lt;p&gt;上次我们讲到Activity的四种启动模式的时候，已经了解到一些关于task的技术，今天我再向大家介绍一下。task是一个具有栈结构的容器，可以放置多个Activity实例。启动一个应用，系统就会为之创建一个task，来放置根Activity；默认情况下，一个Activit
       
     
     </summary>
     
       <category term="Android" scheme="http://yoursite.com/categories/Android/"/>
     
-      <category term="Base" scheme="http://yoursite.com/categories/Android/Base/"/>
+      <category term="Activity" scheme="http://yoursite.com/categories/Android/Activity/"/>
     
     
       <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
     
-      <category term="Base" scheme="http://yoursite.com/tags/Base/"/>
+      <category term="Activity" scheme="http://yoursite.com/tags/Activity/"/>
     
   </entry>
   
   <entry>
-    <title>SELinux与SEAndroid解析</title>
-    <link href="http://yoursite.com/SELinux-SEAndroid/"/>
-    <id>http://yoursite.com/SELinux-SEAndroid/</id>
+    <title>区块链开发</title>
+    <link href="http://yoursite.com/Block-Chain/"/>
+    <id>http://yoursite.com/Block-Chain/</id>
     <published>2015-12-31T16:00:00.000Z</published>
-    <updated>2018-08-07T07:31:55.456Z</updated>
+    <updated>2018-07-30T07:07:51.247Z</updated>
     
-    <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.<br><!--    Module:    第一步:需要将这些文章都看几篇    第二步：形成自己的理解    第三步：可以按照非常有用的文章，重写写一遍    第四步：纠正或者延伸别人的文章--></p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><!--    阅读卡：    文章：    时间：--><p><a href="https://blog.csdn.net/luoshengyang/article/details/37613135" target="_blank" rel="noopener">SEAndroid安全机制框架分析</a></p><p><a href="https://my.csdn.net/huangyabin001" target="_blank" rel="noopener">SELinux学习</a></p>]]></content>
+    <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.<br><!--    Module:    第一步:需要将这些文章都看几篇    第二步：形成自己的理解    第三步：可以按照非常有用的文章，重写写一遍    第四步：纠正或者延伸别人的文章--></p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><!--    阅读卡：    文章：    时间：--><p><a href="https://juejin.im/entry/5a95511cf265da4e7d6070d7?utm_source=gold_browser_extension" target="_blank" rel="noopener">区块链技术开发相关资料 - 介绍、教程、项目、资料、应用</a></p>]]></content>
     
     <summary type="html">
     
@@ -1119,50 +1252,14 @@
     
     </summary>
     
-      <category term="SEAndroid" scheme="http://yoursite.com/categories/SEAndroid/"/>
+      <category term="区块链" scheme="http://yoursite.com/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
     
-      <category term="SELinux" scheme="http://yoursite.com/categories/SEAndroid/SELinux/"/>
-    
-    
-      <category term="SEAndroid" scheme="http://yoursite.com/tags/SEAndroid/"/>
-    
-      <category term="SELinux" scheme="http://yoursite.com/tags/SELinux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>RxJava/RxAndroid</title>
-    <link href="http://yoursite.com/RxJava-RxAndroid/"/>
-    <id>http://yoursite.com/RxJava-RxAndroid/</id>
-    <published>2015-12-31T16:00:00.000Z</published>
-    <updated>2018-07-18T13:22:12.844Z</updated>
-    
-    <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.<br><!--    Module:    第一步:需要将这些文章都看几篇    第二步：形成自己的理解    第三步：可以按照非常有用的文章，重写写一遍    第四步：纠正或者延伸别人的文章--></p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><!--    阅读卡：    文章：    时间：--><p><a href="https://gank.io/post/560e15be2dca930e00da1083" target="_blank" rel="noopener">RxJava</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;Ongoing,待完成，Please wait.&lt;br&gt;&lt;!--
-    Module:
-    第一步:需要将这些文章都看几篇
-    第二步：形成自己的理解
-    第三步：可以按照非常有用的文章，重写写一遍
-    第四步：纠正或者延伸别人的文章
---&gt;&lt;/p&gt;
-&lt;h
-      
-    
-    </summary>
-    
-      <category term="RxJava" scheme="http://yoursite.com/categories/RxJava/"/>
-    
-      <category term="RxAndroid" scheme="http://yoursite.com/categories/RxJava/RxAndroid/"/>
+      <category term="BlockChain" scheme="http://yoursite.com/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/BlockChain/"/>
     
     
-      <category term="RxJava" scheme="http://yoursite.com/tags/RxJava/"/>
+      <category term="区块链" scheme="http://yoursite.com/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
     
-      <category term="RxAndroid" scheme="http://yoursite.com/tags/RxAndroid/"/>
+      <category term="BlockChain" scheme="http://yoursite.com/tags/BlockChain/"/>
     
   </entry>
   
@@ -1295,104 +1392,6 @@
   </entry>
   
   <entry>
-    <title>Android中Activity解析</title>
-    <link href="http://yoursite.com/Android-Activity-Analysis/"/>
-    <id>http://yoursite.com/Android-Activity-Analysis/</id>
-    <published>2015-12-31T16:00:00.000Z</published>
-    <updated>2018-08-08T05:59:22.924Z</updated>
-    
-    <content type="html"><![CDATA[<p>上次我们讲到Activity的四种启动模式的时候，已经了解到一些关于task的技术，今天我再向大家介绍一下。task是一个具有栈结构的容器，可以放置多个Activity实例。启动一个应用，系统就会为之创建一个task，来放置根Activity；默认情况下，一个Activity启动另一个Activity时，两个Activity是放置在同一个task中的，后者被压入前者所在的task栈，当用户按下后退键，后者从task被弹出，前者又显示在幕前，特别是启动其他应用中的Activity时，两个Activity对用户来说就好像是属于同一个应用；系统task和task之间是互相独立的，当我们运行一个应用时，按下Home键回到主屏，启动另一个应用，这个过程中，之前的task被转移到后台，新的task被转移到前台，其根Activity也会显示到幕前，过了一会之后，在此按下Home键回到主屏，再选择之前的应用，之前的task会被转移到前台，系统仍然保留着task内的所有Activity实例，而那个新的task会被转移到后台，如果这时用户再做后退等动作，就是针对该task内部进行操作了。</p><p>我们今天就讲一下和task相关的知识，主要分一下几点：</p><p>1.Activity的affinity(亲和力)</p><p>2.Intent几种常见的flags</p><p>3.与task相关属性</p><p>affinity：</p><p>task对于Activity来说就好像它的身份证一样，可以告诉所在的task，自己属于这个task中的一员；拥有相同affinity的多个Activity理论同属于一个task，task自身的affinity决定于根Activity的affinity值。affinity在什么场合应用呢？1.根据affinity重新为Activity选择宿主task（与allowTaskReparenting属性配合工作）；2.启动一个Activity过程中Intent使用了FLAG_ACTIVITY_NEW_TASK标记，根据affinity查找或创建一个新的具有对应affinity的task。我们会在后面进行详细讲解。</p><p>默认情况下，一个应用内的所有Activity都具有相同的affinity，都是从Application（参考的taskAffinity属性）继承而来，而Application默认的affinity是中的包名，我们可以为设置taskAffinity属性值，这样可以应用到下的所有，也可以单独为某个Activity设置taskAffinity。例如：在系统自带的Browser中，package为com.android.browser，但是却自定义一个taskAffinity属性值：</p><p>Ongoing,待完成，Please wait.</p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p><a href="https://blog.csdn.net/luoshengyang/article/details/8923485" target="_blank" rel="noopener">那两年炼就的Android内功修养</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6685853" target="_blank" rel="noopener">Android应用程序的Activity启动过程简要介绍和学习计划</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6689748" target="_blank" rel="noopener">Android应用程序启动过程源代码分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6703247" target="_blank" rel="noopener">Android应用程序内部启动Activity过程（startActivity）的源代码分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6720261" target="_blank" rel="noopener">Android应用程序在新的进程中启动新的Activity的方法和过程分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6714543" target="_blank" rel="noopener">解开Android应用程序组件Activity的”singleTask”之谜</a></p><p><a href="http://www.cnblogs.com/CSU-PL/p/3794280.html" target="_blank" rel="noopener">android的task任务栈</a></p><p><a href="https://www.jianshu.com/p/9ecea420eb52" target="_blank" rel="noopener">3分钟看懂Activity启动流程</a></p><p><a href="">Android 7.0 startActivity()源码解析以及对几个问题的思考</a></p><p><a href="https://blog.csdn.net/windskier/article/details/7096521" target="_blank" rel="noopener">android Application Component研究之Activity(一)</a><br><a href="https://blog.csdn.net/a19891024/article/details/54342799" target="_blank" rel="noopener">Android instrumentation原理</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;上次我们讲到Activity的四种启动模式的时候，已经了解到一些关于task的技术，今天我再向大家介绍一下。task是一个具有栈结构的容器，可以放置多个Activity实例。启动一个应用，系统就会为之创建一个task，来放置根Activity；默认情况下，一个Activit
-      
-    
-    </summary>
-    
-      <category term="Android" scheme="http://yoursite.com/categories/Android/"/>
-    
-      <category term="Activity" scheme="http://yoursite.com/categories/Android/Activity/"/>
-    
-    
-      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
-    
-      <category term="Activity" scheme="http://yoursite.com/tags/Activity/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Android的稳定性</title>
-    <link href="http://yoursite.com/Android-Stability/"/>
-    <id>http://yoursite.com/Android-Stability/</id>
-    <published>2015-12-31T16:00:00.000Z</published>
-    <updated>2018-08-10T01:46:12.605Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>Android的稳定性包含以下几个方面：<br>1.ANR<br>2.Crash<br>3.Tombstone<br>4.Freeze<br>5.黑屏<br>6.冻屏</p><p>#稳定性问题分析以及需要的相关log<br>/data/anr/traces.txt<br>/data/system/dropbox<br>/data/tombstones</p><p><a href="https://www.aliyun.com/jiaocheng/2860.html" target="_blank" rel="noopener">Android系统各种稳定性问题所需要的log</a><br><a href="https://blog.csdn.net/u014134180/article/details/78122529" target="_blank" rel="noopener">Android系统各种稳定性问题所需要的log</a><br>adb shell bugreport &gt; bugreport.txt<br>adb shell dumpstate &gt; dumpstate.log  (this command will produce trace log about all process then u need adb pull /data/anr to collect the trace log)<br>adb shell dumpsys &gt; dumpsys.log </p><p>adb pull /data/tombstones (All log file time must be consistent with issue occurred time, it needs to clear /data/anr &amp;; /data/tombstones after stability issue occu)</p><p>System Freeze/ Touch panel freeze系统卡死/屏幕卡死</p><p>adb shell getevent  此命令可以获取实时触屏以及按键事件log<br>adb shell getevent -rtl /dev/input/event0 按键事件 </p><p>open echo w &gt; /proc/sysrq-trigger when capture dmesg and bugreport log as follows:<br>adb root<br>adb remount<br>adb shell<br>echo w &gt; /proc/sysrq-trigger<br>&amp;; then exit adb shell, then collect bugreport<br>adb shell bugreport &gt; bugreport.txt<br>adb shell kmesg &gt; kmesg.txt 没有kmesg<br><a href="https://blog.csdn.net/njuitjf/article/details/12045527" target="_blank" rel="noopener">/proc/sysrq-trigger文件的强大功能</a><br><a href="https://www.cnblogs.com/justin-y-lin/p/5424555.html" target="_blank" rel="noopener">Linux内核调试方法总结之sysrq</a><br><a href="https://blog.csdn.net/beckdon/article/details/41313713" target="_blank" rel="noopener">/proc/sysrq-trigger详解</a></p><p>adb pull /d/binder/ .  所有的binder信息</p><p>adb shell dumpsys window &gt; dump_window.txt </p><p>adb shell cat proc/meminfo &gt; meminfo.txt </p><p>adb shell procrank &gt; procrank.txt </p><p>adb shell top &gt; top.txt </p><p>##检查adb,TP,显卡驱动,按键是否正常工作<br>•Adb workable or not, ANR or not<br>•CTP workable or not -&gt;<br>touch screen and observe<br>the output of “adb shell getevent”.<br>•Display driver workable or not -&gt;<br>Use the screencast to see<br>if the screen can be displayed<br>•Power key/volume key work or not?<br>Menu/back/home key work or not? </p><p>##触发一次Dump，不同平台方式不一样<br>It’s better to trigger a ram dump<br>Before test:<br>adb root<br>adb shell “echo 0x843 &gt; /d/spmi/spmi-0/address”<br>adb shell “echo 0x80 &gt; /d/spmi/spmi-0/data”<br>Then long press power key more than 10~30s<br>could trigger a dump.<br>If device is rebooted, it needs to set again. </p><h2 id="Black-screen-黑屏"><a href="#Black-screen-黑屏" class="headerlink" title="Black screen 黑屏"></a>Black screen 黑屏</h2><p><a href="https://blog.csdn.net/zhangbijun1230/article/details/80739233" target="_blank" rel="noopener">Android系统（110）—稳定性问题总结</a></p><h1 id="ANR"><a href="#ANR" class="headerlink" title="ANR"></a>ANR</h1><p>思路： 机制 –&gt; 触发原因 –&gt; 如何避免 –&gt; 如何分析和解决问题<br><a href="https://blog.csdn.net/wei_lei/article/details/70311702" target="_blank" rel="noopener">Android稳定性专题之ANR</a></p><h1 id="Crash"><a href="#Crash" class="headerlink" title="Crash"></a>Crash</h1><p><a href="https://blog.csdn.net/wei_lei/article/details/69868280" target="_blank" rel="noopener">Android稳定性专题之CRASH</a><br><a href="https://blog.csdn.net/weilaideta/article/details/51348251" target="_blank" rel="noopener">Android系统稳定性—-Crash</a></p><h1 id="Watchdog"><a href="#Watchdog" class="headerlink" title="Watchdog"></a>Watchdog</h1><p>机制/原理 –&gt; 实现方式</p><p><a href="http://rayleeya.iteye.com/blog/1963408" target="_blank" rel="noopener">系统进程的Watchdog</a><br><a href="https://blog.csdn.net/yeqishi/article/details/50262087" target="_blank" rel="noopener">Android Watchdog框架看门狗解析、死锁应用与改造（上）</a><br><a href="https://blog.csdn.net/yeqishi/article/details/50262699" target="_blank" rel="noopener">Android Watchdog框架看门狗解析、死锁应用与改造（下）</a><br><a href="https://blog.csdn.net/lezhang123/article/details/72537647" target="_blank" rel="noopener">Watchdog机制以及问题分析</a><br><a href="http://duanqz.github.io/2015-10-12-Watchdog-Analysis#section-1" target="_blank" rel="noopener">Watchdog机制以及问题分析</a><br><a href="https://blog.csdn.net/wd229047557/article/details/79451969" target="_blank" rel="noopener">Android Watchdog机制介绍与分析</a></p><h1 id="Tombstone"><a href="#Tombstone" class="headerlink" title="Tombstone"></a>Tombstone</h1><h1 id="Panic"><a href="#Panic" class="headerlink" title="Panic"></a>Panic</h1><h1 id="OOM"><a href="#OOM" class="headerlink" title="OOM"></a>OOM</h1><h1 id="稳定性测试"><a href="#稳定性测试" class="headerlink" title="稳定性测试"></a>稳定性测试</h1><p><a href="https://blog.csdn.net/ljd2038/article/details/54561511" target="_blank" rel="noopener">Android稳定性测试工具Monkey的使用</a><br><a href="https://blog.csdn.net/tobetheender/article/details/54693874" target="_blank" rel="noopener">Android稳定性测试– Monkey二次开发</a></p><!--    Module:    第一步:需要将这些文章都看几篇    第二步：形成自己的理解    第三步：可以按照非常有用的文章，重写写一遍    第四步：纠正或者延伸别人的文章--><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><!--    阅读卡：    文章：    时间：--><p><a href="https://www.jianshu.com/p/32e6bde42185" target="_blank" rel="noopener">安卓App稳定性之旅</a></p><p><a href="http://rayleeya.iteye.com/blog/1956638" target="_blank" rel="noopener">Android 系统稳定性 - OOM（二）</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h1&gt;&lt;p&gt;Android的稳定性包含以下几个方面：&lt;br&gt;1.ANR&lt;br&gt;2.Crash&lt;br&gt;3.Tombstone&lt;br&gt;4.Freeze&lt;br
-      
-    
-    </summary>
-    
-      <category term="Android" scheme="http://yoursite.com/categories/Android/"/>
-    
-      <category term="Stability" scheme="http://yoursite.com/categories/Android/Stability/"/>
-    
-      <category term="稳定性" scheme="http://yoursite.com/categories/Android/Stability/%E7%A8%B3%E5%AE%9A%E6%80%A7/"/>
-    
-    
-      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
-    
-      <category term="Stability" scheme="http://yoursite.com/tags/Stability/"/>
-    
-      <category term="稳定性" scheme="http://yoursite.com/tags/%E7%A8%B3%E5%AE%9A%E6%80%A7/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Android中Binder机制解析</title>
-    <link href="http://yoursite.com/Android-Binder-Analysis/"/>
-    <id>http://yoursite.com/Android-Binder-Analysis/</id>
-    <published>2015-12-31T16:00:00.000Z</published>
-    <updated>2018-07-18T13:03:43.255Z</updated>
-    
-    <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.<br><!--    Module:    第一步:需要将这些文章都看几篇    第二步：形成自己的理解    第三步：可以按照非常有用的文章，重写写一遍    第四步：纠正或者延伸别人的文章--></p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><!--    阅读卡：    文章：    时间：--><p>老罗系列<br><a href="https://blog.csdn.net/luoshengyang/article/details/8923485" target="_blank" rel="noopener">那两年炼就的Android内功修养</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6618363" target="_blank" rel="noopener">Android进程间通信（IPC）机制Binder简要介绍和学习计划</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6621566" target="_blank" rel="noopener">浅谈Service Manager成为Android进程间通信（IPC）机制Binder守护进程之路</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6627260" target="_blank" rel="noopener">浅谈Android系统进程间通信（IPC）机制Binder中的Server和Client获得Service Manager接口之路</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6629298" target="_blank" rel="noopener">Android系统进程间通信（IPC）机制Binder中的Server启动过程源代码分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6633311" target="_blank" rel="noopener">Android系统进程间通信（IPC）机制Binder中的Client获得Server远程接口过程源代码分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6642463" target="_blank" rel="noopener">Android系统进程间通信Binder机制在应用程序框架层的Java接口源代码分析</a></p><p><a href="https://blog.csdn.net/qian520ao/article/details/78089877" target="_blank" rel="noopener">Android Binder之应用层总结与分析</a><br><a href="https://cloud.tencent.com/developer/article/1005763" target="_blank" rel="noopener">Binder 总体架构及相关代码浅析</a><br><a href="http://weishu.me/2016/01/12/binder-index-for-newer/" target="_blank" rel="noopener">Binder学习指南</a><br><a href="https://mp.weixin.qq.com/s?__biz=MzA5MzI3NjE2MA==&amp;mid=2650241680&amp;idx=1&amp;sn=14648a37ff1e7844e33cd548b9ec5a71&amp;chksm=88638bffbf1402e9b6dbe6b186bc619a341fc5fe0fd2aefd4a7dd3ac70d0539573c48863de0f#rd" target="_blank" rel="noopener">带你一起剖析Android AIDL跨进程通信的实现原理</a></p><p>小米系统工程师–Gityuan 系列<br><a href="http://gityuan.com/2015/10/31/binder-prepare/" target="_blank" rel="noopener">Binder系列—开篇</a><br><a href="http://gityuan.com/2015/11/01/binder-driver/" target="_blank" rel="noopener">Binder系列1—Binder Driver初探</a><br><a href="http://gityuan.com/2015/11/02/binder-driver-2/" target="_blank" rel="noopener">Binder系列2—Binder Driver再探</a><br><a href="http://gityuan.com/2015/11/07/binder-start-sm/" target="_blank" rel="noopener">Binder系列3—启动ServiceManager</a><br><a href="http://gityuan.com/2015/11/08/binder-get-sm/" target="_blank" rel="noopener">Binder系列4—获取ServiceManager</a><br><a href="http://gityuan.com/2015/11/14/binder-add-service/" target="_blank" rel="noopener">Binder系列5—注册服务(addService)</a><br><a href="http://gityuan.com/2015/11/15/binder-get-service/" target="_blank" rel="noopener">Binder系列6—获取服务(getService)</a><br><a href="http://gityuan.com/2015/11/21/binder-framework/" target="_blank" rel="noopener">Binder系列7—framework层分析</a><br><a href="http://gityuan.com/2015/11/22/binder-use/" target="_blank" rel="noopener">Binder系列8—如何使用Binder</a><br><a href="http://gityuan.com/2015/11/23/binder-aidl/" target="_blank" rel="noopener">Binder系列9—如何使用AIDL</a><br><a href="http://gityuan.com/2015/11/28/binder-summary/" target="_blank" rel="noopener">Binder系列10—总结</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;Ongoing,待完成，Please wait.&lt;br&gt;&lt;!--
-    Module:
-    第一步:需要将这些文章都看几篇
-    第二步：形成自己的理解
-    第三步：可以按照非常有用的文章，重写写一遍
-    第四步：纠正或者延伸别人的文章
---&gt;&lt;/p&gt;
-&lt;h
-      
-    
-    </summary>
-    
-      <category term="Android" scheme="http://yoursite.com/categories/Android/"/>
-    
-      <category term="Binder" scheme="http://yoursite.com/categories/Android/Binder/"/>
-    
-    
-      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
-    
-      <category term="Binder" scheme="http://yoursite.com/tags/Binder/"/>
-    
-  </entry>
-  
-  <entry>
     <title>给技术人员一些技术以外的建议</title>
     <link href="http://yoursite.com/IT-Advice-1/"/>
     <id>http://yoursite.com/IT-Advice-1/</id>
@@ -1418,11 +1417,114 @@
       <category term="Advice" scheme="http://yoursite.com/categories/IT/%E5%BB%BA%E8%AE%AE/Advice/"/>
     
     
-      <category term="Advice" scheme="http://yoursite.com/tags/Advice/"/>
-    
       <category term="IT" scheme="http://yoursite.com/tags/IT/"/>
     
       <category term="建议" scheme="http://yoursite.com/tags/%E5%BB%BA%E8%AE%AE/"/>
+    
+      <category term="Advice" scheme="http://yoursite.com/tags/Advice/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Android中启动过程解析</title>
+    <link href="http://yoursite.com/A-Ongoing-Android%E5%BC%82%E5%B8%B8%E8%A7%A3%E6%9E%90/"/>
+    <id>http://yoursite.com/A-Ongoing-Android异常解析/</id>
+    <published>2015-12-31T16:00:00.000Z</published>
+    <updated>2018-07-16T09:49:06.185Z</updated>
+    
+    <content type="html"><![CDATA[<p>android系统常见异常现象有应用无响应、应用停止运行、冻屏、重启、死机</p><p>应用程序无响应：ANR</p><p>应用停止运行：  </p><p>冻屏</p><p>黑屏</p><p>重启</p><p>死机：</p><p>Ongoing,待完成，Please wait.</p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p><a href="https://blog.csdn.net/zwq1457/article/details/75529264" target="_blank" rel="noopener">Android异常分析</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;android系统常见异常现象有应用无响应、应用停止运行、冻屏、重启、死机&lt;/p&gt;
+&lt;p&gt;应用程序无响应：ANR&lt;/p&gt;
+&lt;p&gt;应用停止运行：  &lt;/p&gt;
+&lt;p&gt;冻屏&lt;/p&gt;
+&lt;p&gt;黑屏&lt;/p&gt;
+&lt;p&gt;重启&lt;/p&gt;
+&lt;p&gt;死机：&lt;/p&gt;
+&lt;p&gt;Ongoing,待完成，Ple
+      
+    
+    </summary>
+    
+      <category term="Android" scheme="http://yoursite.com/categories/Android/"/>
+    
+      <category term="启动" scheme="http://yoursite.com/categories/Android/%E5%90%AF%E5%8A%A8/"/>
+    
+    
+      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
+    
+      <category term="Zegote" scheme="http://yoursite.com/tags/Zegote/"/>
+    
+      <category term="Init" scheme="http://yoursite.com/tags/Init/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Android</title>
+    <link href="http://yoursite.com/Android-Base/"/>
+    <id>http://yoursite.com/Android-Base/</id>
+    <published>2015-12-31T16:00:00.000Z</published>
+    <updated>2018-08-10T03:48:58.016Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Android-官网相关"><a href="#Android-官网相关" class="headerlink" title="Android 官网相关"></a>Android 官网相关</h1><h2 id="Google开发技术资源"><a href="#Google开发技术资源" class="headerlink" title="Google开发技术资源"></a>Google开发技术资源</h2><p><a href="https://chinagdg.org/resource-list/" target="_blank" rel="noopener">Google开发技术资源汇总</a></p><p>##Android源码开发指导<br><a href="https://source.android.google.cn" target="_blank" rel="noopener">Android源码开发指导官网</a><br>包含Android的设置、安全性、移植、调整、兼容性、参考等几个模块.</p><p><a href="https://android-review.googlesource.com/" target="_blank" rel="noopener">Android源码</a><br>Android的源码网站，可以直接在线查看Android源码</p><p>##Android开发者网站<br><a href="https://developer.android.google.cn/" target="_blank" rel="noopener">Android开发者官网</a><br><a href="https://developer.android.google.cn/support" target="_blank" rel="noopener">Android开发者支持</a></p><p><a href="https://developer.android.google.cn/guide/" target="_blank" rel="noopener">Android技术简介-开发者指南</a><br><a href="https://developer.android.google.cn/guide/platform/" target="_blank" rel="noopener">Android平台技术</a><br><a href="https://developer.android.google.cn/reference/" target="_blank" rel="noopener">Android API</a><br><a href="https://developer.android.google.cn/samples/" target="_blank" rel="noopener">Android示例</a><br><a href="https://developer.android.google.cn/design/" target="_blank" rel="noopener">Android的材料设计</a><br><a href="https://developer.android.google.cn/jetpack/" target="_blank" rel="noopener">Android开发实用工具</a><br><a href="https://developer.android.google.cn/distribute/" target="_blank" rel="noopener">Android开发中Google Play商店</a>即Google的Android Market开发者网站<br><a href="https://developer.android.google.cn/preview/" target="_blank" rel="noopener">Android各版本功能预览</a><br><a href="https://developer.android.google.cn/studio/" target="_blank" rel="noopener">AndroidStudio官网</a><br><a href="https://developer.android.google.cn/studio/intro/" target="_blank" rel="noopener">AndroidStudio用户指南</a></p><p>Android App Bundles:Google最新推出的Apk动态打包，动态组件化的技术<br><a href="https://developer.android.google.cn/platform/technology/app-bundle/" target="_blank" rel="noopener">Android App Bundles</a><br><a href="https://developer.android.google.cn/guide/app-bundle/configure" target="_blank" rel="noopener">Android App Bundles</a></p><p><a href="https://developers.google.cn/programs/community/gdg/" target="_blank" rel="noopener">GDG Google开发者组</a></p><h2 id="GMS"><a href="#GMS" class="headerlink" title="GMS"></a>GMS</h2><p><a href="https://www.android.com/gms/" target="_blank" rel="noopener">GMS</a></p><h2 id="Google中国开发者"><a href="#Google中国开发者" class="headerlink" title="Google中国开发者"></a>Google中国开发者</h2><p><a href="https://developers.google.cn/china/" target="_blank" rel="noopener">Google中国开发者</a></p><h2 id="Android官方博客"><a href="#Android官方博客" class="headerlink" title="Android官方博客"></a>Android官方博客</h2><p><a href="https://blog.google/products/android" target="_blank" rel="noopener">Android官方博客</a> <a href="https://blog.google/products/android/rss/" target="_blank" rel="noopener">https://blog.google/products/android/rss/</a><br><a href="https://android-developers.googleblog.com/" target="_blank" rel="noopener">Android开发者博客</a><br><a href="https://security.googleblog.com/" target="_blank" rel="noopener">Google安全博客</a></p><p>#查看Android源码的方式<br>1) Google-github<br><a href="https://github.com/android/" target="_blank" rel="noopener">https://github.com/android/</a><br><a href="https://github.com/android/platform_frameworks_base/" target="_blank" rel="noopener">https://github.com/android/platform_frameworks_base/</a></p><p>2).OpenGork<br><a href="http://androidxref.com/" target="_blank" rel="noopener">http://androidxref.com/</a><br><a href="https://www.androidos.net.cn/" target="_blank" rel="noopener">https://www.androidos.net.cn/</a><br><a href="http://android.macpod.net/" target="_blank" rel="noopener">http://android.macpod.net/</a></p><p>3).Google官网 (需要翻墙，不会翻墙的同学，还是用上面两种吧)<br><a href="https://android-review.googlesource.com" target="_blank" rel="noopener">https://android-review.googlesource.com</a></p><p>4）<a href="https://aosp-mirror.github.io/" target="_blank" rel="noopener">https://aosp-mirror.github.io/</a></p><p>★<a href="../Android开发者指南阅读">Android 开发者指南阅读</a><br>★<a href="../Android开发常用网站">Android开发常用网站</a></p><h1 id="Android工具网站："><a href="#Android工具网站：" class="headerlink" title="Android工具网站："></a>Android工具网站：</h1><p><a href="http://www.androiddevtools.cn/" target="_blank" rel="noopener">http://www.androiddevtools.cn/</a><br><a href="http://www.android-studio.org/" target="_blank" rel="noopener">http://www.android-studio.org/</a></p><h1 id="Android-开发技术周报"><a href="#Android-开发技术周报" class="headerlink" title="Android 开发技术周报"></a>Android 开发技术周报</h1><p><a href="https://androidweekly.io/" target="_blank" rel="noopener">https://androidweekly.io/</a>  每周一篇最新的技术周报<br><a href="https://androidweekly.cn/" target="_blank" rel="noopener">https://androidweekly.cn/</a><br>Android 开发的技术文章、开源项目、开发工具、视频教程、Android 设计教程、设计资源等</p><h1 id="Android技术牛人"><a href="#Android技术牛人" class="headerlink" title="Android技术牛人"></a>Android技术牛人</h1><p>技术小黑屋 <a href="https://droidyue.com" target="_blank" rel="noopener">https://droidyue.com</a><br>干货铺子 <a href="https://droidyue.com/ninki/" target="_blank" rel="noopener">https://droidyue.com/ninki/</a></p><h2 id="技术牛人："><a href="#技术牛人：" class="headerlink" title="技术牛人："></a>技术牛人：</h2><p><a href="https://github.com/ColorfulCat/AndroidGuide#5-%E5%A4%A7%E7%A5%9E%E5%8D%9A%E5%AE%A2" target="_blank" rel="noopener">https://github.com/ColorfulCat/AndroidGuide#5-%E5%A4%A7%E7%A5%9E%E5%8D%9A%E5%AE%A2</a></p><p><a href="https://github.com/android-cn/android-dev-cn" target="_blank" rel="noopener">Android开发大牛部分汇总</a></p><p>罗升阳 <a href="https://blog.csdn.net/luoshengyang" target="_blank" rel="noopener">https://blog.csdn.net/luoshengyang</a></p><p>Duanqz：<br><a href="http://duanqz.github.io" target="_blank" rel="noopener">http://duanqz.github.io</a><br><a href="https://github.com/duanqz" target="_blank" rel="noopener">https://github.com/duanqz</a><br><a href="mailto:duanqz@gmail.com" target="_blank" rel="noopener">duanqz@gmail.com</a><br><a href="http://weibo.com/duanqz" target="_blank" rel="noopener">http://weibo.com/duanqz</a></p><p>阿拉神农<br><a href="http://wiki.jikexueyuan.com/project/deep-android-v2/" target="_blank" rel="noopener">http://wiki.jikexueyuan.com/project/deep-android-v2/</a><br><a href="http://blog.csdn.net/innost" target="_blank" rel="noopener">http://blog.csdn.net/innost</a><br><a href="mailto:fanping.deng@gmail.com" target="_blank" rel="noopener">fanping.deng@gmail.com</a></p><p>HenCoder：<br><a href="http://hencoder.com" target="_blank" rel="noopener">http://hencoder.com</a><br><a href="http://plus.hencoder.com" target="_blank" rel="noopener">http://plus.hencoder.com</a>  有部分MVC/MVP的知识<br><a href="https://gank.io/post/560e15be2dca930e00da1083" target="_blank" rel="noopener">https://gank.io/post/560e15be2dca930e00da1083</a><br>HenCoder Android 开发进阶：自定义 View: <a href="http://hencoder.com/ui-1-3/" target="_blank" rel="noopener">http://hencoder.com/ui-1-3/</a></p><p>xu的博客：<br><a href="https://xudeveloper.github.io" target="_blank" rel="noopener">https://xudeveloper.github.io</a><br>写了几篇源码解析，行文思路值得借鉴</p><p>技术小黑屋 androidyue<br><a href="https://droidyue.com/" target="_blank" rel="noopener">https://droidyue.com/</a></p><p>张明云<br><a href="http://zmywly8866.github.io/" target="_blank" rel="noopener">http://zmywly8866.github.io/</a><br><a href="https://github.com/zmywly8866" target="_blank" rel="noopener">https://github.com/zmywly8866</a><br><a href="https://blog.csdn.net/ekeuy" target="_blank" rel="noopener">https://blog.csdn.net/ekeuy</a></p><p>胡凯<br><a href="http://hukai.me/" target="_blank" rel="noopener">http://hukai.me/</a><br>有性能和内存优化的文章</p><p>张涛<br><a href="https://kymjs.com/" target="_blank" rel="noopener">https://kymjs.com/</a><br>Kotlin推广</p><p><a href="http://daemon369.github.io" target="_blank" rel="noopener">http://daemon369.github.io</a></p><p>GcsSloop<br><a href="https://github.com/GcsSloop/AndroidNote" target="_blank" rel="noopener">https://github.com/GcsSloop/AndroidNote</a></p><p>Android系统工程师，曾就职于IBM、Lenovo，目前就职于小米MIUI系统<br><a href="http://gityuan.com" target="_blank" rel="noopener">http://gityuan.com</a></p><p>凶残的程序员<br><a href="https://blog.csdn.net/qian520ao" target="_blank" rel="noopener">https://blog.csdn.net/qian520ao</a> 专长：Java基础、Window和View</p><p><a href="https://www.jianshu.com/u/107bd58d5bbb" target="_blank" rel="noopener">https://www.jianshu.com/u/107bd58d5bbb</a> 专长：讲Window和View、EventBus、OkHttp</p><p><a href="https://my.csdn.net/huangyabin001" target="_blank" rel="noopener">https://my.csdn.net/huangyabin001</a> </p><h1 id="值得关注的Android公众号"><a href="#值得关注的Android公众号" class="headerlink" title="值得关注的Android公众号:"></a>值得关注的Android公众号:</h1><p>Android面试启示录<br>郭霖<br>Android达摩院</p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><!--    阅读卡：    文章：    时间：-->]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Android-官网相关&quot;&gt;&lt;a href=&quot;#Android-官网相关&quot; class=&quot;headerlink&quot; title=&quot;Android 官网相关&quot;&gt;&lt;/a&gt;Android 官网相关&lt;/h1&gt;&lt;h2 id=&quot;Google开发技术资源&quot;&gt;&lt;a href=&quot;#G
+      
+    
+    </summary>
+    
+      <category term="Android" scheme="http://yoursite.com/categories/Android/"/>
+    
+      <category term="Base" scheme="http://yoursite.com/categories/Android/Base/"/>
+    
+    
+      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
+    
+      <category term="Base" scheme="http://yoursite.com/tags/Base/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SELinux与SEAndroid解析</title>
+    <link href="http://yoursite.com/SELinux-SEAndroid/"/>
+    <id>http://yoursite.com/SELinux-SEAndroid/</id>
+    <published>2015-12-31T16:00:00.000Z</published>
+    <updated>2018-08-07T07:31:55.456Z</updated>
+    
+    <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.<br><!--    Module:    第一步:需要将这些文章都看几篇    第二步：形成自己的理解    第三步：可以按照非常有用的文章，重写写一遍    第四步：纠正或者延伸别人的文章--></p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><!--    阅读卡：    文章：    时间：--><p><a href="https://blog.csdn.net/luoshengyang/article/details/37613135" target="_blank" rel="noopener">SEAndroid安全机制框架分析</a></p><p><a href="https://my.csdn.net/huangyabin001" target="_blank" rel="noopener">SELinux学习</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Ongoing,待完成，Please wait.&lt;br&gt;&lt;!--
+    Module:
+    第一步:需要将这些文章都看几篇
+    第二步：形成自己的理解
+    第三步：可以按照非常有用的文章，重写写一遍
+    第四步：纠正或者延伸别人的文章
+--&gt;&lt;/p&gt;
+&lt;h
+      
+    
+    </summary>
+    
+      <category term="SEAndroid" scheme="http://yoursite.com/categories/SEAndroid/"/>
+    
+      <category term="SELinux" scheme="http://yoursite.com/categories/SEAndroid/SELinux/"/>
+    
+    
+      <category term="SEAndroid" scheme="http://yoursite.com/tags/SEAndroid/"/>
+    
+      <category term="SELinux" scheme="http://yoursite.com/tags/SELinux/"/>
     
   </entry>
   
@@ -1457,34 +1559,27 @@
   </entry>
   
   <entry>
-    <title>Android中启动过程解析</title>
-    <link href="http://yoursite.com/Android-Boot-Process/"/>
-    <id>http://yoursite.com/Android-Boot-Process/</id>
+    <title>Kotlin</title>
+    <link href="http://yoursite.com/Kotlin/"/>
+    <id>http://yoursite.com/Kotlin/</id>
     <published>2015-12-31T16:00:00.000Z</published>
-    <updated>2018-07-16T09:49:08.993Z</updated>
+    <updated>2018-08-10T03:20:31.093Z</updated>
     
-    <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.</p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p><a href="https://blog.csdn.net/luoshengyang/article/details/8923485" target="_blank" rel="noopener">那两年炼就的Android内功修养</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6768304" target="_blank" rel="noopener">Android系统进程Zygote启动过程的源代码分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6747696" target="_blank" rel="noopener">Android应用程序进程启动过程的源代码分析</a></p><p>Android开机流程概述：<br><a href="https://blog.csdn.net/h655370/article/details/77727554" target="_blank" rel="noopener">https://blog.csdn.net/h655370/article/details/77727554</a></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="Kotlin-官方网站"><a href="#Kotlin-官方网站" class="headerlink" title="Kotlin 官方网站"></a>Kotlin 官方网站</h1><p><a href="https://developer.android.google.cn/kotlin/" target="_blank" rel="noopener">Kotlin </a><br><a href="https://android.github.io/kotlin-guides/" target="_blank" rel="noopener">Kotlin Home</a><br><a href="https://developer.android.google.cn/kotlin/resources" target="_blank" rel="noopener">Kotlin学习资源</a></p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><!--    阅读卡：    文章：    时间：-->]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;Ongoing,待完成，Please wait.&lt;/p&gt;
-&lt;h1 id=&quot;参考文献&quot;&gt;&lt;a href=&quot;#参考文献&quot; class=&quot;headerlink&quot; title=&quot;参考文献&quot;&gt;&lt;/a&gt;参考文献&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://blog.csdn.net
+        &lt;h1 id=&quot;Kotlin-官方网站&quot;&gt;&lt;a href=&quot;#Kotlin-官方网站&quot; class=&quot;headerlink&quot; title=&quot;Kotlin 官方网站&quot;&gt;&lt;/a&gt;Kotlin 官方网站&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://developer.android
       
     
     </summary>
     
-      <category term="Android" scheme="http://yoursite.com/categories/Android/"/>
-    
-      <category term="启动" scheme="http://yoursite.com/categories/Android/%E5%90%AF%E5%8A%A8/"/>
+      <category term="Kotlin" scheme="http://yoursite.com/categories/Kotlin/"/>
     
     
-      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
-    
-      <category term="Zegote" scheme="http://yoursite.com/tags/Zegote/"/>
-    
-      <category term="Init" scheme="http://yoursite.com/tags/Init/"/>
+      <category term="Kotlin" scheme="http://yoursite.com/tags/Kotlin/"/>
     
   </entry>
   
@@ -1521,70 +1616,6 @@
   </entry>
   
   <entry>
-    <title>React Native</title>
-    <link href="http://yoursite.com/React-Native/"/>
-    <id>http://yoursite.com/React-Native/</id>
-    <published>2015-12-31T16:00:00.000Z</published>
-    <updated>2018-07-19T03:04:04.994Z</updated>
-    
-    <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.<br><!--    Module:    第一步:需要将这些文章都看几篇    第二步：形成自己的理解    第三步：可以按照非常有用的文章，重写写一遍    第四步：纠正或者延伸别人的文章--></p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><!--    阅读卡：    文章：    时间：--><p><a href="https://reactnative.cn/docs/0.36/getting-started.html" target="_blank" rel="noopener">React Native简介教程</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;Ongoing,待完成，Please wait.&lt;br&gt;&lt;!--
-    Module:
-    第一步:需要将这些文章都看几篇
-    第二步：形成自己的理解
-    第三步：可以按照非常有用的文章，重写写一遍
-    第四步：纠正或者延伸别人的文章
---&gt;&lt;/p&gt;
-&lt;h
-      
-    
-    </summary>
-    
-      <category term="React Native" scheme="http://yoursite.com/categories/React-Native/"/>
-    
-    
-      <category term="React Native" scheme="http://yoursite.com/tags/React-Native/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python开发</title>
-    <link href="http://yoursite.com/Python/"/>
-    <id>http://yoursite.com/Python/</id>
-    <published>2015-12-31T16:00:00.000Z</published>
-    <updated>2018-07-30T07:16:38.275Z</updated>
-    
-    <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.<br><!--    Module:    第一步:需要将这些文章都看几篇    第二步：形成自己的理解    第三步：可以按照非常有用的文章，重写写一遍    第四步：纠正或者延伸别人的文章--></p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><!--    阅读卡：    文章：    时间：--><p><a href="https://juejin.im/entry/5a6b4ae3f265da3e3245b66f?utm_source=gold_browser_extension" target="_blank" rel="noopener">Python从入门到转行</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;Ongoing,待完成，Please wait.&lt;br&gt;&lt;!--
-    Module:
-    第一步:需要将这些文章都看几篇
-    第二步：形成自己的理解
-    第三步：可以按照非常有用的文章，重写写一遍
-    第四步：纠正或者延伸别人的文章
---&gt;&lt;/p&gt;
-&lt;h
-      
-    
-    </summary>
-    
-      <category term="Python" scheme="http://yoursite.com/categories/Python/"/>
-    
-    
-      <category term="Python" scheme="http://yoursite.com/tags/Python/"/>
-    
-  </entry>
-  
-  <entry>
     <title>MAC OS</title>
     <link href="http://yoursite.com/Mac-OS/"/>
     <id>http://yoursite.com/Mac-OS/</id>
@@ -1617,33 +1648,38 @@
   </entry>
   
   <entry>
-    <title>Android中BroadcastRecevier解析</title>
-    <link href="http://yoursite.com/Android-BroadcastRecevier-Analysis/"/>
-    <id>http://yoursite.com/Android-BroadcastRecevier-Analysis/</id>
+    <title>Linux</title>
+    <link href="http://yoursite.com/Linux-Base/"/>
+    <id>http://yoursite.com/Linux-Base/</id>
     <published>2015-12-31T16:00:00.000Z</published>
-    <updated>2018-08-08T02:29:07.413Z</updated>
+    <updated>2018-08-10T03:48:44.452Z</updated>
     
-    <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.</p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><ol><li>Android Broadcast广播注册和发布方式以及机制流程 <a href="https://blog.csdn.net/liu_3262296/article/details/51935316" target="_blank" rel="noopener">https://blog.csdn.net/liu_3262296/article/details/51935316</a></li><li>Android广播之发送广播的源码分析 <a href="https://blog.csdn.net/zhangyongfeiyong/article/details/52022935" target="_blank" rel="noopener">https://blog.csdn.net/zhangyongfeiyong/article/details/52022935</a></li><li>Android广播机制实现源码浅析（一） <a href="https://blog.csdn.net/hehui1860/article/details/30726609" target="_blank" rel="noopener">https://blog.csdn.net/hehui1860/article/details/30726609</a></li><li>Android广播机制实现源码浅析（二） <a href="https://blog.csdn.net/hehui1860/article/details/30727075" target="_blank" rel="noopener">https://blog.csdn.net/hehui1860/article/details/30727075</a></li><li>Android广播机制实现源码浅析（三）<a href="https://blog.csdn.net/hehui1860/article/details/30727537" target="_blank" rel="noopener">https://blog.csdn.net/hehui1860/article/details/30727537</a></li><li>BroadcastReceiver源码解析(一)  <a href="https://blog.csdn.net/tiefeng0606/article/details/51354381" target="_blank" rel="noopener">https://blog.csdn.net/tiefeng0606/article/details/51354381</a></li><li>BroadcastReceiver源码解析（二） <a href="https://blog.csdn.net/tiefeng0606/article/details/51381221" target="_blank" rel="noopener">https://blog.csdn.net/tiefeng0606/article/details/51381221</a></li></ol><p><a href="https://blog.csdn.net/luoshengyang/article/details/8923485" target="_blank" rel="noopener">那两年炼就的Android内功修养</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6730748" target="_blank" rel="noopener">Android系统中的广播（Broadcast）机制简要介绍和学习计划</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6737352" target="_blank" rel="noopener">Android应用程序注册广播接收器（registerReceiver）的过程分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6744448" target="_blank" rel="noopener">Android应用程序发送广播（sendBroadcast）的过程分析</a></p><p><a href="https://blog.csdn.net/gaugamela/article/details/53515680" target="_blank" rel="noopener">Android 7.0 ActivityManagerService(5) 广播(Broadcast)相关流程分析</a></p>]]></content>
+    <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.<br><!--    Module:    第一步:需要将这些文章都看几篇    第二步：形成自己的理解    第三步：可以按照非常有用的文章，重写写一遍    第四步：纠正或者延伸别人的文章--></p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><!--    阅读卡：    文章：    时间：-->]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;Ongoing,待完成，Please wait.&lt;/p&gt;
-&lt;h1 id=&quot;参考文献&quot;&gt;&lt;a href=&quot;#参考文献&quot; class=&quot;headerlink&quot; title=&quot;参考文献&quot;&gt;&lt;/a&gt;参考文献&lt;/h1&gt;&lt;ol&gt;
-&lt;li&gt;Android Broadcast广播注册和发布
+        &lt;p&gt;Ongoing,待完成，Please wait.&lt;br&gt;&lt;!--
+    Module:
+    第一步:需要将这些文章都看几篇
+    第二步：形成自己的理解
+    第三步：可以按照非常有用的文章，重写写一遍
+    第四步：纠正或者延伸别人的文章
+--&gt;&lt;/p&gt;
+&lt;h
       
     
     </summary>
     
-      <category term="Android" scheme="http://yoursite.com/categories/Android/"/>
+      <category term="Linux" scheme="http://yoursite.com/categories/Linux/"/>
     
-      <category term="BroadcastRecevier" scheme="http://yoursite.com/categories/Android/BroadcastRecevier/"/>
+      <category term="Base" scheme="http://yoursite.com/categories/Linux/Base/"/>
     
     
-      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
+      <category term="Base" scheme="http://yoursite.com/tags/Base/"/>
     
-      <category term="BroadcastRecevier" scheme="http://yoursite.com/tags/BroadcastRecevier/"/>
+      <category term="Linux" scheme="http://yoursite.com/tags/Linux/"/>
     
   </entry>
   
@@ -1677,9 +1713,9 @@
       <category term="Advice" scheme="http://yoursite.com/categories/Life/Advice/"/>
     
     
-      <category term="Life" scheme="http://yoursite.com/tags/Life/"/>
-    
       <category term="Advice" scheme="http://yoursite.com/tags/Advice/"/>
+    
+      <category term="Life" scheme="http://yoursite.com/tags/Life/"/>
     
   </entry>
   
@@ -2046,32 +2082,30 @@
   </entry>
   
   <entry>
-    <title>Android中SystemUI解析</title>
-    <link href="http://yoursite.com/Android-SystemUI-Analysis/"/>
-    <id>http://yoursite.com/Android-SystemUI-Analysis/</id>
+    <title>读书笔记</title>
+    <link href="http://yoursite.com/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    <id>http://yoursite.com/读书笔记/</id>
     <published>2014-12-31T16:00:00.000Z</published>
-    <updated>2018-08-07T07:01:53.057Z</updated>
+    <updated>2018-08-07T06:38:26.131Z</updated>
     
-    <content type="html"><![CDATA[<p>还未开始，待补充</p><h1 id="Recent模块"><a href="#Recent模块" class="headerlink" title="Recent模块"></a>Recent模块</h1><p>在AndroidManifest.xml里面，我们注意到SystemUISecondaryUserService，对于每一个用户都有一个SystemUI进程，所以在用户切换的时候，需要用SystemUISecondaryUserService来确保新的用户进程创建.<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- Recents depends on every user having their own SystemUI process, so on user switch,</span></span><br><span class="line"><span class="comment">     ensure that the process is created by starting this service.</span></span><br><span class="line"><span class="comment">     --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">service</span> <span class="attr">android:name</span>=<span class="string">"SystemUISecondaryUserService"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:exported</span>=<span class="string">"true"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:permission</span>=<span class="string">"com.android.systemui.permission.SELF"</span> /&gt;</span></span><br></pre></td></tr></table></figure></p><p>RecentsActivity.java的onCreate函数开始<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RecentsActivity</span> <span class="keyword">extends</span> <span class="title">Activity</span> <span class="keyword">implements</span> <span class="title">ViewTreeObserver</span>.<span class="title">OnPreDrawListener</span>,</span></span><br><span class="line"><span class="class">        <span class="title">ColorExtractor</span>.<span class="title">OnColorsChangedListener</span> </span>&#123;</span><br><span class="line">        ...</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** Called with the activity is first created. */</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">        mFinishedOnStartup = <span class="keyword">false</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// In the case that the activity starts up before the Recents component has initialized</span></span><br><span class="line">        <span class="comment">// (usually when debugging/pushing the SysUI apk), just finish this activity.</span></span><br><span class="line">        SystemServicesProxy ssp = Recents.getSystemServices();</span><br><span class="line">        <span class="keyword">if</span> (ssp == <span class="keyword">null</span>) &#123;</span><br><span class="line">            mFinishedOnStartup = <span class="keyword">true</span>;</span><br><span class="line">            finish();</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure></p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p>Doze模式<br><a href="https://blog.csdn.net/u013278940/article/details/50498304" target="_blank" rel="noopener">Android5.1 系统之省电模式探索一启动流程</a><br><a href="https://blog.csdn.net/innost/article/details/47660591" target="_blank" rel="noopener">《深入理解Android 卷III》第七章 深入理解SystemUI</a></p><p><a href="https://jingyan.baidu.com/article/76a7e409071797fc3b6e15bb.html" target="_blank" rel="noopener">SystemUI 调谐器 TunerService的打开方式</a></p><p><a href="https://www.jianshu.com/p/ad040aab0e66" target="_blank" rel="noopener">Android官方架构组件Navigation：大巧不工的Fragment管理框架</a></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>本文目的是记录阅读一些书籍过程中的知识点</p><h1 id="JVM-源码分析"><a href="#JVM-源码分析" class="headerlink" title="JVM 源码分析"></a>JVM 源码分析</h1><p> 下载JVM源码 <a href="https://download.java.net/openjdk/jdk7/" target="_blank" rel="noopener">https://download.java.net/openjdk/jdk7/</a><br> openjdk-7-ea-src-b31-17_jul_2008.zip中有hotspot目录,里面是vm的代码</p><h1 id="《剑指Offer-名企面试官精讲典型编程题》"><a href="#《剑指Offer-名企面试官精讲典型编程题》" class="headerlink" title="《剑指Offer:名企面试官精讲典型编程题》"></a>《剑指Offer:名企面试官精讲典型编程题》</h1><p>   2012年电子工业出版社,何海涛</p><p><a href="https://blog.csdn.net/Together_CZ/article/details/74906427" target="_blank" rel="noopener">剑指Offer学习</a><br><a href="https://blog.csdn.net/panda_AJ/article/details/69420293" target="_blank" rel="noopener">剑指offer题目及答案</a></p><p>#《Android应用安全防护和逆向分析》—姜维</p><ol><li>Android中锁屏密码加密算法分析<br>以Android 5.1版本，分析了密码算法 和手势密码算法</li><li>Android中NDK开发<br>写了简单的实例，实现Java调用C，C调用Java</li><li>Android 开发和逆向常用命令<br>介绍了一些常用的adb 命令</li><li>so文件格式解析<br>so文件是Android中C/C++模块编译出来的库，有静态库和动态库两种。Android中的so文件就是ELF文件。<br>文中介绍了阅读ELF文件的工具readelf的常用命令。</li><li><p>AndroidManifest.xml文件格式解析</p></li><li><p>resource.arsc文件格式解析<br>Resource.arsc文件对应的数据结构 frameworks/base/include/androidfw/ResourceTypes.h</p></li><li><p>dex 文件格式解析</p><p>防护篇</p></li><li><p>Android 应用安全防护的基本策略<br>1) 混淆机制.混淆不仅是为了安全防护，也是为了减小应用安装包的大小。混淆机制有两种:<br> a)代码混淆：混淆后的代码类名和方法名都变了<br> b)资源混淆： 微信已经开源资源混淆 <a href="http://github.com/shwenzhang/AndResGuard" target="_blank" rel="noopener">http://github.com/shwenzhang/AndResGuard</a><br>2) 签名保护<br>3）手动注册native方法<br>4）反调试监测</p></li><li>Android中常用权限分析</li></ol><p><a href="https://github.com/Juude/droidReverse" target="_blank" rel="noopener">逆向工程工具集</a></p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;还未开始，待补充&lt;/p&gt;
-&lt;h1 id=&quot;Recent模块&quot;&gt;&lt;a href=&quot;#Recent模块&quot; class=&quot;headerlink&quot; title=&quot;Recent模块&quot;&gt;&lt;/a&gt;Recent模块&lt;/h1&gt;&lt;p&gt;在AndroidManifest.xml里面，我们注意到Sy
+        &lt;h1 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h1&gt;&lt;p&gt;本文目的是记录阅读一些书籍过程中的知识点&lt;/p&gt;
+&lt;h1 id=&quot;JVM-源码分析&quot;&gt;&lt;a href=&quot;#JVM-源码分析&quot; class=&quot;
       
     
     </summary>
     
-      <category term="Android" scheme="http://yoursite.com/categories/Android/"/>
-    
-      <category term="SystemUI" scheme="http://yoursite.com/categories/Android/SystemUI/"/>
+      <category term="Hexo" scheme="http://yoursite.com/categories/Hexo/"/>
     
     
-      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
+      <category term="逆向分析" scheme="http://yoursite.com/tags/%E9%80%86%E5%90%91%E5%88%86%E6%9E%90/"/>
     
-      <category term="SystemUI" scheme="http://yoursite.com/tags/SystemUI/"/>
+      <category term="安全" scheme="http://yoursite.com/tags/%E5%AE%89%E5%85%A8/"/>
     
   </entry>
   
@@ -2106,33 +2140,32 @@
   </entry>
   
   <entry>
-    <title>Android中WindowManagerService解析</title>
-    <link href="http://yoursite.com/Android-WindowManagerService-Analysis/"/>
-    <id>http://yoursite.com/Android-WindowManagerService-Analysis/</id>
+    <title>Android中SystemUI解析</title>
+    <link href="http://yoursite.com/Android-SystemUI-Analysis/"/>
+    <id>http://yoursite.com/Android-SystemUI-Analysis/</id>
     <published>2014-12-31T16:00:00.000Z</published>
-    <updated>2018-07-04T13:55:04.942Z</updated>
+    <updated>2018-08-07T07:01:53.057Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a href="https://blog.csdn.net/luoshengyang/article/details/8923485" target="_blank" rel="noopener">那两年炼就的Android内功修养</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8462738" target="_blank" rel="noopener">Android窗口管理服务WindowManagerService的简要介绍和学习计划</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8479101" target="_blank" rel="noopener">Android窗口管理服务WindowManagerService计算Activity窗口大小的过程分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8498908" target="_blank" rel="noopener">Android窗口管理服务WindowManagerService对窗口的组织方式分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8526644" target="_blank" rel="noopener">Android窗口管理服务WindowManagerService对输入法窗口（Input Method Window）的管理分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8550820" target="_blank" rel="noopener">Android窗口管理服务WindowManagerService对壁纸窗口（Wallpaper Window）的管理分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8570428" target="_blank" rel="noopener">Android窗口管理服务WindowManagerService计算窗口Z轴位置的过程分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8577789" target="_blank" rel="noopener">Android窗口管理服务WindowManagerService显示Activity组件的启动窗口（Starting Window）的过程分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8596449" target="_blank" rel="noopener">Android窗口管理服务WindowManagerService切换Activity窗口（App Transition）的过程分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8611754" target="_blank" rel="noopener">Android窗口管理服务WindowManagerService显示窗口动画的原理分析</a></p>]]></content>
+    <content type="html"><![CDATA[<p>还未开始，待补充</p><h1 id="Recent模块"><a href="#Recent模块" class="headerlink" title="Recent模块"></a>Recent模块</h1><p>在AndroidManifest.xml里面，我们注意到SystemUISecondaryUserService，对于每一个用户都有一个SystemUI进程，所以在用户切换的时候，需要用SystemUISecondaryUserService来确保新的用户进程创建.<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- Recents depends on every user having their own SystemUI process, so on user switch,</span></span><br><span class="line"><span class="comment">     ensure that the process is created by starting this service.</span></span><br><span class="line"><span class="comment">     --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">service</span> <span class="attr">android:name</span>=<span class="string">"SystemUISecondaryUserService"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:exported</span>=<span class="string">"true"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:permission</span>=<span class="string">"com.android.systemui.permission.SELF"</span> /&gt;</span></span><br></pre></td></tr></table></figure></p><p>RecentsActivity.java的onCreate函数开始<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RecentsActivity</span> <span class="keyword">extends</span> <span class="title">Activity</span> <span class="keyword">implements</span> <span class="title">ViewTreeObserver</span>.<span class="title">OnPreDrawListener</span>,</span></span><br><span class="line"><span class="class">        <span class="title">ColorExtractor</span>.<span class="title">OnColorsChangedListener</span> </span>&#123;</span><br><span class="line">        ...</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** Called with the activity is first created. */</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">        mFinishedOnStartup = <span class="keyword">false</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// In the case that the activity starts up before the Recents component has initialized</span></span><br><span class="line">        <span class="comment">// (usually when debugging/pushing the SysUI apk), just finish this activity.</span></span><br><span class="line">        SystemServicesProxy ssp = Recents.getSystemServices();</span><br><span class="line">        <span class="keyword">if</span> (ssp == <span class="keyword">null</span>) &#123;</span><br><span class="line">            mFinishedOnStartup = <span class="keyword">true</span>;</span><br><span class="line">            finish();</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure></p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p>Doze模式<br><a href="https://blog.csdn.net/u013278940/article/details/50498304" target="_blank" rel="noopener">Android5.1 系统之省电模式探索一启动流程</a><br><a href="https://blog.csdn.net/innost/article/details/47660591" target="_blank" rel="noopener">《深入理解Android 卷III》第七章 深入理解SystemUI</a></p><p><a href="https://jingyan.baidu.com/article/76a7e409071797fc3b6e15bb.html" target="_blank" rel="noopener">SystemUI 调谐器 TunerService的打开方式</a></p><p><a href="https://www.jianshu.com/p/ad040aab0e66" target="_blank" rel="noopener">Android官方架构组件Navigation：大巧不工的Fragment管理框架</a></p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h1 id=&quot;参考资料&quot;&gt;&lt;a href=&quot;#参考资料&quot; class=&quot;headerlink&quot; title=&quot;参考资料&quot;&gt;&lt;/a&gt;参考资料&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://blog.csdn.net/luoshengyang/article/details/89
+        &lt;p&gt;还未开始，待补充&lt;/p&gt;
+&lt;h1 id=&quot;Recent模块&quot;&gt;&lt;a href=&quot;#Recent模块&quot; class=&quot;headerlink&quot; title=&quot;Recent模块&quot;&gt;&lt;/a&gt;Recent模块&lt;/h1&gt;&lt;p&gt;在AndroidManifest.xml里面，我们注意到Sy
       
     
     </summary>
     
       <category term="Android" scheme="http://yoursite.com/categories/Android/"/>
     
-      <category term="WindowManagerService" scheme="http://yoursite.com/categories/Android/WindowManagerService/"/>
+      <category term="SystemUI" scheme="http://yoursite.com/categories/Android/SystemUI/"/>
     
     
       <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
     
-      <category term="WindowManagerService" scheme="http://yoursite.com/tags/WindowManagerService/"/>
-    
-      <category term="WMS" scheme="http://yoursite.com/tags/WMS/"/>
+      <category term="SystemUI" scheme="http://yoursite.com/tags/SystemUI/"/>
     
   </entry>
   
@@ -2197,30 +2230,33 @@
   </entry>
   
   <entry>
-    <title>读书笔记</title>
-    <link href="http://yoursite.com/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
-    <id>http://yoursite.com/读书笔记/</id>
+    <title>Android中WindowManagerService解析</title>
+    <link href="http://yoursite.com/Android-WindowManagerService-Analysis/"/>
+    <id>http://yoursite.com/Android-WindowManagerService-Analysis/</id>
     <published>2014-12-31T16:00:00.000Z</published>
-    <updated>2018-08-07T06:38:26.131Z</updated>
+    <updated>2018-07-04T13:55:04.942Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>本文目的是记录阅读一些书籍过程中的知识点</p><h1 id="JVM-源码分析"><a href="#JVM-源码分析" class="headerlink" title="JVM 源码分析"></a>JVM 源码分析</h1><p> 下载JVM源码 <a href="https://download.java.net/openjdk/jdk7/" target="_blank" rel="noopener">https://download.java.net/openjdk/jdk7/</a><br> openjdk-7-ea-src-b31-17_jul_2008.zip中有hotspot目录,里面是vm的代码</p><h1 id="《剑指Offer-名企面试官精讲典型编程题》"><a href="#《剑指Offer-名企面试官精讲典型编程题》" class="headerlink" title="《剑指Offer:名企面试官精讲典型编程题》"></a>《剑指Offer:名企面试官精讲典型编程题》</h1><p>   2012年电子工业出版社,何海涛</p><p><a href="https://blog.csdn.net/Together_CZ/article/details/74906427" target="_blank" rel="noopener">剑指Offer学习</a><br><a href="https://blog.csdn.net/panda_AJ/article/details/69420293" target="_blank" rel="noopener">剑指offer题目及答案</a></p><p>#《Android应用安全防护和逆向分析》—姜维</p><ol><li>Android中锁屏密码加密算法分析<br>以Android 5.1版本，分析了密码算法 和手势密码算法</li><li>Android中NDK开发<br>写了简单的实例，实现Java调用C，C调用Java</li><li>Android 开发和逆向常用命令<br>介绍了一些常用的adb 命令</li><li>so文件格式解析<br>so文件是Android中C/C++模块编译出来的库，有静态库和动态库两种。Android中的so文件就是ELF文件。<br>文中介绍了阅读ELF文件的工具readelf的常用命令。</li><li><p>AndroidManifest.xml文件格式解析</p></li><li><p>resource.arsc文件格式解析<br>Resource.arsc文件对应的数据结构 frameworks/base/include/androidfw/ResourceTypes.h</p></li><li><p>dex 文件格式解析</p><p>防护篇</p></li><li><p>Android 应用安全防护的基本策略<br>1) 混淆机制.混淆不仅是为了安全防护，也是为了减小应用安装包的大小。混淆机制有两种:<br> a)代码混淆：混淆后的代码类名和方法名都变了<br> b)资源混淆： 微信已经开源资源混淆 <a href="http://github.com/shwenzhang/AndResGuard" target="_blank" rel="noopener">http://github.com/shwenzhang/AndResGuard</a><br>2) 签名保护<br>3）手动注册native方法<br>4）反调试监测</p></li><li>Android中常用权限分析</li></ol><p><a href="https://github.com/Juude/droidReverse" target="_blank" rel="noopener">逆向工程工具集</a></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a href="https://blog.csdn.net/luoshengyang/article/details/8923485" target="_blank" rel="noopener">那两年炼就的Android内功修养</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8462738" target="_blank" rel="noopener">Android窗口管理服务WindowManagerService的简要介绍和学习计划</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8479101" target="_blank" rel="noopener">Android窗口管理服务WindowManagerService计算Activity窗口大小的过程分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8498908" target="_blank" rel="noopener">Android窗口管理服务WindowManagerService对窗口的组织方式分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8526644" target="_blank" rel="noopener">Android窗口管理服务WindowManagerService对输入法窗口（Input Method Window）的管理分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8550820" target="_blank" rel="noopener">Android窗口管理服务WindowManagerService对壁纸窗口（Wallpaper Window）的管理分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8570428" target="_blank" rel="noopener">Android窗口管理服务WindowManagerService计算窗口Z轴位置的过程分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8577789" target="_blank" rel="noopener">Android窗口管理服务WindowManagerService显示Activity组件的启动窗口（Starting Window）的过程分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8596449" target="_blank" rel="noopener">Android窗口管理服务WindowManagerService切换Activity窗口（App Transition）的过程分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8611754" target="_blank" rel="noopener">Android窗口管理服务WindowManagerService显示窗口动画的原理分析</a></p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h1 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h1&gt;&lt;p&gt;本文目的是记录阅读一些书籍过程中的知识点&lt;/p&gt;
-&lt;h1 id=&quot;JVM-源码分析&quot;&gt;&lt;a href=&quot;#JVM-源码分析&quot; class=&quot;
+        &lt;h1 id=&quot;参考资料&quot;&gt;&lt;a href=&quot;#参考资料&quot; class=&quot;headerlink&quot; title=&quot;参考资料&quot;&gt;&lt;/a&gt;参考资料&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://blog.csdn.net/luoshengyang/article/details/89
       
     
     </summary>
     
-      <category term="Hexo" scheme="http://yoursite.com/categories/Hexo/"/>
+      <category term="Android" scheme="http://yoursite.com/categories/Android/"/>
+    
+      <category term="WindowManagerService" scheme="http://yoursite.com/categories/Android/WindowManagerService/"/>
     
     
-      <category term="逆向分析" scheme="http://yoursite.com/tags/%E9%80%86%E5%90%91%E5%88%86%E6%9E%90/"/>
+      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
     
-      <category term="安全" scheme="http://yoursite.com/tags/%E5%AE%89%E5%85%A8/"/>
+      <category term="WindowManagerService" scheme="http://yoursite.com/tags/WindowManagerService/"/>
+    
+      <category term="WMS" scheme="http://yoursite.com/tags/WMS/"/>
     
   </entry>
   
