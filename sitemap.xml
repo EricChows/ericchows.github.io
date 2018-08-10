@@ -2,6 +2,41 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/Android%E5%BC%80%E5%8F%91%E8%80%85%E6%8C%87%E5%8D%97%E9%98%85%E8%AF%BB/</loc>
+    
+    <lastmod>2018-08-10T02:14:20.233Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/Android-Base/</loc>
+    
+    <lastmod>2018-08-10T02:14:12.931Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/Java-Base/</loc>
+    
+    <lastmod>2018-08-10T02:07:20.151Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/Myblog/</loc>
+    
+    <lastmod>2018-08-10T01:52:09.205Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/Android-Stability/</loc>
+    
+    <lastmod>2018-08-10T01:46:12.605Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/Android-InterView/</loc>
     
     <lastmod>2018-08-09T07:34:09.437Z</lastmod>
@@ -12,13 +47,6 @@
     <loc>http://yoursite.com/%E5%90%84%E7%B1%BB%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E5%B0%8F%E6%8A%80%E5%B7%A7/</loc>
     
     <lastmod>2018-08-09T06:40:02.513Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/Android-Stability/</loc>
-    
-    <lastmod>2018-08-09T05:50:09.637Z</lastmod>
     
   </url>
   
@@ -65,20 +93,6 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/Myblog/</loc>
-    
-    <lastmod>2018-08-07T08:16:37.026Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/Android-%E5%BC%80%E5%8F%91%E8%80%85%E6%8C%87%E5%8D%97%E9%98%85%E8%AF%BB/</loc>
-    
-    <lastmod>2018-08-07T08:04:30.742Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/year-06-23-Android/</loc>
     
     <lastmod>2018-08-07T07:59:34.293Z</lastmod>
@@ -110,13 +124,6 @@
     <loc>http://yoursite.com/Java-VirtualMachine/</loc>
     
     <lastmod>2018-08-07T07:48:04.149Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/Java-Base/</loc>
-    
-    <lastmod>2018-08-07T07:47:35.910Z</lastmod>
     
   </url>
   

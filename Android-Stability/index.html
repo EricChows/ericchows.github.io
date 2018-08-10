@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="EricChows">
 <meta property="og:description" content="概述Android的稳定性包含以下几个方面：1.ANR2.Crash3.Tombstone4.Freeze5.黑屏6.冻屏 #稳定性问题分析以及需要的相关log/data/anr/traces.txt/data/system/dropbox/data/tombstones Android系统各种稳定性问题所需要的logAndroid系统各种稳定性问题所需要的logadb shell bugrepo">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-09T05:50:09.637Z">
+<meta property="og:updated_time" content="2018-08-10T01:46:12.605Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android的稳定性">
 <meta name="twitter:description" content="概述Android的稳定性包含以下几个方面：1.ANR2.Crash3.Tombstone4.Freeze5.黑屏6.冻屏 #稳定性问题分析以及需要的相关log/data/anr/traces.txt/data/system/dropbox/data/tombstones Android系统各种稳定性问题所需要的logAndroid系统各种稳定性问题所需要的logadb shell bugrepo">
@@ -453,7 +453,9 @@
 <h2 id="Black-screen-黑屏"><a href="#Black-screen-黑屏" class="headerlink" title="Black screen 黑屏"></a>Black screen 黑屏</h2><p><a href="https://blog.csdn.net/zhangbijun1230/article/details/80739233" target="_blank" rel="noopener">Android系统（110）—稳定性问题总结</a></p>
 <h1 id="ANR"><a href="#ANR" class="headerlink" title="ANR"></a>ANR</h1><p>思路： 机制 –&gt; 触发原因 –&gt; 如何避免 –&gt; 如何分析和解决问题<br><a href="https://blog.csdn.net/wei_lei/article/details/70311702" target="_blank" rel="noopener">Android稳定性专题之ANR</a></p>
 <h1 id="Crash"><a href="#Crash" class="headerlink" title="Crash"></a>Crash</h1><p><a href="https://blog.csdn.net/wei_lei/article/details/69868280" target="_blank" rel="noopener">Android稳定性专题之CRASH</a><br><a href="https://blog.csdn.net/weilaideta/article/details/51348251" target="_blank" rel="noopener">Android系统稳定性—-Crash</a></p>
-<h1 id="Watchdog"><a href="#Watchdog" class="headerlink" title="Watchdog"></a>Watchdog</h1><h1 id="Tombstone"><a href="#Tombstone" class="headerlink" title="Tombstone"></a>Tombstone</h1><h1 id="Panic"><a href="#Panic" class="headerlink" title="Panic"></a>Panic</h1><h1 id="OOM"><a href="#OOM" class="headerlink" title="OOM"></a>OOM</h1><h1 id="稳定性测试"><a href="#稳定性测试" class="headerlink" title="稳定性测试"></a>稳定性测试</h1><p><a href="https://blog.csdn.net/ljd2038/article/details/54561511" target="_blank" rel="noopener">Android稳定性测试工具Monkey的使用</a><br><a href="https://blog.csdn.net/tobetheender/article/details/54693874" target="_blank" rel="noopener">Android稳定性测试– Monkey二次开发</a></p>
+<h1 id="Watchdog"><a href="#Watchdog" class="headerlink" title="Watchdog"></a>Watchdog</h1><p>机制/原理 –&gt; 实现方式</p>
+<p><a href="http://rayleeya.iteye.com/blog/1963408" target="_blank" rel="noopener">系统进程的Watchdog</a><br><a href="https://blog.csdn.net/yeqishi/article/details/50262087" target="_blank" rel="noopener">Android Watchdog框架看门狗解析、死锁应用与改造（上）</a><br><a href="https://blog.csdn.net/yeqishi/article/details/50262699" target="_blank" rel="noopener">Android Watchdog框架看门狗解析、死锁应用与改造（下）</a><br><a href="https://blog.csdn.net/lezhang123/article/details/72537647" target="_blank" rel="noopener">Watchdog机制以及问题分析</a><br><a href="http://duanqz.github.io/2015-10-12-Watchdog-Analysis#section-1" target="_blank" rel="noopener">Watchdog机制以及问题分析</a><br><a href="https://blog.csdn.net/wd229047557/article/details/79451969" target="_blank" rel="noopener">Android Watchdog机制介绍与分析</a></p>
+<h1 id="Tombstone"><a href="#Tombstone" class="headerlink" title="Tombstone"></a>Tombstone</h1><h1 id="Panic"><a href="#Panic" class="headerlink" title="Panic"></a>Panic</h1><h1 id="OOM"><a href="#OOM" class="headerlink" title="OOM"></a>OOM</h1><h1 id="稳定性测试"><a href="#稳定性测试" class="headerlink" title="稳定性测试"></a>稳定性测试</h1><p><a href="https://blog.csdn.net/ljd2038/article/details/54561511" target="_blank" rel="noopener">Android稳定性测试工具Monkey的使用</a><br><a href="https://blog.csdn.net/tobetheender/article/details/54693874" target="_blank" rel="noopener">Android稳定性测试– Monkey二次开发</a></p>
 <!--
     Module:
     第一步:需要将这些文章都看几篇
@@ -502,8 +504,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/Android-Activity-Analysis/" rel="next" title="Android中Activity解析">
-                <i class="fa fa-chevron-left"></i> Android中Activity解析
+              <a href="/Android-JNI-NDK/" rel="next" title="Android中JNI与NDK">
+                <i class="fa fa-chevron-left"></i> Android中JNI与NDK
               </a>
             
           </div>
@@ -512,8 +514,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/Android-EventBus/" rel="prev" title="Android中EventBus解析">
-                Android中EventBus解析 <i class="fa fa-chevron-right"></i>
+              <a href="/Android-SurfaceFlinger-Analysis/" rel="prev" title="Android中SurfaceFlinger解析">
+                Android中SurfaceFlinger解析 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -595,7 +597,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">73</span>
+                  <span class="site-state-item-count">74</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -606,7 +608,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">67</span>
+                  <span class="site-state-item-count">68</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>

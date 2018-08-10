@@ -4,6 +4,128 @@
 
     
   <url>
+    <loc>http://yoursite.com/Android%E5%BC%80%E5%8F%91%E8%80%85%E6%8C%87%E5%8D%97%E9%98%85%E8%AF%BB/</loc>
+    <lastmod>2018-08-10T02:14:20.233Z</lastmod>
+    <data>
+        <display>
+        <title>Android 开发者指南阅读</title>
+        <pubTime>2017-05-02T13:23:33.000Z</pubTime>
+        
+        <tag>指南</tag>
+         
+        <tag>Guides</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="http://yoursite.com/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/Android-Base/</loc>
+    <lastmod>2018-08-10T02:14:12.931Z</lastmod>
+    <data>
+        <display>
+        <title>Android基础</title>
+        <pubTime>2015-12-31T16:00:00.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+        <tag>Base</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="http://yoursite.com/categories/Android/"/>
+          
+             
+              <breadCrumb title="Base" url="http://yoursite.com/categories/Android/Base/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/Java-Base/</loc>
+    <lastmod>2018-08-10T02:07:20.151Z</lastmod>
+    <data>
+        <display>
+        <title>Java基础知识汇总</title>
+        <pubTime>2017-07-16T09:50:38.000Z</pubTime>
+        
+        <tag>Base</tag>
+         
+        <tag>Java</tag>
+         
+         
+           
+             
+              <breadCrumb title="Java" url="http://yoursite.com/categories/Java/"/>
+          
+             
+              <breadCrumb title="Base" url="http://yoursite.com/categories/Java/Base/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/Myblog/</loc>
+    <lastmod>2018-08-10T01:52:09.205Z</lastmod>
+    <data>
+        <display>
+        <title>★★★★★博客导航★★★★★</title>
+        <pubTime>2098-12-31T16:00:00.000Z</pubTime>
+        
+        <tag>Myblog</tag>
+         
+         
+           
+             
+              <breadCrumb title="All" url="http://yoursite.com/categories/All/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/Android-Stability/</loc>
+    <lastmod>2018-08-10T01:46:12.605Z</lastmod>
+    <data>
+        <display>
+        <title>Android的稳定性</title>
+        <pubTime>2015-12-31T16:00:00.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+        <tag>Stability</tag>
+         
+        <tag>稳定性</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="http://yoursite.com/categories/Android/"/>
+          
+             
+              <breadCrumb title="Stability" url="http://yoursite.com/categories/Android/Stability/"/>
+          
+             
+              <breadCrumb title="稳定性" url="http://yoursite.com/categories/Android/Stability/%E7%A8%B3%E5%AE%9A%E6%80%A7/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/Android-InterView/</loc>
     <lastmod>2018-08-09T07:34:09.437Z</lastmod>
     <data>
@@ -39,36 +161,6 @@
            
              
               <breadCrumb title="Tools" url="http://yoursite.com/categories/Tools/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/Android-Stability/</loc>
-    <lastmod>2018-08-09T05:50:09.637Z</lastmod>
-    <data>
-        <display>
-        <title>Android的稳定性</title>
-        <pubTime>2015-12-31T16:00:00.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-        <tag>Stability</tag>
-         
-        <tag>稳定性</tag>
-         
-         
-           
-             
-              <breadCrumb title="Android" url="http://yoursite.com/categories/Android/"/>
-          
-             
-              <breadCrumb title="Stability" url="http://yoursite.com/categories/Android/Stability/"/>
-          
-             
-              <breadCrumb title="稳定性" url="http://yoursite.com/categories/Android/Stability/%E7%A8%B3%E5%AE%9A%E6%80%A7/"/>
           
         </display>
     </data>
@@ -204,48 +296,6 @@
 
     
   <url>
-    <loc>http://yoursite.com/Myblog/</loc>
-    <lastmod>2018-08-07T08:16:37.026Z</lastmod>
-    <data>
-        <display>
-        <title>★★★★★博客导航★★★★★</title>
-        <pubTime>2098-12-31T16:00:00.000Z</pubTime>
-        
-        <tag>Myblog</tag>
-         
-         
-           
-             
-              <breadCrumb title="All" url="http://yoursite.com/categories/All/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/Android-%E5%BC%80%E5%8F%91%E8%80%85%E6%8C%87%E5%8D%97%E9%98%85%E8%AF%BB/</loc>
-    <lastmod>2018-08-07T08:04:30.742Z</lastmod>
-    <data>
-        <display>
-        <title>Android 开发者指南阅读</title>
-        <pubTime>2017-05-02T13:23:33.000Z</pubTime>
-        
-        <tag>指南</tag>
-         
-        <tag>Guides</tag>
-         
-         
-           
-             
-              <breadCrumb title="Android" url="http://yoursite.com/categories/Android/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://yoursite.com/year-06-23-Android/</loc>
     <lastmod>2018-08-07T07:59:34.293Z</lastmod>
     <data>
@@ -339,31 +389,6 @@
         
          
            
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/Java-Base/</loc>
-    <lastmod>2018-08-07T07:47:35.910Z</lastmod>
-    <data>
-        <display>
-        <title>Java基础知识汇总</title>
-        <pubTime>2017-07-16T09:50:38.000Z</pubTime>
-        
-        <tag>Java</tag>
-         
-        <tag>Base</tag>
-         
-         
-           
-             
-              <breadCrumb title="Java" url="http://yoursite.com/categories/Java/"/>
-          
-             
-              <breadCrumb title="Base" url="http://yoursite.com/categories/Java/Base/"/>
-          
         </display>
     </data>
     </url>
