@@ -2,30 +2,51 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://yoursite.com/Android%E5%BC%80%E5%8F%91%E8%80%85%E6%8C%87%E5%8D%97%E9%98%85%E8%AF%BB/</loc>
-    
-    <lastmod>2018-08-10T02:14:20.233Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/Android-Base/</loc>
     
-    <lastmod>2018-08-10T02:14:12.931Z</lastmod>
+    <lastmod>2018-08-10T03:39:35.634Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/Java-Base/</loc>
+    <loc>http://yoursite.com/Android%E5%BC%80%E5%8F%91%E8%80%85%E6%8C%87%E5%8D%97%E9%98%85%E8%AF%BB/</loc>
     
-    <lastmod>2018-08-10T02:07:20.151Z</lastmod>
+    <lastmod>2018-08-10T03:36:16.249Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/IT-Base/</loc>
+    
+    <lastmod>2018-08-10T03:32:01.874Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://yoursite.com/Myblog/</loc>
     
-    <lastmod>2018-08-10T01:52:09.205Z</lastmod>
+    <lastmod>2018-08-10T03:31:55.155Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/Java-Base/</loc>
+    
+    <lastmod>2018-08-10T03:26:59.660Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/Kotlin/</loc>
+    
+    <lastmod>2018-08-10T03:20:31.093Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/IT-Advice-1/</loc>
+    
+    <lastmod>2018-08-10T02:48:13.348Z</lastmod>
     
   </url>
   
@@ -261,13 +282,6 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/IT%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95%E8%AE%BA/</loc>
-    
-    <lastmod>2018-08-06T02:24:21.328Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/Git-Repo/</loc>
     
     <lastmod>2018-08-05T09:07:37.229Z</lastmod>
@@ -299,13 +313,6 @@
     <loc>http://yoursite.com/Android-MVC-MVP/</loc>
     
     <lastmod>2018-07-30T08:43:36.774Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/IT-Other-one/</loc>
-    
-    <lastmod>2018-07-30T08:23:44.199Z</lastmod>
     
   </url>
   
@@ -488,13 +495,6 @@
     <loc>http://yoursite.com/Android-WindowManagerService-Analysis/</loc>
     
     <lastmod>2018-07-04T13:55:04.942Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2017-04-23-Android%E5%BC%80%E5%8F%91%E5%B8%B8%E7%94%A8%E7%BD%91%E7%AB%99/</loc>
-    
-    <lastmod>2018-07-03T13:20:07.790Z</lastmod>
     
   </url>
   

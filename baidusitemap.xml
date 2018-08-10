@@ -4,30 +4,8 @@
 
     
   <url>
-    <loc>http://yoursite.com/Android%E5%BC%80%E5%8F%91%E8%80%85%E6%8C%87%E5%8D%97%E9%98%85%E8%AF%BB/</loc>
-    <lastmod>2018-08-10T02:14:20.233Z</lastmod>
-    <data>
-        <display>
-        <title>Android 开发者指南阅读</title>
-        <pubTime>2017-05-02T13:23:33.000Z</pubTime>
-        
-        <tag>指南</tag>
-         
-        <tag>Guides</tag>
-         
-         
-           
-             
-              <breadCrumb title="Android" url="http://yoursite.com/categories/Android/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://yoursite.com/Android-Base/</loc>
-    <lastmod>2018-08-10T02:14:12.931Z</lastmod>
+    <lastmod>2018-08-10T03:39:35.634Z</lastmod>
     <data>
         <display>
         <title>Android基础</title>
@@ -51,8 +29,75 @@
 
     
   <url>
+    <loc>http://yoursite.com/Android%E5%BC%80%E5%8F%91%E8%80%85%E6%8C%87%E5%8D%97%E9%98%85%E8%AF%BB/</loc>
+    <lastmod>2018-08-10T03:36:16.249Z</lastmod>
+    <data>
+        <display>
+        <title>Android 开发者指南阅读</title>
+        <pubTime>2017-05-02T13:23:33.000Z</pubTime>
+        
+        <tag>指南</tag>
+         
+        <tag>Guides</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="http://yoursite.com/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/IT-Base/</loc>
+    <lastmod>2018-08-10T03:32:01.874Z</lastmod>
+    <data>
+        <display>
+        <title>IT学习方法论</title>
+        <pubTime>2017-05-04T16:00:00.000Z</pubTime>
+        
+        <tag>IT</tag>
+         
+        <tag>方法论</tag>
+         
+         
+           
+             
+              <breadCrumb title="方法论" url="http://yoursite.com/categories/%E6%96%B9%E6%B3%95%E8%AE%BA/"/>
+          
+             
+              <breadCrumb title="IT" url="http://yoursite.com/categories/%E6%96%B9%E6%B3%95%E8%AE%BA/IT/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/Myblog/</loc>
+    <lastmod>2018-08-10T03:31:55.155Z</lastmod>
+    <data>
+        <display>
+        <title>★★★★★博客导航★★★★★</title>
+        <pubTime>2098-12-31T16:00:00.000Z</pubTime>
+        
+        <tag>Myblog</tag>
+         
+         
+           
+             
+              <breadCrumb title="All" url="http://yoursite.com/categories/All/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/Java-Base/</loc>
-    <lastmod>2018-08-10T02:07:20.151Z</lastmod>
+    <lastmod>2018-08-10T03:26:59.660Z</lastmod>
     <data>
         <display>
         <title>Java基础知识汇总</title>
@@ -76,19 +121,49 @@
 
     
   <url>
-    <loc>http://yoursite.com/Myblog/</loc>
-    <lastmod>2018-08-10T01:52:09.205Z</lastmod>
+    <loc>http://yoursite.com/Kotlin/</loc>
+    <lastmod>2018-08-10T03:20:31.093Z</lastmod>
     <data>
         <display>
-        <title>★★★★★博客导航★★★★★</title>
-        <pubTime>2098-12-31T16:00:00.000Z</pubTime>
+        <title>Kotlin</title>
+        <pubTime>2015-12-31T16:00:00.000Z</pubTime>
         
-        <tag>Myblog</tag>
+        <tag>Kotlin</tag>
          
          
            
              
-              <breadCrumb title="All" url="http://yoursite.com/categories/All/"/>
+              <breadCrumb title="Kotlin" url="http://yoursite.com/categories/Kotlin/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/IT-Advice-1/</loc>
+    <lastmod>2018-08-10T02:48:13.348Z</lastmod>
+    <data>
+        <display>
+        <title>给技术人员一些技术以外的建议</title>
+        <pubTime>2015-12-31T16:00:00.000Z</pubTime>
+        
+        <tag>Advice</tag>
+         
+        <tag>IT</tag>
+         
+        <tag>建议</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT" url="http://yoursite.com/categories/IT/"/>
+          
+             
+              <breadCrumb title="建议" url="http://yoursite.com/categories/IT/%E5%BB%BA%E8%AE%AE/"/>
+          
+             
+              <breadCrumb title="Advice" url="http://yoursite.com/categories/IT/%E5%BB%BA%E8%AE%AE/Advice/"/>
           
         </display>
     </data>
@@ -664,9 +739,9 @@
         
         <tag>Android</tag>
          
-        <tag>Activity</tag>
-         
         <tag>Launcher</tag>
+         
+        <tag>Activity</tag>
          
          
            
@@ -842,31 +917,6 @@
 
     
   <url>
-    <loc>http://yoursite.com/IT%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95%E8%AE%BA/</loc>
-    <lastmod>2018-08-06T02:24:21.328Z</lastmod>
-    <data>
-        <display>
-        <title>IT学习方法论</title>
-        <pubTime>2017-05-04T16:00:00.000Z</pubTime>
-        
-        <tag>IT</tag>
-         
-        <tag>方法论</tag>
-         
-         
-           
-             
-              <breadCrumb title="方法论" url="http://yoursite.com/categories/%E6%96%B9%E6%B3%95%E8%AE%BA/"/>
-          
-             
-              <breadCrumb title="IT" url="http://yoursite.com/categories/%E6%96%B9%E6%B3%95%E8%AE%BA/IT/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://yoursite.com/Git-Repo/</loc>
     <lastmod>2018-08-05T09:07:37.229Z</lastmod>
     <data>
@@ -985,31 +1035,6 @@
           
              
               <breadCrumb title="MVP" url="http://yoursite.com/categories/Android/MVC/MVP/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/IT-Other-one/</loc>
-    <lastmod>2018-07-30T08:23:44.199Z</lastmod>
-    <data>
-        <display>
-        <title>给技术人员一些技术以外的建议</title>
-        <pubTime>2015-12-31T16:00:00.000Z</pubTime>
-        
-        <tag>IT</tag>
-         
-        <tag>建议</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT" url="http://yoursite.com/categories/IT/"/>
-          
-             
-              <breadCrumb title="建议" url="http://yoursite.com/categories/IT/%E5%BB%BA%E8%AE%AE/"/>
           
         </display>
     </data>
@@ -1618,26 +1643,6 @@
           
              
               <breadCrumb title="WindowManagerService" url="http://yoursite.com/categories/Android/WindowManagerService/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2017-04-23-Android%E5%BC%80%E5%8F%91%E5%B8%B8%E7%94%A8%E7%BD%91%E7%AB%99/</loc>
-    <lastmod>2018-07-03T13:20:07.790Z</lastmod>
-    <data>
-        <display>
-        <title>Android开发常用网站</title>
-        <pubTime>2017-04-23T09:38:08.000Z</pubTime>
-        
-        <tag>Android Tools</tag>
-         
-         
-           
-             
-              <breadCrumb title="Android Tools" url="http://yoursite.com/categories/Android-Tools/"/>
           
         </display>
     </data>
