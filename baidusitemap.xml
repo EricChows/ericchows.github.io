@@ -3,10 +3,60 @@
 
 
     
+  <url>
+    <loc>http://yoursite.com/Android-Binder-Analysis/</loc>
+    <lastmod>2018-08-16T13:50:16.228Z</lastmod>
+    <data>
+        <display>
+        <title>Android中Binder机制解析</title>
+        <pubTime>2015-12-31T16:00:00.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+        <tag>Binder</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="http://yoursite.com/categories/Android/"/>
+          
+             
+              <breadCrumb title="Binder" url="http://yoursite.com/categories/Android/Binder/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/Android-%E5%86%85%E6%A0%B8%E5%89%96%E6%9E%90/</loc>
+    <lastmod>2018-08-16T12:33:49.161Z</lastmod>
+    <data>
+        <display>
+        <title>Android内核剖析之阅读记录</title>
+        <pubTime>2015-12-31T16:00:00.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+        <tag>内核剖析</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="http://yoursite.com/categories/Android/"/>
+          
+             
+              <breadCrumb title="内核剖析" url="http://yoursite.com/categories/Android/%E5%86%85%E6%A0%B8%E5%89%96%E6%9E%90/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
     
   <url>
     <loc>http://yoursite.com/%E5%90%84%E7%B1%BB%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E5%B0%8F%E6%8A%80%E5%B7%A7/</loc>
-    <lastmod>2018-08-12T11:19:49.631Z</lastmod>
+    <lastmod>2018-08-15T10:02:42.847Z</lastmod>
     <data>
         <display>
         <title>各类工具使用小技巧</title>
@@ -18,6 +68,26 @@
            
              
               <breadCrumb title="Tools" url="http://yoursite.com/categories/Tools/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/WordPress/</loc>
+    <lastmod>2018-08-15T01:35:20.394Z</lastmod>
+    <data>
+        <display>
+        <title>WordPress</title>
+        <pubTime>2015-12-31T16:00:00.000Z</pubTime>
+        
+        <tag>WordPress</tag>
+         
+         
+           
+             
+              <breadCrumb title="WordPress" url="http://yoursite.com/categories/WordPress/"/>
           
         </display>
     </data>
@@ -922,26 +992,6 @@
 
     
   <url>
-    <loc>http://yoursite.com/WordPress/</loc>
-    <lastmod>2018-08-07T02:01:44.103Z</lastmod>
-    <data>
-        <display>
-        <title>WordPress</title>
-        <pubTime>2015-12-31T16:00:00.000Z</pubTime>
-        
-        <tag>WordPress</tag>
-         
-         
-           
-             
-              <breadCrumb title="WordPress" url="http://yoursite.com/categories/WordPress/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://yoursite.com/Git-Repo/</loc>
     <lastmod>2018-08-05T09:07:37.229Z</lastmod>
     <data>
@@ -1355,31 +1405,6 @@
           
              
               <breadCrumb title="RxAndroid" url="http://yoursite.com/categories/RxJava/RxAndroid/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/Android-Binder-Analysis/</loc>
-    <lastmod>2018-07-18T13:03:43.255Z</lastmod>
-    <data>
-        <display>
-        <title>Android中Binder机制解析</title>
-        <pubTime>2015-12-31T16:00:00.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-        <tag>Binder</tag>
-         
-         
-           
-             
-              <breadCrumb title="Android" url="http://yoursite.com/categories/Android/"/>
-          
-             
-              <breadCrumb title="Binder" url="http://yoursite.com/categories/Android/Binder/"/>
           
         </display>
     </data>
