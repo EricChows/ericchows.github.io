@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/%E5%90%84%E7%B1%BB%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E5%B0%8F%E6%8A%80%E5%B7%A7/</loc>
+    
+    <lastmod>2018-08-17T13:15:55.846Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/Android-SystemUI-Analysis/</loc>
+    
+    <lastmod>2018-08-17T06:15:35.544Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/Android-Binder-Analysis/</loc>
     
     <lastmod>2018-08-16T13:50:16.228Z</lastmod>
@@ -19,13 +33,6 @@
     <loc>http://yoursite.com/about/index.html</loc>
     
     <lastmod>2018-08-16T05:57:56.276Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/%E5%90%84%E7%B1%BB%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E5%B0%8F%E6%8A%80%E5%B7%A7/</loc>
-    
-    <lastmod>2018-08-15T10:02:42.847Z</lastmod>
     
   </url>
   
@@ -229,13 +236,6 @@
     <loc>http://yoursite.com/Android-Launcher-Analysis/</loc>
     
     <lastmod>2018-08-07T07:02:15.695Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/Android-SystemUI-Analysis/</loc>
-    
-    <lastmod>2018-08-07T07:01:53.057Z</lastmod>
     
   </url>
   
