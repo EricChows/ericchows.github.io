@@ -4,28 +4,8 @@
 
     
   <url>
-    <loc>http://yoursite.com/%E5%90%84%E7%B1%BB%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E5%B0%8F%E6%8A%80%E5%B7%A7/</loc>
-    <lastmod>2018-08-17T13:15:55.846Z</lastmod>
-    <data>
-        <display>
-        <title>各类工具使用小技巧</title>
-        <pubTime>2015-06-29T06:06:59.000Z</pubTime>
-        
-        <tag>小技巧 工具 vim shell putty</tag>
-         
-         
-           
-             
-              <breadCrumb title="Tools" url="http://yoursite.com/categories/Tools/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://yoursite.com/Android-SystemUI-Analysis/</loc>
-    <lastmod>2018-08-17T06:15:35.544Z</lastmod>
+    <lastmod>2018-08-20T06:16:15.411Z</lastmod>
     <data>
         <display>
         <title>Android中SystemUI解析</title>
@@ -42,6 +22,46 @@
           
              
               <breadCrumb title="SystemUI" url="http://yoursite.com/categories/Android/SystemUI/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/%E9%97%AE%E9%A2%98%E9%94%A6%E9%9B%86-%E9%80%9F%E6%9F%A5/</loc>
+    <lastmod>2018-08-20T02:04:09.626Z</lastmod>
+    <data>
+        <display>
+        <title>问题锦集-速查</title>
+        <pubTime>2015-06-29T06:17:50.000Z</pubTime>
+        
+        <tag>问题 锦集 速查</tag>
+         
+         
+           
+             
+              <breadCrumb title="问题" url="http://yoursite.com/categories/%E9%97%AE%E9%A2%98/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/%E5%90%84%E7%B1%BB%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E5%B0%8F%E6%8A%80%E5%B7%A7/</loc>
+    <lastmod>2018-08-20T01:32:05.202Z</lastmod>
+    <data>
+        <display>
+        <title>各类工具使用小技巧</title>
+        <pubTime>2015-06-29T06:06:59.000Z</pubTime>
+        
+        <tag>小技巧 工具 vim shell putty</tag>
+         
+         
+           
+             
+              <breadCrumb title="Tools" url="http://yoursite.com/categories/Tools/"/>
           
         </display>
     </data>
@@ -172,9 +192,9 @@
         <title>IT学习方法论</title>
         <pubTime>2017-05-04T16:00:00.000Z</pubTime>
         
-        <tag>IT</tag>
-         
         <tag>方法论</tag>
+         
+        <tag>IT</tag>
          
          
            
@@ -1621,26 +1641,6 @@
            
              
               <breadCrumb title="Android 编译" url="http://yoursite.com/categories/Android-%E7%BC%96%E8%AF%91/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/%E9%97%AE%E9%A2%98%E9%94%A6%E9%9B%86-%E9%80%9F%E6%9F%A5/</loc>
-    <lastmod>2018-07-06T09:55:10.221Z</lastmod>
-    <data>
-        <display>
-        <title>问题锦集-速查</title>
-        <pubTime>2015-06-29T06:17:50.000Z</pubTime>
-        
-        <tag>问题 锦集 速查</tag>
-         
-         
-           
-             
-              <breadCrumb title="问题" url="http://yoursite.com/categories/%E9%97%AE%E9%A2%98/"/>
           
         </display>
     </data>
