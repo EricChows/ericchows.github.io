@@ -4,8 +4,33 @@
 
     
   <url>
+    <loc>http://yoursite.com/English-Word/</loc>
+    <lastmod>2018-08-21T02:45:08.863Z</lastmod>
+    <data>
+        <display>
+        <title>英语单词</title>
+        <pubTime>2015-12-31T16:00:00.000Z</pubTime>
+        
+        <tag>English</tag>
+         
+        <tag>word</tag>
+         
+         
+           
+             
+              <breadCrumb title="English" url="http://yoursite.com/categories/English/"/>
+          
+             
+              <breadCrumb title="word" url="http://yoursite.com/categories/English/word/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/Android-SystemUI-Analysis/</loc>
-    <lastmod>2018-08-20T06:16:15.411Z</lastmod>
+    <lastmod>2018-08-20T08:17:48.703Z</lastmod>
     <data>
         <display>
         <title>Android中SystemUI解析</title>
@@ -192,9 +217,9 @@
         <title>IT学习方法论</title>
         <pubTime>2017-05-04T16:00:00.000Z</pubTime>
         
-        <tag>方法论</tag>
-         
         <tag>IT</tag>
+         
+        <tag>方法论</tag>
          
          
            
