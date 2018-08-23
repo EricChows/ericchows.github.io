@@ -830,31 +830,6 @@
     </entry>
     
     <entry>
-      <title>Android内核剖析之阅读记录</title>
-      <link href="/Android-%E5%86%85%E6%A0%B8%E5%89%96%E6%9E%90/"/>
-      <url>/Android-%E5%86%85%E6%A0%B8%E5%89%96%E6%9E%90/</url>
-      <content type="html"><![CDATA[<h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>《Android内核剖析》–柯元旦<br>偏原理，2011年电子工业出版社出版</p><h1 id="第一章：Linux基础知识"><a href="#第一章：Linux基础知识" class="headerlink" title="第一章：Linux基础知识"></a>第一章：Linux基础知识</h1><p>1.1 Linux文件系统<br>1.2 Linux启动过程<br> Android对应的uboot/fastboot<br>1.3 常用Linux命令<br> export：用于将每个变量值的作用域设为全局范围<br> example: Terminal 字符串名字太长，export PS1=me<br>1.4 shell脚本备忘<br> 脚本本身不代表任何计算机语言，也不属于计算机语言范畴，到目前为止，人们把那种不需要编译的程序文件称之为脚本.<br> 不同脚本需要不同的解释器来解释执行.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#! bin/bash</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Hello World"</span> <span class="comment"># show a message</span></span><br></pre></td></tr></table></figure></p><p>1.5 Make脚本备忘<br> Make脚本多用于自动编译过程，具体可以参考GNU Make</p><h1 id="第二章：Java基础"><a href="#第二章：Java基础" class="headerlink" title="第二章：Java基础"></a>第二章：Java基础</h1><p>2.1 类装载器 DexClassLoader<br>动态装载Class文件的ClassLoader类.在Java中使用.<br>DexClassLoader是在Android中使用，用来装载Dex文件.<br>2.2 JNI 调用机制<br>Java Native Interface<br>2.2.1 Java 访问 C<br>2.2.2 C 访问 Java<br>C 调用Java只能在Java调用C中进行.<br>2.2.3 在C中使用持久对象<br>2.3 异步消息处理线程<br> Android中的异步消息处理机制：Message、MessageQueue、Looper、Handler<br> Looper还有一个特殊的概念，那就是ThreadLocal，ThreadLocal并不是线程，它的作用是在每个线程中存储数据.<br> Handler的主要任务是将一个任务切换到指定的线程中执行.</p><h1 id="第三章：Android源码下载以及开发环境的配置"><a href="#第三章：Android源码下载以及开发环境的配置" class="headerlink" title="第三章：Android源码下载以及开发环境的配置"></a>第三章：Android源码下载以及开发环境的配置</h1><p> 有Eclipse中导入Android源码的方法</p><h1 id="第四章：使用Git"><a href="#第四章：使用Git" class="headerlink" title="第四章：使用Git"></a>第四章：使用Git</h1><h1 id="第五章：Binder"><a href="#第五章：Binder" class="headerlink" title="第五章：Binder"></a>第五章：Binder</h1><p> Binder用于进程间通讯，英文的意思是别针、回形针.<br> 由四个部分组成：Binder驱动、ServiceManager、Binder服务端、Binder客户端</p><ol><li>Binder驱动</li><li>ServiceManager</li><li>Binder服务端</li><li>Binder客户端<br><a href="https://blog.csdn.net/freekiteyu/article/details/70082302" target="_blank" rel="noopener">Android-Binder进程间通讯机制</a></li></ol><p>第六章：Framework概述<br>分服务端、客户端和Linux驱动端<br>服务端-WMS、AMS<br>客户端-<br>Linux驱动端-SurfaceFlinger和Binder<br>APK的启动过程<br>每个Activity最少有三个线程<br>第七章：理解Context<br>第八章：窗口创建过程  讲到了Token<br>第九章：Framework的启动过程<br>讲述了Framework的启动过程<br>第十章：AMS内部原理  &lt;重点&gt;<br>第十一章：从输入设备中获取消息<br>第十二章：屏幕绘制基础–SurfaceFlinger<br>第十三章：View工作原理 &lt;重点&gt;<br>第十四章：WMS工作原理 &lt;重点&gt;<br>第十五章：</p><!--    Module:    第一步:需要将这些文章都看几篇    第二步：形成自己的理解    第三步：可以按照非常有用的文章，重写写一遍    第四步：纠正或者延伸别人的文章--><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><!--    阅读卡：    文章：    时间：-->]]></content>
-      
-      <categories>
-          
-          <category> Android </category>
-          
-          <category> 内核剖析 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Android </tag>
-            
-            <tag> 内核剖析 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
       <title>Android中Handler解析</title>
       <link href="/Android-Handler-Analysis/"/>
       <url>/Android-Handler-Analysis/</url>
@@ -874,6 +849,31 @@
             <tag> Android </tag>
             
             <tag> Handler </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>Android内核剖析之阅读记录</title>
+      <link href="/Android-%E5%86%85%E6%A0%B8%E5%89%96%E6%9E%90/"/>
+      <url>/Android-%E5%86%85%E6%A0%B8%E5%89%96%E6%9E%90/</url>
+      <content type="html"><![CDATA[<h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>《Android内核剖析》–柯元旦<br>偏原理，2011年电子工业出版社出版</p><h1 id="第一章：Linux基础知识"><a href="#第一章：Linux基础知识" class="headerlink" title="第一章：Linux基础知识"></a>第一章：Linux基础知识</h1><p>1.1 Linux文件系统<br>1.2 Linux启动过程<br> Android对应的uboot/fastboot<br>1.3 常用Linux命令<br> export：用于将每个变量值的作用域设为全局范围<br> example: Terminal 字符串名字太长，export PS1=me<br>1.4 shell脚本备忘<br> 脚本本身不代表任何计算机语言，也不属于计算机语言范畴，到目前为止，人们把那种不需要编译的程序文件称之为脚本.<br> 不同脚本需要不同的解释器来解释执行.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#! bin/bash</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Hello World"</span> <span class="comment"># show a message</span></span><br></pre></td></tr></table></figure></p><p>1.5 Make脚本备忘<br> Make脚本多用于自动编译过程，具体可以参考GNU Make</p><h1 id="第二章：Java基础"><a href="#第二章：Java基础" class="headerlink" title="第二章：Java基础"></a>第二章：Java基础</h1><p>2.1 类装载器 DexClassLoader<br>动态装载Class文件的ClassLoader类.在Java中使用.<br>DexClassLoader是在Android中使用，用来装载Dex文件.<br>2.2 JNI 调用机制<br>Java Native Interface<br>2.2.1 Java 访问 C<br>2.2.2 C 访问 Java<br>C 调用Java只能在Java调用C中进行.<br>2.2.3 在C中使用持久对象<br>2.3 异步消息处理线程<br> Android中的异步消息处理机制：Message、MessageQueue、Looper、Handler<br> Looper还有一个特殊的概念，那就是ThreadLocal，ThreadLocal并不是线程，它的作用是在每个线程中存储数据.<br> Handler的主要任务是将一个任务切换到指定的线程中执行.</p><h1 id="第三章：Android源码下载以及开发环境的配置"><a href="#第三章：Android源码下载以及开发环境的配置" class="headerlink" title="第三章：Android源码下载以及开发环境的配置"></a>第三章：Android源码下载以及开发环境的配置</h1><p> 有Eclipse中导入Android源码的方法</p><h1 id="第四章：使用Git"><a href="#第四章：使用Git" class="headerlink" title="第四章：使用Git"></a>第四章：使用Git</h1><h1 id="第五章：Binder"><a href="#第五章：Binder" class="headerlink" title="第五章：Binder"></a>第五章：Binder</h1><p> Binder用于进程间通讯，英文的意思是别针、回形针.<br> 由四个部分组成：Binder驱动、ServiceManager、Binder服务端、Binder客户端</p><ol><li>Binder驱动</li><li>ServiceManager</li><li>Binder服务端</li><li>Binder客户端<br><a href="https://blog.csdn.net/freekiteyu/article/details/70082302" target="_blank" rel="noopener">Android-Binder进程间通讯机制</a></li></ol><p>第六章：Framework概述<br>分服务端、客户端和Linux驱动端<br>服务端-WMS、AMS<br>客户端-<br>Linux驱动端-SurfaceFlinger和Binder<br>APK的启动过程<br>每个Activity最少有三个线程<br>第七章：理解Context<br>第八章：窗口创建过程  讲到了Token<br>第九章：Framework的启动过程<br>讲述了Framework的启动过程<br>第十章：AMS内部原理  &lt;重点&gt;<br>第十一章：从输入设备中获取消息<br>第十二章：屏幕绘制基础–SurfaceFlinger<br>第十三章：View工作原理 &lt;重点&gt;<br>第十四章：WMS工作原理 &lt;重点&gt;<br>第十五章：</p><!--    Module:    第一步:需要将这些文章都看几篇    第二步：形成自己的理解    第三步：可以按照非常有用的文章，重写写一遍    第四步：纠正或者延伸别人的文章--><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><!--    阅读卡：    文章：    时间：-->]]></content>
+      
+      <categories>
+          
+          <category> Android </category>
+          
+          <category> 内核剖析 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Android </tag>
+            
+            <tag> 内核剖析 </tag>
             
         </tags>
       
@@ -930,6 +930,27 @@
     </entry>
     
     <entry>
+      <title>MAC OS</title>
+      <link href="/Mac-OS/"/>
+      <url>/Mac-OS/</url>
+      <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.<br><!--    Module:    第一步:需要将这些文章都看几篇    第二步：形成自己的理解    第三步：可以按照非常有用的文章，重写写一遍    第四步：纠正或者延伸别人的文章--></p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><!--    阅读卡：    文章：    时间：--><p><a href="http://www.cnblogs.com/chijianqiang/archive/2011/08/03/2126593.html" target="_blank" rel="noopener">开始使用Mac OS X——写给Mac新人</a></p>]]></content>
+      
+      <categories>
+          
+          <category> MAC OS </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> MAC OS </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>Android中按键事件传递分析</title>
       <link href="/Android-KeyEvent-Analysis/"/>
       <url>/Android-KeyEvent-Analysis/</url>
@@ -949,31 +970,6 @@
             <tag> Android </tag>
             
             <tag> KeyEvent </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>Android中Activity解析</title>
-      <link href="/Android-Activity-Analysis/"/>
-      <url>/Android-Activity-Analysis/</url>
-      <content type="html"><![CDATA[<p>上次我们讲到Activity的四种启动模式的时候，已经了解到一些关于task的技术，今天我再向大家介绍一下。task是一个具有栈结构的容器，可以放置多个Activity实例。启动一个应用，系统就会为之创建一个task，来放置根Activity；默认情况下，一个Activity启动另一个Activity时，两个Activity是放置在同一个task中的，后者被压入前者所在的task栈，当用户按下后退键，后者从task被弹出，前者又显示在幕前，特别是启动其他应用中的Activity时，两个Activity对用户来说就好像是属于同一个应用；系统task和task之间是互相独立的，当我们运行一个应用时，按下Home键回到主屏，启动另一个应用，这个过程中，之前的task被转移到后台，新的task被转移到前台，其根Activity也会显示到幕前，过了一会之后，在此按下Home键回到主屏，再选择之前的应用，之前的task会被转移到前台，系统仍然保留着task内的所有Activity实例，而那个新的task会被转移到后台，如果这时用户再做后退等动作，就是针对该task内部进行操作了。</p><p>我们今天就讲一下和task相关的知识，主要分一下几点：</p><p>1.Activity的affinity(亲和力)</p><p>2.Intent几种常见的flags</p><p>3.与task相关属性</p><p>affinity：</p><p>task对于Activity来说就好像它的身份证一样，可以告诉所在的task，自己属于这个task中的一员；拥有相同affinity的多个Activity理论同属于一个task，task自身的affinity决定于根Activity的affinity值。affinity在什么场合应用呢？1.根据affinity重新为Activity选择宿主task（与allowTaskReparenting属性配合工作）；2.启动一个Activity过程中Intent使用了FLAG_ACTIVITY_NEW_TASK标记，根据affinity查找或创建一个新的具有对应affinity的task。我们会在后面进行详细讲解。</p><p>默认情况下，一个应用内的所有Activity都具有相同的affinity，都是从Application（参考的taskAffinity属性）继承而来，而Application默认的affinity是中的包名，我们可以为设置taskAffinity属性值，这样可以应用到下的所有，也可以单独为某个Activity设置taskAffinity。例如：在系统自带的Browser中，package为com.android.browser，但是却自定义一个taskAffinity属性值：</p><p>Ongoing,待完成，Please wait.</p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p><a href="https://blog.csdn.net/luoshengyang/article/details/8923485" target="_blank" rel="noopener">那两年炼就的Android内功修养</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6685853" target="_blank" rel="noopener">Android应用程序的Activity启动过程简要介绍和学习计划</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6689748" target="_blank" rel="noopener">Android应用程序启动过程源代码分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6703247" target="_blank" rel="noopener">Android应用程序内部启动Activity过程（startActivity）的源代码分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6720261" target="_blank" rel="noopener">Android应用程序在新的进程中启动新的Activity的方法和过程分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6714543" target="_blank" rel="noopener">解开Android应用程序组件Activity的”singleTask”之谜</a></p><p><a href="http://www.cnblogs.com/CSU-PL/p/3794280.html" target="_blank" rel="noopener">android的task任务栈</a></p><p><a href="https://www.jianshu.com/p/9ecea420eb52" target="_blank" rel="noopener">3分钟看懂Activity启动流程</a></p><p><a href="">Android 7.0 startActivity()源码解析以及对几个问题的思考</a></p><p><a href="https://blog.csdn.net/windskier/article/details/7096521" target="_blank" rel="noopener">android Application Component研究之Activity(一)</a><br><a href="https://blog.csdn.net/a19891024/article/details/54342799" target="_blank" rel="noopener">Android instrumentation原理</a></p>]]></content>
-      
-      <categories>
-          
-          <category> Android </category>
-          
-          <category> Activity </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Android </tag>
-            
-            <tag> Activity </tag>
             
         </tags>
       
@@ -1054,7 +1050,7 @@
       <title>英语单词</title>
       <link href="/English-Word/"/>
       <url>/English-Word/</url>
-      <content type="html"><![CDATA[<p>noun 名词 –n<br>adjective 形容词  –adj<br>adverb   副词  –adv</p><h1 id="2018-08-21"><a href="#2018-08-21" class="headerlink" title="2018-08-21"></a>2018-08-21</h1><p>determine 下决心<br>chubby 胖<br>altitude 高度<br>latitude 纬度<br>make up one’s mind 做决定，下决心<br>Think about it before you make up your mind.  在决定之前要先想一想<br>give in 投降<br>give up 放弃<br>atlas 地图集 a book of maps<br>glacier 冰川<br>grocer 食品杂货商，杂货店<br>laser 激光，激光器<br>rapids 急流，湍流  n.<br>No boat could pass through these rapids and survive.<br>rapid 迅速的，急促的，急流，adj.<br>The rabbit ran at a rapid speed.<br>rapidly 迅速地，很快地，立即，adv.<br>The water here is flowing very rapidly.<br>vapid  索然无味的，无生气的，乏味的<br>I’m bored - is this book vapid, or are we ?<br>aids 艾滋病 Acquired Immune Deficiency Synd<br>This ribbon(红丝带) is to help people understand the AIDS disease.<br>rabies 狂犬病<br>A bite from a wild dog may result in rabies.<br>valley 山谷,溪谷，低谷<br>From the top of the mountain I could see the entire valley below.<br>alley 小巷，小径<br>The narrow alley winds through the old town. 这条窄巷弯弯曲曲的穿过古老的小镇.<br>ballet 芭蕾舞<br>The man is watching the ballet dance.<br>wallet 钱包，皮甲<br>My wallet holds all of my money and credit cards.<br>value 给…定价，评价，重视，珍视，价值，有用性<br>Which do you value more - the economy or the environment?<br>waterfall 瀑布<br>The stream drops over the boulders in a beautiful small waterfall.<br>watercolor 水彩，水彩画<br>Watercolor painiting is a fun way to pass the time.<br>watery 水的，水分多的，平淡的，稀薄的，松软的，水淋淋的<br>Look into my watery eyes and tell me I’m the cutest one!<br>watermelon 西瓜<br>The zombie(僵尸) was attacked by watermelon throwing plants.<br>after all 毕竟，终究<br>You should apologize to her. After all, she is your wife.<br>pace 步，步伐<br>The horse walked at a fast pace.<br>lace 花边，鞋带<br>Before you run,make sure your laces are tight.<br>pause 暂停，中止，停顿<br>The video pause at the moment he showed a funny face.<br>sauce 酱，调味汁，莽撞，冒失<br>He is adding different sauces onto the burger.<br>pence 便士<br>In th U.K., one hundred pence make one pound sterling. 在英国，一百便士等于一英镑.<br>bend 弯曲，倾向，屈服<br>First bend to the right, then bend to the left.<br>blender 掺和器，搅拌机<br>I feel like I’m getting into a blender, when I walk to my office.<br>bleed 流血，感到疼痛，榨取，敲诈<br>“I may bleed to death.”were the waterlemon’s last words.<br>meander 漫步<br>I like to meander through the forest.<br>delta 三角洲 = a pieces of land shaped like a triangle that is formed when a river splits into smaller rivers before it flows into an ocean<br>A thriving city was built at the river delta.<br>delete 删除<br>The man with tears on face deleted his ex-wife’s phone number.<br>attitude 态度<br>The waiter has such a bad attitude!<br>altitude 高度，海拔<br>At this altitude it would be dangerous to fall off. 在这种高度下跌落很危险.<br>latitude 纬度<br>Canada and Russia have similar altitude.<br>solitude 孤独，寂寞，荒野<br>I am in solitude. My shadow is my only friend.<br>antique 古董，古玩，古物<br>I’m fascinated by that antique at first sight!<br>boil 沸腾<br>As the water boils it gives off steam.<br>boiler 锅炉，煮器<br>The boiler takes up too much room in the bathroom.we should move it.<br>bill 账单，纸币，钞票<br>Could we have the bill, please? 请把账单给我们看一下.<br>bull 公牛，雄性的鲸，象等大动物<br>A bull market is a situation in which share prices are rising.<br>bell 钟，铃，门铃，钟声<br>He rang the bell to tell the waitress to pick up the dishes.<br>lorry 货车<br>All the stuff was carried in the lorry.<br>merry 欢乐的，愉快的<br>I wish you a merry Christmas!<br>Texas 德克萨斯州<br>Texas is the second largest American State.<br>text 文本，正文，原文，课本，课文，发送，短信<br>The text in this book is small and hard to read.<br>exam 考试<br>The students are taking an exam.<br>tease 取笑，嘲弄，挑逗，戏弄<br>All the kids at school teased him for being different.<br>nexus 关系，连接<br>I keep in close contact with my nexus of good friends.<br>tunas 金枪鱼<br>They caught a whole net full of fresh tunas. 他们捕到了满满一渔网的金枪鱼.<br>accent 口音<br>The foreigner has such a funny accent when he speaks Chinese!<br>absent 缺席的，不存在的，心不在焉的，出神的.</p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><!--    阅读卡：    文章：    时间：-->]]></content>
+      <content type="html"><![CDATA[<p>noun 名词 –n<br>adjective 形容词  –adj<br>adverb   副词  –adv</p><h1 id="2018-08-21"><a href="#2018-08-21" class="headerlink" title="2018-08-21"></a>2018-08-21</h1><p>determine 下决心<br>chubby 胖<br>altitude 高度<br>latitude 纬度<br>make up one’s mind 做决定，下决心<br>Think about it before you make up your mind.  在决定之前要先想一想<br>give in 投降<br>give up 放弃<br>atlas 地图集 a book of maps<br>glacier 冰川<br>grocer 食品杂货商，杂货店<br>laser 激光，激光器<br>rapids 急流，湍流  n.<br>No boat could pass through these rapids and survive.<br>rapid 迅速的，急促的，急流，adj.<br>The rabbit ran at a rapid speed.<br>rapidly 迅速地，很快地，立即，adv.<br>The water here is flowing very rapidly.<br>vapid  索然无味的，无生气的，乏味的<br>I’m bored - is this book vapid, or are we ?<br>aids 艾滋病 Acquired Immune Deficiency Synd<br>This ribbon(红丝带) is to help people understand the AIDS disease.<br>rabies 狂犬病<br>A bite from a wild dog may result in rabies.<br>valley 山谷,溪谷，低谷<br>From the top of the mountain I could see the entire valley below.<br>alley 小巷，小径<br>The narrow alley winds through the old town. 这条窄巷弯弯曲曲的穿过古老的小镇.<br>ballet 芭蕾舞<br>The man is watching the ballet dance.<br>wallet 钱包，皮甲<br>My wallet holds all of my money and credit cards.<br>value 给…定价，评价，重视，珍视，价值，有用性<br>Which do you value more - the economy or the environment?<br>waterfall 瀑布<br>The stream drops over the boulders in a beautiful small waterfall.<br>watercolor 水彩，水彩画<br>Watercolor painiting is a fun way to pass the time.<br>watery 水的，水分多的，平淡的，稀薄的，松软的，水淋淋的<br>Look into my watery eyes and tell me I’m the cutest one!<br>watermelon 西瓜<br>The zombie(僵尸) was attacked by watermelon throwing plants.<br>after all 毕竟，终究<br>You should apologize to her. After all, she is your wife.<br>pace 步，步伐<br>The horse walked at a fast pace.<br>lace 花边，鞋带<br>Before you run,make sure your laces are tight.<br>pause 暂停，中止，停顿<br>The video pause at the moment he showed a funny face.<br>sauce 酱，调味汁，莽撞，冒失<br>He is adding different sauces onto the burger.<br>pence 便士<br>In th U.K., one hundred pence make one pound sterling. 在英国，一百便士等于一英镑.<br>bend 弯曲，倾向，屈服<br>First bend to the right, then bend to the left.<br>blender 掺和器，搅拌机<br>I feel like I’m getting into a blender, when I walk to my office.<br>bleed 流血，感到疼痛，榨取，敲诈<br>“I may bleed to death.”were the waterlemon’s last words.<br>meander 漫步<br>I like to meander through the forest.<br>delta 三角洲 = a pieces of land shaped like a triangle that is formed when a river splits into smaller rivers before it flows into an ocean<br>A thriving city was built at the river delta.<br>delete 删除<br>The man with tears on face deleted his ex-wife’s phone number.<br>attitude 态度<br>The waiter has such a bad attitude!<br>altitude 高度，海拔<br>At this altitude it would be dangerous to fall off. 在这种高度下跌落很危险.<br>latitude 纬度<br>Canada and Russia have similar altitude.<br>solitude 孤独，寂寞，荒野<br>I am in solitude. My shadow is my only friend.<br>antique 古董，古玩，古物<br>I’m fascinated by that antique at first sight!<br>boil 沸腾<br>As the water boils it gives off steam.<br>boiler 锅炉，煮器<br>The boiler takes up too much room in the bathroom.we should move it.<br>bill 账单，纸币，钞票<br>Could we have the bill, please? 请把账单给我们看一下.<br>bull 公牛，雄性的鲸，象等大动物<br>A bull market is a situation in which share prices are rising.<br>bell 钟，铃，门铃，钟声<br>He rang the bell to tell the waitress to pick up the dishes.<br>lorry 货车<br>All the stuff was carried in the lorry.<br>merry 欢乐的，愉快的<br>I wish you a merry Christmas!<br>Texas 德克萨斯州<br>Texas is the second largest American State.<br>text 文本，正文，原文，课本，课文，发送，短信<br>The text in this book is small and hard to read.<br>exam 考试<br>The students are taking an exam.<br>tease 取笑，嘲弄，挑逗，戏弄<br>All the kids at school teased him for being different.<br>nexus 关系，连接<br>I keep in close contact with my nexus of good friends.<br>tunas 金枪鱼<br>They caught a whole net full of fresh tunas. 他们捕到了满满一渔网的金枪鱼.<br>accent 口音<br>The foreigner has such a funny accent when he speaks Chinese!<br>absent 缺席的，不存在的，心不在焉的，出神的.<br>He listened to the lecture with an absent mind. 他上课也心不在焉.<br>pronunciation 发音，发音方法<br>He learns pronunciations of words from that book.<br>payment 支付，报酬<br>The clever dog made the payment for the bone itself.<br>accident 意外<br>Santa Claus is badly injured in the car accident. 圣诞老公公在车祸中受伤严重.<br>catfish 鲶鱼<br>Catfish hava whiskers just like cats do! 鲶鱼有猫一样的胡须.<br>Scottish 苏格兰人<br>These Scottish men are playing traditional music and wearing traditional clothes.<br>catch 捕捉，接住，赶上<br>Tha cat is happy to catch the mouse.<br>cash 现金，兑现<br>Please pay me with cash.<br>goldfish<br>A goldfish is a common pet.</p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><!--    阅读卡：    文章：    时间：-->]]></content>
       
       <categories>
           
@@ -1155,6 +1151,31 @@
     </entry>
     
     <entry>
+      <title>Android中Activity解析</title>
+      <link href="/Android-Activity-Analysis/"/>
+      <url>/Android-Activity-Analysis/</url>
+      <content type="html"><![CDATA[<p>上次我们讲到Activity的四种启动模式的时候，已经了解到一些关于task的技术，今天我再向大家介绍一下。task是一个具有栈结构的容器，可以放置多个Activity实例。启动一个应用，系统就会为之创建一个task，来放置根Activity；默认情况下，一个Activity启动另一个Activity时，两个Activity是放置在同一个task中的，后者被压入前者所在的task栈，当用户按下后退键，后者从task被弹出，前者又显示在幕前，特别是启动其他应用中的Activity时，两个Activity对用户来说就好像是属于同一个应用；系统task和task之间是互相独立的，当我们运行一个应用时，按下Home键回到主屏，启动另一个应用，这个过程中，之前的task被转移到后台，新的task被转移到前台，其根Activity也会显示到幕前，过了一会之后，在此按下Home键回到主屏，再选择之前的应用，之前的task会被转移到前台，系统仍然保留着task内的所有Activity实例，而那个新的task会被转移到后台，如果这时用户再做后退等动作，就是针对该task内部进行操作了。</p><p>我们今天就讲一下和task相关的知识，主要分一下几点：</p><p>1.Activity的affinity(亲和力)</p><p>2.Intent几种常见的flags</p><p>3.与task相关属性</p><p>affinity：</p><p>task对于Activity来说就好像它的身份证一样，可以告诉所在的task，自己属于这个task中的一员；拥有相同affinity的多个Activity理论同属于一个task，task自身的affinity决定于根Activity的affinity值。affinity在什么场合应用呢？1.根据affinity重新为Activity选择宿主task（与allowTaskReparenting属性配合工作）；2.启动一个Activity过程中Intent使用了FLAG_ACTIVITY_NEW_TASK标记，根据affinity查找或创建一个新的具有对应affinity的task。我们会在后面进行详细讲解。</p><p>默认情况下，一个应用内的所有Activity都具有相同的affinity，都是从Application（参考的taskAffinity属性）继承而来，而Application默认的affinity是中的包名，我们可以为设置taskAffinity属性值，这样可以应用到下的所有，也可以单独为某个Activity设置taskAffinity。例如：在系统自带的Browser中，package为com.android.browser，但是却自定义一个taskAffinity属性值：</p><p>Ongoing,待完成，Please wait.</p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p><a href="https://blog.csdn.net/luoshengyang/article/details/8923485" target="_blank" rel="noopener">那两年炼就的Android内功修养</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6685853" target="_blank" rel="noopener">Android应用程序的Activity启动过程简要介绍和学习计划</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6689748" target="_blank" rel="noopener">Android应用程序启动过程源代码分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6703247" target="_blank" rel="noopener">Android应用程序内部启动Activity过程（startActivity）的源代码分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6720261" target="_blank" rel="noopener">Android应用程序在新的进程中启动新的Activity的方法和过程分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6714543" target="_blank" rel="noopener">解开Android应用程序组件Activity的”singleTask”之谜</a></p><p><a href="http://www.cnblogs.com/CSU-PL/p/3794280.html" target="_blank" rel="noopener">android的task任务栈</a></p><p><a href="https://www.jianshu.com/p/9ecea420eb52" target="_blank" rel="noopener">3分钟看懂Activity启动流程</a></p><p><a href="">Android 7.0 startActivity()源码解析以及对几个问题的思考</a></p><p><a href="https://blog.csdn.net/windskier/article/details/7096521" target="_blank" rel="noopener">android Application Component研究之Activity(一)</a><br><a href="https://blog.csdn.net/a19891024/article/details/54342799" target="_blank" rel="noopener">Android instrumentation原理</a></p>]]></content>
+      
+      <categories>
+          
+          <category> Android </category>
+          
+          <category> Activity </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Android </tag>
+            
+            <tag> Activity </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>Android中启动过程解析</title>
       <link href="/A-Ongoing-Android%E5%BC%82%E5%B8%B8%E8%A7%A3%E6%9E%90/"/>
       <url>/A-Ongoing-Android%E5%BC%82%E5%B8%B8%E8%A7%A3%E6%9E%90/</url>
@@ -1201,31 +1222,6 @@
             <tag> Android </tag>
             
             <tag> Base </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>SELinux与SEAndroid解析</title>
-      <link href="/SELinux-SEAndroid/"/>
-      <url>/SELinux-SEAndroid/</url>
-      <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.<br><!--    Module:    第一步:需要将这些文章都看几篇    第二步：形成自己的理解    第三步：可以按照非常有用的文章，重写写一遍    第四步：纠正或者延伸别人的文章--></p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><!--    阅读卡：    文章：    时间：--><p><a href="https://blog.csdn.net/luoshengyang/article/details/37613135" target="_blank" rel="noopener">SEAndroid安全机制框架分析</a></p><p><a href="https://my.csdn.net/huangyabin001" target="_blank" rel="noopener">SELinux学习</a></p>]]></content>
-      
-      <categories>
-          
-          <category> SEAndroid </category>
-          
-          <category> SELinux </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> SEAndroid </tag>
-            
-            <tag> SELinux </tag>
             
         </tags>
       
@@ -1299,21 +1295,25 @@
     </entry>
     
     <entry>
-      <title>MAC OS</title>
-      <link href="/Mac-OS/"/>
-      <url>/Mac-OS/</url>
-      <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.<br><!--    Module:    第一步:需要将这些文章都看几篇    第二步：形成自己的理解    第三步：可以按照非常有用的文章，重写写一遍    第四步：纠正或者延伸别人的文章--></p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><!--    阅读卡：    文章：    时间：--><p><a href="http://www.cnblogs.com/chijianqiang/archive/2011/08/03/2126593.html" target="_blank" rel="noopener">开始使用Mac OS X——写给Mac新人</a></p>]]></content>
+      <title>SELinux与SEAndroid解析</title>
+      <link href="/SELinux-SEAndroid/"/>
+      <url>/SELinux-SEAndroid/</url>
+      <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.<br><!--    Module:    第一步:需要将这些文章都看几篇    第二步：形成自己的理解    第三步：可以按照非常有用的文章，重写写一遍    第四步：纠正或者延伸别人的文章--></p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><!--    阅读卡：    文章：    时间：--><p><a href="https://blog.csdn.net/luoshengyang/article/details/37613135" target="_blank" rel="noopener">SEAndroid安全机制框架分析</a></p><p><a href="https://my.csdn.net/huangyabin001" target="_blank" rel="noopener">SELinux学习</a></p>]]></content>
       
       <categories>
           
-          <category> MAC OS </category>
+          <category> SEAndroid </category>
+          
+          <category> SELinux </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> MAC OS </tag>
+            <tag> SEAndroid </tag>
+            
+            <tag> SELinux </tag>
             
         </tags>
       
@@ -1523,7 +1523,7 @@
       <title>各类工具使用小技巧</title>
       <link href="/%E5%90%84%E7%B1%BB%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E5%B0%8F%E6%8A%80%E5%B7%A7/"/>
       <url>/%E5%90%84%E7%B1%BB%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E5%B0%8F%E6%8A%80%E5%B7%A7/</url>
-      <content type="html"><![CDATA[<h1 id="VIM-使用小技巧"><a href="#VIM-使用小技巧" class="headerlink" title="VIM 使用小技巧"></a>VIM 使用小技巧</h1><h2 id="配置鼠标和显示行号"><a href="#配置鼠标和显示行号" class="headerlink" title="配置鼠标和显示行号"></a>配置鼠标和显示行号</h2><p>服务器在安装了加密之后，vim无法使用鼠标，也无法显示行号了，可以通过如下方法修改：  </p><ol><li>在~路径下创建.vimrc，然后加入两行<br>set mouse=a<br>set nu<br>修改完之后保存退出。  </li><li>关闭bash窗口，或者source .vimrc，接下来vim就可以使用鼠标和显示行号了。</li></ol><h1 id="shell-脚本小技巧"><a href="#shell-脚本小技巧" class="headerlink" title="shell 脚本小技巧"></a>shell 脚本小技巧</h1><h2 id="shell脚本注意事项"><a href="#shell脚本注意事项" class="headerlink" title="shell脚本注意事项"></a>shell脚本注意事项</h2><p>有些情况下，我们会碰到一个问题，在编译时，有些shell脚本会无法执行。相信大家会第一时间去检查脚本的权限，看看脚本是否有可执行权限——ls查看下。如果权限不对，使用chmod指令修改下就好了。<br>但是有些时候，发现权限对了，脚本执行仍然不对，如这种提示——bad interpreter:No such file or directory。这种情况，其实是脚本的文件结尾符是dos格式的，而非unix标准编码。<br>碰到这种情况，可以通过如下方式定位、解决。  </p><ol><li>使用vim打开文件，然后进入命令模式，输入set: ff（ ）并回车，此时，文件下方会有提示 或者 如果是第二种，那么恭喜你中招了，这个文件的格式是dos的（也就是windows一系列系统的格式），这种格式的脚本，是无法在shell中执行的。  </li><li>想要修改，也非常简单。输入命令 ，然后回车，问题搞定了。保存文件，会发现该脚本已经可以执行了。</li></ol><h1 id="Putty-使用小技巧"><a href="#Putty-使用小技巧" class="headerlink" title="Putty 使用小技巧"></a>Putty 使用小技巧</h1><h2 id="实现输入中文和log行数增加"><a href="#实现输入中文和log行数增加" class="headerlink" title="实现输入中文和log行数增加"></a>实现输入中文和log行数增加</h2><ol><li>在Translation标签页，将putty的字符集修改为UTF-8。  </li><li>将字体设置成Fixedsys。  </li><li>在Window标签页，将Lines of Scrollback设置成为20000。  </li><li>将Session中的IP地址和Saved Session填写好。选择Save。  </li><li>下次登录的时候，只要选择存储的Session就可以了。</li></ol><h1 id="Hexo-Markdown-插入图片"><a href="#Hexo-Markdown-插入图片" class="headerlink" title="Hexo-Markdown 插入图片"></a>Hexo-Markdown 插入图片</h1><p><a href="https://blog.csdn.net/qq_26891045/article/details/51693571" target="_blank" rel="noopener">参考</a><br><a href="https://www.jianshu.com/p/cf0628478a4e" target="_blank" rel="noopener">这种方法加载失败</a><br>实例：<br><img src="/各类工具使用小技巧/Android-Window-mechanism/window-01.png" alt="&quot;Window的界面解析&quot;"></p><p>Android-PackageManagerService-Analysis/4-packagemanager-packageparser-parcelable.png</p><h1 id="Hexo-站内文章之间跳转"><a href="#Hexo-站内文章之间跳转" class="headerlink" title="Hexo 站内文章之间跳转"></a>Hexo 站内文章之间跳转</h1><p> 可以从当前文章，跳转到另外的一篇文章，实例见Android中Window机制 这篇文章<br> 首先要分析Window的创建过程，就必须了解<a href="../Android-Launcher-Activity">Activity的启动过程</a>。 </p><h1 id="MarkDown-实现业内跳转"><a href="#MarkDown-实现业内跳转" class="headerlink" title="MarkDown 实现业内跳转"></a>MarkDown 实现业内跳转</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1. 先定义一个锚(id)</span><br><span class="line">    &lt;span id=<span class="string">"jump"</span>&gt;Hello World&lt;/span&gt;</span><br><span class="line">2. 然后使用markdown的语法:</span><br><span class="line">      [XXXX](<span class="comment">#jump)</span></span><br></pre></td></tr></table></figure><h1 id="Android中的源码查看方式"><a href="#Android中的源码查看方式" class="headerlink" title="Android中的源码查看方式"></a>Android中的源码查看方式</h1><p>1) 通过SDK 可以查看framework/base/core下的Java和res源码<br>2) 通过Google官网 <a href="https://android.googlesource.com" target="_blank" rel="noopener">https://android.googlesource.com</a></p><h1 id="Chrome-实用插件"><a href="#Chrome-实用插件" class="headerlink" title="Chrome 实用插件"></a>Chrome 实用插件</h1><p>OneTab<br>谷歌访问助手<br>tampermonkey<br>Github三件套： Octotree<br>Listen 1  <a href="http://listen1.github.io/listen1/" target="_blank" rel="noopener">http://listen1.github.io/listen1/</a><br>office online<br>JSON Viewer<br>JSON Editor<br>MarkDown Here<br>掘金<br>inoreader  RSS工具<br>印象笔记<br>书签侧边栏</p><p><a href="../Chrome">Chrome插件开发</a></p><h1 id="图标素材"><a href="#图标素材" class="headerlink" title="图标素材"></a>图标素材</h1><p>Flatlcon<br><a href="https://flaticons.net/" target="_blank" rel="noopener">https://flaticons.net/</a><br><a href="https://www.flaticon.com/most-downloaded" target="_blank" rel="noopener">https://www.flaticon.com/most-downloaded</a><br><a href="https://pattern.flaticon.com/" target="_blank" rel="noopener">https://pattern.flaticon.com/</a></p><p>Easyicon</p><p>Fontello</p><p>Swifticons</p><p>Noun Project</p><h1 id="Android-反编译"><a href="#Android-反编译" class="headerlink" title="Android 反编译"></a>Android 反编译</h1><p><a href="https://blog.csdn.net/s13383754499/article/details/78914592" target="_blank" rel="noopener">https://blog.csdn.net/s13383754499/article/details/78914592</a></p><p>java -jar apktool_2.3.3.jar d -f YouTube.apk -o MMTS</p><h1 id="Git-使用"><a href="#Git-使用" class="headerlink" title="Git 使用"></a>Git 使用</h1><p><a href="https://juejin.im/entry/5b43ebb1f265da0fa509fd0f" target="_blank" rel="noopener">git clean还你一片清洁之地</a><br><a href="https://mp.weixin.qq.com/s/pQfxMGU6mB3AmZIiFpw2bQ" target="_blank" rel="noopener">一些你可能会用到的Git实用技巧和命令</a></p><ol><li>将某笔提交生成一个patch<br>最近的一次提交生成一个patch<br>git format-patch -1<br>git format-patch -s 1bbe3c8c197a35f79bfddaba099270a2e54ea9c7<br>git format-patch HEAD^ &lt;==最近的1次commit的patch<br>git format-patch HEAD^^ &lt;==最近的2次commit的patch<br>git format-patch HEAD^ &lt;==最近的3次commit的patch<br>git format-patch HEAD^ &lt;==最近的4次commit的patch<br>git format-patch HEAD^^^^^ &lt;==不支持！！！！error！！！</li></ol><h1 id="github"><a href="#github" class="headerlink" title="github"></a>github</h1><ol><li>github trend 总结了每天、每周、每日的热门项目和开发者</li><li>github topic 展示了最新和最流行的讨论主题，还能看到更多的非开发技术的讨论主题</li></ol><h1 id="RSS的使用"><a href="#RSS的使用" class="headerlink" title="RSS的使用"></a>RSS的使用</h1><p><a href="https://juejin.im/post/5af4042e6fb9a07ac23ac3ab" target="_blank" rel="noopener">RSS推送技术–打造自己的今日头条</a><br>Q: 希望通过用RSS查看关注网站之前的文章，如何操作？</p><h1 id="建站"><a href="#建站" class="headerlink" title="建站"></a>建站</h1><p><a href="https://www.cnblogs.com/wu-yun-jiang/p/4518204.html" target="_blank" rel="noopener">搭建自己的服务器和域名</a></p><h1 id="repo的使用"><a href="#repo的使用" class="headerlink" title="repo的使用"></a>repo的使用</h1><ol><li>对于某个项目，只是需要修改某个模块的代码，比如Launcher，可以只需要拉取该模块的代码<br>repo init 8909-la301<br>repo sync -c packages/app/Launcher3<br>这样就可以只拉取Launcher3模块的代码.<br>问题： 代码提交的时候，需要从本地分支提交代码。<br>新建本地分支的方法：<br>a) 之前的repo start master –all肯定不能使用<br>repo start master packages/apps/Launcher3<br>b) git checkout的方式</li></ol><p>常用图标：<br>└──<br>•<br>★</p><h1 id="小程序入坑问题锦集"><a href="#小程序入坑问题锦集" class="headerlink" title="小程序入坑问题锦集"></a>小程序入坑问题锦集</h1><ol><li>如何实现将需要展示的图片放到网站上<br>小程序可以直接到网站上获取图片等资源<br><a href="https://www.cnblogs.com/zhoubingyan/p/8979409.html" target="_blank" rel="noopener">https://www.cnblogs.com/zhoubingyan/p/8979409.html</a></li></ol><ol start="2"><li>为何同样大小的图片，就不能显示？</li></ol><h1 id="VirtualBox-安装Mac-OS"><a href="#VirtualBox-安装Mac-OS" class="headerlink" title="VirtualBox 安装Mac OS"></a>VirtualBox 安装Mac OS</h1><p><a href="https://blog.csdn.net/u012150264/article/details/51434550" target="_blank" rel="noopener">VirtualBOX安装Mac OS X 10.7正式版</a><br><a href="http://bbs.zol.com.cn/nbbbs/d160_148114.html" target="_blank" rel="noopener">全民吃苹果，首发VirtualBOX安装Mac OS X 10.7正式版_可完美升级，无bug</a></p><p><a href="https://www.linuxidc.com/Linux/2014-09/106558.htm" target="_blank" rel="noopener">Ubuntu下使用VirtualBox安装Mac OS X Mavericks(10.9)</a></p><ol><li>下载dmg格式文件<br><a href="http://www.pc6.com/mac/148040.html" target="_blank" rel="noopener">http://www.pc6.com/mac/148040.html</a></li><li>使用ultraiso工具将dmp文件转换成ISO格式</li><li>遇到问题：fatal:no bootable medium found! system halted!<br>目前暂未解决</li></ol><h1 id="WordPress"><a href="#WordPress" class="headerlink" title="WordPress"></a>WordPress</h1><p>弹性Web托管</p><h1 id="adb"><a href="#adb" class="headerlink" title="adb"></a>adb</h1><p>过滤某个TAG的log： adb logcat -s TAG</p><h1 id="迅雷"><a href="#迅雷" class="headerlink" title="迅雷"></a>迅雷</h1><p>去掉迅雷中嵌入式字幕中的中文字幕<br>使用会声会影视频编缉软件，在字幕的位置加一个遮罩，渲染输出。</p><h1 id="跟踪函数调用"><a href="#跟踪函数调用" class="headerlink" title="跟踪函数调用"></a>跟踪函数调用</h1><ol><li>异常时打印函数调用信息<br>fillInStackTrace();//会清空之前的栈内信息<br>e.printStackTrace();</li><li></li></ol>]]></content>
+      <content type="html"><![CDATA[<h1 id="VIM-使用小技巧"><a href="#VIM-使用小技巧" class="headerlink" title="VIM 使用小技巧"></a>VIM 使用小技巧</h1><h2 id="配置鼠标和显示行号"><a href="#配置鼠标和显示行号" class="headerlink" title="配置鼠标和显示行号"></a>配置鼠标和显示行号</h2><p>服务器在安装了加密之后，vim无法使用鼠标，也无法显示行号了，可以通过如下方法修改：  </p><ol><li>在~路径下创建.vimrc，然后加入两行<br>set mouse=a<br>set nu<br>修改完之后保存退出。  </li><li>关闭bash窗口，或者source .vimrc，接下来vim就可以使用鼠标和显示行号了。</li></ol><h1 id="shell-脚本小技巧"><a href="#shell-脚本小技巧" class="headerlink" title="shell 脚本小技巧"></a>shell 脚本小技巧</h1><h2 id="shell脚本注意事项"><a href="#shell脚本注意事项" class="headerlink" title="shell脚本注意事项"></a>shell脚本注意事项</h2><p>有些情况下，我们会碰到一个问题，在编译时，有些shell脚本会无法执行。相信大家会第一时间去检查脚本的权限，看看脚本是否有可执行权限——ls查看下。如果权限不对，使用chmod指令修改下就好了。<br>但是有些时候，发现权限对了，脚本执行仍然不对，如这种提示——bad interpreter:No such file or directory。这种情况，其实是脚本的文件结尾符是dos格式的，而非unix标准编码。<br>碰到这种情况，可以通过如下方式定位、解决。  </p><ol><li>使用vim打开文件，然后进入命令模式，输入set: ff（ ）并回车，此时，文件下方会有提示 或者 如果是第二种，那么恭喜你中招了，这个文件的格式是dos的（也就是windows一系列系统的格式），这种格式的脚本，是无法在shell中执行的。  </li><li>想要修改，也非常简单。输入命令 ，然后回车，问题搞定了。保存文件，会发现该脚本已经可以执行了。</li></ol><h1 id="Putty-使用小技巧"><a href="#Putty-使用小技巧" class="headerlink" title="Putty 使用小技巧"></a>Putty 使用小技巧</h1><h2 id="实现输入中文和log行数增加"><a href="#实现输入中文和log行数增加" class="headerlink" title="实现输入中文和log行数增加"></a>实现输入中文和log行数增加</h2><ol><li>在Translation标签页，将putty的字符集修改为UTF-8。  </li><li>将字体设置成Fixedsys。  </li><li>在Window标签页，将Lines of Scrollback设置成为20000。  </li><li>将Session中的IP地址和Saved Session填写好。选择Save。  </li><li>下次登录的时候，只要选择存储的Session就可以了。</li></ol><h1 id="Hexo-Markdown-插入图片"><a href="#Hexo-Markdown-插入图片" class="headerlink" title="Hexo-Markdown 插入图片"></a>Hexo-Markdown 插入图片</h1><p><a href="https://blog.csdn.net/qq_26891045/article/details/51693571" target="_blank" rel="noopener">参考</a><br><a href="https://www.jianshu.com/p/cf0628478a4e" target="_blank" rel="noopener">这种方法加载失败</a><br>实例：<br><img src="/各类工具使用小技巧/Android-Window-mechanism/window-01.png" alt="&quot;Window的界面解析&quot;"></p><p>Android-PackageManagerService-Analysis/4-packagemanager-packageparser-parcelable.png</p><h1 id="Hexo-站内文章之间跳转"><a href="#Hexo-站内文章之间跳转" class="headerlink" title="Hexo 站内文章之间跳转"></a>Hexo 站内文章之间跳转</h1><p> 可以从当前文章，跳转到另外的一篇文章，实例见Android中Window机制 这篇文章<br> 首先要分析Window的创建过程，就必须了解<a href="../Android-Launcher-Activity">Activity的启动过程</a>。 </p><h1 id="MarkDown-实现业内跳转"><a href="#MarkDown-实现业内跳转" class="headerlink" title="MarkDown 实现业内跳转"></a>MarkDown 实现业内跳转</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1. 先定义一个锚(id)</span><br><span class="line">    &lt;span id=<span class="string">"jump"</span>&gt;Hello World&lt;/span&gt;</span><br><span class="line">2. 然后使用markdown的语法:</span><br><span class="line">      [XXXX](<span class="comment">#jump)</span></span><br></pre></td></tr></table></figure><h1 id="Android中的源码查看方式"><a href="#Android中的源码查看方式" class="headerlink" title="Android中的源码查看方式"></a>Android中的源码查看方式</h1><p>1) 通过SDK 可以查看framework/base/core下的Java和res源码<br>2) 通过Google官网 <a href="https://android.googlesource.com" target="_blank" rel="noopener">https://android.googlesource.com</a></p><h1 id="Chrome-实用插件"><a href="#Chrome-实用插件" class="headerlink" title="Chrome 实用插件"></a>Chrome 实用插件</h1><p>OneTab<br>谷歌访问助手<br>tampermonkey<br>Github三件套： Octotree<br>Listen 1  <a href="http://listen1.github.io/listen1/" target="_blank" rel="noopener">http://listen1.github.io/listen1/</a><br>office online<br>JSON Viewer<br>JSON Editor<br>MarkDown Here<br>掘金<br>inoreader  RSS工具<br>印象笔记<br>书签侧边栏</p><p><a href="../Chrome">Chrome插件开发</a></p><h1 id="图标素材"><a href="#图标素材" class="headerlink" title="图标素材"></a>图标素材</h1><p>Flatlcon<br><a href="https://flaticons.net/" target="_blank" rel="noopener">https://flaticons.net/</a><br><a href="https://www.flaticon.com/most-downloaded" target="_blank" rel="noopener">https://www.flaticon.com/most-downloaded</a><br><a href="https://pattern.flaticon.com/" target="_blank" rel="noopener">https://pattern.flaticon.com/</a></p><p>Easyicon</p><p>Fontello</p><p>Swifticons</p><p>Noun Project</p><h1 id="Android-反编译"><a href="#Android-反编译" class="headerlink" title="Android 反编译"></a>Android 反编译</h1><p><a href="https://blog.csdn.net/s13383754499/article/details/78914592" target="_blank" rel="noopener">https://blog.csdn.net/s13383754499/article/details/78914592</a></p><p>java -jar apktool_2.3.3.jar d -f YouTube.apk -o MMTS</p><h1 id="Git-使用"><a href="#Git-使用" class="headerlink" title="Git 使用"></a>Git 使用</h1><p><a href="https://juejin.im/entry/5b43ebb1f265da0fa509fd0f" target="_blank" rel="noopener">git clean还你一片清洁之地</a><br><a href="https://mp.weixin.qq.com/s/pQfxMGU6mB3AmZIiFpw2bQ" target="_blank" rel="noopener">一些你可能会用到的Git实用技巧和命令</a></p><ol><li>将某笔提交生成一个patch<br>最近的一次提交生成一个patch<br>git format-patch -1<br>git format-patch -s 1bbe3c8c197a35f79bfddaba099270a2e54ea9c7<br>git format-patch HEAD^ &lt;==最近的1次commit的patch<br>git format-patch HEAD^^ &lt;==最近的2次commit的patch<br>git format-patch HEAD^ &lt;==最近的3次commit的patch<br>git format-patch HEAD^ &lt;==最近的4次commit的patch<br>git format-patch HEAD^^^^^ &lt;==不支持！！！！error！！！</li></ol><h1 id="github"><a href="#github" class="headerlink" title="github"></a>github</h1><ol><li>github trend 总结了每天、每周、每日的热门项目和开发者</li><li>github topic 展示了最新和最流行的讨论主题，还能看到更多的非开发技术的讨论主题</li></ol><h1 id="RSS的使用"><a href="#RSS的使用" class="headerlink" title="RSS的使用"></a>RSS的使用</h1><p><a href="https://juejin.im/post/5af4042e6fb9a07ac23ac3ab" target="_blank" rel="noopener">RSS推送技术–打造自己的今日头条</a><br>Q: 希望通过用RSS查看关注网站之前的文章，如何操作？</p><h1 id="建站"><a href="#建站" class="headerlink" title="建站"></a>建站</h1><p><a href="https://www.cnblogs.com/wu-yun-jiang/p/4518204.html" target="_blank" rel="noopener">搭建自己的服务器和域名</a></p><h1 id="repo的使用"><a href="#repo的使用" class="headerlink" title="repo的使用"></a>repo的使用</h1><ol><li>对于某个项目，只是需要修改某个模块的代码，比如Launcher，可以只需要拉取该模块的代码<br>repo init 8909-la301<br>repo sync -c packages/app/Launcher3<br>这样就可以只拉取Launcher3模块的代码.<br>问题： 代码提交的时候，需要从本地分支提交代码。<br>新建本地分支的方法：<br>a) 之前的repo start master –all肯定不能使用<br>repo start master packages/apps/Launcher3<br>b) git checkout的方式</li></ol><p>常用图标：<br>└──<br>•<br>★</p><h1 id="小程序入坑问题锦集"><a href="#小程序入坑问题锦集" class="headerlink" title="小程序入坑问题锦集"></a>小程序入坑问题锦集</h1><ol><li>如何实现将需要展示的图片放到网站上<br>小程序可以直接到网站上获取图片等资源<br><a href="https://www.cnblogs.com/zhoubingyan/p/8979409.html" target="_blank" rel="noopener">https://www.cnblogs.com/zhoubingyan/p/8979409.html</a></li></ol><ol start="2"><li>为何同样大小的图片，就不能显示？</li></ol><h1 id="VirtualBox-安装Mac-OS"><a href="#VirtualBox-安装Mac-OS" class="headerlink" title="VirtualBox 安装Mac OS"></a>VirtualBox 安装Mac OS</h1><p><a href="https://blog.csdn.net/u012150264/article/details/51434550" target="_blank" rel="noopener">VirtualBOX安装Mac OS X 10.7正式版</a><br><a href="http://bbs.zol.com.cn/nbbbs/d160_148114.html" target="_blank" rel="noopener">全民吃苹果，首发VirtualBOX安装Mac OS X 10.7正式版_可完美升级，无bug</a></p><p><a href="https://www.linuxidc.com/Linux/2014-09/106558.htm" target="_blank" rel="noopener">Ubuntu下使用VirtualBox安装Mac OS X Mavericks(10.9)</a></p><ol><li>下载dmg格式文件<br><a href="http://www.pc6.com/mac/148040.html" target="_blank" rel="noopener">http://www.pc6.com/mac/148040.html</a></li><li>使用ultraiso工具将dmp文件转换成ISO格式</li><li>遇到问题：fatal:no bootable medium found! system halted!<br>目前暂未解决</li></ol><h1 id="WordPress"><a href="#WordPress" class="headerlink" title="WordPress"></a>WordPress</h1><p>弹性Web托管</p><h1 id="adb"><a href="#adb" class="headerlink" title="adb"></a>adb</h1><p>过滤某个TAG的log： adb logcat -s TAG</p><h1 id="迅雷"><a href="#迅雷" class="headerlink" title="迅雷"></a>迅雷</h1><p>去掉迅雷中嵌入式字幕中的中文字幕<br>使用会声会影视频编缉软件，在字幕的位置加一个遮罩，渲染输出。</p><h1 id="跟踪函数调用"><a href="#跟踪函数调用" class="headerlink" title="跟踪函数调用"></a>跟踪函数调用</h1><ol><li>异常时打印函数调用信息<br>fillInStackTrace();//会清空之前的栈内信息<br>e.printStackTrace();</li><li></li></ol><h1 id="Android-mk-中过滤"><a href="#Android-mk-中过滤" class="headerlink" title="Android.mk 中过滤"></a>Android.mk 中过滤</h1><p>ifeq (, $(filter msm8953_x57_l8, $(TARGET_PRODUCT)))<br>…<br>endif</p><h1 id="在线编译运行小工具"><a href="#在线编译运行小工具" class="headerlink" title="在线编译运行小工具"></a>在线编译运行小工具</h1><p>适用于Php,Java,C,C++,Go等多种语言<br><a href="https://c.runoob.com/compile" target="_blank" rel="noopener">https://c.runoob.com/compile</a> 背景为白色<br><a href="https://tool.lu/coderunner/" target="_blank" rel="noopener">https://tool.lu/coderunner/</a>  背景为黑色</p>]]></content>
       
       <categories>
           
@@ -1673,16 +1673,16 @@
     </entry>
     
     <entry>
-      <title>Android中Launcher解析</title>
-      <link href="/Android-Launcher-Analysis/"/>
-      <url>/Android-Launcher-Analysis/</url>
-      <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.</p><h1 id="Launcher"><a href="#Launcher" class="headerlink" title="Launcher"></a>Launcher</h1><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p><a href="https://blog.csdn.net/yj934672573/article/details/54571704" target="_blank" rel="noopener">Android 7.0 Keyguard流程分析</a></p><p><a href="https://blog.csdn.net/yin1031468524/article/details/62216934" target="_blank" rel="noopener">Android原生Launcher3简要分析</a></p><p><a href="https://blog.csdn.net/qq_30552095/article/details/80494770" target="_blank" rel="noopener">Android8.1 Launcher3 去掉抽屉(一）</a><br><a href="https://blog.csdn.net/qq_30552095/article/details/80500290" target="_blank" rel="noopener">Android8.1 Launcher3 去掉抽屉（二）</a><br><a href="https://blog.csdn.net/qq_30552095/article/details/80508449" target="_blank" rel="noopener">Android8.1 Launcher3 去掉抽屉（三）</a></p><p><a href="https://blog.csdn.net/qq_31012033/article/details/73289232" target="_blank" rel="noopener">Android 7.0 Launcher3 去掉应用抽屉</a></p>]]></content>
+      <title>Android中WindowManagerService解析</title>
+      <link href="/Android-WindowManagerService-Analysis/"/>
+      <url>/Android-WindowManagerService-Analysis/</url>
+      <content type="html"><![CDATA[<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a href="https://blog.csdn.net/luoshengyang/article/details/8923485" target="_blank" rel="noopener">那两年炼就的Android内功修养</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8462738" target="_blank" rel="noopener">Android窗口管理服务WindowManagerService的简要介绍和学习计划</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8479101" target="_blank" rel="noopener">Android窗口管理服务WindowManagerService计算Activity窗口大小的过程分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8498908" target="_blank" rel="noopener">Android窗口管理服务WindowManagerService对窗口的组织方式分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8526644" target="_blank" rel="noopener">Android窗口管理服务WindowManagerService对输入法窗口（Input Method Window）的管理分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8550820" target="_blank" rel="noopener">Android窗口管理服务WindowManagerService对壁纸窗口（Wallpaper Window）的管理分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8570428" target="_blank" rel="noopener">Android窗口管理服务WindowManagerService计算窗口Z轴位置的过程分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8577789" target="_blank" rel="noopener">Android窗口管理服务WindowManagerService显示Activity组件的启动窗口（Starting Window）的过程分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8596449" target="_blank" rel="noopener">Android窗口管理服务WindowManagerService切换Activity窗口（App Transition）的过程分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8611754" target="_blank" rel="noopener">Android窗口管理服务WindowManagerService显示窗口动画的原理分析</a></p>]]></content>
       
       <categories>
           
           <category> Android </category>
           
-          <category> Launcher </category>
+          <category> WindowManagerService </category>
           
       </categories>
       
@@ -1691,32 +1691,9 @@
             
             <tag> Android </tag>
             
-            <tag> Launcher </tag>
+            <tag> WindowManagerService </tag>
             
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>Android中SystemUI解析</title>
-      <link href="/Android-SystemUI-Analysis/"/>
-      <url>/Android-SystemUI-Analysis/</url>
-      <content type="html"><![CDATA[<p>还未开始，待补充</p><h1 id="状态栏"><a href="#状态栏" class="headerlink" title="状态栏"></a>状态栏</h1><h2 id="锁屏状态栏"><a href="#锁屏状态栏" class="headerlink" title="锁屏状态栏"></a>锁屏状态栏</h2><h2 id="状态栏反色"><a href="#状态栏反色" class="headerlink" title="状态栏反色"></a>状态栏反色</h2><h2 id="沉浸式状态栏"><a href="#沉浸式状态栏" class="headerlink" title="沉浸式状态栏"></a>沉浸式状态栏</h2><h2 id="信号图标的刷新"><a href="#信号图标的刷新" class="headerlink" title="信号图标的刷新"></a>信号图标的刷新</h2><h2 id="凹口处理"><a href="#凹口处理" class="headerlink" title="凹口处理"></a>凹口处理</h2><h1 id="导航栏"><a href="#导航栏" class="headerlink" title="导航栏"></a>导航栏</h1><p>导航栏中的Back键和HOME键的事件处理：<br><a href="https://blog.csdn.net/span76/article/details/48441971" target="_blank" rel="noopener">https://blog.csdn.net/span76/article/details/48441971</a><br>Recent键的处理呢？<br>frameworks/base/packages/SystemUI/src/com/android/systemui/statusbar/phone/NavigationBarFragment.java<br>中的onRecentsClick函数处理Recent键</p><h1 id="快捷开关"><a href="#快捷开关" class="headerlink" title="快捷开关"></a>快捷开关</h1><h1 id="下拉通知栏"><a href="#下拉通知栏" class="headerlink" title="下拉通知栏"></a>下拉通知栏</h1><h1 id="截图模块"><a href="#截图模块" class="headerlink" title="截图模块"></a>截图模块</h1><h1 id="防误触模块"><a href="#防误触模块" class="headerlink" title="防误触模块"></a>防误触模块</h1><h1 id="亮度调节"><a href="#亮度调节" class="headerlink" title="亮度调节"></a>亮度调节</h1><h1 id="PIP-画中画"><a href="#PIP-画中画" class="headerlink" title="PIP 画中画"></a>PIP 画中画</h1><h1 id="双屏异显"><a href="#双屏异显" class="headerlink" title="双屏异显"></a>双屏异显</h1><h1 id="Recent模块"><a href="#Recent模块" class="headerlink" title="Recent模块"></a>Recent模块</h1><p>在AndroidManifest.xml里面，我们注意到SystemUISecondaryUserService，对于每一个用户都有一个SystemUI进程，所以在用户切换的时候，需要用SystemUISecondaryUserService来确保新的用户进程创建.<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- Recents depends on every user having their own SystemUI process, so on user switch,</span></span><br><span class="line"><span class="comment">     ensure that the process is created by starting this service.</span></span><br><span class="line"><span class="comment">     --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">service</span> <span class="attr">android:name</span>=<span class="string">"SystemUISecondaryUserService"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:exported</span>=<span class="string">"true"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:permission</span>=<span class="string">"com.android.systemui.permission.SELF"</span> /&gt;</span></span><br></pre></td></tr></table></figure></p><p>RecentsActivity.java的onCreate函数开始<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RecentsActivity</span> <span class="keyword">extends</span> <span class="title">Activity</span> <span class="keyword">implements</span> <span class="title">ViewTreeObserver</span>.<span class="title">OnPreDrawListener</span>,</span></span><br><span class="line"><span class="class">        <span class="title">ColorExtractor</span>.<span class="title">OnColorsChangedListener</span> </span>&#123;</span><br><span class="line">        ...</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** Called with the activity is first created. */</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">        mFinishedOnStartup = <span class="keyword">false</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// In the case that the activity starts up before the Recents component has initialized</span></span><br><span class="line">        <span class="comment">// (usually when debugging/pushing the SysUI apk), just finish this activity.</span></span><br><span class="line">        SystemServicesProxy ssp = Recents.getSystemServices();</span><br><span class="line">        <span class="keyword">if</span> (ssp == <span class="keyword">null</span>) &#123;</span><br><span class="line">            mFinishedOnStartup = <span class="keyword">true</span>;</span><br><span class="line">            finish();</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure></p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p>Doze模式<br><a href="https://blog.csdn.net/u013278940/article/details/50498304" target="_blank" rel="noopener">Android5.1 系统之省电模式探索一启动流程</a><br><a href="https://blog.csdn.net/innost/article/details/47660591" target="_blank" rel="noopener">《深入理解Android 卷III》第七章 深入理解SystemUI</a></p><p><a href="https://jingyan.baidu.com/article/76a7e409071797fc3b6e15bb.html" target="_blank" rel="noopener">SystemUI 调谐器 TunerService的打开方式</a></p><p><a href="https://www.jianshu.com/p/ad040aab0e66" target="_blank" rel="noopener">Android官方架构组件Navigation：大巧不工的Fragment管理框架</a></p>]]></content>
-      
-      <categories>
-          
-          <category> Android </category>
-          
-          <category> SystemUI </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Android </tag>
-            
-            <tag> SystemUI </tag>
+            <tag> WMS </tag>
             
         </tags>
       
@@ -1775,16 +1752,16 @@
     </entry>
     
     <entry>
-      <title>Android中WindowManagerService解析</title>
-      <link href="/Android-WindowManagerService-Analysis/"/>
-      <url>/Android-WindowManagerService-Analysis/</url>
-      <content type="html"><![CDATA[<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a href="https://blog.csdn.net/luoshengyang/article/details/8923485" target="_blank" rel="noopener">那两年炼就的Android内功修养</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8462738" target="_blank" rel="noopener">Android窗口管理服务WindowManagerService的简要介绍和学习计划</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8479101" target="_blank" rel="noopener">Android窗口管理服务WindowManagerService计算Activity窗口大小的过程分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8498908" target="_blank" rel="noopener">Android窗口管理服务WindowManagerService对窗口的组织方式分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8526644" target="_blank" rel="noopener">Android窗口管理服务WindowManagerService对输入法窗口（Input Method Window）的管理分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8550820" target="_blank" rel="noopener">Android窗口管理服务WindowManagerService对壁纸窗口（Wallpaper Window）的管理分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8570428" target="_blank" rel="noopener">Android窗口管理服务WindowManagerService计算窗口Z轴位置的过程分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8577789" target="_blank" rel="noopener">Android窗口管理服务WindowManagerService显示Activity组件的启动窗口（Starting Window）的过程分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8596449" target="_blank" rel="noopener">Android窗口管理服务WindowManagerService切换Activity窗口（App Transition）的过程分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8611754" target="_blank" rel="noopener">Android窗口管理服务WindowManagerService显示窗口动画的原理分析</a></p>]]></content>
+      <title>Android中Launcher解析</title>
+      <link href="/Android-Launcher-Analysis/"/>
+      <url>/Android-Launcher-Analysis/</url>
+      <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.</p><h1 id="Launcher"><a href="#Launcher" class="headerlink" title="Launcher"></a>Launcher</h1><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p><a href="https://blog.csdn.net/yj934672573/article/details/54571704" target="_blank" rel="noopener">Android 7.0 Keyguard流程分析</a></p><p><a href="https://blog.csdn.net/yin1031468524/article/details/62216934" target="_blank" rel="noopener">Android原生Launcher3简要分析</a></p><p><a href="https://blog.csdn.net/qq_30552095/article/details/80494770" target="_blank" rel="noopener">Android8.1 Launcher3 去掉抽屉(一）</a><br><a href="https://blog.csdn.net/qq_30552095/article/details/80500290" target="_blank" rel="noopener">Android8.1 Launcher3 去掉抽屉（二）</a><br><a href="https://blog.csdn.net/qq_30552095/article/details/80508449" target="_blank" rel="noopener">Android8.1 Launcher3 去掉抽屉（三）</a></p><p><a href="https://blog.csdn.net/qq_31012033/article/details/73289232" target="_blank" rel="noopener">Android 7.0 Launcher3 去掉应用抽屉</a></p>]]></content>
       
       <categories>
           
           <category> Android </category>
           
-          <category> WindowManagerService </category>
+          <category> Launcher </category>
           
       </categories>
       
@@ -1793,9 +1770,32 @@
             
             <tag> Android </tag>
             
-            <tag> WindowManagerService </tag>
+            <tag> Launcher </tag>
             
-            <tag> WMS </tag>
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>Android中SystemUI解析</title>
+      <link href="/Android-SystemUI-Analysis/"/>
+      <url>/Android-SystemUI-Analysis/</url>
+      <content type="html"><![CDATA[<p>还未开始，待补充</p><h1 id="状态栏"><a href="#状态栏" class="headerlink" title="状态栏"></a>状态栏</h1><h2 id="锁屏状态栏"><a href="#锁屏状态栏" class="headerlink" title="锁屏状态栏"></a>锁屏状态栏</h2><h2 id="状态栏反色"><a href="#状态栏反色" class="headerlink" title="状态栏反色"></a>状态栏反色</h2><h2 id="沉浸式状态栏"><a href="#沉浸式状态栏" class="headerlink" title="沉浸式状态栏"></a>沉浸式状态栏</h2><h2 id="信号图标的刷新"><a href="#信号图标的刷新" class="headerlink" title="信号图标的刷新"></a>信号图标的刷新</h2><h2 id="凹口处理"><a href="#凹口处理" class="headerlink" title="凹口处理"></a>凹口处理</h2><h1 id="导航栏"><a href="#导航栏" class="headerlink" title="导航栏"></a>导航栏</h1><p>导航栏中的Back键和HOME键的事件处理：<br><a href="https://blog.csdn.net/span76/article/details/48441971" target="_blank" rel="noopener">https://blog.csdn.net/span76/article/details/48441971</a><br>Recent键的处理呢？<br>frameworks/base/packages/SystemUI/src/com/android/systemui/statusbar/phone/NavigationBarFragment.java<br>中的onRecentsClick函数处理Recent键</p><h1 id="快捷开关"><a href="#快捷开关" class="headerlink" title="快捷开关"></a>快捷开关</h1><h1 id="下拉通知栏"><a href="#下拉通知栏" class="headerlink" title="下拉通知栏"></a>下拉通知栏</h1><h1 id="截图模块"><a href="#截图模块" class="headerlink" title="截图模块"></a>截图模块</h1><h1 id="防误触模块"><a href="#防误触模块" class="headerlink" title="防误触模块"></a>防误触模块</h1><h1 id="亮度调节"><a href="#亮度调节" class="headerlink" title="亮度调节"></a>亮度调节</h1><h1 id="PIP-画中画"><a href="#PIP-画中画" class="headerlink" title="PIP 画中画"></a>PIP 画中画</h1><h1 id="双屏异显"><a href="#双屏异显" class="headerlink" title="双屏异显"></a>双屏异显</h1><h1 id="Recent模块"><a href="#Recent模块" class="headerlink" title="Recent模块"></a>Recent模块</h1><p>在AndroidManifest.xml里面，我们注意到SystemUISecondaryUserService，对于每一个用户都有一个SystemUI进程，所以在用户切换的时候，需要用SystemUISecondaryUserService来确保新的用户进程创建.<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- Recents depends on every user having their own SystemUI process, so on user switch,</span></span><br><span class="line"><span class="comment">     ensure that the process is created by starting this service.</span></span><br><span class="line"><span class="comment">     --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">service</span> <span class="attr">android:name</span>=<span class="string">"SystemUISecondaryUserService"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:exported</span>=<span class="string">"true"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:permission</span>=<span class="string">"com.android.systemui.permission.SELF"</span> /&gt;</span></span><br></pre></td></tr></table></figure></p><p>RecentsActivity.java的onCreate函数开始<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RecentsActivity</span> <span class="keyword">extends</span> <span class="title">Activity</span> <span class="keyword">implements</span> <span class="title">ViewTreeObserver</span>.<span class="title">OnPreDrawListener</span>,</span></span><br><span class="line"><span class="class">        <span class="title">ColorExtractor</span>.<span class="title">OnColorsChangedListener</span> </span>&#123;</span><br><span class="line">        ...</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** Called with the activity is first created. */</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">        mFinishedOnStartup = <span class="keyword">false</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// In the case that the activity starts up before the Recents component has initialized</span></span><br><span class="line">        <span class="comment">// (usually when debugging/pushing the SysUI apk), just finish this activity.</span></span><br><span class="line">        SystemServicesProxy ssp = Recents.getSystemServices();</span><br><span class="line">        <span class="keyword">if</span> (ssp == <span class="keyword">null</span>) &#123;</span><br><span class="line">            mFinishedOnStartup = <span class="keyword">true</span>;</span><br><span class="line">            finish();</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure></p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p>Doze模式<br><a href="https://blog.csdn.net/u013278940/article/details/50498304" target="_blank" rel="noopener">Android5.1 系统之省电模式探索一启动流程</a><br><a href="https://blog.csdn.net/innost/article/details/47660591" target="_blank" rel="noopener">《深入理解Android 卷III》第七章 深入理解SystemUI</a></p><p><a href="https://jingyan.baidu.com/article/76a7e409071797fc3b6e15bb.html" target="_blank" rel="noopener">SystemUI 调谐器 TunerService的打开方式</a></p><p><a href="https://www.jianshu.com/p/ad040aab0e66" target="_blank" rel="noopener">Android官方架构组件Navigation：大巧不工的Fragment管理框架</a></p>]]></content>
+      
+      <categories>
+          
+          <category> Android </category>
+          
+          <category> SystemUI </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Android </tag>
+            
+            <tag> SystemUI </tag>
             
         </tags>
       

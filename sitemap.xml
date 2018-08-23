@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/%E5%90%84%E7%B1%BB%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E5%B0%8F%E6%8A%80%E5%B7%A7/</loc>
+    
+    <lastmod>2018-08-22T07:42:42.841Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/English-Word/</loc>
     
-    <lastmod>2018-08-21T03:10:16.086Z</lastmod>
+    <lastmod>2018-08-21T03:43:07.371Z</lastmod>
     
   </url>
   
@@ -19,13 +26,6 @@
     <loc>http://yoursite.com/%E9%97%AE%E9%A2%98%E9%94%A6%E9%9B%86-%E9%80%9F%E6%9F%A5/</loc>
     
     <lastmod>2018-08-20T02:04:09.626Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/%E5%90%84%E7%B1%BB%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E5%B0%8F%E6%8A%80%E5%B7%A7/</loc>
-    
-    <lastmod>2018-08-20T01:32:05.202Z</lastmod>
     
   </url>
   

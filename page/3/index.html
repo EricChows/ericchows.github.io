@@ -309,7 +309,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Android-Activity-Analysis/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Android-KeyEvent-Analysis/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Eric Chows">
@@ -328,7 +328,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/Android-Activity-Analysis/" itemprop="url">Android中Activity解析</a></h2>
+                <a class="post-title-link" href="/Android-KeyEvent-Analysis/" itemprop="url">Android中按键事件传递分析</a></h2>
         
 
         <div class="post-meta">
@@ -374,8 +374,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android/Activity/" itemprop="url" rel="index">
-                    <span itemprop="name">Activity</span>
+                  <a href="/categories/Android/KeyEvent/" itemprop="url" rel="index">
+                    <span itemprop="name">KeyEvent</span>
                   </a>
                 </span>
 
@@ -391,7 +391,7 @@
 
           
           
-             <span id="/Android-Activity-Analysis/" class="leancloud_visitors" data-flag-title="Android中Activity解析">
+             <span id="/Android-KeyEvent-Analysis/" class="leancloud_visitors" data-flag-title="Android中按键事件传递分析">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -424,11 +424,13 @@
       
         
           
-          上次我们讲到Activity的四种启动模式的时候，已经了解到一些关于task的技术，今天我再向大家介绍一下。task是一个具有栈结构的容器，可以放置多个Activity实例。启动一个应用，系统就会为之创建一个task，来放置根Activity；默认情况下，一个Activity启动另一个Activity时，两个Activity是放置在同一个task中的，后者被压入前者所在的task栈，当用户按下后退
+          Ongoing,待完成，Please wait.
+Framework Native模块代码
+1234567frameworks/base/services/core/jni/├── com_android_server_input_InputManagerService.cpp├── com_android_server_input_InputApplicationHandle.h├── com_
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/Android-Activity-Analysis/#more" rel="contents">
+            <a class="btn" href="/Android-KeyEvent-Analysis/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1694,6 +1696,176 @@ Git官网
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Android-Activity-Analysis/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Eric Chows">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/myapple.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="EricChows">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/Android-Activity-Analysis/" itemprop="url">Android中Activity解析</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-01-01T00:00:00+08:00">
+                2016-01-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/Activity/" itemprop="url" rel="index">
+                    <span itemprop="name">Activity</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/Android-Activity-Analysis/" class="leancloud_visitors" data-flag-title="Android中Activity解析">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          上次我们讲到Activity的四种启动模式的时候，已经了解到一些关于task的技术，今天我再向大家介绍一下。task是一个具有栈结构的容器，可以放置多个Activity实例。启动一个应用，系统就会为之创建一个task，来放置根Activity；默认情况下，一个Activity启动另一个Activity时，两个Activity是放置在同一个task中的，后者被压入前者所在的task栈，当用户按下后退
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/Android-Activity-Analysis/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/A-Ongoing-Android异常解析/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1997,180 +2169,6 @@ Android技术简介-开发者指南And
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/Android-Base/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/SELinux-SEAndroid/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Eric Chows">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/myapple.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="EricChows">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/SELinux-SEAndroid/" itemprop="url">SELinux与SEAndroid解析</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-01-01T00:00:00+08:00">
-                2016-01-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/SEAndroid/" itemprop="url" rel="index">
-                    <span itemprop="name">SEAndroid</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/SEAndroid/SELinux/" itemprop="url" rel="index">
-                    <span itemprop="name">SELinux</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/SELinux-SEAndroid/" class="leancloud_visitors" data-flag-title="SELinux与SEAndroid解析">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          Ongoing,待完成，Please wait.
-参考文献
-SEAndroid安全机制框架分析
-SELinux学习
-
-          
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/SELinux-SEAndroid/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -2726,7 +2724,7 @@ There was a recent discussion among my social group about what “getting dramat
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Mac-OS/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/SELinux-SEAndroid/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Eric Chows">
@@ -2745,7 +2743,7 @@ There was a recent discussion among my social group about what “getting dramat
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/Mac-OS/" itemprop="url">MAC OS</a></h2>
+                <a class="post-title-link" href="/SELinux-SEAndroid/" itemprop="url">SELinux与SEAndroid解析</a></h2>
         
 
         <div class="post-meta">
@@ -2780,8 +2778,19 @@ There was a recent discussion among my social group about what “getting dramat
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/MAC-OS/" itemprop="url" rel="index">
-                    <span itemprop="name">MAC OS</span>
+                  <a href="/categories/SEAndroid/" itemprop="url" rel="index">
+                    <span itemprop="name">SEAndroid</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/SEAndroid/SELinux/" itemprop="url" rel="index">
+                    <span itemprop="name">SELinux</span>
                   </a>
                 </span>
 
@@ -2797,7 +2806,7 @@ There was a recent discussion among my social group about what “getting dramat
 
           
           
-             <span id="/Mac-OS/" class="leancloud_visitors" data-flag-title="MAC OS">
+             <span id="/SELinux-SEAndroid/" class="leancloud_visitors" data-flag-title="SELinux与SEAndroid解析">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -2832,12 +2841,13 @@ There was a recent discussion among my social group about what “getting dramat
           
           Ongoing,待完成，Please wait.
 参考文献
-开始使用Mac OS X——写给Mac新人
+SEAndroid安全机制框架分析
+SELinux学习
 
           
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/Mac-OS/#more" rel="contents">
+            <a class="btn" href="/SELinux-SEAndroid/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
