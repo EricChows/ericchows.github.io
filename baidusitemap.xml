@@ -4,6 +4,37 @@
 
     
   <url>
+    <loc>http://yoursite.com/Cracking-the-Coding-Interview/</loc>
+    <lastmod>2018-08-26T13:25:28.795Z</lastmod>
+    <data>
+        <display>
+        <title>Cracking the Coding Interview</title>
+        <pubTime>2015-12-31T16:00:00.000Z</pubTime>
+        
+        <tag>C++</tag>
+         
+        <tag>InterView</tag>
+         
+        <tag>Code</tag>
+         
+         
+           
+             
+              <breadCrumb title="InterView" url="http://yoursite.com/categories/InterView/"/>
+          
+             
+              <breadCrumb title="Code" url="http://yoursite.com/categories/InterView/Code/"/>
+          
+             
+              <breadCrumb title="C++" url="http://yoursite.com/categories/InterView/Code/C/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+  <url>
     <loc>http://yoursite.com/%E5%90%84%E7%B1%BB%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E5%B0%8F%E6%8A%80%E5%B7%A7/</loc>
     <lastmod>2018-08-26T06:50:19.288Z</lastmod>
     <data>
@@ -142,7 +173,6 @@
     </data>
     </url>
 
-    
     
   <url>
     <loc>http://yoursite.com/WordPress/</loc>
@@ -1749,12 +1779,12 @@
     
     
   <url>
-    <loc>http://yoursite.com/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/</loc>
+    <loc>http://yoursite.com/%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F/</loc>
     <lastmod>2018-06-23T15:24:29.019Z</lastmod>
     <data>
         <display>
-        <title>观察者模式</title>
-        <pubTime>2015-08-01T05:21:22.000Z</pubTime>
+        <title>适配器模式</title>
+        <pubTime>2015-08-01T09:34:49.000Z</pubTime>
         
          
            
@@ -1767,12 +1797,12 @@
 
     
   <url>
-    <loc>http://yoursite.com/%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F/</loc>
+    <loc>http://yoursite.com/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/</loc>
     <lastmod>2018-06-23T15:24:29.019Z</lastmod>
     <data>
         <display>
-        <title>适配器模式</title>
-        <pubTime>2015-08-01T09:34:49.000Z</pubTime>
+        <title>观察者模式</title>
+        <pubTime>2015-08-01T05:21:22.000Z</pubTime>
         
          
            

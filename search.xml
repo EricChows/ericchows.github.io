@@ -507,6 +507,83 @@
     </entry>
     
     <entry>
+      <title>C++ 基础</title>
+      <link href="/C-Base/"/>
+      <url>/C-Base/</url>
+      <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.<br><!--    Module:    第一步:需要将这些文章都看几篇    第二步：形成自己的理解    第三步：可以按照非常有用的文章，重写写一遍    第四步：纠正或者延伸别人的文章--></p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><!--    阅读卡：    文章：    时间：--><p><a href="http://www.runoob.com/cplusplus/cpp-tutorial.html" target="_blank" rel="noopener">C++菜鸟教程</a><br><a href="https://www.w3cschool.cn/cpp/" target="_blank" rel="noopener">W3-C++教程</a></p>]]></content>
+      
+      <categories>
+          
+          <category> C++ </category>
+          
+          <category> Base </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Base </tag>
+            
+            <tag> C++ </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>RxJava/RxAndroid</title>
+      <link href="/RxJava-RxAndroid/"/>
+      <url>/RxJava-RxAndroid/</url>
+      <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.<br><!--    Module:    第一步:需要将这些文章都看几篇    第二步：形成自己的理解    第三步：可以按照非常有用的文章，重写写一遍    第四步：纠正或者延伸别人的文章--></p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><!--    阅读卡：    文章：    时间：--><p><a href="https://gank.io/post/560e15be2dca930e00da1083" target="_blank" rel="noopener">RxJava</a></p>]]></content>
+      
+      <categories>
+          
+          <category> RxJava </category>
+          
+          <category> RxAndroid </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> RxJava </tag>
+            
+            <tag> RxAndroid </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>Android中启动过程解析</title>
+      <link href="/A-Ongoing-Android%E5%BC%82%E5%B8%B8%E8%A7%A3%E6%9E%90/"/>
+      <url>/A-Ongoing-Android%E5%BC%82%E5%B8%B8%E8%A7%A3%E6%9E%90/</url>
+      <content type="html"><![CDATA[<p>android系统常见异常现象有应用无响应、应用停止运行、冻屏、重启、死机</p><p>应用程序无响应：ANR</p><p>应用停止运行：  </p><p>冻屏</p><p>黑屏</p><p>重启</p><p>死机：</p><p>Ongoing,待完成，Please wait.</p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p><a href="https://blog.csdn.net/zwq1457/article/details/75529264" target="_blank" rel="noopener">Android异常分析</a></p>]]></content>
+      
+      <categories>
+          
+          <category> Android </category>
+          
+          <category> 启动 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Android </tag>
+            
+            <tag> Zegote </tag>
+            
+            <tag> Init </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>Android中Binder机制解析</title>
       <link href="/Android-Binder-Analysis/"/>
       <url>/Android-Binder-Analysis/</url>
@@ -526,6 +603,31 @@
             <tag> Android </tag>
             
             <tag> Binder </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>Android中Service解析</title>
+      <link href="/Android-Service-Analysis/"/>
+      <url>/Android-Service-Analysis/</url>
+      <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.</p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p><a href="https://blog.csdn.net/luoshengyang/article/details/8923485" target="_blank" rel="noopener">那两年炼就的Android内功修养</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/7846923" target="_blank" rel="noopener">Android应用程序与SurfaceFlinger服务的关系概述和学习计划</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/7857163" target="_blank" rel="noopener">Android应用程序与SurfaceFlinger服务的连接过程分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/7867340" target="_blank" rel="noopener">Android应用程序与SurfaceFlinger服务之间的共享UI元数据（SharedClient）的创建过程分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/7884628" target="_blank" rel="noopener">Android应用程序请求SurfaceFlinger服务创建Surface的过程分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/7932268" target="_blank" rel="noopener">Android应用程序请求SurfaceFlinger服务渲染Surface的过程分析</a></p><p><a href="https://blog.csdn.net/luoshengyang/article/details/8010977" target="_blank" rel="noopener">Android系统Surface机制的SurfaceFlinger服务简要介绍和学习计划</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8022957" target="_blank" rel="noopener">Android系统Surface机制的SurfaceFlinger服务的启动过程分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8046659" target="_blank" rel="noopener">Android系统Surface机制的SurfaceFlinger服务对帧缓冲区（Frame Buffer）的管理分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8062945" target="_blank" rel="noopener">Android系统Surface机制的SurfaceFlinger服务的线程模型分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8079456" target="_blank" rel="noopener">Android系统Surface机制的SurfaceFlinger服务渲染应用程序UI的过程分析</a></p>]]></content>
+      
+      <categories>
+          
+          <category> Android </category>
+          
+          <category> SurfaceFlinger </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Android </tag>
+            
+            <tag> SurfaceFlinger </tag>
             
         </tags>
       
@@ -559,16 +661,16 @@
     </entry>
     
     <entry>
-      <title>Android中Process</title>
-      <link href="/Android-Process-Analysis/"/>
-      <url>/Android-Process-Analysis/</url>
-      <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.<br><!--    Module:    第一步:需要将这些文章都看几篇    第二步：形成自己的理解    第三步：可以按照非常有用的文章，重写写一遍    第四步：纠正或者延伸别人的文章--></p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><!--    阅读卡：    文章：    时间：--><p><a href="https://mp.weixin.qq.com/s/r8Dxc7cmJbYXZ8E9EvbSkw" target="_blank" rel="noopener">解读Android进程优先级ADJ算法</a></p>]]></content>
+      <title>Android中BroadcastRecevier解析</title>
+      <link href="/Android-BroadcastRecevier-Analysis/"/>
+      <url>/Android-BroadcastRecevier-Analysis/</url>
+      <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.</p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><ol><li>Android Broadcast广播注册和发布方式以及机制流程 <a href="https://blog.csdn.net/liu_3262296/article/details/51935316" target="_blank" rel="noopener">https://blog.csdn.net/liu_3262296/article/details/51935316</a></li><li>Android广播之发送广播的源码分析 <a href="https://blog.csdn.net/zhangyongfeiyong/article/details/52022935" target="_blank" rel="noopener">https://blog.csdn.net/zhangyongfeiyong/article/details/52022935</a></li><li>Android广播机制实现源码浅析（一） <a href="https://blog.csdn.net/hehui1860/article/details/30726609" target="_blank" rel="noopener">https://blog.csdn.net/hehui1860/article/details/30726609</a></li><li>Android广播机制实现源码浅析（二） <a href="https://blog.csdn.net/hehui1860/article/details/30727075" target="_blank" rel="noopener">https://blog.csdn.net/hehui1860/article/details/30727075</a></li><li>Android广播机制实现源码浅析（三）<a href="https://blog.csdn.net/hehui1860/article/details/30727537" target="_blank" rel="noopener">https://blog.csdn.net/hehui1860/article/details/30727537</a></li><li>BroadcastReceiver源码解析(一)  <a href="https://blog.csdn.net/tiefeng0606/article/details/51354381" target="_blank" rel="noopener">https://blog.csdn.net/tiefeng0606/article/details/51354381</a></li><li>BroadcastReceiver源码解析（二） <a href="https://blog.csdn.net/tiefeng0606/article/details/51381221" target="_blank" rel="noopener">https://blog.csdn.net/tiefeng0606/article/details/51381221</a></li></ol><p><a href="https://blog.csdn.net/luoshengyang/article/details/8923485" target="_blank" rel="noopener">那两年炼就的Android内功修养</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6730748" target="_blank" rel="noopener">Android系统中的广播（Broadcast）机制简要介绍和学习计划</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6737352" target="_blank" rel="noopener">Android应用程序注册广播接收器（registerReceiver）的过程分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6744448" target="_blank" rel="noopener">Android应用程序发送广播（sendBroadcast）的过程分析</a></p><p><a href="https://blog.csdn.net/gaugamela/article/details/53515680" target="_blank" rel="noopener">Android 7.0 ActivityManagerService(5) 广播(Broadcast)相关流程分析</a></p>]]></content>
       
       <categories>
           
           <category> Android </category>
           
-          <category> Process </category>
+          <category> BroadcastRecevier </category>
           
       </categories>
       
@@ -577,57 +679,7 @@
             
             <tag> Android </tag>
             
-            <tag> Process </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>Android中Sample</title>
-      <link href="/Android-Sample/"/>
-      <url>/Android-Sample/</url>
-      <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.<br><!--    Module:    第一步:需要将这些文章都看几篇    第二步：形成自己的理解    第三步：可以按照非常有用的文章，重写写一遍    第四步：纠正或者延伸别人的文章--></p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><!--    阅读卡：    文章：    时间：--><p><a href="https://blog.csdn.net/carson_ho/article/details/73250163" target="_blank" rel="noopener">Android：JNI 与 NDK到底是什么？</a></p>]]></content>
-      
-      <categories>
-          
-          <category> Android </category>
-          
-          <category> Sample </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Android </tag>
-            
-            <tag> Sample </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>Android中Service解析</title>
-      <link href="/Android-Service-Analysis/"/>
-      <url>/Android-Service-Analysis/</url>
-      <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.</p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p><a href="https://blog.csdn.net/luoshengyang/article/details/8923485" target="_blank" rel="noopener">那两年炼就的Android内功修养</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/7846923" target="_blank" rel="noopener">Android应用程序与SurfaceFlinger服务的关系概述和学习计划</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/7857163" target="_blank" rel="noopener">Android应用程序与SurfaceFlinger服务的连接过程分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/7867340" target="_blank" rel="noopener">Android应用程序与SurfaceFlinger服务之间的共享UI元数据（SharedClient）的创建过程分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/7884628" target="_blank" rel="noopener">Android应用程序请求SurfaceFlinger服务创建Surface的过程分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/7932268" target="_blank" rel="noopener">Android应用程序请求SurfaceFlinger服务渲染Surface的过程分析</a></p><p><a href="https://blog.csdn.net/luoshengyang/article/details/8010977" target="_blank" rel="noopener">Android系统Surface机制的SurfaceFlinger服务简要介绍和学习计划</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8022957" target="_blank" rel="noopener">Android系统Surface机制的SurfaceFlinger服务的启动过程分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8046659" target="_blank" rel="noopener">Android系统Surface机制的SurfaceFlinger服务对帧缓冲区（Frame Buffer）的管理分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8062945" target="_blank" rel="noopener">Android系统Surface机制的SurfaceFlinger服务的线程模型分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8079456" target="_blank" rel="noopener">Android系统Surface机制的SurfaceFlinger服务渲染应用程序UI的过程分析</a></p>]]></content>
-      
-      <categories>
-          
-          <category> Android </category>
-          
-          <category> SurfaceFlinger </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Android </tag>
-            
-            <tag> SurfaceFlinger </tag>
+            <tag> BroadcastRecevier </tag>
             
         </tags>
       
@@ -663,16 +715,16 @@
     </entry>
     
     <entry>
-      <title>Android中BroadcastRecevier解析</title>
-      <link href="/Android-BroadcastRecevier-Analysis/"/>
-      <url>/Android-BroadcastRecevier-Analysis/</url>
-      <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.</p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><ol><li>Android Broadcast广播注册和发布方式以及机制流程 <a href="https://blog.csdn.net/liu_3262296/article/details/51935316" target="_blank" rel="noopener">https://blog.csdn.net/liu_3262296/article/details/51935316</a></li><li>Android广播之发送广播的源码分析 <a href="https://blog.csdn.net/zhangyongfeiyong/article/details/52022935" target="_blank" rel="noopener">https://blog.csdn.net/zhangyongfeiyong/article/details/52022935</a></li><li>Android广播机制实现源码浅析（一） <a href="https://blog.csdn.net/hehui1860/article/details/30726609" target="_blank" rel="noopener">https://blog.csdn.net/hehui1860/article/details/30726609</a></li><li>Android广播机制实现源码浅析（二） <a href="https://blog.csdn.net/hehui1860/article/details/30727075" target="_blank" rel="noopener">https://blog.csdn.net/hehui1860/article/details/30727075</a></li><li>Android广播机制实现源码浅析（三）<a href="https://blog.csdn.net/hehui1860/article/details/30727537" target="_blank" rel="noopener">https://blog.csdn.net/hehui1860/article/details/30727537</a></li><li>BroadcastReceiver源码解析(一)  <a href="https://blog.csdn.net/tiefeng0606/article/details/51354381" target="_blank" rel="noopener">https://blog.csdn.net/tiefeng0606/article/details/51354381</a></li><li>BroadcastReceiver源码解析（二） <a href="https://blog.csdn.net/tiefeng0606/article/details/51381221" target="_blank" rel="noopener">https://blog.csdn.net/tiefeng0606/article/details/51381221</a></li></ol><p><a href="https://blog.csdn.net/luoshengyang/article/details/8923485" target="_blank" rel="noopener">那两年炼就的Android内功修养</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6730748" target="_blank" rel="noopener">Android系统中的广播（Broadcast）机制简要介绍和学习计划</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6737352" target="_blank" rel="noopener">Android应用程序注册广播接收器（registerReceiver）的过程分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6744448" target="_blank" rel="noopener">Android应用程序发送广播（sendBroadcast）的过程分析</a></p><p><a href="https://blog.csdn.net/gaugamela/article/details/53515680" target="_blank" rel="noopener">Android 7.0 ActivityManagerService(5) 广播(Broadcast)相关流程分析</a></p>]]></content>
+      <title>Android中ContentProvider解析</title>
+      <link href="/Android-ContentProvider-Analysis/"/>
+      <url>/Android-ContentProvider-Analysis/</url>
+      <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.</p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p><a href="https://blog.csdn.net/luoshengyang/article/details/8923485" target="_blank" rel="noopener">那两年炼就的Android内功修养</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6946067" target="_blank" rel="noopener">Android应用程序组件Content Provider简要介绍和学习计划</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6950440" target="_blank" rel="noopener">Android应用程序组件Content Provider应用实例</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6963418" target="_blank" rel="noopener">Android应用程序组件Content Provider的启动过程源代码分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6967204" target="_blank" rel="noopener">Android应用程序组件Content Provider在应用程序之间共享数据的原理分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6985171" target="_blank" rel="noopener">Android应用程序组件Content Provider的共享数据更新通知机制分析</a></p>]]></content>
       
       <categories>
           
           <category> Android </category>
           
-          <category> BroadcastRecevier </category>
+          <category> ContentProvider </category>
           
       </categories>
       
@@ -681,7 +733,7 @@
             
             <tag> Android </tag>
             
-            <tag> BroadcastRecevier </tag>
+            <tag> ContentProvider </tag>
             
         </tags>
       
@@ -713,75 +765,21 @@
     </entry>
     
     <entry>
-      <title>SELinux与SEAndroid解析</title>
-      <link href="/SELinux-SEAndroid/"/>
-      <url>/SELinux-SEAndroid/</url>
-      <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.<br><!--    Module:    第一步:需要将这些文章都看几篇    第二步：形成自己的理解    第三步：可以按照非常有用的文章，重写写一遍    第四步：纠正或者延伸别人的文章--></p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><!--    阅读卡：    文章：    时间：--><p><a href="https://blog.csdn.net/luoshengyang/article/details/37613135" target="_blank" rel="noopener">SEAndroid安全机制框架分析</a></p><p><a href="https://my.csdn.net/huangyabin001" target="_blank" rel="noopener">SELinux学习</a></p>]]></content>
+      <title>WordPress</title>
+      <link href="/WordPress/"/>
+      <url>/WordPress/</url>
+      <content type="html"><![CDATA[<h1 id="官网"><a href="#官网" class="headerlink" title="官网"></a>官网</h1><p><a href="https://cn.wordpress.org/download/" target="_blank" rel="noopener">下载</a><br><a href="https://codex.wordpress.org/zh-cn:Main_Page" target="_blank" rel="noopener">官网中文文档</a></p><h1 id="开发步骤"><a href="#开发步骤" class="headerlink" title="开发步骤"></a>开发步骤</h1><ol><li><p>下载WordPress</p></li><li><p>本地调试代码<br>第一步：安装 XAMPP<br>第二步:启动Apache，改端口到8080<br>第三步：启动MySQL，注意：点击Admin的时候，<a href="http://localhost/phpmyadmin/是无法访问的，需要改端口号http://localhost:8080/phpmyadmin/才能访问" target="_blank" rel="noopener">http://localhost/phpmyadmin/是无法访问的，需要改端口号http://localhost:8080/phpmyadmin/才能访问</a><br>新建用户账户: </p></li></ol><p><a href="https://jingyan.baidu.com/article/1e5468f955d65b484961b7bb.html" target="_blank" rel="noopener">本地安装wordpress教程</a></p><ol start="3"><li>安装主题</li></ol><p><a href="https://www.wpdaxue.com/install-wordpress-theme-and-plugin.html" target="_blank" rel="noopener">WordPress入门 之 安装主题和插件</a></p><p>ecommerce-lite 是一个购物商城的模式，暂时不适用</p><p><a href="https://www.diyzhan.com/2014/02/wordpress-admin-panel/" target="_blank" rel="noopener">WordPress的后台功能菜单介绍与操作，WordPress后台说明</a><br><a href="https://www.diyzhan.com/2014/03/wordpress-page-post-product/" target="_blank" rel="noopener">WordPress添加页面，写文章，增加文章类别，增加产品和产品类别</a></p><ol start="4"><li><p>Logo的设计<br>a) <a href="https://www.logosc.cn/" target="_blank" rel="noopener">https://www.logosc.cn/</a> 不错<br>b) <a href="http://www.logomaker.com.cn/logo-maker.jsp" target="_blank" rel="noopener">http://www.logomaker.com.cn/logo-maker.jsp</a></p></li><li><p>wordpress插件或者说是小工具</p></li></ol><h1 id="遇到的问题："><a href="#遇到的问题：" class="headerlink" title="遇到的问题："></a>遇到的问题：</h1><ol><li><p>上传的文件尺寸超过php.ini中定义的upload_max_filesize值。<br>解决方案： <a href="https://www.cnblogs.com/bhlsheji/p/5356564.html" target="_blank" rel="noopener">https://www.cnblogs.com/bhlsheji/p/5356564.html</a></p></li><li><p>二级菜单不生效</p></li></ol><!--    Module:    第一步:需要将这些文章都看几篇    第二步：形成自己的理解    第三步：可以按照非常有用的文章，重写写一遍    第四步：纠正或者延伸别人的文章--><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><!--    阅读卡：    文章：    时间：-->]]></content>
       
       <categories>
           
-          <category> SEAndroid </category>
-          
-          <category> SELinux </category>
+          <category> WordPress </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> SEAndroid </tag>
-            
-            <tag> SELinux </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>Android中ContentProvider解析</title>
-      <link href="/Android-ContentProvider-Analysis/"/>
-      <url>/Android-ContentProvider-Analysis/</url>
-      <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.</p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p><a href="https://blog.csdn.net/luoshengyang/article/details/8923485" target="_blank" rel="noopener">那两年炼就的Android内功修养</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6946067" target="_blank" rel="noopener">Android应用程序组件Content Provider简要介绍和学习计划</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6950440" target="_blank" rel="noopener">Android应用程序组件Content Provider应用实例</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6963418" target="_blank" rel="noopener">Android应用程序组件Content Provider的启动过程源代码分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6967204" target="_blank" rel="noopener">Android应用程序组件Content Provider在应用程序之间共享数据的原理分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6985171" target="_blank" rel="noopener">Android应用程序组件Content Provider的共享数据更新通知机制分析</a></p>]]></content>
-      
-      <categories>
-          
-          <category> Android </category>
-          
-          <category> ContentProvider </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Android </tag>
-            
-            <tag> ContentProvider </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>英语单词</title>
-      <link href="/English-Word/"/>
-      <url>/English-Word/</url>
-      <content type="html"><![CDATA[<p>noun 名词 –n<br>adjective 形容词  –adj<br>adverb   副词  –adv</p><h1 id="2018-08-21"><a href="#2018-08-21" class="headerlink" title="2018-08-21"></a>2018-08-21</h1><p>determine 下决心<br>chubby 胖<br>altitude 高度<br>latitude 纬度<br>make up one’s mind 做决定，下决心<br>Think about it before you make up your mind.  在决定之前要先想一想<br>give in 投降<br>give up 放弃<br>atlas 地图集 a book of maps<br>glacier 冰川<br>grocer 食品杂货商，杂货店<br>laser 激光，激光器<br>rapids 急流，湍流  n.<br>No boat could pass through these rapids and survive.<br>rapid 迅速的，急促的，急流，adj.<br>The rabbit ran at a rapid speed.<br>rapidly 迅速地，很快地，立即，adv.<br>The water here is flowing very rapidly.<br>vapid  索然无味的，无生气的，乏味的<br>I’m bored - is this book vapid, or are we ?<br>aids 艾滋病 Acquired Immune Deficiency Synd<br>This ribbon(红丝带) is to help people understand the AIDS disease.<br>rabies 狂犬病<br>A bite from a wild dog may result in rabies.<br>valley 山谷,溪谷，低谷<br>From the top of the mountain I could see the entire valley below.<br>alley 小巷，小径<br>The narrow alley winds through the old town. 这条窄巷弯弯曲曲的穿过古老的小镇.<br>ballet 芭蕾舞<br>The man is watching the ballet dance.<br>wallet 钱包，皮甲<br>My wallet holds all of my money and credit cards.<br>value 给…定价，评价，重视，珍视，价值，有用性<br>Which do you value more - the economy or the environment?<br>waterfall 瀑布<br>The stream drops over the boulders in a beautiful small waterfall.<br>watercolor 水彩，水彩画<br>Watercolor painiting is a fun way to pass the time.<br>watery 水的，水分多的，平淡的，稀薄的，松软的，水淋淋的<br>Look into my watery eyes and tell me I’m the cutest one!<br>watermelon 西瓜<br>The zombie(僵尸) was attacked by watermelon throwing plants.<br>after all 毕竟，终究<br>You should apologize to her. After all, she is your wife.<br>pace 步，步伐<br>The horse walked at a fast pace.<br>lace 花边，鞋带<br>Before you run,make sure your laces are tight.<br>pause 暂停，中止，停顿<br>The video pause at the moment he showed a funny face.<br>sauce 酱，调味汁，莽撞，冒失<br>He is adding different sauces onto the burger.<br>pence 便士<br>In th U.K., one hundred pence make one pound sterling. 在英国，一百便士等于一英镑.<br>bend 弯曲，倾向，屈服<br>First bend to the right, then bend to the left.<br>blender 掺和器，搅拌机<br>I feel like I’m getting into a blender, when I walk to my office.<br>bleed 流血，感到疼痛，榨取，敲诈<br>“I may bleed to death.”were the waterlemon’s last words.<br>meander 漫步<br>I like to meander through the forest.<br>delta 三角洲 = a pieces of land shaped like a triangle that is formed when a river splits into smaller rivers before it flows into an ocean<br>A thriving city was built at the river delta.<br>delete 删除<br>The man with tears on face deleted his ex-wife’s phone number.<br>attitude 态度<br>The waiter has such a bad attitude!<br>altitude 高度，海拔<br>At this altitude it would be dangerous to fall off. 在这种高度下跌落很危险.<br>latitude 纬度<br>Canada and Russia have similar altitude.<br>solitude 孤独，寂寞，荒野<br>I am in solitude. My shadow is my only friend.<br>antique 古董，古玩，古物<br>I’m fascinated by that antique at first sight!<br>boil 沸腾<br>As the water boils it gives off steam.<br>boiler 锅炉，煮器<br>The boiler takes up too much room in the bathroom.we should move it.<br>bill 账单，纸币，钞票<br>Could we have the bill, please? 请把账单给我们看一下.<br>bull 公牛，雄性的鲸，象等大动物<br>A bull market is a situation in which share prices are rising.<br>bell 钟，铃，门铃，钟声<br>He rang the bell to tell the waitress to pick up the dishes.<br>lorry 货车<br>All the stuff was carried in the lorry.<br>merry 欢乐的，愉快的<br>I wish you a merry Christmas!<br>Texas 德克萨斯州<br>Texas is the second largest American State.<br>text 文本，正文，原文，课本，课文，发送，短信<br>The text in this book is small and hard to read.<br>exam 考试<br>The students are taking an exam.<br>tease 取笑，嘲弄，挑逗，戏弄<br>All the kids at school teased him for being different.<br>nexus 关系，连接<br>I keep in close contact with my nexus of good friends.<br>tunas 金枪鱼<br>They caught a whole net full of fresh tunas. 他们捕到了满满一渔网的金枪鱼.<br>accent 口音<br>The foreigner has such a funny accent when he speaks Chinese!<br>absent 缺席的，不存在的，心不在焉的，出神的.<br>He listened to the lecture with an absent mind. 他上课也心不在焉.<br>pronunciation 发音，发音方法<br>He learns pronunciations of words from that book.<br>payment 支付，报酬<br>The clever dog made the payment for the bone itself.<br>accident 意外<br>Santa Claus is badly injured in the car accident. 圣诞老公公在车祸中受伤严重.<br>catfish 鲶鱼<br>Catfish hava whiskers just like cats do! 鲶鱼有猫一样的胡须.<br>Scottish 苏格兰人<br>These Scottish men are playing traditional music and wearing traditional clothes.<br>catch 捕捉，接住，赶上<br>Tha cat is happy to catch the mouse.<br>cash 现金，兑现<br>Please pay me with cash.<br>goldfish<br>A goldfish is a common pet.</p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><!--    阅读卡：    文章：    时间：-->]]></content>
-      
-      <categories>
-          
-          <category> English </category>
-          
-          <category> word </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> English </tag>
-            
-            <tag> word </tag>
+            <tag> WordPress </tag>
             
         </tags>
       
@@ -813,50 +811,21 @@
     </entry>
     
     <entry>
-      <title>RxJava/RxAndroid</title>
-      <link href="/RxJava-RxAndroid/"/>
-      <url>/RxJava-RxAndroid/</url>
-      <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.<br><!--    Module:    第一步:需要将这些文章都看几篇    第二步：形成自己的理解    第三步：可以按照非常有用的文章，重写写一遍    第四步：纠正或者延伸别人的文章--></p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><!--    阅读卡：    文章：    时间：--><p><a href="https://gank.io/post/560e15be2dca930e00da1083" target="_blank" rel="noopener">RxJava</a></p>]]></content>
+      <title>MAC OS</title>
+      <link href="/Mac-OS/"/>
+      <url>/Mac-OS/</url>
+      <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.<br><!--    Module:    第一步:需要将这些文章都看几篇    第二步：形成自己的理解    第三步：可以按照非常有用的文章，重写写一遍    第四步：纠正或者延伸别人的文章--></p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><!--    阅读卡：    文章：    时间：--><p><a href="http://www.cnblogs.com/chijianqiang/archive/2011/08/03/2126593.html" target="_blank" rel="noopener">开始使用Mac OS X——写给Mac新人</a></p>]]></content>
       
       <categories>
           
-          <category> RxJava </category>
-          
-          <category> RxAndroid </category>
+          <category> MAC OS </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> RxJava </tag>
-            
-            <tag> RxAndroid </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>Android内核剖析之阅读记录</title>
-      <link href="/Android-%E5%86%85%E6%A0%B8%E5%89%96%E6%9E%90/"/>
-      <url>/Android-%E5%86%85%E6%A0%B8%E5%89%96%E6%9E%90/</url>
-      <content type="html"><![CDATA[<h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>《Android内核剖析》–柯元旦<br>偏原理，2011年电子工业出版社出版</p><h1 id="第一章：Linux基础知识"><a href="#第一章：Linux基础知识" class="headerlink" title="第一章：Linux基础知识"></a>第一章：Linux基础知识</h1><p>1.1 Linux文件系统<br>1.2 Linux启动过程<br> Android对应的uboot/fastboot<br>1.3 常用Linux命令<br> export：用于将每个变量值的作用域设为全局范围<br> example: Terminal 字符串名字太长，export PS1=me<br>1.4 shell脚本备忘<br> 脚本本身不代表任何计算机语言，也不属于计算机语言范畴，到目前为止，人们把那种不需要编译的程序文件称之为脚本.<br> 不同脚本需要不同的解释器来解释执行.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#! bin/bash</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Hello World"</span> <span class="comment"># show a message</span></span><br></pre></td></tr></table></figure></p><p>1.5 Make脚本备忘<br> Make脚本多用于自动编译过程，具体可以参考GNU Make</p><h1 id="第二章：Java基础"><a href="#第二章：Java基础" class="headerlink" title="第二章：Java基础"></a>第二章：Java基础</h1><p>2.1 类装载器 DexClassLoader<br>动态装载Class文件的ClassLoader类.在Java中使用.<br>DexClassLoader是在Android中使用，用来装载Dex文件.<br>2.2 JNI 调用机制<br>Java Native Interface<br>2.2.1 Java 访问 C<br>2.2.2 C 访问 Java<br>C 调用Java只能在Java调用C中进行.<br>2.2.3 在C中使用持久对象<br>2.3 异步消息处理线程<br> Android中的异步消息处理机制：Message、MessageQueue、Looper、Handler<br> Looper还有一个特殊的概念，那就是ThreadLocal，ThreadLocal并不是线程，它的作用是在每个线程中存储数据.<br> Handler的主要任务是将一个任务切换到指定的线程中执行.</p><h1 id="第三章：Android源码下载以及开发环境的配置"><a href="#第三章：Android源码下载以及开发环境的配置" class="headerlink" title="第三章：Android源码下载以及开发环境的配置"></a>第三章：Android源码下载以及开发环境的配置</h1><p> 有Eclipse中导入Android源码的方法</p><h1 id="第四章：使用Git"><a href="#第四章：使用Git" class="headerlink" title="第四章：使用Git"></a>第四章：使用Git</h1><h1 id="第五章：Binder"><a href="#第五章：Binder" class="headerlink" title="第五章：Binder"></a>第五章：Binder</h1><p> Binder用于进程间通讯，英文的意思是别针、回形针.<br> 由四个部分组成：Binder驱动、ServiceManager、Binder服务端、Binder客户端</p><ol><li>Binder驱动</li><li>ServiceManager</li><li>Binder服务端</li><li>Binder客户端<br><a href="https://blog.csdn.net/freekiteyu/article/details/70082302" target="_blank" rel="noopener">Android-Binder进程间通讯机制</a></li></ol><p>第六章：Framework概述<br>分服务端、客户端和Linux驱动端<br>服务端-WMS、AMS<br>客户端-<br>Linux驱动端-SurfaceFlinger和Binder<br>APK的启动过程<br>每个Activity最少有三个线程<br>第七章：理解Context<br>第八章：窗口创建过程  讲到了Token<br>第九章：Framework的启动过程<br>讲述了Framework的启动过程<br>第十章：AMS内部原理  &lt;重点&gt;<br>第十一章：从输入设备中获取消息<br>第十二章：屏幕绘制基础–SurfaceFlinger<br>第十三章：View工作原理 &lt;重点&gt;<br>第十四章：WMS工作原理 &lt;重点&gt;<br>第十五章：</p><!--    Module:    第一步:需要将这些文章都看几篇    第二步：形成自己的理解    第三步：可以按照非常有用的文章，重写写一遍    第四步：纠正或者延伸别人的文章--><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><!--    阅读卡：    文章：    时间：-->]]></content>
-      
-      <categories>
-          
-          <category> Android </category>
-          
-          <category> 内核剖析 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Android </tag>
-            
-            <tag> 内核剖析 </tag>
+            <tag> MAC OS </tag>
             
         </tags>
       
@@ -882,6 +851,27 @@
             <tag> Android </tag>
             
             <tag> Handler </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>React Native</title>
+      <link href="/React-Native/"/>
+      <url>/React-Native/</url>
+      <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.<br><!--    Module:    第一步:需要将这些文章都看几篇    第二步：形成自己的理解    第三步：可以按照非常有用的文章，重写写一遍    第四步：纠正或者延伸别人的文章--></p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><!--    阅读卡：    文章：    时间：--><p><a href="https://reactnative.cn/docs/0.36/getting-started.html" target="_blank" rel="noopener">React Native简介教程</a></p>]]></content>
+      
+      <categories>
+          
+          <category> React Native </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> React Native </tag>
             
         </tags>
       
@@ -917,73 +907,6 @@
     </entry>
     
     <entry>
-      <title>React Native</title>
-      <link href="/React-Native/"/>
-      <url>/React-Native/</url>
-      <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.<br><!--    Module:    第一步:需要将这些文章都看几篇    第二步：形成自己的理解    第三步：可以按照非常有用的文章，重写写一遍    第四步：纠正或者延伸别人的文章--></p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><!--    阅读卡：    文章：    时间：--><p><a href="https://reactnative.cn/docs/0.36/getting-started.html" target="_blank" rel="noopener">React Native简介教程</a></p>]]></content>
-      
-      <categories>
-          
-          <category> React Native </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> React Native </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>Python开发</title>
-      <link href="/Python/"/>
-      <url>/Python/</url>
-      <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.<br><!--    Module:    第一步:需要将这些文章都看几篇    第二步：形成自己的理解    第三步：可以按照非常有用的文章，重写写一遍    第四步：纠正或者延伸别人的文章--></p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><!--    阅读卡：    文章：    时间：--><p><a href="https://juejin.im/entry/5a6b4ae3f265da3e3245b66f?utm_source=gold_browser_extension" target="_blank" rel="noopener">Python从入门到转行</a></p>]]></content>
-      
-      <categories>
-          
-          <category> Python </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Python </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>Android中按键事件传递分析</title>
-      <link href="/Android-KeyEvent-Analysis/"/>
-      <url>/Android-KeyEvent-Analysis/</url>
-      <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.<br><!--    Module:    第一步:需要将这些文章都看几篇    第二步：形成自己的理解    第三步：可以按照非常有用的文章，重写写一遍    第四步：纠正或者延伸别人的文章--></p><p>Framework Native模块代码</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">frameworks/base/services/core/jni/</span><br><span class="line">├── com_android_server_input_InputManagerService.cpp</span><br><span class="line">├── com_android_server_input_InputApplicationHandle.h</span><br><span class="line">├── com_android_server_input_InputApplicationHandle.c</span><br><span class="line">├── com_android_server_input_InputWindowHandle.h</span><br><span class="line">├── com_android_server_input_InputWindowHandle.c</span><br><span class="line">└──</span><br></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">frameworks/native/include/android</span><br><span class="line">├── input.h</span><br><span class="line">└── keycodes.h</span><br></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">frameworks/native/include/input</span><br><span class="line">├── DisplayViewport.h</span><br><span class="line">├── IInputFlinger.h</span><br><span class="line">├── InputDevice.h</span><br><span class="line">├── InputEventLabels.h</span><br><span class="line">├── Input.h</span><br><span class="line">├── InputTransport.h</span><br><span class="line">├── Keyboard.h</span><br><span class="line">├── KeyCharacterMap.h</span><br><span class="line">├── KeyLayoutMap.h</span><br><span class="line">├── VelocityControl.h</span><br><span class="line">├── VelocityTracker.h</span><br><span class="line">└── VirtualKeyMap.h</span><br></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">frameworks/native/services/inputflinger</span><br><span class="line">├── Android.bp</span><br><span class="line">├── EventHub.cpp</span><br><span class="line">├── EventHub.h</span><br><span class="line">├── host</span><br><span class="line">│   ├── Android.bp</span><br><span class="line">│   ├── InputDriver.cpp</span><br><span class="line">│   ├── InputDriver.h</span><br><span class="line">│   ├── InputFlinger.cpp</span><br><span class="line">│   ├── InputFlinger.h</span><br><span class="line">│   ├── inputflinger.rc</span><br><span class="line">│   ├── InputHost.cpp</span><br><span class="line">│   ├── InputHost.h</span><br><span class="line">│   └── main.cpp</span><br><span class="line">├── InputApplication.cpp</span><br><span class="line">├── InputApplication.h</span><br><span class="line">├── InputDispatcher.cpp</span><br><span class="line">├── InputDispatcher.h</span><br><span class="line">├── InputListener.cpp</span><br><span class="line">├── InputListener.h</span><br><span class="line">├── InputManager.cpp</span><br><span class="line">├── InputManager.h</span><br><span class="line">├── InputReader.cpp</span><br><span class="line">├── InputReader.h</span><br><span class="line">├── InputWindow.cpp</span><br><span class="line">├── InputWindow.h</span><br><span class="line">├── PointerControllerInterface.h</span><br><span class="line">└── tests</span><br><span class="line">    ├── Android.bp</span><br><span class="line">    ├── InputDispatcher_test.cpp</span><br><span class="line">    └── InputReader_test.cpp</span><br></pre></td></tr></table></figure><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><!--    阅读卡：    文章：Android按键事件传递流程(一)    时间：2018/07/19--><p>[1095/1219] including ./vendor/qcom/proprietary/diag/Android.mk …<br>build/core/binary.mk:1522: error: vendor/qcom/proprietary/diag/diag_ep/Android.mk: diag_ep: C_INCLUDES must be under the source or output directories: /diag/diag_ep /diag/include /diag/src.</p><p>用户态</p><p>这两篇文章关注了很多的代码细节：<br><a href="https://blog.csdn.net/w690333243/article/details/77493981" target="_blank" rel="noopener">Android按键事件传递流程(一)</a><br><a href="https://blog.csdn.net/qidabing/article/details/74073515" target="_blank" rel="noopener">Android按键事件传递流程(二)</a></p><p>将Native层的Input子系统，起到承上启下的功能.连接Kernel 和 Fwk<br><a href="https://www.cnblogs.com/haiming/p/3318614.html" target="_blank" rel="noopener">Android Framework——之Input子系统</a></p><p>内核态<br><a href="https://www.jianshu.com/p/4f59efee9cd8" target="_blank" rel="noopener">Android物理按键输入事件(一)</a><br><a href="https://www.jianshu.com/p/3fe41b6d0c92" target="_blank" rel="noopener">Android物理输入事件(二)</a><br><a href="https://blog.csdn.net/u013308744/article/details/49274069" target="_blank" rel="noopener">android kl 文件的作用</a></p><p><a href="https://blog.csdn.net/woliuyunyicai/article/details/48577617" target="_blank" rel="noopener">View机制深入学习（三） View中的消息传递及InputManagerService</a></p>]]></content>
-      
-      <categories>
-          
-          <category> Android </category>
-          
-          <category> KeyEvent </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Android </tag>
-            
-            <tag> KeyEvent </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
       <title>区块链开发</title>
       <link href="/Block-Chain/"/>
       <url>/Block-Chain/</url>
@@ -1009,25 +932,21 @@
     </entry>
     
     <entry>
-      <title>C++ 基础</title>
-      <link href="/C-Base/"/>
-      <url>/C-Base/</url>
-      <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.<br><!--    Module:    第一步:需要将这些文章都看几篇    第二步：形成自己的理解    第三步：可以按照非常有用的文章，重写写一遍    第四步：纠正或者延伸别人的文章--></p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><!--    阅读卡：    文章：    时间：--><p><a href="http://www.runoob.com/cplusplus/cpp-tutorial.html" target="_blank" rel="noopener">C++菜鸟教程</a><br><a href="https://www.w3cschool.cn/cpp/" target="_blank" rel="noopener">W3-C++教程</a></p>]]></content>
+      <title>My Approach to Getting Dramatically Better as a Programmer</title>
+      <link href="/L-My-Approach-to-Getting-Dramatically-Better-as-a-Programmer/"/>
+      <url>/L-My-Approach-to-Getting-Dramatically-Better-as-a-Programmer/</url>
+      <content type="html"><![CDATA[<!--    Module:    第一步:需要将这些文章都看几篇    第二步：形成自己的理解    第三步：可以按照非常有用的文章，重写写一遍    第四步：纠正或者延伸别人的文章--><p>There was a recent discussion among my social group about what “getting dramatically better as a programmer” means. Based on that discussion, I’ve decided to share my own approach to becoming a “dramatically better programmer”. I want others to understand what practices I’ve found useful, so they can incorporate them into their own life.</p><p>My approach to getting dramatically better is built around a training regime. There are a specific set of “exercises” I do every week. I designed the training regime with two explicit goals in mind:</p><p>Learning how to solve problems I didn’t know how to solve before.<br>Learning how to write correct programs faster.<br>My training routine consists of a total of four different exercises. Each one helps me achieve the two objectives above. The four different exercises are:</p><p>Reading a paper.<br>Learning a new tool.<br>Reading several chapters of a book.<br>Recording my screen as I write a program. Then reviewing the footage and seeing how I could have written the program faster.<br>Let me explain each of the exercises in a bit more depth. I want to share some details on how each exercise works and the main benefits I’ve had from doing each exercise.</p><p>Reading a Paper<br>This exercise is designed to expand my knowledge of Computer Science. I’ve found two direct benefits to reading papers. The first benefit is that some papers have changed my model of certain problems. A good example of this is The Tail at Scale. That paper examines the counter intuitive nature of long tail latency.</p><p>One interesting lesson I learned from the paper was how running a request on multiple machines affects latency. The authors looked at empirical data from a Google service.  The service processes a request by distributing parts of the request across many different services. They used the data to estimate what would happen if you distributed requests across 100 different services. The authors found that if you measure the time it takes to get a response from all 100 severs, half of that time will be spent waiting for only the last five! This is because the slowest 5% of requests is that much slower than all the other requests. The paper also gives several approaches on how to reduce tail latency. I have found those approaches useful in my own work.</p><p>The other benefit I’ve found from reading papers is that they give me the knowledge to understand different systems as a whole. As an example, take Spanner, Google’s distributed database. Spanner uses many different techniques such as Paxos, two phase commit, MVCC, and predicate locks. I’ve been able to build up an understanding of these different techniques through reading papers. In turn, this enables me to reason the Spanner as a whole and reason about the trade offs Spanner makes compared to other systems.</p><p>I find most papers I read by either following the references of papers I have read or following up on a paper covered in the Morning Paper. The book Designing Data Intensive Applications also has a lot of references to papers that are worth reading.</p><p>Learning a New Tool<br>One of the easiest ways to solve problems is to use an existing tool that already solves that problem. For this exercise, I pick a tool and learn a bit about it. Usually I setup the tool locally, go through a few tutorials, and read a bit of the manual. Tools that I’ve learned in the past range from bash utils such as jq or sed to distributed systems such as Kafka or Zookeeper.</p><p>Learning the bash utilities helps me get solve many common tasks quicker than I could have otherwise. Simple text processing is often easier with sed than it is with a programming language. Likewise, learning about different distributed systems come in handy for understanding what tools work well for solving different problems. That way I know what tool I should use when faced with a given problem.</p><p>Reading Several Chapters of a Book<br>I use books to supplement the knowledge I don’t get from reading a paper or<br>learning a tool. The books I read cover a wide range of topics. Books I’ve read<br>recently include:</p><p>Refactoring – I found this to be a great way to understand what good code should look like and how to turn bad code into good code.<br>Getting Things Done – I found this book to be helpful for prioritizing and keeping track of things. It helped me build a system to make sure I get done what’s important for me to get done.<br>The First Time Manager – I recently became the team coordinator for my team at work. As team coordinator, my main responsibility is communicating with other teams when necessary. I also lead my team’s meetings. I found this book to be great for getting an understanding of basic management principles.<br>Recording My Screen<br>This exercise is my favorite. It’s the exercise that’s changed how I approach problems the most. It’s common for athletes to review footage of themselves to understand how they could have done better. I decided to apply the same approach to programming. Some of the lessons I’ve learned by recording my screen include:</p><p>It helps to test code as it’s written. Doing this reduces the amount of time it takes to debug code by reducing the time you spend locating where the bug is. If all your existing code is bug free, the bug has to be in the new code you just wrote.<br>When debugging a problem, adding functionality only for the purpose debugging is often well worth the cost. As an example, one toy problem I worked on was writing an LRU cache. I had a bug where it wasn’t evicting the right elements. I was able to quickly determine what was wrong by adding a function to print the state of the cache. I could then see where the expected behavior of the cache differed from the actual behavior. This allowed me to quickly locate the bug.<br>Spending five minutes deciding on an approach up front before writing any code is worth it. I’ve found two benefits to doing this. It helps me make sure my approach is correct. More importantly, it forces me to decide on a single approach. By watching a recording of myself, I found I wasted a lot of time switching my code between two different approaches. In reality, either approach would have worked fine.<br>All these lessons are obvious in retrospect. but I had no clue that any of these were issues until I recorded my screen and saw where I was actually spending time.</p><p>The steps I take for this exercise are:</p><p>Record myself writing some problem. This can either be a problem I worked on at work or a problem from a programming challenge website such as Leetcode.<br>Go through the recording at 10x speed and annotate what I was doing at each moment.<br>Total how much time I spent into high level categories. How much time did I spend debugging some bug? How much time did I spend building some feature<br>Look at the categories I spent the most time in. Then dig into what actually took up that time.<br>Come up with approaches that would have allowed me to save time. Often there are ways I could have structured my code up front that would have allowed me to write less code or find bugs earlier.<br>I highly recommend recording your screen. It’s one of the easiest ways to find small changes you can make to make yourself a lot more productive.</p><p>I’ve been doing this training regime over the past year. I’ve definitely noticed a huge difference. There’s a large amount of knowledge about systems and tools that I wouldn’t have developed otherwise. I’m also able to solve problems more quickly than I was able to before. I hope you reflect on these exercises and implement a few of them yourself.</p><p>Going forward, I’m going to start sharing what I find through my training regime. I’m going to start off by writing a blog post every time I do one of the exercises. I’ll share what I learned and found during the exercise. I think it would be beneficial for me to explain what I learned, as well as make a great learning resource for others.</p><!--    阅读卡：    文章：    时间：--><!--    阅读卡：    文章：    时间：    --><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p><a href="http://malisper.me/my-approach-to-getting-dramatically-better-as-a-programmer/?utm_source=wanqu.co&amp;utm_campaign=Wanqu+Daily&amp;utm_medium=website" target="_blank" rel="noopener">My Approach to Getting Dramatically Better as a Programmer</a><br>[My Approach to Getting Dramatically Better as a Programmer]:<a href="http://malisper.me/my-approach-to-getting-dramatically-better-as-a-programmer/?utm_source=wanqu.co&amp;utm_campaign=Wanqu+Daily&amp;utm_medium=website" target="_blank" rel="noopener">http://malisper.me/my-approach-to-getting-dramatically-better-as-a-programmer/?utm_source=wanqu.co&amp;utm_campaign=Wanqu+Daily&amp;utm_medium=website</a></p>]]></content>
       
       <categories>
           
-          <category> C++ </category>
-          
-          <category> Base </category>
+          <category> English </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> Base </tag>
-            
-            <tag> C++ </tag>
+            <tag> English </tag>
             
         </tags>
       
@@ -1049,6 +968,60 @@
         <tags>
             
             <tag> Chrome </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>Cracking the Coding Interview</title>
+      <link href="/Cracking-the-Coding-Interview/"/>
+      <url>/Cracking-the-Coding-Interview/</url>
+      <content type="html"><![CDATA[<p>程序员面试金典</p><p><a href="https://download.csdn.net/download/u011433684/9553267" target="_blank" rel="noopener">下载地址</a></p><p><a href="https://careers.google.com/intl/zh_cn/stories/applying-to-google/" target="_blank" rel="noopener">Google对实习生面试准备的推荐</a><br>里面提到了推荐阅读 Cracking the Coding Interview这个本书</p><p><a href="https://www.cnblogs.com/zhuli19901106/p/cracking-the-coding-interview.html" target="_blank" rel="noopener">《Cracking the Coding Interview》读书笔记</a></p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><!--    阅读卡：    文章：    时间：-->]]></content>
+      
+      <categories>
+          
+          <category> InterView </category>
+          
+          <category> Code </category>
+          
+          <category> C++ </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> C++ </tag>
+            
+            <tag> InterView </tag>
+            
+            <tag> Code </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>英语单词</title>
+      <link href="/English-Word/"/>
+      <url>/English-Word/</url>
+      <content type="html"><![CDATA[<p>noun 名词 –n<br>adjective 形容词  –adj<br>adverb   副词  –adv</p><h1 id="2018-08-21"><a href="#2018-08-21" class="headerlink" title="2018-08-21"></a>2018-08-21</h1><p>determine 下决心<br>chubby 胖<br>altitude 高度<br>latitude 纬度<br>make up one’s mind 做决定，下决心<br>Think about it before you make up your mind.  在决定之前要先想一想<br>give in 投降<br>give up 放弃<br>atlas 地图集 a book of maps<br>glacier 冰川<br>grocer 食品杂货商，杂货店<br>laser 激光，激光器<br>rapids 急流，湍流  n.<br>No boat could pass through these rapids and survive.<br>rapid 迅速的，急促的，急流，adj.<br>The rabbit ran at a rapid speed.<br>rapidly 迅速地，很快地，立即，adv.<br>The water here is flowing very rapidly.<br>vapid  索然无味的，无生气的，乏味的<br>I’m bored - is this book vapid, or are we ?<br>aids 艾滋病 Acquired Immune Deficiency Synd<br>This ribbon(红丝带) is to help people understand the AIDS disease.<br>rabies 狂犬病<br>A bite from a wild dog may result in rabies.<br>valley 山谷,溪谷，低谷<br>From the top of the mountain I could see the entire valley below.<br>alley 小巷，小径<br>The narrow alley winds through the old town. 这条窄巷弯弯曲曲的穿过古老的小镇.<br>ballet 芭蕾舞<br>The man is watching the ballet dance.<br>wallet 钱包，皮甲<br>My wallet holds all of my money and credit cards.<br>value 给…定价，评价，重视，珍视，价值，有用性<br>Which do you value more - the economy or the environment?<br>waterfall 瀑布<br>The stream drops over the boulders in a beautiful small waterfall.<br>watercolor 水彩，水彩画<br>Watercolor painiting is a fun way to pass the time.<br>watery 水的，水分多的，平淡的，稀薄的，松软的，水淋淋的<br>Look into my watery eyes and tell me I’m the cutest one!<br>watermelon 西瓜<br>The zombie(僵尸) was attacked by watermelon throwing plants.<br>after all 毕竟，终究<br>You should apologize to her. After all, she is your wife.<br>pace 步，步伐<br>The horse walked at a fast pace.<br>lace 花边，鞋带<br>Before you run,make sure your laces are tight.<br>pause 暂停，中止，停顿<br>The video pause at the moment he showed a funny face.<br>sauce 酱，调味汁，莽撞，冒失<br>He is adding different sauces onto the burger.<br>pence 便士<br>In th U.K., one hundred pence make one pound sterling. 在英国，一百便士等于一英镑.<br>bend 弯曲，倾向，屈服<br>First bend to the right, then bend to the left.<br>blender 掺和器，搅拌机<br>I feel like I’m getting into a blender, when I walk to my office.<br>bleed 流血，感到疼痛，榨取，敲诈<br>“I may bleed to death.”were the waterlemon’s last words.<br>meander 漫步<br>I like to meander through the forest.<br>delta 三角洲 = a pieces of land shaped like a triangle that is formed when a river splits into smaller rivers before it flows into an ocean<br>A thriving city was built at the river delta.<br>delete 删除<br>The man with tears on face deleted his ex-wife’s phone number.<br>attitude 态度<br>The waiter has such a bad attitude!<br>altitude 高度，海拔<br>At this altitude it would be dangerous to fall off. 在这种高度下跌落很危险.<br>latitude 纬度<br>Canada and Russia have similar altitude.<br>solitude 孤独，寂寞，荒野<br>I am in solitude. My shadow is my only friend.<br>antique 古董，古玩，古物<br>I’m fascinated by that antique at first sight!<br>boil 沸腾<br>As the water boils it gives off steam.<br>boiler 锅炉，煮器<br>The boiler takes up too much room in the bathroom.we should move it.<br>bill 账单，纸币，钞票<br>Could we have the bill, please? 请把账单给我们看一下.<br>bull 公牛，雄性的鲸，象等大动物<br>A bull market is a situation in which share prices are rising.<br>bell 钟，铃，门铃，钟声<br>He rang the bell to tell the waitress to pick up the dishes.<br>lorry 货车<br>All the stuff was carried in the lorry.<br>merry 欢乐的，愉快的<br>I wish you a merry Christmas!<br>Texas 德克萨斯州<br>Texas is the second largest American State.<br>text 文本，正文，原文，课本，课文，发送，短信<br>The text in this book is small and hard to read.<br>exam 考试<br>The students are taking an exam.<br>tease 取笑，嘲弄，挑逗，戏弄<br>All the kids at school teased him for being different.<br>nexus 关系，连接<br>I keep in close contact with my nexus of good friends.<br>tunas 金枪鱼<br>They caught a whole net full of fresh tunas. 他们捕到了满满一渔网的金枪鱼.<br>accent 口音<br>The foreigner has such a funny accent when he speaks Chinese!<br>absent 缺席的，不存在的，心不在焉的，出神的.<br>He listened to the lecture with an absent mind. 他上课也心不在焉.<br>pronunciation 发音，发音方法<br>He learns pronunciations of words from that book.<br>payment 支付，报酬<br>The clever dog made the payment for the bone itself.<br>accident 意外<br>Santa Claus is badly injured in the car accident. 圣诞老公公在车祸中受伤严重.<br>catfish 鲶鱼<br>Catfish hava whiskers just like cats do! 鲶鱼有猫一样的胡须.<br>Scottish 苏格兰人<br>These Scottish men are playing traditional music and wearing traditional clothes.<br>catch 捕捉，接住，赶上<br>Tha cat is happy to catch the mouse.<br>cash 现金，兑现<br>Please pay me with cash.<br>goldfish<br>A goldfish is a common pet.</p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><!--    阅读卡：    文章：    时间：-->]]></content>
+      
+      <categories>
+          
+          <category> English </category>
+          
+          <category> word </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> English </tag>
+            
+            <tag> word </tag>
             
         </tags>
       
@@ -1134,16 +1107,16 @@
     </entry>
     
     <entry>
-      <title>Android中Activity解析</title>
-      <link href="/Android-Activity-Analysis/"/>
-      <url>/Android-Activity-Analysis/</url>
-      <content type="html"><![CDATA[<p>上次我们讲到Activity的四种启动模式的时候，已经了解到一些关于task的技术，今天我再向大家介绍一下。task是一个具有栈结构的容器，可以放置多个Activity实例。启动一个应用，系统就会为之创建一个task，来放置根Activity；默认情况下，一个Activity启动另一个Activity时，两个Activity是放置在同一个task中的，后者被压入前者所在的task栈，当用户按下后退键，后者从task被弹出，前者又显示在幕前，特别是启动其他应用中的Activity时，两个Activity对用户来说就好像是属于同一个应用；系统task和task之间是互相独立的，当我们运行一个应用时，按下Home键回到主屏，启动另一个应用，这个过程中，之前的task被转移到后台，新的task被转移到前台，其根Activity也会显示到幕前，过了一会之后，在此按下Home键回到主屏，再选择之前的应用，之前的task会被转移到前台，系统仍然保留着task内的所有Activity实例，而那个新的task会被转移到后台，如果这时用户再做后退等动作，就是针对该task内部进行操作了。</p><p>我们今天就讲一下和task相关的知识，主要分一下几点：</p><p>1.Activity的affinity(亲和力)</p><p>2.Intent几种常见的flags</p><p>3.与task相关属性</p><p>affinity：</p><p>task对于Activity来说就好像它的身份证一样，可以告诉所在的task，自己属于这个task中的一员；拥有相同affinity的多个Activity理论同属于一个task，task自身的affinity决定于根Activity的affinity值。affinity在什么场合应用呢？1.根据affinity重新为Activity选择宿主task（与allowTaskReparenting属性配合工作）；2.启动一个Activity过程中Intent使用了FLAG_ACTIVITY_NEW_TASK标记，根据affinity查找或创建一个新的具有对应affinity的task。我们会在后面进行详细讲解。</p><p>默认情况下，一个应用内的所有Activity都具有相同的affinity，都是从Application（参考的taskAffinity属性）继承而来，而Application默认的affinity是中的包名，我们可以为设置taskAffinity属性值，这样可以应用到下的所有，也可以单独为某个Activity设置taskAffinity。例如：在系统自带的Browser中，package为com.android.browser，但是却自定义一个taskAffinity属性值：</p><p>Ongoing,待完成，Please wait.</p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p><a href="https://blog.csdn.net/luoshengyang/article/details/8923485" target="_blank" rel="noopener">那两年炼就的Android内功修养</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6685853" target="_blank" rel="noopener">Android应用程序的Activity启动过程简要介绍和学习计划</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6689748" target="_blank" rel="noopener">Android应用程序启动过程源代码分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6703247" target="_blank" rel="noopener">Android应用程序内部启动Activity过程（startActivity）的源代码分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6720261" target="_blank" rel="noopener">Android应用程序在新的进程中启动新的Activity的方法和过程分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6714543" target="_blank" rel="noopener">解开Android应用程序组件Activity的”singleTask”之谜</a></p><p><a href="http://www.cnblogs.com/CSU-PL/p/3794280.html" target="_blank" rel="noopener">android的task任务栈</a></p><p><a href="https://www.jianshu.com/p/9ecea420eb52" target="_blank" rel="noopener">3分钟看懂Activity启动流程</a></p><p><a href="">Android 7.0 startActivity()源码解析以及对几个问题的思考</a></p><p><a href="https://blog.csdn.net/windskier/article/details/7096521" target="_blank" rel="noopener">android Application Component研究之Activity(一)</a><br><a href="https://blog.csdn.net/a19891024/article/details/54342799" target="_blank" rel="noopener">Android instrumentation原理</a></p>]]></content>
+      <title>Android中按键事件传递分析</title>
+      <link href="/Android-KeyEvent-Analysis/"/>
+      <url>/Android-KeyEvent-Analysis/</url>
+      <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.<br><!--    Module:    第一步:需要将这些文章都看几篇    第二步：形成自己的理解    第三步：可以按照非常有用的文章，重写写一遍    第四步：纠正或者延伸别人的文章--></p><p>Framework Native模块代码</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">frameworks/base/services/core/jni/</span><br><span class="line">├── com_android_server_input_InputManagerService.cpp</span><br><span class="line">├── com_android_server_input_InputApplicationHandle.h</span><br><span class="line">├── com_android_server_input_InputApplicationHandle.c</span><br><span class="line">├── com_android_server_input_InputWindowHandle.h</span><br><span class="line">├── com_android_server_input_InputWindowHandle.c</span><br><span class="line">└──</span><br></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">frameworks/native/include/android</span><br><span class="line">├── input.h</span><br><span class="line">└── keycodes.h</span><br></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">frameworks/native/include/input</span><br><span class="line">├── DisplayViewport.h</span><br><span class="line">├── IInputFlinger.h</span><br><span class="line">├── InputDevice.h</span><br><span class="line">├── InputEventLabels.h</span><br><span class="line">├── Input.h</span><br><span class="line">├── InputTransport.h</span><br><span class="line">├── Keyboard.h</span><br><span class="line">├── KeyCharacterMap.h</span><br><span class="line">├── KeyLayoutMap.h</span><br><span class="line">├── VelocityControl.h</span><br><span class="line">├── VelocityTracker.h</span><br><span class="line">└── VirtualKeyMap.h</span><br></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">frameworks/native/services/inputflinger</span><br><span class="line">├── Android.bp</span><br><span class="line">├── EventHub.cpp</span><br><span class="line">├── EventHub.h</span><br><span class="line">├── host</span><br><span class="line">│   ├── Android.bp</span><br><span class="line">│   ├── InputDriver.cpp</span><br><span class="line">│   ├── InputDriver.h</span><br><span class="line">│   ├── InputFlinger.cpp</span><br><span class="line">│   ├── InputFlinger.h</span><br><span class="line">│   ├── inputflinger.rc</span><br><span class="line">│   ├── InputHost.cpp</span><br><span class="line">│   ├── InputHost.h</span><br><span class="line">│   └── main.cpp</span><br><span class="line">├── InputApplication.cpp</span><br><span class="line">├── InputApplication.h</span><br><span class="line">├── InputDispatcher.cpp</span><br><span class="line">├── InputDispatcher.h</span><br><span class="line">├── InputListener.cpp</span><br><span class="line">├── InputListener.h</span><br><span class="line">├── InputManager.cpp</span><br><span class="line">├── InputManager.h</span><br><span class="line">├── InputReader.cpp</span><br><span class="line">├── InputReader.h</span><br><span class="line">├── InputWindow.cpp</span><br><span class="line">├── InputWindow.h</span><br><span class="line">├── PointerControllerInterface.h</span><br><span class="line">└── tests</span><br><span class="line">    ├── Android.bp</span><br><span class="line">    ├── InputDispatcher_test.cpp</span><br><span class="line">    └── InputReader_test.cpp</span><br></pre></td></tr></table></figure><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><!--    阅读卡：    文章：Android按键事件传递流程(一)    时间：2018/07/19--><p>[1095/1219] including ./vendor/qcom/proprietary/diag/Android.mk …<br>build/core/binary.mk:1522: error: vendor/qcom/proprietary/diag/diag_ep/Android.mk: diag_ep: C_INCLUDES must be under the source or output directories: /diag/diag_ep /diag/include /diag/src.</p><p>用户态</p><p>这两篇文章关注了很多的代码细节：<br><a href="https://blog.csdn.net/w690333243/article/details/77493981" target="_blank" rel="noopener">Android按键事件传递流程(一)</a><br><a href="https://blog.csdn.net/qidabing/article/details/74073515" target="_blank" rel="noopener">Android按键事件传递流程(二)</a></p><p>将Native层的Input子系统，起到承上启下的功能.连接Kernel 和 Fwk<br><a href="https://www.cnblogs.com/haiming/p/3318614.html" target="_blank" rel="noopener">Android Framework——之Input子系统</a></p><p>内核态<br><a href="https://www.jianshu.com/p/4f59efee9cd8" target="_blank" rel="noopener">Android物理按键输入事件(一)</a><br><a href="https://www.jianshu.com/p/3fe41b6d0c92" target="_blank" rel="noopener">Android物理输入事件(二)</a><br><a href="https://blog.csdn.net/u013308744/article/details/49274069" target="_blank" rel="noopener">android kl 文件的作用</a></p><p><a href="https://blog.csdn.net/woliuyunyicai/article/details/48577617" target="_blank" rel="noopener">View机制深入学习（三） View中的消息传递及InputManagerService</a></p>]]></content>
       
       <categories>
           
           <category> Android </category>
           
-          <category> Activity </category>
+          <category> KeyEvent </category>
           
       </categories>
       
@@ -1152,122 +1125,7 @@
             
             <tag> Android </tag>
             
-            <tag> Activity </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>WordPress</title>
-      <link href="/WordPress/"/>
-      <url>/WordPress/</url>
-      <content type="html"><![CDATA[<h1 id="官网"><a href="#官网" class="headerlink" title="官网"></a>官网</h1><p><a href="https://cn.wordpress.org/download/" target="_blank" rel="noopener">下载</a><br><a href="https://codex.wordpress.org/zh-cn:Main_Page" target="_blank" rel="noopener">官网中文文档</a></p><h1 id="开发步骤"><a href="#开发步骤" class="headerlink" title="开发步骤"></a>开发步骤</h1><ol><li><p>下载WordPress</p></li><li><p>本地调试代码<br>第一步：安装 XAMPP<br>第二步:启动Apache，改端口到8080<br>第三步：启动MySQL，注意：点击Admin的时候，<a href="http://localhost/phpmyadmin/是无法访问的，需要改端口号http://localhost:8080/phpmyadmin/才能访问" target="_blank" rel="noopener">http://localhost/phpmyadmin/是无法访问的，需要改端口号http://localhost:8080/phpmyadmin/才能访问</a><br>新建用户账户: </p></li></ol><p><a href="https://jingyan.baidu.com/article/1e5468f955d65b484961b7bb.html" target="_blank" rel="noopener">本地安装wordpress教程</a></p><ol start="3"><li>安装主题</li></ol><p><a href="https://www.wpdaxue.com/install-wordpress-theme-and-plugin.html" target="_blank" rel="noopener">WordPress入门 之 安装主题和插件</a></p><p>ecommerce-lite 是一个购物商城的模式，暂时不适用</p><p><a href="https://www.diyzhan.com/2014/02/wordpress-admin-panel/" target="_blank" rel="noopener">WordPress的后台功能菜单介绍与操作，WordPress后台说明</a><br><a href="https://www.diyzhan.com/2014/03/wordpress-page-post-product/" target="_blank" rel="noopener">WordPress添加页面，写文章，增加文章类别，增加产品和产品类别</a></p><ol start="4"><li><p>Logo的设计<br>a) <a href="https://www.logosc.cn/" target="_blank" rel="noopener">https://www.logosc.cn/</a> 不错<br>b) <a href="http://www.logomaker.com.cn/logo-maker.jsp" target="_blank" rel="noopener">http://www.logomaker.com.cn/logo-maker.jsp</a></p></li><li><p>wordpress插件或者说是小工具</p></li></ol><h1 id="遇到的问题："><a href="#遇到的问题：" class="headerlink" title="遇到的问题："></a>遇到的问题：</h1><ol><li><p>上传的文件尺寸超过php.ini中定义的upload_max_filesize值。<br>解决方案： <a href="https://www.cnblogs.com/bhlsheji/p/5356564.html" target="_blank" rel="noopener">https://www.cnblogs.com/bhlsheji/p/5356564.html</a></p></li><li><p>二级菜单不生效</p></li></ol><!--    Module:    第一步:需要将这些文章都看几篇    第二步：形成自己的理解    第三步：可以按照非常有用的文章，重写写一遍    第四步：纠正或者延伸别人的文章--><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><!--    阅读卡：    文章：    时间：-->]]></content>
-      
-      <categories>
-          
-          <category> WordPress </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> WordPress </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>Android中启动过程解析</title>
-      <link href="/A-Ongoing-Android%E5%BC%82%E5%B8%B8%E8%A7%A3%E6%9E%90/"/>
-      <url>/A-Ongoing-Android%E5%BC%82%E5%B8%B8%E8%A7%A3%E6%9E%90/</url>
-      <content type="html"><![CDATA[<p>android系统常见异常现象有应用无响应、应用停止运行、冻屏、重启、死机</p><p>应用程序无响应：ANR</p><p>应用停止运行：  </p><p>冻屏</p><p>黑屏</p><p>重启</p><p>死机：</p><p>Ongoing,待完成，Please wait.</p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p><a href="https://blog.csdn.net/zwq1457/article/details/75529264" target="_blank" rel="noopener">Android异常分析</a></p>]]></content>
-      
-      <categories>
-          
-          <category> Android </category>
-          
-          <category> 启动 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Android </tag>
-            
-            <tag> Zegote </tag>
-            
-            <tag> Init </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>Kaios</title>
-      <link href="/Kaios/"/>
-      <url>/Kaios/</url>
-      <content type="html"><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>官方网站</p><p><a href="https://www.kaiostech.com/" target="_blank" rel="noopener">Kaios官网</a></p><p><a href="https://developer.kaiostech.com/" target="_blank" rel="noopener">Kaios开发者官网</a></p><p><a href="https://developer.mozilla.org/zh-CN/" target="_blank" rel="noopener">火狐开发者官网</a></p><p><a href="https://developer.kaiostech.com/environment-setup" target="_blank" rel="noopener">开发环境配置</a></p><p><a href="https://wiki.mozilla.org/Firefox_OS/TCP" target="_blank" rel="noopener">Firefox OS/TCP</a> ★★★★★</p><p><a href="https://github.com/mozilla-b2g/B2G.git" target="_blank" rel="noopener">Kaios源码</a></p><p><a href="https://www.androidcentral.com/firefox-os" target="_blank" rel="noopener">Firefox OS</a></p><p><a href="https://developer.mozilla.org/en-US/docs/Archive/B2G_OS" target="_blank" rel="noopener">B2G OS</a> ★★★★★</p><p><a href="https://developer.mozilla.org/zh-CN/docs/Archive/B2G_OS/Platform/Architecture" target="_blank" rel="noopener">Firefox OS架构</a></p><p><a href="https://developer.mozilla.org/zh-CN/docs/Archive/B2G_OS/Simulator" target="_blank" rel="noopener">Firefox OS 模拟器</a></p><p><a href="https://hacks.mozilla.org/category/firefox-os/" target="_blank" rel="noopener">Firefox OS Articles</a></p><p><a href="https://www.xda-developers.com/tag/firefox-os/" target="_blank" rel="noopener">FIREFOX OS Posts on XDA</a></p><h2 id="国内开发-Kaios"><a href="#国内开发-Kaios" class="headerlink" title="国内开发 Kaios"></a>国内开发 Kaios</h2><p><a href="https://blog.csdn.net/chieftain01/article/details/21450707" target="_blank" rel="noopener">Firefox OS简介</a></p><p><a href="https://blog.csdn.net/alwaysxihe/article/details/45561559" target="_blank" rel="noopener">Mozilla Firefox os系统构架详解</a></p><p><a href="https://blog.csdn.net/nxh_love/article/details/10610197" target="_blank" rel="noopener">Firefox OS 学习——学习目录</a><br><a href="https://blog.csdn.net/nxh_love/article/category/1524457" target="_blank" rel="noopener">Firefox OS 学习</a><br><a href="https://blog.csdn.net/nxh_love/article/details/9467707" target="_blank" rel="noopener">Firefox OS 学习——B2G 源码获取和build code</a></p><p><a href="https://blog.csdn.net/YAJUN0601/article/details/8620889" target="_blank" rel="noopener">FirefoxOS 系统进程初步分析 底层系统继承自 android</a></p><p><a href="https://blog.csdn.net/zembers/article/details/48495627" target="_blank" rel="noopener">Firefox OS启动过程分析－b2g进程启动</a></p><p><a href="https://blog.csdn.net/xiaowublog/article/details/21822917" target="_blank" rel="noopener">Firefox OS手机应用开发（三）：第一个Firefox OS应用程序</a></p><p><a href="https://blog.csdn.net/u013935416/article/details/25145239" target="_blank" rel="noopener">Firefox OS 2.0 模拟器 – 使用官方火狐浏览器扩展无痛完美模拟体验火狐手机系统</a></p><p><a href="https://blog.csdn.net/WY16223864/article/details/8299245" target="_blank" rel="noopener">Firefox OS编译</a><br>编译的时候遇到一个问题,报错<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Install dir: out/target/product/msm8909_q11/system/b2g</span><br><span class="line">rm -rf out/target/product/msm8909_q11/system/b2g/defaults</span><br><span class="line">mkdir -p out/target/product/msm8909_q11/system/b2g/defaults/pref</span><br><span class="line">cp -r /home/zds/Code/Q11/gaia/profile/defaults/* out/target/product/msm8909_q11/system/b2g/defaults/</span><br><span class="line">cp: cannot <span class="built_in">stat</span> `/home/zds/Code/Q11/gaia/profile/defaults/*<span class="string">': No such file or directory</span></span><br><span class="line"><span class="string">make: *** [out/target/product/msm8909_q11/system/gecko] Error 1</span></span><br></pre></td></tr></table></figure></p><p>查找发现解压有问题.到gaia目录手动把profile.tar.gz解压就行.就可以编译过</p><p>高通平台的话单模块编译，可以直接make 模块名</p><p><a href="https://git.kaiostech.com/" target="_blank" rel="noopener">Kaios</a> <!-- 账号： ganxiao@hymost.com 密码： hymostsw  --></p><!--    Module:    第一步:需要将这些文章都看几篇    第二步：形成自己的理解    第三步：可以按照非常有用的文章，重写写一遍    第四步：纠正或者延伸别人的文章--><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><!--    阅读卡：    文章：    时间：-->]]></content>
-      
-      <categories>
-          
-          <category> Kaios </category>
-          
-          <category> Firefox OS </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Kaios </tag>
-            
-            <tag> Firefox OS </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>Kotlin</title>
-      <link href="/Kotlin/"/>
-      <url>/Kotlin/</url>
-      <content type="html"><![CDATA[<h1 id="Kotlin-官方网站"><a href="#Kotlin-官方网站" class="headerlink" title="Kotlin 官方网站"></a>Kotlin 官方网站</h1><p><a href="https://developer.android.google.cn/kotlin/" target="_blank" rel="noopener">Kotlin </a><br><a href="https://android.github.io/kotlin-guides/" target="_blank" rel="noopener">Kotlin Home</a><br><a href="https://developer.android.google.cn/kotlin/resources" target="_blank" rel="noopener">Kotlin学习资源</a></p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><!--    阅读卡：    文章：    时间：-->]]></content>
-      
-      <categories>
-          
-          <category> Kotlin </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Kotlin </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>My Approach to Getting Dramatically Better as a Programmer</title>
-      <link href="/L-My-Approach-to-Getting-Dramatically-Better-as-a-Programmer/"/>
-      <url>/L-My-Approach-to-Getting-Dramatically-Better-as-a-Programmer/</url>
-      <content type="html"><![CDATA[<!--    Module:    第一步:需要将这些文章都看几篇    第二步：形成自己的理解    第三步：可以按照非常有用的文章，重写写一遍    第四步：纠正或者延伸别人的文章--><p>There was a recent discussion among my social group about what “getting dramatically better as a programmer” means. Based on that discussion, I’ve decided to share my own approach to becoming a “dramatically better programmer”. I want others to understand what practices I’ve found useful, so they can incorporate them into their own life.</p><p>My approach to getting dramatically better is built around a training regime. There are a specific set of “exercises” I do every week. I designed the training regime with two explicit goals in mind:</p><p>Learning how to solve problems I didn’t know how to solve before.<br>Learning how to write correct programs faster.<br>My training routine consists of a total of four different exercises. Each one helps me achieve the two objectives above. The four different exercises are:</p><p>Reading a paper.<br>Learning a new tool.<br>Reading several chapters of a book.<br>Recording my screen as I write a program. Then reviewing the footage and seeing how I could have written the program faster.<br>Let me explain each of the exercises in a bit more depth. I want to share some details on how each exercise works and the main benefits I’ve had from doing each exercise.</p><p>Reading a Paper<br>This exercise is designed to expand my knowledge of Computer Science. I’ve found two direct benefits to reading papers. The first benefit is that some papers have changed my model of certain problems. A good example of this is The Tail at Scale. That paper examines the counter intuitive nature of long tail latency.</p><p>One interesting lesson I learned from the paper was how running a request on multiple machines affects latency. The authors looked at empirical data from a Google service.  The service processes a request by distributing parts of the request across many different services. They used the data to estimate what would happen if you distributed requests across 100 different services. The authors found that if you measure the time it takes to get a response from all 100 severs, half of that time will be spent waiting for only the last five! This is because the slowest 5% of requests is that much slower than all the other requests. The paper also gives several approaches on how to reduce tail latency. I have found those approaches useful in my own work.</p><p>The other benefit I’ve found from reading papers is that they give me the knowledge to understand different systems as a whole. As an example, take Spanner, Google’s distributed database. Spanner uses many different techniques such as Paxos, two phase commit, MVCC, and predicate locks. I’ve been able to build up an understanding of these different techniques through reading papers. In turn, this enables me to reason the Spanner as a whole and reason about the trade offs Spanner makes compared to other systems.</p><p>I find most papers I read by either following the references of papers I have read or following up on a paper covered in the Morning Paper. The book Designing Data Intensive Applications also has a lot of references to papers that are worth reading.</p><p>Learning a New Tool<br>One of the easiest ways to solve problems is to use an existing tool that already solves that problem. For this exercise, I pick a tool and learn a bit about it. Usually I setup the tool locally, go through a few tutorials, and read a bit of the manual. Tools that I’ve learned in the past range from bash utils such as jq or sed to distributed systems such as Kafka or Zookeeper.</p><p>Learning the bash utilities helps me get solve many common tasks quicker than I could have otherwise. Simple text processing is often easier with sed than it is with a programming language. Likewise, learning about different distributed systems come in handy for understanding what tools work well for solving different problems. That way I know what tool I should use when faced with a given problem.</p><p>Reading Several Chapters of a Book<br>I use books to supplement the knowledge I don’t get from reading a paper or<br>learning a tool. The books I read cover a wide range of topics. Books I’ve read<br>recently include:</p><p>Refactoring – I found this to be a great way to understand what good code should look like and how to turn bad code into good code.<br>Getting Things Done – I found this book to be helpful for prioritizing and keeping track of things. It helped me build a system to make sure I get done what’s important for me to get done.<br>The First Time Manager – I recently became the team coordinator for my team at work. As team coordinator, my main responsibility is communicating with other teams when necessary. I also lead my team’s meetings. I found this book to be great for getting an understanding of basic management principles.<br>Recording My Screen<br>This exercise is my favorite. It’s the exercise that’s changed how I approach problems the most. It’s common for athletes to review footage of themselves to understand how they could have done better. I decided to apply the same approach to programming. Some of the lessons I’ve learned by recording my screen include:</p><p>It helps to test code as it’s written. Doing this reduces the amount of time it takes to debug code by reducing the time you spend locating where the bug is. If all your existing code is bug free, the bug has to be in the new code you just wrote.<br>When debugging a problem, adding functionality only for the purpose debugging is often well worth the cost. As an example, one toy problem I worked on was writing an LRU cache. I had a bug where it wasn’t evicting the right elements. I was able to quickly determine what was wrong by adding a function to print the state of the cache. I could then see where the expected behavior of the cache differed from the actual behavior. This allowed me to quickly locate the bug.<br>Spending five minutes deciding on an approach up front before writing any code is worth it. I’ve found two benefits to doing this. It helps me make sure my approach is correct. More importantly, it forces me to decide on a single approach. By watching a recording of myself, I found I wasted a lot of time switching my code between two different approaches. In reality, either approach would have worked fine.<br>All these lessons are obvious in retrospect. but I had no clue that any of these were issues until I recorded my screen and saw where I was actually spending time.</p><p>The steps I take for this exercise are:</p><p>Record myself writing some problem. This can either be a problem I worked on at work or a problem from a programming challenge website such as Leetcode.<br>Go through the recording at 10x speed and annotate what I was doing at each moment.<br>Total how much time I spent into high level categories. How much time did I spend debugging some bug? How much time did I spend building some feature<br>Look at the categories I spent the most time in. Then dig into what actually took up that time.<br>Come up with approaches that would have allowed me to save time. Often there are ways I could have structured my code up front that would have allowed me to write less code or find bugs earlier.<br>I highly recommend recording your screen. It’s one of the easiest ways to find small changes you can make to make yourself a lot more productive.</p><p>I’ve been doing this training regime over the past year. I’ve definitely noticed a huge difference. There’s a large amount of knowledge about systems and tools that I wouldn’t have developed otherwise. I’m also able to solve problems more quickly than I was able to before. I hope you reflect on these exercises and implement a few of them yourself.</p><p>Going forward, I’m going to start sharing what I find through my training regime. I’m going to start off by writing a blog post every time I do one of the exercises. I’ll share what I learned and found during the exercise. I think it would be beneficial for me to explain what I learned, as well as make a great learning resource for others.</p><!--    阅读卡：    文章：    时间：--><!--    阅读卡：    文章：    时间：    --><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p><a href="http://malisper.me/my-approach-to-getting-dramatically-better-as-a-programmer/?utm_source=wanqu.co&amp;utm_campaign=Wanqu+Daily&amp;utm_medium=website" target="_blank" rel="noopener">My Approach to Getting Dramatically Better as a Programmer</a><br>[My Approach to Getting Dramatically Better as a Programmer]:<a href="http://malisper.me/my-approach-to-getting-dramatically-better-as-a-programmer/?utm_source=wanqu.co&amp;utm_campaign=Wanqu+Daily&amp;utm_medium=website" target="_blank" rel="noopener">http://malisper.me/my-approach-to-getting-dramatically-better-as-a-programmer/?utm_source=wanqu.co&amp;utm_campaign=Wanqu+Daily&amp;utm_medium=website</a></p>]]></content>
-      
-      <categories>
-          
-          <category> English </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> English </tag>
+            <tag> KeyEvent </tag>
             
         </tags>
       
@@ -1299,6 +1157,131 @@
     </entry>
     
     <entry>
+      <title>Android中Activity解析</title>
+      <link href="/Android-Activity-Analysis/"/>
+      <url>/Android-Activity-Analysis/</url>
+      <content type="html"><![CDATA[<p>上次我们讲到Activity的四种启动模式的时候，已经了解到一些关于task的技术，今天我再向大家介绍一下。task是一个具有栈结构的容器，可以放置多个Activity实例。启动一个应用，系统就会为之创建一个task，来放置根Activity；默认情况下，一个Activity启动另一个Activity时，两个Activity是放置在同一个task中的，后者被压入前者所在的task栈，当用户按下后退键，后者从task被弹出，前者又显示在幕前，特别是启动其他应用中的Activity时，两个Activity对用户来说就好像是属于同一个应用；系统task和task之间是互相独立的，当我们运行一个应用时，按下Home键回到主屏，启动另一个应用，这个过程中，之前的task被转移到后台，新的task被转移到前台，其根Activity也会显示到幕前，过了一会之后，在此按下Home键回到主屏，再选择之前的应用，之前的task会被转移到前台，系统仍然保留着task内的所有Activity实例，而那个新的task会被转移到后台，如果这时用户再做后退等动作，就是针对该task内部进行操作了。</p><p>我们今天就讲一下和task相关的知识，主要分一下几点：</p><p>1.Activity的affinity(亲和力)</p><p>2.Intent几种常见的flags</p><p>3.与task相关属性</p><p>affinity：</p><p>task对于Activity来说就好像它的身份证一样，可以告诉所在的task，自己属于这个task中的一员；拥有相同affinity的多个Activity理论同属于一个task，task自身的affinity决定于根Activity的affinity值。affinity在什么场合应用呢？1.根据affinity重新为Activity选择宿主task（与allowTaskReparenting属性配合工作）；2.启动一个Activity过程中Intent使用了FLAG_ACTIVITY_NEW_TASK标记，根据affinity查找或创建一个新的具有对应affinity的task。我们会在后面进行详细讲解。</p><p>默认情况下，一个应用内的所有Activity都具有相同的affinity，都是从Application（参考的taskAffinity属性）继承而来，而Application默认的affinity是中的包名，我们可以为设置taskAffinity属性值，这样可以应用到下的所有，也可以单独为某个Activity设置taskAffinity。例如：在系统自带的Browser中，package为com.android.browser，但是却自定义一个taskAffinity属性值：</p><p>Ongoing,待完成，Please wait.</p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p><a href="https://blog.csdn.net/luoshengyang/article/details/8923485" target="_blank" rel="noopener">那两年炼就的Android内功修养</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6685853" target="_blank" rel="noopener">Android应用程序的Activity启动过程简要介绍和学习计划</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6689748" target="_blank" rel="noopener">Android应用程序启动过程源代码分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6703247" target="_blank" rel="noopener">Android应用程序内部启动Activity过程（startActivity）的源代码分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6720261" target="_blank" rel="noopener">Android应用程序在新的进程中启动新的Activity的方法和过程分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/6714543" target="_blank" rel="noopener">解开Android应用程序组件Activity的”singleTask”之谜</a></p><p><a href="http://www.cnblogs.com/CSU-PL/p/3794280.html" target="_blank" rel="noopener">android的task任务栈</a></p><p><a href="https://www.jianshu.com/p/9ecea420eb52" target="_blank" rel="noopener">3分钟看懂Activity启动流程</a></p><p><a href="">Android 7.0 startActivity()源码解析以及对几个问题的思考</a></p><p><a href="https://blog.csdn.net/windskier/article/details/7096521" target="_blank" rel="noopener">android Application Component研究之Activity(一)</a><br><a href="https://blog.csdn.net/a19891024/article/details/54342799" target="_blank" rel="noopener">Android instrumentation原理</a></p>]]></content>
+      
+      <categories>
+          
+          <category> Android </category>
+          
+          <category> Activity </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Android </tag>
+            
+            <tag> Activity </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>Kaios</title>
+      <link href="/Kaios/"/>
+      <url>/Kaios/</url>
+      <content type="html"><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>官方网站</p><p><a href="https://www.kaiostech.com/" target="_blank" rel="noopener">Kaios官网</a></p><p><a href="https://developer.kaiostech.com/" target="_blank" rel="noopener">Kaios开发者官网</a></p><p><a href="https://developer.mozilla.org/zh-CN/" target="_blank" rel="noopener">火狐开发者官网</a></p><p><a href="https://developer.kaiostech.com/environment-setup" target="_blank" rel="noopener">开发环境配置</a></p><p><a href="https://wiki.mozilla.org/Firefox_OS/TCP" target="_blank" rel="noopener">Firefox OS/TCP</a> ★★★★★</p><p><a href="https://github.com/mozilla-b2g/B2G.git" target="_blank" rel="noopener">Kaios源码</a></p><p><a href="https://www.androidcentral.com/firefox-os" target="_blank" rel="noopener">Firefox OS</a></p><p><a href="https://developer.mozilla.org/en-US/docs/Archive/B2G_OS" target="_blank" rel="noopener">B2G OS</a> ★★★★★</p><p><a href="https://developer.mozilla.org/zh-CN/docs/Archive/B2G_OS/Platform/Architecture" target="_blank" rel="noopener">Firefox OS架构</a></p><p><a href="https://developer.mozilla.org/zh-CN/docs/Archive/B2G_OS/Simulator" target="_blank" rel="noopener">Firefox OS 模拟器</a></p><p><a href="https://hacks.mozilla.org/category/firefox-os/" target="_blank" rel="noopener">Firefox OS Articles</a></p><p><a href="https://www.xda-developers.com/tag/firefox-os/" target="_blank" rel="noopener">FIREFOX OS Posts on XDA</a></p><h2 id="国内开发-Kaios"><a href="#国内开发-Kaios" class="headerlink" title="国内开发 Kaios"></a>国内开发 Kaios</h2><p><a href="https://blog.csdn.net/chieftain01/article/details/21450707" target="_blank" rel="noopener">Firefox OS简介</a></p><p><a href="https://blog.csdn.net/alwaysxihe/article/details/45561559" target="_blank" rel="noopener">Mozilla Firefox os系统构架详解</a></p><p><a href="https://blog.csdn.net/nxh_love/article/details/10610197" target="_blank" rel="noopener">Firefox OS 学习——学习目录</a><br><a href="https://blog.csdn.net/nxh_love/article/category/1524457" target="_blank" rel="noopener">Firefox OS 学习</a><br><a href="https://blog.csdn.net/nxh_love/article/details/9467707" target="_blank" rel="noopener">Firefox OS 学习——B2G 源码获取和build code</a></p><p><a href="https://blog.csdn.net/YAJUN0601/article/details/8620889" target="_blank" rel="noopener">FirefoxOS 系统进程初步分析 底层系统继承自 android</a></p><p><a href="https://blog.csdn.net/zembers/article/details/48495627" target="_blank" rel="noopener">Firefox OS启动过程分析－b2g进程启动</a></p><p><a href="https://blog.csdn.net/xiaowublog/article/details/21822917" target="_blank" rel="noopener">Firefox OS手机应用开发（三）：第一个Firefox OS应用程序</a></p><p><a href="https://blog.csdn.net/u013935416/article/details/25145239" target="_blank" rel="noopener">Firefox OS 2.0 模拟器 – 使用官方火狐浏览器扩展无痛完美模拟体验火狐手机系统</a></p><p><a href="https://blog.csdn.net/WY16223864/article/details/8299245" target="_blank" rel="noopener">Firefox OS编译</a><br>编译的时候遇到一个问题,报错<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Install dir: out/target/product/msm8909_q11/system/b2g</span><br><span class="line">rm -rf out/target/product/msm8909_q11/system/b2g/defaults</span><br><span class="line">mkdir -p out/target/product/msm8909_q11/system/b2g/defaults/pref</span><br><span class="line">cp -r /home/zds/Code/Q11/gaia/profile/defaults/* out/target/product/msm8909_q11/system/b2g/defaults/</span><br><span class="line">cp: cannot <span class="built_in">stat</span> `/home/zds/Code/Q11/gaia/profile/defaults/*<span class="string">': No such file or directory</span></span><br><span class="line"><span class="string">make: *** [out/target/product/msm8909_q11/system/gecko] Error 1</span></span><br></pre></td></tr></table></figure></p><p>查找发现解压有问题.到gaia目录手动把profile.tar.gz解压就行.就可以编译过</p><p>高通平台的话单模块编译，可以直接make 模块名</p><p><a href="https://git.kaiostech.com/" target="_blank" rel="noopener">Kaios</a> <!-- 账号： ganxiao@hymost.com 密码： hymostsw  --></p><!--    Module:    第一步:需要将这些文章都看几篇    第二步：形成自己的理解    第三步：可以按照非常有用的文章，重写写一遍    第四步：纠正或者延伸别人的文章--><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><!--    阅读卡：    文章：    时间：-->]]></content>
+      
+      <categories>
+          
+          <category> Kaios </category>
+          
+          <category> Firefox OS </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Kaios </tag>
+            
+            <tag> Firefox OS </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>Android内核剖析之阅读记录</title>
+      <link href="/Android-%E5%86%85%E6%A0%B8%E5%89%96%E6%9E%90/"/>
+      <url>/Android-%E5%86%85%E6%A0%B8%E5%89%96%E6%9E%90/</url>
+      <content type="html"><![CDATA[<h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>《Android内核剖析》–柯元旦<br>偏原理，2011年电子工业出版社出版</p><h1 id="第一章：Linux基础知识"><a href="#第一章：Linux基础知识" class="headerlink" title="第一章：Linux基础知识"></a>第一章：Linux基础知识</h1><p>1.1 Linux文件系统<br>1.2 Linux启动过程<br> Android对应的uboot/fastboot<br>1.3 常用Linux命令<br> export：用于将每个变量值的作用域设为全局范围<br> example: Terminal 字符串名字太长，export PS1=me<br>1.4 shell脚本备忘<br> 脚本本身不代表任何计算机语言，也不属于计算机语言范畴，到目前为止，人们把那种不需要编译的程序文件称之为脚本.<br> 不同脚本需要不同的解释器来解释执行.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#! bin/bash</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Hello World"</span> <span class="comment"># show a message</span></span><br></pre></td></tr></table></figure></p><p>1.5 Make脚本备忘<br> Make脚本多用于自动编译过程，具体可以参考GNU Make</p><h1 id="第二章：Java基础"><a href="#第二章：Java基础" class="headerlink" title="第二章：Java基础"></a>第二章：Java基础</h1><p>2.1 类装载器 DexClassLoader<br>动态装载Class文件的ClassLoader类.在Java中使用.<br>DexClassLoader是在Android中使用，用来装载Dex文件.<br>2.2 JNI 调用机制<br>Java Native Interface<br>2.2.1 Java 访问 C<br>2.2.2 C 访问 Java<br>C 调用Java只能在Java调用C中进行.<br>2.2.3 在C中使用持久对象<br>2.3 异步消息处理线程<br> Android中的异步消息处理机制：Message、MessageQueue、Looper、Handler<br> Looper还有一个特殊的概念，那就是ThreadLocal，ThreadLocal并不是线程，它的作用是在每个线程中存储数据.<br> Handler的主要任务是将一个任务切换到指定的线程中执行.</p><h1 id="第三章：Android源码下载以及开发环境的配置"><a href="#第三章：Android源码下载以及开发环境的配置" class="headerlink" title="第三章：Android源码下载以及开发环境的配置"></a>第三章：Android源码下载以及开发环境的配置</h1><p> 有Eclipse中导入Android源码的方法</p><h1 id="第四章：使用Git"><a href="#第四章：使用Git" class="headerlink" title="第四章：使用Git"></a>第四章：使用Git</h1><h1 id="第五章：Binder"><a href="#第五章：Binder" class="headerlink" title="第五章：Binder"></a>第五章：Binder</h1><p> Binder用于进程间通讯，英文的意思是别针、回形针.<br> 由四个部分组成：Binder驱动、ServiceManager、Binder服务端、Binder客户端</p><ol><li>Binder驱动</li><li>ServiceManager</li><li>Binder服务端</li><li>Binder客户端<br><a href="https://blog.csdn.net/freekiteyu/article/details/70082302" target="_blank" rel="noopener">Android-Binder进程间通讯机制</a></li></ol><p>第六章：Framework概述<br>分服务端、客户端和Linux驱动端<br>服务端-WMS、AMS<br>客户端-<br>Linux驱动端-SurfaceFlinger和Binder<br>APK的启动过程<br>每个Activity最少有三个线程<br>第七章：理解Context<br>第八章：窗口创建过程  讲到了Token<br>第九章：Framework的启动过程<br>讲述了Framework的启动过程<br>第十章：AMS内部原理  &lt;重点&gt;<br>第十一章：从输入设备中获取消息<br>第十二章：屏幕绘制基础–SurfaceFlinger<br>第十三章：View工作原理 &lt;重点&gt;<br>第十四章：WMS工作原理 &lt;重点&gt;<br>第十五章：</p><!--    Module:    第一步:需要将这些文章都看几篇    第二步：形成自己的理解    第三步：可以按照非常有用的文章，重写写一遍    第四步：纠正或者延伸别人的文章--><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><!--    阅读卡：    文章：    时间：-->]]></content>
+      
+      <categories>
+          
+          <category> Android </category>
+          
+          <category> 内核剖析 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Android </tag>
+            
+            <tag> 内核剖析 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>SELinux与SEAndroid解析</title>
+      <link href="/SELinux-SEAndroid/"/>
+      <url>/SELinux-SEAndroid/</url>
+      <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.<br><!--    Module:    第一步:需要将这些文章都看几篇    第二步：形成自己的理解    第三步：可以按照非常有用的文章，重写写一遍    第四步：纠正或者延伸别人的文章--></p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><!--    阅读卡：    文章：    时间：--><p><a href="https://blog.csdn.net/luoshengyang/article/details/37613135" target="_blank" rel="noopener">SEAndroid安全机制框架分析</a></p><p><a href="https://my.csdn.net/huangyabin001" target="_blank" rel="noopener">SELinux学习</a></p>]]></content>
+      
+      <categories>
+          
+          <category> SEAndroid </category>
+          
+          <category> SELinux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> SEAndroid </tag>
+            
+            <tag> SELinux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>Android中Process</title>
+      <link href="/Android-Process-Analysis/"/>
+      <url>/Android-Process-Analysis/</url>
+      <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.<br><!--    Module:    第一步:需要将这些文章都看几篇    第二步：形成自己的理解    第三步：可以按照非常有用的文章，重写写一遍    第四步：纠正或者延伸别人的文章--></p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><!--    阅读卡：    文章：    时间：--><p><a href="https://mp.weixin.qq.com/s/r8Dxc7cmJbYXZ8E9EvbSkw" target="_blank" rel="noopener">解读Android进程优先级ADJ算法</a></p>]]></content>
+      
+      <categories>
+          
+          <category> Android </category>
+          
+          <category> Process </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Android </tag>
+            
+            <tag> Process </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>Linux</title>
       <link href="/Linux-Base/"/>
       <url>/Linux-Base/</url>
@@ -1324,21 +1307,67 @@
     </entry>
     
     <entry>
-      <title>MAC OS</title>
-      <link href="/Mac-OS/"/>
-      <url>/Mac-OS/</url>
-      <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.<br><!--    Module:    第一步:需要将这些文章都看几篇    第二步：形成自己的理解    第三步：可以按照非常有用的文章，重写写一遍    第四步：纠正或者延伸别人的文章--></p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><!--    阅读卡：    文章：    时间：--><p><a href="http://www.cnblogs.com/chijianqiang/archive/2011/08/03/2126593.html" target="_blank" rel="noopener">开始使用Mac OS X——写给Mac新人</a></p>]]></content>
+      <title>Kotlin</title>
+      <link href="/Kotlin/"/>
+      <url>/Kotlin/</url>
+      <content type="html"><![CDATA[<h1 id="Kotlin-官方网站"><a href="#Kotlin-官方网站" class="headerlink" title="Kotlin 官方网站"></a>Kotlin 官方网站</h1><p><a href="https://developer.android.google.cn/kotlin/" target="_blank" rel="noopener">Kotlin </a><br><a href="https://android.github.io/kotlin-guides/" target="_blank" rel="noopener">Kotlin Home</a><br><a href="https://developer.android.google.cn/kotlin/resources" target="_blank" rel="noopener">Kotlin学习资源</a></p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><!--    阅读卡：    文章：    时间：-->]]></content>
       
       <categories>
           
-          <category> MAC OS </category>
+          <category> Kotlin </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> MAC OS </tag>
+            <tag> Kotlin </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>Python开发</title>
+      <link href="/Python/"/>
+      <url>/Python/</url>
+      <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.<br><!--    Module:    第一步:需要将这些文章都看几篇    第二步：形成自己的理解    第三步：可以按照非常有用的文章，重写写一遍    第四步：纠正或者延伸别人的文章--></p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><!--    阅读卡：    文章：    时间：--><p><a href="https://juejin.im/entry/5a6b4ae3f265da3e3245b66f?utm_source=gold_browser_extension" target="_blank" rel="noopener">Python从入门到转行</a></p>]]></content>
+      
+      <categories>
+          
+          <category> Python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Python </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>Android中Sample</title>
+      <link href="/Android-Sample/"/>
+      <url>/Android-Sample/</url>
+      <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.<br><!--    Module:    第一步:需要将这些文章都看几篇    第二步：形成自己的理解    第三步：可以按照非常有用的文章，重写写一遍    第四步：纠正或者延伸别人的文章--></p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><!--    阅读卡：    文章：    时间：--><p><a href="https://blog.csdn.net/carson_ho/article/details/73250163" target="_blank" rel="noopener">Android：JNI 与 NDK到底是什么？</a></p>]]></content>
+      
+      <categories>
+          
+          <category> Android </category>
+          
+          <category> Sample </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Android </tag>
+            
+            <tag> Sample </tag>
             
         </tags>
       
@@ -1650,31 +1679,6 @@
     </entry>
     
     <entry>
-      <title>Android中Launcher解析</title>
-      <link href="/Android-Launcher-Analysis/"/>
-      <url>/Android-Launcher-Analysis/</url>
-      <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.</p><h1 id="Launcher"><a href="#Launcher" class="headerlink" title="Launcher"></a>Launcher</h1><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p><a href="https://blog.csdn.net/yj934672573/article/details/54571704" target="_blank" rel="noopener">Android 7.0 Keyguard流程分析</a></p><p><a href="https://blog.csdn.net/yin1031468524/article/details/62216934" target="_blank" rel="noopener">Android原生Launcher3简要分析</a></p><p><a href="https://blog.csdn.net/qq_30552095/article/details/80494770" target="_blank" rel="noopener">Android8.1 Launcher3 去掉抽屉(一）</a><br><a href="https://blog.csdn.net/qq_30552095/article/details/80500290" target="_blank" rel="noopener">Android8.1 Launcher3 去掉抽屉（二）</a><br><a href="https://blog.csdn.net/qq_30552095/article/details/80508449" target="_blank" rel="noopener">Android8.1 Launcher3 去掉抽屉（三）</a></p><p><a href="https://blog.csdn.net/qq_31012033/article/details/73289232" target="_blank" rel="noopener">Android 7.0 Launcher3 去掉应用抽屉</a></p>]]></content>
-      
-      <categories>
-          
-          <category> Android </category>
-          
-          <category> Launcher </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Android </tag>
-            
-            <tag> Launcher </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
       <title>读书笔记</title>
       <link href="/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
       <url>/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</url>
@@ -1692,6 +1696,31 @@
             <tag> 逆向分析 </tag>
             
             <tag> 安全 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>Android中SystemUI解析</title>
+      <link href="/Android-SystemUI-Analysis/"/>
+      <url>/Android-SystemUI-Analysis/</url>
+      <content type="html"><![CDATA[<p>还未开始，待补充</p><h1 id="状态栏"><a href="#状态栏" class="headerlink" title="状态栏"></a>状态栏</h1><h2 id="锁屏状态栏"><a href="#锁屏状态栏" class="headerlink" title="锁屏状态栏"></a>锁屏状态栏</h2><h2 id="状态栏反色"><a href="#状态栏反色" class="headerlink" title="状态栏反色"></a>状态栏反色</h2><h2 id="沉浸式状态栏"><a href="#沉浸式状态栏" class="headerlink" title="沉浸式状态栏"></a>沉浸式状态栏</h2><h2 id="信号图标的刷新"><a href="#信号图标的刷新" class="headerlink" title="信号图标的刷新"></a>信号图标的刷新</h2><h2 id="凹口处理"><a href="#凹口处理" class="headerlink" title="凹口处理"></a>凹口处理</h2><h1 id="导航栏"><a href="#导航栏" class="headerlink" title="导航栏"></a>导航栏</h1><p>导航栏中的Back键和HOME键的事件处理：<br><a href="https://blog.csdn.net/span76/article/details/48441971" target="_blank" rel="noopener">https://blog.csdn.net/span76/article/details/48441971</a><br>Recent键的处理呢？<br>frameworks/base/packages/SystemUI/src/com/android/systemui/statusbar/phone/NavigationBarFragment.java<br>中的onRecentsClick函数处理Recent键</p><h1 id="快捷开关"><a href="#快捷开关" class="headerlink" title="快捷开关"></a>快捷开关</h1><h1 id="下拉通知栏"><a href="#下拉通知栏" class="headerlink" title="下拉通知栏"></a>下拉通知栏</h1><h1 id="截图模块"><a href="#截图模块" class="headerlink" title="截图模块"></a>截图模块</h1><h1 id="防误触模块"><a href="#防误触模块" class="headerlink" title="防误触模块"></a>防误触模块</h1><h1 id="亮度调节"><a href="#亮度调节" class="headerlink" title="亮度调节"></a>亮度调节</h1><h1 id="PIP-画中画"><a href="#PIP-画中画" class="headerlink" title="PIP 画中画"></a>PIP 画中画</h1><h1 id="双屏异显"><a href="#双屏异显" class="headerlink" title="双屏异显"></a>双屏异显</h1><h1 id="Recent模块"><a href="#Recent模块" class="headerlink" title="Recent模块"></a>Recent模块</h1><p>在AndroidManifest.xml里面，我们注意到SystemUISecondaryUserService，对于每一个用户都有一个SystemUI进程，所以在用户切换的时候，需要用SystemUISecondaryUserService来确保新的用户进程创建.<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- Recents depends on every user having their own SystemUI process, so on user switch,</span></span><br><span class="line"><span class="comment">     ensure that the process is created by starting this service.</span></span><br><span class="line"><span class="comment">     --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">service</span> <span class="attr">android:name</span>=<span class="string">"SystemUISecondaryUserService"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:exported</span>=<span class="string">"true"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:permission</span>=<span class="string">"com.android.systemui.permission.SELF"</span> /&gt;</span></span><br></pre></td></tr></table></figure></p><p>RecentsActivity.java的onCreate函数开始<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RecentsActivity</span> <span class="keyword">extends</span> <span class="title">Activity</span> <span class="keyword">implements</span> <span class="title">ViewTreeObserver</span>.<span class="title">OnPreDrawListener</span>,</span></span><br><span class="line"><span class="class">        <span class="title">ColorExtractor</span>.<span class="title">OnColorsChangedListener</span> </span>&#123;</span><br><span class="line">        ...</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** Called with the activity is first created. */</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">        mFinishedOnStartup = <span class="keyword">false</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// In the case that the activity starts up before the Recents component has initialized</span></span><br><span class="line">        <span class="comment">// (usually when debugging/pushing the SysUI apk), just finish this activity.</span></span><br><span class="line">        SystemServicesProxy ssp = Recents.getSystemServices();</span><br><span class="line">        <span class="keyword">if</span> (ssp == <span class="keyword">null</span>) &#123;</span><br><span class="line">            mFinishedOnStartup = <span class="keyword">true</span>;</span><br><span class="line">            finish();</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure></p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p>Doze模式<br><a href="https://blog.csdn.net/u013278940/article/details/50498304" target="_blank" rel="noopener">Android5.1 系统之省电模式探索一启动流程</a><br><a href="https://blog.csdn.net/innost/article/details/47660591" target="_blank" rel="noopener">《深入理解Android 卷III》第七章 深入理解SystemUI</a></p><p><a href="https://jingyan.baidu.com/article/76a7e409071797fc3b6e15bb.html" target="_blank" rel="noopener">SystemUI 调谐器 TunerService的打开方式</a></p><p><a href="https://www.jianshu.com/p/ad040aab0e66" target="_blank" rel="noopener">Android官方架构组件Navigation：大巧不工的Fragment管理框架</a></p>]]></content>
+      
+      <categories>
+          
+          <category> Android </category>
+          
+          <category> SystemUI </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Android </tag>
+            
+            <tag> SystemUI </tag>
             
         </tags>
       
@@ -1750,31 +1779,6 @@
     </entry>
     
     <entry>
-      <title>Android中SystemUI解析</title>
-      <link href="/Android-SystemUI-Analysis/"/>
-      <url>/Android-SystemUI-Analysis/</url>
-      <content type="html"><![CDATA[<p>还未开始，待补充</p><h1 id="状态栏"><a href="#状态栏" class="headerlink" title="状态栏"></a>状态栏</h1><h2 id="锁屏状态栏"><a href="#锁屏状态栏" class="headerlink" title="锁屏状态栏"></a>锁屏状态栏</h2><h2 id="状态栏反色"><a href="#状态栏反色" class="headerlink" title="状态栏反色"></a>状态栏反色</h2><h2 id="沉浸式状态栏"><a href="#沉浸式状态栏" class="headerlink" title="沉浸式状态栏"></a>沉浸式状态栏</h2><h2 id="信号图标的刷新"><a href="#信号图标的刷新" class="headerlink" title="信号图标的刷新"></a>信号图标的刷新</h2><h2 id="凹口处理"><a href="#凹口处理" class="headerlink" title="凹口处理"></a>凹口处理</h2><h1 id="导航栏"><a href="#导航栏" class="headerlink" title="导航栏"></a>导航栏</h1><p>导航栏中的Back键和HOME键的事件处理：<br><a href="https://blog.csdn.net/span76/article/details/48441971" target="_blank" rel="noopener">https://blog.csdn.net/span76/article/details/48441971</a><br>Recent键的处理呢？<br>frameworks/base/packages/SystemUI/src/com/android/systemui/statusbar/phone/NavigationBarFragment.java<br>中的onRecentsClick函数处理Recent键</p><h1 id="快捷开关"><a href="#快捷开关" class="headerlink" title="快捷开关"></a>快捷开关</h1><h1 id="下拉通知栏"><a href="#下拉通知栏" class="headerlink" title="下拉通知栏"></a>下拉通知栏</h1><h1 id="截图模块"><a href="#截图模块" class="headerlink" title="截图模块"></a>截图模块</h1><h1 id="防误触模块"><a href="#防误触模块" class="headerlink" title="防误触模块"></a>防误触模块</h1><h1 id="亮度调节"><a href="#亮度调节" class="headerlink" title="亮度调节"></a>亮度调节</h1><h1 id="PIP-画中画"><a href="#PIP-画中画" class="headerlink" title="PIP 画中画"></a>PIP 画中画</h1><h1 id="双屏异显"><a href="#双屏异显" class="headerlink" title="双屏异显"></a>双屏异显</h1><h1 id="Recent模块"><a href="#Recent模块" class="headerlink" title="Recent模块"></a>Recent模块</h1><p>在AndroidManifest.xml里面，我们注意到SystemUISecondaryUserService，对于每一个用户都有一个SystemUI进程，所以在用户切换的时候，需要用SystemUISecondaryUserService来确保新的用户进程创建.<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- Recents depends on every user having their own SystemUI process, so on user switch,</span></span><br><span class="line"><span class="comment">     ensure that the process is created by starting this service.</span></span><br><span class="line"><span class="comment">     --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">service</span> <span class="attr">android:name</span>=<span class="string">"SystemUISecondaryUserService"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:exported</span>=<span class="string">"true"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:permission</span>=<span class="string">"com.android.systemui.permission.SELF"</span> /&gt;</span></span><br></pre></td></tr></table></figure></p><p>RecentsActivity.java的onCreate函数开始<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RecentsActivity</span> <span class="keyword">extends</span> <span class="title">Activity</span> <span class="keyword">implements</span> <span class="title">ViewTreeObserver</span>.<span class="title">OnPreDrawListener</span>,</span></span><br><span class="line"><span class="class">        <span class="title">ColorExtractor</span>.<span class="title">OnColorsChangedListener</span> </span>&#123;</span><br><span class="line">        ...</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** Called with the activity is first created. */</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">        mFinishedOnStartup = <span class="keyword">false</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// In the case that the activity starts up before the Recents component has initialized</span></span><br><span class="line">        <span class="comment">// (usually when debugging/pushing the SysUI apk), just finish this activity.</span></span><br><span class="line">        SystemServicesProxy ssp = Recents.getSystemServices();</span><br><span class="line">        <span class="keyword">if</span> (ssp == <span class="keyword">null</span>) &#123;</span><br><span class="line">            mFinishedOnStartup = <span class="keyword">true</span>;</span><br><span class="line">            finish();</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure></p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p>Doze模式<br><a href="https://blog.csdn.net/u013278940/article/details/50498304" target="_blank" rel="noopener">Android5.1 系统之省电模式探索一启动流程</a><br><a href="https://blog.csdn.net/innost/article/details/47660591" target="_blank" rel="noopener">《深入理解Android 卷III》第七章 深入理解SystemUI</a></p><p><a href="https://jingyan.baidu.com/article/76a7e409071797fc3b6e15bb.html" target="_blank" rel="noopener">SystemUI 调谐器 TunerService的打开方式</a></p><p><a href="https://www.jianshu.com/p/ad040aab0e66" target="_blank" rel="noopener">Android官方架构组件Navigation：大巧不工的Fragment管理框架</a></p>]]></content>
-      
-      <categories>
-          
-          <category> Android </category>
-          
-          <category> SystemUI </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Android </tag>
-            
-            <tag> SystemUI </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
       <title>Android中WindowManagerService解析</title>
       <link href="/Android-WindowManagerService-Analysis/"/>
       <url>/Android-WindowManagerService-Analysis/</url>
@@ -1796,6 +1800,31 @@
             <tag> WindowManagerService </tag>
             
             <tag> WMS </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>Android中Launcher解析</title>
+      <link href="/Android-Launcher-Analysis/"/>
+      <url>/Android-Launcher-Analysis/</url>
+      <content type="html"><![CDATA[<p>Ongoing,待完成，Please wait.</p><h1 id="Launcher"><a href="#Launcher" class="headerlink" title="Launcher"></a>Launcher</h1><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p><a href="https://blog.csdn.net/yj934672573/article/details/54571704" target="_blank" rel="noopener">Android 7.0 Keyguard流程分析</a></p><p><a href="https://blog.csdn.net/yin1031468524/article/details/62216934" target="_blank" rel="noopener">Android原生Launcher3简要分析</a></p><p><a href="https://blog.csdn.net/qq_30552095/article/details/80494770" target="_blank" rel="noopener">Android8.1 Launcher3 去掉抽屉(一）</a><br><a href="https://blog.csdn.net/qq_30552095/article/details/80500290" target="_blank" rel="noopener">Android8.1 Launcher3 去掉抽屉（二）</a><br><a href="https://blog.csdn.net/qq_30552095/article/details/80508449" target="_blank" rel="noopener">Android8.1 Launcher3 去掉抽屉（三）</a></p><p><a href="https://blog.csdn.net/qq_31012033/article/details/73289232" target="_blank" rel="noopener">Android 7.0 Launcher3 去掉应用抽屉</a></p>]]></content>
+      
+      <categories>
+          
+          <category> Android </category>
+          
+          <category> Launcher </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Android </tag>
+            
+            <tag> Launcher </tag>
             
         </tags>
       
