@@ -4,6 +4,51 @@
 
     
   <url>
+    <loc>http://yoursite.com/Android-Launcher-Analysis/</loc>
+    <lastmod>2018-08-27T14:01:59.307Z</lastmod>
+    <data>
+        <display>
+        <title>Android中Launcher解析</title>
+        <pubTime>2014-12-31T16:00:00.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+        <tag>Launcher</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="http://yoursite.com/categories/Android/"/>
+          
+             
+              <breadCrumb title="Launcher" url="http://yoursite.com/categories/Android/Launcher/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/%E5%90%84%E7%B1%BB%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E5%B0%8F%E6%8A%80%E5%B7%A7/</loc>
+    <lastmod>2018-08-27T07:00:11.869Z</lastmod>
+    <data>
+        <display>
+        <title>各类工具使用小技巧</title>
+        <pubTime>2015-06-29T06:06:59.000Z</pubTime>
+        
+        <tag>小技巧 工具 vim shell putty</tag>
+         
+         
+           
+             
+              <breadCrumb title="Tools" url="http://yoursite.com/categories/Tools/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/Android-Base/</loc>
     <lastmod>2018-08-27T01:43:51.980Z</lastmod>
     <data>
@@ -58,26 +103,6 @@
     </url>
 
     
-    
-  <url>
-    <loc>http://yoursite.com/%E5%90%84%E7%B1%BB%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E5%B0%8F%E6%8A%80%E5%B7%A7/</loc>
-    <lastmod>2018-08-26T06:50:19.288Z</lastmod>
-    <data>
-        <display>
-        <title>各类工具使用小技巧</title>
-        <pubTime>2015-06-29T06:06:59.000Z</pubTime>
-        
-        <tag>小技巧 工具 vim shell putty</tag>
-         
-         
-           
-             
-              <breadCrumb title="Tools" url="http://yoursite.com/categories/Tools/"/>
-          
-        </display>
-    </data>
-    </url>
-
     
   <url>
     <loc>http://yoursite.com/English-Word/</loc>
@@ -818,31 +843,6 @@
            
              
               <breadCrumb title="Android Tools" url="http://yoursite.com/categories/Android-Tools/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/Android-Launcher-Analysis/</loc>
-    <lastmod>2018-08-07T07:02:15.695Z</lastmod>
-    <data>
-        <display>
-        <title>Android中Launcher解析</title>
-        <pubTime>2014-12-31T16:00:00.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-        <tag>Launcher</tag>
-         
-         
-           
-             
-              <breadCrumb title="Android" url="http://yoursite.com/categories/Android/"/>
-          
-             
-              <breadCrumb title="Launcher" url="http://yoursite.com/categories/Android/Launcher/"/>
           
         </display>
     </data>
