@@ -4,6 +4,31 @@
 
     
   <url>
+    <loc>http://yoursite.com/Android-Base/</loc>
+    <lastmod>2018-08-27T01:43:51.980Z</lastmod>
+    <data>
+        <display>
+        <title>Android</title>
+        <pubTime>2015-12-31T16:00:00.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+        <tag>Base</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="http://yoursite.com/categories/Android/"/>
+          
+             
+              <breadCrumb title="Base" url="http://yoursite.com/categories/Android/Base/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/Cracking-the-Coding-Interview/</loc>
     <lastmod>2018-08-27T01:41:03.873Z</lastmod>
     <data>
@@ -11,11 +36,11 @@
         <title>Cracking the Coding Interview</title>
         <pubTime>2015-12-31T16:00:00.000Z</pubTime>
         
+        <tag>C++</tag>
+         
         <tag>InterView</tag>
          
         <tag>Code</tag>
-         
-        <tag>C++</tag>
          
          
            
@@ -208,31 +233,6 @@
            
              
               <breadCrumb title="All" url="http://yoursite.com/categories/All/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/Android-Base/</loc>
-    <lastmod>2018-08-10T06:32:39.151Z</lastmod>
-    <data>
-        <display>
-        <title>Android</title>
-        <pubTime>2015-12-31T16:00:00.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-        <tag>Base</tag>
-         
-         
-           
-             
-              <breadCrumb title="Android" url="http://yoursite.com/categories/Android/"/>
-          
-             
-              <breadCrumb title="Base" url="http://yoursite.com/categories/Android/Base/"/>
           
         </display>
     </data>
