@@ -4,6 +4,31 @@
 
     
   <url>
+    <loc>http://yoursite.com/Android-Launcher-Analysis/</loc>
+    <lastmod>2018-08-28T04:17:27.354Z</lastmod>
+    <data>
+        <display>
+        <title>Android中Launcher解析</title>
+        <pubTime>2014-12-31T16:00:00.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+        <tag>Launcher</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="http://yoursite.com/categories/Android/"/>
+          
+             
+              <breadCrumb title="Launcher" url="http://yoursite.com/categories/Android/Launcher/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/Android-Base/</loc>
     <lastmod>2018-08-28T03:06:38.722Z</lastmod>
     <data>
@@ -22,31 +47,6 @@
           
              
               <breadCrumb title="Base" url="http://yoursite.com/categories/Android/Base/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/Android-Launcher-Analysis/</loc>
-    <lastmod>2018-08-28T02:57:02.711Z</lastmod>
-    <data>
-        <display>
-        <title>Android中Launcher解析</title>
-        <pubTime>2014-12-31T16:00:00.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-        <tag>Launcher</tag>
-         
-         
-           
-             
-              <breadCrumb title="Android" url="http://yoursite.com/categories/Android/"/>
-          
-             
-              <breadCrumb title="Launcher" url="http://yoursite.com/categories/Android/Launcher/"/>
           
         </display>
     </data>
