@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/Android-Base/</loc>
+    
+    <lastmod>2018-08-28T03:01:36.424Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/Android-Launcher-Analysis/</loc>
     
-    <lastmod>2018-08-27T14:01:59.307Z</lastmod>
+    <lastmod>2018-08-28T02:57:02.711Z</lastmod>
     
   </url>
   
@@ -12,13 +19,6 @@
     <loc>http://yoursite.com/%E5%90%84%E7%B1%BB%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E5%B0%8F%E6%8A%80%E5%B7%A7/</loc>
     
     <lastmod>2018-08-27T07:00:11.869Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/Android-Base/</loc>
-    
-    <lastmod>2018-08-27T01:43:51.980Z</lastmod>
     
   </url>
   
