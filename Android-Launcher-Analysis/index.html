@@ -93,7 +93,7 @@
 <meta property="og:image" content="http://yoursite.com/Android-Launcher-Analysis/Launcher-02.jpg">
 <meta property="og:image" content="http://yoursite.com/Android-Launcher-Analysis/Launcher-03.jpg">
 <meta property="og:image" content="http://yoursite.com/Android-Launcher-Analysis/Launcher-04.jpg">
-<meta property="og:updated_time" content="2018-08-28T08:15:17.047Z">
+<meta property="og:updated_time" content="2018-08-28T08:49:54.896Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android中Launcher解析">
 <meta name="twitter:description" content="Ongoing,待完成，Please wait. Launcher 概述Launcher3代码统计:123456789-------------------------------------------------------------------------------Language                     files          blank        comme">
@@ -447,15 +447,15 @@
 <h2 id="DeviceProfile-java"><a href="#DeviceProfile-java" class="headerlink" title="DeviceProfile.java"></a>DeviceProfile.java</h2><p>定义了Launcher中各个模块的一些基本属性.以及属性值的初始化等工作.<br>设置各元素布局的padding  。修改workspace的padding使用getWorkspacePadding方法。</p>
 <h2 id="InvariantDeviceProfile-java"><a href="#InvariantDeviceProfile-java" class="headerlink" title="InvariantDeviceProfile.java"></a>InvariantDeviceProfile.java</h2><p>一些不变的设备相关参数管理类，其内部包涵了横竖屏模式的DeviceProfile。<br>getPredefinedDeviceProfiles方法 负责加载在不同设备上不同的布局，和图标大小等。</p>
 <h2 id="SystemUiController-java"><a href="#SystemUiController-java" class="headerlink" title="SystemUiController.java"></a>SystemUiController.java</h2><p>用于管理Launcher界面时，SystemUI中的StatusBar和NavigationBar的颜色</p>
-<h2 id="LauncherAppState-java"><a href="#LauncherAppState-java" class="headerlink" title="LauncherAppState.java"></a>LauncherAppState.java</h2><p>单例对象，构造方法中初始化对象、注册应用安装、卸载、更新，配置变化等广播。这些广播用来实时更新桌面图标等，其receiver的实现在LauncherModel类中，LauncherModel也在这里初始化。</p>
-<h2 id="LauncherModel-java"><a href="#LauncherModel-java" class="headerlink" title="LauncherModel.java"></a>LauncherModel.java</h2><p>数据处理类，保存桌面状态，提供读写数据库的API，内部类LoaderTask用来初始化桌面。</p>
+<h2 id="LauncherAppState-java"><a href="#LauncherAppState-java" class="headerlink" title="LauncherAppState.java"></a>LauncherAppState.java</h2><p>单例模式的全局管理类,主要是初始化一些对象,注册广播等.<br>单例对象，构造方法中初始化对象、注册应用安装、卸载、更新，配置变化等广播。这些广播用来实时更新桌面图标等，其receiver的实现在LauncherModel类中，LauncherModel也在这里初始化。</p>
+<h2 id="LauncherModel-java"><a href="#LauncherModel-java" class="headerlink" title="LauncherModel.java"></a>LauncherModel.java</h2><p>继承BroadcastReceiver,由此可知他是一个广播接收器,用来接收广播,另外,LauncherModel还主要加载数据;<br>数据处理类，保存桌面状态，提供读写数据库的API，内部类LoaderTask用来初始化桌面。</p>
 <h2 id="LauncherAppsCompat-java"><a href="#LauncherAppsCompat-java" class="headerlink" title="LauncherAppsCompat.java"></a>LauncherAppsCompat.java</h2><p>获取已安装App列表信息的兼容抽象基类，子类依据不同版本API进行兼容性处理。<br>子类有LauncherAppsCompatVL.java和LauncherAppsCompatVO.java，其中LauncherAppsCompatVO处理O版本以及以上的版本.</p>
 <h2 id="WidgetPreviewLoader-java"><a href="#WidgetPreviewLoader-java" class="headerlink" title="WidgetPreviewLoader.java"></a>WidgetPreviewLoader.java</h2><p>存储Widget信息的数据库，内部创建了数据库widgetpreviews.db.</p>
 <h2 id="AppWidgetManagerCompat-java"><a href="#AppWidgetManagerCompat-java" class="headerlink" title="AppWidgetManagerCompat.java"></a>AppWidgetManagerCompat.java</h2><p>获取AppWidget列表的兼容抽象基类，子类依据不同版本API进行兼容性处理。</p>
 <h2 id="LauncherStateTransitionAnimation-java"><a href="#LauncherStateTransitionAnimation-java" class="headerlink" title="LauncherStateTransitionAnimation.java"></a>LauncherStateTransitionAnimation.java</h2><p>各类动画总管处理执行类，负责各种情况下的各种动画效果处理</p>
 <h2 id="DragLayer-java"><a href="#DragLayer-java" class="headerlink" title="DragLayer.java"></a>DragLayer.java</h2><p>一个用来负责分发事件的ViewGroup</p>
 <h2 id="DragController-java"><a href="#DragController-java" class="headerlink" title="DragController.java"></a>DragController.java</h2><p>DragLayer只是一个ViewGroup，具体的拖拽的处理都放到了DragController中。</p>
-<h2 id="LauncherProvider-java"><a href="#LauncherProvider-java" class="headerlink" title="LauncherProvider.java"></a>LauncherProvider.java</h2><p>核心数据库类，负责launcher.db的创建与维护。</p>
+<h2 id="LauncherProvider-java"><a href="#LauncherProvider-java" class="headerlink" title="LauncherProvider.java"></a>LauncherProvider.java</h2><p>继承ContentProvider,主要是处理数据库操作;<br>核心数据库类，负责launcher.db的创建与维护。</p>
 <h2 id="LauncherAppWidgetHost-java"><a href="#LauncherAppWidgetHost-java" class="headerlink" title="LauncherAppWidgetHost.java"></a>LauncherAppWidgetHost.java</h2><p>AppWidgetHost子类，是桌面插件宿主，为了方便托拽等才继承处理的。</p>
 <h2 id="LauncherAppWidgetHostView-java"><a href="#LauncherAppWidgetHostView-java" class="headerlink" title="LauncherAppWidgetHostView.java"></a>LauncherAppWidgetHostView.java</h2><p>AppWidgetHostView子类，配合LauncherAppWidgetHost得到HostView。</p>
 <h2 id="LauncherRootView-java"><a href="#LauncherRootView-java" class="headerlink" title="LauncherRootView.java"></a>LauncherRootView.java</h2><p>竖屏模式下根布局，继承了InsettableFrameLayout，控制是否显示在状态栏等下面。</p>
@@ -544,6 +544,7 @@
 <p><a href="https://blog.csdn.net/xufeifandj/article/details/39851741" target="_blank" rel="noopener">Launcher 细说ItemInfo</a></p>
 <p><a href="https://blog.csdn.net/weixin_37077539/article/details/54892406" target="_blank" rel="noopener">一步步客制化Android桌面（Launcher3）图标</a> 可以用此思路来更改主题</p>
 <p><a href="https://www.cnblogs.com/mythou/tag/launcher/" target="_blank" rel="noopener">Android Launcher分析和修改 系列文章</a></p>
+<p><a href="http://codemx.cn/2016/07/30/Launcher01/#" target="_blank" rel="noopener">墨香带你学Launcher之（一）- 概述 </a> 讲述了Launcher的布局界面等基本东西<br><a href="http://codemx.cn/2016/08/05/Launcher02/" target="_blank" rel="noopener">墨香带你学Launcher之（二）- 数据加载流程 </a><br>讲解了Launcher桌面图标的默认配置<br>Launcher从AMS启动的流程<br>Launcher的初始化流程<br>Launcher的数据加载<br><a href="http://codemx.cn/2016/08/14/Launcher03/" target="_blank" rel="noopener">墨香带你学Launcher之（三）- 绑定屏幕、图标、文件夹和Widget </a><br><a href="http://codemx.cn/2016/08/21/Launcher04/" target="_blank" rel="noopener">墨香带你学Launcher之（四）- 应用安装、更新、卸载时的数据加载 </a><br><a href="http://codemx.cn/2016/10/16/Launcher05/" target="_blank" rel="noopener">墨香带你学Launcher之（五）- Workspace滑动 </a><br><a href="http://codemx.cn/2016/11/21/Launcher06/" target="_blank" rel="noopener">墨香带你学Launcher之（六）- 拖拽 </a><br><a href="http://codemx.cn/2016/12/18/Launcher07/" target="_blank" rel="noopener">墨香带你学Launcher之（七）- 小部件的加载、添加以及大小调节 </a><br><a href="http://codemx.cn/2017/05/19/Launcher08/" target="_blank" rel="noopener">墨香带你学Launcher之（八）- 加载Icon、设置壁纸 </a></p>
 <p><a href="https://blog.csdn.net/yin1031468524/article/details/62216934" target="_blank" rel="noopener">Android原生Launcher3简要分析</a></p>
 <p><a href="https://blog.csdn.net/qq_30552095/article/details/80494770" target="_blank" rel="noopener">Android8.1 Launcher3 去掉抽屉(一）</a><br><a href="https://blog.csdn.net/qq_30552095/article/details/80500290" target="_blank" rel="noopener">Android8.1 Launcher3 去掉抽屉（二）</a><br><a href="https://blog.csdn.net/qq_30552095/article/details/80508449" target="_blank" rel="noopener">Android8.1 Launcher3 去掉抽屉（三）</a></p>
 <p><a href="https://blog.csdn.net/qq_31012033/article/details/73289232" target="_blank" rel="noopener">Android 7.0 Launcher3 去掉应用抽屉</a></p>
