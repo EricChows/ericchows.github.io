@@ -90,7 +90,7 @@
 <meta property="og:description" content="VIM 使用小技巧配置鼠标和显示行号服务器在安装了加密之后，vim无法使用鼠标，也无法显示行号了，可以通过如下方法修改：    在~路径下创建.vimrc，然后加入两行set mouse=aset nu修改完之后保存退出。   关闭bash窗口，或者source .vimrc，接下来vim就可以使用鼠标和显示行号了。  shell 脚本小技巧shell脚本注意事项有些情况下，我们会碰到一个问题，在">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/各类工具使用小技巧/Android-Window-mechanism/window-01.png">
-<meta property="og:updated_time" content="2018-08-30T05:51:16.013Z">
+<meta property="og:updated_time" content="2018-08-30T11:06:28.594Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="各类工具使用小技巧">
 <meta name="twitter:description" content="VIM 使用小技巧配置鼠标和显示行号服务器在安装了加密之后，vim无法使用鼠标，也无法显示行号了，可以通过如下方法修改：    在~路径下创建.vimrc，然后加入两行set mouse=aset nu修改完之后保存退出。   关闭bash窗口，或者source .vimrc，接下来vim就可以使用鼠标和显示行号了。  shell 脚本小技巧shell脚本注意事项有些情况下，我们会碰到一个问题，在">
@@ -489,8 +489,17 @@
 <p>结果解释：<br>files 文件个数<br>blank 空白行数<br>comment 注释行数<br>code 代码行数</p>
 <h1 id="9矢量图查看"><a href="#9矢量图查看" class="headerlink" title=".9矢量图查看"></a>.9矢量图查看</h1><p>Method Draw  <a href="http://editor.method.ac/" target="_blank" rel="noopener">http://editor.method.ac/</a><br>可以在此网站查看.9 patch路径画出来的图的样子.</p>
 <h1 id="Understand-高效代码静态分析神器"><a href="#Understand-高效代码静态分析神器" class="headerlink" title="Understand 高效代码静态分析神器"></a>Understand 高效代码静态分析神器</h1><p><a href="http://codemx.cn/2016/04/30/Understand01/#" target="_blank" rel="noopener">Understand:高效代码静态分析神器详解(一)</a><br><a href="https://www.cnblogs.com/zhangyang/p/7602485.html" target="_blank" rel="noopener">Understand:高效代码静态分析神器详解(一)</a><br><a href="https://blog.csdn.net/u011776903/article/details/73563957/" target="_blank" rel="noopener">understand软件使用教程</a><br>该软件可以帮助你快速的分析代码结构流程.<br><a href="https://scitools.com/features/" target="_blank" rel="noopener">官网</a>官网下载收费，支持Linux、Windows、MAC系统.<br><a href="https://blog.csdn.net/look85/article/details/7988332" target="_blank" rel="noopener">Scientific Toolworks Understand for linux 的下载</a><br>Linux64位下载地址：<a href="https://pan.baidu.com/s/1i52nrut" target="_blank" rel="noopener">https://pan.baidu.com/s/1i52nrut</a><br>小技巧 ：<br>1、设置字体和颜色风格<br>修改默认字体：Tools - Options - Editor - Default style<br>修改颜色： Tools - Options - Editor - Styles<br>2、生成UML类图、调用树图<br>默认安装的插件不支持这两种图，需要从官网下载插件。<br>_<a href="http://www.scitools.com/perl_scripts/uperl/uml_class.upl" target="_blank" rel="noopener">http://www.scitools.com/perl_scripts/uperl/uml_class.upl</a><br>_<a href="http://www.scitools.com/perl_scripts/uperl/invocation.upl" target="_blank" rel="noopener">http://www.scitools.com/perl_scripts/uperl/invocation.upl</a><br>放到sti/conf/scripts/local目录下。<br>然后重新运行，执行 project- project graphical views - xxxx可以生成这两种图。<br>3、更改图的字体<br>直接修改对应的脚本文件（\Program Files\STI\conf\scripts目录下），在do_load( )函数的对应位置加入如下的设置：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$graph</span>- default( fontname , Consolas , node );</span><br><span class="line"><span class="variable">$graph</span>- default( fontsize , 10 , node );</span><br><span class="line"><span class="variable">$graph</span>- default( fontname , Consolas , edge );</span><br><span class="line"><span class="variable">$graph</span>- default( fontsize , 10 , edge );</span><br></pre></td></tr></table></figure></p>
-<h1 id="Android-Studio-小技巧"><a href="#Android-Studio-小技巧" class="headerlink" title="Android Studio 小技巧"></a>Android Studio 小技巧</h1><p><a href="https://blog.csdn.net/qq_27093465/article/details/52857307" target="_blank" rel="noopener">查看类的继承关系</a></p>
-<p><a href="https://blog.csdn.net/zheng_weichao/article/details/72961791" target="_blank" rel="noopener">事半功倍：Android Studio 优秀插件汇总</a></p>
+<h1 id="Android-Studio-小技巧"><a href="#Android-Studio-小技巧" class="headerlink" title="Android Studio 小技巧"></a>Android Studio 小技巧</h1><p><a href="https://blog.csdn.net/myosotis5/article/details/79208707" target="_blank" rel="noopener">android studio 学习入门篇</a><br><a href="https://blog.csdn.net/qq_27093465/article/details/52857307" target="_blank" rel="noopener">查看类的继承关系</a></p>
+<p>AndroidStudio 3.1.2 快捷键<br>AndroidStudio有个不好的地方是，快捷键太多了，很多快捷键功能会与系统功能冲突，导致快捷键功能实际不起作用，而不生效.</p>
+<p>Ctrl + C:复制<br>Ctrl + Shift + C:复制绝对路径，在某个文件内，按此三个键，实现复制当前文件的路径<br>Ctrl + Shift + Alt +C :复制当前文件相对路径，得到的是当前项目文件夹下面的路径</p>
+<p>查找与替换<br>Ctrl + F: 文件内查找<br>Ctrl + R: 文件内替换<br>F3：查找下一个<br>Shift + F3：查找前一个<br>Ctrl + Shift + F:当前项目中全局搜索<br>Ctrl + Shift + R:当前项目中全局替换</p>
+<p>选择<br>Ctrl + W : 会选择鼠标附近的模块代码，一直点击的话，会一直扩大选择的范围<br>Ctrl + Shift + W: 对应的会缩小选择的范围</p>
+<p>常用的：<br>Ctrl + F12：显示当前文件中，文件结构，也就是有哪些方法和变量<br>Ctrl + Shift + N : 在当前项目中查找文件<br>Ctrl + E :显示最近打开的文件<br>Ctrl + G :按照行号跳转<br>查找变量或者方法被使用的地方： 右键-&gt; Find Usages<br>显示变量或者方法被使用的地方： Ctrl + Alt + 7<br>Ctrl + Alt + H：可以查看当前方法被哪些地方调用到了，以及当前方法掉用了哪些函数.</p>
+<p>Ctrl + +:展开方法<br>Ctrl + -：折叠方法<br>Ctrl + Shift + +:展开所有方法<br>Ctrl + Shift + -：折叠所有方法<br>Ctrl + Alt + I:模块代码自动对齐</p>
+<p>Ctrl + D: 在下一行复制当前行代码<br>Ctrl + Shift + U: 整个单词的大小些切换，全部大写，或者全部小写<br>Ctrl + Shift + Alt + 2:显示文件夹和文件，点击后，直接通过文件夹的方式打开文件所在的路径.</p>
+<p>文件对比： View -&gt; Compare With</p>
+<p>AS 插件</p>
+<p><a href="https://blog.csdn.net/zheng_weichao/article/details/72961791" target="_blank" rel="noopener">事半功倍：Android Studio 优秀插件汇总</a><br><a href="https://blog.csdn.net/m0_37358427/article/details/81131353" target="_blank" rel="noopener">最完整的Andriod studio插件整理</a> 有图形化展示插件的功能</p>
 <h1 id="Visual-Studio-小技巧"><a href="#Visual-Studio-小技巧" class="headerlink" title="Visual Studio 小技巧"></a>Visual Studio 小技巧</h1><p><a href="https://www.cnblogs.com/happyzwt/p/7769129.html" target="_blank" rel="noopener">Visual Studio 2017 常用快捷键</a><br>Ubuntu Version 1.23.1 的快捷方式如下：<br>CTRL + P 打开某个文件或者打开某行，可以输入?，进行命令查询<br>CTRL + P 之后可以使用的命令如下:<br>a) :123 跳到当前文件的123行<br>   或者直接Ctrl + G 也可以跳到某行<br>b）#  列出了当前项目的所有方法，可以选择或者输入进入对应的方法<br>c) &gt; 可以执行某些命令,这些命令很好玩，<br>    比如第一个Add Curor above，会在当前行上面的一行增加一个光标，后面输入的字符，两行可以同时输入<br>    如果当前连接上了手机的话，Android: View Logcat,会在当前文件右边打开一个logcat的窗口，显示实时的log，非常有用<br>    还有很多其他的命令待探索，各种语言或者工具，都分别有一些小工具<br>d) edt 会显示当前打开了的所有的文件列表，我们可以输入文件名进行跳转，这个比CTRL+TAB更好一点，当打开的文件太多的时候，用TAB键很费力<br>e) ext 会进入安装了的插件管理<br>f) view 可以进行其他模块的跳转，比如说，打开文件界面，打开搜索界面，打开控制台界面等等<br>g) @ 可以@当前文件中的所有方法和变量，然后进行跳转<br>h) @: 可以调用当前文件中的所有方法和变量，然后进行跳转，和@的区别是，进行了归类，把方法放一起显示，变量放一起显示</p>
 <p>ctrl + w  关闭当前打开的文件窗口<br>CTRL+TAB：活动窗体切换 （alt+tab：任务切换）<br>CTRL+SHIFT+TAB：上一个文档窗口<br>Ctrl+F: 在当前文件中查找 （Find）<br>Ctrl+Shift+F: 在当前项目中查找<br>F3: 查找下一个<br>Shift+F3: 查找上一个<br>Ctrl+H: 在当前文件中替换<br>Ctrl+Shift+H: 在当前项目中替换<br>Ctrl+K,C: 注释选定内容 （Comment）<br>Ctrl+K,U: 取消选定内容注释 （UnComment）<br>Ctrl+J：打开/关闭 Debug 控制台<br>Ctrl + Shift + Y :打开/关闭 控制台<br>View -&gt; Debug Control :打开/关闭 控制台</p>
 <p>Ctrl + Shift + Y: 打开新的VS窗口<br>Ctrl + = 放大窗口<br>Ctrl + - 缩小窗口</p>
@@ -500,7 +509,8 @@
 <p>实现两个文件的比较：<br>在左侧选中需要比较的文件1，右键-&gt; Select for Compare<br>在左侧选中需要比较的文件1，右键-&gt; Compare with Select</p>
 <p>Ctrl + Atl + - :光标回到上次的位置<br>顶部状态栏-&gt; Go -&gt; Back : 光标回到上次的位置<br>Ctrl + Shift + - :光标回到下次的位置<br>顶部状态栏-&gt; Go -&gt; Back : 光标回到下次的位置</p>
 <p>Ctrl + K,T 调整VS的颜色</p>
-<p>VS 插件推荐：</p>
+<p>VS 插件推荐：<br>插件搜索notepad++,sublimetext,markdown等，可以安装相关的工具<br>搜索Android，第一个Android插件需要安装</p>
+<p><a href="https://javahello.github.io/2018/02/26/ubuntu/vscode-java-environment/" target="_blank" rel="noopener">vscode Java 开发环境配置</a></p>
 <h1 id="Eclipse-小技巧"><a href="#Eclipse-小技巧" class="headerlink" title="Eclipse 小技巧"></a>Eclipse 小技巧</h1>
       
     </div>
