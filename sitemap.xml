@@ -2,6 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/Android-SystemUI-Analysis/</loc>
+    
+    <lastmod>2018-08-31T10:05:49.338Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/Android-Base/</loc>
+    
+    <lastmod>2018-08-31T10:05:13.038Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/Android-Launcher-Analysis/</loc>
+    
+    <lastmod>2018-08-31T08:00:12.844Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/Android-Keyguard-Analysis/</loc>
+    
+    <lastmod>2018-08-31T07:24:28.086Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/Android-InterView/</loc>
     
     <lastmod>2018-08-31T07:09:05.874Z</lastmod>
@@ -16,37 +44,9 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/Android-Launcher-Analysis/</loc>
-    
-    <lastmod>2018-08-30T14:12:06.840Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/Android-Keyguard-Analysis/</loc>
-    
-    <lastmod>2018-08-30T02:01:17.689Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/Android-SystemUI-Analysis/</loc>
-    
-    <lastmod>2018-08-29T14:01:58.898Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/about/index.html</loc>
     
     <lastmod>2018-08-28T12:02:08.132Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/Android-Base/</loc>
-    
-    <lastmod>2018-08-28T08:50:45.969Z</lastmod>
     
   </url>
   
