@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/Android-InterView/</loc>
+    
+    <lastmod>2018-08-31T07:09:05.874Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/%E5%90%84%E7%B1%BB%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E5%B0%8F%E6%8A%80%E5%B7%A7/</loc>
     
     <lastmod>2018-08-31T03:36:07.451Z</lastmod>
@@ -138,13 +145,6 @@
     <loc>http://yoursite.com/Android-Stability/</loc>
     
     <lastmod>2018-08-10T01:46:12.605Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/Android-InterView/</loc>
-    
-    <lastmod>2018-08-09T07:34:09.437Z</lastmod>
     
   </url>
   

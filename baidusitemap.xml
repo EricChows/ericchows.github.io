@@ -4,6 +4,28 @@
 
     
   <url>
+    <loc>http://yoursite.com/Android-InterView/</loc>
+    <lastmod>2018-08-31T07:09:05.874Z</lastmod>
+    <data>
+        <display>
+        <title>Android面试汇总</title>
+        <pubTime>2015-01-31T16:00:00.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+        <tag>面试</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="http://yoursite.com/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/%E5%90%84%E7%B1%BB%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E5%B0%8F%E6%8A%80%E5%B7%A7/</loc>
     <lastmod>2018-08-31T03:36:07.451Z</lastmod>
     <data>
@@ -460,28 +482,6 @@
           
              
               <breadCrumb title="稳定性" url="http://yoursite.com/categories/Android/Stability/%E7%A8%B3%E5%AE%9A%E6%80%A7/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/Android-InterView/</loc>
-    <lastmod>2018-08-09T07:34:09.437Z</lastmod>
-    <data>
-        <display>
-        <title>Android面试汇总</title>
-        <pubTime>2015-01-31T16:00:00.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-        <tag>面试</tag>
-         
-         
-           
-             
-              <breadCrumb title="Android" url="http://yoursite.com/categories/Android/"/>
           
         </display>
     </data>
