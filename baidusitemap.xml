@@ -4,8 +4,35 @@
 
     
   <url>
+    <loc>http://yoursite.com/Android-WindowManagerService-Analysis/</loc>
+    <lastmod>2018-09-03T01:53:40.988Z</lastmod>
+    <data>
+        <display>
+        <title>Android中WindowManagerService解析</title>
+        <pubTime>2014-12-31T16:00:00.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+        <tag>WindowManagerService</tag>
+         
+        <tag>WMS</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="http://yoursite.com/categories/Android/"/>
+          
+             
+              <breadCrumb title="WindowManagerService" url="http://yoursite.com/categories/Android/WindowManagerService/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/Android-SystemUI-Analysis/</loc>
-    <lastmod>2018-08-31T10:05:49.338Z</lastmod>
+    <lastmod>2018-08-31T12:58:06.723Z</lastmod>
     <data>
         <display>
         <title>Android中SystemUI解析</title>
@@ -179,11 +206,11 @@
         <title>Cracking the Coding Interview</title>
         <pubTime>2015-12-31T16:00:00.000Z</pubTime>
         
-        <tag>C++</tag>
-         
         <tag>InterView</tag>
          
         <tag>Code</tag>
+         
+        <tag>C++</tag>
          
          
            
@@ -1728,33 +1755,6 @@
 
     
   <url>
-    <loc>http://yoursite.com/Android-WindowManagerService-Analysis/</loc>
-    <lastmod>2018-07-04T13:55:04.942Z</lastmod>
-    <data>
-        <display>
-        <title>Android中WindowManagerService解析</title>
-        <pubTime>2014-12-31T16:00:00.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-        <tag>WindowManagerService</tag>
-         
-        <tag>WMS</tag>
-         
-         
-           
-             
-              <breadCrumb title="Android" url="http://yoursite.com/categories/Android/"/>
-          
-             
-              <breadCrumb title="WindowManagerService" url="http://yoursite.com/categories/Android/WindowManagerService/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://yoursite.com/Window-Bat/</loc>
     <lastmod>2018-07-01T10:38:39.635Z</lastmod>
     <data>
@@ -1779,12 +1779,12 @@
     
     
   <url>
-    <loc>http://yoursite.com/%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F/</loc>
+    <loc>http://yoursite.com/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/</loc>
     <lastmod>2018-06-23T15:24:29.019Z</lastmod>
     <data>
         <display>
-        <title>适配器模式</title>
-        <pubTime>2015-08-01T09:34:49.000Z</pubTime>
+        <title>观察者模式</title>
+        <pubTime>2015-08-01T05:21:22.000Z</pubTime>
         
          
            
@@ -1797,12 +1797,12 @@
 
     
   <url>
-    <loc>http://yoursite.com/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/</loc>
+    <loc>http://yoursite.com/%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F/</loc>
     <lastmod>2018-06-23T15:24:29.019Z</lastmod>
     <data>
         <display>
-        <title>观察者模式</title>
-        <pubTime>2015-08-01T05:21:22.000Z</pubTime>
+        <title>适配器模式</title>
+        <pubTime>2015-08-01T09:34:49.000Z</pubTime>
         
          
            
