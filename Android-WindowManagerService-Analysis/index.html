@@ -89,12 +89,12 @@
 <meta property="og:site_name" content="EricChows">
 <meta property="og:description" content="WindowManagerService 概述 关键文件分析参考资料那两年炼就的Android内功修养Android窗口管理服务WindowManagerService的简要介绍和学习计划Android窗口管理服务WindowManagerService计算Activity窗口大小的过程分析Android窗口管理服务WindowManagerService对窗口的组织方式分析Android窗口管理">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/Android-WindowManagerService-Analysis/WMS-01.jpg">
-<meta property="og:updated_time" content="2018-09-03T08:56:46.054Z">
+<meta property="og:image" content="http://yoursite.com/Android-WindowManagerService-Analysis/WMS-01.png">
+<meta property="og:updated_time" content="2018-09-04T02:33:13.213Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android中WindowManagerService解析">
 <meta name="twitter:description" content="WindowManagerService 概述 关键文件分析参考资料那两年炼就的Android内功修养Android窗口管理服务WindowManagerService的简要介绍和学习计划Android窗口管理服务WindowManagerService计算Activity窗口大小的过程分析Android窗口管理服务WindowManagerService对窗口的组织方式分析Android窗口管理">
-<meta name="twitter:image" content="http://yoursite.com/Android-WindowManagerService-Analysis/WMS-01.jpg">
+<meta name="twitter:image" content="http://yoursite.com/Android-WindowManagerService-Analysis/WMS-01.png">
 
 
 
@@ -427,11 +427,12 @@
       
 
       
-        <h1 id="WindowManagerService-概述"><a href="#WindowManagerService-概述" class="headerlink" title="WindowManagerService 概述"></a>WindowManagerService 概述</h1><p><img src="/Android-WindowManagerService-Analysis/WMS-01.jpg" alt="&quot;对象与实体之间的关系&quot;"></p>
+        <h1 id="WindowManagerService-概述"><a href="#WindowManagerService-概述" class="headerlink" title="WindowManagerService 概述"></a>WindowManagerService 概述</h1><p><img src="/Android-WindowManagerService-Analysis/WMS-01.png" alt="&quot;对象与实体之间的关系&quot;"></p>
 <h1 id="关键文件分析"><a href="#关键文件分析" class="headerlink" title="关键文件分析"></a>关键文件分析</h1><h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a href="https://blog.csdn.net/luoshengyang/article/details/8923485" target="_blank" rel="noopener">那两年炼就的Android内功修养</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8462738" target="_blank" rel="noopener">Android窗口管理服务WindowManagerService的简要介绍和学习计划</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8479101" target="_blank" rel="noopener">Android窗口管理服务WindowManagerService计算Activity窗口大小的过程分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8498908" target="_blank" rel="noopener">Android窗口管理服务WindowManagerService对窗口的组织方式分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8526644" target="_blank" rel="noopener">Android窗口管理服务WindowManagerService对输入法窗口（Input Method Window）的管理分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8550820" target="_blank" rel="noopener">Android窗口管理服务WindowManagerService对壁纸窗口（Wallpaper Window）的管理分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8570428" target="_blank" rel="noopener">Android窗口管理服务WindowManagerService计算窗口Z轴位置的过程分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8577789" target="_blank" rel="noopener">Android窗口管理服务WindowManagerService显示Activity组件的启动窗口（Starting Window）的过程分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8596449" target="_blank" rel="noopener">Android窗口管理服务WindowManagerService切换Activity窗口（App Transition）的过程分析</a><br><a href="https://blog.csdn.net/luoshengyang/article/details/8611754" target="_blank" rel="noopener">Android窗口管理服务WindowManagerService显示窗口动画的原理分析</a></p>
 <p><a href="https://www.cnblogs.com/wzjhoutai/p/6873790.html" target="_blank" rel="noopener">第4章  深入理解WindowManagerService（节选）</a><br><a href="https://www.jianshu.com/p/f3ec3f6e0f6b" target="_blank" rel="noopener">Android窗口系统第一篇—Window的类型与Z-Order确定</a> 主要讲窗口类型、坐标系统、Z-Order,Z-Order确定跟窗口类型有关系<br><a href="https://www.jianshu.com/p/ba53cf8694f1" target="_blank" rel="noopener">Android窗口系统第二篇—Window的添加过程</a><br><a href="https://blog.csdn.net/u013263323/article/details/78482141" target="_blank" rel="noopener">Android窗口系统第三篇—WindowManagerService中窗口的组织方式</a></p>
 <p><a href="https://blog.csdn.net/yhaolpz/article/details/68936932" target="_blank" rel="noopener">Android 带你彻底理解 Window 和 WindowManager</a><br><a href="https://blog.csdn.net/itachi85/article/details/77888668" target="_blank" rel="noopener">Android解析WindowManager（一）WindowManager体系</a><br><a href="https://blog.csdn.net/itachi85/article/details/77939884" target="_blank" rel="noopener">Android解析WindowManager（二）Window的属性</a><br><a href="https://blog.csdn.net/sted_zxz/article/details/73277645" target="_blank" rel="noopener">Window和WindowManager(Android开发艺术探索学习笔记)</a><br><a href="https://blog.csdn.net/WHB20081815/article/details/62419059" target="_blank" rel="noopener">Android快速理解Activity、View及Window&amp;WindowManager之间关系</a></p>
 <p><a href="https://blog.csdn.net/qq379454816/article/details/49736231" target="_blank" rel="noopener">Android之WindowManager实现悬浮按钮</a><br><a href="https://blog.csdn.net/qq_17250009/article/details/52908791" target="_blank" rel="noopener">Android 使用WindowManager实现悬浮窗及源码解析</a></p>
+<p><a href="http://www.cnblogs.com/samchen2009/p/3364327.html" target="_blank" rel="noopener">图解Android - Android GUI 系统 (1) - 概论</a> 需要重点研究一下GUI</p>
 
       
     </div>
@@ -466,8 +467,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/Android-Ashmem-Analysis/" rel="next" title="Android匿名共享内存Ashmem解析">
-                <i class="fa fa-chevron-left"></i> Android匿名共享内存Ashmem解析
+              <a href="/读书笔记/" rel="next" title="读书笔记">
+                <i class="fa fa-chevron-left"></i> 读书笔记
               </a>
             
           </div>
@@ -476,8 +477,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/Android-Launcher-Analysis/" rel="prev" title="Android中Launcher解析">
-                Android中Launcher解析 <i class="fa fa-chevron-right"></i>
+              <a href="/Android-ActivityManagerService-Analysis/" rel="prev" title="Android中ActivityManagerService解析">
+                Android中ActivityManagerService解析 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>

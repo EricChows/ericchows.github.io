@@ -4,6 +4,58 @@
 
     
   <url>
+    <loc>http://yoursite.com/Android-Keyguard-Analysis/</loc>
+    <lastmod>2018-09-04T03:11:50.487Z</lastmod>
+    <data>
+        <display>
+        <title>Android中Keyguard解析</title>
+        <pubTime>2018-05-04T16:00:00.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+        <tag>Keyguard</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="http://yoursite.com/categories/Android/"/>
+          
+             
+              <breadCrumb title="Keyguard" url="http://yoursite.com/categories/Android/Keyguard/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/Android-WindowManagerService-Analysis/</loc>
+    <lastmod>2018-09-04T02:33:13.213Z</lastmod>
+    <data>
+        <display>
+        <title>Android中WindowManagerService解析</title>
+        <pubTime>2014-12-31T16:00:00.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+        <tag>WindowManagerService</tag>
+         
+        <tag>WMS</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="http://yoursite.com/categories/Android/"/>
+          
+             
+              <breadCrumb title="WindowManagerService" url="http://yoursite.com/categories/Android/WindowManagerService/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/Android-SystemUI-Analysis/</loc>
     <lastmod>2018-09-03T10:10:52.366Z</lastmod>
     <data>
@@ -54,33 +106,6 @@
 
     
   <url>
-    <loc>http://yoursite.com/Android-WindowManagerService-Analysis/</loc>
-    <lastmod>2018-09-03T08:56:46.054Z</lastmod>
-    <data>
-        <display>
-        <title>Android中WindowManagerService解析</title>
-        <pubTime>2014-12-31T16:00:00.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-        <tag>WindowManagerService</tag>
-         
-        <tag>WMS</tag>
-         
-         
-           
-             
-              <breadCrumb title="Android" url="http://yoursite.com/categories/Android/"/>
-          
-             
-              <breadCrumb title="WindowManagerService" url="http://yoursite.com/categories/Android/WindowManagerService/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://yoursite.com/ADB-Android-Debug-Bridge/</loc>
     <lastmod>2018-09-03T08:52:18.993Z</lastmod>
     <data>
@@ -114,31 +139,6 @@
            
              
               <breadCrumb title="Tools" url="http://yoursite.com/categories/Tools/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/Android-Keyguard-Analysis/</loc>
-    <lastmod>2018-09-03T08:33:56.707Z</lastmod>
-    <data>
-        <display>
-        <title>Android中Keyguard解析</title>
-        <pubTime>2018-05-04T16:00:00.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-        <tag>Keyguard</tag>
-         
-         
-           
-             
-              <breadCrumb title="Android" url="http://yoursite.com/categories/Android/"/>
-          
-             
-              <breadCrumb title="Keyguard" url="http://yoursite.com/categories/Android/Keyguard/"/>
           
         </display>
     </data>
