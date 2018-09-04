@@ -81,18 +81,22 @@
 
 
 
-<meta name="description" content="还未开始，待补充 SystemUI概述Android8.1.0 SystemUI代码统计如下：12345678910-------------------------------------------------------------------------------Language                     files          blank        commen">
+<meta name="description" content="还未完成，待继续补充. SystemUI概述Android8.1.0 SystemUI代码统计如下：12345678910-------------------------------------------------------------------------------Language                     files          blank        com">
 <meta name="keywords" content="Android,SystemUI">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android中SystemUI解析">
 <meta property="og:url" content="http://yoursite.com/Android-SystemUI-Analysis/index.html">
 <meta property="og:site_name" content="EricChows">
-<meta property="og:description" content="还未开始，待补充 SystemUI概述Android8.1.0 SystemUI代码统计如下：12345678910-------------------------------------------------------------------------------Language                     files          blank        commen">
+<meta property="og:description" content="还未完成，待继续补充. SystemUI概述Android8.1.0 SystemUI代码统计如下：12345678910-------------------------------------------------------------------------------Language                     files          blank        com">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-03T07:41:32.964Z">
+<meta property="og:image" content="http://yoursite.com/Android-SystemUI-Analysis/SystemUI-Start.png">
+<meta property="og:image" content="http://yoursite.com/Android-SystemUI-Analysis/KeyguardViewMediator_start.png">
+<meta property="og:image" content="http://yoursite.com/Android-SystemUI-Analysis/SystemBar-Start.png">
+<meta property="og:updated_time" content="2018-09-03T10:10:52.366Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android中SystemUI解析">
-<meta name="twitter:description" content="还未开始，待补充 SystemUI概述Android8.1.0 SystemUI代码统计如下：12345678910-------------------------------------------------------------------------------Language                     files          blank        commen">
+<meta name="twitter:description" content="还未完成，待继续补充. SystemUI概述Android8.1.0 SystemUI代码统计如下：12345678910-------------------------------------------------------------------------------Language                     files          blank        com">
+<meta name="twitter:image" content="http://yoursite.com/Android-SystemUI-Analysis/SystemUI-Start.png">
 
 
 
@@ -425,12 +429,20 @@
       
 
       
-        <p>还未开始，待补充</p>
+        <p>还未完成，待继续补充.</p>
 <h1 id="SystemUI概述"><a href="#SystemUI概述" class="headerlink" title="SystemUI概述"></a>SystemUI概述</h1><p>Android8.1.0 SystemUI代码统计如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">-------------------------------------------------------------------------------</span><br><span class="line">Language                     files          blank        comment           code</span><br><span class="line">-------------------------------------------------------------------------------</span><br><span class="line">Java                           892          23725          27078         143796</span><br><span class="line">XML                           1318           4337          20556          91781</span><br><span class="line">Python                           1             25             10            130</span><br><span class="line">Bourne Shell                     1              1              0             13</span><br><span class="line">-------------------------------------------------------------------------------</span><br><span class="line">SUM:                          2212          28088          47644         235720</span><br><span class="line">-------------------------------------------------------------------------------</span><br></pre></td></tr></table></figure></p>
 <p>从Android7.0开始，把Keyguard模块的代码也一起放到了SystemUI模块中，从代码统计来看，SystemUI中Java代码大概有14万行.<br>实际SystemUI与Framework有很多的交互,还有很多的代码是在Framework的其他模块里面.</p>
+<p>4.4版本SystemUI中SystemBar启动流程如下：<br><img src="/Android-SystemUI-Analysis/SystemUI-Start.png" alt="&quot;SystemUI启动流程分析&quot;"></p>
 <h1 id="主要类功能初步解析"><a href="#主要类功能初步解析" class="headerlink" title="主要类功能初步解析"></a>主要类功能初步解析</h1><h2 id="ImmersiveModeConfirmation-java"><a href="#ImmersiveModeConfirmation-java" class="headerlink" title="ImmersiveModeConfirmation.java"></a>ImmersiveModeConfirmation.java</h2><p>首次隐藏状态栏和导航栏，进入沉浸模式是的提示</p>
-<h1 id="SystemUI包含的服务"><a href="#SystemUI包含的服务" class="headerlink" title="SystemUI包含的服务"></a>SystemUI包含的服务</h1><p>SystemUI通过java启动的服务有13个，分别是：<br>1.TunerService<br>2.KeyguardViewMediator<br>3.Recents<br>4.VolumeUI<br>5.Divider<br>6.SystemBars<br>7.StorageNotification<br>8.PowerUI<br>9.RingtonePlayer<br>10.KeyboardUI<br>11.PipUI<br>12.ShortcutKeyDispatcher<br>13.VendorServices</p>
+<h1 id="SystemUI包含的服务"><a href="#SystemUI包含的服务" class="headerlink" title="SystemUI包含的服务"></a>SystemUI包含的服务</h1><p>SystemUI通过java启动的服务有13个，分别是：<br>1.TunerService 系统界面调谐器<br>    系统界面调制器是安卓M加入的，当用户长按下拉菜单的齿轮卡3秒中就可以在setting app里加入界面调制器。<br>可以对状态栏、导航栏、勿扰模式以及锁屏界面进行局部定制.</p>
+<p>2.KeyguardViewMediator<br>    锁屏管理</p>
+<p>3.Recents<br>    最近应用模块,</p>
+<p>4.VolumeUI<br>    音量的调节</p>
+<p>5.Divider</p>
+<p>6.SystemBars<br>7.StorageNotification<br>8.PowerUI<br>9.RingtonePlayer<br>10.KeyboardUI<br>11.PipUI<br>12.ShortcutKeyDispatcher<br>13.VendorServices</p>
 <p>通过xml启动的服务有6个，分别是：<br>1.SystemUIService<br>2.SystemUISecondaryUserService<br>3.TakeScreenshotService<br>4.ImageWallpaper<br>5.RecentsSystemUserService<br>6.DessertCaseDream<br>7.KeyguardService<br>8.DozeService</p>
+<p>先以KeyguardViewMediator服务启动流程图为例进行分析,其它服务启动顺序与这个类似，只是功能不同而已。<br><img src="/Android-SystemUI-Analysis/KeyguardViewMediator_start.png" alt="&quot;KeyguardViewMediator服务启动流程分析&quot;"></p>
+<p>SystemBar的启动流程图如下：<br><img src="/Android-SystemUI-Analysis/SystemBar-Start.png" alt="&quot;SystemBar服务启动流程分析&quot;"><br>PhoneStatusBar.java中的createAndAddWindows()会初始化并且加载SystemUI的绝大多数界面，包括statusbar与navigationbar，以及初始化QSHostView。</p>
 <h1 id="SystemUI的功能模块"><a href="#SystemUI的功能模块" class="headerlink" title="SystemUI的功能模块"></a>SystemUI的功能模块</h1><p>SystemUI的功能模块：<br>a)Keyguard<br>锁屏和壁纸<br>b)StatusBar:电量、时间、SIM卡状态和信号、WIFI、Bluetooth、数据连接状态<br>通知、<br>c)NavigationBar<br>d)Shortcut<br>截图和录屏<br>e)Recents<br>f)PipUI<br>g)Tuner<br>h)RingtonePlayer</p>
 <h1 id="SystemUI重难点"><a href="#SystemUI重难点" class="headerlink" title="SystemUI重难点"></a>SystemUI重难点</h1><ol>
 <li>滑动事件的处理</li>
@@ -457,16 +469,241 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell settings put global sysui_demo_allowed 1</span><br></pre></td></tr></table></figure>
 <h2 id="Protocol"><a href="#Protocol" class="headerlink" title="Protocol"></a>Protocol</h2><p>The protocol is based on broadcast intents, and thus can be driven via the command line (adb shell am broadcast) or an app (Context.sendBroadcast).</p>
 <h3 id="Broadcast-action"><a href="#Broadcast-action" class="headerlink" title="Broadcast action"></a>Broadcast action</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">com.android.systemui.demo</span><br></pre></td></tr></table></figure>
-<h3 id="Commands"><a href="#Commands" class="headerlink" title="Commands"></a>Commands</h3><p>Commands and subcommands (below) are sent as string extras in the broadcast<br>intent.<br><br><br>Commands are sent as string extras with key <figure class="highlight plain"><figcaption><span>(required). Possible values are:</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Command              | Subcommand                 | Argument       | Description</span><br><span class="line">---                  | ---                        | ---            | ---</span><br><span class="line">```enter```          |                            |                | Enters demo mode, bar state allowed to be modified (for convenience, any of the other non-exit commands will automatically flip demo mode on, no need to call this explicitly in practice)</span><br><span class="line">```exit```           |                            |                | Exits demo mode, bars back to their system-driven state</span><br><span class="line">```battery```        |                            |                | Control the battery display</span><br><span class="line">                     | ```level```                |                | Sets the battery level (0 - 100)</span><br><span class="line">                     | ```plugged```              |                | Sets charging state (```true```, ```false```)</span><br><span class="line">                     | ```powersave```            |                | Sets power save mode (```true```, ```anything else```)</span><br><span class="line">```network```        |                            |                | Control the RSSI display</span><br><span class="line">                     | ```airplane```             |                | ```show``` to show icon, any other value to hide</span><br><span class="line">                     | ```fully```                |                | Sets MCS state to fully connected (```true```, ```false```)</span><br><span class="line">                     | ```wifi```                 |                | ```show``` to show icon, any other value to hide</span><br><span class="line">                     |                            | ```level```    | Sets wifi level (null or 0-4)</span><br><span class="line">                     | ```mobile```               |                | ```show``` to show icon, any other value to hide</span><br><span class="line">                     |                            | ```datatype``` | Values: ```1x```, ```3g```, ```4g```, ```e```, ```g```, ```h```, ```lte```, ```roam```, any other value to hide</span><br><span class="line">                     |                            | ```level```    | Sets mobile signal strength level (null or 0-4)</span><br><span class="line">                     | ```carriernetworkchange``` |                | Sets mobile signal icon to carrier network change UX when disconnected (```show``` to show icon, any other value to hide)</span><br><span class="line">                     | ```sims```                 |                | Sets the number of sims (1-8)</span><br><span class="line">                     | ```nosim```                |                | ```show``` to show icon, any other value to hide</span><br><span class="line">```bars```           |                            |                | Control the visual style of the bars (opaque, translucent, etc)</span><br><span class="line">                     | ```mode```                 |                | Sets the bars visual style (opaque, translucent, semi-transparent)</span><br><span class="line">```status```         |                            |                | Control the system status icons</span><br><span class="line">                     | ```volume```               |                | Sets the icon in the volume slot (```silent```, ```vibrate```, any other value to hide)</span><br><span class="line">                     | ```bluetooth```            |                | Sets the icon in the bluetooth slot (```connected```, ```disconnected```, any other value to hide)</span><br><span class="line">                     | ```location```             |                | Sets the icon in the location slot (```show```, any other value to hide)</span><br><span class="line">                     | ```alarm```                |                | Sets the icon in the alarm_clock slot (```show```, any other value to hide)</span><br><span class="line">                     | ```sync```                 |                | Sets the icon in the sync_active slot (```show```, any other value to hide)</span><br><span class="line">                     | ```tty```                  |                | Sets the icon in the tty slot (```show```, any other value to hide)</span><br><span class="line">                     | ```eri```                  |                | Sets the icon in the cdma_eri slot (```show```, any other value to hide)</span><br><span class="line">                     | ```mute```                 |                | Sets the icon in the mute slot (```show```, any other value to hide)</span><br><span class="line">                     | ```speakerphone```         |                | Sets the icon in the speakerphone slot (```show```, any other value to hide)</span><br><span class="line">```notifications```  |                            |                | Control the notification icons</span><br><span class="line">                     | ```visible```              |                | ```false``` to hide the notification icons, any other value to show</span><br><span class="line">```clock```          |                            |                | Control the clock display</span><br><span class="line">                     | ```millis```               |                | Sets the time in millis</span><br><span class="line">                     | ```hhmm```                 |                | Sets the time in hh:mm</span><br><span class="line"></span><br><span class="line">## Examples</span><br><span class="line">Enter demo mode</span><br></pre></td></tr></table></figure></p>
-<p>adb shell am broadcast -a com.android.systemui.demo -e command enter<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">Exit demo mode</span><br></pre></td></tr></table></figure></p>
-<p>adb shell am broadcast -a com.android.systemui.demo -e command exit<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">Set the clock to 12:31</span><br></pre></td></tr></table></figure></p>
-<p>adb shell am broadcast -a com.android.systemui.demo -e command clock -e hhmm<br>1231<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">Set the wifi level to max</span><br></pre></td></tr></table></figure></p>
-<p>adb shell am broadcast -a com.android.systemui.demo -e command network -e wifi<br>show -e level 4<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">Show the silent volume icon</span><br></pre></td></tr></table></figure></p>
-<p>adb shell am broadcast -a com.android.systemui.demo -e command status -e volume<br>silent<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">Empty battery, and not charging (red exclamation point)</span><br></pre></td></tr></table></figure></p>
-<p>adb shell am broadcast -a com.android.systemui.demo -e command battery -e level<br>0 -e plugged false<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">Hide the notification icons</span><br></pre></td></tr></table></figure></p>
-<p>adb shell am broadcast -a com.android.systemui.demo -e command notifications -e<br>visible false<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">Exit demo mode</span><br></pre></td></tr></table></figure></p>
-<p>adb shell am broadcast -a com.android.systemui.demo -e command exit<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">## Example demo controller app in AOSP</span><br></pre></td></tr></table></figure></p>
-<p>frameworks/base/tests/SystemUIDemoModeController<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">## Example script (for screenshotting purposes)</span><br><span class="line">```bash</span><br><span class="line">#!/bin/sh</span><br><span class="line">CMD=$1</span><br><span class="line"></span><br><span class="line">if [[ $ADB == &quot;&quot; ]]; then</span><br><span class="line">  ADB=adb</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">if [[ $CMD != &quot;on&quot; &amp;&amp; $CMD != &quot;off&quot; ]]; then</span><br><span class="line">  echo &quot;Usage: $0 [on|off] [hhmm]&quot; &gt;&amp;2</span><br><span class="line">  exit</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">if [[ &quot;$2&quot; != &quot;&quot; ]]; then</span><br><span class="line">  HHMM=&quot;$2&quot;</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">$ADB root || exit</span><br><span class="line">$ADB wait-for-devices</span><br><span class="line">$ADB shell settings put global sysui_demo_allowed 1</span><br><span class="line"></span><br><span class="line">if [ $CMD == &quot;on&quot; ]; then</span><br><span class="line">  $ADB shell am broadcast -a com.android.systemui.demo -e command enter || exit</span><br><span class="line">  if [[ &quot;$HHMM&quot; != &quot;&quot; ]]; then</span><br><span class="line">    $ADB shell am broadcast -a com.android.systemui.demo -e command clock -e</span><br><span class="line">hhmm $&#123;HHMM&#125;</span><br><span class="line">  fi</span><br><span class="line">  $ADB shell am broadcast -a com.android.systemui.demo -e command battery -e</span><br><span class="line">plugged false</span><br><span class="line">  $ADB shell am broadcast -a com.android.systemui.demo -e command battery -e</span><br><span class="line">level 100</span><br><span class="line">  $ADB shell am broadcast -a com.android.systemui.demo -e command network -e</span><br><span class="line">wifi show -e level 4</span><br><span class="line">  $ADB shell am broadcast -a com.android.systemui.demo -e command network -e</span><br><span class="line">mobile show -e datatype none -e level 4</span><br><span class="line">  $ADB shell am broadcast -a com.android.systemui.demo -e command notifications</span><br><span class="line">-e visible false</span><br><span class="line">elif [ $CMD == &quot;off&quot; ]; then</span><br><span class="line">  $ADB shell am broadcast -a com.android.systemui.demo -e command exit</span><br><span class="line">fi</span><br></pre></td></tr></table></figure></p>
+<h3 id="Commands"><a href="#Commands" class="headerlink" title="Commands"></a>Commands</h3><p>Commands and subcommands (below) are sent as string extras in the broadcast<br>intent.<br><br><br>Commands are sent as string extras with key <em>command</em> (required). Possible values are:</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Subcommand</th>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>enter</em></td>
+<td></td>
+<td></td>
+<td>Enters demo mode, bar state allowed to be modified (for convenience, any of the other non-exit commands will automatically flip demo mode on, no need to call this explicitly in practice)</td>
+</tr>
+<tr>
+<td><em>exit</em></td>
+<td></td>
+<td></td>
+<td>Exits demo mode, bars back to their system-driven state</td>
+</tr>
+<tr>
+<td><em>battery</em></td>
+<td></td>
+<td></td>
+<td>Control the battery display</td>
+</tr>
+<tr>
+<td></td>
+<td><em>level</em></td>
+<td></td>
+<td>Sets the battery level (0 - 100)</td>
+</tr>
+<tr>
+<td></td>
+<td><em>plugged</em></td>
+<td></td>
+<td>Sets charging state (<em>true</em>, <em>false</em>)</td>
+</tr>
+<tr>
+<td></td>
+<td><em>powersave</em></td>
+<td></td>
+<td>Sets power save mode (<em>true</em>, <em>anything else</em>)</td>
+</tr>
+<tr>
+<td><em>network</em></td>
+<td></td>
+<td></td>
+<td>Control the RSSI display</td>
+</tr>
+<tr>
+<td></td>
+<td><em>airplane</em></td>
+<td></td>
+<td><em>show</em> to show icon, any other value to hide</td>
+</tr>
+<tr>
+<td></td>
+<td><em>fully</em></td>
+<td></td>
+<td>Sets MCS state to fully connected (<em>true</em>, <em>false</em>)</td>
+</tr>
+<tr>
+<td></td>
+<td><em>wifi</em></td>
+<td></td>
+<td><em>show</em> to show icon, any other value to hide</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><em>level</em></td>
+<td>Sets wifi level (null or 0-4)</td>
+</tr>
+<tr>
+<td></td>
+<td><em>mobile</em></td>
+<td></td>
+<td><em>show</em> to show icon, any other value to hide</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><em>datatype</em></td>
+<td>Values: <em>1x</em>, <em>3g</em>, <em>4g</em>, <em>e</em>, <em>g</em>, <em>h</em>, <em>lte</em>, <em>roam</em>, any other value to hide</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><em>level</em></td>
+<td>Sets mobile signal strength level (null or 0-4)</td>
+</tr>
+<tr>
+<td></td>
+<td><em>carriernetworkchange</em></td>
+<td></td>
+<td>Sets mobile signal icon to carrier network change UX when disconnected (<em>show</em> to show icon, any other value to hide)</td>
+</tr>
+<tr>
+<td></td>
+<td><em>sims</em></td>
+<td></td>
+<td>Sets the number of sims (1-8)</td>
+</tr>
+<tr>
+<td></td>
+<td><em>nosim</em></td>
+<td></td>
+<td><em>show</em> to show icon, any other value to hide</td>
+</tr>
+<tr>
+<td><em>bars</em></td>
+<td></td>
+<td></td>
+<td>Control the visual style of the bars (opaque, translucent, etc)</td>
+</tr>
+<tr>
+<td></td>
+<td><em>mode</em></td>
+<td></td>
+<td>Sets the bars visual style (opaque, translucent, semi-transparent)</td>
+</tr>
+<tr>
+<td><em>status</em></td>
+<td></td>
+<td></td>
+<td>Control the system status icons</td>
+</tr>
+<tr>
+<td></td>
+<td><em>volume</em></td>
+<td></td>
+<td>Sets the icon in the volume slot (<em>silent</em>, <em>vibrate</em>, any other value to hide)</td>
+</tr>
+<tr>
+<td></td>
+<td><em>bluetooth</em></td>
+<td></td>
+<td>Sets the icon in the bluetooth slot (<em>connected</em>, <em>disconnected</em>, any other value to hide)</td>
+</tr>
+<tr>
+<td></td>
+<td><em>location</em></td>
+<td></td>
+<td>Sets the icon in the location slot (<em>show</em>, any other value to hide)</td>
+</tr>
+<tr>
+<td></td>
+<td><em>alarm</em></td>
+<td></td>
+<td>Sets the icon in the alarm_clock slot (<em>show</em>, any other value to hide)</td>
+</tr>
+<tr>
+<td></td>
+<td><em>sync</em></td>
+<td></td>
+<td>Sets the icon in the sync_active slot (<em>show</em>, any other value to hide)</td>
+</tr>
+<tr>
+<td></td>
+<td><em>tty</em></td>
+<td></td>
+<td>Sets the icon in the tty slot (<em>show</em>, any other value to hide)</td>
+</tr>
+<tr>
+<td></td>
+<td><em>eri</em></td>
+<td></td>
+<td>Sets the icon in the cdma_eri slot (<em>show</em>, any other value to hide)</td>
+</tr>
+<tr>
+<td></td>
+<td><em>mute</em></td>
+<td></td>
+<td>Sets the icon in the mute slot (<em>show</em>, any other value to hide)</td>
+</tr>
+<tr>
+<td></td>
+<td><em>speakerphone</em></td>
+<td></td>
+<td>Sets the icon in the speakerphone slot (<em>show</em>, any other value to hide)</td>
+</tr>
+<tr>
+<td><em>notifications</em></td>
+<td></td>
+<td></td>
+<td>Control the notification icons</td>
+</tr>
+<tr>
+<td></td>
+<td><em>visible</em></td>
+<td></td>
+<td><em>false</em> to hide the notification icons, any other value to show</td>
+</tr>
+<tr>
+<td><em>clock</em></td>
+<td></td>
+<td></td>
+<td>Control the clock display</td>
+</tr>
+<tr>
+<td></td>
+<td><em>millis</em></td>
+<td></td>
+<td>Sets the time in millis</td>
+</tr>
+<tr>
+<td></td>
+<td><em>hhmm</em></td>
+<td></td>
+<td>Sets the time in hh:mm</td>
+</tr>
+</tbody>
+</table>
+<h2 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h2><p>Enter demo mode</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell am broadcast -a com.android.systemui.demo -e command enter</span><br></pre></td></tr></table></figure>
+<p>Exit demo mode</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell am broadcast -a com.android.systemui.demo -e command exit</span><br></pre></td></tr></table></figure>
+<p>Set the clock to 12:31</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">adb shell am broadcast -a com.android.systemui.demo -e command clock -e hhmm</span><br><span class="line">1231</span><br></pre></td></tr></table></figure>
+<p>Set the wifi level to max</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">adb shell am broadcast -a com.android.systemui.demo -e command network -e wifi</span><br><span class="line">show -e level 4</span><br></pre></td></tr></table></figure>
+<p>Show the silent volume icon</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">adb shell am broadcast -a com.android.systemui.demo -e command status -e volume</span><br><span class="line">silent</span><br></pre></td></tr></table></figure>
+<p>Empty battery, and not charging (red exclamation point)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">adb shell am broadcast -a com.android.systemui.demo -e command battery -e level</span><br><span class="line">0 -e plugged false</span><br></pre></td></tr></table></figure>
+<p>Hide the notification icons</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">adb shell am broadcast -a com.android.systemui.demo -e command notifications -e</span><br><span class="line">visible false</span><br></pre></td></tr></table></figure>
+<p>Exit demo mode</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell am broadcast -a com.android.systemui.demo -e command exit</span><br></pre></td></tr></table></figure>
+<h2 id="Example-demo-controller-app-in-AOSP"><a href="#Example-demo-controller-app-in-AOSP" class="headerlink" title="Example demo controller app in AOSP"></a>Example demo controller app in AOSP</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">frameworks/base/tests/SystemUIDemoModeController</span><br></pre></td></tr></table></figure>
+<h2 id="Example-script-for-screenshotting-purposes"><a href="#Example-script-for-screenshotting-purposes" class="headerlink" title="Example script (for screenshotting purposes)"></a>Example script (for screenshotting purposes)</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span></span><br><span class="line">CMD=<span class="variable">$1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [[ <span class="variable">$ADB</span> == <span class="string">""</span> ]]; <span class="keyword">then</span></span><br><span class="line">  ADB=adb</span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [[ <span class="variable">$CMD</span> != <span class="string">"on"</span> &amp;&amp; <span class="variable">$CMD</span> != <span class="string">"off"</span> ]]; <span class="keyword">then</span></span><br><span class="line">  <span class="built_in">echo</span> <span class="string">"Usage: <span class="variable">$0</span> [on|off] [hhmm]"</span> &gt;&amp;2</span><br><span class="line">  <span class="built_in">exit</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [[ <span class="string">"<span class="variable">$2</span>"</span> != <span class="string">""</span> ]]; <span class="keyword">then</span></span><br><span class="line">  HHMM=<span class="string">"<span class="variable">$2</span>"</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="variable">$ADB</span> root || <span class="built_in">exit</span></span><br><span class="line"><span class="variable">$ADB</span> <span class="built_in">wait</span>-for-devices</span><br><span class="line"><span class="variable">$ADB</span> shell settings put global sysui_demo_allowed 1</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [ <span class="variable">$CMD</span> == <span class="string">"on"</span> ]; <span class="keyword">then</span></span><br><span class="line">  <span class="variable">$ADB</span> shell am broadcast -a com.android.systemui.demo -e <span class="built_in">command</span> enter || <span class="built_in">exit</span></span><br><span class="line">  <span class="keyword">if</span> [[ <span class="string">"<span class="variable">$HHMM</span>"</span> != <span class="string">""</span> ]]; <span class="keyword">then</span></span><br><span class="line">    <span class="variable">$ADB</span> shell am broadcast -a com.android.systemui.demo -e <span class="built_in">command</span> clock -e</span><br><span class="line">hhmm <span class="variable">$&#123;HHMM&#125;</span></span><br><span class="line">  <span class="keyword">fi</span></span><br><span class="line">  <span class="variable">$ADB</span> shell am broadcast -a com.android.systemui.demo -e <span class="built_in">command</span> battery -e</span><br><span class="line">plugged <span class="literal">false</span></span><br><span class="line">  <span class="variable">$ADB</span> shell am broadcast -a com.android.systemui.demo -e <span class="built_in">command</span> battery -e</span><br><span class="line">level 100</span><br><span class="line">  <span class="variable">$ADB</span> shell am broadcast -a com.android.systemui.demo -e <span class="built_in">command</span> network -e</span><br><span class="line">wifi show -e level 4</span><br><span class="line">  <span class="variable">$ADB</span> shell am broadcast -a com.android.systemui.demo -e <span class="built_in">command</span> network -e</span><br><span class="line">mobile show -e datatype none -e level 4</span><br><span class="line">  <span class="variable">$ADB</span> shell am broadcast -a com.android.systemui.demo -e <span class="built_in">command</span> notifications</span><br><span class="line">-e visible <span class="literal">false</span></span><br><span class="line"><span class="keyword">elif</span> [ <span class="variable">$CMD</span> == <span class="string">"off"</span> ]; <span class="keyword">then</span></span><br><span class="line">  <span class="variable">$ADB</span> shell am broadcast -a com.android.systemui.demo -e <span class="built_in">command</span> <span class="built_in">exit</span></span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
 <h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p>Doze模式<br><a href="https://blog.csdn.net/u013278940/article/details/50498304" target="_blank" rel="noopener">Android5.1 系统之省电模式探索一启动流程</a><br><a href="https://blog.csdn.net/innost/article/details/47660591" target="_blank" rel="noopener">《深入理解Android 卷III》第七章 深入理解SystemUI</a></p>
 <p>NavigationBar相关<br><a href="https://blog.csdn.net/span76/article/details/48441971" target="_blank" rel="noopener">Android SystemUI中HOME key的处理</a><br><a href="https://blog.csdn.net/frakie_kwok/article/details/78730477" target="_blank" rel="noopener">去除首次进入沉浸模式气泡提示</a><br><a href="hrome-extension://lecdifefmmfjnjjinhaennhdlmcaeeeb/main.html" target="_blank" rel="noopener">Android 修改横屏角度为顺时针270度</a></p>
 <p><a href="https://jingyan.baidu.com/article/76a7e409071797fc3b6e15bb.html" target="_blank" rel="noopener">SystemUI 调谐器 TunerService的打开方式</a></p>
@@ -734,7 +971,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#SystemUI概述"><span class="nav-number">1.</span> <span class="nav-text">SystemUI概述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#主要类功能初步解析"><span class="nav-number">2.</span> <span class="nav-text">主要类功能初步解析</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ImmersiveModeConfirmation-java"><span class="nav-number">2.1.</span> <span class="nav-text">ImmersiveModeConfirmation.java</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SystemUI包含的服务"><span class="nav-number">3.</span> <span class="nav-text">SystemUI包含的服务</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SystemUI的功能模块"><span class="nav-number">4.</span> <span class="nav-text">SystemUI的功能模块</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SystemUI重难点"><span class="nav-number">5.</span> <span class="nav-text">SystemUI重难点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#状态栏"><span class="nav-number">6.</span> <span class="nav-text">状态栏</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#锁屏状态栏"><span class="nav-number">6.1.</span> <span class="nav-text">锁屏状态栏</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#状态栏反色"><span class="nav-number">6.2.</span> <span class="nav-text">状态栏反色</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#沉浸式状态栏"><span class="nav-number">6.3.</span> <span class="nav-text">沉浸式状态栏</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#信号图标的刷新"><span class="nav-number">6.4.</span> <span class="nav-text">信号图标的刷新</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#凹口处理"><span class="nav-number">6.5.</span> <span class="nav-text">凹口处理</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#导航栏-NavigationBar"><span class="nav-number">7.</span> <span class="nav-text">导航栏 NavigationBar</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#导航栏的加载流程"><span class="nav-number">7.1.</span> <span class="nav-text">导航栏的加载流程</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#快捷开关"><span class="nav-number">8.</span> <span class="nav-text">快捷开关</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#下拉通知栏"><span class="nav-number">9.</span> <span class="nav-text">下拉通知栏</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#截图模块"><span class="nav-number">10.</span> <span class="nav-text">截图模块</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#防误触模块"><span class="nav-number">11.</span> <span class="nav-text">防误触模块</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#亮度调节"><span class="nav-number">12.</span> <span class="nav-text">亮度调节</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#PIP-画中画"><span class="nav-number">13.</span> <span class="nav-text">PIP 画中画</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#双屏异显"><span class="nav-number">14.</span> <span class="nav-text">双屏异显</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Recent模块"><span class="nav-number">15.</span> <span class="nav-text">Recent模块</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SystemUI-新功能"><span class="nav-number">16.</span> <span class="nav-text">SystemUI 新功能</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#隐藏导航栏"><span class="nav-number">16.1.</span> <span class="nav-text">隐藏导航栏</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#悬浮按钮"><span class="nav-number">16.2.</span> <span class="nav-text">悬浮按钮</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单手模式-小屏模式"><span class="nav-number">16.3.</span> <span class="nav-text">单手模式(小屏模式)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单手键盘"><span class="nav-number">16.4.</span> <span class="nav-text">单手键盘</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#口袋模式-防误触模式"><span class="nav-number">16.5.</span> <span class="nav-text">口袋模式(防误触模式)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#凹口设计"><span class="nav-number">16.6.</span> <span class="nav-text">凹口设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#灭屏动画"><span class="nav-number">16.7.</span> <span class="nav-text">灭屏动画</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#翻转静音"><span class="nav-number">16.8.</span> <span class="nav-text">翻转静音</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#双击唤醒"><span class="nav-number">16.9.</span> <span class="nav-text">双击唤醒</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#指关节截屏"><span class="nav-number">16.10.</span> <span class="nav-text">指关节截屏</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字母手势"><span class="nav-number">16.11.</span> <span class="nav-text">字母手势</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#面部解锁"><span class="nav-number">16.12.</span> <span class="nav-text">面部解锁</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#画中画"><span class="nav-number">16.13.</span> <span class="nav-text">画中画</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#异屏双显"><span class="nav-number">16.14.</span> <span class="nav-text">异屏双显</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#沉浸模式"><span class="nav-number">16.15.</span> <span class="nav-text">沉浸模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#通知栏和状态栏功能"><span class="nav-number">16.16.</span> <span class="nav-text">通知栏和状态栏功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#通知"><span class="nav-number">16.16.1.</span> <span class="nav-text">通知</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#通知栏："><span class="nav-number">16.16.2.</span> <span class="nav-text">通知栏：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#状态栏："><span class="nav-number">16.16.3.</span> <span class="nav-text">状态栏：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Demo模式命令调试SystemUI"><span class="nav-number">17.</span> <span class="nav-text">Demo模式命令调试SystemUI</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Enabling-demo-mode"><span class="nav-number">17.1.</span> <span class="nav-text">Enabling demo mode</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Protocol"><span class="nav-number">17.2.</span> <span class="nav-text">Protocol</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Broadcast-action"><span class="nav-number">17.2.1.</span> <span class="nav-text">Broadcast action</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Commands"><span class="nav-number">17.2.2.</span> <span class="nav-text">Commands</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考文献"><span class="nav-number">18.</span> <span class="nav-text">参考文献</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#SystemUI概述"><span class="nav-number">1.</span> <span class="nav-text">SystemUI概述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#主要类功能初步解析"><span class="nav-number">2.</span> <span class="nav-text">主要类功能初步解析</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ImmersiveModeConfirmation-java"><span class="nav-number">2.1.</span> <span class="nav-text">ImmersiveModeConfirmation.java</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SystemUI包含的服务"><span class="nav-number">3.</span> <span class="nav-text">SystemUI包含的服务</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SystemUI的功能模块"><span class="nav-number">4.</span> <span class="nav-text">SystemUI的功能模块</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SystemUI重难点"><span class="nav-number">5.</span> <span class="nav-text">SystemUI重难点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#状态栏"><span class="nav-number">6.</span> <span class="nav-text">状态栏</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#锁屏状态栏"><span class="nav-number">6.1.</span> <span class="nav-text">锁屏状态栏</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#状态栏反色"><span class="nav-number">6.2.</span> <span class="nav-text">状态栏反色</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#沉浸式状态栏"><span class="nav-number">6.3.</span> <span class="nav-text">沉浸式状态栏</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#信号图标的刷新"><span class="nav-number">6.4.</span> <span class="nav-text">信号图标的刷新</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#凹口处理"><span class="nav-number">6.5.</span> <span class="nav-text">凹口处理</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#导航栏-NavigationBar"><span class="nav-number">7.</span> <span class="nav-text">导航栏 NavigationBar</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#导航栏的加载流程"><span class="nav-number">7.1.</span> <span class="nav-text">导航栏的加载流程</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#快捷开关"><span class="nav-number">8.</span> <span class="nav-text">快捷开关</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#下拉通知栏"><span class="nav-number">9.</span> <span class="nav-text">下拉通知栏</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#截图模块"><span class="nav-number">10.</span> <span class="nav-text">截图模块</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#防误触模块"><span class="nav-number">11.</span> <span class="nav-text">防误触模块</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#亮度调节"><span class="nav-number">12.</span> <span class="nav-text">亮度调节</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#PIP-画中画"><span class="nav-number">13.</span> <span class="nav-text">PIP 画中画</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#双屏异显"><span class="nav-number">14.</span> <span class="nav-text">双屏异显</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Recent模块"><span class="nav-number">15.</span> <span class="nav-text">Recent模块</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SystemUI-新功能"><span class="nav-number">16.</span> <span class="nav-text">SystemUI 新功能</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#隐藏导航栏"><span class="nav-number">16.1.</span> <span class="nav-text">隐藏导航栏</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#悬浮按钮"><span class="nav-number">16.2.</span> <span class="nav-text">悬浮按钮</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单手模式-小屏模式"><span class="nav-number">16.3.</span> <span class="nav-text">单手模式(小屏模式)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单手键盘"><span class="nav-number">16.4.</span> <span class="nav-text">单手键盘</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#口袋模式-防误触模式"><span class="nav-number">16.5.</span> <span class="nav-text">口袋模式(防误触模式)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#凹口设计"><span class="nav-number">16.6.</span> <span class="nav-text">凹口设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#灭屏动画"><span class="nav-number">16.7.</span> <span class="nav-text">灭屏动画</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#翻转静音"><span class="nav-number">16.8.</span> <span class="nav-text">翻转静音</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#双击唤醒"><span class="nav-number">16.9.</span> <span class="nav-text">双击唤醒</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#指关节截屏"><span class="nav-number">16.10.</span> <span class="nav-text">指关节截屏</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字母手势"><span class="nav-number">16.11.</span> <span class="nav-text">字母手势</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#面部解锁"><span class="nav-number">16.12.</span> <span class="nav-text">面部解锁</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#画中画"><span class="nav-number">16.13.</span> <span class="nav-text">画中画</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#异屏双显"><span class="nav-number">16.14.</span> <span class="nav-text">异屏双显</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#沉浸模式"><span class="nav-number">16.15.</span> <span class="nav-text">沉浸模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#通知栏和状态栏功能"><span class="nav-number">16.16.</span> <span class="nav-text">通知栏和状态栏功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#通知"><span class="nav-number">16.16.1.</span> <span class="nav-text">通知</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#通知栏："><span class="nav-number">16.16.2.</span> <span class="nav-text">通知栏：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#状态栏："><span class="nav-number">16.16.3.</span> <span class="nav-text">状态栏：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Demo模式命令调试SystemUI"><span class="nav-number">17.</span> <span class="nav-text">Demo模式命令调试SystemUI</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Enabling-demo-mode"><span class="nav-number">17.1.</span> <span class="nav-text">Enabling demo mode</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Protocol"><span class="nav-number">17.2.</span> <span class="nav-text">Protocol</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Broadcast-action"><span class="nav-number">17.2.1.</span> <span class="nav-text">Broadcast action</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Commands"><span class="nav-number">17.2.2.</span> <span class="nav-text">Commands</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Examples"><span class="nav-number">17.3.</span> <span class="nav-text">Examples</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Example-demo-controller-app-in-AOSP"><span class="nav-number">17.4.</span> <span class="nav-text">Example demo controller app in AOSP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Example-script-for-screenshotting-purposes"><span class="nav-number">17.5.</span> <span class="nav-text">Example script (for screenshotting purposes)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考文献"><span class="nav-number">18.</span> <span class="nav-text">参考文献</span></a></li></ol></div>
             
 
           </div>
