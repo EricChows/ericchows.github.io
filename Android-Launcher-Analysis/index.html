@@ -93,7 +93,7 @@
 <meta property="og:image" content="http://yoursite.com/Android-Launcher-Analysis/Launcher-02.jpg">
 <meta property="og:image" content="http://yoursite.com/Android-Launcher-Analysis/Launcher-03.jpg">
 <meta property="og:image" content="http://yoursite.com/Android-Launcher-Analysis/Launcher-04.jpg">
-<meta property="og:updated_time" content="2018-09-03T03:35:58.480Z">
+<meta property="og:updated_time" content="2018-09-06T03:17:27.723Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android中Launcher解析">
 <meta name="twitter:description" content="Ongoing,待完成，Please wait. Launcher 概述Launcher3代码统计:123456789-------------------------------------------------------------------------------Language                     files          blank        comme">
@@ -537,8 +537,9 @@
 <p>getSystemResField函数的实现如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> Field <span class="title">getSystemResField</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">    Field staticField = Resources.class.getDeclaredField(<span class="string">"mSystem"</span>);</span><br><span class="line">    staticField.setAccessible(<span class="keyword">true</span>);</span><br><span class="line">    <span class="keyword">return</span> staticField;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>可以看到getSystemResField函数返回值是Field，也就是说需要通过反射来改变某个属性的值.<br>从代码流程上来看，是通过反射机制，将设置中的.9路径值，重新赋值给config_icon_mask这个属性.</p>
 <p>接下来我们来看看，如何用给定的图形来给Launcher中的图标加边框.<br>继续从LauncherProvider开始分析.</p>
-<p>本文讲的是开启Launcher的图标样式，实际上在Android O版本中，还可以开启系统级别的图标样式，Android O版本中系统图标样式是由config_icon_mask这个属性值控制,请参考<a href="https://sspai.com/post/41011" target="_blank" rel="noopener">为 Android 8.0 强制开启全局圆形图标规范</a></p>
-<h1 id="模拟未接来电"><a href="#模拟未接来电" class="headerlink" title="模拟未接来电"></a>模拟未接来电</h1><p><a href="https://source.android.google.cn/devices/tech/connect/call-notification" target="_blank" rel="noopener">Android 7.0版本中的来电</a><br>通过查询发现MissCall这个通知是在Dialer里面发出，跟踪到MissedCallNotificationReceiver.java和MissedCallNotifier.java的代码，发现此通知是在收到<br>  public static final String ACTION_SHOW_MISSED_CALLS_NOTIFICATION = “android.telecom.action.SHOW_MISSED_CALLS_NOTIFICATION”;<br>  这样的广播后发出.当然这个广播还会带两个参数，未接来电号码和未接来电个数.</p>
+<p>本文讲的是开启Launcher的图标样式，实际上在Android O版本中，还可以开启系统级别的图标样式，Android O版本中系统图标样式是由 config_icon_mask 这个属性值控制,请参考<a href="https://sspai.com/post/41011" target="_blank" rel="noopener">为 Android 8.0 强制开启全局圆形图标规范</a><br>config_icon_mask 是在AdaptiveIconDrawable.java里面实现，也就是自适应图标，这个也是Android8.0的一个新功能.</p>
+<h1 id="模拟未接来电"><a href="#模拟未接来电" class="headerlink" title="模拟未接来电"></a>模拟未接来电</h1><p>方式一：分别读取电话和短信数据库中的相应字段<br>方式二：从通知里面获取(Android8.0的做法)</p>
+<p><a href="https://source.android.google.cn/devices/tech/connect/call-notification" target="_blank" rel="noopener">Android 7.0版本中的来电</a><br>通过查询发现MissCall这个通知是在Dialer里面发出，跟踪到MissedCallNotificationReceiver.java和MissedCallNotifier.java的代码，发现此通知是在收到<br>  public static final String ACTION_SHOW_MISSED_CALLS_NOTIFICATION = “android.telecom.action.SHOW_MISSED_CALLS_NOTIFICATION”;<br>  这样的广播后发出.当然这个广播还会带两个参数，未接来电号码和未接来电个数.</p>
 <p>Launcher的功能是需要显示未接来电个数就行.所以有两种方法来实现<br>方法一：模拟发送这个广播<br>方法二：调用Telecommon里面发送这个广播的方法</p>
 <p>首先看方法一：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">sendNotificationThroughDefaultDialer</span><span class="params">(CallInfo callInfo, UserHandle userHandle)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> count = mMissedCallCounts.get(userHandle).get();</span><br><span class="line">    Intent intent = getShowMissedCallIntentForDefaultDialer(userHandle)</span><br><span class="line">        .setFlags(Intent.FLAG_RECEIVER_FOREGROUND)</span><br><span class="line">        .putExtra(TelecomManager.EXTRA_CLEAR_MISSED_CALLS_INTENT,</span><br><span class="line">                createClearMissedCallsPendingIntent(userHandle))</span><br><span class="line">        .putExtra(TelecomManager.EXTRA_NOTIFICATION_COUNT, count)</span><br><span class="line">        .putExtra(TelecomManager.EXTRA_NOTIFICATION_PHONE_NUMBER,</span><br><span class="line">                callInfo == <span class="keyword">null</span> ? <span class="keyword">null</span> : callInfo.getPhoneNumber());</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (count == <span class="number">1</span> &amp;&amp; callInfo != <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">final</span> Uri handleUri = callInfo.getHandle();</span><br><span class="line">        String handle = handleUri == <span class="keyword">null</span> ? <span class="keyword">null</span> : handleUri.getSchemeSpecificPart();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (!TextUtils.isEmpty(handle) &amp;&amp; !TextUtils.equals(handle,</span><br><span class="line">                mContext.getString(R.string.handle_restricted))) &#123;</span><br><span class="line">            intent.putExtra(TelecomManager.EXTRA_CALL_BACK_INTENT,</span><br><span class="line">                    createCallBackPendingIntent(handleUri, userHandle));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    Log.w(<span class="keyword">this</span>, <span class="string">"Showing missed calls through default dialer."</span>);</span><br><span class="line">    mContext.sendBroadcastAsUser(intent, userHandle, READ_PHONE_STATE);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -588,8 +589,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/Android-SystemUI-Analysis/" rel="next" title="Android中SystemUI解析">
-                <i class="fa fa-chevron-left"></i> Android中SystemUI解析
+              <a href="/Android-Ashmem-Analysis/" rel="next" title="Android匿名共享内存Ashmem解析">
+                <i class="fa fa-chevron-left"></i> Android匿名共享内存Ashmem解析
               </a>
             
           </div>
@@ -598,8 +599,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/Android-InterView/" rel="prev" title="Android面试汇总">
-                Android面试汇总 <i class="fa fa-chevron-right"></i>
+              <a href="/Android-SystemUI-Analysis/" rel="prev" title="Android中SystemUI解析">
+                Android中SystemUI解析 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -681,7 +682,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">79</span>
+                  <span class="site-state-item-count">80</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -692,7 +693,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">77</span>
+                  <span class="site-state-item-count">80</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -703,7 +704,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">89</span>
+                  <span class="site-state-item-count">91</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
