@@ -4,6 +4,76 @@
 
     
   <url>
+    <loc>http://yoursite.com/Android-SystemUI-Analysis/</loc>
+    <lastmod>2018-09-10T12:17:45.834Z</lastmod>
+    <data>
+        <display>
+        <title>Android中SystemUI解析</title>
+        <pubTime>2014-12-31T16:00:00.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+        <tag>SystemUI</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="http://yoursite.com/categories/Android/"/>
+          
+             
+              <breadCrumb title="SystemUI" url="http://yoursite.com/categories/Android/SystemUI/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/About-Good-Programmer/</loc>
+    <lastmod>2018-09-10T06:13:50.973Z</lastmod>
+    <data>
+        <display>
+        <title>关于有潜力的程序员</title>
+        <pubTime>2015-12-31T16:00:00.000Z</pubTime>
+        
+        <tag>Story</tag>
+         
+         
+           
+             
+              <breadCrumb title="Story" url="http://yoursite.com/categories/Story/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/English-Word/</loc>
+    <lastmod>2018-09-09T09:57:04.661Z</lastmod>
+    <data>
+        <display>
+        <title>英语单词</title>
+        <pubTime>2015-12-31T16:00:00.000Z</pubTime>
+        
+        <tag>English</tag>
+         
+        <tag>word</tag>
+         
+         
+           
+             
+              <breadCrumb title="English" url="http://yoursite.com/categories/English/"/>
+          
+             
+              <breadCrumb title="word" url="http://yoursite.com/categories/English/word/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/UsefulWebsite/</loc>
     <lastmod>2018-09-09T09:37:36.255Z</lastmod>
     <data>
@@ -191,31 +261,6 @@
 
     
   <url>
-    <loc>http://yoursite.com/Android-SystemUI-Analysis/</loc>
-    <lastmod>2018-09-03T10:10:52.366Z</lastmod>
-    <data>
-        <display>
-        <title>Android中SystemUI解析</title>
-        <pubTime>2014-12-31T16:00:00.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-        <tag>SystemUI</tag>
-         
-         
-           
-             
-              <breadCrumb title="Android" url="http://yoursite.com/categories/Android/"/>
-          
-             
-              <breadCrumb title="SystemUI" url="http://yoursite.com/categories/Android/SystemUI/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://yoursite.com/Android-Window-Mechanism/</loc>
     <lastmod>2018-09-03T09:16:03.511Z</lastmod>
     <data>
@@ -341,11 +386,11 @@
         <title>Cracking the Coding Interview</title>
         <pubTime>2015-12-31T16:00:00.000Z</pubTime>
         
+        <tag>C++</tag>
+         
         <tag>InterView</tag>
          
         <tag>Code</tag>
-         
-        <tag>C++</tag>
          
          
            
@@ -357,31 +402,6 @@
           
              
               <breadCrumb title="C++" url="http://yoursite.com/categories/InterView/Code/C/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/English-Word/</loc>
-    <lastmod>2018-08-21T03:43:07.371Z</lastmod>
-    <data>
-        <display>
-        <title>英语单词</title>
-        <pubTime>2015-12-31T16:00:00.000Z</pubTime>
-        
-        <tag>English</tag>
-         
-        <tag>word</tag>
-         
-         
-           
-             
-              <breadCrumb title="English" url="http://yoursite.com/categories/English/"/>
-          
-             
-              <breadCrumb title="word" url="http://yoursite.com/categories/English/word/"/>
           
         </display>
     </data>
@@ -486,9 +506,9 @@
         <title>IT学习方法论</title>
         <pubTime>2017-05-04T16:00:00.000Z</pubTime>
         
-        <tag>方法论</tag>
-         
         <tag>IT</tag>
+         
+        <tag>方法论</tag>
          
          
            
@@ -580,9 +600,9 @@
         
         <tag>IT</tag>
          
-        <tag>Advice</tag>
-         
         <tag>建议</tag>
+         
+        <tag>Advice</tag>
          
          
            
@@ -1441,9 +1461,9 @@
         <title>关于工作和成长的121条具体建议</title>
         <pubTime>2015-09-08T16:00:00.000Z</pubTime>
         
-        <tag>Life</tag>
-         
         <tag>Advice</tag>
+         
+        <tag>Life</tag>
          
          
            
